@@ -8,7 +8,6 @@ class ADAlertCloseButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .whiteColor()
     }
     
     override func drawRect(rect: CGRect) {
@@ -16,10 +15,9 @@ class ADAlertCloseButton: UIButton {
         let radius = buttonWidth / 2
         layer.cornerRadius = radius
         layer.masksToBounds = true
-        
         let contex = UIGraphicsGetCurrentContext()
-        CGContextSetStrokeColorWithColor(contex, buttonStrokeColor!.CGColor)
-        CGContextSetLineWidth(contex, 2)
+        CGContextSetStrokeColorWithColor(contex, UIColor.lightGrayColor().CGColor)
+        CGContextSetLineWidth(contex, 1)
         
         CGContextBeginPath(contex)
         
@@ -126,12 +124,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     // MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let adCell = cell as! ADCell
-        if indexPath.row % 2 == 0 {
-            cell.backgroundColor = .yellowColor()
-        } else {
-            cell.backgroundColor = .whiteColor()
-        }
-        adCell.textLabel.text = "\(indexPath.row)"
+        adCell.textLabel.text = contents[indexPath.row]
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -140,7 +133,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
-    func handle(item: ((NSIndexPath) -> Void)) {
+    func selected(item: ((NSIndexPath) -> Void)) {
         self.selectedIndexPath = item
     }
 }
@@ -153,10 +146,10 @@ class ADCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageView.frame = CGRect(origin: CGPointZero, size: frame.size)
+        imageView.userInteractionEnabled = true
         contentView.addSubview(imageView)
         
         textLabel.frame = CGRectMake((frame.width - 40) / 2, 50, 40, 20)
-        textLabel.backgroundColor = .whiteColor()
         contentView.addSubview(textLabel)
     }
     
@@ -178,9 +171,9 @@ class ADAlertView: UIView {
     var containerSubviews = [String]() {
         didSet {
             if NSThread.isMainThread() {
-                performSelectorOnMainThread(#selector(updateUIForKeypath), withObject: "contents", waitUntilDone: false)
+                performSelectorOnMainThread(#selector(updateUIForKeypath), withObject: nil, waitUntilDone: false)
             } else {
-                updateUIForKeypath("contents")
+                updateUIForKeypath()
             }
         }
     }
@@ -254,15 +247,13 @@ class ADAlertView: UIView {
         }
     }
     
-    func updateUIForKeypath(keyPath: String) {
-        if keyPath == "contents" {
-            containerView.contents = containerSubviews
-            containerView.handle({ [unowned self] (indexPath) in
-                if let selectedIndePath = self.selectedIndePath {
-                    selectedIndePath(indexPath)
-                }
-                })
-        }
+    func updateUIForKeypath() {
+        containerView.contents = containerSubviews
+        containerView.selected({ [unowned self] (indexPath) in
+            if let selectedIndePath = self.selectedIndePath {
+                selectedIndePath(indexPath)
+            }
+            })
         
         setNeedsLayout()
         setNeedsDisplay()
