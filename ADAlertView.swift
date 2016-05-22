@@ -42,22 +42,28 @@ class ADAlertCloseButton: UIButton {
 }
 
 //MARK: - ADAlertContainerView
-class ADAlertContainerView: UIView {
+class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     var cornerRadius: CGFloat?
     var containerBgColor: UIColor?
     var closeBtnTintColor: UIColor?
     var closeBtnBgColor: UIColor?
-    var containtViews = [UIView]()
+    var contents = [String]()
     
     private let closeBtn = ADAlertCloseButton()
     private let containerView = UIView()
-    private let scrollView = UIScrollView()
+    private var collectionView: UICollectionView!
+    private var selectedIndexPath: ((NSIndexPath) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        scrollView.backgroundColor = .redColor()
-        scrollView.pagingEnabled = true
-        scrollView.showsHorizontalScrollIndicator = false
+        
+        collectionView = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewLayout())
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.registerClass(ADCell.self, forCellWithReuseIdentifier: "cell_id")
+        collectionView.backgroundColor = .redColor()
+        collectionView.pagingEnabled = true
+        collectionView.showsHorizontalScrollIndicator = false
         
         closeBtn.buttonStrokeColor = closeBtnTintColor
         closeBtn.backgroundColor = closeBtnBgColor
@@ -70,7 +76,7 @@ class ADAlertContainerView: UIView {
         containerView.backgroundColor = containerBgColor
         containerView.layer.masksToBounds = true
         
-        containerView.addSubview(scrollView)
+        containerView.addSubview(collectionView)
         
         addSubview(containerView)
         addSubview(closeBtn)
@@ -80,8 +86,6 @@ class ADAlertContainerView: UIView {
         super.layoutSubviews()
         let kContainerPadding: CGFloat = 5
         let kCloseButtonWidth: CGFloat = 32
-        
-        let subviewCount = CGFloat(containtViews.count)
         
         let containerFrame = CGRectInset(bounds, kContainerPadding, kContainerPadding)
         containerView.frame = containerFrame
@@ -94,20 +98,66 @@ class ADAlertContainerView: UIView {
         closeBtn.center = CGPointMake(CGRectGetMaxX(containerView.frame) - kCloseButtonWidth / 4.5, CGRectGetMinY(containerView.frame) + kCloseButtonWidth / 4.5)
         closeBtn.setNeedsDisplay()
         
-        scrollView.frame = CGRectInset(containerView.bounds, 5, 5)
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.itemSize = CGRectInset(containerView.bounds, 5, 5).size
+        layout.scrollDirection = .Horizontal
+        collectionView.collectionViewLayout = layout
+        collectionView.frame = CGRectInset(containerView.bounds, 5, 5)
+        collectionView.reloadData()
         
-        scrollView.contentSize = CGSizeMake(CGRectGetWidth(scrollView.frame) * subviewCount, CGRectGetHeight(scrollView.frame))
-        
-        scrollView.subviews.forEach { (subView) in
-            subView.removeFromSuperview()
+        collectionView.contentOffset = CGPointZero
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - UICollectionViewDataSource
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return contents.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell_id", forIndexPath: indexPath)
+        return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+        let adCell = cell as! ADCell
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = .yellowColor()
+        } else {
+            cell.backgroundColor = .whiteColor()
         }
-        
-        for idx in 0..<Int(subviewCount) {
-            let viewToAdd = containtViews[idx]
-            viewToAdd.frame = CGRectMake(CGFloat(idx) * CGRectGetWidth(scrollView.frame), 0, CGRectGetWidth(scrollView.frame), CGRectGetHeight(scrollView.frame))
-            scrollView.addSubview(viewToAdd)
+        adCell.textLabel.text = "\(indexPath.row)"
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        if let selectedIndexPath = self.selectedIndexPath {
+            selectedIndexPath(indexPath)
         }
-        scrollView.contentOffset = CGPointZero
+    }
+    
+    func handle(item: ((NSIndexPath) -> Void)) {
+        self.selectedIndexPath = item
+    }
+}
+
+class ADCell: UICollectionViewCell {
+    let imageView = UIImageView()
+    let textLabel = UILabel()
+    
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        imageView.frame = CGRect(origin: CGPointZero, size: frame.size)
+        contentView.addSubview(imageView)
+        
+        textLabel.frame = CGRectMake((frame.width - 40) / 2, 50, 40, 20)
+        textLabel.backgroundColor = .whiteColor()
+        contentView.addSubview(textLabel)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -121,18 +171,21 @@ class ADAlertView: UIView {
     var closeBtnBgColor: UIColor?
     var cornerRadius: CGFloat?
     var dimBackground: Bool?
-    var containerSubviews = [UIView]() {
-        didSet {
-            if NSThread.isMainThread() {
-                performSelectorOnMainThread(#selector(updateUIForKeypath), withObject: "containerSubviews", waitUntilDone: false)
-            } else {
-                updateUIForKeypath("containerSubviews")
-            }
-        }
-    }
     var minHorizontalPadding: CGFloat?
     var minVertalPadding: CGFloat?
     var proportion: CGFloat?
+    
+    var containerSubviews = [String]() {
+        didSet {
+            if NSThread.isMainThread() {
+                performSelectorOnMainThread(#selector(updateUIForKeypath), withObject: "contents", waitUntilDone: false)
+            } else {
+                updateUIForKeypath("contents")
+            }
+        }
+    }
+    
+    private var selectedIndePath: ((NSIndexPath) -> Void)?
     
     private let containerView = ADAlertContainerView()
     
@@ -160,8 +213,9 @@ class ADAlertView: UIView {
         self.init(frame: CGRectZero)
     }
     
-    convenience init(view: UIView) {
+    convenience init(view: UIView, handle: ((NSIndexPath) -> Void)? = nil) {
         self.init(frame: view.bounds)
+        self.selectedIndePath = handle
     }
     
     convenience init(window: UIWindow) {
@@ -169,10 +223,6 @@ class ADAlertView: UIView {
     }
     
     deinit {
-        for keyPath in observableKeypaths() {
-            removeObserver(self, forKeyPath: keyPath)
-        }
-        
         NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidChangeStatusBarOrientationNotification, object: nil)
     }
     
@@ -204,13 +254,14 @@ class ADAlertView: UIView {
         }
     }
     
-    func observableKeypaths() -> [String] {
-        return ["containerSubviews", "cardBgColor", "closeBtnTintColor", "closeBtnBgColor", "cornerRadius", "dimBackground", "minHorizontalPadding", "minVertalPadding", "proportion"]
-    }
-    
     func updateUIForKeypath(keyPath: String) {
-        if keyPath == "containerSubviews" {
-            containerView.containtViews = containerSubviews
+        if keyPath == "contents" {
+            containerView.contents = containerSubviews
+            containerView.handle({ [unowned self] (indexPath) in
+                if let selectedIndePath = self.selectedIndePath {
+                    selectedIndePath(indexPath)
+                }
+                })
         }
         
         setNeedsLayout()
