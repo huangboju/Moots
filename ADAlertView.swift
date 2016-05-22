@@ -9,7 +9,6 @@ class ADAlertCloseButton: UIButton {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = .whiteColor()
-        showsTouchWhenHighlighted = true
     }
     
     override func drawRect(rect: CGRect) {
@@ -140,6 +139,8 @@ class ADAlertView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         alpha = 0
+        
+        backgroundColor = .clearColor()
         
         cardBgColor = .whiteColor()
         closeBtnTintColor = UIColor(red: 0, green: 183 / 255, blue: 238 / 255, alpha: 1)
