@@ -64,7 +64,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.showsHorizontalScrollIndicator = false
         
         closeBtn.buttonStrokeColor = closeBtnTintColor
-        closeBtn.backgroundColor = closeBtnBgColor
+        closeBtn.backgroundColor = .clearColor()
         closeBtn.addTarget(self.superview, action: #selector(ADAlertView().hide), forControlEvents: .TouchUpInside)
         
         if let cornerRadius = self.cornerRadius {
@@ -93,15 +93,15 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         closeBtn.buttonStrokeColor = closeBtnTintColor
         closeBtn.backgroundColor = closeBtnBgColor
         closeBtn.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(kCloseButtonWidth, kCloseButtonWidth))
-        closeBtn.center = CGPointMake(CGRectGetMaxX(containerView.frame) - kCloseButtonWidth / 4.5, CGRectGetMinY(containerView.frame) + kCloseButtonWidth / 4.5)
+        closeBtn.frame.origin = CGPointMake((CGRectGetMaxX(containerView.frame) - kCloseButtonWidth) / 2, CGRectGetMaxY(containerView.frame) - kCloseButtonWidth)
         closeBtn.setNeedsDisplay()
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGRectInset(containerView.bounds, 5, 5).size
+        layout.itemSize = CGRectInset(containerView.bounds, kContainerPadding, 25).size
         layout.scrollDirection = .Horizontal
         collectionView.collectionViewLayout = layout
-        collectionView.frame = CGRectInset(containerView.bounds, 5, 5)
+        collectionView.frame = CGRectInset(containerView.bounds, kContainerPadding, kCloseButtonWidth + kContainerPadding)
         collectionView.reloadData()
         
         collectionView.contentOffset = CGPointZero
@@ -178,7 +178,8 @@ class ADAlertView: UIView {
         }
     }
     
-    private var selectedIndePath: ((NSIndexPath) -> Void)?
+    private var selectedIndexPath: ((NSIndexPath) -> Void)?
+    private var closeAction: ((Bool) -> Void)?
     
     private let containerView = ADAlertContainerView()
     
@@ -188,9 +189,9 @@ class ADAlertView: UIView {
         
         backgroundColor = .clearColor()
         
-        cardBgColor = .whiteColor()
-        closeBtnTintColor = UIColor(red: 0, green: 183 / 255, blue: 238 / 255, alpha: 1)
-        closeBtnBgColor = .whiteColor()
+//        cardBgColor = .whiteColor()
+        closeBtnTintColor = .whiteColor()
+//        closeBtnBgColor = .whiteColor()
         cornerRadius = 10
         dimBackground = true
         minHorizontalPadding = 25
@@ -206,9 +207,10 @@ class ADAlertView: UIView {
         self.init(frame: CGRectZero)
     }
     
-    convenience init(view: UIView, handle: ((NSIndexPath) -> Void)? = nil) {
+    convenience init(view: UIView, handle: ((NSIndexPath) -> Void)? = nil, close: ((Bool) -> Void)? = nil) {
         self.init(frame: view.bounds)
-        self.selectedIndePath = handle
+        self.selectedIndexPath = handle
+        self.closeAction = close
     }
     
     convenience init(window: UIWindow) {
@@ -224,6 +226,9 @@ class ADAlertView: UIView {
     }
     
     func hide() {
+        if let close = self.closeAction {
+            close(true)
+        }
         hideUsingAnimation(true)
     }
     
@@ -250,7 +255,7 @@ class ADAlertView: UIView {
     func updateUIForKeypath() {
         containerView.contents = containerSubviews
         containerView.selected({ [unowned self] (indexPath) in
-            if let selectedIndePath = self.selectedIndePath {
+            if let selectedIndePath = self.selectedIndexPath {
                 selectedIndePath(indexPath)
             }
             })
