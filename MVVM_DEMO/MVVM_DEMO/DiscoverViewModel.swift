@@ -19,6 +19,8 @@ extension DiscoverViewModel: DiscoverCellDelegate {
         }
     }
     
+    
+    
     var selectedColor: UIColor {
         return .redColor()
     }
