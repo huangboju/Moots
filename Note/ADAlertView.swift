@@ -45,7 +45,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     var containerBgColor: UIColor?
     var closeBtnTintColor: UIColor?
     var closeBtnBgColor: UIColor?
-    var contents = [String]()
+    var contents = [UIImage]()
     
     private let closeBtn = ADAlertCloseButton()
     private let containerView = UIView()
@@ -124,7 +124,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     // MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let adCell = cell as! ADCell
-        adCell.textLabel.text = contents[indexPath.row]
+        adCell.imageView.image = contents[indexPath.row]
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -145,8 +145,10 @@ class ADCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        imageView.frame = CGRect(origin: CGPointZero, size: frame.size)
+        imageView.frame = CGRect(origin: CGPoint.zero, size: frame.size)
         imageView.userInteractionEnabled = true
+        imageView.contentMode = .ScaleAspectFill
+        clipsToBounds = true
         contentView.addSubview(imageView)
         
         textLabel.frame = CGRectMake((frame.width - 40) / 2, 50, 40, 20)
@@ -168,7 +170,7 @@ class ADAlertView: UIView {
     var minVertalPadding: CGFloat?
     var proportion: CGFloat?
     
-    var containerSubviews = [String]() {
+    var containerSubviews = [UIImage]() {
         didSet {
             if NSThread.isMainThread() {
                 performSelectorOnMainThread(#selector(updateUIForKeypath), withObject: nil, waitUntilDone: false)
@@ -189,9 +191,9 @@ class ADAlertView: UIView {
         
         backgroundColor = .clearColor()
         
-//        cardBgColor = .whiteColor()
+        //        cardBgColor = .whiteColor()
         closeBtnTintColor = .whiteColor()
-//        closeBtnBgColor = .whiteColor()
+        //        closeBtnBgColor = .whiteColor()
         cornerRadius = 10
         dimBackground = true
         minHorizontalPadding = 25

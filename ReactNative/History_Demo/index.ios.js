@@ -9,6 +9,7 @@ import {
   Image,
   ListView,
   StyleSheet,
+  TouchableHighlight,
   Text,
   View
 } from 'react-native'

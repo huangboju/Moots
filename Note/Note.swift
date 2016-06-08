@@ -27,8 +27,8 @@ func drawDottedLine(lineView: UIView, offset: CGPoint) {
     // 4=线的宽度 1=每条线的间距
     shapeLayer.lineDashPattern = [NSNumber(int: 4), NSNumber(int: 1)]
     let path = CGPathCreateMutable()
-    CGPathMoveToPoint(path, nil, offset.x, offset.y);
-    CGPathAddLineToPoint(path, nil, CGRectGetWidth(lineView.frame) - offset.x, offset.y);
+    CGPathMoveToPoint(path, nil, offset.x, offset.y)
+    CGPathAddLineToPoint(path, nil, CGRectGetWidth(lineView.frame) - offset.x, offset.y)
     shapeLayer.path = path
     lineView.layer.addSublayer(shapeLayer)
 }
@@ -43,3 +43,9 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     imageView.layer.mask = shapeLayer
     return imageView
 }
+
+//删除多余模拟器
+// /Library/Developer/CoreSimulator/Profiles/Runtimes
+
+//修改swift文件
+// /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
