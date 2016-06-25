@@ -47,13 +47,17 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     var closeBtnBgColor: UIColor?
     var contents = [UIImage]()
     
+    private let kCloseButtonWidth: CGFloat = 24
+    private let lengthen: CGFloat = 15
     private let closeBtn = ADAlertCloseButton()
     private let containerView = UIView()
+    private let layout = UICollectionViewFlowLayout()
     private var collectionView: UICollectionView!
     private var selectedIndexPath: ((NSIndexPath) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
         
         collectionView = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewLayout())
         collectionView.delegate = self
@@ -62,6 +66,9 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.backgroundColor = .clearColor()
         collectionView.pagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
+        layout.scrollDirection = .Horizontal
+        layout.minimumLineSpacing = 0
+        collectionView.collectionViewLayout = layout
         
         closeBtn.buttonStrokeColor = closeBtnTintColor
         closeBtn.backgroundColor = .clearColor()
@@ -82,25 +89,15 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let kCloseButtonWidth: CGFloat = 24
-        let lengthen: CGFloat = 15
-        let containerFrame = bounds
-        containerView.frame = containerFrame
-        containerView.layer.cornerRadius = cornerRadius!
-        containerView.backgroundColor = containerBgColor
+        containerView.frame = bounds
         
-        closeBtn.buttonStrokeColor = closeBtnTintColor
-        closeBtn.backgroundColor = closeBtnBgColor
         closeBtn.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: kCloseButtonWidth, height: kCloseButtonWidth))
         closeBtn.frame.origin = CGPoint(x: (containerView.frame.maxX - kCloseButtonWidth) / 2, y: containerView.frame.maxY - kCloseButtonWidth)
         closeBtn.setNeedsDisplay()
         
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
-        layout.itemSize = containerView.bounds.insetBy(dx: 0, dy: kCloseButtonWidth + lengthen).size
-        layout.scrollDirection = .Horizontal
-//        collectionView.collectionViewLayout = layout
         collectionView.frame = containerView.bounds.insetBy(dx: 0, dy: kCloseButtonWidth + lengthen)
+        layout.itemSize = collectionView.frame.size
+        
         collectionView.reloadData()
         collectionView.contentOffset = CGPoint.zero
     }
@@ -209,8 +206,8 @@ class ADAlertView: UIView {
     convenience init(view: UIView, handle: ((NSIndexPath) -> Void)? = nil, close: ((Bool) -> Void)? = nil) {
         self.init(frame: view.bounds)
         view.addSubview(self)
-        self.selectedIndexPath = handle
-        self.closeAction = close
+        selectedIndexPath = handle
+        closeAction = close
     }
     
     convenience init(window: UIWindow) {
