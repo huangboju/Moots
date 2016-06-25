@@ -5,11 +5,11 @@
 //MARK: - ADAlertCloseButton
 class ADAlertCloseButton: UIButton {
     var buttonStrokeColor: UIColor?
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
-    
+
     override func drawRect(rect: CGRect) {
         let buttonWidth = min(CGRectGetWidth(rect), CGRectGetHeight(rect))
         let radius = buttonWidth / 2
@@ -18,22 +18,22 @@ class ADAlertCloseButton: UIButton {
         let contex = UIGraphicsGetCurrentContext()
         CGContextSetStrokeColorWithColor(contex, UIColor.lightGrayColor().CGColor)
         CGContextSetLineWidth(contex, 1)
-        
+
         CGContextBeginPath(contex)
-        
+
         let path = UIBezierPath(roundedRect: CGRectInset(rect, 1, 1), cornerRadius: radius).CGPath
-        
+
         CGContextAddPath(contex, path)
-        
+
         CGContextMoveToPoint(contex, 0, 0)
         CGContextAddLineToPoint(contex, CGRectGetMaxX(rect), CGRectGetMaxY(rect))
-        
+
         CGContextMoveToPoint(contex, CGRectGetMaxX(rect), 0)
         CGContextAddLineToPoint(contex, 0, CGRectGetMaxY(rect))
-        
+
         CGContextStrokePath(contex)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -59,7 +59,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.registerClass(ADCell.self, forCellWithReuseIdentifier: "cell_id")
-        collectionView.backgroundColor = .redColor()
+        collectionView.backgroundColor = .clearColor()
         collectionView.pagingEnabled = true
         collectionView.showsHorizontalScrollIndicator = false
         
@@ -82,29 +82,27 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let kContainerPadding: CGFloat = 5
-        let kCloseButtonWidth: CGFloat = 32
-        
-        let containerFrame = CGRectInset(bounds, kContainerPadding, kContainerPadding)
+        let kCloseButtonWidth: CGFloat = 24
+        let lengthen: CGFloat = 15
+        let containerFrame = bounds
         containerView.frame = containerFrame
         containerView.layer.cornerRadius = cornerRadius!
         containerView.backgroundColor = containerBgColor
         
         closeBtn.buttonStrokeColor = closeBtnTintColor
         closeBtn.backgroundColor = closeBtnBgColor
-        closeBtn.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(kCloseButtonWidth, kCloseButtonWidth))
-        closeBtn.frame.origin = CGPointMake((CGRectGetMaxX(containerView.frame) - kCloseButtonWidth) / 2, CGRectGetMaxY(containerView.frame) - kCloseButtonWidth)
+        closeBtn.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: kCloseButtonWidth, height: kCloseButtonWidth))
+        closeBtn.frame.origin = CGPoint(x: (containerView.frame.maxX - kCloseButtonWidth) / 2, y: containerView.frame.maxY - kCloseButtonWidth)
         closeBtn.setNeedsDisplay()
         
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 0
-        layout.itemSize = CGRectInset(containerView.bounds, kContainerPadding, 25).size
+        layout.itemSize = containerView.bounds.insetBy(dx: 0, dy: kCloseButtonWidth + lengthen).size
         layout.scrollDirection = .Horizontal
-        collectionView.collectionViewLayout = layout
-        collectionView.frame = CGRectInset(containerView.bounds, kContainerPadding, kCloseButtonWidth + kContainerPadding)
+//        collectionView.collectionViewLayout = layout
+        collectionView.frame = containerView.bounds.insetBy(dx: 0, dy: kCloseButtonWidth + lengthen)
         collectionView.reloadData()
-        
-        collectionView.contentOffset = CGPointZero
+        collectionView.contentOffset = CGPoint.zero
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -123,8 +121,8 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     
     // MARK: - UICollectionViewDelegate
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
-        let adCell = cell as! ADCell
-        adCell.imageView.image = contents[indexPath.row]
+        let adCell = cell as? ADCell
+        adCell?.imageView.image = contents[indexPath.row]
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -151,7 +149,7 @@ class ADCell: UICollectionViewCell {
         clipsToBounds = true
         contentView.addSubview(imageView)
         
-        textLabel.frame = CGRectMake((frame.width - 40) / 2, 50, 40, 20)
+        textLabel.frame = CGRect(x: (frame.width - 40) / 2, y: 50, width: 40, height: 20)
         contentView.addSubview(textLabel)
     }
     
@@ -196,9 +194,8 @@ class ADAlertView: UIView {
         //        closeBtnBgColor = .whiteColor()
         cornerRadius = 10
         dimBackground = true
-        minHorizontalPadding = 25
+        minHorizontalPadding = frame.width * 0.1
         minVertalPadding = 10
-        
         proportion = 0.75
         addSubview(containerView)
         
@@ -206,11 +203,12 @@ class ADAlertView: UIView {
     }
     
     convenience init () {
-        self.init(frame: CGRectZero)
+        self.init(frame: CGRect.zero)
     }
     
     convenience init(view: UIView, handle: ((NSIndexPath) -> Void)? = nil, close: ((Bool) -> Void)? = nil) {
         self.init(frame: view.bounds)
+        view.addSubview(self)
         self.selectedIndexPath = handle
         self.closeAction = close
     }
@@ -259,6 +257,7 @@ class ADAlertView: UIView {
         containerView.selected({ [unowned self] (indexPath) in
             if let selectedIndePath = self.selectedIndexPath {
                 selectedIndePath(indexPath)
+                self.hide()
             }
             })
         
@@ -297,15 +296,15 @@ class ADAlertView: UIView {
         containerView.closeBtnTintColor = closeBtnTintColor
         containerView.cornerRadius = cornerRadius
         
-        if CGRectGetWidth(bounds) > CGRectGetHeight(bounds) {
-            let containerHeight = CGRectGetHeight(bounds) - kHeightPadding! * 2
-            containerView.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(containerHeight * kProportion!, containerHeight))
+        if bounds.width > bounds.height {
+            let containerHeight = bounds.height - kHeightPadding! * 2
+            containerView.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: containerHeight * kProportion!, height: containerHeight))
         } else {
-            let containerWidth = CGRectGetWidth(bounds) - kWidthPadding! * 2
-            containerView.bounds = CGRect(origin: CGPointZero, size: CGSizeMake(containerWidth, containerWidth / kProportion!))
+            let containerWidth = bounds.width - kWidthPadding! * 2
+            containerView.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: containerWidth, height: containerWidth / kProportion! + 78))
         }
         
-        containerView.center = CGPointMake(CGRectGetMidX(bounds), CGRectGetMidY(bounds))
+        containerView.center = CGPoint(x: bounds.midX, y: bounds.midY - 39)
     }
     
     required init?(coder aDecoder: NSCoder) {
