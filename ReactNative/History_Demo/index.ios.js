@@ -82,24 +82,34 @@ var History_Demo = React.createClass({
     );
   },
 
+  showBookDetail() {
+
+      this.props.navigator.push({
+          title: book.volumeInfo.title,
+          component: Detail
+      });
+  },
+
   renderHistory(history) {
     return (
+      <TouchableHighlight onPress={() => this.showBookDetail()} underlayColor='#dddddd'>
         <View>
           <View style={styles.container}>
             <View style={styles.rightContainer}>
-              <Text style={styles.name}>{history.name}</Text>
-              <Text style={styles.message}>{history.status.message}</Text>
+                <Text style={styles.name}>{history.name}</Text>
+                <Text style={styles.message}>{history.status.message}</Text>
               <View style={styles.separator}/>
-              <Text style={styles.rate}>{history.rate / 100 + '%'}</Text>
-              <Text style={styles.rateText}>{'年化利率'}</Text>
-              <Text style={styles.period}>{history.period + '天'}</Text>
-              <Text style={styles.periodText}>{'投资期限'}</Text>
-              <Text style={styles.count}>{history.orders.count + '人'}</Text>
-              <Text style={styles.countText}>{'投资人数'}</Text>
-          </View>
-          </View>
+                <Text style={styles.rate}>{history.rate / 100 + '%'}</Text>
+                <Text style={styles.rateText}>{'年化利率'}</Text>
+                <Text style={styles.period}>{history.period + '天'}</Text>
+                <Text style={styles.periodText}>{'投资期限'}</Text>
+                <Text style={styles.count}>{history.orders.count + '人'}</Text>
+                <Text style={styles.countText}>{'投资人数'}</Text>
+              </View>
+            </View>
           <View style={styles.section} />
         </View>
+      </TouchableHighlight>
     );
   },
 });

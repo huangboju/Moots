@@ -37,12 +37,12 @@ class TableView: UITableViewController {
         if let setting = Setting(rawValue: indexPath.row) {
             switch setting {
             case .MinionMode:
-                let cell = tableView.dequeueReusableCellWithIdentifier("SwitchCellId", forIndexPath: indexPath) as! SwitchCell
+                let cell = tableView.dequeueReusableCellWithIdentifier("SwitchCellId", forIndexPath: indexPath) as? SwitchCell
                 
                 // this is where the magic happens!
                 let viewModel = Model()
-                cell.configure(withDataSource: viewModel, delegate: viewModel)
-                return cell
+                cell?.configure(withDataSource: viewModel, delegate: viewModel)
+                return cell ?? SwitchCell()
             }
         }
         
