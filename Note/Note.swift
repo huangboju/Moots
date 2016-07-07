@@ -44,6 +44,23 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     return imageView
 }
 
+//通过字符串构建类
+extension String {
+    func fromClassName() -> NSObject {
+        let className = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String + "." + self
+        let aClass = NSClassFromString(className) as! UIViewController.Type
+        return aClass.init()
+    }
+}
+
+extension NSObject {
+    class func fromClassName(className: String) -> NSObject {
+        let className = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String + "." + className
+        let aClass = NSClassFromString(className) as! UIViewController.Type
+        return aClass.init()
+    }
+}
+
 //删除多余模拟器
 // /Library/Developer/CoreSimulator/Profiles/Runtimes
 
