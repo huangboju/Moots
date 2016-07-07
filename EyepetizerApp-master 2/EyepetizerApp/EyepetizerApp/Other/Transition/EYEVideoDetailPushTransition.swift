@@ -55,9 +55,9 @@ class EYEVideoDetailPushTransition: NSObject, UIViewControllerAnimatedTransition
         toVC.detailView.describeLabel.alpha = 0
         toVC.detailView.bottomToolView.alpha = 0
         //4.都添加到 container 中。注意顺序不能错了
-        container?.addSubview(toVC.view)
+        container!.addSubview(toVC.view)
         container?.addSubview(backgroundSnapshotView)
-        container?.addSubview(snapshotView)
+        container!.addSubview(snapshotView)
         container?.addSubview(coverView)
         container?.addSubview(blurImageView)
         container?.addSubview(blurView)
