@@ -37,7 +37,7 @@ extension UIScrollView {
      *  结束下拉刷新
      */
     func headerViewEndRefresh() {
-        for object : AnyObject in self.subviews{
+        for object : AnyObject in self.subviews {
             if object is EYEPullToRefreshHeaderView {
                 object.endRefreshing()
             }
@@ -49,8 +49,8 @@ extension UIScrollView {
      上拉加载更多
      */
     func footerViewPullToRefresh(callback : (()->Void)?) {
-        let footView : EYEPullToRefreshFooterView = EYEPullToRefreshFooterView.footerView()
-        self.addSubview(footView)
+        let footView = EYEPullToRefreshFooterView.footerView()
+        addSubview(footView)
         footView.beginRefreshingCallback = callback
         footView.state = .Normal
     }

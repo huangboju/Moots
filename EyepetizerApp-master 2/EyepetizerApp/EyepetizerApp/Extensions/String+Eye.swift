@@ -16,7 +16,7 @@ extension String {
 }
 
 extension Int {
-    static func durationToTimer(duration : Int) -> String {
+    static func durationToTimer(duration: Int) -> String {
         return "\(String(format: "%02d", duration/60))' \(String(format: "%02d", duration%60))\""
     }
 }

@@ -13,7 +13,7 @@ public protocol Reusable: class {
 }
 
 extension Reusable {
-    static var reuseIdentifier : String {
+    static var reuseIdentifier: String {
         return String(Self)
     }  
 }

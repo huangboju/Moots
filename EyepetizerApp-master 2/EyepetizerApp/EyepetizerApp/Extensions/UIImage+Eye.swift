@@ -9,8 +9,8 @@
 import UIKit
 
 extension UIImage {
-    class func colorImage(color : UIColor, size : CGSize) -> UIImage {
-        let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    class func colorImage(color: UIColor, size: CGSize) -> UIImage {
+        let rect = CGRect(origin: CGPoint.zero, size: size)
         UIGraphicsBeginImageContext(rect.size)
         let context = UIGraphicsGetCurrentContext()
         CGContextSetFillColorWithColor(context, color.CGColor)

@@ -13,7 +13,7 @@ extension NSDate {
      获取当前时间戳
      */
     class func getCurrentTimeStamp() -> String {
-        let timeStamp : String = "\(Int64(floor(NSDate().timeIntervalSince1970 * 1000)))"
+        let timeStamp = "\(Int64(floor(NSDate().timeIntervalSince1970 * 1000)))"
         return timeStamp
     }
     
@@ -21,7 +21,7 @@ extension NSDate {
      获取当前年月日
      */
     class func getCurrentDate() -> String {
-        let formatter : NSDateFormatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFromString("yyyy-MM-dd")
         return formatter.stringFromDate(NSDate())
     }
@@ -34,7 +34,7 @@ extension NSDate {
      - returns: 时间戳
      */
     class func change2TimeStamp(date : String) -> String {
-        let formatter : NSDateFormatter = NSDateFormatter()
+        let formatter = NSDateFormatter()
         formatter.dateFromString("yyyy-MM-dd")
         formatter.dateStyle = .MediumStyle
         formatter.timeStyle = .ShortStyle
@@ -50,7 +50,7 @@ extension NSDate {
      
      - returns: 时间
      */
-    class func change2Date(timestamp : String) -> String {
+    class func change2Date(timestamp: String) -> String {
         guard timestamp.length > 3 else {
             return ""
         }
