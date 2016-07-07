@@ -13,7 +13,7 @@ class EYEPopularFooterView: UICollectionReusableView, Reusable {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(titleLabel)
+        addSubview(titleLabel)
         titleLabel.snp_makeConstraints { [unowned self](make) in
             make.edges.equalTo(self)
         }

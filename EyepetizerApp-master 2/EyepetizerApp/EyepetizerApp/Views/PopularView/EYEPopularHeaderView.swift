@@ -30,15 +30,15 @@ class EYEPopularHeaderView: UIView {
             titleButton.setTitle(title, forState: .Normal)
             titleButton.titleLabel?.font = UIFont.customFont_FZLTXIHJW()
             titleButton.addTarget(self, action: #selector(EYEPopularHeaderView.titleBtnDidClick(_:)), forControlEvents: .TouchUpInside)
-            self.addSubview(titleButton)
-            self.titleLabelArray.append(titleButton)
+            addSubview(titleButton)
+            titleLabelArray.append(titleButton)
         }
         
-        self.currentBtn = self.titleLabelArray.first
+        currentBtn = self.titleLabelArray.first
         
         // 添加2条横线
-        self.addSubview(topLineView)
-        self.addSubview(bottomLineView)
+        addSubview(topLineView)
+        addSubview(bottomLineView)
     }
     
     
@@ -54,19 +54,19 @@ class EYEPopularHeaderView: UIView {
         
         self.startAnimation(button.tag)
         
-        if let _ = block {
-            self.block!(targetBtn: button, index: button.tag)
+        if let block = block {
+            block(targetBtn: button, index: button.tag)
         }
         
         self.currentBtn = button
     }
     
-    func headerViewTitleDidClick(block : HeaderViewBtnClickBlock?) {
+    func headerViewTitleDidClick(block: HeaderViewBtnClickBlock?) {
         self.block = block
     }
     
     //MARK: --------------------------- Private Methods --------------------------
-    private func startAnimation (index : Int) {
+    private func startAnimation(index: Int) {
         self.isAnimation = true
         let button = self.titleLabelArray[index]
         UIView.animateWithDuration(0.4, delay: 0, options: .CurveEaseIn, animations: {
@@ -78,7 +78,7 @@ class EYEPopularHeaderView: UIView {
     }
     
     //MARK: --------------------------- Public Methods --------------------------
-    func setupLineViewWidth(width : CGFloat) {
+    func setupLineViewWidth(width: CGFloat) {
         bottomLineView.width = width
         topLineView.width = width
         bottomLineView.center = CGPoint(x: self.titleLabelArray.first!.center.x, y: self.height-12)
@@ -86,19 +86,19 @@ class EYEPopularHeaderView: UIView {
     }
    
     //MARK: --------------------------- Getter or Setter --------------------------
-    typealias HeaderViewBtnClickBlock = (targetBtn : UIButton, index : Int) -> Void
+    typealias HeaderViewBtnClickBlock = (targetBtn: UIButton, index : Int) -> Void
     // 标题
     private var titleArray: [String] = [String]()
     // 按钮
-    private var titleLabelArray : [UIButton] = [UIButton]()
+    private var titleLabelArray: [UIButton] = [UIButton]()
     // 点击回调
-    private var block : HeaderViewBtnClickBlock?
+    private var block: HeaderViewBtnClickBlock?
     // 是否正在动画 底部两条横线动画
-    private var isAnimation : Bool! = false
+    private var isAnimation: Bool! = false
     // 当前选中的button
-    private var currentBtn : UIButton!
+    private var currentBtn: UIButton!
     // 顶部横线
-    private lazy var topLineView : UIView = {
+    private lazy var topLineView: UIView = {
         let topLineView: UIView = UIView()
         topLineView.backgroundColor = UIColor.blackColor()
         topLineView.frame = CGRect(x: 0, y: 0, width: 35, height: 0.5)
@@ -106,7 +106,7 @@ class EYEPopularHeaderView: UIView {
         return topLineView
     }()
     // 底部横线
-    private lazy var bottomLineView : UIView = {
+    private lazy var bottomLineView: UIView = {
         let bottomLineView: UIView = UIView()
         bottomLineView.backgroundColor = UIColor.blackColor()
         bottomLineView.frame = CGRect(x: 0, y: 0, width: 35, height: 0.5)
