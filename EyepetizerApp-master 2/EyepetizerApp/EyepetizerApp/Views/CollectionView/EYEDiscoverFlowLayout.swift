@@ -15,7 +15,7 @@ class EYEDiscoverFlowLayout : UICollectionViewFlowLayout {
     private var width: CGFloat {
         get {
             let insets = collectionView!.contentInset
-            return CGRectGetWidth(collectionView!.bounds) - (insets.left + insets.right)
+            return collectionView!.bounds.width - (insets.left + insets.right)
         }
     }
     

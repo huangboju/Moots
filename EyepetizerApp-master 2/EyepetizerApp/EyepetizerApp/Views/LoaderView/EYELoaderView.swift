@@ -12,8 +12,8 @@ class EYELoaderView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.addSubview(eyeBackgroundLoaderView)
-        self.addSubview(eyeCenterLoaderView)        
+        addSubview(eyeBackgroundLoaderView)
+        addSubview(eyeCenterLoaderView)
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -21,7 +21,7 @@ class EYELoaderView: UIView {
     }
     
     func startLoadingAnimation() {
-        self.hidden = false
+        hidden = false
         let animation : CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         animation.fromValue = 0
         animation.toValue = M_PI * 2
@@ -30,12 +30,12 @@ class EYELoaderView: UIView {
         animation.repeatCount = HUGE
         animation.fillMode = kCAFillModeForwards
         animation.removedOnCompletion = false
-        self.eyeCenterLoaderView.layer.addAnimation(animation, forKey: animation.keyPath)
+        eyeCenterLoaderView.layer.addAnimation(animation, forKey: animation.keyPath)
     }
     
     func stopLoadingAnimation() {
 //        self.hidden = true
-        self.eyeCenterLoaderView.layer.removeAllAnimations()
+        eyeCenterLoaderView.layer.removeAllAnimations()
     }
     
     /// 外面眼圈

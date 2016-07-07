@@ -11,7 +11,7 @@ import UIKit
 class EYECollectionLayout: UICollectionViewFlowLayout {
     override init () {
         super.init()
-        let itemHeight = 200*UIConstant.SCREEN_WIDTH/UIConstant.IPHONE5_WIDTH
+        let itemHeight = 200 * UIConstant.SCREEN_WIDTH / UIConstant.IPHONE5_WIDTH
         itemSize = CGSize(width: UIConstant.SCREEN_WIDTH, height: itemHeight)
         sectionInset = UIEdgeInsetsZero
         minimumInteritemSpacing = 0

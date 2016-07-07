@@ -13,36 +13,36 @@ class EYEChoiceCell: UICollectionViewCell, Reusable {
     override init(frame: CGRect) {
         super.init(frame : frame)
      
-        self.contentView.addSubview(backgroundImageView)
-        self.contentView.addSubview(coverButton)
-        self.contentView.addSubview(titleLabel)
-        self.contentView.addSubview(subTitleLabel)
-        self.contentView.addSubview(indexView)
+        contentView.addSubview(backgroundImageView)
+        contentView.addSubview(coverButton)
+        contentView.addSubview(titleLabel)
+        contentView.addSubview(subTitleLabel)
+        contentView.addSubview(indexView)
         
-        backgroundImageView.snp_makeConstraints { [unowned self](make) -> Void in
+        backgroundImageView.snp_makeConstraints { [unowned self](make) in
             make.leading.trailing.top.bottom.equalTo(self.contentView)
         }
-        coverButton.snp_makeConstraints { [unowned self](make) -> Void in
+        coverButton.snp_makeConstraints { [unowned self] (make) in
             make.leading.trailing.top.bottom.equalTo(self.contentView)
         }
-        titleLabel.snp_makeConstraints { [unowned self](make) -> Void in
+        titleLabel.snp_makeConstraints { [unowned self] (make) in
             make.leading.trailing.equalTo(self.contentView)
             make.height.equalTo(20)
             make.centerY.equalTo(self.contentView.center).offset(-10)
         }
-        subTitleLabel.snp_makeConstraints { [unowned self](make) -> Void in
+        subTitleLabel.snp_makeConstraints { [unowned self] (make) in
             make.leading.trailing.equalTo(self.contentView)
             make.height.equalTo(20)
             make.centerY.equalTo(self.contentView.center).offset(10)
         }
         
-        indexView.snp_makeConstraints { [unowned self](make) in
+        indexView.snp_makeConstraints { [unowned self] (make) in
             make.left.right.equalTo(self.contentView)
             make.bottom.equalTo(self.contentView).offset(-30)
             make.height.equalTo(30)
         }
         
-        indexLabel.snp_makeConstraints { [unowned self](make) in
+        indexLabel.snp_makeConstraints { [unowned self] (make) in
             make.edges.equalTo(self.indexView)
         }
         
@@ -92,7 +92,7 @@ class EYEChoiceCell: UICollectionViewCell, Reusable {
     }
     
     // 传入index
-    var index : String! {
+    var index: String! {
         didSet {
             self.indexView.hidden = false
             self.indexLabel.text = index
@@ -100,14 +100,14 @@ class EYEChoiceCell: UICollectionViewCell, Reusable {
     }
     
     /// 背景图
-    lazy var backgroundImageView : UIImageView = {
+    lazy var backgroundImageView: UIImageView = {
         var background : UIImageView = UIImageView()
 //        background.image = UIImage.colorImage(UIColor.lightGrayColor(), size: background.size)
         return background
     }()
     
     /// 黑色图层
-    lazy var coverButton : UIButton = {
+    lazy var coverButton: UIButton = {
         var coverButton : UIButton = UIButton()
         coverButton.userInteractionEnabled = false
         coverButton.backgroundColor = UIColor.blackColor()
@@ -116,7 +116,7 @@ class EYEChoiceCell: UICollectionViewCell, Reusable {
     }()
     
     /// 标题
-    lazy var titleLabel : UILabel = {
+    lazy var titleLabel: UILabel = {
         var titleLabel : UILabel = UILabel()
         titleLabel.textAlignment = .Center
         titleLabel.text = "标题"
@@ -126,8 +126,8 @@ class EYEChoiceCell: UICollectionViewCell, Reusable {
     }()
     
     /// 副标题
-    lazy var subTitleLabel : UILabel = {
-        var subTitleLabel : UILabel = UILabel()
+    lazy var subTitleLabel: UILabel = {
+        var subTitleLabel: UILabel = UILabel()
         subTitleLabel.textAlignment = .Center
         subTitleLabel.text = "副标题"
         subTitleLabel.textColor = UIColor.whiteColor()

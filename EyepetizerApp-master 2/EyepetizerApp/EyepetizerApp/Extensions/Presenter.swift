@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol LoadingPresenter : class {
+protocol LoadingPresenter: class {
     // 加载控件
     var loaderView : EYELoaderView! { get set }
     // 初始化加载控件

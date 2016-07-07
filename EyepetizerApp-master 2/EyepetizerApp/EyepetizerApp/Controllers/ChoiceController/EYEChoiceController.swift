@@ -43,7 +43,7 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
         Alamofire.request(.GET, api, parameters: params).responseSwiftyJSON ({[unowned self](request, Response, json, error) -> Void in
             print("\(EYEAPIHeaper.API_Choice)- \(params)")
             
-            if json != .null && error == nil{
+            if json != .null && error == nil {
                 // 转模型
                 let dict = json.rawValue as! NSDictionary
                 // 获取下一个url
@@ -55,7 +55,7 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
                 })
                 
                 // 这里判断下拉刷新还是上拉加载更多，如果是上拉加载更多，拼接model。如果是下拉刷新，直接复制
-                if let _ = params {
+                if params != nil {
                     // 如果params有值就是下拉刷新
                     self.issueList = list
                     self.collectionView.headerViewEndRefresh()
@@ -82,10 +82,10 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
             presentationAnimator.animationDelegate = menuController as? GuillotineAnimationDelegate
         }
         
-        presentationAnimator.supportView = self.navigationController?.navigationBar
+        presentationAnimator.supportView = navigationController?.navigationBar
         presentationAnimator.presentButton = menuBtn
         presentationAnimator.duration = 0.15
-        self.presentViewController(menuController, animated: true, completion: nil)
+        presentViewController(menuController, animated: true, completion: nil)
     }
     
     //MARK: --------------------------- Getter or Setter -------------------------
@@ -98,8 +98,8 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
     /// 菜单按钮
     var menuBtn: EYEMenuBtn!
     /// collectionView
-    private lazy var collectionView : EYECollectionView = {
-        var collectionView : EYECollectionView = EYECollectionView(frame: self.view.bounds, collectionViewLayout:EYECollectionLayout())
+    private lazy var collectionView: EYECollectionView = {
+        var collectionView: EYECollectionView = EYECollectionView(frame: self.view.bounds, collectionViewLayout:EYECollectionLayout())
             // 注册header
         collectionView.registerClass(EYEChoiceHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: EYEChoiceHeaderView.reuseIdentifier)
         collectionView.delegate = self
@@ -111,7 +111,7 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
 }
 
 //MARK: --------------------------- UICollectionViewDelegate, UICollectionViewDataSource --------------------------
-extension EYEChoiceController : UICollectionViewDelegate, UICollectionViewDataSource {
+extension EYEChoiceController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     // return section count
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -121,7 +121,7 @@ extension EYEChoiceController : UICollectionViewDelegate, UICollectionViewDataSo
     
     // return section row count
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let issueModel : IssueModel = issueList[section]
+        let issueModel: IssueModel = issueList[section]
         let itemList = issueModel.itemList
         return itemList.count
     }
@@ -151,7 +151,7 @@ extension EYEChoiceController : UICollectionViewDelegate, UICollectionViewDataSo
             APESuperHUD.showOrUpdateHUD(.SadFace, message: "没有播放地址", duration: 0.3, presentingView: self.view, completion: nil)
             return
         }
-        self.navigationController?.pushViewController(EYEVideoDetailController(model: model), animated: true)
+        navigationController?.pushViewController(EYEVideoDetailController(model: model), animated: true)
     }
     
     /**
