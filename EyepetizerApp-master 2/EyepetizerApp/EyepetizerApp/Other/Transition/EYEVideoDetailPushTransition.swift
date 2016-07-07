@@ -37,9 +37,9 @@ class EYEVideoDetailPushTransition: NSObject, UIViewControllerAnimatedTransition
         
         // 模糊背景
         let blurImageView = UIImageView(image: fromVC.selectCell.backgroundImageView.image)
-        blurImageView.frame = CGRectMake(0, CGRectGetMaxY(snapshotView.frame), snapshotView.width, 0)
+        blurImageView.frame = CGRectMake(0, snapshotView.frame.maxY, snapshotView.width, 0)
         
-        let blurEffect : UIBlurEffect = UIBlurEffect(style: .Light)
+        let blurEffect = UIBlurEffect(style: .Light)
         let blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = blurImageView.frame
         
@@ -55,9 +55,9 @@ class EYEVideoDetailPushTransition: NSObject, UIViewControllerAnimatedTransition
         toVC.detailView.describeLabel.alpha = 0
         toVC.detailView.bottomToolView.alpha = 0
         //4.都添加到 container 中。注意顺序不能错了
-        container!.addSubview(toVC.view)
+        container?.addSubview(toVC.view)
         container?.addSubview(backgroundSnapshotView)
-        container!.addSubview(snapshotView)
+        container?.addSubview(snapshotView)
         container?.addSubview(coverView)
         container?.addSubview(blurImageView)
         container?.addSubview(blurView)
@@ -74,7 +74,7 @@ class EYEVideoDetailPushTransition: NSObject, UIViewControllerAnimatedTransition
             blurImageView.frame = toVC.detailView.blurImageView.frame
             blurView.frame = toVC.detailView.blurImageView.frame
             
-        }) { [unowned self](finish: Bool) -> Void in
+        }) { [unowned self] finish in
             toVC.detailView.albumImageView.image = fromVC.selectCell.backgroundImageView.image
             toVC.detailView.albumImageView.alpha = 1
             toVC.detailView.blurImageView.alpha = 1
