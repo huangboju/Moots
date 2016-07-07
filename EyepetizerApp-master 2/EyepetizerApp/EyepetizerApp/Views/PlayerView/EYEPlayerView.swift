@@ -43,23 +43,23 @@ class EYEPlayerView: UIView {
         super.awakeFromNib()
         
         // 设置进度条属性
-        self.sliderView.setThumbImage(UIImage(named: "slider"), forState: .Normal)
-        self.insertSubview(self.progressView, belowSubview: self.sliderView)
-        self.sliderView.minimumTrackTintColor = UIColor.whiteColor()
-        self.sliderView.maximumTrackTintColor = UIColor(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 0.6)
+        sliderView.setThumbImage(UIImage(named: "slider"), forState: .Normal)
+        insertSubview(progressView, belowSubview: sliderView)
+        sliderView.minimumTrackTintColor = UIColor.whiteColor()
+        sliderView.maximumTrackTintColor = UIColor(colorLiteralRed: 0.3, green: 0.3, blue: 0.3, alpha: 0.6)
         
         // 设置缓存进度条属性
-        self.progressView.progressTintColor    = UIColor.whiteColor()
-        self.progressView.trackTintColor       = UIColor.clearColor()
+        progressView.progressTintColor    = UIColor.whiteColor()
+        progressView.trackTintColor       = UIColor.clearColor()
         
         // 设置快进快退label
-        self.horizontalLabel.backgroundColor = UIColor(patternImage: UIImage(named: "Management_Mask")!)
-        self.indicatorView.stopAnimating()
-        self.horizontalLabel.hidden = true
+        horizontalLabel.backgroundColor = UIColor(patternImage: UIImage(named: "Management_Mask")!)
+        indicatorView.stopAnimating()
+        horizontalLabel.hidden = true
         
         // 点击屏幕
         let tap = UITapGestureRecognizer(target: self, action: #selector(EYEPlayerView.tapAction))
-        self.addGestureRecognizer(tap)
+        addGestureRecognizer(tap)
     }
     
     /**
@@ -133,8 +133,6 @@ class EYEPlayerView: UIView {
     private func afterHidden() {
         
         NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(EYEPlayerView.hiddenAnimation), object: nil)
-        self.performSelector(#selector(EYEPlayerView.hiddenAnimation), withObject: nil, afterDelay: 5.0)
+        performSelector(#selector(EYEPlayerView.hiddenAnimation), withObject: nil, afterDelay: 5.0)
     }
-
-
 }
