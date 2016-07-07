@@ -12,14 +12,14 @@ class EYEMenuHeaderView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clearColor()
         // 添加控件
-        self.addSubview(backgroundIconView)
+        addSubview(backgroundIconView)
         backgroundIconView.addSubview(eyeIconView)
-        self.addSubview(loginLabel)
-        self.addSubview(lineView)
-        self.addSubview(collectionLabel)
-        self.addSubview(commentLabel)
+        addSubview(loginLabel)
+        addSubview(lineView)
+        addSubview(collectionLabel)
+        addSubview(commentLabel)
     
         // 适配
         backgroundIconView.snp_makeConstraints { (make) in
@@ -67,8 +67,8 @@ class EYEMenuHeaderView: UIView {
     }
     
     // 头像
-    private lazy var backgroundIconView : UIView = {
-        var backgroundIconView : UIView = UIView()
+    private lazy var backgroundIconView: UIView = {
+        var backgroundIconView: UIView = UIView()
         backgroundIconView.backgroundColor = UIColor.lightGrayColor()
         backgroundIconView.layer.borderColor = UIColor.whiteColor().CGColor
         backgroundIconView.layer.borderWidth = 2
@@ -77,15 +77,15 @@ class EYEMenuHeaderView: UIView {
     }()
     
     // 眼镜
-    private lazy var eyeIconView : UIImageView = {
+    private lazy var eyeIconView: UIImageView = {
         var eyeIconView: UIImageView = UIImageView(image: UIImage(named: "ic_action_focus_white"))
         eyeIconView.contentMode = .ScaleAspectFit
         return eyeIconView
     }()
     
     // 登录标签
-    private lazy var loginLabel : UILabel = {
-        var loginLabel : UILabel = UILabel()
+    private lazy var loginLabel: UILabel = {
+        var loginLabel: UILabel = UILabel()
         loginLabel.text = "点击登录后可评论"
         loginLabel.textAlignment = .Center
         loginLabel.textColor = UIColor.blackColor()
@@ -94,14 +94,14 @@ class EYEMenuHeaderView: UIView {
     }()
 
     // 分割线
-    private lazy var lineView : UIView = {
-        var lineView : UIView = UIView()
+    private lazy var lineView: UIView = {
+        var lineView: UIView = UIView()
         lineView.backgroundColor = UIColor.lightGrayColor()
         return lineView
     }()
     
     // 我的收藏
-    private lazy var collectionLabel : UILabel = {
+    private lazy var collectionLabel: UILabel = {
         var collectionLabel: UILabel = UILabel()
         collectionLabel.textAlignment = .Center
         collectionLabel.text = "我的收藏"
@@ -110,8 +110,8 @@ class EYEMenuHeaderView: UIView {
         return collectionLabel
     }()
     // 我的评论
-    private lazy var commentLabel : UILabel = {
-        var commentLabel : UILabel = UILabel()
+    private lazy var commentLabel: UILabel = {
+        var commentLabel: UILabel = UILabel()
         commentLabel.textAlignment = .Center
         commentLabel.text = "我的评论"
         commentLabel.font = UIFont.customFont_FZLTXIHJW(fontSize: UIConstant.UI_FONT_14)

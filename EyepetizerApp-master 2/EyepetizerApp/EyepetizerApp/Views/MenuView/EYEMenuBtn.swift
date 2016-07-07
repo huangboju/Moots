@@ -20,14 +20,14 @@ public enum EYEMenuBtnType {
 class EYEMenuBtn: UIButton {
    
     // 类型
-    private var type : EYEMenuBtnType = .None
+    private var type: EYEMenuBtnType = .None
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        self.titleLabel?.font = UIFont.customFont_Lobster()
-        self.setTitleColor(UIColor.blackColor(), forState: .Normal)
-        self.setImage(UIImage(named: "ic_action_menu"), forState: .Normal)
+        titleLabel?.font = UIFont.customFont_Lobster()
+        setTitleColor(UIColor.blackColor(), forState: .Normal)
+        setImage(UIImage(named: "ic_action_menu"), forState: .Normal)
     }
     
     convenience init(frame: CGRect, type: EYEMenuBtnType) {
@@ -36,7 +36,7 @@ class EYEMenuBtn: UIButton {
         self.type = type
         
         if type == .Date {
-            self.setTitle("Today", forState: .Normal)
+            setTitle("Today", forState: .Normal)
         }
     }
     
@@ -48,7 +48,7 @@ class EYEMenuBtn: UIButton {
         if type == .Date{
             return CGRect(x: self.height-UIConstant.UI_MARGIN_10, y: 0, width: self.width-self.height+UIConstant.UI_MARGIN_10, height: self.height)
         }
-        return CGRectZero
+        return CGRect.zero
     }
     
     override func imageRectForContentRect(contentRect: CGRect) -> CGRect {
