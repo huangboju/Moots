@@ -9,25 +9,23 @@
 import UIKit
 
 class EYEShapeView: UIView {
-    
-    var pathLayer : CAShapeLayer!
+    var pathLayer: CAShapeLayer!
     
     // 做动画的字体
-    var animationString : String! {
+    var animationString: String! {
         didSet {
             let pathLayer = setupDefaultLayer()
             self.pathLayer = pathLayer
-            
         }
     }
     // 字体
-    var font : UIFont!
+    var font: UIFont!
     // 字体大小 
-    var fontSize : CGFloat!
+    var fontSize: CGFloat!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.clearColor()
+        backgroundColor = UIColor.clearColor()
         
         font = UIFont.customFont_FZLTXIHJW()
         fontSize = UIConstant.UI_FONT_12
@@ -71,7 +69,7 @@ class EYEShapeView: UIView {
         path.appendPath(UIBezierPath(CGPath: letters))
         
         let pathLayer = CAShapeLayer()
-        pathLayer.frame = self.bounds
+        pathLayer.frame = bounds
         pathLayer.bounds = CGPathGetBoundingBox(path.CGPath)
         pathLayer.geometryFlipped = true
         pathLayer.path = path.CGPath
