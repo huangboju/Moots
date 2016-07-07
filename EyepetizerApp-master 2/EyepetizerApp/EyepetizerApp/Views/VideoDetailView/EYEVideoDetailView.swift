@@ -20,17 +20,17 @@ class EYEVideoDetailView: UIView {
     //MARK: --------------------------- Life Cycle --------------------------
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.clipsToBounds = true
-        self.addSubview(albumImageView)
-        self.addSubview(blurImageView)
-        self.addSubview(blurView)
-        self.addSubview(backBtn)
-        self.addSubview(playImageView)
-        self.addSubview(videoTitleLabel)
-        self.addSubview(lineView)
-        self.addSubview(classifyLabel)
-        self.addSubview(describeLabel)
-        self.addSubview(bottomToolView)
+        clipsToBounds = true
+        addSubview(albumImageView)
+        addSubview(blurImageView)
+        addSubview(blurView)
+        addSubview(backBtn)
+        addSubview(playImageView)
+        addSubview(videoTitleLabel)
+        addSubview(lineView)
+        addSubview(classifyLabel)
+        addSubview(describeLabel)
+        addSubview(bottomToolView)
         // 添加底部item
         
         let itemSize: CGFloat = 80
@@ -84,13 +84,13 @@ class EYEVideoDetailView: UIView {
     // 代理
     var delegate: EYEVideoDetailViewDelegate!
     // 图片
-    lazy var albumImageView : UIImageView = {
+    lazy var albumImageView: UIImageView = {
         // 图片大小 1242 x 777
         // 6 621*388.5
         // 5 621*388.5
-        let photoW : CGFloat = 1222.0
-        let photoH : CGFloat = 777.0
-        let albumImageViewH = self.height*0.6
+        let photoW: CGFloat = 1222.0
+        let photoH: CGFloat = 777.0
+        let albumImageViewH = self.height * 0.6
         let albumImageViewW = photoW*albumImageViewH/photoH
         let albumImageViewX = (albumImageViewW-self.width)*0.5
 //        let imageViewH = self.width*photoH / UIConstant.IPHONE6_WIDTH
@@ -102,27 +102,27 @@ class EYEVideoDetailView: UIView {
     }()
     
     // 模糊背景
-    lazy var blurImageView : UIImageView = {
+    lazy var blurImageView: UIImageView = {
         var blurImageView = UIImageView(frame: CGRect(x: 0, y: self.albumImageView.height, width: self.width, height: self.height-self.albumImageView.height))
         return blurImageView
     }()
     
-    lazy var blurView : UIVisualEffectView = {
-        let blurEffect : UIBlurEffect = UIBlurEffect(style: .Light)
+    lazy var blurView: UIVisualEffectView = {
+        let blurEffect: UIBlurEffect = UIBlurEffect(style: .Light)
         var blurView = UIVisualEffectView(effect: blurEffect)
         blurView.frame = self.blurImageView.frame
         return blurView
     }()
     
     // 返回按钮
-    lazy var backBtn : UIButton = {
+    lazy var backBtn: UIButton = {
         var backBtn = UIButton(frame: CGRect(x: UIConstant.UI_MARGIN_10, y: UIConstant.UI_MARGIN_20, width: 40, height: 40))
         backBtn.setImage(UIImage(named: "play_back_full"), forState: .Normal)
         backBtn.addTarget(self, action: #selector(EYEVideoDetailView.backBtnDidClick), forControlEvents: .TouchUpInside)
         return backBtn
     }()
     // 播放按钮
-    lazy var playImageView : UIImageView = {
+    lazy var playImageView: UIImageView = {
         var playImageView = UIImageView(image: UIImage(named: "ic_action_play"))
         playImageView.frame = CGRect(x: 0, y: 0, width: 60, height: 60)
         playImageView.center = self.albumImageView.center
@@ -132,7 +132,7 @@ class EYEVideoDetailView: UIView {
     }()
     
     // 标题
-    lazy var videoTitleLabel : EYEShapeView = {
+    lazy var videoTitleLabel: EYEShapeView = {
         let rect = CGRect(x: UIConstant.UI_MARGIN_10, y: CGRectGetMaxY(self.albumImageView.frame)+UIConstant.UI_MARGIN_10, width: self.width-2*UIConstant.UI_MARGIN_10, height: 20)
         let font = UIFont.customFont_FZLTZCHJW(fontSize: UIConstant.UI_FONT_16)
         var videoTitleLabel = EYEShapeView(frame: rect)
@@ -142,14 +142,14 @@ class EYEVideoDetailView: UIView {
     }()
     
     // 分割线
-    private lazy var lineView : UIView = {
+    private lazy var lineView: UIView = {
         var lineView = UIView(frame: CGRect(x: UIConstant.UI_MARGIN_10, y: CGRectGetMaxY(self.videoTitleLabel.frame)+UIConstant.UI_MARGIN_10, width: self.width-2*UIConstant.UI_MARGIN_10, height: 0.5))
         lineView.backgroundColor = UIColor.whiteColor()
         return lineView
     }()
     
     // 分类/时间
-    lazy var classifyLabel : UILabel = {
+    lazy var classifyLabel: UILabel = {
         var classifyLabel = UILabel(frame: CGRect(x: UIConstant.UI_MARGIN_10, y: CGRectGetMaxY(self.lineView.frame)+UIConstant.UI_MARGIN_10, width: self.width-2*UIConstant.UI_MARGIN_10, height: 20))
         classifyLabel.textColor = UIColor.whiteColor()
         classifyLabel.font = UIFont.customFont_FZLTXIHJW(fontSize: UIConstant.UI_FONT_13)
@@ -157,7 +157,7 @@ class EYEVideoDetailView: UIView {
     }()
     
     // 描述
-    lazy var describeLabel : UILabel = {
+    lazy var describeLabel: UILabel = {
         var describeLabel = UILabel(frame: CGRect(x: UIConstant.UI_MARGIN_10, y: CGRectGetMaxY(self.classifyLabel.frame)+UIConstant.UI_MARGIN_10, width: self.width-2*UIConstant.UI_MARGIN_10, height: 200))
         describeLabel.numberOfLines = 0
         describeLabel.textColor = UIColor.whiteColor()
@@ -165,7 +165,7 @@ class EYEVideoDetailView: UIView {
         return describeLabel
     }()
     // 底部 喜欢 分享 评论 缓存
-    lazy var bottomToolView : UIView = {
+    lazy var bottomToolView: UIView = {
         var bottomToolView = UIView(frame: CGRect(x: 0, y: self.height-50, width: self.width, height: 30))
         bottomToolView.backgroundColor = UIColor.clearColor()
         return bottomToolView
@@ -173,7 +173,12 @@ class EYEVideoDetailView: UIView {
     
     private var itemArray: [BottomItemBtn] = [BottomItemBtn]()
     // 底部图片数组
-    private var bottomImgArray = [UIImage(named: "ic_action_favorites_without_padding"), UIImage(named: "ic_action_share_without_padding"), UIImage(named: "ic_action_reply_nopadding"), UIImage(named: "action_download_cut")]
+    private var bottomImgArray = [
+        UIImage(named: "ic_action_favorites_without_padding"),
+        UIImage(named: "ic_action_share_without_padding"),
+        UIImage(named: "ic_action_reply_nopadding"),
+        UIImage(named: "action_download_cut")
+    ]
     
         /// 底部item
     private class BottomItemBtn : UIButton {
@@ -184,9 +189,9 @@ class EYEVideoDetailView: UIView {
         
         override init(frame: CGRect) {
             super.init(frame: frame)
-            self.backgroundColor = UIColor.clearColor()
-            self.titleLabel?.font = UIFont.customFont_FZLTXIHJW()
-            self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+            backgroundColor = UIColor.clearColor()
+            titleLabel?.font = UIFont.customFont_FZLTXIHJW()
+            setTitleColor(UIColor.whiteColor(), forState: .Normal)
         }
         
         convenience init(frame: CGRect, title: String, image: UIImage) {
@@ -194,8 +199,8 @@ class EYEVideoDetailView: UIView {
             self.title = title
             self.image = image
             
-            self.setImage(image, forState: .Normal)
-            self.setTitle(title, forState: .Normal)
+            setImage(image, forState: .Normal)
+            setTitle(title, forState: .Normal)
         }
         
         required init?(coder aDecoder: NSCoder) {
@@ -215,7 +220,5 @@ class EYEVideoDetailView: UIView {
         private override func imageRectForContentRect(contentRect: CGRect) -> CGRect {
             return CGRect(x: 0, y: 8, width: self.height-16, height: self.height-16)
         }
-        
     }
 }
-
