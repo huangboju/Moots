@@ -38,12 +38,12 @@ extension LoadingPresenter where Self: UIViewController {
      设置显示隐藏
      */
     func setLoaderViewHidden(hidden : Bool) {
-        if let view = loaderView {
+        if let loaderView = loaderView {
             view.hidden = hidden
             if hidden {
-                view.stopLoadingAnimation()
+                loaderView.stopLoadingAnimation()
             } else {
-                view.startLoadingAnimation()
+                loaderView.startLoadingAnimation()
             }
         }
     }
@@ -52,8 +52,8 @@ extension LoadingPresenter where Self: UIViewController {
      开启动画
      */
     func startLoadingAnimation () {
-        if let view = loaderView {
-            view.startLoadingAnimation()
+        if let loaderView = loaderView {
+            loaderView.startLoadingAnimation()
         }
     }
     
@@ -61,8 +61,8 @@ extension LoadingPresenter where Self: UIViewController {
      停止动画
      */
     func stopLoadingAnimation() {
-        if let view = loaderView {
-            view.stopLoadingAnimation()
+        if let loaderView = loaderView {
+            loaderView.stopLoadingAnimation()
         }
     }
 }
