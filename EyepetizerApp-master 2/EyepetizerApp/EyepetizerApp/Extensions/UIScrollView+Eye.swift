@@ -16,7 +16,7 @@ extension UIScrollView {
      */
     func headerViewPullToRefresh(callback:(() -> Void)?) {
         // 创建headerview
-        let headerView : EYEPullToRefreshHeaderView = EYEPullToRefreshHeaderView.headerView()
+        let headerView = EYEPullToRefreshHeaderView.headerView()
         self.addSubview(headerView)
         headerView.beginRefreshingCallback = callback
         headerView.state = .Normal

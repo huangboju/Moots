@@ -121,7 +121,7 @@ class EYEPullToRefreshView: UIView {
     // 交给子类去实现和调用
     var oldState: PullToRefreshViewState! = .Normal
     // 当状态改变时设置状态(State)就会调用这个方法
-    var state : PullToRefreshViewState = .Normal {
+    var state: PullToRefreshViewState = .Normal {
         willSet {
             self.state = newValue
         }
