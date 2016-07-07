@@ -85,6 +85,6 @@ extension EYEDiscoverController : UICollectionViewDelegate, UICollectionViewData
         let model = modelArray[indexPath.row]
         let detailController = EYEDiscoverDetailController(title: model.name, categoryId: model.id)
         detailController.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(detailController, animated: true)
+        navigationController?.pushViewController(detailController, animated: true)
     }
 }

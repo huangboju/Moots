@@ -24,7 +24,6 @@ class EYENavigationController : UINavigationController, UIGestureRecognizerDeleg
         if respondsToSelector(Selector("interactivePopGestureRecognizer")) && animated {
             interactivePopGestureRecognizer?.enabled = false
         }
-        
         super.pushViewController(viewController, animated: animated)
     }
     
