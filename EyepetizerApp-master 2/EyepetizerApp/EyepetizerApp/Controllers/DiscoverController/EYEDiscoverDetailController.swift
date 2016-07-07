@@ -21,7 +21,7 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
         view.addSubview(headerView)
 
         // headerview点击
-        headerView.headerViewTitleDidClick { [unowned self](targetBtn, index) in
+        headerView.headerViewTitleDidClick { [unowned self] (targetBtn, index) in
             
             self.itemDidClick(index)
         }
@@ -43,7 +43,7 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
     
     //MARK: --------------------------- Event response --------------------------
     @objc private func leftBtnDidClick() {
-        self.navigationController?.popViewControllerAnimated(true)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     /**
@@ -68,9 +68,9 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
         default:
             break
         }
-        self.addChildViewController(actionController)
-        self.view.addSubview(actionController.view)
-        self.setupControllerFrame(actionController.view)
+        addChildViewController(actionController)
+        view.addSubview(actionController.view)
+        setupControllerFrame(actionController.view)
         // 动画
         startAnimation(currentController, toVC: actionController)
     }
