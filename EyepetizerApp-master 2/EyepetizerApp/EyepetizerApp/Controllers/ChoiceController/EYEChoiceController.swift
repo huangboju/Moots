@@ -90,7 +90,7 @@ class EYEChoiceController: EYEBaseViewController, LoadingPresenter, MenuPresente
     
     //MARK: --------------------------- Getter or Setter -------------------------
     /// 模型数据
-    var issueList: [IssueModel] = [IssueModel]()
+    var issueList = [IssueModel]()
     /// 下一个page的地址
     var nextPageUrl: String?
     /// 加载控件

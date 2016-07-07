@@ -41,7 +41,7 @@ class EYEDiscoverController: UIViewController, LoadingPresenter {
     
     //MARK: --------------------------- Getter or Setter --------------------------
     // 模型数组
-    var modelArray : [EYEDiscoverModel] = [EYEDiscoverModel]()
+    var modelArray = [EYEDiscoverModel]()
     // 加载框
     var loaderView : EYELoaderView!
     

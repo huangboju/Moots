@@ -14,11 +14,11 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
     //MARK: --------------------------- Life Cycle --------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        view.backgroundColor = UIColor.whiteColor()
         // 返回按钮
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithImg(UIImage(named: "ic_action_back"), selectorImg: nil, target: self, action: #selector(EYEDiscoverDetailController.leftBtnDidClick))
+        navigationItem.leftBarButtonItem = UIBarButtonItem.barButtonItemWithImg(UIImage(named: "ic_action_back"), selectorImg: nil, target: self, action: #selector(EYEDiscoverDetailController.leftBtnDidClick))
         // 添加headerView
-        self.view.addSubview(headerView)
+        view.addSubview(headerView)
 
         // headerview点击
         headerView.headerViewTitleDidClick { [unowned self](targetBtn, index) in
