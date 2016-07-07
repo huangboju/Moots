@@ -13,9 +13,9 @@ var animationDuration: NSTimeInterval = 0.3
 // 下拉刷新高度
 var pullToRefreshHeight: CGFloat = 80
 
-let refreshHeaderTimeKey: String =  "RefreshHeaderView"
-let refreshContentOffset: String =  "contentOffset"
-let refreshContentSize: String =  "contentSize"
+let refreshHeaderTimeKey = "RefreshHeaderView"
+let refreshContentOffset = "contentOffset"
+let refreshContentSize = "contentSize"
 
 //控件的类型
 enum PullToRefreshViewType {
@@ -46,17 +46,17 @@ class EYEPullToRefreshView: UIView {
         super.willMoveToSuperview(newSuperview)
         
         // 移走旧的父控件
-        if (self.superview != nil) {
-            self.superview?.removeObserver(self, forKeyPath: refreshContentOffset as String, context: nil)
+        if (superview != nil) {
+            superview?.removeObserver(self, forKeyPath: refreshContentOffset, context: nil)
         }
         // 新的父控件 添加监听器
         if (newSuperview != nil) {
-            newSuperview!.addObserver(self, forKeyPath: refreshContentOffset as String, options: NSKeyValueObservingOptions.New, context: nil)
-            var rect:CGRect = self.frame
+            newSuperview!.addObserver(self, forKeyPath: refreshContentOffset, options: NSKeyValueObservingOptions.New, context: nil)
+            var rect = frame
             // 设置宽度 位置
-            rect.size.width = newSuperview!.frame.size.width
+            rect.size.width = newSuperview!.frame.width
             rect.origin.x = 0
-            self.frame = frame;
+            frame = rect
             
             //UIScrollView
             scrollView = newSuperview as! UIScrollView
@@ -73,19 +73,19 @@ class EYEPullToRefreshView: UIView {
      判断是否正在刷新
      */
     func isRefresh() -> Bool {
-        return PullToRefreshViewState.Refreshing == state;
+        return PullToRefreshViewState.Refreshing == state
     }
     
     /**
      开始刷新
      */
     func beginRefreshing(){
-        // self.State = RefreshState.Refreshing;
+        // self.State = RefreshState.Refreshing
         if (self.window != nil) {
-            state = .Refreshing;
+            state = .Refreshing
         } else {
             //不能调用set方法
-            state = .Normal;
+            state = .Normal
             super.setNeedsDisplay()
         }
     }
@@ -99,10 +99,10 @@ class EYEPullToRefreshView: UIView {
         }
         
         let delayInSeconds:Double = 0.3
-        let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds));
+        let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds))
         
         dispatch_after(popTime, dispatch_get_main_queue(), {
-            self.state = .Normal;
+            self.state = .Normal
         })
     }
     
@@ -136,7 +136,7 @@ class EYEPullToRefreshView: UIView {
                 loadView.stopLoadingAnimation()
             // 释放刷新状态
             case .Pulling:
-                break;
+                break
             // 正在刷新状态
             case .Refreshing:
                 loadView.startLoadingAnimation()
@@ -162,9 +162,9 @@ class EYEPullToRefreshHeaderView: EYEPullToRefreshView {
     override func willMoveToSuperview(newSuperview: UIView!) {
         super.willMoveToSuperview(newSuperview)
         
-        var rect:CGRect = self.frame
+        var rect = frame
         rect.origin.y = -pullToRefreshHeight
-        self.frame = rect
+        frame = rect
     }
     
     /**
@@ -224,7 +224,7 @@ class EYEPullToRefreshHeaderView: EYEPullToRefreshView {
                 }
                 
             case .Pulling:
-                break;
+                break
             case .Refreshing:
                 UIView.animateWithDuration(animationDuration, animations: {
                     let top:CGFloat = self.scrollViewOriginalInset.top + self.frame.size.height
@@ -253,10 +253,10 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
     
     override func willMoveToSuperview(newSuperview: UIView!) {
         super.willMoveToSuperview(newSuperview)
-        if (self.superview != nil){
-            self.superview!.removeObserver(self, forKeyPath: refreshContentSize as String,context:nil)
+        if superview != nil {
+            superview!.removeObserver(self, forKeyPath: refreshContentSize as String,context:nil)
         }
-        if (newSuperview != nil)  {
+        if newSuperview != nil {
             // 监听contentsize
             newSuperview.addObserver(self, forKeyPath: refreshContentSize, options: NSKeyValueObservingOptions.New, context: nil)
             // 重新调整frame
@@ -291,7 +291,7 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
                 if state == .Normal && currentOffsetY > normal2pullingOffsetY {
                     state = .Pulling
                 } else if (state == .Pulling && currentOffsetY <= normal2pullingOffsetY) {
-                    state = .Normal;
+                    state = .Normal
                 }
             } else if (state == .Pulling) {
                 state = .Refreshing
@@ -306,14 +306,14 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
         let contentHeight:CGFloat = self.scrollView.contentSize.height
         let scrollHeight:CGFloat = self.scrollView.frame.size.height  - self.scrollViewOriginalInset.top - self.scrollViewOriginalInset.bottom
         
-        var rect:CGRect = self.frame;
+        var rect:CGRect = self.frame
         rect.origin.y =  contentHeight > scrollHeight ? contentHeight : scrollHeight
-        self.frame = rect;
+        self.frame = rect
     }
     
     private func heightForContentBreakView() -> CGFloat {
-        let h:CGFloat  = self.scrollView.frame.size.height - self.scrollViewOriginalInset.bottom - self.scrollViewOriginalInset.top;
-        return self.scrollView.contentSize.height - h;
+        let h:CGFloat  = self.scrollView.frame.size.height - self.scrollViewOriginalInset.bottom - self.scrollViewOriginalInset.top
+        return self.scrollView.contentSize.height - h
     }
     
     
@@ -321,9 +321,9 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
         let deltaH:CGFloat = self.heightForContentBreakView()
         
         if deltaH > 0 {
-            return   deltaH - self.scrollViewOriginalInset.top;
+            return   deltaH - self.scrollViewOriginalInset.top
         } else {
-            return  -self.scrollViewOriginalInset.top;
+            return  -self.scrollViewOriginalInset.top
         }
     }
     
@@ -370,27 +370,27 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
                     let currentCount : Int = self.totalDataCountInScrollView()
                     
                     if (deltaH > 0  && currentCount != self.lastRefreshCount) {
-                        var offset:CGPoint = self.scrollView.contentOffset;
+                        var offset:CGPoint = self.scrollView.contentOffset
                         offset.y = self.scrollView.contentOffset.y
-                        self.scrollView.contentOffset = offset;
+                        self.scrollView.contentOffset = offset
                     }
                 }
             // 释放加载更多
             case .Pulling:
-                break;
+                break
                 
             // 正在加载更多
             case .Refreshing:
-                self.lastRefreshCount = self.totalDataCountInScrollView();
+                self.lastRefreshCount = self.totalDataCountInScrollView()
                 UIView.animateWithDuration(animationDuration, animations: {
                     var bottom : CGFloat = self.frame.size.height + self.scrollViewOriginalInset.bottom
                     let deltaH : CGFloat = self.heightForContentBreakView()
                     if deltaH < 0 {
                         bottom = bottom - deltaH
                     }
-                    var inset:UIEdgeInsets = self.scrollView.contentInset;
-                    inset.bottom = bottom;
-                    self.scrollView.contentInset = inset;
+                    var inset:UIEdgeInsets = self.scrollView.contentInset
+                    inset.bottom = bottom
+                    self.scrollView.contentInset = inset
                 })
             }
         }
