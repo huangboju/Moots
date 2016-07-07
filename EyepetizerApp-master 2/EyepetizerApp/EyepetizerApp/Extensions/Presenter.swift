@@ -68,7 +68,7 @@ extension LoadingPresenter where Self: UIViewController {
 }
 
 protocol MenuPresenter: class {
-    var menuBtn : EYEMenuBtn! { get set }
+    var menuBtn: EYEMenuBtn! { get set }
     func menuBtnDidClick()
 }
 
