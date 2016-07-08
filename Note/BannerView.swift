@@ -173,13 +173,13 @@ class BannerView: UIView, UIScrollViewDelegate {
     func scrollingAction() {
         UIView.animateWithDuration(0.25, animations: { 
             if self.scrollStyle == BannerViewStyle.Landscape {
-                self.scrollView?.contentOffset = CGPointMake(self.bounds.size.width * 1.99, 0)
+                self.scrollView?.contentOffset = CGPoint(x: self.bounds.width * 1.99, y: 0)
             } else if self.scrollStyle == BannerViewStyle.Portait {
-                self.scrollView?.contentOffset = CGPointMake(0, 1.99 * self.bounds.height)
+                self.scrollView?.contentOffset = CGPoint(x: 0, y: 1.99 * self.bounds.height)
             }
-        }) { (finished: Bool) in
+        }) { (finished) in
             if finished {
-                self.currentPage = self.getPageIndex(currentPage + 1)
+                self.currentPage = self.getPageIndex(self.currentPage + 1)
                 self.refreshScrollView()
                 if self.enableScroll != nil {
                     NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(self.scrollingAction), object: nil)
@@ -190,14 +190,9 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     func setSquare(asquare: CGFloat) {
-        if self.scrollView != nil {
-            self.scrollView!.layer.cornerRadius = asquare
-            if asquare == 0 {
-                scrollView?.layer.masksToBounds = false
-            }
-            else {
-                scrollView?.layer.masksToBounds = true
-            }
+        if let scrollView = self.scrollView {
+            scrollView.layer.cornerRadius = asquare
+            scrollView.layer.masksToBounds = asquare != 0
         }
     }
     
