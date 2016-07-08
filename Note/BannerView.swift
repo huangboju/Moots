@@ -40,7 +40,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     private var scrollView: UIScrollView?
     private var closeButton: UIButton?
     private var totalPage: Int?
-    private var currentPage: Int?
+    private var currentPage = 0
     
     var normalColor: UIColor? {
         //给normalColor赋值后进行
@@ -115,7 +115,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     
     //tap点击事件
     func tapAction(tap: UITapGestureRecognizer) {
-        delegate?.bannerViewDidSelected(self, index: currentPage! - 1)
+        delegate?.bannerViewDidSelected(self, index: currentPage - 1)
     }
     
     func startScolling() {
@@ -144,7 +144,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     private func refreshScrollView() {
-        let images = self.getImagesWithPageIndex(currentPage!)
+        let images = self.getImagesWithPageIndex(currentPage)
         for i in 0 ..< 3 {
             let imageView = self.scrollView!.viewWithTag(100 + i) as! UIImageView
             let imageName = images[i] as! String
@@ -157,15 +157,15 @@ class BannerView: UIView, UIScrollViewDelegate {
         else if scrollStyle == BannerViewStyle.Portait {
             scrollView?.contentOffset = CGPointMake(0, self.bounds.size.height)
         }
-        pageController?.currentPage = currentPage! - 1
+        pageController?.currentPage = currentPage - 1
     }
     
     private func getImagesWithPageIndex(pageIndex: Int) -> NSArray {
-        let pre = self.getPageIndex(currentPage! - 1)
-        let last = self.getPageIndex(currentPage! + 1)
+        let pre = self.getPageIndex(currentPage - 1)
+        let last = self.getPageIndex(currentPage + 1)
         let images = NSMutableArray.init(capacity: 0)
         images.addObject(imagesArr![pre - 1])
-        images.addObject(imagesArr![self.currentPage! - 1])
+        images.addObject(imagesArr![currentPage - 1])
         images.addObject(imagesArr![last - 1])
         return images
     }
@@ -179,7 +179,7 @@ class BannerView: UIView, UIScrollViewDelegate {
             }
         }) { (finished: Bool) in
             if finished {
-                self.currentPage = self.getPageIndex(self.currentPage! + 1)
+                self.currentPage = self.getPageIndex(currentPage + 1)
                 self.refreshScrollView()
                 if self.enableScroll != nil {
                     NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(self.scrollingAction), object: nil)
@@ -205,24 +205,24 @@ class BannerView: UIView, UIScrollViewDelegate {
         let x = scrollView.contentOffset.x
         let y = scrollView.contentOffset.y
         if enableScroll != nil {
-            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(self.scrollingAction), object: nil)
+            NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(scrollingAction), object: nil)
         }
         if scrollStyle == .Landscape   {
             if x >= bounds.width * 2 {
-                currentPage = getPageIndex(currentPage! + 1)
+                currentPage = getPageIndex(currentPage + 1)
                 refreshScrollView()
             }
             if x <= 0 {
-                currentPage = getPageIndex(currentPage! - 1)
+                currentPage = getPageIndex(currentPage - 1)
                 refreshScrollView()
             }
         } else if scrollStyle == .Portait {
             if  y >= bounds.height * 2 {
-                currentPage = getPageIndex(currentPage! + 1)
+                currentPage = getPageIndex(currentPage + 1)
                 refreshScrollView()
             }
             if y <= 0 {
-                currentPage = getPageIndex(currentPage! - 1)
+                currentPage = getPageIndex(currentPage - 1)
                 self.refreshScrollView()
             }
         }
