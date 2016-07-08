@@ -25,7 +25,7 @@ class EYEMainViewController: UITabBarController {
         // 添加launchView
         view.addSubview(launchView)
         // 动画完成回调
-        launchView.animationDidStop { [unowned self](launchView) in
+        launchView.animationDidStop { [unowned self] (launchView) in
             self.launchViewRemoveAnimation()
         }
     }
@@ -57,9 +57,9 @@ class EYEMainViewController: UITabBarController {
     /**
      设置更控制器
      
-     - parameter vc: <#vc description#>
+     - parameter vc:
      */
-    private func setupChildController(vc : UIViewController) {
+    private func setupChildController(vc: UIViewController) {
         vc.title = "Eyepetizer"
         // 包装一个navigationcontroller
         self.addChildViewController(EYENavigationController(rootViewController: vc))
@@ -71,14 +71,14 @@ class EYEMainViewController: UITabBarController {
     private func launchViewRemoveAnimation() {
         UIView.animateWithDuration(1, animations: {
             self.launchView.alpha = 0
-            }) { [unowned self](_) in
+            }) { [unowned self] (_) in
                 self.launchView.removeFromSuperview()
         }
     }
     //MARK: --------------------------- getter or setter --------------------------
     // 底部Tab
-    private lazy var tabView : EYEMainTabView = {
-        var tabView : EYEMainTabView = EYEMainTabView.tabView()
+    private lazy var tabView: EYEMainTabView = {
+        var tabView = EYEMainTabView.tabView()
         tabView.frame = self.tabBar.bounds
         tabView.delegate = self
         return tabView
@@ -86,20 +86,20 @@ class EYEMainViewController: UITabBarController {
     
 
     private lazy var launchView: EYELaunchView = {
-        var launchView : EYELaunchView = EYELaunchView.launchView()
+        var launchView = EYELaunchView.launchView()
         launchView.frame = self.view.bounds
         return launchView
     }()
     
 }
-extension EYEMainViewController : UITabBarControllerDelegate {
+extension EYEMainViewController: UITabBarControllerDelegate {
     func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return EYETabbarTransition()
     }
 }
 
 //MARK: --------------------------- EYEMainTabViewDelegate --------------------------
-extension EYEMainViewController : EYEMainTabViewDelegate {
+extension EYEMainViewController: EYEMainTabViewDelegate {
     func tabBarDidSelector(fromSelectorButton from: Int, toSelectorButton to: Int, title : String) {
         self.selectedIndex = to
     }

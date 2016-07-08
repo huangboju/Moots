@@ -66,3 +66,10 @@ extension NSObject {
 
 //修改swift文件
 // /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
+
+
+
+//卸载当前版本
+//sudo gem uninstall cocoapods
+//下载旧版本
+//sudo gem install cocoapods -v 0.25.0
