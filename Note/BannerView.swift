@@ -31,7 +31,7 @@ protocol BannerViewDelegate {
 
 class BannerView: UIView, UIScrollViewDelegate {
     var delegate: BannerViewDelegate?
-    var imagesArr: NSArray?
+    var imagesArr = [String]()
     var scrollStyle: BannerViewStyle?
     var scrollTime: NSTimeInterval?
     private var totalCount: Int?
@@ -119,7 +119,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     func startScolling() {
-        if imagesArr?.count == 1 {
+        if imagesArr.count == 1 {
             return
         }
         stopScrolling()
@@ -151,11 +151,11 @@ class BannerView: UIView, UIScrollViewDelegate {
             imageView.image = UIImage(named: imageName)
         }
         
-        if scrollStyle == BannerViewStyle.Landscape {
-            scrollView?.contentOffset = CGPointMake(self.bounds.size.width, 0)
+        if scrollStyle == .Landscape {
+            scrollView?.contentOffset = CGPoint(x: bounds.width, y: 0)
         }
-        else if scrollStyle == BannerViewStyle.Portait {
-            scrollView?.contentOffset = CGPointMake(0, self.bounds.size.height)
+        else if scrollStyle == .Portait {
+            scrollView?.contentOffset = CGPoint(x: 0, y: bounds.height)
         }
         pageController?.currentPage = currentPage - 1
     }
@@ -164,17 +164,17 @@ class BannerView: UIView, UIScrollViewDelegate {
         let pre = self.getPageIndex(currentPage - 1)
         let last = self.getPageIndex(currentPage + 1)
         let images = NSMutableArray.init(capacity: 0)
-        images.addObject(imagesArr![pre - 1])
-        images.addObject(imagesArr![currentPage - 1])
-        images.addObject(imagesArr![last - 1])
+        images.addObject(imagesArr[pre - 1])
+        images.addObject(imagesArr[currentPage - 1])
+        images.addObject(imagesArr[last - 1])
         return images
     }
     
     func scrollingAction() {
         UIView.animateWithDuration(0.25, animations: { 
-            if self.scrollStyle == BannerViewStyle.Landscape {
+            if self.scrollStyle == .Landscape {
                 self.scrollView?.contentOffset = CGPoint(x: self.bounds.width * 1.99, y: 0)
-            } else if self.scrollStyle == BannerViewStyle.Portait {
+            } else if self.scrollStyle == .Portait {
                 self.scrollView?.contentOffset = CGPoint(x: 0, y: 1.99 * self.bounds.height)
             }
         }) { (finished) in
@@ -242,7 +242,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         } else if pageStyle == .Right {
             pageController?.frame = CGRect(x: bounds.size.width - 60, y: self.bounds.size.height - 15, width: 60, height: 15)
         } else if pageStyle == .Middle {
-            pageController?.frame = CGRect(x: (bounds.width - 60)/2, y: bounds.height - 15, width: 60, height: 15)
+            pageController?.frame = CGRect(x: (bounds.width - 60) / 2, y: bounds.height - 15, width: 60, height: 15)
         } else if pageStyle == .None {
             pageController?.hidden = true
         }
