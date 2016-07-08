@@ -33,13 +33,12 @@ class BannerView: UIView, UIScrollViewDelegate {
     var delegate: BannerViewDelegate?
     var imagesArr = [String]()
     var scrollStyle: BannerViewStyle?
-    var scrollTime: NSTimeInterval?
-    private var totalCount: Int?
+    var scrollTime: NSTimeInterval = 3
     private var pageController: UIPageControl?
     private var enableScroll: Bool?
     private var scrollView: UIScrollView?
     private var closeButton: UIButton?
-    private var totalPage: Int?
+    private var totalPage = 0
     private var currentPage = 0
     
     var normalColor: UIColor? {
@@ -73,7 +72,6 @@ class BannerView: UIView, UIScrollViewDelegate {
         imagesArr = images
         scrollStyle = direction
         totalPage = images.count
-        totalCount = images.count
         currentPage = 1
         scrollView = UIScrollView(frame: bounds)
         scrollView?.backgroundColor = UIColor.clearColor()
@@ -124,7 +122,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         }
         stopScrolling()
         enableScroll = true
-        performSelector(#selector(self.scrollingAction), withObject: nil, afterDelay: scrollTime!)
+        performSelector(#selector(self.scrollingAction), withObject: nil, afterDelay: scrollTime)
     }
     
     func stopScrolling() {
@@ -135,16 +133,16 @@ class BannerView: UIView, UIScrollViewDelegate {
     private func getPageIndex(index: Int) -> Int {
         var pageIndex = index
         if index == 0 {
-            pageIndex = totalPage!
+            pageIndex = totalPage
         }
-        if index == totalPage! + 1 {
+        if index == totalPage + 1 {
             pageIndex = 1
         }
         return pageIndex
     }
     
     private func refreshScrollView() {
-        let images = self.getImagesWithPageIndex(currentPage)
+        let images = getImagesWithPageIndex(currentPage)
         for i in 0 ..< 3 {
             let imageView = self.scrollView!.viewWithTag(100 + i) as! UIImageView
             let imageName = images[i] as! String
@@ -183,14 +181,14 @@ class BannerView: UIView, UIScrollViewDelegate {
                 self.refreshScrollView()
                 if self.enableScroll != nil {
                     NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(self.scrollingAction), object: nil)
-                    self.performSelector(#selector(self.scrollingAction), withObject: nil, afterDelay: self.scrollTime!, inModes: [NSRunLoopCommonModes])
+                    self.performSelector(#selector(self.scrollingAction), withObject: nil, afterDelay: self.scrollTime, inModes: [NSRunLoopCommonModes])
                 }
             }
         }
     }
     
     func setSquare(asquare: CGFloat) {
-        if let scrollView = self.scrollView {
+        if let scrollView = scrollView {
             scrollView.layer.cornerRadius = asquare
             scrollView.layer.masksToBounds = asquare != 0
         }
@@ -232,7 +230,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         
         if enableScroll != nil {
             NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(scrollingAction), object: nil)
-            performSelector(#selector(scrollingAction), withObject: nil, afterDelay: scrollTime!, inModes: [NSRunLoopCommonModes])
+            performSelector(#selector(scrollingAction), withObject: nil, afterDelay: scrollTime, inModes: [NSRunLoopCommonModes])
         }
     }
     
