@@ -218,7 +218,7 @@ class BannerView: UIView, UIScrollViewDelegate {
             }
             if y <= 0 {
                 currentPage = getPageIndex(currentPage - 1)
-                self.refreshScrollView()
+                refreshScrollView()
             }
         }
     }
@@ -226,12 +226,11 @@ class BannerView: UIView, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if scrollStyle == .Landscape {
             scrollView.contentOffset = CGPoint(x: bounds.width, y: 0)
-        }
-        else if scrollStyle == BannerViewStyle.Portait {
+        } else if scrollStyle == BannerViewStyle.Portait {
             scrollView.contentOffset = CGPoint(x: 0, y: bounds.height)
         }
         
-        if self.enableScroll != nil {
+        if enableScroll != nil {
             NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(scrollingAction), object: nil)
             performSelector(#selector(scrollingAction), withObject: nil, afterDelay: scrollTime!, inModes: [NSRunLoopCommonModes])
         }
@@ -239,11 +238,11 @@ class BannerView: UIView, UIScrollViewDelegate {
     
     func setPageControlStyle(pageStyle: PageStyle) {
         if pageStyle == .Left {
-            pageController?.frame = CGRectMake(5, bounds.height - 15, 60, 15)
+            pageController?.frame = CGRect(x: 5, y: bounds.height - 15, width: 60, height: 15)
         } else if pageStyle == .Right {
-            pageController?.frame = CGRectMake(bounds.size.width - 60, self.bounds.size.height - 15, 60, 15)
+            pageController?.frame = CGRect(x: bounds.size.width - 60, y: self.bounds.size.height - 15, width: 60, height: 15)
         } else if pageStyle == .Middle {
-            pageController?.frame = CGRectMake((bounds.width - 60)/2, bounds.height - 15, 60, 15)
+            pageController?.frame = CGRect(x: (bounds.width - 60)/2, y: bounds.height - 15, width: 60, height: 15)
         } else if pageStyle == .None {
             pageController?.hidden = true
         }
