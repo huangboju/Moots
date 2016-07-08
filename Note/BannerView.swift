@@ -98,8 +98,7 @@ class BannerView: UIView, UIScrollViewDelegate {
             imageView.addGestureRecognizer(singleTap)
             if scrollStyle == .Landscape {
                 imageView.frame = CGRectOffset(imageView.frame, bounds.width * CGFloat(i), 0)
-            }
-            else if scrollStyle == .Portait {
+            } else if scrollStyle == .Portait {
                 imageView.frame = CGRectOffset(imageView.frame, 0, bounds.height * CGFloat(i))
             }
             scrollView?.addSubview(imageView)
@@ -110,8 +109,10 @@ class BannerView: UIView, UIScrollViewDelegate {
         
         pageController = UIPageControl(frame: CGRectMake(5, frame.height - 15, 60, 15))
         pageController?.numberOfPages = images.count
-        addSubview(pageController!)
         pageController?.currentPage = 0
+        if let pageController = pageController {
+            addSubview(pageController)
+        }
     }
     
     //tap点击事件
@@ -125,12 +126,12 @@ class BannerView: UIView, UIScrollViewDelegate {
         }
         stopScrolling()
         enableScroll = true
-        performSelector(#selector(self.scrollingAction), withObject: nil, afterDelay: scrollTime)
+        performSelector(#selector(scrollingAction), withObject: nil, afterDelay: scrollTime)
     }
     
     func stopScrolling() {
         enableScroll = false
-        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(self.scrollingAction), object: nil)
+        NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(scrollingAction), object: nil)
     }
     
     private func getPageIndex(index: Int) -> Int {
@@ -147,15 +148,14 @@ class BannerView: UIView, UIScrollViewDelegate {
     private func refreshScrollView() {
         let images = getImagesWithPageIndex(currentPage)
         for i in 0 ..< 3 {
-            let imageView = self.scrollView!.viewWithTag(100 + i) as! UIImageView
-            let imageName = images[i] as! String
-            imageView.image = UIImage(named: imageName)
+            let imageView = scrollView?.viewWithTag(100 + i) as? UIImageView
+            let imageName = images[i] as? String
+            imageView?.image = UIImage(named: imageName ?? "")
         }
         
         if scrollStyle == .Landscape {
             scrollView?.contentOffset = CGPoint(x: bounds.width, y: 0)
-        }
-        else if scrollStyle == .Portait {
+        } else if scrollStyle == .Portait {
             scrollView?.contentOffset = CGPoint(x: 0, y: bounds.height)
         }
         pageController?.currentPage = currentPage - 1
