@@ -53,6 +53,7 @@ class EYENavigationController : UINavigationController, UIGestureRecognizerDeleg
             interactivePopGestureRecognizer?.enabled = true
         }
     }
+    
     //MARK: - UIGestureRecognizerDelegate
     func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
         if gestureRecognizer == interactivePopGestureRecognizer {

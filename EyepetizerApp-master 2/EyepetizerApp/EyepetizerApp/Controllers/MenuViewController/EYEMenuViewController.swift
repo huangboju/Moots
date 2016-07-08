@@ -64,6 +64,7 @@ class EYEMenuViewController: UIViewController, GuillotineMenu {
         dismissButton.addTarget(self, action: #selector(EYEMenuViewController.dismissButtonTapped(_:)), forControlEvents: .TouchUpInside)
         return dismissButton
     }()
+    
     lazy var titleLabel: UILabel! = {
         var titleLabel = UILabel()
         titleLabel.numberOfLines = 1
@@ -79,12 +80,13 @@ extension EYEMenuViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
     }
   
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell: UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(menuViewCellId)
+        var cell = tableView.dequeueReusableCellWithIdentifier(menuViewCellId)
         if cell == nil {
             cell = UITableViewCell(style: .Default, reuseIdentifier: menuViewCellId)
         }

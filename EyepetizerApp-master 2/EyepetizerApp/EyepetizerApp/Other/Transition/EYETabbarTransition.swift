@@ -10,7 +10,7 @@ import UIKit
 
 /// tabbar切换动画
 class EYETabbarTransition: NSObject, UIViewControllerAnimatedTransitioning {
-    let duration : NSTimeInterval = 0.4
+    let duration: NSTimeInterval = 0.4
     
     func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return duration

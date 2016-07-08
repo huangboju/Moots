@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class EYEPopularController: EYEBaseViewController, LoadingPresenter {
-    var loaderView : EYELoaderView!
+    var loaderView: EYELoaderView!
     
     //MARK: --------------------------- Life Cycle --------------------------
     override func viewDidLoad() {
