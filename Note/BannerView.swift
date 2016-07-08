@@ -66,7 +66,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     //补充初始化（并不能被子类super）
-    init(frame: CGRect,direction: BannerViewStyle,images: NSArray) {
+    init(frame: CGRect,direction: BannerViewStyle, images: [String]) {
         //必须调用构造函数
         super.init(frame: frame)
         clipsToBounds = true
@@ -83,31 +83,31 @@ class BannerView: UIView, UIScrollViewDelegate {
         scrollView?.delegate = self
         addSubview(scrollView!)
         
-        if scrollStyle == BannerViewStyle.Landscape {
+        if scrollStyle == .Landscape {
             scrollView?.contentSize = CGSize(width: bounds.width * 3, height: bounds.height)
-        } else if scrollStyle == BannerViewStyle.Portait {
-            self.scrollView?.contentSize = CGSize(width: bounds.width, height: bounds.height * 3)
+        } else if scrollStyle == .Portait {
+            scrollView?.contentSize = CGSize(width: bounds.width, height: bounds.height * 3)
         }
         
         for i in 0 ..< 3 {
-            let imageView = UIImageView(frame:bounds)
+            let imageView = UIImageView(frame: bounds)
             imageView.userInteractionEnabled = true
             imageView.tag = 100 + i
             let singleTap = UITapGestureRecognizer(target: self,action: #selector(tapAction))
             imageView.addGestureRecognizer(singleTap)
-            if scrollStyle == BannerViewStyle.Landscape {
+            if scrollStyle == .Landscape {
                 imageView.frame = CGRectOffset(imageView.frame, bounds.width * CGFloat(i), 0)
             }
-            else if scrollStyle == BannerViewStyle.Portait {
+            else if scrollStyle == .Portait {
                 imageView.frame = CGRectOffset(imageView.frame, 0, bounds.height * CGFloat(i))
             }
             scrollView?.addSubview(imageView)
             if images.count >= 3 {
-                imageView.image = UIImage(named: images[i] as! String)
+                imageView.image = UIImage(named: images[i])
             }
         }
         
-        pageController = UIPageControl(frame: CGRectMake(5,frame.size.height - 15,60,15))
+        pageController = UIPageControl(frame: CGRectMake(5, frame.height - 15, 60, 15))
         pageController?.numberOfPages = images.count
         addSubview(pageController!)
         pageController?.currentPage = 0
