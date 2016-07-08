@@ -26,14 +26,17 @@ enum PageStyle {
 
 protocol BannerViewDelegate {
     func bannerViewDidSelected(bannerView: BannerView,index: Int)
-    func bannerViewDidClosed(bannerView: BannerView)
+}
+
+extension BannerViewDelegate {
+    func bannerViewDidClosed(bannerView: BannerView) {}
 }
 
 class BannerView: UIView, UIScrollViewDelegate {
     var delegate: BannerViewDelegate?
-    var imagesArr = [String]()
     var scrollStyle: BannerViewStyle?
     var scrollTime: NSTimeInterval = 3
+    var imagesArr = [String]()
     private var pageController: UIPageControl?
     private var enableScroll: Bool?
     private var scrollView: UIScrollView?
@@ -44,13 +47,13 @@ class BannerView: UIView, UIScrollViewDelegate {
     var normalColor: UIColor? {
         //给normalColor赋值后进行
         didSet {
-            pageController?.pageIndicatorTintColor = normalColor
+            pageController?.pageIndicatorTintColor = oldValue
         }
     }
     
     var selectedColor: UIColor? {
         didSet {
-            pageController?.currentPageIndicatorTintColor = selectedColor
+            pageController?.currentPageIndicatorTintColor = oldValue
         }
     }
     
@@ -61,7 +64,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     
     //反初始化（析构函数）
     deinit {
-        self.delegate = nil
+        delegate = nil
     }
     
     //补充初始化（并不能被子类super）
