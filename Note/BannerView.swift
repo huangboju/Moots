@@ -55,11 +55,6 @@ class BannerView: UIView, UIScrollViewDelegate {
         }
     }
     
-    //designated初始化（构造函数）
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-    }
-    
     //调用上面函数必须调用此函数
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -71,22 +66,22 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     //补充初始化（并不能被子类super）
-    convenience init(frame: CGRect,direction: BannerViewStyle,images: NSArray) {
+    init(frame: CGRect,direction: BannerViewStyle,images: NSArray) {
         //必须调用构造函数
-        self.init(frame: frame)
-        self.clipsToBounds = true
-        self.imagesArr = images
-        self.scrollStyle = direction
-        self.totalPage = images.count
-        self.totalCount = images.count
-        self.currentPage = 1
-        self.scrollView = UIScrollView(frame: self.bounds)
-        self.scrollView?.backgroundColor = UIColor.clearColor()
-        self.scrollView?.showsHorizontalScrollIndicator = false
-        self.scrollView?.showsVerticalScrollIndicator = false
-        self.scrollView?.pagingEnabled = true
-        self.scrollView?.delegate = self
-        self.addSubview(self.scrollView!)
+        super.init(frame: frame)
+        clipsToBounds = true
+        imagesArr = images
+        scrollStyle = direction
+        totalPage = images.count
+        totalCount = images.count
+        currentPage = 1
+        scrollView = UIScrollView(frame: bounds)
+        scrollView?.backgroundColor = UIColor.clearColor()
+        scrollView?.showsHorizontalScrollIndicator = false
+        scrollView?.showsVerticalScrollIndicator = false
+        scrollView?.pagingEnabled = true
+        scrollView?.delegate = self
+        addSubview(scrollView!)
         
         if scrollStyle == BannerViewStyle.Landscape {
             scrollView?.contentSize = CGSize(width: bounds.width * 3, height: bounds.height)
