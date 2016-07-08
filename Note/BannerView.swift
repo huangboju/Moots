@@ -161,12 +161,12 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     private func getImagesWithPageIndex(pageIndex: Int) -> NSArray {
-        let pre = self.getPageIndex(currentPage - 1)
-        let last = self.getPageIndex(currentPage + 1)
-        let images = NSMutableArray.init(capacity: 0)
-        images.addObject(imagesArr[pre - 1])
-        images.addObject(imagesArr[currentPage - 1])
-        images.addObject(imagesArr[last - 1])
+        let pre = getPageIndex(currentPage - 1)
+        let last = getPageIndex(currentPage + 1)
+        var images = [String]()
+        images.append(imagesArr[pre - 1])
+        images.append(imagesArr[currentPage - 1])
+        images.append(imagesArr[last - 1])
         return images
     }
     
@@ -226,7 +226,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         if scrollStyle == .Landscape {
             scrollView.contentOffset = CGPoint(x: bounds.width, y: 0)
-        } else if scrollStyle == BannerViewStyle.Portait {
+        } else if scrollStyle == .Portait {
             scrollView.contentOffset = CGPoint(x: 0, y: bounds.height)
         }
         
