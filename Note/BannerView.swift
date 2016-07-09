@@ -4,22 +4,10 @@
 
 import UIKit
 
-/*
- 滚动方向
- *水平
- *数值
- */
 enum BannerViewStyle {
     case Landscape, Portait
 }
 
-/*
- pageControl显示位置
- *不显示
- *显示在左边
- *显示在右边
- *显示在中间
- */
 enum PageStyle {
     case None, Left, Right, Middle
 }
@@ -43,6 +31,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     private var closeButton: UIButton?
     private var totalPage = 0
     private var currentPage = 0
+    private let pageControllerSize = CGSize(width: 60, height: 15)
     
     var normalColor: UIColor? {
         //给normalColor赋值后进行
@@ -107,7 +96,8 @@ class BannerView: UIView, UIScrollViewDelegate {
             }
         }
         
-        pageController = UIPageControl(frame: CGRectMake(5, frame.height - 15, 60, 15))
+        
+        pageController = UIPageControl(frame: CGRect(origin: CGPoint(x: 5, y: bounds.height - pageControllerSize.height), size: pageControllerSize))
         pageController?.numberOfPages = images.count
         pageController?.currentPage = 0
         if let pageController = pageController {
@@ -149,7 +139,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         let images = getImagesWithPageIndex(currentPage)
         for i in 0 ..< 3 {
             let imageView = scrollView?.viewWithTag(100 + i) as? UIImageView
-            let imageName = images[i] as? String
+            let imageName = images[i]
             imageView?.image = UIImage(named: imageName ?? "")
         }
         
@@ -161,7 +151,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         pageController?.currentPage = currentPage - 1
     }
     
-    private func getImagesWithPageIndex(pageIndex: Int) -> NSArray {
+    private func getImagesWithPageIndex(pageIndex: Int) -> [String] {
         let pre = getPageIndex(currentPage - 1)
         let last = getPageIndex(currentPage + 1)
         var images = [String]()
@@ -239,11 +229,11 @@ class BannerView: UIView, UIScrollViewDelegate {
     
     func setPageControlStyle(pageStyle: PageStyle) {
         if pageStyle == .Left {
-            pageController?.frame = CGRect(x: 5, y: bounds.height - 15, width: 60, height: 15)
+            pageController?.frame.origin = CGPoint(x: 5, y: bounds.height - pageControllerSize.height)
         } else if pageStyle == .Right {
-            pageController?.frame = CGRect(x: bounds.size.width - 60, y: self.bounds.size.height - 15, width: 60, height: 15)
+            pageController?.frame.origin = CGPoint(x: bounds.width - pageControllerSize.width, y: bounds.height - pageControllerSize.height)
         } else if pageStyle == .Middle {
-            pageController?.frame = CGRect(x: (bounds.width - 60) / 2, y: bounds.height - 15, width: 60, height: 15)
+            pageController?.frame.origin = CGPoint(x: (bounds.width - pageControllerSize.width) / 2, y: bounds.height - pageControllerSize.height)
         } else if pageStyle == .None {
             pageController?.hidden = true
         }
