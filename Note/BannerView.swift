@@ -168,7 +168,7 @@ class BannerView: UIView, UIScrollViewDelegate {
             } else if self.scrollStyle == .Portait {
                 self.scrollView?.contentOffset = CGPoint(x: 0, y: 1.99 * self.bounds.height)
             }
-        }) { (finished) in
+        }) { [unowned self] (finished) in
             if finished {
                 self.currentPage = self.getPageIndex(self.currentPage + 1)
                 self.refreshScrollView()
