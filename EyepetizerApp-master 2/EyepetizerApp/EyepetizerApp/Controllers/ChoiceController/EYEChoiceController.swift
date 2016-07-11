@@ -146,7 +146,7 @@ extension EYEChoiceController: UICollectionViewDelegate, UICollectionViewDataSou
         let model: ItemModel = issueModel.itemList[indexPath.row]
         // 如果播放地址为空就返回
         if model.playUrl.isEmpty {
-            APESuperHUD.showOrUpdateHUD(.SadFace, message: "没有播放地址", duration: 0.3, presentingView: self.view, completion: nil)
+            APESuperHUD.showOrUpdateHUD(.SadFace, message: "没有播放地址", duration: 0.3, presentingView: view, completion: nil)
             return
         }
         navigationController?.pushViewController(EYEVideoDetailController(model: model), animated: true)
@@ -158,7 +158,7 @@ extension EYEChoiceController: UICollectionViewDelegate, UICollectionViewDataSou
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         
 //        if kind == UICollectionElementKindSectionHeader {
-            let headerView : EYEChoiceHeaderView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: EYEChoiceHeaderView.reuseIdentifier, forIndexPath: indexPath) as! EYEChoiceHeaderView
+            let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: EYEChoiceHeaderView.reuseIdentifier, forIndexPath: indexPath) as! EYEChoiceHeaderView
             let issueModel = issueList[indexPath.section]
             if let image = issueModel.headerImage {
                 headerView.image = image

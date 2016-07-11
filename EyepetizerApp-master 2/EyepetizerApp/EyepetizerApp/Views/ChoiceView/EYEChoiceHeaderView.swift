@@ -12,15 +12,15 @@ class EYEChoiceHeaderView: UICollectionReusableView, Reusable {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.whiteColor()
+        backgroundColor = UIColor.whiteColor()
         
-        self.addSubview(titleLabel)
-        self.addSubview(imageView)
-        titleLabel.snp_makeConstraints { [unowned self](make) -> Void in
+        addSubview(titleLabel)
+        addSubview(imageView)
+        titleLabel.snp_makeConstraints { [unowned self] (make) -> Void in
             make.edges.equalTo(self)
         }
         
-        imageView.snp_makeConstraints { [unowned self](make) -> Void in
+        imageView.snp_makeConstraints { [unowned self] (make) -> Void in
             make.leading.trailing.equalTo(self)
             make.top.equalTo(self).offset(self.height*0.25)
             make.height.equalTo(self.height*0.5)
@@ -29,26 +29,26 @@ class EYEChoiceHeaderView: UICollectionReusableView, Reusable {
     
     var title : String? {
         didSet {
-            if let _ = title {
-                self.imageView.hidden = true
-                self.titleLabel.hidden = false
-                self.titleLabel.text = title!
+            if let title = title {
+                imageView.hidden = true
+                titleLabel.hidden = false
+                titleLabel.text = title
             } else {
-                self.imageView.hidden = false
-                self.titleLabel.hidden = true
+                imageView.hidden = false
+                titleLabel.hidden = true
             }
         }
     }
 
     var image : String? {
         didSet {
-            if let _ = image {
-                self.titleLabel.hidden = true
-                self.imageView.hidden = false
-                self.imageView.yy_setImageWithURL(NSURL(string: image!)!, options: .ProgressiveBlur)
+            if let image = image {
+                titleLabel.hidden = true
+                imageView.hidden = false
+                imageView.yy_setImageWithURL(NSURL(string: image)!, options: .ProgressiveBlur)
             } else {
-                self.titleLabel.hidden = false
-                self.imageView.hidden = true
+                titleLabel.hidden = false
+                imageView.hidden = true
             }
         }
     }

@@ -61,15 +61,18 @@ extension NSObject {
     }
 }
 
+//卸载当前版本
+//sudo gem uninstall cocoapods
+//下载旧版本
+//sudo gem install cocoapods -v 0.25.0
+
+
+//修改Xcode自动生成的文件注释来导出API文档
+//http://www.jianshu.com/p/d0c7d9040c93
+//open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
+
 //删除多余模拟器
 // /Library/Developer/CoreSimulator/Profiles/Runtimes
 
 //修改swift文件
 // /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
-
-
-
-//卸载当前版本
-//sudo gem uninstall cocoapods
-//下载旧版本
-//sudo gem install cocoapods -v 0.25.0
