@@ -61,6 +61,14 @@ extension NSObject {
     }
 }
 
+///修改状态栏背景颜色
+func setStatusBarBackgroundColor(color: UIColor) {
+    guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+        return
+    }
+    statusBar.backgroundColor = color
+}
+
 //卸载当前版本
 //sudo gem uninstall cocoapods
 //下载旧版本
@@ -76,3 +84,5 @@ extension NSObject {
 
 //修改swift文件
 // /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
+
+// Self 表示引用当前实例的类型
