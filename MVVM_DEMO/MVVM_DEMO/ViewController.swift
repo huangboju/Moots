@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(cameraAction))
         camera.viewControllerForAlerts = self
-        
+        navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_action_back")
+        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_action_back")
     }
     
     func cameraAction() {

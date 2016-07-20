@@ -58,13 +58,11 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
                 timeController = EYEDiscoverDetailTimeController(categoryId: self.categoryId)
             }
             actionController = timeController
-            break
         case 1:
             if shareController == nil {
                 shareController = EYEDiscoverDetailShareController(categoryId: self.categoryId)
             }
             actionController = shareController
-            break
         default:
             break
         }
@@ -123,3 +121,14 @@ class EYEDiscoverDetailController: EYEBaseViewController, LoadingPresenter {
         return headerView
     }()
 }
+
+
+
+
+
+
+
+
+
+
+

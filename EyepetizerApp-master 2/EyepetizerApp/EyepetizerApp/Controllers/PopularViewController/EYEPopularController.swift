@@ -108,3 +108,26 @@ class EYEPopularController: EYEBaseViewController, LoadingPresenter {
         return headerView
     }()
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

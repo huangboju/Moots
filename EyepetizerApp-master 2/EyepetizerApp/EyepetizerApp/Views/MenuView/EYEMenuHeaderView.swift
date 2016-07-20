@@ -27,6 +27,7 @@ class EYEMenuHeaderView: UIView {
             make.centerX.equalTo(self)
             make.top.equalTo(self).offset(UIConstant.UI_MARGIN_10)
         }
+        
         backgroundIconView.layer.cornerRadius = 50
         
         eyeIconView.snp_makeConstraints { (make) in

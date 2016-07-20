@@ -58,7 +58,6 @@ class EYEPopularMonthController: UIViewController, LoadingPresenter {
         collectionView.registerClass(EYEPopularFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: EYEPopularFooterView.reuseIdentifier)
         let layout = collectionView.collectionViewLayout as! EYECollectionLayout
         layout.footerReferenceSize = CGSize(width: collectionView.width, height: 50)
-        collectionView.registerClass(EYEPopularFooterView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: EYEPopularFooterView.reuseIdentifier)
 
         collectionView.delegate = self
         collectionView.dataSource = self

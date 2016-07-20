@@ -98,7 +98,7 @@ class EYEPullToRefreshView: UIView {
             return
         }
         
-        let delayInSeconds:Double = 0.3
+        let delayInSeconds: Double = 0.3
         let popTime:dispatch_time_t = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds))
         
         dispatch_after(popTime, dispatch_get_main_queue(), {
@@ -148,6 +148,16 @@ class EYEPullToRefreshView: UIView {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
 
 /// 下拉刷新
 class EYEPullToRefreshHeaderView: EYEPullToRefreshView {
@@ -240,6 +250,14 @@ class EYEPullToRefreshHeaderView: EYEPullToRefreshView {
         }
     }
 }
+
+
+
+
+
+
+
+
 
 /// 上拉加载更多
 class EYEPullToRefreshFooterView: EYEPullToRefreshView {
@@ -396,4 +414,34 @@ class EYEPullToRefreshFooterView: EYEPullToRefreshView {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

@@ -6,9 +6,6 @@
 //  Copyright © 2016年 xiaoming. All rights reserved.
 //
 
-import Foundation
-import Alamofire
-
 struct EYEAPIHeaper {
     static let API_Service = "http://baobab.wandoujia.com/api/v2/"
     /// 一.每日精选api 参数 1.date:时间戳 2.num：数量(默认7)  date=1457883945551&num=7

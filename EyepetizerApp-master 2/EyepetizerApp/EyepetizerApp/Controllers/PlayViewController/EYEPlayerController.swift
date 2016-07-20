@@ -10,7 +10,17 @@ import UIKit
 import AVFoundation
 import MediaPlayer
 
+let ApplicationManager = UIApplication.sharedApplication()
+let NotificationManager = NSNotificationCenter.defaultCenter()
+
 class EYEPlayerController: UIViewController {
+    
+    private let keyPathes = [
+        "status",
+        "loadedTimeRanges",
+        "playbackBufferEmpty" ,
+        "playbackLikelyToKeepUp"
+    ]
     
     //MARK: --------------------------- Life Cycle --------------------------
     override func viewDidLoad() {
@@ -20,7 +30,7 @@ class EYEPlayerController: UIViewController {
         self.view.addSubview(playView)
         
         //旋转屏幕，但是只旋转当前的View
-        UIApplication.sharedApplication().setStatusBarOrientation(
+        ApplicationManager.setStatusBarOrientation(
             .LandscapeRight, animated: false)
         self.view.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/2))
         let frame = UIScreen.mainScreen().bounds
@@ -68,9 +78,10 @@ class EYEPlayerController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBarHidden = true
+//        self.navigationController?.navigationBarHidden = true
     }
     
+    //屏幕旋转
     override func shouldAutorotate() -> Bool {
         return false
     }
@@ -82,31 +93,26 @@ class EYEPlayerController: UIViewController {
     //MARK: --------------------------- Event or Action --------------------------
     private func addObserverAndNotifacation() {
         // AVPlayer播放完成通知
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EYEPlayerController.moviePlayDidEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: self.player.currentItem)
+        NotificationManager.addObserver(self, selector: #selector(moviePlayDidEnd(_:)), name: AVPlayerItemDidPlayToEndTimeNotification, object: self.player.currentItem)
         // app退到后台
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EYEPlayerController.appDidEnterBackground), name: UIApplicationWillResignActiveNotification, object: nil)
+        NotificationManager.addObserver(self, selector: #selector(appDidEnterBackground), name: UIApplicationWillResignActiveNotification, object: nil)
         // app进入前台
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(EYEPlayerController.appDidEnterPlayGround), name: UIApplicationDidBecomeActiveNotification, object: nil)
+        NotificationManager.addObserver(self, selector: #selector(appDidEnterPlayGround), name: UIApplicationDidBecomeActiveNotification, object: nil)
         // slider开始滑动事件
-        self.playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderTouchBegan(_:)), forControlEvents: .TouchDown)
+        playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderTouchBegan(_:)), forControlEvents: .TouchDown)
         // slider滑动中事件
-        self.playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
+        playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderValueChanged(_:)), forControlEvents: .ValueChanged)
         // slider结束滑动事件
-        self.playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderTouchEnded(_:)), forControlEvents: [.TouchUpInside, .TouchCancel, .TouchUpOutside])
+        playView.sliderView.addTarget(self, action: #selector(EYEPlayerController.progressSliderTouchEnded(_:)), forControlEvents: [.TouchUpInside, .TouchCancel, .TouchUpOutside])
         // 播放按钮点击事件
-        self.playView.startButton.addTarget(self, action: #selector(EYEPlayerController.startAction(_:)), forControlEvents: .TouchUpInside)
+        playView.startButton.addTarget(self, action: #selector(EYEPlayerController.startAction(_:)), forControlEvents: .TouchUpInside)
         // 返回按钮点击事件
-        self.playView.backBtn.addTarget(self, action: #selector(EYEPlayerController.backButtonAction), forControlEvents: .TouchUpInside)
+        playView.backBtn.addTarget(self, action: #selector(EYEPlayerController.backButtonAction), forControlEvents: .TouchUpInside)
         
         // 监听播放状态
-        self.player.currentItem?.addObserver(self, forKeyPath: "status", options: .New, context: nil)
-        // 监听loadedTimeRanges属性
-        self.player.currentItem?.addObserver(self, forKeyPath: "loadedTimeRanges", options: .New, context: nil)
-        // Will warn you when your buffer is empty
-        self.player.currentItem?.addObserver(self, forKeyPath: "playbackBufferEmpty", options: .New, context: nil)
-        // Will warn you when your buffer is good to go again.
-        self.player.currentItem?.addObserver(self, forKeyPath: "playbackLikelyToKeepUp", options: .New, context: nil)
-        
+        keyPathes.forEach { (keyPath) in
+            player.currentItem?.addObserver(self, forKeyPath: keyPath, options: .New, context: nil)
+        }
     }
     
     /**
@@ -116,10 +122,9 @@ class EYEPlayerController: UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
         
         // 移除观察者
-        self.player.currentItem?.removeObserver(self, forKeyPath: "status")
-        self.player.currentItem?.removeObserver(self, forKeyPath: "loadedTimeRanges")
-        self.player.currentItem?.removeObserver(self, forKeyPath: "playbackBufferEmpty")
-        self.player.currentItem?.removeObserver(self, forKeyPath: "playbackLikelyToKeepUp")
+        keyPathes.forEach { (keyPath) in
+            player.currentItem?.removeObserver(self, forKeyPath: keyPath)
+        }
     }
     
     /**
@@ -421,3 +426,15 @@ class EYEPlayerController: UIViewController {
     // 是否正在缓存
     private var isBuffering = false
 }
+
+
+
+
+
+
+
+
+
+
+
+
