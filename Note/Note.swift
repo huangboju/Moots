@@ -69,6 +69,23 @@ func setStatusBarBackgroundColor(color: UIColor) {
     statusBar.backgroundColor = color
 }
 
+/// 裁剪图片
+extension UIImage {
+    func cutOutImageWithRect(rect: CGRect) -> UIImage {
+
+        guard let subImageRef = CGImageCreateWithImageInRect(CGImage, rect) else {
+            return self
+        }
+        let smallBounds = CGRect(x: 0, y: 0, width: CGImageGetWidth(subImageRef), height: CGImageGetHeight(subImageRef))
+        UIGraphicsBeginImageContext(smallBounds.size)
+        let context = UIGraphicsGetCurrentContext()
+        CGContextDrawImage(context, smallBounds, subImageRef)
+        let smallImage = UIImage(CGImage: subImageRef)
+        UIGraphicsEndImageContext()
+        return smallImage
+    }
+}
+
 //卸载当前版本
 //sudo gem uninstall cocoapods
 //下载旧版本
@@ -83,6 +100,6 @@ func setStatusBarBackgroundColor(color: UIColor) {
 // /Library/Developer/CoreSimulator/Profiles/Runtimes
 
 //修改swift文件
-// /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
+//open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
 
 // Self 表示引用当前实例的类型
