@@ -92,7 +92,8 @@ class BannerView: UIView, UIScrollViewDelegate {
             }
             scrollView?.addSubview(imageView)
             if images.count >= 3 {
-                imageView.image = UIImage(named: images[i])
+                imageView.kf_setImageWithURL(NSURL(string: images[i]))
+//                imageView.image = UIImage(named: images[i])
             }
         }
         
@@ -140,7 +141,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         for i in 0 ..< 3 {
             let imageView = scrollView?.viewWithTag(100 + i) as? UIImageView
             let imageName = images[i]
-            imageView?.image = UIImage(named: imageName ?? "")
+            imageView?.kf_setImageWithURL(NSURL(string: imageName))
         }
         
         if scrollStyle == .Landscape {
