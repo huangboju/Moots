@@ -13,7 +13,7 @@ enum PageStyle {
 }
 
 protocol BannerViewDelegate {
-    func bannerViewDidSelected(bannerView: BannerView,index: Int)
+    func bannerViewDidSelected(bannerView: BannerView, index: Int)
 }
 
 extension BannerViewDelegate {
@@ -25,7 +25,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     var scrollStyle: BannerViewStyle?
     var scrollTime: NSTimeInterval = 3
     var imagesArr = [String]()
-    private var pageController: UIPageControl?
+    private var pageControl: UIPageControl?
     private var enableScroll: Bool?
     private var scrollView: UIScrollView?
     private var closeButton: UIButton?
@@ -36,13 +36,13 @@ class BannerView: UIView, UIScrollViewDelegate {
     var normalColor: UIColor? {
         //给normalColor赋值后进行
         didSet {
-            pageController?.pageIndicatorTintColor = oldValue
+            pageControl?.pageIndicatorTintColor = normalColor
         }
     }
     
     var selectedColor: UIColor? {
         didSet {
-            pageController?.currentPageIndicatorTintColor = oldValue
+            pageControl?.currentPageIndicatorTintColor = selectedColor
         }
     }
     
@@ -57,7 +57,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     //补充初始化（并不能被子类super）
-    init(frame: CGRect,direction: BannerViewStyle, images: [String]) {
+    init(frame: CGRect, direction: BannerViewStyle, images: [String]) {
         //必须调用构造函数
         super.init(frame: frame)
         clipsToBounds = true
@@ -83,25 +83,25 @@ class BannerView: UIView, UIScrollViewDelegate {
             let imageView = UIImageView(frame: bounds)
             imageView.userInteractionEnabled = true
             imageView.tag = 100 + i
-            let singleTap = UITapGestureRecognizer(target: self,action: #selector(tapAction))
+            let singleTap = UITapGestureRecognizer(target: self, action: #selector(tapAction))
             imageView.addGestureRecognizer(singleTap)
+            let method = CGRect.offsetBy(imageView.frame)
             if scrollStyle == .Landscape {
-                imageView.frame = CGRectOffset(imageView.frame, bounds.width * CGFloat(i), 0)
+                imageView.frame = method(dx: bounds.width * CGFloat(i), dy: 0)
             } else if scrollStyle == .Portait {
-                imageView.frame = CGRectOffset(imageView.frame, 0, bounds.height * CGFloat(i))
+                imageView.frame = method(dx: bounds.width * CGFloat(i), dy: bounds.height * CGFloat(i))
             }
             scrollView?.addSubview(imageView)
             if images.count >= 3 {
                 imageView.kf_setImageWithURL(NSURL(string: images[i]))
-//                imageView.image = UIImage(named: images[i])
             }
         }
         
         
-        pageController = UIPageControl(frame: CGRect(origin: CGPoint(x: 5, y: bounds.height - pageControllerSize.height), size: pageControllerSize))
-        pageController?.numberOfPages = images.count
-        pageController?.currentPage = 0
-        if let pageController = pageController {
+        pageControl = UIPageControl(frame: CGRect(origin: CGPoint(x: 5, y: bounds.height - pageControllerSize.height), size: pageControllerSize))
+        pageControl?.numberOfPages = images.count
+        pageControl?.currentPage = 0
+        if let pageController = pageControl {
             addSubview(pageController)
         }
     }
@@ -149,7 +149,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         } else if scrollStyle == .Portait {
             scrollView?.contentOffset = CGPoint(x: 0, y: bounds.height)
         }
-        pageController?.currentPage = currentPage - 1
+        pageControl?.currentPage = currentPage - 1
     }
     
     private func getImagesWithPageIndex(pageIndex: Int) -> [String] {
@@ -163,7 +163,7 @@ class BannerView: UIView, UIScrollViewDelegate {
     }
     
     func scrollingAction() {
-        UIView.animateWithDuration(0.25, animations: { 
+        UIView.animateWithDuration(0.25, animations: {
             if self.scrollStyle == .Landscape {
                 self.scrollView?.contentOffset = CGPoint(x: self.bounds.width * 1.99, y: 0)
             } else if self.scrollStyle == .Portait {
@@ -194,7 +194,7 @@ class BannerView: UIView, UIScrollViewDelegate {
         if enableScroll != nil {
             NSObject.cancelPreviousPerformRequestsWithTarget(self, selector: #selector(scrollingAction), object: nil)
         }
-        if scrollStyle == .Landscape   {
+        if scrollStyle == .Landscape {
             if x >= bounds.width * 2 {
                 currentPage = getPageIndex(currentPage + 1)
                 refreshScrollView()
@@ -230,13 +230,13 @@ class BannerView: UIView, UIScrollViewDelegate {
     
     func setPageControlStyle(pageStyle: PageStyle) {
         if pageStyle == .Left {
-            pageController?.frame.origin = CGPoint(x: 5, y: bounds.height - pageControllerSize.height)
+            pageControl?.frame.origin = CGPoint(x: 5, y: bounds.height - pageControllerSize.height)
         } else if pageStyle == .Right {
-            pageController?.frame.origin = CGPoint(x: bounds.width - pageControllerSize.width, y: bounds.height - pageControllerSize.height)
+            pageControl?.frame.origin = CGPoint(x: bounds.width - pageControllerSize.width, y: bounds.height - pageControllerSize.height)
         } else if pageStyle == .Middle {
-            pageController?.frame.origin = CGPoint(x: (bounds.width - pageControllerSize.width) / 2, y: bounds.height - pageControllerSize.height)
+            pageControl?.frame.origin = CGPoint(x: (bounds.width - pageControllerSize.width) / 2, y: bounds.height - pageControllerSize.height - 8)
         } else if pageStyle == .None {
-            pageController?.hidden = true
+            pageControl?.hidden = true
         }
     }
 }

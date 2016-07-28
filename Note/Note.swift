@@ -103,6 +103,11 @@ extension UIButton {
     }
 }
 
+//离幕渲染
+//layer.shouldRasterize = true
+//self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+
+
 //卸载当前版本
 //sudo gem uninstall cocoapods
 //下载旧版本
