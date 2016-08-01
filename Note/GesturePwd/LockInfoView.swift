@@ -20,7 +20,7 @@ class LockInfoView: UIView {
         
         CGContextSetLineWidth(context, ARC_LINE_WIDTH)
         
-        CoreLockNormalColor.set()
+        NORMAL_TITLE_COLOR.set()
         
         let path = CGPathCreateMutable()
         

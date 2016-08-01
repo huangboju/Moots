@@ -12,12 +12,12 @@ class LockLabel: UILabel {
     
     func showNormal(message: String?) {
         text = message
-        textColor = CoreLockNormalColor
+        textColor = NORMAL_TITLE_COLOR
     }
     
     func showWarn(message: String?) {
         text = message
-        textColor = CoreLockWarnColor
+        textColor = WARNING_TITLE_COLOR
         layer.shake()
     }
     

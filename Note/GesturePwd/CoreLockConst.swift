@@ -2,7 +2,6 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-// 参考支付宝
 let LABEL_HEIGHT: CGFloat = 20
 let INFO_VIEW_WIDTH: CGFloat = 30
 let BUTTON_SPACE: CGFloat = 50
@@ -80,19 +79,13 @@ let CoreLockCircleLineSelectedCircleColor = rgba(255,g: 150,b: 0,a: 1)
 let CoreLockLockLineColor = rgba(255,g: 150,b: 0,a: 1)
 
 /// 警示文字颜色
-let CoreLockWarnColor = rgba(254,g: 82,b: 92,a: 1)
+let WARNING_TITLE_COLOR = rgba(254,g: 82,b: 92,a: 1)
 
-let RedrawNotification = "RedrawNotification"
+let REDRAW_NOTIFICATION = "REDRAW_NOTIFICATION"
 
 /// 普通文字颜色
-let CoreLockNormalColor = rgba(192,g: 192,b: 192,a: 1)
+let NORMAL_TITLE_COLOR = rgba(192,g: 192,b: 192,a: 1)
 
 func rgba(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
     return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a)
 }
-
-let iphone4x_3_5 = (UIScreen.mainScreen().bounds.height == 480)
-let iphone5x_4_0 = (UIScreen.mainScreen().bounds.height == 568)
-let iphone6_4_7 = (UIScreen.mainScreen().bounds.height == 667)
-let iphone6Plus_5_5 = (UIScreen.mainScreen().bounds.height == 736) || (UIScreen.mainScreen().bounds.width == 414)
-

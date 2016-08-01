@@ -172,7 +172,7 @@ class LockVC: UIViewController {
     func redraw() {
         rightBarButtonItem?.enabled = false
         label.showNormal(CONFIRM_PASSWORD)
-        NSNotificationCenter.defaultCenter().postNotificationName(RedrawNotification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(REDRAW_NOTIFICATION, object: nil)
     }
     
     func passwordReset() {
