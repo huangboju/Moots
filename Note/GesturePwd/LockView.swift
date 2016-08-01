@@ -2,7 +2,7 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-class CLLockView: UIView {
+class LockView: UIView {
     var type: CoreLockType?
     var setPWBeginBlock: (() -> Void)?
     var setPWConfirmlock: (() -> Void)?
@@ -21,7 +21,7 @@ class CLLockView: UIView {
     
     private let marginValue: CGFloat = 36
     
-    private var itemViewsM = [CLLockItemView]()
+    private var itemViewsM = [LockItemView]()
     private var pwdM = ""
     private var firstRightPWD = ""
     private var modify_VeriryOldRight = false
@@ -30,7 +30,7 @@ class CLLockView: UIView {
         super.init(frame: frame)
         backgroundColor = CoreLockViewBgColor
         for _ in 0..<9 {
-            let itemView = CLLockItemView()
+            let itemView = LockItemView()
             addSubview(itemView)
         }
     }
@@ -234,10 +234,10 @@ class CLLockView: UIView {
         }
     }
     
-    func itemViewWithTouchLocation(location: CGPoint?) -> CLLockItemView? {
-        var item: CLLockItemView?
+    func itemViewWithTouchLocation(location: CGPoint?) -> LockItemView? {
+        var item: LockItemView?
         for subView in subviews {
-            if let itemView = (subView as? CLLockItemView) {
+            if let itemView = (subView as? LockItemView) {
                 if !CGRectContainsPoint(itemView.frame, location!) {
                     continue
                 }

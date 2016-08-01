@@ -8,17 +8,23 @@ enum CoreLockType: Int {
     case Modify
 }
 
-class CLLockVC: UIViewController {
+class LockVC: UIViewController {
     
     var type: CoreLockType? {
         didSet {
-            labelWithType()
+            if type == .Set {
+                message = SET_PASSWORD
+            } else if type == .Veryfi {
+                message = ENTER_PASSWORD
+            } else if type == .Modify {
+                message = ENTER_OLD_PASSWORD
+            }
         }
     }
     
-    private var success: ((CLLockVC, String) -> Void)?
+    private var success: ((LockVC, String) -> Void)?
     private var forget: (() -> Void)?
-//    private var overrunTimes: ((CLLockVC) -> Void)?
+//    private var overrunTimes: ((LockVC) -> Void)?
     private var message: String?
     private var controller: UIViewController?
     private var modifyCurrentTitle: String?
@@ -27,7 +33,7 @@ class CLLockVC: UIViewController {
     private var rightBarButtonItem: UIBarButtonItem?
     private var isDirectModify = false
     private var errorTime = 1
-    private var lockView: CLLockView! {
+    private var lockView: LockView! {
         didSet {
             if type != .Set {
                 let forgetButton = UIButton()
@@ -42,8 +48,8 @@ class CLLockVC: UIViewController {
             }
         }
     }
-    private lazy var label: CLLockLabel = {
-        return CLLockLabel(frame: CGRect(x: 0, y: TOP_MARGIN, width: self.view.frame.width, height: LABEL_HEIGHT))
+    private lazy var label: LockLabel = {
+        return LockLabel(frame: CGRect(x: 0, y: TOP_MARGIN, width: self.view.frame.width, height: LABEL_HEIGHT))
     }()
     
     private lazy var resetItem: UIBarButtonItem = {
@@ -62,10 +68,10 @@ class CLLockVC: UIViewController {
     private func onPrepare() {
         if type == .Set {
             label.frame.origin.y = label.frame.minY + 30
-            let infoView = CLLockInfoView(frame: CGRect(x: (view.frame.width - INFO_VIEW_WIDTH) / 2, y: label.frame.minY - 50, width: INFO_VIEW_WIDTH, height: INFO_VIEW_WIDTH))
+            let infoView = LockInfoView(frame: CGRect(x: (view.frame.width - INFO_VIEW_WIDTH) / 2, y: label.frame.minY - 50, width: INFO_VIEW_WIDTH, height: INFO_VIEW_WIDTH))
             view.addSubview(infoView)
         }
-        lockView = CLLockView(frame: CGRect(x: 0, y: label.frame.minY, width: view.frame.width, height: view.frame.width))
+        lockView = LockView(frame: CGRect(x: 0, y: label.frame.minY, width: view.frame.width, height: view.frame.width))
         //添加顺序不要反 因为lockView的背景颜色不为透明
         view.addSubview(lockView)
         view.addSubview(label)
@@ -120,7 +126,7 @@ class CLLockVC: UIViewController {
                     self.view.userInteractionEnabled = false
                     self.dismiss(0)
                 } else if self.type == .Modify {
-                    let lockVC = CLLockVC()
+                    let lockVC = LockVC()
                     lockVC.isDirectModify = true
                     lockVC.type = .Set
                     self.navigationController?.pushViewController(lockVC, animated: true)
@@ -186,7 +192,7 @@ class CLLockVC: UIViewController {
     }
     
     ///展示设置密码控制器
-    class func showSettingLockVCIn(controller: UIViewController, success: (CLLockVC, pwd: String) -> Void) -> CLLockVC {
+    class func showSettingLockVCIn(controller: UIViewController, success: (LockVC, pwd: String) -> Void) -> LockVC {
         let lockVC = self.lockVC(controller)
         lockVC.title = "设置密码"
         lockVC.type = .Set
@@ -195,7 +201,7 @@ class CLLockVC: UIViewController {
         return lockVC
     }
     
-    class func showVerifyLockVCIn(controller: UIViewController, forget: () -> Void, success: (CLLockVC, pwd: String) -> Void) -> CLLockVC {
+    class func showVerifyLockVCIn(controller: UIViewController, forget: () -> Void, success: (LockVC, pwd: String) -> Void) -> LockVC {
         let lockVC = self.lockVC(controller)
         lockVC.title = "手势解锁"
         lockVC.type = .Veryfi
@@ -204,7 +210,7 @@ class CLLockVC: UIViewController {
         return lockVC
     }
     
-    class func showModifyLockVCIn(controller: UIViewController, success: (CLLockVC, pwd: String) -> Void) -> CLLockVC {
+    class func showModifyLockVCIn(controller: UIViewController, success: (LockVC, pwd: String) -> Void) -> LockVC {
         let lockVC = self.lockVC(controller)
         lockVC.title = "修改密码"
         lockVC.type = .Modify
@@ -213,20 +219,10 @@ class CLLockVC: UIViewController {
         return lockVC
     }
     
-    func labelWithType() {
-        if type == .Set {
-            message = SET_PASSWORD
-        } else if type == .Veryfi {
-            message = ENTER_PASSWORD
-        } else if type == .Modify {
-            message = ENTER_OLD_PASSWORD
-        }
-    }
-    
-    class func lockVC(controller: UIViewController) -> CLLockVC {
-        let lockVC = CLLockVC()
+    class func lockVC(controller: UIViewController) -> LockVC {
+        let lockVC = LockVC()
         lockVC.controller = controller
-        controller.presentViewController(CLLockNavVC(rootViewController: lockVC), animated: true, completion: nil)
+        controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
         return lockVC
     }
     
@@ -241,14 +237,6 @@ class CLLockVC: UIViewController {
         if let forget = forget {
             forget()
         }
-    }
-    
-    func modifyPwdAction() {
-        let lockVC = CLLockVC()
-        lockVC.title = "修改密码"
-        lockVC.isDirectModify = true
-        lockVC.type = .Modify
-        navigationController?.pushViewController(lockVC, animated: true)
     }
     
     func delay(interval: NSTimeInterval, handle: () -> Void) {

@@ -2,7 +2,7 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-class CLLockLabel: UILabel {
+class LockLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)

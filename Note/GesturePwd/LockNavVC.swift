@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CLLockNavVC: UINavigationController {
+class LockNavVC: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

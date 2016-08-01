@@ -13,7 +13,7 @@ enum LockItemViewDirect: Int {
     case LeftTop
 }
 
-class CLLockItemView: UIView {
+class LockItemView: UIView {
     var direct: LockItemViewDirect? {
         willSet {
             if let newValue = newValue {

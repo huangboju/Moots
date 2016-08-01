@@ -4,7 +4,7 @@
 
 import UIKit
 
-class CLLockInfoView: UIView {
+class LockInfoView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
