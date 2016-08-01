@@ -24,7 +24,7 @@ class LockView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = CoreLockViewBgColor
+        backgroundColor = BACKGROUND_COLOR
         for _ in 0..<9 {
             let itemView = LockItemView()
             addSubview(itemView)

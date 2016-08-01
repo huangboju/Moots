@@ -8,7 +8,7 @@ class LockInfoView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = CoreLockViewBgColor
+        backgroundColor = BACKGROUND_COLOR
     }
     
     required init?(coder aDecoder: NSCoder) {

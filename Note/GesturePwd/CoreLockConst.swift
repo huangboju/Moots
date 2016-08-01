@@ -65,7 +65,7 @@ let PASSWORD_CORRECT = "密码正确"
 let ENTER_OLD_PASSWORD = "请输入旧密码"
 
 /// 背景色
-let CoreLockViewBgColor = rgba(255, g: 255, b: 255, a: 1)
+let BACKGROUND_COLOR = rgba(255, g: 255, b: 255, a: 1)
 
 /// 外环线条颜色：默认
 let CoreLockCircleLineNormalColor = rgba(255,g: 150,b: 0,a: 1)

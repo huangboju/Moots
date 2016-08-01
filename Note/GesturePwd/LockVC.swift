@@ -36,7 +36,7 @@ class LockVC: UIViewController {
         didSet {
             if type != .Set {
                 let forgetButton = UIButton()
-                forgetButton.backgroundColor = CoreLockViewBgColor
+                forgetButton.backgroundColor = BACKGROUND_COLOR
                 forgetButton.setTitleColor(CoreLockCircleLineNormalColor, forState: .Normal)
                 forgetButton.setTitle("忘记密码", forState: .Normal)
                 forgetButton.sizeToFit()
@@ -147,7 +147,7 @@ class LockVC: UIViewController {
     }
     
     func controllerPrepare() {
-        view.backgroundColor = CoreLockViewBgColor
+        view.backgroundColor = BACKGROUND_COLOR
         navigationItem.rightBarButtonItem = nil
         navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .Plain, target: nil, action: nil)
         modifyCurrentTitle = ENTER_OLD_PASSWORD

@@ -7,7 +7,7 @@ class LockLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         textAlignment = .Center
-        backgroundColor = CoreLockViewBgColor
+        backgroundColor = BACKGROUND_COLOR
     }
     
     func showNormal(message: String?) {
