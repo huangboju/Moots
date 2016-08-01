@@ -4,7 +4,7 @@
 
 class LockView: UIView {
     var type: CoreLockType?
-    var setPWBeginBlock: (() -> Void)?
+    var setPasswordHandle: (() -> Void)?
     var setPWConfirmlock: (() -> Void)?
     var setPWSErrorLengthTooShortBlock: ((Int) -> Void)?
     var setPWSErrorTwiceDiffBlock: ((password1: String, passwordNow: String) -> Void)?
@@ -67,10 +67,6 @@ class LockView: UIView {
         CGContextStrokePath(context)
     }
     
-    func redrawPwd() {
-        firstRightPWD = ""
-    }
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         let itemViewWH = (frame.width - 4 * marginValue) / 3
@@ -90,8 +86,8 @@ class LockView: UIView {
         
         if type == .Set {
             if firstRightPWD.isEmpty {
-                if let setPWBeginBlock = setPWBeginBlock {
-                    setPWBeginBlock()
+                if let setPasswordHandle = setPasswordHandle {
+                    setPasswordHandle()
                 }
             } else {
                 if let setPWConfirmlock = setPWConfirmlock {
@@ -145,7 +141,7 @@ class LockView: UIView {
         }
         
         if type == .Set {
-            setpwd()
+            setPassword()
         } else if type == .Veryfi {
             if let verifyPwdBlock = verifyPwdBlock {
                 verifyPwdBlock(password: pwdM)
@@ -156,12 +152,12 @@ class LockView: UIView {
                     modify_VeriryOldRight = verifyPwdBlock(password: pwdM)
                 }
             } else {
-                setpwd()
+                setPassword()
             }
         }
     }
     
-    func setpwd() {
+    private func setPassword() {
         if firstRightPWD.isEmpty {
             firstRightPWD = pwdM
             if let setPWFirstRightBlock = setPWFirstRightBlock {

@@ -78,7 +78,7 @@ class LockVC: UIViewController {
     }
     
     func event() {
-        lockView.setPWBeginBlock = { [unowned self] in
+        lockView.setPasswordHandle = { [unowned self] in
             self.label.showNormal(SET_PASSWORD)
         }
         
