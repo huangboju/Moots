@@ -108,12 +108,12 @@ class LockVC: UIViewController {
             }
         }
         
-        lockView.verifyPWBeginBlock = { [unowned self] in
+        lockView.verifyPasswordHandle = { [unowned self] in
             self.label.showNormal(ENTER_PASSWORD)
         }
         
        
-        lockView.verifyPwdBlock = { [unowned self] (password) in
+        lockView.verifySuccessHandle = { [unowned self] (password) in
             let pwdLocal = CoreArchive.strFor(PASSWORD_KEY)
             let result = (pwdLocal == password)
             
@@ -137,7 +137,7 @@ class LockVC: UIViewController {
             return result
         }
         
-        lockView.modifyPwdBlock = { [unowned self] in
+        lockView.modifyPasswordHandle = { [unowned self] in
             self.label.showNormal(self.modifyCurrentTitle)
         }
     }

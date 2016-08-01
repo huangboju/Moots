@@ -11,13 +11,13 @@ class LockView: UIView {
     var passwordFirstRightHandle: (() -> Void)?
     var setSuccessHandle: ((password: String) -> Void)?
     
-    var verifyPWBeginBlock: (() -> Void)?
-    var verifyPwdBlock: ((password: String) -> Bool)?
+    var verifyPasswordHandle: (() -> Void)?
+    var verifySuccessHandle: ((password: String) -> Bool)?
     
-    var modifyPwdBlock: (() -> Void)?
+    var modifyPasswordHandle: (() -> Void)?
     var modifyPwdSuccessBlock: (() -> Void)?
     
-    private var itemViewsM = [LockItemView]()
+    private var itemViews = [LockItemView]()
     private var pwdM = ""
     private var firstRightPWD = ""
     private var modify_VeriryOldRight = false
@@ -34,10 +34,10 @@ class LockView: UIView {
     }
     
     override func drawRect(rect: CGRect) {
-        if itemViewsM.isEmpty { return }
+        if itemViews.isEmpty { return }
         let context = UIGraphicsGetCurrentContext()
         CGContextAddRect(context, rect)
-        itemViewsM.forEach { (itemView) in
+        itemViews.forEach { (itemView) in
             
             CGContextAddEllipseInRect(context, itemView.frame)
         }
@@ -53,7 +53,7 @@ class LockView: UIView {
         CGContextSetLineJoin(context, .Round)
         CGContextSetLineWidth(context, 1)
         
-        for (idx, itemView) in itemViewsM.enumerate() {
+        for (idx, itemView) in itemViews.enumerate() {
             let directPoint = itemView.center
             if idx == 0 {
                 CGPathMoveToPoint(path, nil, directPoint.x, directPoint.y)
@@ -93,12 +93,12 @@ class LockView: UIView {
                 }
             }
         } else if type == .Veryfy {
-            if let verifyPWBeginBlock = verifyPWBeginBlock {
-                verifyPWBeginBlock()
+            if let verifyPasswordHandle = verifyPasswordHandle {
+                verifyPasswordHandle()
             }
         } else if type == .Modify {
-            if let modifyPwdBlock = modifyPwdBlock {
-                modifyPwdBlock()
+            if let modifyPasswordHandle = modifyPasswordHandle {
+                modifyPasswordHandle()
             }
         }
     }
@@ -117,7 +117,7 @@ class LockView: UIView {
     
     func gestureEnd() {
         if !pwdM.isEmpty {
-            let count = itemViewsM.count
+            let count = itemViews.count
             if count < MIN_ITEM_COUNT {
                 if let passwordTooShortHandle = passwordTooShortHandle {
                     passwordTooShortHandle(count)
@@ -128,13 +128,13 @@ class LockView: UIView {
             if type == .Set {
                 setPassword()
             } else if type == .Veryfy {
-                if let verifyPwdBlock = verifyPwdBlock {
-                    verifyPwdBlock(password: pwdM)
+                if let verifySuccessHandle = verifySuccessHandle {
+                    verifySuccessHandle(password: pwdM)
                 }
             } else if type == .Modify {
                 if !modify_VeriryOldRight {
-                    if let verifyPwdBlock = verifyPwdBlock {
-                        modify_VeriryOldRight = verifyPwdBlock(password: pwdM)
+                    if let verifySuccessHandle = verifySuccessHandle {
+                        modify_VeriryOldRight = verifySuccessHandle(password: pwdM)
                     }
                 } else {
                     setPassword()
@@ -142,11 +142,11 @@ class LockView: UIView {
             }
         }
         
-        for item in itemViewsM {
+        for item in itemViews {
             item.selected = false
             item.direct = nil
         }
-        itemViewsM.removeAll()
+        itemViews.removeAll()
         setNeedsDisplay()
         pwdM = ""
     }
@@ -175,10 +175,10 @@ class LockView: UIView {
         let touch = touches.first
         let location = touch?.locationInView(self)
         if let itemView = itemViewWithTouchLocation(location) {
-            if itemViewsM.contains(itemView) {
+            if itemViews.contains(itemView) {
                 return
             }
-            itemViewsM.append(itemView)
+            itemViews.append(itemView)
             pwdM += itemView.tag.description
             calDirect()
             itemView.selected = true
@@ -187,10 +187,10 @@ class LockView: UIView {
     }
     
     func calDirect() {
-        let count = itemViewsM.count
-        if itemViewsM.count > 1 {
-            let last_1_ItemView = itemViewsM.last
-            let last_2_ItemView = itemViewsM[count - 2]
+        let count = itemViews.count
+        if itemViews.count > 1 {
+            let last_1_ItemView = itemViews.last
+            let last_2_ItemView = itemViews[count - 2]
             
             let last_1_x = last_1_ItemView?.frame.minX
             let last_1_y = last_1_ItemView?.frame.minY
