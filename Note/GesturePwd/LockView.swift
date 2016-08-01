@@ -79,26 +79,7 @@ class LockView: UIView {
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         lockHandle(touches)
-        
-        if type == .Set {
-            if firstPassword.isEmpty {
-                if let setPasswordHandle = setPasswordHandle {
-                    setPasswordHandle()
-                }
-            } else {
-                if let confirmPasswordHandle = confirmPasswordHandle {
-                    confirmPasswordHandle()
-                }
-            }
-        } else if type == .Veryfy {
-            if let verifyPasswordHandle = verifyPasswordHandle {
-                verifyPasswordHandle()
-            }
-        } else if type == .Modify {
-            if let modifyPasswordHandle = modifyPasswordHandle {
-                modifyPasswordHandle()
-            }
-        }
+        handleBack()
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -109,6 +90,7 @@ class LockView: UIView {
         gestureEnd()
     }
     
+    // 电话等打断触摸过程时，会调用这个方法。
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         gestureEnd()
     }
@@ -120,6 +102,9 @@ class LockView: UIView {
                 if let passwordTooShortHandle = passwordTooShortHandle {
                     passwordTooShortHandle(count)
                 }
+                delay(0.4, handle: { 
+                    self.resetItem()
+                })
                 return
             }
             
@@ -139,14 +124,29 @@ class LockView: UIView {
                 }
             }
         }
-        
-        for item in itemViews {
-            item.selected = false
-            item.direct = nil
+        resetItem()
+    }
+    
+    func handleBack() {
+        if type == .Set {
+            if firstPassword.isEmpty {
+                if let setPasswordHandle = setPasswordHandle {
+                    setPasswordHandle()
+                }
+            } else {
+                if let confirmPasswordHandle = confirmPasswordHandle {
+                    confirmPasswordHandle()
+                }
+            }
+        } else if type == .Veryfy {
+            if let verifyPasswordHandle = verifyPasswordHandle {
+                verifyPasswordHandle()
+            }
+        } else if type == .Modify {
+            if let modifyPasswordHandle = modifyPasswordHandle {
+                modifyPasswordHandle()
+            }
         }
-        itemViews.removeAll()
-        setNeedsDisplay()
-        passwordContainer = ""
     }
     
     private func setPassword() {
@@ -238,6 +238,16 @@ class LockView: UIView {
     
     func resetPassword() {
         firstPassword = ""
+    }
+    
+    private func resetItem() {
+        for item in itemViews {
+            item.selected = false
+            item.direct = nil
+        }
+        itemViews.removeAll()
+        setNeedsDisplay()
+        passwordContainer = ""
     }
     
     required init?(coder aDecoder: NSCoder) {

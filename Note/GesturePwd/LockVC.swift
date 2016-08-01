@@ -95,6 +95,7 @@ class LockVC: UIViewController {
         }
         
         lockView.passwordFirstRightHandle = { [unowned self] in
+            // 在这里是路径
             self.label.showNormal(CONFIRM_PASSWORD_AGAIN)
         }
         
@@ -149,7 +150,6 @@ class LockVC: UIViewController {
     func controllerPrepare() {
         view.backgroundColor = BACKGROUND_COLOR
         navigationItem.rightBarButtonItem = nil
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .Plain, target: nil, action: nil)
         modifyCurrentTitle = ENTER_OLD_PASSWORD
         if type == .Modify {
             if isDirectModify { return }
@@ -165,19 +165,8 @@ class LockVC: UIViewController {
         }
     }
     
-    func dismissAction() {
-        dismiss(0)
-    }
-    
-    func redraw() {
-        rightBarButtonItem?.enabled = false
-        label.showNormal(CONFIRM_PASSWORD)
-        NSNotificationCenter.defaultCenter().postNotificationName(REDRAW_NOTIFICATION, object: nil)
-    }
-    
     func passwordReset() {
         label.showNormal(SET_PASSWORD)
-        
         navigationItem.rightBarButtonItem = nil
         lockView.resetPassword()
     }
@@ -225,26 +214,26 @@ class LockVC: UIViewController {
         return lockVC
     }
     
-    func dismiss(interval: NSTimeInterval, conmpletion: (() -> Void)? = nil) {
+    func dismiss(interval: NSTimeInterval = 0, conmpletion: (() -> Void)? = nil) {
         delay(interval) {
             self.dismissViewControllerAnimated(true, completion: conmpletion)
         }
     }
     
     func forgetPwdAction() {
-        dismiss(0)
+        dismiss()
         if let forget = forget {
             forget()
         }
     }
     
-    func delay(interval: NSTimeInterval, handle: () -> Void) {
-        dispatch_after(
-            dispatch_time(
-                DISPATCH_TIME_NOW,
-                Int64(interval * Double(NSEC_PER_SEC))
-            ),
-            dispatch_get_main_queue(), handle)
+    func dismissAction() {
+        dismiss()
+    }
+    
+    func redraw() {
+        rightBarButtonItem?.enabled = false
+        label.showNormal(CONFIRM_PASSWORD)
     }
 
     override func didReceiveMemoryWarning() {

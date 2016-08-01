@@ -81,8 +81,6 @@ let CoreLockLockLineColor = rgba(255,g: 150,b: 0,a: 1)
 /// 警示文字颜色
 let WARNING_TITLE_COLOR = rgba(254,g: 82,b: 92,a: 1)
 
-let REDRAW_NOTIFICATION = "REDRAW_NOTIFICATION"
-
 /// 普通文字颜色
 let NORMAL_TITLE_COLOR = rgba(192,g: 192,b: 192,a: 1)
 
