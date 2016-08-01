@@ -23,12 +23,11 @@ class LockVC: UIViewController {
     }
     
     private var success: ((LockVC, String) -> Void)?
-    private var forget: (() -> Void)?
+    private var forget: handle?
 //    private var overrunTimes: ((LockVC) -> Void)?
     private var message: String?
     private var controller: UIViewController?
     private var modifyCurrentTitle: String?
-    private var modifyButton: UIButton?
     private var key: String!
     private var rightBarButtonItem: UIBarButtonItem?
     private var isDirectModify = false
@@ -101,7 +100,7 @@ class LockVC: UIViewController {
         
         lockView.setSuccessHandle = { [unowned self] (password) in
             self.label.showNormal(PASSWORD_SUCCESS)
-            CoreArchive.set(password, key: PASSWORD_KEY)
+            CoreArchive.setStr(password, key: PASSWORD_KEY)
             self.view.userInteractionEnabled = false
             if let success = self.success {
                 success(self, password)

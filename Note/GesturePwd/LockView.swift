@@ -4,25 +4,23 @@
 
 class LockView: UIView {
     var type: CoreLockType?
-    var setPasswordHandle: (() -> Void)?
-    var confirmPasswordHandle: (() -> Void)?
+    var setPasswordHandle: handle?
+    var confirmPasswordHandle: handle?
     var passwordTooShortHandle: ((Int) -> Void)?
     var passwordTwiceDifferentHandle: ((password1: String, passwordNow: String) -> Void)?
-    var passwordFirstRightHandle: (() -> Void)?
-    var setSuccessHandle: ((password: String) -> Void)?
+    var passwordFirstRightHandle: handle?
+    var setSuccessHandle: strHandle?
     
-    var verifyPasswordHandle: (() -> Void)?
+    var verifyPasswordHandle: handle?
     var verifySuccessHandle: ((password: String) -> Bool)?
     
-    var modifyPasswordHandle: (() -> Void)?
-    var modifySuccessHandle: (() -> Void)?
+    var modifyPasswordHandle: handle?
+    var modifySuccessHandle: handle?
     
     private var itemViews = [LockItemView]()
     private var passwordContainer = ""
-    private var firstRightPWD = ""
+    private var firstPassword = ""
     private var modify_VeriryOldRight = false
-    
-    private let marginValue: CGFloat = 36
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -67,12 +65,12 @@ class LockView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let itemViewWH = (frame.width - 4 * marginValue) / 3
+        let itemViewWH = (frame.width - 4 * ITEM_MARGIN) / 3
         for (idx, subview) in subviews.enumerate() {
             let row = CGFloat(idx % 3)
             let col = CGFloat(idx / 3)
-            let x = marginValue * (row + 1) + row * itemViewWH
-            let y = marginValue * (col + 1) + col * itemViewWH
+            let x = ITEM_MARGIN * (row + 1) + row * itemViewWH
+            let y = ITEM_MARGIN * (col + 1) + col * itemViewWH
             let rect = CGRect(x: x, y: y, width: itemViewWH, height: itemViewWH)
             subview.tag = idx
             subview.frame = rect
@@ -83,7 +81,7 @@ class LockView: UIView {
         lockHandle(touches)
         
         if type == .Set {
-            if firstRightPWD.isEmpty {
+            if firstPassword.isEmpty {
                 if let setPasswordHandle = setPasswordHandle {
                     setPasswordHandle()
                 }
@@ -152,20 +150,20 @@ class LockView: UIView {
     }
     
     private func setPassword() {
-        if firstRightPWD.isEmpty {
-            firstRightPWD = passwordContainer
+        if firstPassword.isEmpty {
+            firstPassword = passwordContainer
             if let passwordFirstRightHandle = passwordFirstRightHandle {
                 passwordFirstRightHandle()
             }
         } else {
-            if firstRightPWD != passwordContainer {
+            if firstPassword != passwordContainer {
                 if let passwordTwiceDifferentHandle = passwordTwiceDifferentHandle {
-                    passwordTwiceDifferentHandle(password1: firstRightPWD, passwordNow: passwordContainer)
+                    passwordTwiceDifferentHandle(password1: firstPassword, passwordNow: passwordContainer)
                 }
                 return
             } else {
                 if let setSuccessHandle = setSuccessHandle {
-                    setSuccessHandle(password: firstRightPWD)
+                    setSuccessHandle(firstPassword)
                 }
             }
         }
@@ -239,7 +237,7 @@ class LockView: UIView {
     }
     
     func resetPassword() {
-        firstRightPWD = ""
+        firstPassword = ""
     }
     
     required init?(coder aDecoder: NSCoder) {

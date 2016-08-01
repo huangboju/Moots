@@ -7,6 +7,10 @@ let LABEL_HEIGHT: CGFloat = 20
 let INFO_VIEW_WIDTH: CGFloat = 30
 let BUTTON_SPACE: CGFloat = 50
 let TOP_MARGIN: CGFloat =  (UIScreen.mainScreen().bounds.height - UIScreen.mainScreen().bounds.width) / 2 + 30
+let ITEM_MARGIN: CGFloat = 36
+
+typealias handle = () -> Void
+typealias strHandle = (String) -> Void
 
 /// 选中圆大小比例
 let ARC_WHR: CGFloat = 0.3

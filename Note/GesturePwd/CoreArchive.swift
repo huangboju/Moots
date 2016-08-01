@@ -3,7 +3,7 @@
 //
 
 struct CoreArchive {
-    static func set(value: String?, key: String) {
+    static func setStr(value: String?, key: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(value, forKey: key)
         defaults.synchronize()
@@ -14,10 +14,10 @@ struct CoreArchive {
     }
     
     static func removeValueFor(key: String) {
-        set(nil, key: key)
+        setStr(nil, key: key)
     }
     
-    static func set(value: Int, key: String) {
+    static func setInt(value: Int, key: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setInteger(value, forKey: key)
         defaults.synchronize()
@@ -27,7 +27,7 @@ struct CoreArchive {
         return NSUserDefaults.standardUserDefaults().integerForKey(key)
     }
     
-    static func set(value: Float, key: String) {
+    static func setFloat(value: Float, key: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setFloat(value, forKey: key)
         //如果程序意外退出数据不会被系统写入到该文件，所以，要使用synchronize()命令直接同步到文件里
@@ -38,7 +38,7 @@ struct CoreArchive {
         return NSUserDefaults.standardUserDefaults().floatForKey(key)
     }
     
-    static func set(value: Bool, key: String) {
+    static func setBool(value: Bool, key: String) {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setBool(value, forKey: key)
         defaults.synchronize()
