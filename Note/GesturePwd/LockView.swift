@@ -15,10 +15,10 @@ class LockView: UIView {
     var verifySuccessHandle: ((password: String) -> Bool)?
     
     var modifyPasswordHandle: (() -> Void)?
-    var modifyPwdSuccessBlock: (() -> Void)?
+    var modifySuccessHandle: (() -> Void)?
     
     private var itemViews = [LockItemView]()
-    private var pwdM = ""
+    private var passwordContainer = ""
     private var firstRightPWD = ""
     private var modify_VeriryOldRight = false
     
@@ -116,7 +116,7 @@ class LockView: UIView {
     }
     
     func gestureEnd() {
-        if !pwdM.isEmpty {
+        if !passwordContainer.isEmpty {
             let count = itemViews.count
             if count < MIN_ITEM_COUNT {
                 if let passwordTooShortHandle = passwordTooShortHandle {
@@ -129,12 +129,12 @@ class LockView: UIView {
                 setPassword()
             } else if type == .Veryfy {
                 if let verifySuccessHandle = verifySuccessHandle {
-                    verifySuccessHandle(password: pwdM)
+                    verifySuccessHandle(password: passwordContainer)
                 }
             } else if type == .Modify {
                 if !modify_VeriryOldRight {
                     if let verifySuccessHandle = verifySuccessHandle {
-                        modify_VeriryOldRight = verifySuccessHandle(password: pwdM)
+                        modify_VeriryOldRight = verifySuccessHandle(password: passwordContainer)
                     }
                 } else {
                     setPassword()
@@ -148,19 +148,19 @@ class LockView: UIView {
         }
         itemViews.removeAll()
         setNeedsDisplay()
-        pwdM = ""
+        passwordContainer = ""
     }
     
     private func setPassword() {
         if firstRightPWD.isEmpty {
-            firstRightPWD = pwdM
+            firstRightPWD = passwordContainer
             if let passwordFirstRightHandle = passwordFirstRightHandle {
                 passwordFirstRightHandle()
             }
         } else {
-            if firstRightPWD != pwdM {
+            if firstRightPWD != passwordContainer {
                 if let passwordTwiceDifferentHandle = passwordTwiceDifferentHandle {
-                    passwordTwiceDifferentHandle(password1: firstRightPWD, passwordNow: pwdM)
+                    passwordTwiceDifferentHandle(password1: firstRightPWD, passwordNow: passwordContainer)
                 }
                 return
             } else {
@@ -179,7 +179,7 @@ class LockView: UIView {
                 return
             }
             itemViews.append(itemView)
-            pwdM += itemView.tag.description
+            passwordContainer += itemView.tag.description
             calDirect()
             itemView.selected = true
             setNeedsDisplay()
