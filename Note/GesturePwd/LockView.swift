@@ -5,26 +5,24 @@
 class LockView: UIView {
     var type: CoreLockType?
     var setPasswordHandle: (() -> Void)?
-    var setPWConfirmlock: (() -> Void)?
-    var setPWSErrorLengthTooShortBlock: ((Int) -> Void)?
-    var setPWSErrorTwiceDiffBlock: ((password1: String, passwordNow: String) -> Void)?
-    var setPWFirstRightBlock: (() -> Void)?
-    var setPWTwiceSameBlock: ((password: String) -> Void)?
+    var confirmPasswordHandle: (() -> Void)?
+    var passwordTooShortHandle: ((Int) -> Void)?
+    var passwordTwiceDifferentHandle: ((password1: String, passwordNow: String) -> Void)?
+    var passwordFirstRightHandle: (() -> Void)?
+    var setSuccessHandle: ((password: String) -> Void)?
     
     var verifyPWBeginBlock: (() -> Void)?
-    
     var verifyPwdBlock: ((password: String) -> Bool)?
     
     var modifyPwdBlock: (() -> Void)?
-    
     var modifyPwdSuccessBlock: (() -> Void)?
-    
-    private let marginValue: CGFloat = 36
     
     private var itemViewsM = [LockItemView]()
     private var pwdM = ""
     private var firstRightPWD = ""
     private var modify_VeriryOldRight = false
+    
+    private let marginValue: CGFloat = 36
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -90,11 +88,11 @@ class LockView: UIView {
                     setPasswordHandle()
                 }
             } else {
-                if let setPWConfirmlock = setPWConfirmlock {
-                    setPWConfirmlock()
+                if let confirmPasswordHandle = confirmPasswordHandle {
+                    confirmPasswordHandle()
                 }
             }
-        } else if type == .Veryfi {
+        } else if type == .Veryfy {
             if let verifyPWBeginBlock = verifyPWBeginBlock {
                 verifyPWBeginBlock()
             }
@@ -119,7 +117,29 @@ class LockView: UIView {
     
     func gestureEnd() {
         if !pwdM.isEmpty {
-            setpwdCheck()
+            let count = itemViewsM.count
+            if count < MIN_ITEM_COUNT {
+                if let passwordTooShortHandle = passwordTooShortHandle {
+                    passwordTooShortHandle(count)
+                }
+                return
+            }
+            
+            if type == .Set {
+                setPassword()
+            } else if type == .Veryfy {
+                if let verifyPwdBlock = verifyPwdBlock {
+                    verifyPwdBlock(password: pwdM)
+                }
+            } else if type == .Modify {
+                if !modify_VeriryOldRight {
+                    if let verifyPwdBlock = verifyPwdBlock {
+                        modify_VeriryOldRight = verifyPwdBlock(password: pwdM)
+                    }
+                } else {
+                    setPassword()
+                }
+            }
         }
         
         for item in itemViewsM {
@@ -131,47 +151,21 @@ class LockView: UIView {
         pwdM = ""
     }
     
-    func setpwdCheck() {
-        let count = itemViewsM.count
-        if count < MIN_ITEM_COUNT {
-            if let setPWSErrorLengthTooShortBlock = setPWSErrorLengthTooShortBlock {
-                setPWSErrorLengthTooShortBlock(count)
-            }
-            return
-        }
-        
-        if type == .Set {
-            setPassword()
-        } else if type == .Veryfi {
-            if let verifyPwdBlock = verifyPwdBlock {
-                verifyPwdBlock(password: pwdM)
-            }
-        } else if type == .Modify {
-            if !modify_VeriryOldRight {
-                if let verifyPwdBlock = verifyPwdBlock {
-                    modify_VeriryOldRight = verifyPwdBlock(password: pwdM)
-                }
-            } else {
-                setPassword()
-            }
-        }
-    }
-    
     private func setPassword() {
         if firstRightPWD.isEmpty {
             firstRightPWD = pwdM
-            if let setPWFirstRightBlock = setPWFirstRightBlock {
-                setPWFirstRightBlock()
+            if let passwordFirstRightHandle = passwordFirstRightHandle {
+                passwordFirstRightHandle()
             }
         } else {
             if firstRightPWD != pwdM {
-                if let setPWSErrorTwiceDiffBlock = setPWSErrorTwiceDiffBlock {
-                    setPWSErrorTwiceDiffBlock(password1: firstRightPWD, passwordNow: pwdM)
+                if let passwordTwiceDifferentHandle = passwordTwiceDifferentHandle {
+                    passwordTwiceDifferentHandle(password1: firstRightPWD, passwordNow: pwdM)
                 }
                 return
             } else {
-                if let setPWTwiceSameBlock = setPWTwiceSameBlock {
-                    setPWTwiceSameBlock(password: firstRightPWD)
+                if let setSuccessHandle = setSuccessHandle {
+                    setSuccessHandle(password: firstRightPWD)
                 }
             }
         }

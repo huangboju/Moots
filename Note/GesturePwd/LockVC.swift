@@ -4,7 +4,7 @@
 
 enum CoreLockType: Int {
     case Set
-    case Veryfi
+    case Veryfy
     case Modify
 }
 
@@ -14,7 +14,7 @@ class LockVC: UIViewController {
         didSet {
             if type == .Set {
                 message = SET_PASSWORD
-            } else if type == .Veryfi {
+            } else if type == .Veryfy {
                 message = ENTER_PASSWORD
             } else if type == .Modify {
                 message = ENTER_OLD_PASSWORD
@@ -82,24 +82,24 @@ class LockVC: UIViewController {
             self.label.showNormal(SET_PASSWORD)
         }
         
-        lockView.setPWConfirmlock = { [unowned self] in
+        lockView.confirmPasswordHandle = { [unowned self] in
             self.label.showNormal(CONFIRM_PASSWORD_AGAIN)
         }
         
-        lockView.setPWSErrorLengthTooShortBlock = { [unowned self] (count) in
+        lockView.passwordTooShortHandle = { [unowned self] (count) in
             self.label.showWarn("请连接至少\(count)个点")
         }
         
-        lockView.setPWSErrorTwiceDiffBlock = { [unowned self] (pwd1, pwdNow) in
+        lockView.passwordTwiceDifferentHandle = { [unowned self] (pwd1, pwdNow) in
             self.label.showWarn(DIFFERENT_PASSWORD)
             self.navigationItem.rightBarButtonItem = self.resetItem
         }
         
-        lockView.setPWFirstRightBlock = { [unowned self] in
+        lockView.passwordFirstRightHandle = { [unowned self] in
             self.label.showNormal(CONFIRM_PASSWORD_AGAIN)
         }
         
-        lockView.setPWTwiceSameBlock = { [unowned self] (password) in
+        lockView.setSuccessHandle = { [unowned self] (password) in
             self.label.showNormal(PASSWORD_SUCCESS)
             CoreArchive.set(password, key: PASSWORD_KEY)
             self.view.userInteractionEnabled = false
@@ -119,7 +119,7 @@ class LockVC: UIViewController {
             
             if result {
                 self.label.showNormal(PASSWORD_CORRECT)
-                if self.type == .Veryfi {
+                if self.type == .Veryfy {
                     if let success = self.success {
                         success(self, password)
                     }
@@ -204,7 +204,7 @@ class LockVC: UIViewController {
     class func showVerifyLockVCIn(controller: UIViewController, forget: () -> Void, success: (LockVC, pwd: String) -> Void) -> LockVC {
         let lockVC = self.lockVC(controller)
         lockVC.title = "手势解锁"
-        lockVC.type = .Veryfi
+        lockVC.type = .Veryfy
         lockVC.success = success
         lockVC.forget = forget
         return lockVC
