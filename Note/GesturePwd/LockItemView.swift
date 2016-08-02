@@ -34,8 +34,8 @@ class LockItemView: UIView {
         }
         get {
             if CGRectEqualToRect(storeCalRect, CGRect.zero) {
-                let sizeWH = bounds.width - ARC_LINE_WIDTH
-                let originXY = ARC_LINE_WIDTH * 0.5
+                let sizeWH = bounds.width - options.arcLineWidht
+                let originXY = options.arcLineWidht * 0.5
                 self.storeCalRect = CGRect(x: originXY, y: originXY, width: sizeWH, height: sizeWH)
             }
             return storeCalRect
@@ -48,8 +48,8 @@ class LockItemView: UIView {
         }
         get {
             if CGRectEqualToRect(self.storeSelectedRect, CGRect.zero) {
-                let selectRectWH = bounds.width * ARC_WHR
-                let selectRectXY = bounds.width * (1 - ARC_WHR) * 0.5
+                let selectRectWH = bounds.width * options.scale
+                let selectRectXY = bounds.width * (1 - options.scale) * 0.5
                 storeSelectedRect = CGRect(x: selectRectXY, y: selectRectXY, width: selectRectWH, height: selectRectWH)
             }
             return storeSelectedRect
@@ -57,10 +57,16 @@ class LockItemView: UIView {
     }
     private var storeSelectedRect = CGRect()
     private var angle: CGFloat?
+    private var options: LockOptions!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .clearColor()
+    }
+    
+    convenience init(options: LockOptions) {
+        self.init(frame: CGRect.zero)
+        self.options = options
+        backgroundColor = options.backgroundColor
     }
     
     override func drawRect(rect: CGRect) {
@@ -124,11 +130,11 @@ class LockItemView: UIView {
     
     func propertySetting(context: CGContextRef?) {
         //设置线宽
-        CGContextSetLineWidth(context, ARC_LINE_WIDTH)
+        CGContextSetLineWidth(context, options.arcLineWidht)
         if selected {
-            CoreLockCircleLineSelectedColor.set()
+            options.circleLineSelectedColor.set()
         } else {
-            CoreLockCircleLineNormalColor.set()
+            options.circleLineNormalColor.set()
         }
     }
     
@@ -153,7 +159,7 @@ class LockItemView: UIView {
         //绘制一个圆形
         CGPathAddEllipseInRect(circlePath, nil, selectedRect)
         
-        CoreLockCircleLineSelectedCircleColor.set()
+        options.circleLineSelectedCircleColor.set()
         
         //将路径添加到上下文中
         CGContextAddPath(contenxt, circlePath);

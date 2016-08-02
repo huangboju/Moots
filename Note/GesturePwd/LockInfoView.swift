@@ -6,9 +6,12 @@ import UIKit
 
 class LockInfoView: UIView {
     
-    override init(frame: CGRect) {
+    private var options: LockOptions?
+    
+    init(frame: CGRect, options: LockOptions) {
         super.init(frame: frame)
-        backgroundColor = BACKGROUND_COLOR
+        backgroundColor = options.backgroundColor
+        self.options = options
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -18,9 +21,9 @@ class LockInfoView: UIView {
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         
-        CGContextSetLineWidth(context, ARC_LINE_WIDTH)
+        CGContextSetLineWidth(context, self.options?.arcLineWidht ?? 1)
         
-        NORMAL_TITLE_COLOR.set()
+        self.options?.normalTitleColor.set()
         
         let path = CGPathCreateMutable()
         

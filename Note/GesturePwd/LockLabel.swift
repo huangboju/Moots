@@ -4,20 +4,23 @@
 
 class LockLabel: UILabel {
     
-    override init(frame: CGRect) {
+    var options: LockOptions!
+    
+    init(frame: CGRect, options: LockOptions) {
         super.init(frame: frame)
         textAlignment = .Center
-        backgroundColor = BACKGROUND_COLOR
+        backgroundColor = options.backgroundColor
+        self.options = options
     }
     
     func showNormal(message: String?) {
         text = message
-        textColor = NORMAL_TITLE_COLOR
+        textColor = options.normalTitleColor
     }
     
     func showWarn(message: String?) {
         text = message
-        textColor = WARNING_TITLE_COLOR
+        textColor = options.warningTitleColor
         layer.shake()
     }
     

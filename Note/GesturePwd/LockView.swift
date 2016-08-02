@@ -22,11 +22,14 @@ class LockView: UIView {
     private var firstPassword = ""
     private var modify_VeriryOldRight = false
     
-    override init(frame: CGRect) {
+    private var options: LockOptions!
+    
+    init(frame: CGRect, options: LockOptions) {
         super.init(frame: frame)
-        backgroundColor = BACKGROUND_COLOR
+        self.options = options
+        backgroundColor = options.backgroundColor
         for _ in 0..<9 {
-            let itemView = LockItemView()
+            let itemView = LockItemView(options: options)
             addSubview(itemView)
         }
     }
@@ -46,7 +49,7 @@ class LockView: UIView {
         //新建路径：管理线条
         let path = CGPathCreateMutable()
         
-        CoreLockLockLineColor.set()
+        options.lockLineColor.set()
         CGContextSetLineCap(context, .Round)
         CGContextSetLineJoin(context, .Round)
         CGContextSetLineWidth(context, 1)
@@ -98,7 +101,7 @@ class LockView: UIView {
     func gestureEnd() {
         if !passwordContainer.isEmpty {
             let count = itemViews.count
-            if count < MIN_ITEM_COUNT {
+            if count < options.passwordMinCount {
                 if let passwordTooShortHandle = passwordTooShortHandle {
                     passwordTooShortHandle(count)
                 }
