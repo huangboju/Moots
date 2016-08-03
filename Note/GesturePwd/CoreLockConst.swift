@@ -24,4 +24,4 @@ func rgba(r: CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) -> UIColor {
     return UIColor(red: r / 255, green: g / 255, blue: b / 255, alpha: a)
 }
 
-let PASSWORD_KEY = "password_key"
+let PASSWORD_KEY = "gesture_password_key"

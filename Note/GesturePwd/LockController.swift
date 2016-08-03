@@ -10,11 +10,10 @@ enum CoreLockType: Int {
 
 class LockController : UIViewController, BackBarButtonItemDelegate {
     
-    var options = LockOptions()
-    
     private var forget: controllerHandle?
     private var success: controllerHandle?
     private var overrunTimes: controllerHandle?
+    private let options = LockManager.sharedInstance.options
     
     private var errorTimes = 1
     private var message: String?
@@ -79,14 +78,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
     }
     
     func event() {
-//        lockView.setPasswordHandle = { [weak self] in
-//            self?.label.showNormal(self?.options.setPassword)
-//        }
-//        
-//        lockView.confirmPasswordHandle = { [weak self] in
-//            self?.label.showNormal(self?.options.confirmPassword)
-//        }
-        
         lockView.passwordTooShortHandle = { [unowned self] in
             self.label.showWarn("请连接至少\(self.options.passwordMinCount)个点")
         }
@@ -103,7 +94,7 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
         
         lockView.setSuccessHandle = { [weak self] (password) in
             self?.label.showNormal(self?.options.setSuccess)
-            CoreArchive.setStr(password, key: PASSWORD_KEY)
+            CoreArchive.setStr(password, key: PASSWORD_KEY + self!.options.passwordKeySuffix)
             self?.view.userInteractionEnabled = false
             if let success = self?.success {
                 success(self!)
@@ -121,8 +112,8 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
                 self.dismiss()
             } else {
                 if self.errorTimes < self.options.errorTimes {
-                    self.options.errorTimes -= 1
-                    self.label.showWarn("您还可以尝试\(self.options.errorTimes)次")
+                    self.label.showWarn("您还可以尝试\(self.options.errorTimes - self.errorTimes)次")
+                    self.errorTimes += 1
                 } else {
                     self.label.showWarn("错误次数已达上限")
                     if let overrunTimes = self.overrunTimes {
@@ -171,14 +162,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
         }
     }
     
-    class func hasPassword() -> Bool {
-        return CoreArchive.strFor(PASSWORD_KEY) != nil
-    }
-    
-    class func removePassword(key: String) {
-        CoreArchive.removeValueFor(PASSWORD_KEY + key)
-    }
-    
     ///展示设置密码控制器
     class func showSettingLockControllerIn(controller: UIViewController, success: controllerHandle) -> LockController {
         let lockVC = self.lockVC(controller)
@@ -208,12 +191,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
     
     class func lockVC(controller: UIViewController) -> LockController {
         let lockVC = LockController()
-//        if let nav = controller.navigationController {
-//            nav.pushViewController(lockVC, animated: true)
-//        } else {
-//            lockVC.controller = controller
-//            controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
-//        }
         lockVC.controller = controller
         controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
         return lockVC
