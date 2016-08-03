@@ -8,7 +8,7 @@ enum CoreLockType: Int {
     case Modify
 }
 
-class LockController : UIViewController {
+class LockController : UIViewController, BackBarButtonItemDelegate {
     
     var options = LockOptions()
     
@@ -242,6 +242,11 @@ class LockController : UIViewController {
     
     func getBarButton(title: String?) -> UIBarButtonItem {
         return UIBarButtonItem(title: title, style: .Plain, target: self, action: #selector(dismissAction))
+    }
+    
+    func viewControllerShouldPopOnBackBarButtonItem() -> Bool {
+        navigationController?.viewControllers.first?.dismissViewControllerAnimated(true, completion: nil)
+        return false
     }
 
     override func didReceiveMemoryWarning() {
