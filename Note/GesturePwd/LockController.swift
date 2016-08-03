@@ -12,11 +12,11 @@ class LockController : UIViewController {
     
     var options = LockOptions()
     
-    private var forget: handle?
+    private var forget: controllerHandle?
     private var success: controllerHandle?
     private var overrunTimes: controllerHandle?
     
-    private var errorTime = 1
+    private var errorTimes = 1
     private var message: String?
     private var modifyCurrentTitle: String?
     private var controller: UIViewController?
@@ -79,13 +79,13 @@ class LockController : UIViewController {
     }
     
     func event() {
-        lockView.setPasswordHandle = { [weak self] in
-            self?.label.showNormal(self?.options.setPassword)
-        }
-        
-        lockView.confirmPasswordHandle = { [weak self] in
-            self?.label.showNormal(self?.options.confirmPassword)
-        }
+//        lockView.setPasswordHandle = { [weak self] in
+//            self?.label.showNormal(self?.options.setPassword)
+//        }
+//        
+//        lockView.confirmPasswordHandle = { [weak self] in
+//            self?.label.showNormal(self?.options.confirmPassword)
+//        }
         
         lockView.passwordTooShortHandle = { [unowned self] in
             self.label.showWarn("请连接至少\(self.options.passwordMinCount)个点")
@@ -120,7 +120,15 @@ class LockController : UIViewController {
                 self.view.userInteractionEnabled = false
                 self.dismiss()
             } else {
-                self.label.showWarn(self.options.enterPasswordWrong)
+                if self.errorTimes < self.options.errorTimes {
+                    self.options.errorTimes -= 1
+                    self.label.showWarn("您还可以尝试\(self.options.errorTimes)次")
+                } else {
+                    self.label.showWarn("错误次数已达上限")
+                    if let overrunTimes = self.overrunTimes {
+                        overrunTimes(self)
+                    }
+                }
             }
         }
         
@@ -180,12 +188,13 @@ class LockController : UIViewController {
         return lockVC
     }
     
-    class func showVerifyLockControllerIn(controller: UIViewController, forget: handle, success: controllerHandle) -> LockController {
+    class func showVerifyLockControllerIn(controller: UIViewController, forget: controllerHandle, success: controllerHandle, overrunTimes: controllerHandle) -> LockController {
         let lockVC = self.lockVC(controller)
         lockVC.title = "手势解锁"
         lockVC.type = .Veryfy
         lockVC.success = success
         lockVC.forget = forget
+        lockVC.overrunTimes = overrunTimes
         return lockVC
     }
     
@@ -217,9 +226,8 @@ class LockController : UIViewController {
     }
     
     func forgetPwdAction() {
-        dismiss()
         if let forget = forget {
-            forget()
+            forget(self)
         }
     }
     
