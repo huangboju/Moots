@@ -12,15 +12,15 @@ class LockController : UIViewController {
     
     var options = LockOptions()
     
-    private var success: controllerHandle?
     private var forget: handle?
+    private var success: controllerHandle?
     private var overrunTimes: controllerHandle?
-    private var message: String?
-    private var controller: UIViewController?
-    private var modifyCurrentTitle: String?
-    private var key: String!
-    private var isDirectModify = false
+    
     private var errorTime = 1
+    private var message: String?
+    private var modifyCurrentTitle: String?
+    private var controller: UIViewController?
+    private var isDirectModify = false
     private var lockView: LockView! {
         didSet {
             if type != .Set {
