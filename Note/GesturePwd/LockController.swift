@@ -8,18 +8,17 @@ enum CoreLockType: Int {
     case Modify
 }
 
-class LockVC: UIViewController {
+class LockController : UIViewController {
     
     var options = LockOptions()
     
-    private var success: ((LockVC, String) -> Void)?
+    private var success: controllerHandle?
     private var forget: handle?
-//    private var overrunTimes: ((LockVC) -> Void)?
+    private var overrunTimes: controllerHandle?
     private var message: String?
     private var controller: UIViewController?
     private var modifyCurrentTitle: String?
     private var key: String!
-    private var rightBarButtonItem: UIBarButtonItem?
     private var isDirectModify = false
     private var errorTime = 1
     private var lockView: LockView! {
@@ -43,7 +42,7 @@ class LockVC: UIViewController {
     }()
     
     private lazy var resetItem: UIBarButtonItem = {
-        let resetItem = UIBarButtonItem(title: "重设", style: .Plain, target: self, action: #selector(passwordReset))
+        let resetItem = UIBarButtonItem(title: "重绘", style: .Plain, target: self, action: #selector(redraw))
         return resetItem
     }()
     
@@ -88,18 +87,18 @@ class LockVC: UIViewController {
             self?.label.showNormal(self?.options.confirmPassword)
         }
         
-        lockView.passwordTooShortHandle = { [unowned self] (count) in
-            self.label.showWarn("请连接至少\(count)个点")
+        lockView.passwordTooShortHandle = { [unowned self] in
+            self.label.showWarn("请连接至少\(self.options.passwordMinCount)个点")
         }
         
         lockView.passwordTwiceDifferentHandle = { [weak self] (pwd1, pwdNow) in
             self?.label.showWarn(self?.options.differentPassword)
-            self?.navigationItem.rightBarButtonItem = self?.resetItem
+            self?.resetItem.enabled = true
         }
         
         lockView.passwordFirstRightHandle = { [weak self] in
-            // 在这里是路径
-            self?.label.showNormal(self?.options.secondPassword)
+            // 在这里绘制infoView路径
+            self?.label.showNormal(self?.options.confirmPassword)
         }
         
         lockView.setSuccessHandle = { [weak self] (password) in
@@ -107,42 +106,39 @@ class LockVC: UIViewController {
             CoreArchive.setStr(password, key: PASSWORD_KEY)
             self?.view.userInteractionEnabled = false
             if let success = self?.success {
-                success(self!, password)
+                success(self!)
             }
-        }
-        
-        lockView.verifyPasswordHandle = { [weak self] in
-            self?.label.showNormal(self?.options.enterPassword)
         }
         
        
-        lockView.verifySuccessHandle = { [unowned self] (password) in
-            let pwdLocal = CoreArchive.strFor(PASSWORD_KEY)
-            let result = (pwdLocal == password)
-            
-            if result {
+        lockView.verifyHandle = { [unowned self] (flag) in
+            if flag {
                 self.label.showNormal(self.options.passwordCorrect)
-                if self.type == .Veryfy {
-                    if let success = self.success {
-                        success(self, password)
-                    }
-                    self.view.userInteractionEnabled = false
-                    self.dismiss()
-                } else if self.type == .Modify {
-                    let lockVC = LockVC()
-                    lockVC.isDirectModify = true
-                    lockVC.type = .Set
-                    self.navigationController?.pushViewController(lockVC, animated: true)
+                if let success = self.success {
+                    success(self)
                 }
+                self.view.userInteractionEnabled = false
+                self.dismiss()
             } else {
                 self.label.showWarn(self.options.enterPasswordWrong)
             }
-            return result
         }
         
-        lockView.modifyPasswordHandle = { [unowned self] in
-            self.label.showNormal(self.modifyCurrentTitle)
+        lockView.modifyHandle = { [unowned self] flag in
+            if flag {
+                self.label.showNormal(self.options.passwordCorrect)
+                let lockVC = LockController()
+                lockVC.isDirectModify = true
+                lockVC.type = .Set
+                self.navigationController?.pushViewController(lockVC, animated: true)
+            } else {
+                self.label.showWarn(self.options.enterPasswordWrong)
+            }
         }
+        
+//        lockView.modifyPasswordHandle = { [unowned self] in
+//            self.label.showNormal(self.modifyCurrentTitle)
+//        }
     }
     
     func dataTransfer() {
@@ -156,22 +152,15 @@ class LockVC: UIViewController {
         modifyCurrentTitle = options.enterOldPassword
         if type == .Modify {
             if isDirectModify { return }
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "关闭", style: .Plain, target: self, action: #selector(dismissAction))
+            navigationItem.leftBarButtonItem = getBarButton("关闭")
         } else if type == .Set {
             if isDirectModify {
                 return
             }
-            navigationItem.leftBarButtonItem = UIBarButtonItem(title: "取消", style: .Plain, target: self, action: #selector(dismissAction))
-            rightBarButtonItem = UIBarButtonItem(title: "重绘", style: .Plain, target: self, action: #selector(redraw))
-            rightBarButtonItem?.enabled = false
-            navigationItem.rightBarButtonItem = rightBarButtonItem
+            navigationItem.leftBarButtonItem = getBarButton("取消")
+            resetItem.enabled = false
+            navigationItem.rightBarButtonItem = resetItem
         }
-    }
-    
-    func passwordReset() {
-        label.showNormal(options.setPassword)
-        navigationItem.rightBarButtonItem = nil
-        lockView.resetPassword()
     }
     
     class func hasPassword() -> Bool {
@@ -183,7 +172,7 @@ class LockVC: UIViewController {
     }
     
     ///展示设置密码控制器
-    class func showSettingLockVCIn(controller: UIViewController, success: (LockVC, pwd: String) -> Void) -> LockVC {
+    class func showSettingLockControllerIn(controller: UIViewController, success: controllerHandle) -> LockController {
         let lockVC = self.lockVC(controller)
         lockVC.title = "设置密码"
         lockVC.type = .Set
@@ -191,7 +180,7 @@ class LockVC: UIViewController {
         return lockVC
     }
     
-    class func showVerifyLockVCIn(controller: UIViewController, forget: () -> Void, success: (LockVC, pwd: String) -> Void) -> LockVC {
+    class func showVerifyLockControllerIn(controller: UIViewController, forget: handle, success: controllerHandle) -> LockController {
         let lockVC = self.lockVC(controller)
         lockVC.title = "手势解锁"
         lockVC.type = .Veryfy
@@ -200,7 +189,7 @@ class LockVC: UIViewController {
         return lockVC
     }
     
-    class func showModifyLockVCIn(controller: UIViewController, success: (LockVC, pwd: String) -> Void) -> LockVC {
+    class func showModifyLockControllerIn(controller: UIViewController, success: controllerHandle) -> LockController {
         let lockVC = self.lockVC(controller)
         lockVC.title = "修改密码"
         lockVC.type = .Modify
@@ -208,8 +197,14 @@ class LockVC: UIViewController {
         return lockVC
     }
     
-    class func lockVC(controller: UIViewController) -> LockVC {
-        let lockVC = LockVC()
+    class func lockVC(controller: UIViewController) -> LockController {
+        let lockVC = LockController()
+//        if let nav = controller.navigationController {
+//            nav.pushViewController(lockVC, animated: true)
+//        } else {
+//            lockVC.controller = controller
+//            controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
+//        }
         lockVC.controller = controller
         controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
         return lockVC
@@ -232,9 +227,13 @@ class LockVC: UIViewController {
         dismiss()
     }
     
-    func redraw() {
-        rightBarButtonItem?.enabled = false
+    func redraw(sender: UIBarButtonItem) {
+        sender.enabled = false
         label.showNormal(options.confirmPassword)
+    }
+    
+    func getBarButton(title: String?) -> UIBarButtonItem {
+        return UIBarButtonItem(title: title, style: .Plain, target: self, action: #selector(dismissAction))
     }
 
     override func didReceiveMemoryWarning() {

@@ -6,21 +6,18 @@ class LockView: UIView {
     var type: CoreLockType?
     var setPasswordHandle: handle?
     var confirmPasswordHandle: handle?
-    var passwordTooShortHandle: ((Int) -> Void)?
+    var passwordTooShortHandle: handle?
     var passwordTwiceDifferentHandle: ((password1: String, passwordNow: String) -> Void)?
     var passwordFirstRightHandle: handle?
     var setSuccessHandle: strHandle?
     
-    var verifyPasswordHandle: handle?
-    var verifySuccessHandle: ((password: String) -> Bool)?
+    var verifyHandle: boolHandle?
     
-    var modifyPasswordHandle: handle?
-    var modifySuccessHandle: handle?
+    var modifyHandle: boolHandle?
     
     private var itemViews = [LockItemView]()
     private var passwordContainer = ""
     private var firstPassword = ""
-    private var modify_VeriryOldRight = false
     
     private var options: LockOptions!
     
@@ -103,7 +100,7 @@ class LockView: UIView {
             let count = itemViews.count
             if count < options.passwordMinCount {
                 if let passwordTooShortHandle = passwordTooShortHandle {
-                    passwordTooShortHandle(count)
+                    passwordTooShortHandle()
                 }
                 delay(0.4, handle: { 
                     self.resetItem()
@@ -114,16 +111,16 @@ class LockView: UIView {
             if type == .Set {
                 setPassword()
             } else if type == .Veryfy {
-                if let verifySuccessHandle = verifySuccessHandle {
-                    verifySuccessHandle(password: passwordContainer)
+                if let verifyHandle = verifyHandle {
+                    let pwdLocal = CoreArchive.strFor(PASSWORD_KEY)
+                    let result = (pwdLocal == passwordContainer)
+                    verifyHandle(result)
                 }
             } else if type == .Modify {
-                if !modify_VeriryOldRight {
-                    if let verifySuccessHandle = verifySuccessHandle {
-                        modify_VeriryOldRight = verifySuccessHandle(password: passwordContainer)
-                    }
-                } else {
-                    setPassword()
+                let pwdLocal = CoreArchive.strFor(PASSWORD_KEY)
+                let result = (pwdLocal == passwordContainer)
+                if let modifyHandle = modifyHandle {
+                    modifyHandle(result)
                 }
             }
         }
@@ -142,13 +139,13 @@ class LockView: UIView {
                 }
             }
         } else if type == .Veryfy {
-            if let verifyPasswordHandle = verifyPasswordHandle {
-                verifyPasswordHandle()
-            }
+//            if let verifyPasswordHandle = verifyPasswordHandle {
+//                verifyPasswordHandle()
+//            }
         } else if type == .Modify {
-            if let modifyPasswordHandle = modifyPasswordHandle {
-                modifyPasswordHandle()
-            }
+//            if let modifyPasswordHandle = modifyPasswordHandle {
+//                modifyPasswordHandle()
+//            }
         }
     }
     
@@ -163,7 +160,6 @@ class LockView: UIView {
                 if let passwordTwiceDifferentHandle = passwordTwiceDifferentHandle {
                     passwordTwiceDifferentHandle(password1: firstPassword, passwordNow: passwordContainer)
                 }
-                return
             } else {
                 if let setSuccessHandle = setSuccessHandle {
                     setSuccessHandle(firstPassword)

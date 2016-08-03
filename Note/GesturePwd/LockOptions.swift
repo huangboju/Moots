@@ -10,6 +10,9 @@ struct LockOptions {
     /// 选中圆大小的线宽
     var arcLineWidht: CGFloat = 1
     
+    /// 密码后缀
+    var passwordKeySuffix = ""
+    
     
     // MARK: - 设置密码
     
