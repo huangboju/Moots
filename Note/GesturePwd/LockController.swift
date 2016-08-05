@@ -134,10 +134,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
                 self.label.showWarn(self.options.enterPasswordWrong)
             }
         }
-        
-//        lockView.modifyPasswordHandle = { [unowned self] in
-//            self.label.showNormal(self.modifyCurrentTitle)
-//        }
     }
     
     func dataTransfer() {

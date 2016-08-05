@@ -2,6 +2,10 @@
 //  Copyright © 2016年 NY. All rights reserved.
 //
 
+// There are only two hard things in Computer Science: cache invalidation and naming things.
+
+// Don't Repeat Yourself
+
 // SO: http://stackoverflow.com/questions/1214965/setting-action-for-back-button-in-navigation-controller/19132881#comment34452906_19132881
 public protocol BackBarButtonItemDelegate {
     func viewControllerShouldPopOnBackBarButtonItem() -> Bool
