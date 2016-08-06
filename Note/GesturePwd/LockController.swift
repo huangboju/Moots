@@ -4,21 +4,22 @@
 
 enum CoreLockType: Int {
     case Set
-    case Veryfy
+    case Verify
     case Modify
 }
 
-class LockController : UIViewController, BackBarButtonItemDelegate {
+class LockController: UIViewController, BackBarButtonItemDelegate {
     
-    private var forget: controllerHandle?
-    private var success: controllerHandle?
-    private var overrunTimes: controllerHandle?
-    private let options = LockManager.sharedInstance.options
+    var forget: controllerHandle?
+    var success: controllerHandle?
+    var overrunTimes: controllerHandle?
+    var controller: UIViewController?
+    
+    private let options = LockCenter.sharedInstance.options
     
     private var errorTimes = 1
     private var message: String?
     private var modifyCurrentTitle: String?
-    private var controller: UIViewController?
     private var isDirectModify = false
     private var lockView: LockView! {
         didSet {
@@ -36,6 +37,19 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
             }
         }
     }
+    
+    var type: CoreLockType? {
+        didSet {
+            if type == .Set {
+                message = options.setPassword
+            } else if type == .Verify {
+                message = options.enterPassword
+            } else if type == .Modify {
+                message = options.enterOldPassword
+            }
+        }
+    }
+    
     private lazy var label: LockLabel = {
         return LockLabel(frame: CGRect(x: 0, y: TOP_MARGIN, width: self.view.frame.width, height: LABEL_HEIGHT), options: self.options)
     }()
@@ -44,18 +58,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
         let resetItem = UIBarButtonItem(title: "重绘", style: .Plain, target: self, action: #selector(redraw))
         return resetItem
     }()
-    
-    private var type: CoreLockType? {
-        didSet {
-            if type == .Set {
-                message = options.setPassword
-            } else if type == .Veryfy {
-                message = options.enterPassword
-            } else if type == .Modify {
-                message = options.enterOldPassword
-            }
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,40 +158,6 @@ class LockController : UIViewController, BackBarButtonItemDelegate {
             resetItem.enabled = false
             navigationItem.rightBarButtonItem = resetItem
         }
-    }
-    
-    ///展示设置密码控制器
-    class func showSettingLockControllerIn(controller: UIViewController, success: controllerHandle) -> LockController {
-        let lockVC = self.lockVC(controller)
-        lockVC.title = "设置密码"
-        lockVC.type = .Set
-        lockVC.success = success
-        return lockVC
-    }
-    
-    class func showVerifyLockControllerIn(controller: UIViewController, forget: controllerHandle, success: controllerHandle, overrunTimes: controllerHandle) -> LockController {
-        let lockVC = self.lockVC(controller)
-        lockVC.title = "手势解锁"
-        lockVC.type = .Veryfy
-        lockVC.success = success
-        lockVC.forget = forget
-        lockVC.overrunTimes = overrunTimes
-        return lockVC
-    }
-    
-    class func showModifyLockControllerIn(controller: UIViewController, success: controllerHandle) -> LockController {
-        let lockVC = self.lockVC(controller)
-        lockVC.title = "修改密码"
-        lockVC.type = .Modify
-        lockVC.success = success
-        return lockVC
-    }
-    
-    class func lockVC(controller: UIViewController) -> LockController {
-        let lockVC = LockController()
-        lockVC.controller = controller
-        controller.presentViewController(LockNavVC(rootViewController: lockVC), animated: true, completion: nil)
-        return lockVC
     }
     
     func dismiss(interval: NSTimeInterval = 0, conmpletion: (() -> Void)? = nil) {

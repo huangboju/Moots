@@ -110,7 +110,7 @@ class LockView: UIView {
             
             if type == .Set {
                 setPassword()
-            } else if type == .Veryfy {
+            } else if type == .Verify {
                 if let verifyHandle = verifyHandle {
                     let pwdLocal = CoreArchive.strFor(PASSWORD_KEY + options.passwordKeySuffix)
                     let result = (pwdLocal == passwordContainer)
@@ -138,7 +138,7 @@ class LockView: UIView {
                     confirmPasswordHandle()
                 }
             }
-        } else if type == .Veryfy {
+        } else if type == .Verify {
 //            if let verifyPasswordHandle = verifyPasswordHandle {
 //                verifyPasswordHandle()
 //            }

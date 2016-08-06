@@ -2,7 +2,7 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-struct LockOptions {
+struct LockOptions: LockDataSource {
     
     /// 选中圆大小比例
     var scale: CGFloat = 0.3
@@ -17,6 +17,8 @@ struct LockOptions {
     // MARK: - 设置密码
     
     /// 最低设置密码数目
+    var settingTittle = "设置密码"
+    
     var passwordMinCount = 4
     
     /// 密码错误次数
@@ -39,6 +41,8 @@ struct LockOptions {
     
     // MARK: - 验证密码
     
+    var verifyTittle = "验证密码"
+    
     /// 验证密码：普通提示文字
     var enterPassword = "请滑动输入密码"
     
@@ -51,6 +55,8 @@ struct LockOptions {
     
     
     //MARK: - 修改密码
+    
+    var modifyTittle = "修改密码"
     
     /// 修改密码：普通提示文字
     var enterOldPassword = "请输入旧密码"
@@ -78,4 +84,10 @@ struct LockOptions {
     
     /// 普通文字颜色
     var normalTitleColor = rgba(192, g: 192, b: 192, a: 1)
+}
+
+extension LockOptions: LockDelegate {
+    var barTittleColor: UIColor {
+        return UIColor.blackColor()
+    }
 }
