@@ -1,0 +1,6 @@
+framework module PermissionScope {
+  umbrella header "PermissionScope-umbrella.h"
+
+  export *
+  module * { export * }
+}

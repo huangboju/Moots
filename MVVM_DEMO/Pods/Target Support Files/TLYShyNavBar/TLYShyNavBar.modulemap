@@ -1,0 +1,6 @@
+framework module TLYShyNavBar {
+  umbrella header "TLYShyNavBar-umbrella.h"
+
+  export *
+  module * { export * }
+}
