@@ -3,6 +3,12 @@ everything is the best arrangement
 
 ## 1、常用代码
 
+#### 导航栏标题设置
+```swift
+// tabBarItem的title与导航栏title不一致
+navigationItem.title = "示例"
+```
+
 #### tableView分割线左边到头
 ```swift
 //写在viewDidLoad
@@ -149,6 +155,8 @@ extension UIButton {
 >AnyObject可以代表任何class类型的实例
 
 >Any可以表示任何类型。除了方法类型（function types）
+
+>对于生命周期中会变为nil的实例使用弱引用。相反地，对于初始化赋值后再也不会被赋值为nil的实例，使用无主引用。
 
 ## 3、常用配置
 
