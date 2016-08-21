@@ -5,8 +5,9 @@ everything is the best arrangement
 
 #### 导航栏标题设置
 ```swift
-// tabBarItem的title与导航栏title不一致
+// 需要tabBarItem的title与导航栏title不一致,如下设置navigationbar的titile
 navigationItem.title = "示例"
+注意: 直接 title = "示例" 在tabbar切换时tabBarItem的title会变成设置
 ```
 
 #### tableView分割线左边到头
@@ -184,3 +185,10 @@ open /Library/Developer/CoreSimulator/Profiles/Runtimes
 ```
 open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
 ```
+
+## 4、错误处理
+> The certificate used to sign "XXX" has either expired or has been revoked
+解决方法
+
+## 5、其他
+#### [markdown语法](http://www.jianshu.com/p/f3fd881548ad)
