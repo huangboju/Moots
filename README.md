@@ -150,6 +150,11 @@ extension UIButton {
 
 >cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = [UIColor grayColor];一般情况下，两种方式效果一样。但是在多选编辑状态，直接设置cell的背景色可以保证左侧多选框部分的背景色与cell背景色一致，而设置contentView背景色，左侧多选框的背景色会是UITableView的背景色或UITableView父视图背景色，如果需要保证颜色一致，必须设置cell的背景色而不是cell.contentView的。
 
+##### 优化
+>[UIKit性能调优实战讲解](http://www.jianshu.com/p/619cf14640f3)
+
+>[UITableView](http://www.cocoachina.com/ios/20160115/15001.html)
+
 ##### 杂
 > Self 表示引用当前实例的类型
 
