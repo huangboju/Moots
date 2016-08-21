@@ -188,7 +188,8 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 
 ## 4、错误处理
 > The certificate used to sign "XXX" has either expired or has been revoked
-解决方法
+>[解决方法](http://www.cnblogs.com/zzugyl/p/5555695.html)
+> [然后](http://stackoverflow.com/questions/32730312/reason-no-suitable-image-found/32730393#32730393)
 
 ## 5、其他
 #### [markdown语法](http://www.jianshu.com/p/f3fd881548ad)
