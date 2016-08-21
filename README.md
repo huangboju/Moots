@@ -192,3 +192,5 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 
 ## 5、其他
 #### [markdown语法](http://www.jianshu.com/p/f3fd881548ad)
+#### [public podspec](http://www.jianshu.com/p/98407f0c175b)
+#### [private podspec](http://www.cocoachina.com/ios/20150228/11206.html)
