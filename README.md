@@ -204,3 +204,20 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 #### [public podspec](http://www.jianshu.com/p/98407f0c175b)
 #### [private podspec](http://www.cocoachina.com/ios/20150228/11206.html)
 #### [podfile 锁定版本](http://blog.csdn.net/openglnewbee/article/details/25032843)
+
+# UI
+|             库名             |             描述             |           语言             |
+|:---------------------------:|:---------------------------:|:---------------------------:|
+|      [FontAwesomeKit][]     |           各种icon           |            OC              |
+|       [GSMessages][]        | navigationbar下面出来的提示框  |           Swift             |
+|       [MobilePlayer][]      |            播放器            |           Swift             |
+
+
+# 数据库
+|             库名             |             描述             |           语言             |
+|       [SQLite.swift][]      |            数据库            |           Swift             |
+
+[FontAwesomeKit]: https://github.com/PrideChung/FontAwesomeKit
+[GSMessages]: https://github.com/wxxsw/GSMessages
+[MobilePlayer]: https://github.com/mobileplayer/mobileplayer-ios
+[SQLite.swift]: https://github.com/stars
