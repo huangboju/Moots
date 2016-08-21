@@ -123,7 +123,10 @@ extension UIButton {
 }
 ```
 
-### 笔记
+### 2、笔记
+> Self 表示引用当前实例的类型
+
+### 3、常用配置
 
 #### cocoapods
 ```ruby
