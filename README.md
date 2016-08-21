@@ -1,7 +1,7 @@
 # Moots
 everything is the best arrangement
 
-### 1、常用代码
+## 1、常用代码
 
 #### tableView分割线左边到头
 ```swift
@@ -123,14 +123,14 @@ extension UIButton {
 }
 ```
 
-### 2、笔记
+## 2、笔记
 > Self 表示引用当前实例的类型
 
 >AnyObject可以代表任何class类型的实例
 
 >Any可以表示任何类型。除了方法类型（function types）
 
-### 3、常用配置
+## 3、常用配置
 
 #### cocoapods
 ```ruby
