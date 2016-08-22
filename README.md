@@ -215,6 +215,7 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 
 # 数据库
 |             库名             |             描述             |           语言             |
+|:---------------------------:|:---------------------------:|:---------------------------:|
 |       [SQLite.swift][]      |            数据库            |           Swift             |
 
 [FontAwesomeKit]: https://github.com/PrideChung/FontAwesomeKit
