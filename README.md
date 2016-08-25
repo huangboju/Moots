@@ -10,6 +10,12 @@ navigationItem.title = "示例"
 注意: 直接 title = "示例" 在tabbar切换时tabBarItem的title会变成设置
 ```
 
+#### 导航栏标返回图片
+```swift
+navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
+navigationBar.backIndicatorImage = R.image.ic_nav_back()
+```
+
 #### tableView分割线左边到头
 ```swift
 //写在viewDidLoad
