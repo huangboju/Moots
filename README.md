@@ -10,6 +10,37 @@ navigationItem.title = "示例"
 注意: 直接 title = "示例" 在tabbar切换时tabBarItem的title会变成设置
 ```
 
+#### tabbar隐藏动画
+```
+func setTabBarVisible(visible: Bool, animated: Bool) {
+
+//* This cannot be called before viewDidLayoutSubviews(), because the frame is not set before this time
+
+// bail if the current state matches the desired state
+if tabBarIsVisible == visible { return }
+
+// get a frame calculation ready
+let frame = tabBarController?.tabBar.frame
+let height = frame?.size.height
+let offsetY = (visible ? -height! : height)
+
+// zero duration means no animation
+let duration: NSTimeInterval = (animated ? 0.3 : 0.0)
+
+//  animate the tabBar
+if let rect = frame {
+UIView.animateWithDuration(duration) {
+self.tabBarController?.tabBar.frame = CGRectOffset(rect, 0, offsetY!)
+return
+}
+}
+}
+
+var tabBarIsVisible: Bool {
+return tabBarController?.tabBar.frame.minY < view.frame.maxY
+}
+```
+
 #### 导航栏标返回图片
 ```swift
 navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
