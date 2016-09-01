@@ -47,7 +47,7 @@ navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
 navigationBar.backIndicatorImage = R.image.ic_nav_back()
 ```
 
-#### tableView分割线左边到头
+#### tableView分割线左边到头(_UITableViewCellSeparatorView)
 ```swift
 //写在viewDidLoad
 if tableView.respondsToSelector(Selector("setSeparatorInset:")) {
