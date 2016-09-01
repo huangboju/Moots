@@ -64,6 +64,13 @@ if cell.respondsToSelector(Selector("setSeparatorInset:")) {
 if cell.respondsToSelector(Selector("setLayoutMargins:")) {
     cell.layoutMargins = UIEdgeInsetsZero
 }
+
+override func layoutSubviews() {
+super.layoutSubviews()
+separatorInset = UIEdgeInsetsZero
+preservesSuperviewLayoutMargins = false
+layoutMargins = UIEdgeInsetsZero
+}
 ```
 
 #### 虚线
