@@ -393,6 +393,7 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 #### [podfile 锁定版本](http://blog.csdn.net/openglnewbee/article/details/25032843)
 #### [Swift runtime](http://www.infoq.com/cn/articles/dynamic-analysis-of-runtime-swift)
 #### [Xcode快捷键](http://www.cocoachina.com/ios/20160708/16989.html)
+#### [理解UIView的绘制](http://vizlabxt.github.io/blog/2012/10/22/UIView-Rendering/)
 
 # UI
 |             库名             |             描述             |           语言             |
