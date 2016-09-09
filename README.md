@@ -3,6 +3,31 @@ everything is the best arrangement
 
 ## 1、常用代码
 
+#### 单行代码
+```swift
+let arr = (1...1024).map{ $0 * 2 }
+
+
+let n = (1...1024).reduce(0,combine: +)
+
+
+let words = ["Swift","iOS","cocoa","OSX","tvOS"]
+let tweet = "This is an example tweet larking about Swift"
+let valid = !words.filter({ tweet.containsString($0) }).isEmpty
+valid //true
+let valid2 = words.contains(tweet.containsString)
+valid2 //true
+
+
+var n = 102
+var primes = Set(2...n)
+var sameprimes = Set(2...n)
+let aa = sameprimes.subtract(Set(2...Int(sqrt(Double(n))))
+    .flatMap{(2 * $0).stride(through: n, by:$0)})
+let bb = aa.sort()
+// bb [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+```
+
 #### 导航栏标题设置
 ```swift
 // 需要tabBarItem的title与导航栏title不一致,如下设置navigationbar的titile
@@ -124,7 +149,7 @@ extension UIImage {
             UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners,
                 cornerRadii: CGSize(width: radius, height: radius)).CGPath)
         CGContextClip(UIGraphicsGetCurrentContext())
-        
+
         self.drawInRect(rect)
         CGContextDrawPath(UIGraphicsGetCurrentContext(), .FillStroke)
         let output = UIGraphicsGetImageFromCurrentImageContext()
