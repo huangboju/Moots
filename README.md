@@ -19,12 +19,6 @@ let valid2 = words.contains(tweet.containsString)
 valid2 //true
 
 
-var part3 = [82, 58, 76, 49, 88, 90].reduce( ([],[]), combine: {
-   (a:([Int],[Int]),n:Int) -> ([Int],[Int]) in
-   (n<60) ? (a.0+[n],a.1) : (a.0,a.1+[n])
-})
-
-
 var n = 102
 var primes = Set(2...n)
 var sameprimes = Set(2...n)
@@ -32,6 +26,7 @@ let aa = sameprimes.subtract(Set(2...Int(sqrt(Double(n))))
     .flatMap{(2 * $0).stride(through: n, by:$0)})
 let bb = aa.sort()
 // bb [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
+
 
 let arr = [82, 58, 76, 49, 88, 90]
 let retulst = data.reduce(([], [])) {
