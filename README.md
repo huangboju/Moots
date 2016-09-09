@@ -19,6 +19,7 @@ let valid2 = words.contains(tweet.containsString)
 valid2 //true
 
 
+// 埃拉托斯特尼筛法
 var n = 102
 var primes = Set(2...n)
 var sameprimes = Set(2...n)
