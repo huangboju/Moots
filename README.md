@@ -36,6 +36,83 @@ let retulst = data.reduce(([], [])) {
 // retulst ([58, 49], [82, 76, 88, 90])
 ```
 
+#### [GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)
+```swift
+extension Array {
+    public func pmap(transform: (Element -> Element)) -> [Element] {
+        guard !self.isEmpty else {
+            return []
+        }
+
+        var result: [(Int, [Element])] = []
+
+        let group = dispatch_group_create()
+        let lock = dispatch_queue_create("pmap queue for result", DISPATCH_QUEUE_SERIAL)
+
+        let step: Int = max(1, self.count / NSProcessInfo.processInfo().activeProcessorCount) // step can never be 0
+
+        for var stepIndex = 0; stepIndex * step < self.count; stepIndex += 1 {
+            let capturedStepIndex = stepIndex
+
+            var stepResult: [Element] = []
+            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                for i in (capturedStepIndex * step)..<((capturedStepIndex + 1) * step) {
+                    if i < self.count {
+                        let mappedElement = transform(self[i])
+                        stepResult += [mappedElement]
+                    }
+                }
+
+                dispatch_group_async(group, lock) {
+                    result += [(capturedStepIndex, stepResult)]
+                }
+            }
+        }
+
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER)
+
+        return result.sort { $0.0 < $1.0 }.flatMap { $0.1 }
+    }
+}
+
+extension Array {
+    public func pfilter(includeElement: Element -> Bool) -> [Element] {
+        guard !self.isEmpty else {
+            return []
+        }
+
+        var result: [(Int, [Element])] = []
+
+        let group = dispatch_group_create()
+        let lock = dispatch_queue_create("pmap queue for result", DISPATCH_QUEUE_SERIAL)
+
+        let step: Int = max(1, self.count / NSProcessInfo.processInfo().activeProcessorCount) // step can never be 0
+
+        for var stepIndex = 0; stepIndex * step < self.count; stepIndex += 1 {
+            let capturedStepIndex = stepIndex
+
+            var stepResult: [Element] = []
+            dispatch_group_async(group, dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
+                for i in (capturedStepIndex * step)..<((capturedStepIndex + 1) * step) {
+                    if i < self.count && includeElement(self[i]) {
+                        stepResult += [self[i]]
+                    }
+                }
+
+                dispatch_group_async(group, lock) {
+                    result += [(capturedStepIndex, stepResult)]
+                }
+            }
+        }
+
+        dispatch_group_wait(group, DISPATCH_TIME_FOREVER)
+
+        return result.sort { $0.0 < $1.0 }.flatMap { $0.1 }
+    }
+}
+```
+
+
 #### 导航栏标题设置
 ```swift
 // 需要tabBarItem的title与导航栏title不一致,如下设置navigationbar的titile
