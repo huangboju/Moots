@@ -372,6 +372,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 #### 删除多余模拟器
 ```
 open /Library/Developer/CoreSimulator/Profiles/Runtimes
+open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
 ```
 
 #### 修改swift文件
