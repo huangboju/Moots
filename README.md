@@ -288,6 +288,14 @@ func setStatusBarBackgroundColor(color: UIColor) {
     }
     statusBar.backgroundColor = color
 }
+swift3.0
+    func setStatusBarBackgroundColor(color: UIColor) {
+        let statusBarWindow = UIApplication.shared.value(forKey: "statusBarWindow") as? UIView
+        guard  let statusBar = statusBarWindow?.value(forKey: "statusBar") as? UIView else {
+            return
+        }
+        statusBar.backgroundColor = color
+    }
 ```
 
 #### 裁剪图片
