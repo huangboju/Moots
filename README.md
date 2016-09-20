@@ -3,6 +3,22 @@ everything is the best arrangement
 
 ## 1、常用代码
 
+#### 匹配模式
+```swift
+let age = 19
+if 18...25 ~= age {
+print("条件满足")
+}
+同
+if age >= 18 && age <= 25 {
+print("条件满足")
+}
+同
+if case 18...25 = age {
+    print("条件满足")
+}
+```
+
 #### 单行代码
 ```swift
 let arr = (1...1024).map{ $0 * 2 }
@@ -396,6 +412,7 @@ open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Te
 #### [Xcode快捷键](http://www.cocoachina.com/ios/20160708/16989.html)
 #### [理解UIView的绘制](http://vizlabxt.github.io/blog/2012/10/22/UIView-Rendering/)
 #### [切换淘宝源](https://ruby.taobao.org/)
+
 
 # UI
 |             库名             |             描述             |           语言             |
