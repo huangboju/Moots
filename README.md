@@ -402,6 +402,8 @@ open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
 #### 修改swift文件
 ```
 open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
+
+open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/Cocoa\ Touch\ Class.xctemplate/UIViewControllerSwift
 ```
 
 ## 4、错误处理
