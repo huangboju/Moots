@@ -14,6 +14,9 @@
 		D81712391D93726F0034B351 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81712371D93726F0034B351 /* LaunchScreen.storyboard */; };
 		D81712441D93726F0034B351 /* LoadLargeImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81712431D93726F0034B351 /* LoadLargeImageTests.swift */; };
 		D817124F1D93726F0034B351 /* LoadLargeImageUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D817124E1D93726F0034B351 /* LoadLargeImageUITests.swift */; };
+		D81712601D9377830034B351 /* large_leaves_70mp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D817125F1D9377830034B351 /* large_leaves_70mp.jpg */; };
+		D81712621D93882F0034B351 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81712611D93882F0034B351 /* ImageScrollView.swift */; };
+		D81712641D9388570034B351 /* TiledImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81712631D9388570034B351 /* TiledImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		D817124A1D93726F0034B351 /* LoadLargeImageUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LoadLargeImageUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D817124E1D93726F0034B351 /* LoadLargeImageUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadLargeImageUITests.swift; sourceTree = "<group>"; };
 		D81712501D93726F0034B351 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D817125E1D9376C20034B351 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		D817125F1D9377830034B351 /* large_leaves_70mp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = large_leaves_70mp.jpg; sourceTree = "<group>"; };
+		D81712611D93882F0034B351 /* ImageScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		D81712631D9388570034B351 /* TiledImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TiledImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +104,16 @@
 		D817122D1D93726F0034B351 /* LoadLargeImage */ = {
 			isa = PBXGroup;
 			children = (
+				D817125F1D9377830034B351 /* large_leaves_70mp.jpg */,
 				D817122E1D93726F0034B351 /* AppDelegate.swift */,
 				D81712301D93726F0034B351 /* ViewController.swift */,
 				D81712321D93726F0034B351 /* Main.storyboard */,
 				D81712351D93726F0034B351 /* Assets.xcassets */,
 				D81712371D93726F0034B351 /* LaunchScreen.storyboard */,
 				D817123A1D93726F0034B351 /* Info.plist */,
+				D817125E1D9376C20034B351 /* Bridging.h */,
+				D81712611D93882F0034B351 /* ImageScrollView.swift */,
+				D81712631D9388570034B351 /* TiledImageView.swift */,
 			);
 			path = LoadLargeImage;
 			sourceTree = "<group>";
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81712391D93726F0034B351 /* LaunchScreen.storyboard in Resources */,
+				D81712601D9377830034B351 /* large_leaves_70mp.jpg in Resources */,
 				D81712361D93726F0034B351 /* Assets.xcassets in Resources */,
 				D81712341D93726F0034B351 /* Main.storyboard in Resources */,
 			);
@@ -259,8 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D81712621D93882F0034B351 /* ImageScrollView.swift in Sources */,
 				D81712311D93726F0034B351 /* ViewController.swift in Sources */,
 				D817122F1D93726F0034B351 /* AppDelegate.swift in Sources */,
+				D81712641D9388570034B351 /* TiledImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -415,6 +429,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LoadLargeImage.LoadLargeImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = LoadLargeImage/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -428,6 +443,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LoadLargeImage.LoadLargeImage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = LoadLargeImage/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
