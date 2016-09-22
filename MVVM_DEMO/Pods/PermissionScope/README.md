@@ -4,7 +4,7 @@
 
 <p align="center">
     <img src="https://img.shields.io/badge/platform-iOS%208%2B-blue.svg?style=flat" alt="Platform: iOS 8+" />
-    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift2-f48041.svg?style=flat" alt="Language: Swift 2" /></a>
+    <a href="https://developer.apple.com/swift"><img src="https://img.shields.io/badge/language-swift3-f48041.svg?style=flat" alt="Language: Swift 3" /></a>
     <a href="https://github.com/Carthage/Carthage"><img src="https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat" alt="Carthage compatible" /></a>
     <a href="https://cocoapods.org/pods/PermissionScope"><img src="https://cocoapod-badges.herokuapp.com/v/PermissionScope/badge.png" alt="Cocoapods compatible" /></a>
     <img src="https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat" alt="License: MIT" />
@@ -33,9 +33,9 @@ Best of all, PermissionScope detects when your app's permissions have been denie
 
 ## compatibility
 
-PermissionScope requires iOS 8+, compatible with both **Swift 2** and **Objective-C** based projects
+PermissionScope requires iOS 8+, compatible with both **Swift 3** and **Objective-C** based projects
 
-For Swift 1.2 support, please use the swift12 branch. This branch has the basics but is not being maintained.
+For Swift 2.x support, please use the swift2 branch or the 1.0.2 release version. This branch was up-to-date on 9/6/16 but is not being maintained. All future efforts will go towards Swift 3 development.
 
 ## installation
 
@@ -202,17 +202,6 @@ However, enabling `background-modes` in the capabilities section and checking th
 
 Enable `HealthKit` in your target's capabilities, **required**.
 
-## projects using PermissionScope
-
-Feel free to add your project in a PR if you're using PermissionScope:
-
-<img src="http://raquo.net/images/icon-round-80.png" width="40" height="40" /><br />
-<a href="https://treathq.com">treat</a><br /><br />
-<img src="http://lootapp.io/assets/img/loot-app-icon.png" width="40" height="40" /><br />
-<a href="https://loot.io">Loot</a><br /><br />
-<img src="http://a4.mzstatic.com/us/r30/Purple4/v4/7b/d5/32/7bd532c6-1d81-2c90-5132-62f920cd0a15/icon175x175.png" width="40" height="40" /><br />
-<a href="https://www.umwho.com">umwho</a><br /><br />
-
 ## known bugs
 
 * Link "**Show me**" does not work on denied a permission ([#61](https://github.com/nickoneill/PermissionScope/issues/#61))
@@ -221,7 +210,7 @@ Solution: Run your app without the debugger.
 
 * When using **Carthage**, the following error occurs: *Module file was created by an older version of the compiler*.
 
-Solution: Use `carthage bootstrap --no-use-binaries` instead.
+Solution: Use the `--no-use-binaries` flag (e.g:  `carthage update --no-use-binaries`).
 
 ## license
 

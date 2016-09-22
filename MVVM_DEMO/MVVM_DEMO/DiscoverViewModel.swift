@@ -10,18 +10,18 @@ struct DiscoverViewModel: DiscoverCellDataSource {
 }
 
 extension DiscoverViewModel: DiscoverCellDelegate {
-    func didSelected(sender: UIButton) {
-        sender.selected = !sender.selected
-        if sender.selected {
-            sender.backgroundColor = .blueColor()
+    func didSelected(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        if sender.isSelected {
+            sender.backgroundColor = .blue
         } else {
-            sender.backgroundColor = .redColor()
+            sender.backgroundColor = .red
         }
     }
     
     
     
     var selectedColor: UIColor {
-        return .redColor()
+        return .red
     }
 }

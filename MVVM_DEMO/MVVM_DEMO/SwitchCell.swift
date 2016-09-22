@@ -14,7 +14,7 @@ protocol SwitchCellDatasorce {
 }
 
 protocol SwitchCellDelegate {
-    func onSwitchTogleOn(on: Bool)
+    func onSwitchTogleOn(_ on: Bool)
     
     var switchColor: UIColor { get }
     var textColor: UIColor { get }
@@ -24,15 +24,15 @@ protocol SwitchCellDelegate {
 extension SwitchCellDelegate {
     
     var switchColor: UIColor {
-        return .purpleColor()
+        return .purple
     }
     
     var textColor: UIColor {
-        return .blackColor()
+        return .black
     }
     
     var font: UIFont {
-        return .systemFontOfSize(17)
+        return .systemFont(ofSize: 17)
     }
 }
 
@@ -41,8 +41,8 @@ class SwitchCell: UITableViewCell {
     var label: UILabel!
     var switchToggle: UISwitch!
     
-    private var dataSource: SwitchCellDatasorce?
-    private var delegate: SwitchCellDelegate?
+    fileprivate var dataSource: SwitchCellDatasorce?
+    fileprivate var delegate: SwitchCellDelegate?
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -50,7 +50,7 @@ class SwitchCell: UITableViewCell {
         contentView.addSubview(label)
         
         switchToggle = UISwitch(frame: CGRect(x: frame.width - 100, y: 10, width: 0, height: 0))
-        switchToggle.addTarget(self, action: #selector(onSwitchToggle), forControlEvents: .ValueChanged)
+        switchToggle.addTarget(self, action: #selector(onSwitchToggle), for: .valueChanged)
         contentView.addSubview(switchToggle)
     }
     
@@ -59,13 +59,13 @@ class SwitchCell: UITableViewCell {
         self.delegate = delegate
         
         label.text = dataSource.title
-        switchToggle.on = dataSource.switchOn
+        switchToggle.isOn = dataSource.switchOn
         // color option added!
         switchToggle.onTintColor = delegate?.switchColor
     }
     
-    func onSwitchToggle(sender: UISwitch) {
-        delegate?.onSwitchTogleOn(sender.on)
+    func onSwitchToggle(_ sender: UISwitch) {
+        delegate?.onSwitchTogleOn(sender.isOn)
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -19,40 +19,40 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .WhiteLarge)
-        activity.setValue(UIColor.redColor(), forKey: "color")
+        let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activity.setValue(UIColor.red, forKey: "color")
         activity.setValue(50, forKey: "width")
         self.view.addSubview(activity)
         
-        activity.center = CGPointMake(self.view.center.x, self.view.center.y)
+        activity.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
         
         activity.startAnimating()
         
     }
 
-    private func loadUI() {
+    fileprivate func loadUI() {
         
         self.title = "UIKit"
         
         
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        let detailVC = storyboard?.instantiateViewControllerWithIdentifier("detailvc") as? DetailViewController
-        detailVC?.className = classArray[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "detailvc") as? DetailViewController
+        detailVC?.className = classArray[(indexPath as NSIndexPath).row]
         navigationController?.pushViewController(detailVC!, animated: true)
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell0", forIndexPath: indexPath)
-        cell.textLabel?.text = classArray[indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
+        cell.textLabel?.text = classArray[(indexPath as NSIndexPath).row]
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
     }
     

@@ -11,7 +11,7 @@ struct Model: SwitchCellDatasorce {
 
 extension Model: SwitchCellDelegate {
     
-    func onSwitchTogleOn(on: Bool) {
+    func onSwitchTogleOn(_ on: Bool) {
         if on {
             print("The Minions are here to stay!")
         } else {

@@ -10,7 +10,7 @@ protocol DiscoverCellDataSource {
 }
 
 protocol DiscoverCellDelegate {
-    func didSelected(sender: UIButton)
+    func didSelected(_ sender: UIButton)
     var selectedColor: UIColor { get }
 }
 
@@ -24,7 +24,7 @@ class DiscoverCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         likeButton = UIButton(frame: CGRect(x: frame.width - 60 - 15, y: (frame.height - 30) / 2, width: 60, height: 30))
-        likeButton.addTarget(self, action: #selector(selectedItem), forControlEvents: .TouchUpInside)
+        likeButton.addTarget(self, action: #selector(selectedItem), for: .touchUpInside)
         contentView.addSubview(likeButton)
     }
     
@@ -32,13 +32,13 @@ class DiscoverCell: UITableViewCell {
         self.dataSource = dataSource
         self.delegate = delegate
         
-        textLabel?.backgroundColor = .clearColor()
+        textLabel?.backgroundColor = .clear
         textLabel?.text = dataSource.title
-        likeButton.selected = dataSource.selected
+        likeButton.isSelected = dataSource.selected
         likeButton.backgroundColor = delegate.selectedColor
     }
     
-    func selectedItem(sender: UIButton) {
+    func selectedItem(_ sender: UIButton) {
         delegate?.didSelected(sender)
     }
     

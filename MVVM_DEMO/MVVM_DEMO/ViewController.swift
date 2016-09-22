@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         view.addSubview(button)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Camera, target: self, action: #selector(cameraAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(cameraAction))
         camera.viewControllerForAlerts = self
         navigationController?.navigationBar.backIndicatorImage = UIImage(named: "ic_action_back")
         navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named: "ic_action_back")
@@ -25,25 +25,25 @@ class ViewController: UIViewController {
     
     func cameraAction() {
         switch camera.statusCamera() {
-        case .Authorized:
-            let alert = UIAlertController(title: "", message: "相机已开", preferredStyle: .Alert)
-            let action = UIAlertAction(title: "好", style: .Cancel, handler: nil)
+        case .authorized:
+            let alert = UIAlertController(title: "", message: "相机已开", preferredStyle: .alert)
+            let action = UIAlertAction(title: "好", style: .cancel, handler: nil)
             alert.addAction(action)
-            presentViewController(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         default:
             camera.requestCamera()
         }
         
     }
     
-    private lazy var button: UIButton = {
-        let button = UIButton(frame: CGRectInset(self.view.frame, 100, 250))
-        button.addTarget(self, action: #selector(action), forControlEvents: .TouchUpInside)
-        button.backgroundColor = .blueColor()
+    fileprivate lazy var button: UIButton = {
+        let button = UIButton(frame: self.view.frame.insetBy(dx: 100, dy: 250))
+        button.addTarget(self, action: #selector(action), for: .touchUpInside)
+        button.backgroundColor = .blue
         return button
     }()
     
-    func action(sender: UIButton) {
+    func action(_ sender: UIButton) {
         navigationController?.pushViewController(TableView(), animated: true)
     }
 

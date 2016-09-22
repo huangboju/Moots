@@ -1,24 +1,34 @@
 PODS:
-  - Alamofire (3.4.0)
-  - AlamofireObjectMapper (3.0.0):
-    - Alamofire (~> 3.2)
-    - ObjectMapper (~> 1.0)
-  - ObjectMapper (1.3.0)
-  - PermissionScope (1.0.2)
+  - Alamofire (4.0.0)
+  - AlamofireObjectMapper (4.0.0):
+    - Alamofire (~> 4.0)
+    - ObjectMapper (~> 2.0)
+  - ObjectMapper (2.0.0)
+  - PermissionScope (1.0.3)
   - TLYShyNavBar (1.1.0)
 
 DEPENDENCIES:
   - AlamofireObjectMapper
-  - PermissionScope
+  - PermissionScope (from `https://github.com/nickoneill/PermissionScope.git`, branch `swift3`)
   - TLYShyNavBar
 
+EXTERNAL SOURCES:
+  PermissionScope:
+    :branch: swift3
+    :git: https://github.com/nickoneill/PermissionScope.git
+
+CHECKOUT OPTIONS:
+  PermissionScope:
+    :commit: 10367783829706a54aad0e5c7d6f876564c68cfe
+    :git: https://github.com/nickoneill/PermissionScope.git
+
 SPEC CHECKSUMS:
-  Alamofire: c19a627cefd6a95f840401c49ab1f124e07f54ee
-  AlamofireObjectMapper: 2d16585d06177be0116d76de73497e77437798af
-  ObjectMapper: 4eb08a726e9791a93b2632049951b56a7c17e471
-  PermissionScope: 860828c5516d349b6f49e5491799cfef33c5ccc7
+  Alamofire: fef59f00388f267e52d9b432aa5d93dc97190f14
+  AlamofireObjectMapper: 9faa3ce5a240efda1b209009a2d6e1e949227abc
+  ObjectMapper: aed2570edabbd3c9b26c939e1cabdb6558f933e0
+  PermissionScope: 3ee3e8a4a962b7621400c136a63ae1e16ecf1718
   TLYShyNavBar: 3150e9a03ff8ab5fd81de00167e8829b91af8326
 
-PODFILE CHECKSUM: 8b77f03d73b8fd016e115dba4bc702863e239121
+PODFILE CHECKSUM: 6a771c410ba2ec15128638843ccedd282239f73f
 
-COCOAPODS: 1.0.0.beta.3
+COCOAPODS: 1.1.0.rc.2

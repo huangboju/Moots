@@ -23,21 +23,21 @@ class DetailViewController: UIViewController {
         
     }
     
-    private func loadUI() {
+    fileprivate func loadUI() {
         
         self.title = "\(self.className)"
         self.classArr = classCopyIvarList(self.className!)
     
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell1", forIndexPath: indexPath)
-        let property = self.classArr![indexPath.row]
+    func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
+        let property = self.classArr![(indexPath as NSIndexPath).row]
         cell.textLabel?.text = property as String
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classCopyIvarList(self.className!).count
     }
     
@@ -47,7 +47,7 @@ class DetailViewController: UIViewController {
     }
     
     //MARK:查看类中的隐藏属性
-    private func classCopyIvarList(className:String) -> Array<NSString> {
+    fileprivate func classCopyIvarList(_ className:String) -> Array<NSString> {
         
         var classArray = [NSString]()
         
@@ -60,7 +60,7 @@ class DetailViewController: UIViewController {
         
         for i in 0...(icount-1) {
             
-            let memberName = NSString(UTF8String: ivar_getName(ivars[Int(i)]))
+            let memberName = NSString(utf8String: ivar_getName(ivars?[Int(i)]))
             print("memberName == \(memberName)")
             classArray.append(memberName!)
             

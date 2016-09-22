@@ -11,31 +11,31 @@ import UIKit
 class Discover: UITableViewController {
 
     enum CellType: Int {
-        case Default = 1
-        case Special = 2
+        case `default` = 1
+        case special = 2
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-        tableView.registerClass(DiscoverCell.self, forCellReuseIdentifier: "discoverCell")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(DiscoverCell.self, forCellReuseIdentifier: "discoverCell")
         tableView.tableFooterView = UIView()
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 10
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 //        if let type = CellType(rawValue: indexPath.row) {
 //            switch type {
 //            case .Default:
@@ -48,7 +48,7 @@ class Discover: UITableViewController {
 //            }
 //        }
 //        return tableView.dequeueReusableCellWithIdentifier("cellId", forIndexPath: indexPath)
-        let cell = tableView.dequeueReusableCellWithIdentifier("discoverCell", forIndexPath: indexPath) as! DiscoverCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "discoverCell", for: indexPath) as! DiscoverCell
         let discoverModel = DiscoverViewModel()
         cell.configure(withDataSource: discoverModel, delegate: discoverModel)
         return cell

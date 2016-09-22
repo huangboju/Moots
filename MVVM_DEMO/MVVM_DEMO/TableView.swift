@@ -11,33 +11,33 @@ import UIKit
 class TableView: UITableViewController {
     
     enum Setting: Int {
-        case MinionMode
+        case minionMode
         // other settings here
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cellId")
-        tableView.registerClass(SwitchCell.self, forCellReuseIdentifier: "SwitchCellId")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cellId")
+        tableView.register(SwitchCell.self, forCellReuseIdentifier: "SwitchCellId")
     }
 
     // MARK: - Table view data source
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 1
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        if let setting = Setting(rawValue: indexPath.row) {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let setting = Setting(rawValue: (indexPath as NSIndexPath).row) {
             switch setting {
-            case .MinionMode:
-                let cell = tableView.dequeueReusableCellWithIdentifier("SwitchCellId", forIndexPath: indexPath) as? SwitchCell
+            case .minionMode:
+                let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchCellId", for: indexPath) as? SwitchCell
                 
                 // this is where the magic happens!
                 let viewModel = Model()
@@ -46,7 +46,7 @@ class TableView: UITableViewController {
             }
         }
         
-        return tableView.dequeueReusableCellWithIdentifier("cellId", forIndexPath: indexPath)
+        return tableView.dequeueReusableCell(withIdentifier: "cellId", for: indexPath)
     }
     
     override func didReceiveMemoryWarning() {
