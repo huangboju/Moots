@@ -107,13 +107,13 @@
 				D817125F1D9377830034B351 /* large_leaves_70mp.jpg */,
 				D817122E1D93726F0034B351 /* AppDelegate.swift */,
 				D81712301D93726F0034B351 /* ViewController.swift */,
+				D81712611D93882F0034B351 /* ImageScrollView.swift */,
+				D81712631D9388570034B351 /* TiledImageView.swift */,
 				D81712321D93726F0034B351 /* Main.storyboard */,
 				D81712351D93726F0034B351 /* Assets.xcassets */,
 				D81712371D93726F0034B351 /* LaunchScreen.storyboard */,
 				D817123A1D93726F0034B351 /* Info.plist */,
 				D817125E1D9376C20034B351 /* Bridging.h */,
-				D81712611D93882F0034B351 /* ImageScrollView.swift */,
-				D81712631D9388570034B351 /* TiledImageView.swift */,
 			);
 			path = LoadLargeImage;
 			sourceTree = "<group>";

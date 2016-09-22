@@ -35,14 +35,12 @@ class ImageScrollView: UIScrollView {
             
             imageScale = frame.width / imageRect.width
             minimumScale = imageScale * 0.75
-            
+            print("imageScale:", imageScale)
             imageRect.size = CGSize(width: imageRect.width*imageScale, height: imageRect.height*imageScale)
             
             UIGraphicsBeginImageContext(imageRect.size)
             
-            guard let context = UIGraphicsGetCurrentContext() else  {
-                return
-            }
+            let context = UIGraphicsGetCurrentContext()!
             context.saveGState()
             context.draw(cgImage, in: imageRect)
             context.restoreGState()
@@ -55,8 +53,33 @@ class ImageScrollView: UIScrollView {
             
             addSubview(backgroundImageView!)
             sendSubview(toBack: backgroundImageView!)
+            
+            frontTiledView = TiledImageView(frame: imageRect, image: image, scale: imageScale)
+            addSubview(frontTiledView!)
+        }
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        let boundsSize = bounds.size
+        var frameToCenter = frontTiledView!.frame
+        // center horizontally
+        if frameToCenter.width < boundsSize.width {
+            frameToCenter.origin.x = boundsSize.width - frameToCenter.width / 2
+        } else {
+            frameToCenter.origin.x = 0
+        }
+
+        // center vertically
+        if frameToCenter.size.height < boundsSize.height {
+            frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 2
+        } else {
+            frameToCenter.origin.y = 0
         }
         
+        frontTiledView?.frame = frameToCenter
+        backgroundImageView?.frame = frameToCenter
+        frontTiledView?.contentScaleFactor = 1.0
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -65,5 +88,25 @@ class ImageScrollView: UIScrollView {
 }
 
 extension ImageScrollView: UIScrollViewDelegate {
-
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return frontTiledView
+    }
+    
+    func scrollViewDidEndZooming(_ scrollView: UIScrollView, with view: UIView?, atScale scale: CGFloat) {
+        imageScale! *= scale
+        if imageScale < minimumScale {
+            imageScale = minimumScale
+        }
+        guard let cgImage = image?.cgImage else {
+            return
+        }
+        let imageRect = CGRect(x: 0, y: 0, width: cgImage.width, height: cgImage.height)
+        frontTiledView = TiledImageView(frame: imageRect, image: image!, scale: imageScale)
+        addSubview(frontTiledView!)
+    }
+    
+    func scrollViewWillBeginZooming(_ scrollView: UIScrollView, with view: UIView?) {
+        backTiledView?.removeFromSuperview()
+        backTiledView = frontTiledView
+    }
 }

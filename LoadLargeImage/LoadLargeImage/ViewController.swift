@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     private var destTile = CGRect()
     private var sourceSeemOverlap: CGFloat!
     private var destImage: UIImage!
+    private var scrollView: ImageScrollView!
     
     private lazy var progressView: UIImageView = {
         return UIImageView(frame: self.view.frame)
@@ -120,17 +121,29 @@ class ViewController: UIViewController {
                 }
             }
         }
+        DispatchQueue.main.sync {
+            initializeScrollView()
+        }
     }
     
     func createImageFromContext() {
         if let destImageRef = destContext.makeImage() {
-            destImage = UIImage(cgImage: destImageRef, scale: 1, orientation: .down)
+            destImage = UIImage(cgImage: destImageRef, scale: 1, orientation: .downMirrored)
         }
     }
 
     func updateScrollView() {
         createImageFromContext()
         progressView.image = destImage
+    }
+    
+    func initializeScrollView() {
+        progressView.removeFromSuperview()
+        createImageFromContext()
+        
+        // create a scroll view to display the resulting image.
+        scrollView = ImageScrollView(frame: view.bounds, image: destImage!)
+        view.addSubview(scrollView)
     }
 
     override func didReceiveMemoryWarning() {
