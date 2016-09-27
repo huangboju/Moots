@@ -211,11 +211,21 @@ extension PhotoCollectionViewController {
 private extension PhotoCollectionViewController {
   func contentChangedNotification(notification: NSNotification!) {
     collectionView?.reloadData()
-    showOrHideNavPrompt();
+    showOrHideNavPrompt()
   }
 
   func showOrHideNavPrompt() {
-    // Implement me!
+    let delayInSeconds = 1.0
+    let popTime = dispatch_time(DISPATCH_TIME_NOW,
+                                Int64(delayInSeconds * Double(NSEC_PER_SEC))) // 1
+    dispatch_after(popTime, GlobalMainQueue) { // 2
+      let count = PhotoManager.sharedManager.photos.count
+      if count > 0 {
+        self.navigationItem.prompt = nil
+      } else {
+        self.navigationItem.prompt = "Add photos with faces to Googlyify them!"
+      }
+    }
   }
 
   func downloadImageAssets() {

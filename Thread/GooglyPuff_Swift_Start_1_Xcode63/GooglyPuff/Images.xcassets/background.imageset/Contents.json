@@ -2,23 +2,27 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x",
-      "filename" : "background.png"
+      "filename" : "background.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "scale" : "2x",
-      "filename" : "background@2x.png"
+      "filename" : "background@2x.png",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     },
     {
       "idiom" : "ipad",
-      "scale" : "1x",
-      "filename" : "background~ipad.png"
+      "filename" : "background~ipad.png",
+      "scale" : "1x"
     },
     {
       "idiom" : "ipad",
-      "scale" : "2x",
-      "filename" : "background@2x~ipad.png"
+      "filename" : "background@2x~ipad.png",
+      "scale" : "2x"
     }
   ],
   "info" : {
