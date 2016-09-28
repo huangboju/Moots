@@ -15,18 +15,20 @@ class TiledImageView: UIView {
             return
         }
         
-        imageRect = CGRect(x: 0, y: 0, width: CGFloat(cgImage.width), height: CGFloat(cgImage.height))
+        imageRect = CGRect(x: 0, y: 0, width: cgImage.width, height: cgImage.height)
         imageScale = scale
-        let tiledLayer = layer as? CATiledLayer
-        tiledLayer?.levelsOfDetail = 4
-        tiledLayer?.levelsOfDetailBias = 4
-        tiledLayer?.tileSize = CGSize(width: 512.0, height: 512.0)
+        if let tiledLayer = layer as? CATiledLayer {
+            print(tiledLayer)
+            tiledLayer.levelsOfDetail = 4
+            tiledLayer.levelsOfDetailBias = 4
+            tiledLayer.tileSize = CGSize(width: 512.0, height: 512.0)
+        }
     }
     
-    override var layer: CALayer {
-        return CATiledLayer()
+    override class var layerClass: AnyClass {
+        return CATiledLayer.self
     }
-    
+
     override func draw(_ rect: CGRect) {
         if let context = UIGraphicsGetCurrentContext(), let cgImage = image?.cgImage {
             context.saveGState()

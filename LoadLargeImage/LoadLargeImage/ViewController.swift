@@ -122,7 +122,7 @@ class ViewController: UIViewController {
             }
         }
         DispatchQueue.main.sync {
-            initializeScrollView()
+            self.initializeScrollView()
         }
     }
     
