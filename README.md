@@ -407,11 +407,19 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 ```
 
 ## 4、错误处理
-> The certificate used to sign "XXX" has either expired or has been revoked
+1.The certificate used to sign "XXX" has either expired or has been revoked
 
 >[解决方法](http://www.cnblogs.com/zzugyl/p/5555695.html)
 
 > [然后](http://stackoverflow.com/questions/32730312/reason-no-suitable-image-found/32730393#32730393)
+
+
+
+2.解决cocoapods diff: /../Podfile.lock: No such file or directory
+
+> [解决方法1](http://www.jianshu.com/p/774d782a610b)
+
+> [解决方法2](http://www.jianshu.com/p/4c3164fe552a)
 
 ## 5、其他
 #### [markdown语法](http://www.jianshu.com/p/f3fd881548ad)
