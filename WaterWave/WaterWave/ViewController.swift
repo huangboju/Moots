@@ -9,8 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    var timer: DispatchSourceTimer?
 
     override func viewDidLoad() {
         super.viewDidLoad()
