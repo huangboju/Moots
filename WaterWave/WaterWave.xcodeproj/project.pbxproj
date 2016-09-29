@@ -15,6 +15,8 @@
 		D8B1A32F1D9CC75D0083AAA3 /* WaterWaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A32E1D9CC75D0083AAA3 /* WaterWaveTests.swift */; };
 		D8B1A33A1D9CC75D0083AAA3 /* WaterWaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3391D9CC75D0083AAA3 /* WaterWaveUITests.swift */; };
 		D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */; };
+		D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */; };
+		D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		D8B1A3391D9CC75D0083AAA3 /* WaterWaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveUITests.swift; sourceTree = "<group>"; };
 		D8B1A33B1D9CC75D0083AAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterWaveView.swift; sourceTree = "<group>"; };
+		D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,7 @@
 		D8B1A3181D9CC75D0083AAA3 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
+				D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */,
 				D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */,
 				D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */,
 				D8B1A31D1D9CC75D0083AAA3 /* Main.storyboard */,
@@ -106,6 +111,7 @@
 				D8B1A3221D9CC75D0083AAA3 /* LaunchScreen.storyboard */,
 				D8B1A3251D9CC75D0083AAA3 /* Info.plist */,
 				D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */,
+				D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */,
 			);
 			path = WaterWave;
 			sourceTree = "<group>";
@@ -263,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */,
+				D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */,
+				D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */,
 				D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
 			);

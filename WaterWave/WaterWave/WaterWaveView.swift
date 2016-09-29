@@ -5,7 +5,8 @@
 import UIKit
 
 class WaterWaveView: UIView {
-    var waterColor = UIColor(red: 88 / 255, green: 202 / 255, blue: 139 / 255, alpha: 1)
+    var frontWaveColor = UIColor(red: 88 / 255, green: 202 / 255, blue: 139 / 255, alpha: 1)
+    var backWaveColor = UIColor.orange
     var waterLineY: CGFloat = 120
     var waveAmplitude: CGFloat = 3
     var waveCycle: CGFloat = 1
@@ -105,7 +106,7 @@ class WaterWaveView: UIView {
                 frontPath.addLine(to: CGPoint(x: cgX, y: frontY))
                 
                 //后波浪绘制
-                backY = waveAmplitude * cos( cgX / 180 * .pi + 3 * waveCycle / .pi) * 5 + waterLineY
+                backY = waveAmplitude * cos(cgX / 180 * .pi + 3 * waveCycle / .pi) * 5 + waterLineY
                 backPath.addLine(to: CGPoint(x: cgX, y: backY))
                 if  x >= 100 {
                     //后波浪反色绘制
@@ -115,7 +116,7 @@ class WaterWaveView: UIView {
                     //前波浪反色绘制
                     frontReverseY = waveAmplitude * sin( cgX / 180 * .pi + 4 * waveCycle / .pi) * 5 + waterLineY
                     frontReversePath.addLine(to: CGPoint(x: cgX, y: frontReverseY))
-                    context.setFillColor(UIColor.orange.cgColor)
+                    context.setFillColor(backWaveColor.cgColor)
                 }
             }
             
@@ -142,7 +143,7 @@ class WaterWaveView: UIView {
             context.restoreGState()
             
             //前波浪绘制
-            context.setFillColor(waterColor.cgColor)
+            context.setFillColor(frontWaveColor.cgColor)
             frontPath.addLine(to: CGPoint(x: 320, y: rect.height))
             frontPath.addLine(to: CGPoint(x: 0, y: rect.height))
             frontPath.addLine(to: CGPoint(x: 0, y: waterLineY))
