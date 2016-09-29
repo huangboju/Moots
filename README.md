@@ -430,6 +430,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 #### [Xcode快捷键](http://www.cocoachina.com/ios/20160708/16989.html)
 #### [理解UIView的绘制](http://vizlabxt.github.io/blog/2012/10/22/UIView-Rendering/)
 #### [切换淘宝源](https://ruby.taobao.org/)
+#### [卸载cocoapods](http://www.jianshu.com/p/8b61b421dd76)
 
 
 # UI
