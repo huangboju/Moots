@@ -15,8 +15,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+//        test()
         return true
+    }
+    
+    func test() {
+        var oneInt = 3
+        var twoInt = 4
+        SwapTwoValues(a: &oneInt, b: &twoInt)
+        print("oneInt:\(oneInt),twoInt:\(twoInt)") // oneInt:3,twoInt:4
+        
+        var oneStr = "hello"
+        var twoStr = "world"
+        SwapTwoValues(a: &oneStr, b: &twoStr)
+        print("oneStr:\(oneStr),twoStr:\(twoStr)")// oneStr:world,twoStr:hello
+        
+        var stack = Stack<String>() //要在类型名后面加<类型名>
+        stack.push(item: "uno")
+        stack.push(item: "dos")
+        stack.push(item: "tres")
+        stack.push(item: "cuatro")
+        
+        print(stack.pop())
+        
+        print("stack's top item is : \(stack.topItem!)")
+        
+        let value = findIndex([3.14159, 0.1, 0.25], valueToFind: 9.3)
+        print(value)
+        
+        let stringIndex = findIndex(["Mike", "Malcolm", "Andrea"], valueToFind: "Andrea")
+        print(stringIndex)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

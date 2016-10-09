@@ -115,21 +115,21 @@ class ViewController: UIViewController {
     func gcdGroup() {
         let group = DispatchGroup()
         let queue = DispatchQueue.global()
-        __dispatch_group_async(group, queue) { 
+        queue.async(group: group) {
             for _ in 0..<3 {
                 print("1",Thread.current)
             }
         }
         
-        __dispatch_group_async(group, DispatchQueue.main) {
+        queue.async(group: group) {
             for _ in 0..<8 {
-                print("main", Thread.current)
+                print("2", Thread.current)
             }
         }
         
-        __dispatch_group_async(group, queue) {
+        DispatchQueue.main.async(group: group) {
             for _ in 0..<5 {
-                print("2", Thread.current)
+                print("main", Thread.current)
             }
         }
         

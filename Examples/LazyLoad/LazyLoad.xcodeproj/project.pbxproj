@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8883C2F1DA8C8F00025821F /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8883C2E1DA8C8F00025821F /* SecondController.swift */; };
+		D89AD9B51DA8F5030043D659 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AD9B41DA8F5030043D659 /* Test.swift */; };
 		D8CD4B8E1DA8967400102CD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4B8D1DA8967400102CD7 /* AppDelegate.swift */; };
 		D8CD4B901DA8967400102CD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4B8F1DA8967400102CD7 /* ViewController.swift */; };
 		D8CD4B931DA8967400102CD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CD4B911DA8967400102CD7 /* Main.storyboard */; };
@@ -14,6 +16,7 @@
 		D8CD4B981DA8967400102CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CD4B961DA8967400102CD7 /* LaunchScreen.storyboard */; };
 		D8CD4BA31DA8967400102CD7 /* LazyLoadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4BA21DA8967400102CD7 /* LazyLoadTests.swift */; };
 		D8CD4BAE1DA8967400102CD7 /* LazyLoadUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4BAD1DA8967400102CD7 /* LazyLoadUITests.swift */; };
+		D8CD4BBC1DA8992300102CD7 /* GLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CD4BBB1DA8992300102CD7 /* GLImageCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8883C2E1DA8C8F00025821F /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
+		D89AD9B41DA8F5030043D659 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		D8CD4B8A1DA8967400102CD7 /* LazyLoad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LazyLoad.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD4B8D1DA8967400102CD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CD4B8F1DA8967400102CD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +52,7 @@
 		D8CD4BA91DA8967400102CD7 /* LazyLoadUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyLoadUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CD4BAD1DA8967400102CD7 /* LazyLoadUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyLoadUITests.swift; sourceTree = "<group>"; };
 		D8CD4BAF1DA8967400102CD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8CD4BBB1DA8992300102CD7 /* GLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLImageCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,9 @@
 				D8CD4B941DA8967400102CD7 /* Assets.xcassets */,
 				D8CD4B961DA8967400102CD7 /* LaunchScreen.storyboard */,
 				D8CD4B991DA8967400102CD7 /* Info.plist */,
+				D8CD4BBB1DA8992300102CD7 /* GLImageCell.swift */,
+				D8883C2E1DA8C8F00025821F /* SecondController.swift */,
+				D89AD9B41DA8F5030043D659 /* Test.swift */,
 			);
 			path = LazyLoad;
 			sourceTree = "<group>";
@@ -260,6 +269,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CD4B901DA8967400102CD7 /* ViewController.swift in Sources */,
+				D8883C2F1DA8C8F00025821F /* SecondController.swift in Sources */,
+				D89AD9B51DA8F5030043D659 /* Test.swift in Sources */,
+				D8CD4BBC1DA8992300102CD7 /* GLImageCell.swift in Sources */,
 				D8CD4B8E1DA8967400102CD7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -505,6 +517,7 @@
 				D8CD4BB41DA8967400102CD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8CD4BB51DA8967400102CD7 /* Build configuration list for PBXNativeTarget "LazyLoadTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +526,7 @@
 				D8CD4BB71DA8967400102CD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8CD4BB81DA8967400102CD7 /* Build configuration list for PBXNativeTarget "LazyLoadUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +535,7 @@
 				D8CD4BBA1DA8967400102CD7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
