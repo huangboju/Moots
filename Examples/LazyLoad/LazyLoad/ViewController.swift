@@ -59,28 +59,28 @@ class ViewController: UIViewController {
     func setup(cell: GLImageCell, with indexPath: IndexPath) {
         let item = data[indexPath.section].itemList[indexPath.row]
         let targetURL = URL(string: item.feed)
-        if let cell = tableView.cellForRow(at: indexPath) as? GLImageCell {
-            if cell.photoView.sd_imageURL() != targetURL {
-                cell.photoView.alpha = 0
-                let manager = SDWebImageManager.shared()
-                let cellFrame = tableView.rectForRow(at: indexPath)
-                var shouldLoadImage = true
-                if let targetRect = targetRect {
-                    if !targetRect.cgRectValue.intersects(cellFrame) {
-                        let cache = manager?.imageCache
-                        let key = manager?.cacheKey(for: targetURL)
-                        if cache?.imageFromMemoryCache(forKey: key) != nil {
-                            shouldLoadImage = false
-                        }
+        let cellFrame = tableView.rectForRow(at: indexPath)
+        if cell.photoView.sd_imageURL() != targetURL {
+            cell.photoView.alpha = 0
+            let manager = SDWebImageManager.shared()
+            
+            var shouldLoadImage = true
+            if let targetRect = targetRect {
+                if !targetRect.cgRectValue.intersects(cellFrame) {
+                    let cache = manager?.imageCache
+                    let key = manager?.cacheKey(for: targetURL)
+                    if cache?.imageFromMemoryCache(forKey: key) != nil {
+                        shouldLoadImage = false
                     }
                 }
-                if shouldLoadImage {
-                    cell.photoView.sd_setImage(with: targetURL!, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
-                        UIView.animate(withDuration: 0.25, animations: {
-                            cell.photoView.alpha = 1
-                        })
+            }
+            if shouldLoadImage {
+                cell.photoView.frame = CGRect(origin: .zero, size: cellFrame.size)
+                cell.photoView.sd_setImage(with: targetURL!, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
+                    UIView.animate(withDuration: 0.25, animations: {
+                        cell.photoView.alpha = 1
                     })
-                }
+                })
             }
         }
     }
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 500
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
