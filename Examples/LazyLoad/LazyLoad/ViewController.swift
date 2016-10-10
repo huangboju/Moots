@@ -7,93 +7,136 @@
 //
 
 import UIKit
+import Alamofire
+import WebImage
 
 class ViewController: UIViewController {
+    
+    var targetRect: NSValue?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.estimatedRowHeight = 44
+        
         return tableView
     }()
     
-    fileprivate lazy var data = [Any]()
-    var targetRect: NSValue?
-
+    fileprivate lazy var data = [IssueModel]()
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.register(GLImageCell.self, forCellReuseIdentifier: "cell")
+        fetchDataFromServer()
+        
+        tableView.register(GLImageCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
     }
     
     func refresh() {
-        
         tableView.reloadSections(IndexSet(integer: 0), with: .none)
     }
     
     func fetchDataFromServer() {
-        
+        let url = "http://baobab.wandoujia.com/api/v2/feed?date=1457883945551&num=7"
+        Alamofire.request(url).responseJSON { response in
+            if let result = DATA(response.result.value).dictionaryValue["issueList"] {
+                self.data = result.map { IssueModel(dict: $0.1.dictionary) }
+                self.tableView.reloadData()
+            }
+        }
+    }
+
+    func loadImageForVisibleCells() {
+        let cells = tableView.visibleCells.flatMap { $0 as? GLImageCell }
+        for cell in cells {
+            if let indexPath = tableView.indexPath(for: cell) {
+                setup(cell: cell, with: indexPath)
+            }
+        }
     }
     
-    func objectFor(row: Int) -> [String: Any]? {
-        return row < data.count ? data[row] as? [String: Any] : nil
+    func setup(cell: GLImageCell, with indexPath: IndexPath) {
+        let item = data[indexPath.section].itemList[indexPath.row]
+        let targetURL = URL(string: item.feed)
+        if let cell = tableView.cellForRow(at: indexPath) as? GLImageCell {
+            if cell.photoView.sd_imageURL() != targetURL {
+                cell.photoView.alpha = 0
+                let manager = SDWebImageManager.shared()
+                let cellFrame = tableView.rectForRow(at: indexPath)
+                var shouldLoadImage = true
+                if let targetRect = targetRect {
+                    if !targetRect.cgRectValue.intersects(cellFrame) {
+                        let cache = manager?.imageCache
+                        let key = manager?.cacheKey(for: targetURL)
+                        if cache?.imageFromMemoryCache(forKey: key) != nil {
+                            shouldLoadImage = false
+                        }
+                    }
+                }
+                if shouldLoadImage {
+                    cell.photoView.sd_setImage(with: targetURL!, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
+                        UIView.animate(withDuration: 0.25, animations: {
+                            cell.photoView.alpha = 1
+                        })
+                    })
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
-    }
-    
-    enum StringType {
-        case color, font
-    }
-    func attributeStr(type: StringType = .color, text: String, targetText: String, color: UIColor = .red, font: UIFont = UIFont.systemFont(ofSize: 12), negate: Bool = false) -> NSMutableAttributedString {
-        guard text.contains(targetText) else { return NSMutableAttributedString(string: text) }
-        var targetRange = (text as NSString).range(of: targetText)
-        var tempRange: NSRange!
-        if negate {
-            tempRange = targetRange
-            targetRange = NSRange(location: 0, length: targetRange.location)
-        }
-        let attributedString = NSMutableAttributedString(string: text)
-        func set(range: NSRange) {
-            switch type {
-            case .color:
-                attributedString.addAttribute(NSForegroundColorAttributeName, value: color, range: range)
-            case .font:
-                attributedString.addAttribute(NSFontAttributeName, value: font, range: range)
-            }
-        }
-        set(range: targetRange)
-        if negate {
-            set(range: NSRange(location: tempRange.location + tempRange.length, length: text.characters.count - tempRange.location - tempRange.length))
-        }
-        return attributedString
     }
 }
 
 extension ViewController: UITableViewDelegate {
-     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = indexPath.row.description
-        cell.detailTextLabel?.attributedText = attributeStr(text: "今天天气好晴朗", targetText: "天气")
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 200
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if let imageCell = cell as? GLImageCell {
+            setup(cell: imageCell, with: indexPath)
+        }
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        targetRect = nil
+        loadImageForVisibleCells()
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let rect = CGRect(origin: targetContentOffset.move(), size: scrollView.frame.size)
+        targetRect = NSValue(cgRect: rect)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        targetRect = nil
+        loadImageForVisibleCells()
     }
 }
 
 extension ViewController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return data.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if data.isEmpty {
+            return 0
+        }
+        let issueModel = data[section]
+        return issueModel.itemList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        return GLImageCell(style: .value1, reuseIdentifier: "cell")
+        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
 

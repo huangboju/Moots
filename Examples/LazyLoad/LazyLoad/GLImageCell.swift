@@ -10,8 +10,9 @@ import UIKit
 
 class GLImageCell: UITableViewCell {
 
-    private lazy var photoView: UIImageView = {
+    lazy var photoView: UIImageView = {
         let photoView = UIImageView(frame: self.bounds)
+        photoView.contentMode = .scaleAspectFit
         return photoView
     }()
     
@@ -37,11 +38,5 @@ class GLImageCell: UITableViewCell {
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
         super.setHighlighted(highlighted, animated: animated)
         
-    }
-    
-    override var isHighlighted: Bool {
-        didSet {
-            
-        }
     }
 }

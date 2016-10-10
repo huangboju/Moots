@@ -16,7 +16,7 @@ class SecondController: UIViewController {
         let a = n.description.add(n: "5.4").sub(n: 1).div(n: 10)
         print("a=" + a.description)
         
-        let b = getFormatAmount(values: 45.8999)
+        let b = getFormatAmount(values: 100000000)
         print("default=" + b)
         
         let c = getFormatAmount(type: .large,values: 100, 45000)
@@ -58,7 +58,7 @@ func getFormatAmount<T: CustomStringConvertible>(type: FormatType = .default, se
             formatter.groupingSeparator = separator
         }
         // formatter.string(from: amount) 会四舍五入
-        return startStr + formatter.number(from: amount.description)!.description + endStr
+        return startStr + formatter.string(from: amount)! + endStr
     case .large:
         formatter.numberStyle = NumberFormatter.Style.decimal
         let str = formatter.string(from: amount.dividing(by: 10000))!
