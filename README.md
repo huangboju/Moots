@@ -346,6 +346,9 @@ extension UIButton {
 
 ###### 2. [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
 
+###### 3.UIButton setImage setBackgroundImage
+> 首先setBackgroundImage，image会随着button的大小而改变，图片自动会拉伸来适应button的大小，这个时候任然可以设置button的title，image不会挡住title；相反的的setImage，图片不会进行拉伸，原比例的显示在button上，此时再设置title，title将无法显示，因此可以根据需求选中方法
+
 ##### Protocol
 >delegate一般得用weak标识符，这样当delegate指向的controller被销毁时，delegate会跟着被置为nil，可以有效防止这种问题。
 若是使用assign标识的delegate，则注意在delegate指向的对象被销毁时，将delegate 置为nil。
