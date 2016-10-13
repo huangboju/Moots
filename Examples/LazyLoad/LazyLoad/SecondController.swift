@@ -27,8 +27,8 @@ class SecondController: UIViewController {
         
         let e = getFormatAmount(type: .double,values: 100, 45.89)
         print("percent=" + e)
-        
-        let f = getFormatAmount(type: .float,values: 100, 45.8999)
+        let str = 100.description
+        let f = getFormatAmount(type: .float,values: str, 45.8999.description)
         print("percent=" + f)
     }
 
@@ -45,7 +45,7 @@ enum FormatType {
 func getFormatAmount<T: CustomStringConvertible>(type: FormatType = .default, separator: String? = nil, values: T..., endStr: String = "", startStr: String = "") -> String {
     var sum = "1"
     for num in values {
-        sum = sum.mul(n: num.description)
+        sum = sum.mul(n: num)
     }
     let num = NSDecimalNumber(string: sum)
     let amount = num.dividing(by: 100)
@@ -92,4 +92,16 @@ extension String {
     func div<T: CustomStringConvertible>(n: T) -> String {
         return NSDecimalNumber(string: self).dividing(by: NSDecimalNumber(string: n.description)).description
     }
+    
+    private func dealEmpty<T: CustomStringConvertible>(n: T) -> Bool {
+        return NSDecimalNumber(string: n.description).doubleValue.isNaN || NSDecimalNumber(string: self).doubleValue.isNaN
+    }
+    
+//    var round: String {
+//        let f = NumberFormatter()
+//        f.numberStyle = .CurrencyStyle
+//        f.currencySymbol = ""
+//        let num = NSDecimalNumber(string: self.stringByReplacingOccurrencesOfString(",", withString: ""))
+//        return f.stringFromNumber(num) ?? self
+//    }
 }

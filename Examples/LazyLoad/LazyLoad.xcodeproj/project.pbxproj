@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		D84096FA1DAB7DB90049A89F /* WebImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84096F91DAB7DB90049A89F /* WebImage.framework */; };
 		D84096FB1DAB7DB90049A89F /* WebImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D84096F91DAB7DB90049A89F /* WebImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D84F85A41DADEA4800FA652E /* NSNumber+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D84F85A31DADEA4800FA652E /* NSNumber+Extensions.swift */; };
 		D8883C2F1DA8C8F00025821F /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8883C2E1DA8C8F00025821F /* SecondController.swift */; };
 		D89AD9B51DA8F5030043D659 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89AD9B41DA8F5030043D659 /* Test.swift */; };
 		D8A5A7231DAA4CC40021ABD1 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A5A71F1DAA49110021ABD1 /* Alamofire.framework */; };
@@ -62,6 +63,7 @@
 
 /* Begin PBXFileReference section */
 		D84096F91DAB7DB90049A89F /* WebImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebImage.framework; path = Carthage/Build/iOS/WebImage.framework; sourceTree = "<group>"; };
+		D84F85A31DADEA4800FA652E /* NSNumber+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Extensions.swift"; sourceTree = "<group>"; };
 		D8883C2E1DA8C8F00025821F /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		D89AD9B41DA8F5030043D659 /* Test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		D8A5A71F1DAA49110021ABD1 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				D8CD4BBB1DA8992300102CD7 /* GLImageCell.swift */,
 				D8883C2E1DA8C8F00025821F /* SecondController.swift */,
 				D89AD9B41DA8F5030043D659 /* Test.swift */,
+				D84F85A31DADEA4800FA652E /* NSNumber+Extensions.swift */,
 			);
 			path = LazyLoad;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8CD4B901DA8967400102CD7 /* ViewController.swift in Sources */,
+				D84F85A41DADEA4800FA652E /* NSNumber+Extensions.swift in Sources */,
 				D8883C2F1DA8C8F00025821F /* SecondController.swift in Sources */,
 				D89AD9B51DA8F5030043D659 /* Test.swift in Sources */,
 				D8B504021DAB283300B48EA3 /* IssueModel.swift in Sources */,
