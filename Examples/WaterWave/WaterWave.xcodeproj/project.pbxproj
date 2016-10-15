@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */; };
+		D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */; };
+		D88B02401DB2210D0096114E /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023F1DB2210D0096114E /* ThirdController.swift */; };
 		D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */; };
 		D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */; };
 		D8B1A31F1D9CC75D0083AAA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B1A31D1D9CC75D0083AAA3 /* Main.storyboard */; };
@@ -37,6 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshWaveView.swift; sourceTree = "<group>"; };
+		D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		D88B023F1DB2210D0096114E /* ThirdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
 		D8B1A3161D9CC75D0083AAA3 /* WaterWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +86,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D88B023A1DB209380096114E /* PullToRefreshWave */ = {
+			isa = PBXGroup;
+			children = (
+				D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */,
+				D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */,
+			);
+			name = PullToRefreshWave;
+			sourceTree = "<group>";
+		};
 		D8B1A30D1D9CC75D0083AAA3 = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +118,7 @@
 		D8B1A3181D9CC75D0083AAA3 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
+				D88B023A1DB209380096114E /* PullToRefreshWave */,
 				D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */,
 				D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */,
 				D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */,
@@ -112,6 +128,7 @@
 				D8B1A3251D9CC75D0083AAA3 /* Info.plist */,
 				D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */,
 				D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */,
+				D88B023F1DB2210D0096114E /* ThirdController.swift */,
 			);
 			path = WaterWave;
 			sourceTree = "<group>";
@@ -268,11 +285,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */,
 				D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */,
 				D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */,
 				D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */,
 				D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
+				D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */,
+				D88B02401DB2210D0096114E /* ThirdController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -517,6 +537,7 @@
 				D8B1A3401D9CC75D0083AAA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8B1A3411D9CC75D0083AAA3 /* Build configuration list for PBXNativeTarget "WaterWaveTests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +546,7 @@
 				D8B1A3431D9CC75D0083AAA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8B1A3441D9CC75D0083AAA3 /* Build configuration list for PBXNativeTarget "WaterWaveUITests" */ = {
 			isa = XCConfigurationList;
@@ -533,6 +555,7 @@
 				D8B1A3461D9CC75D0083AAA3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

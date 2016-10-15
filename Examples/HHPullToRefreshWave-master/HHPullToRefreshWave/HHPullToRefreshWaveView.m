@@ -144,7 +144,7 @@ typedef NS_ENUM(NSUInteger, HHPullToRefreshWaveViewState) {
     }
     
     _times = offset/10 + 1;
-
+    NSLog(@"%lu", (unsigned long)_times);
     if (offset == 0.00 && self.scrollView.isDecelerating) {
          [self animatingStopWave];
     }
