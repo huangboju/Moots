@@ -76,6 +76,7 @@ class PullToRefreshWaveView: UIView {
 
         topWaveColor = UIColor.lightGray
         bottomWaveColor = UIColor.white
+        setupProperty()
     }
     
     func setupProperty() {
@@ -107,7 +108,7 @@ class PullToRefreshWaveView: UIView {
     
     func scrollViewDidChangeContentOffset() {
         if let scrollView = scrollView {
-            let offset = scrollView.contentOffset.y - scrollView.contentInset.top
+            let offset = -scrollView.contentOffset.y - scrollView.contentInset.top
             if offset < 0 {
                 times = 0
             }
@@ -214,7 +215,7 @@ class PullToRefreshWaveView: UIView {
     
     func configViewFrame() {
         let width = scrollView!.bounds.width
-        frame = CGRect(x: 0, y: -height, width: width, height: currentHeight)
+        frame = CGRect(x: 0, y: -currentHeight, width: width, height: currentHeight)
     }
     
     func configFirstWaveLayerPath() {
