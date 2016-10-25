@@ -3,7 +3,7 @@ everything is the best arrangement
 
 ## 1、常用代码
 
-#### 匹配模式
+#### [匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)
 ```swift
 let age = 19
 if 18...25 ~= age {
