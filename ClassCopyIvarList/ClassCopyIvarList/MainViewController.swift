@@ -11,8 +11,18 @@ import UIKit
 class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
-    
-    var classArray = ["UITextField","UISlider","UIImageView","UITabBarItem","UIActivityIndicatorView","UIBarButtonItem","UILabel","UINavigationBar","UIProgressView","UIAlertAction"]
+    var classArray = [
+        "UITextField",
+        "UISlider",
+        "UIImageView",
+        "UITabBarItem",
+        "UIActivityIndicatorView",
+        "UIBarButtonItem",
+        "UILabel",
+        "UINavigationBar",
+        "UIProgressView",
+        "UIAlertAction"
+    ]
     
     
     override func viewDidLoad() {
@@ -22,33 +32,29 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
         activity.setValue(UIColor.red, forKey: "color")
         activity.setValue(50, forKey: "width")
-        self.view.addSubview(activity)
+        view.addSubview(activity)
         
-        activity.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+        activity.center = view.center
         
         activity.startAnimating()
         
     }
 
     fileprivate func loadUI() {
-        
-        self.title = "UIKit"
-        
-        
+        title = "UIKit"
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "detailvc") as? DetailViewController
-        detailVC?.className = classArray[(indexPath as NSIndexPath).row]
+        detailVC?.className = classArray[indexPath.row]
         navigationController?.pushViewController(detailVC!, animated: true)
         
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell0", for: indexPath)
-        cell.textLabel?.text = classArray[(indexPath as NSIndexPath).row]
+        cell.textLabel?.text = classArray[indexPath.row]
         return cell
     }
     

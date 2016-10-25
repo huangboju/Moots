@@ -139,7 +139,7 @@ func test() {
     stackOfStrings.append(item: "dos")
     stackOfStrings.append(item: "tres")
     
-    var arrayOfStrings = ["uno", "dos", "tres"] //array类型的满足Container类型，参考上面的extension Array
+    _ = ["uno", "dos", "tres"] //array类型的满足Container类型，参考上面的extension Array
     
 //    if allItemsMatch(someContainer: stackOfStrings, arrayOfStrings) {
 //        print("All items match.")

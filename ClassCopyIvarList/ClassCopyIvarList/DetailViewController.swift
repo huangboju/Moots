@@ -12,33 +12,32 @@ class DetailViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
 
-    var className:String?
-    var classArr:Array<NSString>?
+    var className: String?
+    var classArr: [String] {
+        return classCopyIvarList(className!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadUI()
-        
     }
     
     fileprivate func loadUI() {
         
-        self.title = "\(self.className)"
-        self.classArr = classCopyIvarList(self.className!)
-    
+        title = className
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell1", for: indexPath)
-        let property = self.classArr![(indexPath as NSIndexPath).row]
-        cell.textLabel?.text = property as String
+        let property = classArr[indexPath.row]
+        cell.textLabel?.text = property
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return classCopyIvarList(self.className!).count
+        return classCopyIvarList(className!).count
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,11 +46,11 @@ class DetailViewController: UIViewController {
     }
     
     //MARK:查看类中的隐藏属性
-    fileprivate func classCopyIvarList(_ className:String) -> Array<NSString> {
+    fileprivate func classCopyIvarList(_ className: String) -> [String] {
         
-        var classArray = [NSString]()
+        var classArray: [String] = []
         
-        let classOjbect:AnyClass! = objc_getClass(className) as?AnyClass
+        let classOjbect: AnyClass! = objc_getClass(className) as? AnyClass
         
         var icount: CUnsignedInt = 0
         
@@ -59,8 +58,7 @@ class DetailViewController: UIViewController {
         print("icount == \(icount)")
         
         for i in 0...(icount-1) {
-            
-            let memberName = NSString(utf8String: ivar_getName(ivars?[Int(i)]))
+            let memberName = String(utf8String: ivar_getName(ivars?[Int(i)]))
             print("memberName == \(memberName)")
             classArray.append(memberName!)
             
