@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D814BF441DC08528008CDC14 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D814BF421DC08524008CDC14 /* Eureka.framework */; };
+		D814BF451DC08528008CDC14 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D814BF421DC08524008CDC14 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D814BF481DC085CF008CDC14 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D814BF471DC085CF008CDC14 /* SecondController.swift */; };
 		D81712721D93B9F10034B351 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81712711D93B9F10034B351 /* AppDelegate.swift */; };
 		D81712741D93B9F10034B351 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81712731D93B9F10034B351 /* ViewController.swift */; };
 		D81712771D93B9F10034B351 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D81712751D93B9F10034B351 /* Main.storyboard */; };
@@ -33,7 +36,23 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D814BF461DC08528008CDC14 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D814BF451DC08528008CDC14 /* Eureka.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D814BF421DC08524008CDC14 /* Eureka.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Eureka.framework; path = Carthage/Build/iOS/Eureka.framework; sourceTree = "<group>"; };
+		D814BF471DC085CF008CDC14 /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		D817126E1D93B9F10034B351 /* Thread_Swift3.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thread_Swift3.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81712711D93B9F10034B351 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D81712731D93B9F10034B351 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D814BF441DC08528008CDC14 /* Eureka.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +94,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D814BF411DC08524008CDC14 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D814BF421DC08524008CDC14 /* Eureka.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D81712651D93B9F10034B351 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,7 @@
 				D81712851D93B9F10034B351 /* Thread_Swift3.0Tests */,
 				D81712901D93B9F10034B351 /* Thread_Swift3.0UITests */,
 				D817126F1D93B9F10034B351 /* Products */,
+				D814BF411DC08524008CDC14 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +132,7 @@
 				D81712781D93B9F10034B351 /* Assets.xcassets */,
 				D817127A1D93B9F10034B351 /* LaunchScreen.storyboard */,
 				D817127D1D93B9F10034B351 /* Info.plist */,
+				D814BF471DC085CF008CDC14 /* SecondController.swift */,
 			);
 			path = Thread_Swift3.0;
 			sourceTree = "<group>";
@@ -135,6 +165,7 @@
 				D817126A1D93B9F10034B351 /* Sources */,
 				D817126B1D93B9F10034B351 /* Frameworks */,
 				D817126C1D93B9F10034B351 /* Resources */,
+				D814BF461DC08528008CDC14 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -260,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D814BF481DC085CF008CDC14 /* SecondController.swift in Sources */,
 				D81712741D93B9F10034B351 /* ViewController.swift in Sources */,
 				D81712721D93B9F10034B351 /* AppDelegate.swift in Sources */,
 			);
@@ -412,6 +444,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 46A8679957;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Thread_Swift3.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -426,6 +462,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 46A8679957;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Thread_Swift3.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -508,6 +548,7 @@
 				D81712981D93B9F10034B351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D81712991D93B9F10034B351 /* Build configuration list for PBXNativeTarget "Thread_Swift3.0Tests" */ = {
 			isa = XCConfigurationList;
@@ -516,6 +557,7 @@
 				D817129B1D93B9F10034B351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D817129C1D93B9F10034B351 /* Build configuration list for PBXNativeTarget "Thread_Swift3.0UITests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +566,7 @@
 				D817129E1D93B9F10034B351 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
