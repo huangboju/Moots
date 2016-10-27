@@ -69,7 +69,7 @@ class SecondController: FormViewController {
     }
     
     func action(tag: String) {
-        print("🍀🍀🍀",tag)
+        print("🍀🍀🍀\(tag)🍀🍀🍀")
         print("**************************开始**************************")
         switch tag {
         case "同步执行串行队列":
@@ -115,17 +115,16 @@ class SecondController: FormViewController {
             queue.sync() {
                 currentThreadSleep(1)
                 print("当前执行线程：\(Thread.current)")
-                print("执行\(i)")
+                print("执行\(i.toEmoji)")
             }
-            print("\(i)执行完毕")
+            print("\(i.toEmoji)执行完毕")
         }
         print("所有队列使用同步方式执行完毕")
-        print("**************************结束**************************\n")
+        ended()
     }
 
-    /**
-     使用dispatch_async在当前线程中执行队列
-     */
+    
+    /// 使用dispatch_async在当前线程中执行队列
     func performQueuesUseAsynchronization(_ queue: DispatchQueue) -> Void {
         
         //一个串行队列，用于同步执行
@@ -142,54 +141,64 @@ class SecondController: FormViewController {
                     group.leave()
                     print("①Sleep的线程\(currentThread)")
                     print("②当前输出内容的线程\(Thread.current)")
-                    print("③执行\(i):\(queue)\n")
+                    print("③执行\(i.toEmoji):\(queue)\n")
                 }
             }
-            print("\(i)添加完毕\n")
+            print("\(i.toEmoji)添加完毕\n")
         }
         print("使用异步方式添加队列")
         
         group.notify(queue: DispatchQueue.main) {
-            print("**************************结束**************************\n")
+            self.ended()
         }
     }
-    
+
     func currentThreadSleep(_ timer: TimeInterval) {
         Thread.sleep(forTimeInterval: timer)
     }
     
-    /**
-     创建串行队列
-     */
+    
+    /// 创建串行队列
     func getSerialQueue(_ label: String) -> DispatchQueue {
         return DispatchQueue(label: label)
     }
+
     
-    /**
-     创建并行队列
-     */
+    /// 创建并行队列
     func getConcurrentQueue(_ label: String) -> DispatchQueue {
         return DispatchQueue(label: label, attributes: .concurrent)
     }
     
-    /**
-     延迟执行
-     */
+    
+    /// 延迟执行
     func deferPerform(_ time: Int) {
+        
+        let semaphore = DispatchSemaphore(value: 0)
         let queue = getGlobalQueue()
-        let delayTime = DispatchTime.now() + DispatchTimeInterval.seconds(time)
+        let delaySecond = DispatchTimeInterval.seconds(time)
+        
+        print(Date())
+        let delayTime = DispatchTime.now() + delaySecond
         queue.asyncAfter(deadline: delayTime) {
-            print("执行线程：\(Thread.current)\ndispatch_time: 延迟\(time)秒执行\n")
+            print("执行线程：\(Thread.current)\ndispatch_time: 延迟\(time)秒执行\n",Date())
+            semaphore.signal()
         }
         
-        //dispatch_walltime用于计算绝对时间,而dispatch_walltime是根据挂钟来计算的时间，即使设备睡眠了，他也不会睡眠。
-        let nowInterval = Date().timeIntervalSince1970
-        let nowStruct = timespec(tv_sec: Int(nowInterval), tv_nsec: 0)
-        let delayWalltime = DispatchWallTime(timespec: nowStruct)
+        //DispatchWallTime用于计算绝对时间,而DispatchWallTime是根据挂钟来计算的时间，即使设备睡眠了，他也不会睡眠。
+//        let nowInterval = Date().timeIntervalSince1970
+//        let nowStruct = timespec(tv_sec: Int(nowInterval), tv_nsec: 0)
+//        let delayWalltime = DispatchWallTime(timespec: nowStruct)
+        let delayWalltime = DispatchWallTime.now() + delaySecond
         queue.asyncAfter(wallDeadline: delayWalltime) {
-            print("执行线程：\(Thread.current)\ndispatch_walltime: 延迟\(time)秒执行\n")
+            print("执行线程：\(Thread.current)\ndispatch_walltime: 延迟\(time)秒执行\n", Date())
         }
-        print(NSEC_PER_SEC) //一秒有多少纳秒
+        semaphore.wait()
+        
+        ended()
+    }
+    
+    func ended() {
+        print("**************************结束**************************\n")
     }
     
     
@@ -205,9 +214,8 @@ class SecondController: FormViewController {
         return DispatchQueue.global(qos: qos)
     }
     
-    /**
-     全局队列的优先级关系
-     */
+    
+    /// 全局队列的优先级关系
     func globalQueuePriority() {
         //高 > 默认 > 低 > 后台
         
@@ -216,37 +224,42 @@ class SecondController: FormViewController {
         let queueLow = getGlobalQueue(qos: .utility)
         let queueBackground = getGlobalQueue(qos: .background)
         
-        
+        let group = DispatchGroup()
         //优先级不是绝对的，大体上会按这个优先级来执行。 一般都是使用默认（default）优先级
-        queueLow.async {
+        queueLow.async(group: group) {
+            
             print("Low：\(Thread.current)")
         }
         
-        queueBackground.async {
+        queueBackground.async(group: group) {
             print("Background：\(Thread.current)")
         }
         
-        queueDefault.async {
+        queueDefault.async(group: group) {
             print("Default：\(Thread.current)")
         }
         
-        queueHeight.async {
+        queueHeight.async(group: group) {
             print("High：\(Thread.current)")
         }
+        
+        group.wait()
+        
+        ended()
     }
     
-    /**
-     给串行队列或者并行队列设置优先级
-     */
+    
+    /// 给串行队列或者并行队列设置优先级
     func setCustomeQueuePriority() {
         //优先级的执行顺序也不是绝对的
         
         //给serialQueueHigh设定DISPATCH_QUEUE_PRIORITY_HIGH优先级
         let serialQueueHigh = getSerialQueue("cn.zeluli.serial1")
-        serialQueueHigh.setTarget(queue: getGlobalQueue(qos: .userInitiated))
+        getGlobalQueue(qos: .userInitiated).setTarget(queue: serialQueueHigh)
         
         let serialQueueLow = getSerialQueue("cn.zeluli.serial1")
-        serialQueueLow.setTarget(queue: getGlobalQueue(qos: .utility))
+        getGlobalQueue(qos: .utility).setTarget(queue: serialQueueLow)
+        
         
         
         serialQueueLow.async {
@@ -255,18 +268,16 @@ class SecondController: FormViewController {
         
         serialQueueHigh.async {
             print("高：\(Thread.current)")
+            self.ended()
         }
     }
     
     func performGroupQueue() {
-        print("\n任务组自动管理：")
-        
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         let group = DispatchGroup()
         
         //将group与queue进行管理，并且自动执行
         for i in 1...3 {
-            
             concurrentQueue.async(group: group) {
                 self.currentThreadSleep(1)
                 print("任务\(i)执行完毕\n")
@@ -275,17 +286,15 @@ class SecondController: FormViewController {
         
         //队列组的都执行完毕后会进行通知
         group.notify(queue: DispatchQueue.main) {
-            print("所有的任务组执行完毕！\n")
+            self.ended()
         }
         
         print("异步执行测试，不会阻塞当前线程")
     }
     
-    /**
-     * 使用enter与leave手动管理group与queue
-     */
+    
+    /// 使用enter与leave手动管理group与queue
     func performGroupUseEnterAndleave() {
-        print("\n任务组手动管理：")
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         let group = DispatchGroup()
         
@@ -294,7 +303,7 @@ class SecondController: FormViewController {
             group.enter() //进入队列组
             concurrentQueue.async {
                 self.currentThreadSleep(1)
-                print("任务\(i)执行完毕\n")
+                print("任务\(i.toEmoji)执行完毕\n")
                 group.leave()                 //离开队列组
             }
         }
@@ -303,7 +312,7 @@ class SecondController: FormViewController {
         print("任务组执行完毕")
         
         group.notify(queue: concurrentQueue) {
-            print("手动管理的队列执行OK")
+            self.ended()
         }
     }
     
@@ -317,21 +326,19 @@ class SecondController: FormViewController {
         
         var testNumber = 0
         
-        for index in 1...10 {
+        for index in 0...9 {
             concurrentQueue.async {
-                _ = semaphoreLock.wait(timeout: .distantFuture) //上锁
-                
+                let wait = semaphoreLock.wait(timeout: .distantFuture) //上锁
+                print("wait=\(wait)")
                 testNumber += 1
-                self.currentThreadSleep(Double(1))
+                self.currentThreadSleep(1)
                 print(Thread.current)
-                print("第\(index)次执行: testNumber = \(testNumber)\n")
+                print("第\(index.toEmoji)次执行: testNumber = \(testNumber)\n")
                 
                 semaphoreLock.signal()                      //开锁
                 
             }
         }
-        
-        print("异步执行测试\n")
     }
     
     func useBarrierAsync() {
@@ -360,9 +367,8 @@ class SecondController: FormViewController {
         print("异步执行测试\n")
     }
     
-    /**
-     循环执行
-     */
+    
+    /// 循环执行
     func useDispatchApply() {
         
         print("循环多次执行并行队列")
@@ -395,9 +401,8 @@ class SecondController: FormViewController {
         concurrentQueue.resume()    //将挂起的队列进行唤醒
     }
     
-    /**
-     以加法运算的方式合并数据
-     */
+    
+    /// 以加法运算的方式合并数据
     func useDispatchSourceAdd() {
         var sum = 0     //手动计数的sum, 来模拟记录merge的数据
         
@@ -422,9 +427,8 @@ class SecondController: FormViewController {
         }
     }
     
-    /**
-     以或运算的方式合并数据
-     */
+    
+    /// 以或运算的方式合并数据
     func useDispatchSourceOr() {
         
         var or = 0     //手动计数的sum, 来记录merge的数据
@@ -454,9 +458,8 @@ class SecondController: FormViewController {
         print("\nsum = \(or)")
     }
     
-    /**
-     使用dispatch_source创建定时器
-     */
+    
+    /// 使用dispatch_source创建定时器
     func useDispatchSourceTimer() {
         let queue = getGlobalQueue()
         
@@ -511,5 +514,34 @@ extension DispatchQueue {
         
         _onceTracker.append(token)
         block()
+    }
+}
+
+extension Int {
+    var toEmoji: String {
+        switch self {
+        case 0:
+            return "0️⃣"
+        case 1:
+            return "1️⃣"
+        case 2:
+            return "2️⃣"
+        case 3:
+            return "3️⃣"
+        case 4:
+            return "4️⃣"
+        case 5:
+            return "5️⃣"
+        case 6:
+            return "6️⃣"
+        case 7:
+            return "7️⃣"
+        case 8:
+            return "8️⃣"
+        case 9:
+            return "9️⃣"
+        default:
+            return self.description
+        }
     }
 }

@@ -19,6 +19,25 @@ class ViewController: UIViewController {
 //        operationDependency()
 //        test()
 //        delay()
+        semaphoreGroup()
+    }
+    
+    func semaphoreGroup() {
+        let group = DispatchGroup()
+        let semaphore = DispatchSemaphore(value: 10)
+        
+        let queue = DispatchQueue.global()
+        for i in 0..<100 {
+            print(semaphore.wait(timeout: .distantFuture))
+            queue.async(group: group) {
+                print(i)
+                Thread.sleep(forTimeInterval: 2)
+                semaphore.signal()
+            }
+        }
+        group.notify(queue: queue) { 
+                print("😄")
+        }
     }
     
     func semaphore() {

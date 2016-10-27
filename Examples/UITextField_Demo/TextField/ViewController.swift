@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     fileprivate lazy var cursorView: UIView = {
         let cursorView = UIView(frame: CGRect(x: 15, y: 10, width: 2, height: 24))
         cursorView.backgroundColor = UIColor.blue
-        cursorView.layer.add(self.animation, forKey: nil)
+        cursorView.layer.add(self.opacityForever_Animation(), forKey: nil)
         return cursorView
     }()
     
@@ -42,6 +42,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
         animation.isRemovedOnCompletion = false
         animation.fromValue = NSNumber(value: 1.0)
         animation.toValue = NSNumber(value: 0.0)
+        return animation
+    }
+    
+    func opacityForever_Animation() -> CABasicAnimation {
+        let animation = CABasicAnimation(keyPath: "opacity")//必须写opacity才行。
+        animation.fromValue = NSNumber(value: 1.0)
+        animation.toValue = NSNumber(value: 0.0)
+//        animation.autoreverses = true
+        animation.duration = 0.8
+        animation.repeatCount = MAXFLOAT
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = kCAFillModeRemoved
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)///没有的话是均匀的动画。
         return animation
     }
 
