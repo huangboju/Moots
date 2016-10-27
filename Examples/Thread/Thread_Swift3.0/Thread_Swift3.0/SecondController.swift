@@ -13,24 +13,37 @@ class SecondController: FormViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Swift3.0 GCD"
         
         let tags = [
             [
                 "同步执行串行队列",
-                "同步执行并行队列",
+                "同步执行并行队列"
+            ],
+            [
                 "异步执行串行队列",
-                "异步执行并行队列",
-                "延迟执行",
+                "异步执行并行队列"
+            ],
+            [
+                "延迟执行"
+            ],
+            [
                 "设置全局队列的优先级",
-                "设置自建队列优先级",
+                "设置自建队列优先级"
+            ],
+            [
                 "自动执行任务组",
-                "手动执行任务组",
+                "手动执行任务组"
+            ],
+            [
                 "使用信号量添加同步锁"
             ],
             [
                 "使用Apply循环执行",
                 "暂停和重启队列",
-                "使用任务隔离栅栏",
+                "使用任务隔离栅栏"
+            ],
+            [
                 "dispatch源,ADD",
                 "dispatch源,OR",
                 "dispatch源,定时器"
@@ -56,8 +69,8 @@ class SecondController: FormViewController {
     }
     
     func action(tag: String) {
-        print(tag)
-        print("********************************************************")
+        print("🍀🍀🍀",tag)
+        print("**************************开始**************************")
         switch tag {
         case "同步执行串行队列":
             performQueuesUseSynchronization(getSerialQueue("syn.serial.queue"))
@@ -95,7 +108,6 @@ class SecondController: FormViewController {
         default:
             break
         }
-        print("********************************************************")
     }
     
     func performQueuesUseSynchronization(_ queue: DispatchQueue) {
@@ -108,6 +120,7 @@ class SecondController: FormViewController {
             print("\(i)执行完毕")
         }
         print("所有队列使用同步方式执行完毕")
+        print("**************************结束**************************\n")
     }
 
     /**
@@ -116,20 +129,29 @@ class SecondController: FormViewController {
     func performQueuesUseAsynchronization(_ queue: DispatchQueue) -> Void {
         
         //一个串行队列，用于同步执行
+        
+        let group = DispatchGroup()
+        
         let serialQueue = getSerialQueue("serialQueue")
         for i in 0..<3 {
-            queue.async {
+            group.enter()
+            queue.async(group: group) {
                 self.currentThreadSleep(Double(arc4random()%3))
                 let currentThread = Thread.current
                 serialQueue.sync {              //同步锁
-                    print("Sleep的线程\(currentThread)")
-                    print("当前输出内容的线程\(Thread.current)")
-                    print("执行\(i):\(queue)\n")
+                    group.leave()
+                    print("①Sleep的线程\(currentThread)")
+                    print("②当前输出内容的线程\(Thread.current)")
+                    print("③执行\(i):\(queue)\n")
                 }
             }
             print("\(i)添加完毕\n")
         }
         print("使用异步方式添加队列")
+        
+        group.notify(queue: DispatchQueue.main) {
+            print("**************************结束**************************\n")
+        }
     }
     
     func currentThreadSleep(_ timer: TimeInterval) {

@@ -17,8 +17,8 @@ class ViewController: UIViewController {
 //        operation()
 //        operationQueue()
 //        operationDependency()
-        test()
-        delay()
+//        test()
+//        delay()
     }
     
     func semaphore() {
