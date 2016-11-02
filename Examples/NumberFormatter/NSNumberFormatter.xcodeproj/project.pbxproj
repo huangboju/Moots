@@ -15,6 +15,8 @@
 		D8CE54001DC847470080AAFF /* NSNumberFormatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE53FF1DC847470080AAFF /* NSNumberFormatterUITests.swift */; };
 		D8CE540D1DC9DB0D0080AAFF /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */; };
 		D8CE540F1DC9ED580080AAFF /* HeaderViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE540E1DC9ED580080AAFF /* HeaderViewPresenter.swift */; };
+		D8CE54111DCA277A0080AAFF /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE54101DCA277A0080AAFF /* Cell.swift */; };
+		D8CE54131DCA27970080AAFF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE54121DCA27970080AAFF /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,8 @@
 		D8CE54011DC847470080AAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 		D8CE540E1DC9ED580080AAFF /* HeaderViewPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderViewPresenter.swift; sourceTree = "<group>"; };
+		D8CE54101DCA277A0080AAFF /* Cell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
+		D8CE54121DCA27970080AAFF /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				D8CE53F61DC847470080AAFF /* Info.plist */,
 				D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */,
 				D8CE540E1DC9ED580080AAFF /* HeaderViewPresenter.swift */,
+				D8CE54101DCA277A0080AAFF /* Cell.swift */,
+				D8CE54121DCA27970080AAFF /* Item.swift */,
 			);
 			path = NSNumberFormatter;
 			sourceTree = "<group>";
@@ -207,7 +213,9 @@
 			files = (
 				D8CE540D1DC9DB0D0080AAFF /* SecondController.swift in Sources */,
 				D8CE53ED1DC847470080AAFF /* ViewController.swift in Sources */,
+				D8CE54111DCA277A0080AAFF /* Cell.swift in Sources */,
 				D8CE53EB1DC847470080AAFF /* AppDelegate.swift in Sources */,
+				D8CE54131DCA27970080AAFF /* Item.swift in Sources */,
 				D8CE540F1DC9ED580080AAFF /* HeaderViewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

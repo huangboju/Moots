@@ -102,8 +102,7 @@ extension SecondController {
                                 8888888888888888 :
                                 inputNumber.int64Value
         let number = NSNumber(value: cardNumber)
-        let text = numberFormatter.string(from: number)
-        displayLabel?.text = text
+        displayLabel?.text = numberFormatter.string(from: number)
     }
     
     func currencyDisplay() {
@@ -113,8 +112,7 @@ extension SecondController {
         let n: NSNumber = isNaN ?
                           1000 :
                           inputNumber
-        let text = numberFormatter.string(from: n)
-        displayLabel?.text = text
+        displayLabel?.text = numberFormatter.string(from: n)
     }
     
     // 从64.01开始，NSNumber(value: 64.01).description得到是这样“64.01000000000001”到“99.01”都是有bug的，可能不准确，请注意。
@@ -143,25 +141,4 @@ extension SecondController {
         let positiveText = numberFormatter.string(from: flag ? 12345.7658 : inputNumber)!
         displayLabel?.text = negativeText + "\n\n" + positiveText
     }
-}
-
-class Cell: UITableViewCell {
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
-        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
-        detailTextLabel?.textColor = UIColor.gray
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        textLabel?.frame.origin.y = 8
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-struct Item {
-    let methodName: String
-    let desc: String
 }
