@@ -107,11 +107,17 @@ extension ViewController: UITableViewDelegate {
         let text = data[indexPath.row]
         print("🍀🍀🍀🍀🍀\(text)🍀🍀🍀🍀🍀")
         perform(Selector(text))
-        print("\n===========================================\n")
+        print("\n*****************************************************\n")
     }
 }
 
 extension ViewController {
+    
+
+    /*
+     *  default: none
+     *  desc:  数字的风格
+     */
 
     func numberStyle() {
         let number = NSNumber(value: 1234567.8369)
@@ -154,6 +160,7 @@ extension ViewController {
         print(formatter.currencySymbol) // $
     }
     
+    
     /*
      * default: false
      * desc:  控制这个func number(from string: String) -> NSNumber?的返回值是
@@ -175,16 +182,13 @@ extension ViewController {
     
     /*
      *  default: Behavior
-     *  desc: ???
+     *  desc: ??? 接收器的格式化器行为。
      */
     
     // open var formatterBehavior: NumberFormatter.Behavior
     func formatterBehavior() {
         let formatter = NumberFormatter()
         print(formatter.formatterBehavior)
-        formatter.formatterBehavior = NumberFormatter.Behavior.behavior10_4
-        let str = formatter.number(from: "1237868794.56878")
-        print(str!)
     }
     
     /*
@@ -202,16 +206,16 @@ extension ViewController {
         print(formatter.string(from: -70.00)!) //$-70.00
     }
     
+    
     /*
      *  default: nil
-     *  desc: 用于显示负值的文本属性。
+     *  desc: ???  用于显示负值的文本属性。
      */
     
     // open var textAttributesForNegativeValues: [String : Any]?
     func textAttributesForNegativeValues() {
         let formatter = NumberFormatter()
         print(formatter.textAttributesForNegativeValues as Any)
-        formatter.textAttributesForNegativeValues = [NSForegroundColorAttributeName: UIColor.red]
     }
     
     
@@ -233,7 +237,7 @@ extension ViewController {
     
     /*
      *  default: nil
-     *  desc: 用于显示正值的文本属性。
+     *  desc: ??? 用于显示正值的文本属性。
      */
     
     // open var textAttributesForPositiveValues: [String : Any]?
@@ -358,23 +362,22 @@ extension ViewController {
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.zeroSymbol as Any)
         let str = formatter.string(from: 0)
-        print(str!) //  $14,321,423.123
+        print(str!) //  0
         formatter.zeroSymbol = "*"
         let str1 = formatter.string(from: 0)
-        print(str1!) // $14*321*423.123
+        print(str1!) // *
     }
     
     
     
     /*
      *  default: nil
-     *  desc: 接收器用于显示零值的属性字符串。
+     *  desc: ??? 接收器用于显示零值的属性字符串。
      */
     
     // open var textAttributesForZero: [String : Any]?
     func textAttributesForZero() {
         let formatter = NumberFormatter()
-        formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForZero as Any)
     }
     
@@ -426,7 +429,7 @@ extension ViewController {
     
     /*
      *  default: nil
-     *  desc: ??? 用于显示MaN（“不是数字”）字符串的文本属性。
+     *  desc: ??? 用于显示NaN（“不是数字”）字符串的文本属性。
      */
     
     // open var textAttributesForNotANumber: [String : Any]?
@@ -436,6 +439,7 @@ extension ViewController {
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNotANumber as Any)
     }
+    
     
     /*
      *  default: +∞
@@ -451,7 +455,7 @@ extension ViewController {
     
     /*
      *  default: nil
-     *  desc: 用于显示正无穷大符号的文本属性。
+     *  desc: ??? 用于显示正无穷大符号的文本属性。
      */
     
     // open var textAttributesForPositiveInfinity: [String : Any]?
@@ -477,7 +481,7 @@ extension ViewController {
     
     /*
      *  default: nil
-     *  desc: 用于显示负无穷大符号的文本属性。
+     *  desc: ??? 用于显示负无穷大符号的文本属性。
      */
     
     // open var textAttributesForNegativeInfinity: [String : Any]?
@@ -486,6 +490,7 @@ extension ViewController {
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNegativeInfinity as Any)
     }
+    
     
     /*
      *  default: ''
@@ -499,8 +504,8 @@ extension ViewController {
         print(formatter.positivePrefix, "😁")
         let str = formatter.string(from: 123456)
         print(str as Any)
-        formatter.positivePrefix = "+"
-        let str1 = formatter.string(from: 123456)
+        formatter.positivePrefix = "+" // 123456
+        let str1 = formatter.string(from: 123456) // +123456
         print(str1 as Any)
     }
     
@@ -514,10 +519,10 @@ extension ViewController {
         let formatter = NumberFormatter()
         print(formatter.positiveSuffix, "😁")
         let str = formatter.string(from: 123456)
-        print(str as Any)
+        print(str as Any) // "123456"
         formatter.positiveSuffix = "🌞"
         let str1 = formatter.string(from: 123456)
-        print(str1 as Any)
+        print(str1 as Any) // "123456🌞"
     }
     
     
@@ -533,11 +538,12 @@ extension ViewController {
         let formatter = NumberFormatter()
         print(formatter.negativePrefix, "😁")
         let str = formatter.string(from: -123456)
-        print(str as Any)
+        print(str as Any) // -123456
         formatter.negativePrefix = "减号"
-        let str1 = formatter.string(from: -123456)
+        let str1 = formatter.string(from: -123456) // 减号123456
         print(str1 as Any)
     }
+    
     
     /*
      *  default: '-'
@@ -549,10 +555,10 @@ extension ViewController {
         let formatter = NumberFormatter()
         print(formatter.negativeSuffix, "😁")
         let str = formatter.string(from: -123456)
-        print(str as Any)
+        print(str as Any) // "-123456"
         formatter.negativeSuffix = "🌞"
-        let str1 = formatter.string(from: -123456)
-        print(str1 as Any)
+        let str1 = formatter.string(from: -123456) // "-123456🌞"
+        print(str1 as Any) //
     }
     
     
@@ -582,8 +588,8 @@ extension ViewController {
         print(formatter.currencySymbol)
         let str = formatter.string(from: 123456) // $123,456.00
         print(str as Any)
-        formatter.currencySymbol = "￥"
-        let str1 = formatter.string(from: 123456) // ￥123,456.00
+        formatter.currencySymbol = "💵"
+        let str1 = formatter.string(from: 123456) // 💵123,456.00
         print(str1 as Any)
     }
     
@@ -594,7 +600,6 @@ extension ViewController {
      */
     
     // open var internationalCurrencySymbol: String!
-    
     func internationalCurrencySymbol() {
         
         let formatter = NumberFormatter()
@@ -692,7 +697,7 @@ extension ViewController {
         let str = formatter.string(from: 123456) // $123,456.00
         print(str as Any)
         formatter.groupingSize = 1
-        let str1 = formatter.string(from: 123456) // $1,2,3,4,5,6.00😄
+        let str1 = formatter.string(from: 123456) // $1,2,3,4,5,6.00
         print(str1 as Any)
     }
     
@@ -703,7 +708,6 @@ extension ViewController {
      */
     
     // open var secondaryGroupingSize: Int
-    
     func secondaryGroupingSize() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -923,7 +927,6 @@ extension ViewController {
      */
     
     // @NSCopying open var maximum: NSNumber?
-    
     func maximum() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -937,7 +940,6 @@ extension ViewController {
      */
     
     // open var currencyGroupingSeparator: String!
-    
     func currencyGroupingSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -956,7 +958,6 @@ extension ViewController {
      */
     
     // open var isLenient: Bool
-    
     func isLenient() {
         let formatter = NumberFormatter()
         print(formatter.isLenient)
@@ -1001,7 +1002,7 @@ extension ViewController {
     
     /*
      *  default: 6
-     *  desc: 最小有效数字位数
+     *  desc: 最大有效数字位数
      */
     
     // open var maximumSignificantDigits: Int
