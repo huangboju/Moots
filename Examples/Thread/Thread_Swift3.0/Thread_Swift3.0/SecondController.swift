@@ -154,6 +154,7 @@ class SecondController: FormViewController {
     }
 
     func currentThreadSleep(_ timer: TimeInterval) {
+        print("😪😪😪延时😪😪😪")
         Thread.sleep(forTimeInterval: timer)
     }
     
@@ -342,11 +343,13 @@ class SecondController: FormViewController {
     }
     
     func useBarrierAsync() {
+        
+        
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         for i in 0...3 {
             concurrentQueue.async {
                 self.currentThreadSleep(Double(i))
-                print("第一批：\(i)\(Thread.current)")
+                print("第一批：\(i.toEmoji)\(Thread.current)")
             }
         }
         
@@ -360,11 +363,11 @@ class SecondController: FormViewController {
         for i in 0...3 {
             concurrentQueue.async {
                 self.currentThreadSleep(Double(i))
-                print("第二批：\(i)\(Thread.current)")
+                print("第二批：\(i.toEmoji)\(Thread.current)")
             }
         }
         
-        print("异步执行测试\n")
+        print("😁😁😁不会阻塞主线程😁😁😁")
     }
     
     
@@ -373,36 +376,29 @@ class SecondController: FormViewController {
         
         print("循环多次执行并行队列")
         _ = getConcurrentQueue("cn.zeluli")
-        //会阻塞当前线程, 但concurrentQueue队列会在新的线程中执行
-        DispatchQueue.concurrentPerform(iterations: 2) { (index) in
+        DispatchQueue.concurrentPerform(iterations: 3) { (index) in
             currentThreadSleep(Double(index))
             print("第\(index)次执行，\n\(Thread.current)\n")
         }
-        
-        print("\n\n循环多次执行串行队列")
-        _ = getSerialQueue("cn.zeluli")
-        //会阻塞当前线程, serialQueue队列在当前线程中执行
-        DispatchQueue.concurrentPerform(iterations: 2) { (index) in
-            currentThreadSleep(Double(index))
-            print("第\(index)次执行，\n\(Thread.current)\n")
-        }
+        ended()
     }
     
     //暂停和重启队列
     func queueSuspendAndResume() {
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
-        
         concurrentQueue.suspend()   //将队列进行挂起
         concurrentQueue.async { 
-            print("任务执行")
+            print("任务执行, \(Thread.current)")
         }
         
         currentThreadSleep(2)
         concurrentQueue.resume()    //将挂起的队列进行唤醒
+        ended()
     }
     
     
     /// 以加法运算的方式合并数据
+    // http://www.tanhao.me/pieces/360.html/
     func useDispatchSourceAdd() {
         var sum = 0     //手动计数的sum, 来模拟记录merge的数据
         
@@ -417,14 +413,16 @@ class SecondController: FormViewController {
             self.currentThreadSleep(0.3)
         }
         
+        // DispatchQueue启动时默认状态是挂起的,创建完毕之后得主动恢复，否则事件不会被传送
         dispatchSource.resume()
         
         for i in 1...10 {
             sum += i
-            print(i)
+            print("i=\(i)")
             dispatchSource.add(data: UInt(i))
             currentThreadSleep(0.1)
         }
+        ended()
     }
     
     
@@ -449,24 +447,25 @@ class SecondController: FormViewController {
         
         for i in 1...10 {
             or |= i
-            print(i)
+            print("i=\(i)")
             dispatchSource.or(data: UInt(i))
             currentThreadSleep(0.1)
-            
         }
         
         print("\nsum = \(or)")
     }
     
     
-    /// 使用dispatch_source创建定时器
+    /// 使用DispatchSource创建定时器
     func useDispatchSourceTimer() {
         let queue = getGlobalQueue()
         
         let source = DispatchSource.makeTimerSource(queue: queue)
         
-        //设置间隔时间，从当前时间开始，允许偏差0纳秒
-        source.scheduleOneshot(deadline: DispatchTime.now(), leeway: DispatchTimeInterval.nanoseconds(1))
+        // deadline 结束时间
+        // interval 时间间隔
+        // leeway  时间精度
+        source.scheduleRepeating(deadline: .now(), interval: 1, leeway: .nanoseconds(0))
 
         var timeout = 10    //倒计时时间
         
@@ -477,7 +476,7 @@ class SecondController: FormViewController {
             if(timeout <= 0) {
                 source.cancel()
             } else {
-                print("\(timeout)s")
+                print("\(timeout)s", Date())
                 timeout -= 1
             }
         }
