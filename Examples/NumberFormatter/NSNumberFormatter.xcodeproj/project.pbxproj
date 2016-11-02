@@ -13,6 +13,7 @@
 		D8CE53F21DC847470080AAFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8CE53F11DC847470080AAFF /* Assets.xcassets */; };
 		D8CE53F51DC847470080AAFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CE53F31DC847470080AAFF /* LaunchScreen.storyboard */; };
 		D8CE54001DC847470080AAFF /* NSNumberFormatterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE53FF1DC847470080AAFF /* NSNumberFormatterUITests.swift */; };
+		D8CE540D1DC9DB0D0080AAFF /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D8CE53FB1DC847470080AAFF /* NSNumberFormatterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NSNumberFormatterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CE53FF1DC847470080AAFF /* NSNumberFormatterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberFormatterUITests.swift; sourceTree = "<group>"; };
 		D8CE54011DC847470080AAFF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				D8CE53F11DC847470080AAFF /* Assets.xcassets */,
 				D8CE53F31DC847470080AAFF /* LaunchScreen.storyboard */,
 				D8CE53F61DC847470080AAFF /* Info.plist */,
+				D8CE540C1DC9DB0D0080AAFF /* SecondController.swift */,
 			);
 			path = NSNumberFormatter;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8CE540D1DC9DB0D0080AAFF /* SecondController.swift in Sources */,
 				D8CE53ED1DC847470080AAFF /* ViewController.swift in Sources */,
 				D8CE53EB1DC847470080AAFF /* AppDelegate.swift in Sources */,
 			);
