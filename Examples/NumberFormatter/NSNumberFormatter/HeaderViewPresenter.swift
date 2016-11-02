@@ -15,15 +15,16 @@ protocol HeaderViewPresenter: class {
 
 extension HeaderViewPresenter where Self: UIViewController {
     func setupHeaderView() {
-        displayLabel = UILabel(frame: CGRect(x: 15, y: 69, width: view.frame.width - 30, height: 44))
+        displayLabel = UILabel(frame: CGRect(x: 15, y: 104, width: view.frame.width - 30, height: 88))
+        displayLabel?.numberOfLines = 0
+        displayLabel?.textAlignment = .center
         displayLabel?.backgroundColor = UIColor(white: 0.9, alpha: 1)
         view.addSubview(displayLabel!)
         
-        textField = UITextField(frame: CGRect(x: 15, y: 121, width: view.frame.width - 30, height: 34))
-        textField?.borderStyle = .line
-        textField?.layer.cornerRadius = 5
+        textField = UITextField(frame: CGRect(x: 15, y: view.frame.height - 360, width: view.frame.width - 30, height: 34))
+        textField?.borderStyle = .roundedRect
+        textField?.clearButtonMode = .whileEditing
         textField?.keyboardType = .decimalPad
-        textField?.clipsToBounds = true
         textField?.placeholder = "请输入"
         view.addSubview(textField!)
     }

@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="-2923" y="876"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="QVv-Nd-aEb">
             <objects>
                 <navigationController id="pxI-l0-tds" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="pFW-WM-dfE"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="pFW-WM-dfE"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="bOW-yt-Ttm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -62,11 +62,11 @@
             </objects>
             <point key="canvasLocation" x="-1134" y="351"/>
         </scene>
-        <!--Item-->
+        <!--Navigation Controller-->
         <scene sceneID="en6-6R-3NB">
             <objects>
                 <navigationController id="Vkn-0m-1Ko" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="lwX-YR-q8l"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="lwX-YR-q8l"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3o7-36-y9S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
