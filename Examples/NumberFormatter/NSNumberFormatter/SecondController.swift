@@ -8,10 +8,13 @@
 
 import UIKit
 
-class SecondController: UIViewController {
+class SecondController: UIViewController, HeaderViewPresenter {
+    
+    var textField: UITextField?
+    var displayLabel: UILabel? 
     
     fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: .grouped)
+        let tableView = UITableView(frame: CGRect(x: 0, y: 160, width: self.view.frame.width, height: self.view.frame.height - 209), style: .grouped)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
@@ -26,8 +29,14 @@ class SecondController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor.groupTableViewBackground
+        
+        automaticallyAdjustsScrollViewInsets = false
         title = "NumberFormatter使用"
         tableView.register(Cell.self, forCellReuseIdentifier: "cell")
+        
+        setupHeaderView()
+        
         view.addSubview(tableView)
     }
     
