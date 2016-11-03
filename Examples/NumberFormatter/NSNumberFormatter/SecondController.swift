@@ -24,8 +24,11 @@ class SecondController: UIViewController, HeaderViewPresenter {
         Item(methodName: "bankCardNumber", desc: "分割16位银行卡号"),
         Item(methodName: "currencyDisplay", desc: "货币显示"),
         Item(methodName: "accurateDisplay", desc: "带,分隔的精确显示"),
-        Item(methodName: "changeDetails", desc: "微信零钱明细")
-        ]
+        Item(methodName: "changeDetails", desc: "微信零钱明细"),
+        Item(methodName: "percent", desc: "百分数"),
+        Item(methodName: "customizingGroupingSeparator", desc: "自定义分隔符"),
+        Item(methodName: "currencyStrToNumber", desc: "货币字符串转数字")
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,8 +98,11 @@ extension SecondController {
     
     func bankCardNumber() {
         let numberFormatter = NumberFormatter()
+        // 分隔位数,会受numberStyle的影响，currency，decimal是3位
         numberFormatter.groupingSize = 4
+        // 会受numberStyle的影响，currency，decimal是true
         numberFormatter.usesGroupingSeparator = true
+        // 分隔符号
         numberFormatter.groupingSeparator = " "
         let cardNumber: Int64 = isNaN ?
                                 8888888888888888 :
@@ -119,14 +125,16 @@ extension SecondController {
     func accurateDisplay() {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = NumberFormatter.Style.currency
+        
         numberFormatter.currencySymbol = ""
         let n: NSNumber = isNaN ?
                           12345.7658 :
                           inputNumber
-        let strs = n.description.components(separatedBy: ".")
-        numberFormatter.minimumFractionDigits = strs.count > 1 ? strs[1].characters.count : 0
-        let text = numberFormatter.string(from: n)
-        displayLabel?.text = text
+        // 使用这句去掉分隔符
+//        numberFormatter.usesGroupingSeparator = false
+        // 这句控制小数点后保留几位, 在currency默认2位decimal默认3
+        numberFormatter.maximumFractionDigits = Int.max
+        displayLabel?.text = numberFormatter.string(from: n)
     }
     
     func changeDetails() {
@@ -141,5 +149,35 @@ extension SecondController {
 //        numberFormatter.positiveSuffix = "元"
         let positiveText = numberFormatter.string(from: flag ? 12345.7658 : inputNumber)!
         displayLabel?.text = negativeText + "\n\n" + positiveText
+    }
+    
+    func percent() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.percent
+        let n: NSNumber = isNaN ?
+            0.121 :
+        inputNumber
+        numberFormatter.maximumFractionDigits = Int.max
+        displayLabel?.text = numberFormatter.string(from: n)
+    }
+    
+    func customizingGroupingSeparator() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        let n: NSNumber = isNaN ?
+            12345.7658 :
+        inputNumber
+        numberFormatter.groupingSeparator = "_"
+        numberFormatter.maximumFractionDigits = Int.max
+        displayLabel?.text = numberFormatter.string(from: n)
+    }
+    
+    func currencyStrToNumber() {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = NumberFormatter.Style.currency
+        let text = numberFormatter.string(from: inputNumber)
+        let str = isNaN ? numberFormatter.currencySymbol + "12,345.76" : text!
+        let num = numberFormatter.number(from: str)
+        displayLabel?.text = "原字符串：" + str + "\n\n反转数字" + num!.description
     }
 }

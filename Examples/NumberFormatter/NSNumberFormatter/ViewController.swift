@@ -145,6 +145,7 @@ extension ViewController {
         }
     }
     
+    //  Locale Identifiers  https://gist.github.com/jasef/337431c43c3addb2cbd5eb215b376179
     /*
      *  default: Locale.current
      *  desc:  设置地区，会影响currencySymbol，internationalCurrencySymbol
