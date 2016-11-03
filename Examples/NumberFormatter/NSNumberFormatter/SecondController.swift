@@ -123,7 +123,8 @@ extension SecondController {
         let n: NSNumber = isNaN ?
                           12345.7658 :
                           inputNumber
-        numberFormatter.minimumFractionDigits = n.description.components(separatedBy: ".").last?.characters.count ?? 0
+        let strs = n.description.components(separatedBy: ".")
+        numberFormatter.minimumFractionDigits = strs.count > 1 ? strs[1].characters.count : 0
         let text = numberFormatter.string(from: n)
         displayLabel?.text = text
     }
