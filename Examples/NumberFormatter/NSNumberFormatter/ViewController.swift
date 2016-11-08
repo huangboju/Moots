@@ -78,6 +78,15 @@ class ViewController: UIViewController {
         title = "NumberFormatter"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+        
+        barButton()
+    }
+    
+    func barButton() {
+        navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.leftBarButtonItem?.badgeValue = "1"
+        navigationItem.leftBarButtonItem?.badgeMinSize = 1
+        navigationItem.leftBarButtonItem?.badgeBGColor = UIColor.red
     }
     
     func button() {

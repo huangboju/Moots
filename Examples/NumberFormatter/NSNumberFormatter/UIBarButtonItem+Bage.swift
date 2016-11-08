@@ -5,7 +5,7 @@
 import UIKit
 
 extension UIBarButtonItem {
-    
+
     private struct AssociatedKeys {
         static var badgeKey = "badgeKey"
         static var badgeValueKey = "badgeValueKey"
@@ -19,7 +19,7 @@ extension UIBarButtonItem {
         static var shouldHideBadgeAtZeroKey = "shouldHideBadgeAtZeroKey"
         static var shouldAnimateBadgeKey = "shouldAnimateBadgeKey"
     }
-    
+
     func badgeInit() {
         var superview: UIView?
         var defaultOriginX: CGFloat = 0
@@ -32,16 +32,9 @@ extension UIBarButtonItem {
                 defaultOriginX = superview!.frame.width - badge!.frame.width
             }
         }
+        
         superview?.addSubview(badge!)
-        badgeBGColor = .red
-        badgeTextColor = .white
-        badgeFont = UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
-        badgePadding = 6
-        badgeMinSize = 8
-        badgeOriginX = defaultOriginX
-        badgeOriginY = -4
-        shouldHideBadgeAtZero = true
-        shouldAnimateBadge = true
+        badgeOriginX = defaultOriginX + 3
     }
     
     func refreshBadge() {
@@ -49,7 +42,7 @@ extension UIBarButtonItem {
         badge?.backgroundColor = badgeBGColor
         badge?.font = badgeFont
         
-        if badgeValue != nil || badgeValue == "" || badgeValue == "0" && shouldHideBadgeAtZero {
+        if badgeValue == nil || badgeValue == "" || (badgeValue == "0" && shouldHideBadgeAtZero) {
             badge?.isHidden = true
         } else {
             badge?.isHidden = false
@@ -57,25 +50,26 @@ extension UIBarButtonItem {
         }
     }
     
-    func badgeExpectedSize() -> CGSize {
+    var badgeExpectedSize: CGSize {
         let frameLabel = duplicateLabel(labelToCopy: badge!)
         frameLabel.sizeToFit()
         return frameLabel.frame.size
     }
     
     func updateBadgeFrame() {
-        let expectedLabelSize = badgeExpectedSize()
+
+        let expectedLabelSize = badgeExpectedSize
         var minHeight = expectedLabelSize.height
-        minHeight = (minHeight < badgeMinSize!) ? badgeMinSize! : expectedLabelSize.height
+        minHeight = max(minHeight, badgeMinSize)
         var minWidth = expectedLabelSize.width
         let padding = badgePadding
-        minWidth = (minWidth < minHeight) ? minHeight : expectedLabelSize.width
-        
+        minWidth = max(minWidth, minHeight)
+
         badge?.layer.masksToBounds = true
-        badge?.frame = CGRect(x: badgeOriginX!, y: badgeOriginY!, width: minWidth + padding!, height: minHeight + padding!)
-        badge?.layer.cornerRadius = (minHeight + padding!) / 2
+        badge?.layer.cornerRadius = (minHeight + padding) / 2
+        badge?.frame = CGRect(x: badgeOriginX, y: badgeOriginY, width: minWidth + padding, height: minHeight + padding)
     }
-    
+
     func updateBadgeValue(animated: Bool) {
         if animated && shouldAnimateBadge && badge?.text != badgeValue {
             let animation = CABasicAnimation(keyPath: "transform.scale")
@@ -116,7 +110,7 @@ extension UIBarButtonItem {
         get {
             var label = objc_getAssociatedObject(self, &AssociatedKeys.badgeKey) as? UILabel
             if label == nil {
-                label = UILabel(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+                label = UILabel(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
                 self.badge = label!
                 badgeInit()
                 customView?.addSubview(label!)
@@ -142,9 +136,10 @@ extension UIBarButtonItem {
         }
     }
     
-    var badgeBGColor: UIColor? {
+    var badgeBGColor: UIColor {
         get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.badgeBGColorKey) as?  UIColor
+            let color = objc_getAssociatedObject(self, &AssociatedKeys.badgeBGColorKey) as?  UIColor
+            return  color ?? UIColor.red
         }
         
         set {
@@ -154,25 +149,27 @@ extension UIBarButtonItem {
         }
     }
     
-    var badgeTextColor: UIColor? {
+    var badgeTextColor: UIColor {
         get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.badgeTextColorKey) as?  UIColor
+            let color = objc_getAssociatedObject(self, &AssociatedKeys.badgeTextColorKey) as?  UIColor
+            return color ?? UIColor.white
         }
         
         set {
             objc_setAssociatedObject(self, &AssociatedKeys.badgeTextColorKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             updateBadgeValue(animated: true)
             refreshBadge()
-            
             if badge != nil {
                 refreshBadge()
             }
         }
     }
     
-    var badgeFont: UIFont? {
+    /// Defatul UIFont.smallSystemFontSize
+    var badgeFont: UIFont {
         get {
-            return objc_getAssociatedObject(self, &AssociatedKeys.badgeFontKey) as? UIFont
+            let font = objc_getAssociatedObject(self, &AssociatedKeys.badgeFontKey) as? UIFont
+            return font ?? UIFont.systemFont(ofSize: UIFont.smallSystemFontSize)
         }
         
         set {
@@ -183,60 +180,60 @@ extension UIBarButtonItem {
         }
     }
     
-    var badgePadding: CGFloat? {
+    /// Defatult 1.5
+    var badgePadding: CGFloat {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgePaddingKey) as? NSNumber
-            return CGFloat(number?.floatValue ?? 0)
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgePaddingKey) as? CGFloat
+            return number ?? 1.5
         }
         
         set {
-            let number = NSNumber(value: Float(newValue ?? 0))
-            objc_setAssociatedObject(self, &AssociatedKeys.badgePaddingKey, number, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.badgePaddingKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if badge != nil {
                 updateBadgeFrame()
             }
         }
     }
     
-    var badgeMinSize: CGFloat? {
+    /// Defatult 8
+    var badgeMinSize: CGFloat {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeMinSizeKey) as? NSNumber
-            return CGFloat(number?.floatValue ?? 0)
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeMinSizeKey) as? CGFloat
+            return number ?? 8
         }
         
         set {
-            let number = NSNumber(value: Double(newValue ?? 0))
-            objc_setAssociatedObject(self, &AssociatedKeys.badgeMinSizeKey, number, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.badgeMinSizeKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if badge != nil {
                 updateBadgeFrame()
             }
         }
     }
     
-    var badgeOriginX: CGFloat? {
+    /// Defatul 0
+    var badgeOriginX: CGFloat {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeOriginXKey) as? NSNumber
-            return CGFloat(number?.floatValue ?? 0)
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeOriginXKey) as? CGFloat
+            return number ?? 0
         }
         
         set {
-            let number = NSNumber(value: Double(newValue ?? 0))
-            objc_setAssociatedObject(self, &AssociatedKeys.badgeOriginXKey, number, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.badgeOriginXKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if badge != nil {
                 updateBadgeFrame()
             }
         }
     }
     
-    var badgeOriginY: CGFloat? {
+    /// Defatul -4
+    var badgeOriginY: CGFloat {
         get {
-            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeOriginYKey) as? NSNumber
-            return CGFloat(number?.floatValue ?? 0)
+            let number = objc_getAssociatedObject(self, &AssociatedKeys.badgeOriginYKey) as? CGFloat
+            return number ?? -4
         }
         
         set {
-            let number = NSNumber(value: Double(newValue ?? 0))
-            objc_setAssociatedObject(self, &AssociatedKeys.badgeOriginYKey, number, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &AssociatedKeys.badgeOriginYKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             if badge != nil {
                 updateBadgeFrame()
             }
@@ -246,7 +243,7 @@ extension UIBarButtonItem {
     var shouldHideBadgeAtZero: Bool {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.shouldHideBadgeAtZeroKey) as? NSNumber
-            return number?.boolValue ?? false
+            return number?.boolValue ?? true
         }
         
         set {
@@ -261,7 +258,7 @@ extension UIBarButtonItem {
     var shouldAnimateBadge: Bool {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.shouldAnimateBadgeKey) as? NSNumber
-            return number?.boolValue ?? false
+            return number?.boolValue ?? true
         }
         
         set {
