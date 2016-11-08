@@ -80,6 +80,25 @@ class ViewController: UIViewController {
         view.addSubview(tableView)
     }
     
+    func button() {
+        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+        effectView.frame = view.bounds
+        view.addSubview(effectView)
+        
+        let button = AYVibrantButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100), style: AYVibrantButtonStyleTranslucent)
+        button?.vibrancyEffect = nil
+        button?.text = "Any Color"
+        button?.font = UIFont.systemFont(ofSize: 18)
+        button?.tintColor = UIColor.black
+        view.addSubview(button!)
+        
+        let invertButton = AYVibrantButton(frame: CGRect(x: 100, y: 210, width: 100, height: 100), style: AYVibrantButtonStyleInvert)
+        invertButton?.vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .light))
+        invertButton?.text = "Invert"
+        invertButton?.font = UIFont.systemFont(ofSize: 18)
+        view.addSubview(invertButton!)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -407,7 +426,6 @@ extension ViewController {
     
     // open var textAttributesForNil: [String : Any]?
     func textAttributesForNil() {
-        
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNil as Any)
@@ -602,7 +620,6 @@ extension ViewController {
     
     // open var internationalCurrencySymbol: String!
     func internationalCurrencySymbol() {
-        
         let formatter = NumberFormatter()
         //        formatter.locale = Locale(identifier: "de_DE")
         formatter.numberStyle = NumberFormatter.Style.currency

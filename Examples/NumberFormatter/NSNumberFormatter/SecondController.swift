@@ -27,7 +27,8 @@ class SecondController: UIViewController, HeaderViewPresenter {
         Item(methodName: "changeDetails", desc: "微信零钱明细"),
         Item(methodName: "percent", desc: "百分数"),
         Item(methodName: "customizingGroupingSeparator", desc: "自定义分隔符"),
-        Item(methodName: "currencyStrToNumber", desc: "货币字符串转数字")
+        Item(methodName: "currencyStrToNumber", desc: "货币字符串转数字"),
+        Item(methodName: "rounding", desc: "取整")
     ]
     
     override func viewDidLoad() {
@@ -97,87 +98,106 @@ extension SecondController {
     }
     
     func bankCardNumber() {
-        let numberFormatter = NumberFormatter()
+        let formatter = NumberFormatter()
         // 分隔位数,会受numberStyle的影响，currency，decimal是3位
-        numberFormatter.groupingSize = 4
+        formatter.groupingSize = 4
         // 会受numberStyle的影响，currency，decimal是true
-        numberFormatter.usesGroupingSeparator = true
+        formatter.usesGroupingSeparator = true
         // 分隔符号
-        numberFormatter.groupingSeparator = " "
+        formatter.groupingSeparator = " "
         let cardNumber: Int64 = isNaN ?
                                 8888888888888888 :
                                 inputNumber.int64Value
         let number = NSNumber(value: cardNumber)
-        displayLabel?.text = numberFormatter.string(from: number)
+        displayLabel?.text = formatter.string(from: number)
     }
     
     func currencyDisplay() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.currency
-        numberFormatter.currencySymbol = "" // 注释这一句前面可以有货币符号
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        formatter.currencySymbol = "" // 注释这一句前面可以有货币符号
         let n: NSNumber = isNaN ?
                           1000 :
                           inputNumber
-        displayLabel?.text = numberFormatter.string(from: n)
+        displayLabel?.text = formatter.string(from: n)
     }
     
     // 从64.01开始，NSNumber(value: 64.01).description得到是这样“64.01000000000001”到“99.01”都是有bug的，可能不准确，请注意。
     func accurateDisplay() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.currency
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
         
-        numberFormatter.currencySymbol = ""
+        formatter.currencySymbol = ""
         let n: NSNumber = isNaN ?
                           12345.7658 :
                           inputNumber
         // 使用这句去掉分隔符
 //        numberFormatter.usesGroupingSeparator = false
         // 这句控制小数点后保留几位, 在currency默认2位decimal默认3
-        numberFormatter.maximumFractionDigits = Int.max
-        displayLabel?.text = numberFormatter.string(from: n)
+        formatter.maximumFractionDigits = Int.max
+        displayLabel?.text = formatter.string(from: n)
     }
     
     func changeDetails() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.currency
-        numberFormatter.currencySymbol = ""
-        numberFormatter.negativePrefix = "- "
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        formatter.currencySymbol = ""
+        formatter.negativePrefix = "- "
 //        numberFormatter.negativeSuffix = "元"
         let flag = isNaN
-        let negativeText = numberFormatter.string(from: flag ? -12345.7658 : inputNumber.multiplying(by: -1))!
-        numberFormatter.positivePrefix = "+ "
+        let negativeText = formatter.string(from: flag ? -12345.7658 : inputNumber.multiplying(by: -1))!
+        formatter.positivePrefix = "+ "
 //        numberFormatter.positiveSuffix = "元"
-        let positiveText = numberFormatter.string(from: flag ? 12345.7658 : inputNumber)!
+        let positiveText = formatter.string(from: flag ? 12345.7658 : inputNumber)!
         displayLabel?.text = negativeText + "\n\n" + positiveText
     }
     
     func percent() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.percent
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.percent
         let n: NSNumber = isNaN ?
-            0.121 :
-        inputNumber
-        numberFormatter.maximumFractionDigits = Int.max
-        displayLabel?.text = numberFormatter.string(from: n)
+                          0.121 :
+                          inputNumber
+        formatter.maximumFractionDigits = Int.max
+        displayLabel?.text = formatter.string(from: n)
     }
     
     func customizingGroupingSeparator() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.decimal
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.decimal
         let n: NSNumber = isNaN ?
-            12345.7658 :
-        inputNumber
-        numberFormatter.groupingSeparator = "_"
-        numberFormatter.maximumFractionDigits = Int.max
-        displayLabel?.text = numberFormatter.string(from: n)
+                          12345.7658 :
+                          inputNumber
+        formatter.groupingSeparator = "_"
+        formatter.maximumFractionDigits = Int.max
+        displayLabel?.text = formatter.string(from: n)
     }
     
     func currencyStrToNumber() {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = NumberFormatter.Style.currency
-        let text = numberFormatter.string(from: inputNumber)
-        let str = isNaN ? numberFormatter.currencySymbol + "12,345.76" : text!
-        let num = numberFormatter.number(from: str)
-        displayLabel?.text = "原字符串：" + str + "\n\n反转数字" + num!.description
+        let formatter = NumberFormatter()
+        formatter.numberStyle = NumberFormatter.Style.currency
+        let text = formatter.string(from: inputNumber)
+        let str = isNaN ? formatter.currencySymbol + "12,345.76" : text!
+        let num = formatter.number(from: str)
+        displayLabel?.text = "原字符串：" + str + "\n\n反转数字：" + num!.description
+    }
+    
+    /*
+        ceiling 回到正无穷。  1.1->2, -1.1->-1
+        floor 向负无穷大舍入。  1.1->1, -1.1->-2
+        down 向零舍入。  1.99->1, -1.1->-1
+        up 从零舍弃。    0.01->1, -1.1->-2
+        halfEven 向最接近的整数，或偶数的等距离。   0.5->0, 1.5->2 -0.5->-0, -1.5->-2
+        halfDown 向最接近的整数舍入，或如果等距离则向零。   0.5->0, 1.5->1
+        halfUp  向最接近的整数舍入，或如果等距离，则离开零。  0.5->1, 1.5->2
+     */
+    //
+    func rounding() {
+        let formatter = NumberFormatter()
+        formatter.roundingMode = .halfUp
+        let n: NSNumber = isNaN ?
+                          1.43 :
+                          inputNumber
+        displayLabel?.text = "初值：" + n.description + "\n\n取整值:" + formatter.string(from: n)!
     }
 }

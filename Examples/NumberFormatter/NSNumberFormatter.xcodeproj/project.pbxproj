@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8C4876E1DD1A9BF008694D8 /* UIBarButtonItem+Bage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C4876C1DD1A9BF008694D8 /* UIBarButtonItem+Bage.swift */; };
+		D8C487721DD1B221008694D8 /* AYVibrantButton.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C487711DD1B221008694D8 /* AYVibrantButton.m */; };
 		D8CE53EB1DC847470080AAFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE53EA1DC847470080AAFF /* AppDelegate.swift */; };
 		D8CE53ED1DC847470080AAFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8CE53EC1DC847470080AAFF /* ViewController.swift */; };
 		D8CE53F01DC847470080AAFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8CE53EE1DC847470080AAFF /* Main.storyboard */; };
@@ -30,6 +32,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D8C4876C1DD1A9BF008694D8 /* UIBarButtonItem+Bage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Bage.swift"; sourceTree = "<group>"; };
+		D8C4876F1DD1B1EB008694D8 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		D8C487701DD1B221008694D8 /* AYVibrantButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYVibrantButton.h; sourceTree = "<group>"; };
+		D8C487711DD1B221008694D8 /* AYVibrantButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYVibrantButton.m; sourceTree = "<group>"; };
 		D8CE53E71DC847470080AAFF /* NSNumberFormatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NSNumberFormatter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8CE53EA1DC847470080AAFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8CE53EC1DC847470080AAFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 		D8CE53E91DC847470080AAFF /* NSNumberFormatter */ = {
 			isa = PBXGroup;
 			children = (
+				D8C487701DD1B221008694D8 /* AYVibrantButton.h */,
+				D8C487711DD1B221008694D8 /* AYVibrantButton.m */,
+				D8C4876C1DD1A9BF008694D8 /* UIBarButtonItem+Bage.swift */,
 				D8CE53EA1DC847470080AAFF /* AppDelegate.swift */,
 				D8CE53EC1DC847470080AAFF /* ViewController.swift */,
 				D8CE53EE1DC847470080AAFF /* Main.storyboard */,
@@ -95,6 +104,7 @@
 				D8CE540E1DC9ED580080AAFF /* HeaderViewPresenter.swift */,
 				D8CE54101DCA277A0080AAFF /* Cell.swift */,
 				D8CE54121DCA27970080AAFF /* Item.swift */,
+				D8C4876F1DD1B1EB008694D8 /* Bridging.h */,
 			);
 			path = NSNumberFormatter;
 			sourceTree = "<group>";
@@ -211,10 +221,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8C487721DD1B221008694D8 /* AYVibrantButton.m in Sources */,
 				D8CE540D1DC9DB0D0080AAFF /* SecondController.swift in Sources */,
 				D8CE53ED1DC847470080AAFF /* ViewController.swift in Sources */,
 				D8CE54111DCA277A0080AAFF /* Cell.swift in Sources */,
 				D8CE53EB1DC847470080AAFF /* AppDelegate.swift in Sources */,
+				D8C4876E1DD1A9BF008694D8 /* UIBarButtonItem+Bage.swift in Sources */,
 				D8CE54131DCA27970080AAFF /* Item.swift in Sources */,
 				D8CE540F1DC9ED580080AAFF /* HeaderViewPresenter.swift in Sources */,
 			);
@@ -358,6 +370,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NSNumberFormatter.NSNumberFormatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NSNumberFormatter/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -371,6 +384,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = NSNumberFormatter.NSNumberFormatter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = NSNumberFormatter/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
