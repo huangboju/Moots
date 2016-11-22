@@ -239,7 +239,7 @@ extension UIBarButtonItem {
             }
         }
     }
-    
+
     var shouldHideBadgeAtZero: Bool {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.shouldHideBadgeAtZeroKey) as? NSNumber
@@ -254,7 +254,7 @@ extension UIBarButtonItem {
             }
         }
     }
-    
+
     var shouldAnimateBadge: Bool {
         get {
             let number = objc_getAssociatedObject(self, &AssociatedKeys.shouldAnimateBadgeKey) as? NSNumber

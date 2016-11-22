@@ -21,7 +21,8 @@ class MainViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         "UILabel",
         "UINavigationBar",
         "UIProgressView",
-        "UIAlertAction"
+        "UIAlertAction",
+        "UIViewController"
     ]
     
     
