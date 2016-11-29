@@ -1,0 +1,4 @@
+
+github "Alamofire/Alamofire" ~> 4.0
+github "SnapKit/SnapKit" ~> 3.0.2
+github "ViccAlexander/Chameleon"
