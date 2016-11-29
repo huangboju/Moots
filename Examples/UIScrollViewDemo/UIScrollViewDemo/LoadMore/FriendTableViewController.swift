@@ -38,7 +38,6 @@ class FriendTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("😄")
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
