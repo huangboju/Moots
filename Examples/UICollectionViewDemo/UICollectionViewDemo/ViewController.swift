@@ -25,7 +25,10 @@ class ViewController: UIViewController {
             DebugGapController.self,
             DebugNoGapController.self
         ],
-        
+        [
+            HighlightController1.self,
+            HighlightController2.self
+        ]
     ]
     
     override func viewDidLoad() {

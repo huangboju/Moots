@@ -17,6 +17,8 @@
 		D813FFE61DEC2A8000B81BA9 /* NoGapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFE51DEC2A8000B81BA9 /* NoGapController.swift */; };
 		D813FFE81DEC2E7C00B81BA9 /* DebugGapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFE71DEC2E7C00B81BA9 /* DebugGapController.swift */; };
 		D813FFEA1DEC2EBB00B81BA9 /* DebugNoGapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */; };
+		D8A731C71DED5360005DF7C8 /* HighlightController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731C61DED5360005DF7C8 /* HighlightController1.swift */; };
+		D8A731C91DED5376005DF7C8 /* HighlightController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731C81DED5376005DF7C8 /* HighlightController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		D813FFE51DEC2A8000B81BA9 /* NoGapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoGapController.swift; sourceTree = "<group>"; };
 		D813FFE71DEC2E7C00B81BA9 /* DebugGapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugGapController.swift; sourceTree = "<group>"; };
 		D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugNoGapController.swift; sourceTree = "<group>"; };
+		D8A731C61DED5360005DF7C8 /* HighlightController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightController1.swift; sourceTree = "<group>"; };
+		D8A731C81DED5376005DF7C8 /* HighlightController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +99,8 @@
 				D813FFE51DEC2A8000B81BA9 /* NoGapController.swift */,
 				D813FFE71DEC2E7C00B81BA9 /* DebugGapController.swift */,
 				D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */,
+				D8A731C61DED5360005DF7C8 /* HighlightController1.swift */,
+				D8A731C81DED5376005DF7C8 /* HighlightController2.swift */,
 			);
 			path = UICollectionViewDemo;
 			sourceTree = "<group>";
@@ -214,6 +220,8 @@
 				D813FFE81DEC2E7C00B81BA9 /* DebugGapController.swift in Sources */,
 				D813FFC61DEC215900B81BA9 /* ViewController.swift in Sources */,
 				D813FFE61DEC2A8000B81BA9 /* NoGapController.swift in Sources */,
+				D8A731C91DED5376005DF7C8 /* HighlightController2.swift in Sources */,
+				D8A731C71DED5360005DF7C8 /* HighlightController1.swift in Sources */,
 				D813FFEA1DEC2EBB00B81BA9 /* DebugNoGapController.swift in Sources */,
 				D813FFC41DEC215900B81BA9 /* AppDelegate.swift in Sources */,
 				D813FFE41DEC22A500B81BA9 /* GapController.swift in Sources */,
@@ -418,6 +426,7 @@
 				D813FFDF1DEC215900B81BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D813FFE01DEC215900B81BA9 /* Build configuration list for PBXNativeTarget "UICollectionViewDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +435,7 @@
 				D813FFE21DEC215900B81BA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
