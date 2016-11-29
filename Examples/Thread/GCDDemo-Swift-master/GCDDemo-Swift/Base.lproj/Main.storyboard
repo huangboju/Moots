@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="GCDDemo_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DVa-Mq-SBC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="fGj-PW-tv5"/>
+                                    <constraint firstAttribute="height" constant="30" id="kcQ-da-Da1"/>
+                                </constraints>
+                                <state key="normal" title="同步执行串行队列"/>
+                                <connections>
+                                    <action selector="tapButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d3O-XY-Mqy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w5g-9I-LM2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eGl-HE-w9T"/>
+                                    <constraint firstAttribute="width" constant="120" id="jLk-fZ-fMg"/>
+                                </constraints>
+                                <state key="normal" title="同步执行并行队列"/>
+                                <connections>
+                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eWY-ji-S3L"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YhO-Rb-he0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3pO-gV-85z"/>
+                                    <constraint firstAttribute="width" constant="120" id="dwU-rW-jZd"/>
+                                </constraints>
+                                <state key="normal" title="异步执行串行队列"/>
+                                <connections>
+                                    <action selector="tapButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BrP-A0-5eZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hN7-at-fnN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="NUP-Id-bJ5"/>
+                                    <constraint firstAttribute="width" constant="120" id="bb1-PF-Wd2"/>
+                                </constraints>
+                                <state key="normal" title="异步执行并行队列"/>
+                                <connections>
+                                    <action selector="tapButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IyE-pH-MT9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzb-Na-pw4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="PTI-4g-4q3"/>
+                                    <constraint firstAttribute="height" constant="30" id="krH-MK-S3c"/>
+                                </constraints>
+                                <state key="normal" title="延迟执行"/>
+                                <connections>
+                                    <action selector="tapButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SyI-QF-a6Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6tS-a2-Kea">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cEI-pg-XfC"/>
+                                    <constraint firstAttribute="width" constant="150" id="wln-Rz-ZxT"/>
+                                </constraints>
+                                <state key="normal" title="设置全局队列的优先级"/>
+                                <connections>
+                                    <action selector="tapButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pgO-TR-p5c"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eX7-16-m4p">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="J5f-O3-ZJr"/>
+                                    <constraint firstAttribute="height" constant="30" id="vDy-iH-khX"/>
+                                </constraints>
+                                <state key="normal" title="设置自建队列优先级"/>
+                                <connections>
+                                    <action selector="tapButton7:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XYk-vP-Ap4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wci-Ys-6jA">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RuH-T9-aZC"/>
+                                    <constraint firstAttribute="width" constant="120" id="kew-v2-DgD"/>
+                                </constraints>
+                                <state key="normal" title="使用任务隔离栅栏"/>
+                                <connections>
+                                    <action selector="tapButton9:" destination="BYZ-38-t0r" eventType="touchUpInside" id="su2-w8-Ayz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8sW-oz-ihc">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9Fq-9v-Eix"/>
+                                    <constraint firstAttribute="width" constant="130" id="iX3-fY-YBu"/>
+                                </constraints>
+                                <state key="normal" title="使用Apply循环执行"/>
+                                <connections>
+                                    <action selector="tapButton10:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Scb-j2-h56"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BcY-DD-Ace">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Wff-7x-d1f"/>
+                                    <constraint firstAttribute="width" constant="105" id="nOU-HK-J9b"/>
+                                </constraints>
+                                <state key="normal" title="暂停和重启队列"/>
+                                <connections>
+                                    <action selector="tapButton11:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tbP-IW-9Xm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwR-ps-hl6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="G2j-KC-yiZ"/>
+                                    <constraint firstAttribute="width" constant="150" id="aEp-LJ-W3u"/>
+                                </constraints>
+                                <state key="normal" title="使用信号量添加同步锁"/>
+                                <connections>
+                                    <action selector="tapButton12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZWn-Xi-Z39"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LbG-S3-Apf">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="107" id="end-4t-SLd"/>
+                                    <constraint firstAttribute="height" constant="30" id="mPS-D0-7s8"/>
+                                </constraints>
+                                <state key="normal" title="手动执行任务组"/>
+                                <connections>
+                                    <action selector="tapButton08:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqC-DJ-FTo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leB-dg-unI">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="DyL-KP-cIH"/>
+                                    <constraint firstAttribute="height" constant="30" id="F0L-Ih-vUF"/>
+                                </constraints>
+                                <state key="normal" title="dispatch源,ADD"/>
+                                <connections>
+                                    <action selector="tapButton13:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5MS-ht-tUF"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="14x-UR-kld">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="8nB-hN-SPc"/>
+                                    <constraint firstAttribute="width" constant="99" id="Hih-id-6CQ"/>
+                                </constraints>
+                                <state key="normal" title="dispatch源,OR"/>
+                                <connections>
+                                    <action selector="tapButton14:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9FP-h6-54i"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tkQ-YY-PzJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="0KQ-Ra-gJe"/>
+                                    <constraint firstAttribute="height" constant="30" id="j9p-9G-FJw"/>
+                                </constraints>
+                                <state key="normal" title="dispatch源,定时器"/>
+                                <connections>
+                                    <action selector="tapButton15:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LHj-me-Zco"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6O-eX-Wdu">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Jga-D4-C21"/>
+                                    <constraint firstAttribute="width" constant="105" id="NVy-vq-y4U"/>
+                                </constraints>
+                                <state key="normal" title="自动执行任务组"/>
+                                <connections>
+                                    <action selector="tapButton8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nnj-Yb-vGz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="b6O-eX-Wdu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Bl-8v-TIO"/>
+                            <constraint firstItem="LbG-S3-Apf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="1Fl-jY-bK9"/>
+                            <constraint firstItem="eX7-16-m4p" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="277-ho-GQt"/>
+                            <constraint firstItem="8sW-oz-ihc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="3rw-6i-DJ1"/>
+                            <constraint firstItem="leB-dg-unI" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="8V8-pN-4Ee"/>
+                            <constraint firstItem="6tS-a2-Kea" firstAttribute="top" secondItem="Pzb-Na-pw4" secondAttribute="bottom" constant="13" id="968-7P-WK8"/>
+                            <constraint firstItem="rwR-ps-hl6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Avh-P3-SOb"/>
+                            <constraint firstItem="Pzb-Na-pw4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="BK4-db-vXC"/>
+                            <constraint firstItem="14x-UR-kld" firstAttribute="top" secondItem="leB-dg-unI" secondAttribute="bottom" constant="15" id="CtG-kx-wUQ"/>
+                            <constraint firstItem="leB-dg-unI" firstAttribute="top" secondItem="Wci-Ys-6jA" secondAttribute="bottom" constant="19" id="Ip8-E9-f7E"/>
+                            <constraint firstItem="Pzb-Na-pw4" firstAttribute="top" secondItem="hN7-at-fnN" secondAttribute="bottom" constant="15" id="J1f-TE-7Zm"/>
+                            <constraint firstItem="eX7-16-m4p" firstAttribute="top" secondItem="6tS-a2-Kea" secondAttribute="bottom" constant="16" id="JbD-U3-2aG"/>
+                            <constraint firstItem="DVa-Mq-SBC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="KP5-AT-TO0"/>
+                            <constraint firstItem="6tS-a2-Kea" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="LeY-BG-IDg"/>
+                            <constraint firstItem="Wci-Ys-6jA" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="SPe-87-xKp"/>
+                            <constraint firstItem="Wci-Ys-6jA" firstAttribute="top" secondItem="BcY-DD-Ace" secondAttribute="bottom" constant="15" id="ULQ-QY-Gsd"/>
+                            <constraint firstItem="YhO-Rb-he0" firstAttribute="top" secondItem="w5g-9I-LM2" secondAttribute="bottom" constant="15" id="VcB-Pr-uex"/>
+                            <constraint firstItem="BcY-DD-Ace" firstAttribute="top" secondItem="8sW-oz-ihc" secondAttribute="bottom" constant="13" id="a8f-RX-fli"/>
+                            <constraint firstItem="BcY-DD-Ace" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="aFq-P6-J9G"/>
+                            <constraint firstItem="rwR-ps-hl6" firstAttribute="top" secondItem="b6O-eX-Wdu" secondAttribute="bottom" constant="59" id="cRT-8W-H56"/>
+                            <constraint firstItem="tkQ-YY-PzJ" firstAttribute="top" secondItem="14x-UR-kld" secondAttribute="bottom" constant="13" id="e41-0j-p5g"/>
+                            <constraint firstItem="b6O-eX-Wdu" firstAttribute="top" secondItem="eX7-16-m4p" secondAttribute="bottom" constant="16" id="fXu-O2-yUT"/>
+                            <constraint firstItem="DVa-Mq-SBC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="19" id="fn9-k5-T80"/>
+                            <constraint firstItem="tkQ-YY-PzJ" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="g2o-oF-cdM"/>
+                            <constraint firstItem="YhO-Rb-he0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gK6-o5-r9a"/>
+                            <constraint firstItem="14x-UR-kld" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="gZf-L3-nrD"/>
+                            <constraint firstItem="8sW-oz-ihc" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="l61-bh-mi4"/>
+                            <constraint firstItem="hN7-at-fnN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="lSQ-od-MMH"/>
+                            <constraint firstItem="hN7-at-fnN" firstAttribute="top" secondItem="YhO-Rb-he0" secondAttribute="bottom" constant="19" id="lUd-Zk-255"/>
+                            <constraint firstItem="w5g-9I-LM2" firstAttribute="top" secondItem="DVa-Mq-SBC" secondAttribute="bottom" constant="13" id="o7S-Ro-Tkc"/>
+                            <constraint firstItem="LbG-S3-Apf" firstAttribute="top" secondItem="b6O-eX-Wdu" secondAttribute="bottom" constant="13" id="qMr-VA-soj"/>
+                            <constraint firstItem="w5g-9I-LM2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="qW5-dp-R89"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="700" y="295"/>
+        </scene>
+    </scenes>
+</document>
