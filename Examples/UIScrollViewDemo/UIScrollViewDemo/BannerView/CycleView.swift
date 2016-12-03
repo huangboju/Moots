@@ -95,7 +95,8 @@ class CycleView: UIView, UIScrollViewDelegate {
     }
 
     func autoSetCurrentContentOffset() {
-        let n = Int(scrollView.contentOffset.x / scrollView.frame.width)
+//        let n = Int(scrollView.contentOffset.x / scrollView.frame.width) // 放开这句解决不能滚动整屏
+        let n = scrollView.contentOffset.x / scrollView.frame.width
         let x = CGFloat(n) * scrollView.frame.width
         scrollView.setContentOffset(CGPoint(x: x + scrollView.frame.width, y: scrollView.contentOffset.y), animated: true)
     }
