@@ -151,13 +151,11 @@ extension BannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.width
         if page <= 0.0 {
-            print("✈️")
             // 向右拉
             collectionView?.scrollToItem(at: IndexPath(item: urlStrs.count - 2, section: 0), at: .centeredHorizontally, animated: false)
             pageControl?.currentPage = urlStrs.count - 3
         } else if page >= CGFloat(urlStrs.count - 1) {
             // 向左
-            print("🚄")
             pageControl?.currentPage = 0
             collectionView?.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
         } else {
