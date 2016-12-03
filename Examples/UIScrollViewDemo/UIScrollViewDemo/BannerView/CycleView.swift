@@ -4,16 +4,15 @@
 
 import UIKit
 
-class PageCell: UIView, UIScrollViewDelegate {
+class CycleView: UIView, UIScrollViewDelegate {
     // MARK: - 🍀 变量
     var scrollView: UIScrollView!
-    var count = 0
     var page = 0 // 当前处于的页面,默认为0
 
     private var imageViewX: CGFloat = 0
 
-    var canCycle = false // 能否循环
-    var canAutoRun: Bool = false { // 能否自动滑动
+    var canCycle = true // 能否循环
+    var canAutoRun: Bool = true { // 能否自动滑动
         didSet {
             if canAutoRun {
                 timerInit()
@@ -55,10 +54,10 @@ class PageCell: UIView, UIScrollViewDelegate {
         page = Int(scrollView.contentOffset.x / scrollView.frame.width)
         if canCycle {
             if page <= 0 {
-                if scrollView.contentOffset.x < scrollView.frame.width / 2 && ((count - 2) >= 0) {
-                    scrollView.contentOffset.x = scrollView.frame.width * CGFloat(count - 2) + scrollView.contentOffset.x
+                if scrollView.contentOffset.x < scrollView.frame.width / 2 && ((data.count - 2) >= 0) {
+                    scrollView.contentOffset.x = scrollView.frame.width * CGFloat(data.count - 2) + scrollView.contentOffset.x
                 }
-            } else if page >= count - 1 {
+            } else if page >= data.count - 1 {
                 scrollView.contentOffset.x = scrollView.frame.width
             }
         }
@@ -67,18 +66,31 @@ class PageCell: UIView, UIScrollViewDelegate {
     func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         timerInit()
     }
-
-    // MARK: - 💛 自定义方法 (Custom Method)
-    func addPage(view: UIView) {
-        count += 1
-        view.tag = count
-        scrollView.contentSize = CGSize(width: scrollView.frame.width * CGFloat(count), height: scrollView.frame.height)
-        scrollView.addSubview(view)
+    
+    var data: [String]!
+    
+    func set(contents: [String]) {
+        data = [contents[0]] + contents + [contents[contents.count - 1]]
+        let width = scrollView.frame.width
+        
+        scrollView.contentSize = CGSize(width: width * CGFloat(data.count), height: scrollView.frame.height)
+        
+        for (i, _) in data.enumerated() {
+            let contentLabel = UILabel(frame: CGRect(x: CGFloat(i) * width, y: 0, width: width, height: scrollView.frame.height))
+            contentLabel.text = i.description
+            contentLabel.font = UIFont.systemFont(ofSize: 58)
+            contentLabel.textAlignment = .center
+            contentLabel.textColor = .white
+            contentLabel.backgroundColor = UIColor(white: CGFloat(i) / 10, alpha: 1)
+            contentLabel.tag = i
+            scrollView.addSubview(contentLabel)
+        }
+        timerInit()
     }
 
     func timerInit() {
         if canAutoRun {
-            timer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(autoSetCurrentContentOffset), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(autoSetCurrentContentOffset), userInfo: nil, repeats: true)
         }
     }
 

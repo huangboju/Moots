@@ -8,14 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CycleViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
     }()
-
+    
     lazy var data: [[UIViewController.Type]] = [
         [
             FriendTableViewController.self,
@@ -27,17 +27,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "UIScrollView"
-        
-        
-        let bannerView = BannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 130))
-        bannerView.set(content: ["", "", "", "", ""])
-        bannerView.pageStepTime = 1
-        bannerView.handleBack = {
-            print($0)
-        }
-        tableView.tableHeaderView = bannerView
+        title = "CycleViewController"
 
+        let cycleView = CycleView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 130))
+        cycleView.set(contents: ["", "", "", "", ""])
+        tableView.tableHeaderView = cycleView
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
@@ -49,7 +43,7 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension CycleViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -57,18 +51,18 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data[section].count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
 
-extension ViewController: UITableViewDelegate {
-
+extension CycleViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
@@ -78,29 +72,3 @@ extension ViewController: UITableViewDelegate {
         }
     }
 }
-
-extension String {
-    func fromClassName() -> NSObject {
-        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + self
-        let aClass = NSClassFromString(className) as! UIViewController.Type
-        return aClass.init()
-    }
-}
-
-extension UICollectionViewFlowLayout {
-    /// 修正collection布局有缝隙
-    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
-        let totalSpace = (colCount - 1) * space
-        let itemWidth = (rect.width - totalSpace) / colCount
-        var realItemWidth = floor(itemWidth) + 0.5
-        if realItemWidth < itemWidth {
-            realItemWidth += 0.5
-        }
-        let realWidth = colCount * realItemWidth + totalSpace
-        let pointX = (realWidth - rect.width) / 2
-        rect.origin.x = -pointX
-        rect.size.width = realWidth
-        return (rect.width - totalSpace) / colCount
-    }
-}
-

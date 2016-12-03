@@ -59,7 +59,6 @@ class BannerView: UIView {
         pageControl = UIPageControl(frame: CGRect(x: (frame.width - 60) / 2, y: frame.height - 30, width: 60, height: 20))
         pageControl?.pageIndicatorTintColor = UIColor(white: 0.7, alpha: 0.8)
         addSubview(pageControl!)
-        setTheTimer()
     }
 
     fileprivate func setTheTimer() {
@@ -90,7 +89,7 @@ class BannerView: UIView {
         }
     }
 
-    func setContent(_ content: [String]) {
+    func set(content: [String]) {
         urlStrs = content
         pageControl?.numberOfPages = content.count
         if content.count > 1 {
@@ -103,6 +102,7 @@ class BannerView: UIView {
             storeUrlStrs = urlStrs
             collectionView?.reloadData()
         }
+        setTheTimer()
     }
 
     required init?(coder aDecoder: NSCoder) {

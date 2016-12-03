@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
+		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
+		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
 		D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */; };
 		D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */; };
 		D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731F31DED6E28005DF7C8 /* ViewController.swift */; };
@@ -29,8 +32,6 @@
 		D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
-		D8DFB8551DF25FB000810BDB /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB8541DF25FB000810BDB /* BannerView.swift */; };
-		D8DFB8571DF2672600810BDB /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DFB8561DF2672600810BDB /* CycleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
+		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
+		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
 		D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		D8A731EE1DED6E28005DF7C8 /* UIScrollViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIScrollViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,8 +87,6 @@
 		D8A732221DED7124005DF7C8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
-		D8DFB8541DF25FB000810BDB /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
-		D8DFB8561DF2672600810BDB /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8076CBC1DF272C6008ACB34 /* BannerView */ = {
+			isa = PBXGroup;
+			children = (
+				D8076CBD1DF272FA008ACB34 /* BannerView.swift */,
+				D8076CBE1DF272FA008ACB34 /* CycleView.swift */,
+			);
+			path = BannerView;
+			sourceTree = "<group>";
+		};
 		D8A731E51DED6E27005DF7C8 = {
 			isa = PBXGroup;
 			children = (
@@ -130,16 +141,16 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				D8076CBC1DF272C6008ACB34 /* BannerView */,
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
 				D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */,
 				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
-				D8DFB8541DF25FB000810BDB /* BannerView.swift */,
 				D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */,
 				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
 				D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */,
-				D8DFB8561DF2672600810BDB /* CycleView.swift */,
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
+				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
 				D8A731FA1DED6E28005DF7C8 /* LaunchScreen.storyboard */,
@@ -289,14 +300,15 @@
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
-				D8DFB8571DF2672600810BDB /* CycleView.swift in Sources */,
+				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
+				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
-				D8DFB8551DF25FB000810BDB /* BannerView.swift in Sources */,
+				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
