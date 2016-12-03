@@ -77,7 +77,7 @@ extension ScrollViewController: UIScrollViewDelegate {
         print("🍀🍀🍀\(#function)🍀🍀🍀")
         logDraggingAndDecelerating()
     }
-    
+
     func scrollViewShouldScrollToTop(_ scrollView: UIScrollView) -> Bool {
         // 点击statusBar调用
         return true
