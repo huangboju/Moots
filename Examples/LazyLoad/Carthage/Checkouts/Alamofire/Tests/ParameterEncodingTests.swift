@@ -646,8 +646,38 @@ class JSONParameterEncodingTestCase: ParameterEncodingTestCase {
                 } catch {
                     XCTFail("json should not be nil")
                 }
-            } else {
-                XCTFail("json should not be nil")
+            }
+        } catch {
+            XCTFail("Test encountered unexpected error: \(error)")
+        }
+    }
+
+    func testJSONParameterEncodeArray() {
+        do {
+            // Given
+            let array: [String] = ["foo", "bar", "baz"]
+
+            // When
+            let URLRequest = try encoding.encode(self.urlRequest, withJSONObject: array)
+
+            // Then
+            XCTAssertNil(URLRequest.url?.query)
+            XCTAssertNotNil(URLRequest.value(forHTTPHeaderField: "Content-Type"))
+            XCTAssertEqual(URLRequest.value(forHTTPHeaderField: "Content-Type"), "application/json")
+            XCTAssertNotNil(URLRequest.httpBody)
+
+            if let httpBody = URLRequest.httpBody {
+                do {
+                    let json = try JSONSerialization.jsonObject(with: httpBody, options: .allowFragments)
+
+                    if let json = json as? NSObject {
+                        XCTAssertEqual(json, array as NSObject)
+                    } else {
+                        XCTFail("json should be an NSObject")
+                    }
+                } catch {
+                    XCTFail("json should not be nil")
+                }
             }
         } catch {
             XCTFail("Test encountered unexpected error: \(error)")
@@ -742,7 +772,7 @@ class PropertyListParameterEncodingTestCase: ParameterEncodingTestCase {
         do {
             // Given
             let date: Date = Date()
-            let data: Data = "data".data(using: String.Encoding.utf8, allowLossyConversion: false)!
+            let data: Data = "data".data(using: .utf8, allowLossyConversion: false)!
 
             let parameters: [String: Any] = [
                 "date": date,

@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D8CE53A11DC7361F0080AAFF"
-               BuildableName = "ADControllerFramework.framework"
-               BlueprintName = "ADControllerFramework"
-               ReferencedContainer = "container:ADController.xcodeproj">
+               BlueprintIdentifier = "D8C488A41DD35EC8008694D8"
+               BuildableName = "ADController.framework"
+               BlueprintName = "ADController"
+               ReferencedContainer = "container:ADControllerDemo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,10 +45,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8CE53A11DC7361F0080AAFF"
-            BuildableName = "ADControllerFramework.framework"
-            BlueprintName = "ADControllerFramework"
-            ReferencedContainer = "container:ADController.xcodeproj">
+            BlueprintIdentifier = "D8C488A41DD35EC8008694D8"
+            BuildableName = "ADController.framework"
+            BlueprintName = "ADController"
+            ReferencedContainer = "container:ADControllerDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -63,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D8CE53A11DC7361F0080AAFF"
-            BuildableName = "ADControllerFramework.framework"
-            BlueprintName = "ADControllerFramework"
-            ReferencedContainer = "container:ADController.xcodeproj">
+            BlueprintIdentifier = "D8C488A41DD35EC8008694D8"
+            BuildableName = "ADController.framework"
+            BlueprintName = "ADController"
+            ReferencedContainer = "container:ADControllerDemo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -26,7 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchDataFromServer()
-        
+
         tableView.register(GLImageCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         

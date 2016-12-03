@@ -52,11 +52,16 @@ class SessionManagerTestCase: BaseTestCase {
     private class RequestHandler: RequestAdapter, RequestRetrier {
         var adaptedCount = 0
         var retryCount = 0
+        var retryErrors: [Error] = []
+
         var shouldApplyAuthorizationHeader = false
         var throwsErrorOnSecondAdapt = false
 
         func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
-            if throwsErrorOnSecondAdapt && adaptedCount == 1 { throw AFError.invalidURL(url: "") }
+            if throwsErrorOnSecondAdapt && adaptedCount == 1 {
+                throwsErrorOnSecondAdapt = false
+                throw AFError.invalidURL(url: "")
+            }
 
             var urlRequest = urlRequest
 
@@ -73,12 +78,34 @@ class SessionManagerTestCase: BaseTestCase {
 
         func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
             retryCount += 1
+            retryErrors.append(error)
 
             if retryCount < 2 {
                 completion(true, 0.0)
             } else {
                 completion(false, 0.0)
             }
+        }
+    }
+
+    private class UploadHandler: RequestAdapter, RequestRetrier {
+        var adaptedCount = 0
+        var retryCount = 0
+        var retryErrors: [Error] = []
+
+        func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+            adaptedCount += 1
+
+            if adaptedCount == 1 { throw AFError.invalidURL(url: "") }
+
+            return urlRequest
+        }
+
+        func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
+            retryCount += 1
+            retryErrors.append(error)
+
+            completion(true, 0.0)
         }
     }
 
@@ -562,7 +589,7 @@ class SessionManagerTestCase: BaseTestCase {
         var response: DataResponse<Any>?
 
         // When
-        sessionManager.request("https://httpbin.org/basic-auth/user/password")
+        let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
                 response = jsonResponse
@@ -574,12 +601,15 @@ class SessionManagerTestCase: BaseTestCase {
         // Then
         XCTAssertEqual(handler.adaptedCount, 2)
         XCTAssertEqual(handler.retryCount, 2)
+        XCTAssertEqual(request.retryCount, 1)
         XCTAssertEqual(response?.result.isSuccess, false)
     }
 
-    func testThatSessionManagerCallsAdapterWhenRequestIsRetried() {
+    func testThatSessionManagerCallsRequestRetrierWhenRequestInitiallyEncountersAdaptError() {
         // Given
         let handler = RequestHandler()
+        handler.adaptedCount = 1
+        handler.throwsErrorOnSecondAdapt = true
         handler.shouldApplyAuthorizationHeader = true
 
         let sessionManager = SessionManager()
@@ -603,6 +633,105 @@ class SessionManagerTestCase: BaseTestCase {
         XCTAssertEqual(handler.adaptedCount, 2)
         XCTAssertEqual(handler.retryCount, 1)
         XCTAssertEqual(response?.result.isSuccess, true)
+
+        handler.retryErrors.forEach { XCTAssertFalse($0 is AdaptError) }
+    }
+
+    func testThatSessionManagerCallsRequestRetrierWhenDownloadInitiallyEncountersAdaptError() {
+        // Given
+        let handler = RequestHandler()
+        handler.adaptedCount = 1
+        handler.throwsErrorOnSecondAdapt = true
+        handler.shouldApplyAuthorizationHeader = true
+
+        let sessionManager = SessionManager()
+        sessionManager.adapter = handler
+        sessionManager.retrier = handler
+
+        let expectation = self.expectation(description: "request should eventually fail")
+        var response: DownloadResponse<Any>?
+
+        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let fileURL = self.testDirectoryURL.appendingPathComponent("test-output.json")
+            return (fileURL, [.removePreviousFile])
+        }
+
+        // When
+        sessionManager.download("https://httpbin.org/basic-auth/user/password", to: destination)
+            .validate()
+            .responseJSON { jsonResponse in
+                response = jsonResponse
+                expectation.fulfill()
+            }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(handler.adaptedCount, 2)
+        XCTAssertEqual(handler.retryCount, 1)
+        XCTAssertEqual(response?.result.isSuccess, true)
+
+        handler.retryErrors.forEach { XCTAssertFalse($0 is AdaptError) }
+    }
+
+    func testThatSessionManagerCallsRequestRetrierWhenUploadInitiallyEncountersAdaptError() {
+        // Given
+        let handler = UploadHandler()
+
+        let sessionManager = SessionManager()
+        sessionManager.adapter = handler
+        sessionManager.retrier = handler
+
+        let expectation = self.expectation(description: "request should eventually fail")
+        var response: DataResponse<Any>?
+
+        let uploadData = "upload data".data(using: .utf8, allowLossyConversion: false)!
+
+        // When
+        sessionManager.upload(uploadData, to: "https://httpbin.org/post")
+            .validate()
+            .responseJSON { jsonResponse in
+                response = jsonResponse
+                expectation.fulfill()
+            }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(handler.adaptedCount, 2)
+        XCTAssertEqual(handler.retryCount, 1)
+        XCTAssertEqual(response?.result.isSuccess, true)
+
+        handler.retryErrors.forEach { XCTAssertFalse($0 is AdaptError) }
+    }
+
+    func testThatSessionManagerCallsAdapterWhenRequestIsRetried() {
+        // Given
+        let handler = RequestHandler()
+        handler.shouldApplyAuthorizationHeader = true
+
+        let sessionManager = SessionManager()
+        sessionManager.adapter = handler
+        sessionManager.retrier = handler
+
+        let expectation = self.expectation(description: "request should eventually fail")
+        var response: DataResponse<Any>?
+
+        // When
+        let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
+            .validate()
+            .responseJSON { jsonResponse in
+                response = jsonResponse
+                expectation.fulfill()
+            }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertEqual(handler.adaptedCount, 2)
+        XCTAssertEqual(handler.retryCount, 1)
+        XCTAssertEqual(request.retryCount, 1)
+        XCTAssertEqual(response?.result.isSuccess, true)
     }
 
     func testThatRequestAdapterErrorThrowsResponseHandlerErrorWhenRequestIsRetried() {
@@ -618,7 +747,7 @@ class SessionManagerTestCase: BaseTestCase {
         var response: DataResponse<Any>?
 
         // When
-        sessionManager.request("https://httpbin.org/basic-auth/user/password")
+        let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
                 response = jsonResponse
@@ -630,6 +759,7 @@ class SessionManagerTestCase: BaseTestCase {
         // Then
         XCTAssertEqual(handler.adaptedCount, 1)
         XCTAssertEqual(handler.retryCount, 1)
+        XCTAssertEqual(request.retryCount, 0)
         XCTAssertEqual(response?.result.isSuccess, false)
 
         if let error = response?.result.error as? AFError {

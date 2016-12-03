@@ -5,14 +5,14 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
         tableView.delegate = self
         return tableView
     }()
-
+    
     lazy var data: [TransitionType] = [
         .bottomToTop,
         .topToBottom,
@@ -21,13 +21,13 @@ class ViewController: UIViewController {
         .overlayVertical,
         .overlayHorizontal
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -50,23 +50,24 @@ extension ViewController: UITableViewDelegate {
         f.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return f.date(from: "2016-10-21 14:45:41")
     }
-
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = data[indexPath.row].rawValue
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         
         let controller = ADController(type: data[indexPath.row])
         let flag = controller.isCanShowing(date: adDate!)
-        controller.images = (0...9).flatMap { UIImage(named: "IMG_\($0)") }
+        controller.images = (0...9).flatMap { UIImage(named: "IMG_\($0).PNG") }
         controller.selectedHandel = { (idx, controller) in
             print(idx)
             controller.dismiss(animated: true, completion: nil)
         }
-        if !flag {
-            present(controller, animated: true) {}
-        }
+//        if !flag {
+//            present(controller, animated: true) {}
+//        }
+        present(controller, animated: true) {}
     }
 }
