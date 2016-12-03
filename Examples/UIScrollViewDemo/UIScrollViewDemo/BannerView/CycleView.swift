@@ -54,11 +54,15 @@ class CycleView: UIView, UIScrollViewDelegate {
         page = Int(scrollView.contentOffset.x / scrollView.frame.width)
         if canCycle {
             if page <= 0 {
-                if scrollView.contentOffset.x < scrollView.frame.width / 2 && ((data.count - 2) >= 0) {
-                    scrollView.contentOffset.x = scrollView.frame.width * CGFloat(data.count - 2) + scrollView.contentOffset.x
+                let value = data.count - 2
+                if scrollView.contentOffset.x < scrollView.frame.width / 2 && (value >= 0) {
+                    scrollView.contentOffset.x = scrollView.frame.width * CGFloat(value) + scrollView.contentOffset.x
                 }
             } else if page >= data.count - 1 {
+                // 最后一个
                 scrollView.contentOffset.x = scrollView.frame.width
+            } else {
+            
             }
         }
     }
