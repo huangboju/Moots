@@ -89,6 +89,7 @@ class CycleView: UIView, UIScrollViewDelegate {
             contentLabel.tag = i
             scrollView.addSubview(contentLabel)
         }
+        scrollView.contentOffset.x = scrollView.frame.width
         timerInit()
     }
 

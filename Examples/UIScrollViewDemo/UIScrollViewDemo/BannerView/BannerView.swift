@@ -13,7 +13,13 @@ class BannerView: UIView {
             setTheTimer()
         }
     }
-    var bgColor: UIColor?
+    var isAllowLooping = true {
+        willSet {
+            if !newValue {
+                deinitTimer()
+            }
+        }
+    }
     var handleBack: selectedData? {
         didSet {
             backClosure = handleBack
@@ -30,14 +36,20 @@ class BannerView: UIView {
     fileprivate let cellIdentifier = "scrollUpCell"
 
     private var timer: DispatchSourceTimer?
-    fileprivate var isFirst = true // 第一次进入时显示第一个cell
     fileprivate var backClosure: selectedData?
     fileprivate var pageControl: UIPageControl?
     fileprivate var collectionView: UICollectionView?
 
-    fileprivate lazy var urlStrs = [String]() /// 图片链接
+    fileprivate lazy var urlStrs: [String] = [] /// 图片链接
 
-    fileprivate lazy var storeUrlStrs = [String]() /// 用于和外部数据比较，是否reload
+    fileprivate var storeUrlStrs: [String] = []{
+        willSet {
+            collectionView?.reloadData()
+            if isAllowLooping {
+                collectionView?.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
+            }
+        }
+    } /// 用于和外部数据比较，是否reload
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,25 +74,26 @@ class BannerView: UIView {
     }
 
     fileprivate func setTheTimer() {
-        timer = DispatchSource.makeTimerSource(queue: .main)
-        timer?.scheduleRepeating(deadline: .now() + .seconds(pageStepTime), interval: .seconds(pageStepTime))
-        timer?.setEventHandler {
-            self.nextItem()
+        if isAllowLooping {
+            timer = DispatchSource.makeTimerSource(queue: .main)
+            timer?.scheduleRepeating(deadline: .now() + .seconds(pageStepTime), interval: .seconds(pageStepTime))
+            timer?.setEventHandler {
+                self.nextItem()
+            }
+            // 启动定时器
+            timer?.resume()
         }
-        // 启动定时器
-        timer?.resume()
     }
 
     fileprivate func deinitTimer() {
-        if let time = self.timer {
+        if let time = timer {
             time.cancel()
             timer = nil
         }
     }
 
     func nextItem() {
-        if !urlStrs.isEmpty {
-            let indexPath = collectionView?.indexPathsForVisibleItems.first ?? IndexPath()
+        if let indexPath = collectionView?.indexPathsForVisibleItems.first {
             if indexPath.row + 1 < urlStrs.count {
                 collectionView?.scrollToItem(at: IndexPath(item: indexPath.row + 1, section: 0), at: .centeredHorizontally, animated: true)
             } else {
@@ -90,19 +103,21 @@ class BannerView: UIView {
     }
 
     func set(content: [String]) {
-        urlStrs = content
-        pageControl?.numberOfPages = content.count
-        if content.count > 1 {
-            urlStrs.insert(content.last ?? "", at: 0)
-            urlStrs.append(content.first ?? "")
-        } else {
-            deinitTimer()
+        if content.isEmpty { return }
+
+        urlStrs = isAllowLooping ? [content[content.count - 1]] + content + [content[0]] : content
+
+        if storeUrlStrs != content { // 内容不同才重设
+            pageControl?.numberOfPages = content.count
+
+            storeUrlStrs = content
+
+            setTheTimer()
         }
-        if storeUrlStrs != urlStrs {
-            storeUrlStrs = urlStrs
-            collectionView?.reloadData()
-        }
-        setTheTimer()
+    }
+
+    deinit {
+        deinitTimer()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -118,19 +133,11 @@ extension BannerView: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-        if let color = bgColor {
-            cell.backgroundColor = color
-        } else {
-            cell.backgroundColor = .white
-        }
+        cell.backgroundColor = .white
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if isFirst && urlStrs.count > 1 {
-            isFirst = false
-            collectionView.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
-        }
         cell.backgroundColor = UIColor(white: CGFloat(indexPath.row) / 10, alpha: 1)
         let bannerCell = (cell as? BannerCell)
         bannerCell?.urlStr = urlStrs[(indexPath).row]
@@ -150,6 +157,17 @@ extension BannerView: UICollectionViewDataSource, UICollectionViewDelegate {
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let page = scrollView.contentOffset.x / scrollView.frame.width
+        
+        let currentPage = {
+            let value = page.truncatingRemainder(dividingBy: 1) < 0.3
+            if value { // cell过半才改变pageControl
+                self.pageControl?.currentPage = Int(page) - (self.isAllowLooping ? 1 : 0)
+            }
+        }
+
+        currentPage()
+        guard isAllowLooping else { return }
+
         if page <= 0.0 {
             // 向右拉
             collectionView?.scrollToItem(at: IndexPath(item: urlStrs.count - 2, section: 0), at: .centeredHorizontally, animated: false)
@@ -159,10 +177,7 @@ extension BannerView: UICollectionViewDataSource, UICollectionViewDelegate {
             pageControl?.currentPage = 0
             collectionView?.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
         } else {
-            let value = page.truncatingRemainder(dividingBy: 1) < 0.5
-            if value { // cell过半才改变pageControl
-                pageControl?.currentPage = Int(page) - 1
-            }
+            currentPage()
         }
     }
 
