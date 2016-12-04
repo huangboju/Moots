@@ -7,7 +7,6 @@
 import UIKit
 
 class BannerView: UIView {
-    typealias selectedData = (Int) -> Void
     var pageStepTime = 5 { /// 自动滚动时间间隔
         didSet {
             setTheTimer()
@@ -20,11 +19,7 @@ class BannerView: UIView {
             }
         }
     }
-    var handleBack: selectedData? {
-        didSet {
-            backClosure = handleBack
-        }
-    }
+    var handleBack: ((Int) -> Void)?
     var showPageControl = true {
         willSet {
             if !newValue {
@@ -36,20 +31,22 @@ class BannerView: UIView {
     fileprivate let cellIdentifier = "scrollUpCell"
 
     private var timer: DispatchSourceTimer?
-    fileprivate var backClosure: selectedData?
     fileprivate var pageControl: UIPageControl?
     fileprivate var collectionView: UICollectionView?
 
-    fileprivate lazy var urlStrs: [String] = [] /// 图片链接
+    fileprivate var urlStrs: [String] = [] {
+        didSet { /// 图片链接
+            if oldValue != urlStrs {
 
-    fileprivate var storeUrlStrs: [String] = []{
-        willSet {
-            collectionView?.reloadData()
-            if isAllowLooping {
-                collectionView?.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
+                collectionView?.reloadData()
+
+                if isAllowLooping {
+                    collectionView?.scrollToItem(at: IndexPath(item: 1, section: 0), at: .centeredHorizontally, animated: false)
+                }
+                setTheTimer()
             }
         }
-    } /// 用于和外部数据比较，是否reload
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -106,14 +103,7 @@ class BannerView: UIView {
         if content.isEmpty { return }
 
         urlStrs = isAllowLooping ? [content[content.count - 1]] + content + [content[0]] : content
-
-        if storeUrlStrs != content { // 内容不同才重设
-            pageControl?.numberOfPages = content.count
-
-            storeUrlStrs = content
-
-            setTheTimer()
-        }
+        pageControl?.numberOfPages = content.count
     }
 
     deinit {
@@ -145,8 +135,8 @@ extension BannerView: UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if let backClosure = self.backClosure {
-            backClosure(max((indexPath).row - 1, 0))
+        if let handleBack = self.handleBack {
+            handleBack(max((indexPath).row - 1, 0))
         }
     }
 

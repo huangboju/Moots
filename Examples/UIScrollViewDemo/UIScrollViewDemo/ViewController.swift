@@ -31,7 +31,6 @@ class ViewController: UIViewController {
         
         
         let bannerView = BannerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 130))
-        bannerView.isAllowLooping = false
         bannerView.set(content: ["", "", "", "", ""])
         bannerView.pageStepTime = 1
         bannerView.handleBack = {
