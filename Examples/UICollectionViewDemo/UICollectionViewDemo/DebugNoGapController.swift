@@ -14,7 +14,7 @@ class DebugNoGapController: UIViewController {
         var rect = self.view.frame
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: layout.fixSlit(rect: &rect, colCount: 4), height: 88)
+        layout.itemSize = CGSize(width: layout.fixSlit(rect: &rect, colCount: 5), height: 88)
         layout.minimumLineSpacing = 0
         layout.minimumInteritemSpacing = 0
         

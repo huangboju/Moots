@@ -87,9 +87,10 @@ extension UICollectionViewFlowLayout {
     func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
         let totalSpace = (colCount - 1) * space
         let itemWidth = (rect.width - totalSpace) / colCount
-        var realItemWidth = floor(itemWidth) + 0.5
+        let fixValue = 1 / UIScreen.main.scale
+        var realItemWidth = floor(itemWidth) + fixValue
         if realItemWidth < itemWidth {
-            realItemWidth += 0.5
+            realItemWidth += fixValue
         }
         let realWidth = colCount * realItemWidth + totalSpace
         let pointX = (realWidth - rect.width) / 2

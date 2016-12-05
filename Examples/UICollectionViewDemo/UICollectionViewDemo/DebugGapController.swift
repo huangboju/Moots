@@ -14,9 +14,9 @@ class DebugGapController: UIViewController {
         var rect = self.view.frame
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: layout.fixSlit(rect: &rect, colCount: 2, space: 0.5), height: 88)
-        layout.minimumLineSpacing = 0.5
-        layout.minimumInteritemSpacing = 0.5
+        layout.itemSize = CGSize(width: layout.fixSlit(rect: &rect, colCount: 2, space: 1), height: 88)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         
         
         let collectionView = UICollectionView(frame: rect, collectionViewLayout: layout)
