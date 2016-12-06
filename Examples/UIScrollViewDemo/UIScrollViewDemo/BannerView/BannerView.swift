@@ -101,7 +101,7 @@ class BannerView: UIView {
 
     func set(content: [String]) {
         if content.isEmpty { return }
-
+        isAllowLooping = content.count > 1
         urlStrs = isAllowLooping ? [content[content.count - 1]] + content + [content[0]] : content
         pageControl?.numberOfPages = content.count
     }
