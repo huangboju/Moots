@@ -19,6 +19,8 @@
 		D813FFEA1DEC2EBB00B81BA9 /* DebugNoGapController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */; };
 		D8A731C71DED5360005DF7C8 /* HighlightController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731C61DED5360005DF7C8 /* HighlightController1.swift */; };
 		D8A731C91DED5376005DF7C8 /* HighlightController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A731C81DED5376005DF7C8 /* HighlightController2.swift */; };
+		D8ED296E1DF808B100AA03E9 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED296D1DF808B100AA03E9 /* UIButton+Extension.swift */; };
+		D8ED29701DF8090100AA03E9 /* IconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8ED296F1DF8090100AA03E9 /* IconLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,8 @@
 		D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugNoGapController.swift; sourceTree = "<group>"; };
 		D8A731C61DED5360005DF7C8 /* HighlightController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightController1.swift; sourceTree = "<group>"; };
 		D8A731C81DED5376005DF7C8 /* HighlightController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighlightController2.swift; sourceTree = "<group>"; };
+		D8ED296D1DF808B100AA03E9 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		D8ED296F1DF8090100AA03E9 /* IconLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 				D813FFE91DEC2EBB00B81BA9 /* DebugNoGapController.swift */,
 				D8A731C61DED5360005DF7C8 /* HighlightController1.swift */,
 				D8A731C81DED5376005DF7C8 /* HighlightController2.swift */,
+				D8ED296F1DF8090100AA03E9 /* IconLabel.swift */,
+				D8ED296D1DF808B100AA03E9 /* UIButton+Extension.swift */,
 			);
 			path = UICollectionViewDemo;
 			sourceTree = "<group>";
@@ -222,9 +228,11 @@
 				D813FFE61DEC2A8000B81BA9 /* NoGapController.swift in Sources */,
 				D8A731C91DED5376005DF7C8 /* HighlightController2.swift in Sources */,
 				D8A731C71DED5360005DF7C8 /* HighlightController1.swift in Sources */,
+				D8ED296E1DF808B100AA03E9 /* UIButton+Extension.swift in Sources */,
 				D813FFEA1DEC2EBB00B81BA9 /* DebugNoGapController.swift in Sources */,
 				D813FFC41DEC215900B81BA9 /* AppDelegate.swift in Sources */,
 				D813FFE41DEC22A500B81BA9 /* GapController.swift in Sources */,
+				D8ED29701DF8090100AA03E9 /* IconLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
