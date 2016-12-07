@@ -5,12 +5,12 @@
 import UIKit
 
 enum IconDirection {
-    case Left, Right, Top, Bottom
+    case left, right, top, bottom
 }
 
 class IconLabel: UILabel {
     var edgeInsets = UIEdgeInsets()
-    var direction = IconDirection.Left
+    var direction = IconDirection.left
     var gap: CGFloat = 5
     var icon: UIImage? {
         didSet {
@@ -62,7 +62,7 @@ class IconLabel: UILabel {
         if let iconView = iconView {
             switchFunc({
                 iconView.center.y = bounds.height / 2
-                if direction == .Left {
+                if direction == .left {
                     iconView.frame.origin.x = edgeInsets.left
                     temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left + gap + iconView.frame.width, bottom: edgeInsets.bottom, right: edgeInsets.right)
                 } else {
@@ -71,7 +71,7 @@ class IconLabel: UILabel {
                 }
             }, vertical: {
                 iconView.center.x = bounds.width / 2
-                if direction == .Top {
+                if direction == .top {
                     iconView.frame.origin.y = 0
                     temp = UIEdgeInsets(top: edgeInsets.top + gap + iconView.frame.height, left: edgeInsets.left, bottom: edgeInsets.bottom, right: edgeInsets.right)
                 } else {
@@ -85,7 +85,7 @@ class IconLabel: UILabel {
 
     private func switchFunc(_ horizontal: () -> Void, vertical: () -> Void) {
         switch direction {
-        case .Left, .Right:
+        case .left, .right:
             horizontal()
         default:
             vertical()
