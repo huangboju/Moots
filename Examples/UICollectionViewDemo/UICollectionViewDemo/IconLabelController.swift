@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class IconLabelController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -28,26 +28,31 @@ class ViewController: UIViewController {
         [
             HighlightController1.self,
             HighlightController2.self
-        ],
-        [
-            IconLabelController.self
         ]
     ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Runtime"
+        title = "\(classForCoder)"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
+        tableView.tableHeaderView = headerView
+
+        let button = UIButton(frame: CGRect(x: view.frame.width / 2 - 40, y: 0, width: 80, height: 80))
+        button.set("知乎", with: UIImage(named: "icon"))
+        headerView.addSubview(button)
+        
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
-extension ViewController: UITableViewDataSource {
+extension IconLabelController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
@@ -61,12 +66,12 @@ extension ViewController: UITableViewDataSource {
     }
 }
 
-extension ViewController: UITableViewDelegate {
+extension IconLabelController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
@@ -77,29 +82,4 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
-extension String {
-    func fromClassName() -> NSObject {
-        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + self
-        let aClass = NSClassFromString(className) as! UIViewController.Type
-        return aClass.init()
-    }
-}
-
-extension UICollectionViewFlowLayout {
-    /// 修正collection布局有缝隙
-    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
-        let totalSpace = (colCount - 1) * space
-        let itemWidth = (rect.width - totalSpace) / colCount
-        let fixValue = 1 / UIScreen.main.scale
-        var realItemWidth = floor(itemWidth) + fixValue
-        if realItemWidth < itemWidth {
-            realItemWidth += fixValue
-        }
-        let realWidth = colCount * realItemWidth + totalSpace
-        let pointX = (realWidth - rect.width) / 2
-        rect.origin.x = -pointX
-        rect.size.width = realWidth
-        return (rect.width - totalSpace) / colCount
-    }
-}
 

@@ -10,16 +10,16 @@ import UIKit
 
 extension UIButton {
     // FIXME: 横向不完美
-    func setButton(title: String?, image: UIImage?, direction: IconDirection = .top, interval: CGFloat = 10.0) {
+    func set(_ title: String?, with image: UIImage?, direction: IconDirection = .top, interval: CGFloat = 10.0) {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
         adjustsImageWhenHighlighted = false
-        titleLabel?.backgroundColor = backgroundColor
-        imageView?.backgroundColor = backgroundColor
+        titleLabel?.backgroundColor = UIColor.red
+        imageView?.backgroundColor = UIColor.blue
         guard let titleSize = titleLabel?.bounds.size, let imageSize = imageView?.bounds.size else {
             return
         }
-        let horizontal = (frame.width - max(titleSize.width, imageSize.width) - interval) / 2
+        let horizontal = (frame.width - titleSize.width - imageSize.width - interval) / 2
         let vertical = (frame.height - titleSize.height - imageSize.height - interval) / 2
         imageView?.translatesAutoresizingMaskIntoConstraints = false
         if let constraints = imageView?.superview?.constraints {
@@ -40,7 +40,10 @@ extension UIButton {
             let centerY = NSLayoutConstraint(item: imageView!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
             let right = NSLayoutConstraint(item: imageView!, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -horizontal)
             imageView?.superview?.addConstraints([centerY, right])
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: -(imageSize.width + interval), bottom: 0, right: imageSize.width + interval + horizontal)
+
+            print(imageView)
+            let left = (horizontal - titleLabel!.frame.minX) * 2
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
         case .top:
             let centerX = NSLayoutConstraint(item: imageView!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
             let top = NSLayoutConstraint(item: imageView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: vertical)

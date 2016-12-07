@@ -14,11 +14,11 @@ class DebugGapController: UIViewController {
         var rect = self.view.frame
         
         let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: layout.fixSlit(rect: &rect, colCount: 2, space: 1), height: 88)
+        let width = layout.fixSlit(rect: &rect, colCount: 2, space: 1)
+        layout.itemSize = CGSize(width: width, height: width)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
-        
-        
+
         let collectionView = UICollectionView(frame: rect, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -30,10 +30,17 @@ class DebugGapController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
         
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(IconLabelCell.self, forCellWithReuseIdentifier: "cell")
         view.addSubview(collectionView)
     }
     
+    let directions: [IconDirection] = [
+        .top,
+        .bottom,
+        .left,
+        .right
+    ]
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -42,7 +49,7 @@ class DebugGapController: UIViewController {
 
 extension DebugGapController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 50
+        return 12
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -52,7 +59,8 @@ extension DebugGapController: UICollectionViewDataSource {
 
 extension DebugGapController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor(white: CGFloat(indexPath.row) / 10, alpha: 1)
+        (cell as? IconLabelCell)?.direction = directions[indexPath.row % 4]
+        cell.backgroundColor = UIColor.groupTableViewBackground
     }
 }
 
