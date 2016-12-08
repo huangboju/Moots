@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIButton {
-    // FIXME: 横向不完美
+
     func set(_ title: String?, with image: UIImage?, direction: IconDirection = .top, interval: CGFloat = 10.0) {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
