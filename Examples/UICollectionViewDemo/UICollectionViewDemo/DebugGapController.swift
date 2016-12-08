@@ -34,7 +34,7 @@ class DebugGapController: UIViewController {
         view.addSubview(collectionView)
     }
     
-    let directions: [IconDirection] = [
+    let directions: [NSLayoutAttribute] = [
         .top,
         .bottom,
         .left,

@@ -10,7 +10,7 @@ import UIKit
 
 class IconLabelCell: UICollectionViewCell {
     
-    var direction: IconDirection? {
+    var direction: NSLayoutAttribute? {
         didSet {
             if let direction = direction {
                 button.set("知乎日报", with: UIImage(named: "icon"), direction: direction)
@@ -26,6 +26,7 @@ class IconLabelCell: UICollectionViewCell {
         super.init(frame: frame)
 
         button.setTitleColor(UIColor.darkGray, for: .normal)
+        button.adjustsImageWhenHighlighted = false
         contentView.addSubview(button)
     }
 

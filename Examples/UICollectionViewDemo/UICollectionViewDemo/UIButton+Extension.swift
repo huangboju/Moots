@@ -10,44 +10,43 @@ import UIKit
 
 extension UIButton {
 
-    func set(_ title: String?, with image: UIImage?, direction: IconDirection = .top, interval: CGFloat = 10.0) {
+    func set(_ title: String?, with image: UIImage?, direction: NSLayoutAttribute = .top, interval: CGFloat = 10.0) {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
         adjustsImageWhenHighlighted = false
-        titleLabel?.backgroundColor = UIColor.red
-        imageView?.backgroundColor = UIColor.blue
+        titleLabel?.backgroundColor = backgroundColor
+        imageView?.backgroundColor = backgroundColor
         guard let titleSize = titleLabel?.bounds.size, let imageSize = imageView?.bounds.size else {
             return
         }
         let horizontal = (frame.width - titleSize.width - imageSize.width - interval) / 2
-        let vertical = (frame.height - titleSize.height - imageSize.height - interval) / 2
+         let h = imageSize.height + interval
+        let vertical = (frame.height - titleSize.height - h) / 2
         imageView?.translatesAutoresizingMaskIntoConstraints = false
         if let constraints = imageView?.superview?.constraints {
             imageView?.superview?.removeConstraints(constraints)
         }
         switch direction {
-        case .left:
+        case .left, .right:
             let centerY = NSLayoutConstraint(item: imageView!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-            let left = NSLayoutConstraint(item: imageView!, attribute: .left, relatedBy: .equal, toItem: self, attribute: .left, multiplier: 1, constant: horizontal)
-            imageView?.superview?.addConstraints([centerY, left])
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: interval, bottom: 0, right: 0)
-        case .bottom:
-            let centerX = NSLayoutConstraint(item: imageView!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
-            let bottom = NSLayoutConstraint(item: imageView!, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1, constant: -vertical)
-            imageView?.superview?.addConstraints([centerX, bottom])
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: -imageSize.width, bottom: imageSize.height + interval, right: 0)
-        case .right:
-            let centerY = NSLayoutConstraint(item: imageView!, attribute: .centerY, relatedBy: .equal, toItem: self, attribute: .centerY, multiplier: 1, constant: 0)
-            let right = NSLayoutConstraint(item: imageView!, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -horizontal)
-            imageView?.superview?.addConstraints([centerY, right])
 
-            let left = -(0.5 * interval + imageSize.width) * 2
-            titleEdgeInsets = UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
-        case .top:
+            let isRight = direction == .right
+            let constraint = NSLayoutConstraint(item: imageView!, attribute: direction, relatedBy: .equal, toItem: self, attribute: direction, multiplier: 1, constant: horizontal * (isRight ? -1 : 1))
+            imageView?.superview?.addConstraints([centerY, constraint])
+
+            let offsetX = isRight ? -(0.5 * interval + imageSize.width) * 2 : interval
+            titleEdgeInsets = UIEdgeInsets(top: 0, left: offsetX, bottom: 0, right: 0)
+        case .bottom, .top:
+            let value: CGFloat = direction == .top ? 1 : -1
+
             let centerX = NSLayoutConstraint(item: imageView!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
-            let top = NSLayoutConstraint(item: imageView!, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1, constant: vertical)
-            imageView?.superview?.addConstraints([centerX, top])
-            titleEdgeInsets = UIEdgeInsets(top: imageSize.height + interval, left: -imageSize.width, bottom: 0, right: 0)
+
+            let constraint = NSLayoutConstraint(item: imageView!, attribute: direction, relatedBy: .equal, toItem: self, attribute: direction, multiplier: 1, constant: vertical * value)
+            imageView?.superview?.addConstraints([centerX, constraint])
+
+            titleEdgeInsets = UIEdgeInsets(top: h * value, left: -imageSize.width, bottom: 0, right: 0)
+        default:
+            fatalError("方向不匹配")
         }
     }
 }

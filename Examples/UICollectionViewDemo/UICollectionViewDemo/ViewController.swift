@@ -31,9 +31,12 @@ class ViewController: UIViewController {
         ],
         [
             IconLabelController.self
+        ],
+        [
+            LayoutController.self
         ]
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Runtime"
