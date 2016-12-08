@@ -13,7 +13,7 @@ class IconLabelCell: UICollectionViewCell {
     var direction: IconDirection? {
         didSet {
             if let direction = direction {
-                button.set("知乎", with: UIImage(named: "icon"), direction: direction)
+                button.set("知乎日报", with: UIImage(named: "icon"), direction: direction)
             }
         }
     }

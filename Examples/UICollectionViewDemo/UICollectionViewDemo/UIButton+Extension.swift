@@ -41,8 +41,7 @@ extension UIButton {
             let right = NSLayoutConstraint(item: imageView!, attribute: .right, relatedBy: .equal, toItem: self, attribute: .right, multiplier: 1, constant: -horizontal)
             imageView?.superview?.addConstraints([centerY, right])
 
-            print(imageView)
-            let left = (horizontal - titleLabel!.frame.minX) * 2
+            let left = -(0.5 * interval + imageSize.width) * 2
             titleEdgeInsets = UIEdgeInsets(top: 0, left: left, bottom: 0, right: 0)
         case .top:
             let centerX = NSLayoutConstraint(item: imageView!, attribute: .centerX, relatedBy: .equal, toItem: self, attribute: .centerX, multiplier: 1, constant: 0)
