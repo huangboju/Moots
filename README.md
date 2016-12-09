@@ -4,7 +4,7 @@ everything is the best arrangement
 ## 1、常用代码
 
 #### 多标志符字符串分割
-```
+```swift
 let text = "abc,vfr.yyuu"
 let set = CharacterSet(charactersIn: ",.")
 print(text.components(separatedBy: set)) // ["abc", "vfr", "yyuu"]
