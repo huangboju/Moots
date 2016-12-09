@@ -12,7 +12,7 @@ class IconLabelController: UIViewController {
     
     private lazy var collectionView: UICollectionView = {
         var rect = self.view.frame
-        
+
         let layout = UICollectionViewFlowLayout()
         let width = layout.fixSlit(rect: &rect, colCount: 2, space: 1)
         layout.itemSize = CGSize(width: width, height: width)
@@ -25,35 +25,34 @@ class IconLabelController: UIViewController {
         collectionView.backgroundColor = .white
         return collectionView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
-        
+
         collectionView.register(IconLabelCell.self, forCellWithReuseIdentifier: "cell")
         view.addSubview(collectionView)
-        
+
         var x: CGFloat = 0
-        
+
         for i in 0..<4 {
             let iconLabel = IconLabel()
             iconLabel.direction = IconDirection(rawValue: i)!
-            iconLabel.icon = UIImage(named: "icon")
-            iconLabel.text = "知乎"
+            iconLabel.edgeInsets = UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+            iconLabel.set("知乎", with: UIImage(named: "icon"))
             iconLabel.frame.origin = CGPoint(x: x, y: 20)
-            iconLabel.backgroundColor = UIColor.blue
             x = iconLabel.frame.maxX + 20
             collectionView.addSubview(iconLabel)
         }
     }
-    
+
     let directions: [NSLayoutAttribute] = [
         .top,
         .bottom,
         .left,
         .right
     ]
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
