@@ -13,6 +13,9 @@
 		D816D9D41DFA92820056132B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D816D9D31DFA92820056132B /* Assets.xcassets */; };
 		D816D9D71DFA92820056132B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D816D9D51DFA92820056132B /* LaunchScreen.storyboard */; };
 		D816D9E21DFA92820056132B /* LazyScrollViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9E11DFA92820056132B /* LazyScrollViewUITests.swift */; };
+		D816D9EE1DFA932A0056132B /* UIView+LazyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9ED1DFA932A0056132B /* UIView+LazyScrollView.swift */; };
+		D816D9F11DFA995E0056132B /* RectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9F01DFA995E0056132B /* RectModel.swift */; };
+		D816D9F31DFA9A960056132B /* LazyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9F21DFA9A960056132B /* LazyScrollView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 		D816D9DD1DFA92820056132B /* LazyScrollViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LazyScrollViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D816D9E11DFA92820056132B /* LazyScrollViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LazyScrollViewUITests.swift; sourceTree = "<group>"; };
 		D816D9E31DFA92830056132B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D816D9ED1DFA932A0056132B /* UIView+LazyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LazyScrollView.swift"; sourceTree = "<group>"; };
+		D816D9EF1DFA933C0056132B /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		D816D9F01DFA995E0056132B /* RectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectModel.swift; sourceTree = "<group>"; };
+		D816D9F21DFA9A960056132B /* LazyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyScrollView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +84,7 @@
 		D816D9CB1DFA92820056132B /* LazyScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				D816D9EC1DFA930A0056132B /* LazyScrollView */,
 				D816D9CC1DFA92820056132B /* AppDelegate.swift */,
 				D816D9CE1DFA92820056132B /* ViewController.swift */,
 				D816D9D01DFA92820056132B /* Main.storyboard */,
@@ -94,6 +102,17 @@
 				D816D9E31DFA92830056132B /* Info.plist */,
 			);
 			path = LazyScrollViewUITests;
+			sourceTree = "<group>";
+		};
+		D816D9EC1DFA930A0056132B /* LazyScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D816D9ED1DFA932A0056132B /* UIView+LazyScrollView.swift */,
+				D816D9EF1DFA933C0056132B /* Bridging.h */,
+				D816D9F01DFA995E0056132B /* RectModel.swift */,
+				D816D9F21DFA9A960056132B /* LazyScrollView.swift */,
+			);
+			path = LazyScrollView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,8 +218,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D816D9F31DFA9A960056132B /* LazyScrollView.swift in Sources */,
 				D816D9CF1DFA92820056132B /* ViewController.swift in Sources */,
+				D816D9F11DFA995E0056132B /* RectModel.swift in Sources */,
 				D816D9CD1DFA92820056132B /* AppDelegate.swift in Sources */,
+				D816D9EE1DFA932A0056132B /* UIView+LazyScrollView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +364,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.LazyScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = LazyScrollView/LazyScrollView/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -355,6 +378,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.LazyScrollView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = LazyScrollView/LazyScrollView/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -404,6 +428,7 @@
 				D816D9E81DFA92830056132B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D816D9E91DFA92830056132B /* Build configuration list for PBXNativeTarget "LazyScrollViewUITests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +437,7 @@
 				D816D9EB1DFA92830056132B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
