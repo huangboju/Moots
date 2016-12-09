@@ -3,6 +3,36 @@ everything is the best arrangement
 
 ## 1、常用代码
 
+#### 银行金额验证
+```swift
+extension String {
+    func enteredCorrectly() -> Bool {
+        if length == 0 {
+            return false
+        }
+        let scan = NSScanner(string: self)
+        let isNotZero = Double(self) > 0
+        if isNotZero {
+            if containsString(".") {
+                if let rangeOfZero = rangeOfString(".", options: .BackwardsSearch) {
+                    let suffix = String(characters.suffixFrom(rangeOfZero.endIndex))
+                    if suffix.length > 2 {
+                        showAlert(controller, message: "您输入的金额有误")
+                        return false
+                    }
+                }
+                var float: Float = 0
+                guard !(scan.scanFloat(&float) && scan.atEnd) else { return true }
+            } else {
+                var int: Int64 = 0
+                guard !(scan.scanLongLong(&int) && scan.atEnd) else { return true }
+            }
+        }
+        return false
+    }
+}
+```
+
 #### 多标志符字符串分割
 ```swift
 let text = "abc,vfr.yyuu"
