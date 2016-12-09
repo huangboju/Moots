@@ -3,6 +3,13 @@ everything is the best arrangement
 
 ## 1、常用代码
 
+#### 多标志符字符串分割
+```
+let text = "abc,vfr.yyuu"
+let set = CharacterSet(charactersIn: ",.")
+print(text.components(separatedBy: set)) // ["abc", "vfr", "yyuu"]
+```
+
 #### [匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)
 ```swift
 let age = 19
