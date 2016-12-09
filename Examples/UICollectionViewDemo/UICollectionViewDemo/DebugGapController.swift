@@ -14,7 +14,7 @@ class DebugGapController: UIViewController {
         var rect = self.view.frame
         
         let layout = UICollectionViewFlowLayout()
-        let width = layout.fixSlit(rect: &rect, colCount: 2, space: 1)
+        let width = layout.fixSlit(rect: &rect, colCount: 3, space: 1)
         layout.itemSize = CGSize(width: width, height: width)
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
@@ -30,16 +30,9 @@ class DebugGapController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
         
-        collectionView.register(IconLabelCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         view.addSubview(collectionView)
     }
-    
-    let directions: [NSLayoutAttribute] = [
-        .top,
-        .bottom,
-        .left,
-        .right
-    ]
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,7 +42,7 @@ class DebugGapController: UIViewController {
 
 extension DebugGapController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -59,8 +52,7 @@ extension DebugGapController: UICollectionViewDataSource {
 
 extension DebugGapController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        (cell as? IconLabelCell)?.direction = directions[indexPath.row % 4]
-        cell.backgroundColor = UIColor.groupTableViewBackground
+        cell.backgroundColor = UIColor(white: 0.7, alpha: 1)
     }
 }
 

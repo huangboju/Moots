@@ -1,85 +1,79 @@
 //
 //  ViewController.swift
-//  RunTime
+//  UICollectionViewDemo
 //
-//  Created by 伯驹 黄 on 2016/10/19.
+//  Created by 伯驹 黄 on 2016/11/28.
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
 import UIKit
 
 class IconLabelController: UIViewController {
-    fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: .grouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
     
-    lazy var data: [[UIViewController.Type]] = [
-        [
-            GapController.self,
-            NoGapController.self
-        ],
-        [
-            DebugGapController.self,
-            DebugNoGapController.self
-        ],
-        [
-            HighlightController1.self,
-            HighlightController2.self
-        ]
-    ]
+    private lazy var collectionView: UICollectionView = {
+        var rect = self.view.frame
+        
+        let layout = UICollectionViewFlowLayout()
+        let width = layout.fixSlit(rect: &rect, colCount: 2, space: 1)
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
+        layout.headerReferenceSize = CGSize(width: rect.width, height: 180)
+        let collectionView = UICollectionView(frame: rect, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.backgroundColor = .white
+        return collectionView
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "\(classForCoder)"
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        view.addSubview(tableView)
-
-        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 80))
-        tableView.tableHeaderView = headerView
-
-        let button = UIButton(frame: CGRect(x: view.frame.width / 2 - 40, y: 0, width: 80, height: 80))
-        button.set("知乎", with: UIImage(named: "icon"))
-        headerView.addSubview(button)
+        view.backgroundColor = UIColor.blue
         
+        collectionView.register(IconLabelCell.self, forCellWithReuseIdentifier: "cell")
+        view.addSubview(collectionView)
+        
+        var x: CGFloat = 0
+        
+        for i in 0..<4 {
+            let iconLabel = IconLabel()
+            iconLabel.direction = IconDirection(rawValue: i)!
+            iconLabel.icon = UIImage(named: "icon")
+            iconLabel.text = "知乎"
+            iconLabel.frame.origin = CGPoint(x: x, y: 20)
+            iconLabel.backgroundColor = UIColor.blue
+            x = iconLabel.frame.maxX + 20
+            collectionView.addSubview(iconLabel)
+        }
     }
-
+    
+    let directions: [NSLayoutAttribute] = [
+        .top,
+        .bottom,
+        .left,
+        .right
+    ]
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
-extension IconLabelController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
+extension IconLabelController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        return collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
     }
 }
 
-extension IconLabelController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
-    }
-
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
-        if let controller = controllerName.fromClassName() as? UIViewController {
-            controller.title = controllerName
-            navigationController?.pushViewController(controller, animated: true)
-        }
+extension IconLabelController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        (cell as? IconLabelCell)?.direction = directions[indexPath.row % 4]
+        cell.backgroundColor = UIColor.groupTableViewBackground
     }
 }
-
 

@@ -4,13 +4,13 @@
 
 import UIKit
 
-enum IconDirection {
+enum IconDirection: Int {
     case left, right, top, bottom
 }
 
 class IconLabel: UILabel {
     var edgeInsets = UIEdgeInsets()
-    var direction = IconDirection.left
+    var direction = IconDirection.top
     var gap: CGFloat = 5
     var icon: UIImage? {
         didSet {
@@ -23,7 +23,7 @@ class IconLabel: UILabel {
             addSubview(iconView ?? UIImageView())
         }
     }
-
+    
     private var iconView: UIImageView?
 
     override var text: String? {
@@ -31,23 +31,24 @@ class IconLabel: UILabel {
             sizeToFit()
         }
     }
-
+    
     override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         var rect = super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, edgeInsets), limitedToNumberOfLines: numberOfLines)
         rect.origin.x -= edgeInsets.left
         rect.origin.y -= edgeInsets.top
         rect.size.height += (edgeInsets.top + edgeInsets.bottom)
-        switchFunc({
+        switch direction {
+        case .left, .right:
             if let iconView = iconView {
-                if iconView.isMember(of: UIImageView.self) {
+                if iconView.isKind(of: UIImageView.self) {
                     rect.size.width += (edgeInsets.left + edgeInsets.right + gap + iconView.frame.width)
                 }
             } else {
                 rect.size.width += (edgeInsets.left + edgeInsets.right)
             }
-        }) {
+        default:
             if let iconView = iconView {
-                if iconView.isMember(of: UIImageView.self) {
+                if iconView.isKind(of: UIImageView.self) {
                     rect.size.height += (edgeInsets.top + edgeInsets.bottom + gap + iconView.frame.height)
                 }
             } else {
@@ -56,11 +57,12 @@ class IconLabel: UILabel {
         }
         return rect
     }
-
+    
     override func drawText(in rect: CGRect) {
         var temp = edgeInsets
         if let iconView = iconView {
-            switchFunc({
+            switch direction {
+            case .left, .right:
                 iconView.center.y = bounds.height / 2
                 if direction == .left {
                     iconView.frame.origin.x = edgeInsets.left
@@ -69,7 +71,7 @@ class IconLabel: UILabel {
                     iconView.frame.origin.x = frame.width - edgeInsets.right - iconView.frame.width
                     temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left, bottom: edgeInsets.bottom, right: edgeInsets.right + gap + iconView.frame.width)
                 }
-            }, vertical: {
+            default:
                 iconView.center.x = bounds.width / 2
                 if direction == .top {
                     iconView.frame.origin.y = 0
@@ -78,17 +80,8 @@ class IconLabel: UILabel {
                     iconView.frame.origin.y = edgeInsets.bottom + iconView.frame.height
                     temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left, bottom: edgeInsets.bottom + gap + iconView.frame.height, right: edgeInsets.right)
                 }
-            })
+            }
         }
         super.drawText(in: UIEdgeInsetsInsetRect(rect, temp))
-    }
-
-    private func switchFunc(_ horizontal: () -> Void, vertical: () -> Void) {
-        switch direction {
-        case .left, .right:
-            horizontal()
-        default:
-            vertical()
-        }
     }
 }

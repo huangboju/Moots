@@ -14,8 +14,8 @@ extension UIButton {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
         adjustsImageWhenHighlighted = false
-        titleLabel?.backgroundColor = backgroundColor
-        imageView?.backgroundColor = backgroundColor
+        titleLabel?.backgroundColor = UIColor.red
+        imageView?.backgroundColor = UIColor.blue
         guard let titleSize = titleLabel?.bounds.size, let imageSize = imageView?.bounds.size else {
             return
         }
