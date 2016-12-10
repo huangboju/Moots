@@ -74,5 +74,9 @@ extension IconLabelController: UICollectionViewDelegate {
         (cell as? IconLabelCell)?.direction = directions[indexPath.row % 4]
         cell.backgroundColor = UIColor.groupTableViewBackground
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath)
+    }
 }
 

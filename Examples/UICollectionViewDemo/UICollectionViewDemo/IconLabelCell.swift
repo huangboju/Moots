@@ -27,6 +27,8 @@ class IconLabelCell: UICollectionViewCell {
 
         button.setTitleColor(UIColor.darkGray, for: .normal)
         button.adjustsImageWhenHighlighted = false
+        button.isUserInteractionEnabled = false
+//        button.isEnabled = false 设置这个也可以，但是颜色会有偏移
         contentView.addSubview(button)
     }
 
