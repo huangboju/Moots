@@ -22,7 +22,7 @@ extension UIView {
         }
     }
     
-    var reuseIdentifier: String! {
+    var reuseIdentifier: String? {
         set {
             objc_setAssociatedObject(self, Keys.reuseIdentifierKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
         }

@@ -39,9 +39,25 @@ class ViewController: UIViewController {
 
         tableView.tableHeaderView = bannerView
 
+        let subView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
 
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+
+        print(subView.isDescendant(of: view))
+        
+        
+        
+        let array = NSArray(objects: "2.0", "2.3", "3.0", "4.0", "10")
+        
+        
+        let sum = array.value(forKeyPath: "@sum.floatValue")
+        
+        let avg = array.value(forKeyPath: "@avg.floatValue")
+        let max = array.value(forKeyPath: "@max.floatValue")
+        let min = array.value(forKeyPath: "@min.floatValue")
+
+        print(sum, avg, max, min)
     }
     
     override func didReceiveMemoryWarning() {
@@ -102,6 +118,21 @@ extension UICollectionViewFlowLayout {
         rect.origin.x = -pointX
         rect.size.width = realWidth
         return (rect.width - totalSpace) / colCount
+    }
+}
+
+extension UIView {
+    var viewController: UIViewController? {
+        var viewController: UIViewController?
+        var next = self.next
+        while next != nil {
+            if next!.isKind(of: UIViewController.self) {
+                viewController = next as? UIViewController
+                break
+            }
+            next = next?.next
+        }
+        return viewController
     }
 }
 
