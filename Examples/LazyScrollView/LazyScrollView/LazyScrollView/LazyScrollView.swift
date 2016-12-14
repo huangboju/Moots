@@ -32,18 +32,18 @@ class LazyScrollView: UIScrollView {
     }
     
     /// 重用池
-    private var reuseViews: [String: Set<UIView>] = [:]
+    private lazy var reuseViews: [String: Set<UIView>] = [:]
     
     /// 当前屏幕已经显示的Views
-    private var visibleViews: [UIView] = []
+    private lazy var visibleViews: [UIView] = []
     
     /// 所有的View的RectModel
-    private var allModels: [RectModel] = []
+    private lazy var allModels: [RectModel] = []
     
     private var numberOfItems = 0
 
     /// 注册的View的Classes类型
-    private var registerClass: [String: UIView.Type] = [:]
+    private lazy var registerClass: [String: UIView.Type] = [:]
 
     private let kBufferSize: CGFloat = 20
     
@@ -52,7 +52,7 @@ class LazyScrollView: UIScrollView {
 
         let newVisibleViews = visiableViewModels
         let newVisiblelazyIDs = newVisibleViews.flatMap { $0.lazyID }
-        let removeViews: [UIView]
+        var removeViews: [UIView] = []
         for view in visibleViews {
             if !newVisiblelazyIDs.contains(view.lazyID) {
                removeViews.append(view)
@@ -108,7 +108,7 @@ class LazyScrollView: UIScrollView {
             return view!
         }
     }
-    
+
     func register(viewClass: UIView.Type, forViewReuse identifier: String) {
         registerClass[identifier] = viewClass
     }
@@ -141,10 +141,10 @@ class LazyScrollView: UIScrollView {
         midIndex = max(midIndex - 1, 0)
         let array = ascendingEdgeArray[midIndex...ascendingEdgeArray.count - midIndex]
 
-        return Set(arrayLiteral: array)
+        return Set(array)
     }
-    
-    func findSet(with maxEdge: CGFloat) -> NSMutableSet {
+
+    func findSet(withMaxEdge maxEdge: CGFloat) -> Set<RectModel> {
         let descendingEdgeArray = allModels.sorted {  $0.0.absRect.maxY < $0.1.absRect.maxY }
         
         var minIndex = 0
@@ -163,16 +163,28 @@ class LazyScrollView: UIScrollView {
         midIndex = max(midIndex - 1, 0)
         let array = descendingEdgeArray[midIndex...descendingEdgeArray.count - midIndex]
         
-        return NSMutableSet(array: array)
+        return Set(array)
     }
     
     var visiableViewModels: [RectModel] {
-        let ascendSet =
-        return [RectModel]()
+        let ascendSet = findSet(with: minEdgeOffset)
+        let descendSet = findSet(withMaxEdge: maxEdgeOffset)
+
+        return Array(ascendSet.union(descendSet))
     }
     
     func updateAllRects() {
+        allModels.removeAll(keepingCapacity: true)
+        numberOfItems = dataSource!.numberOfItem(in: self)
         
+        for i in 0..<numberOfItems {
+            if let model = dataSource?.scrollView(self, rectModelAt: i) {
+                allModels.append(model)
+            }
+        }
+
+        let model = allModels.last
+        contentSize = CGSize(width: bounds.width, height: model?.absRect.maxY ?? 0)
     }
     
     /// 获取所有的RectModel
@@ -184,7 +196,7 @@ class LazyScrollView: UIScrollView {
         
         for i in 0..<count {
             
-            let model = dataSource.scrollView(self, rectModelAt: i)
+            let model = dataSource!.scrollView(self, rectModelAt: i)
             allModels.append(model)
         }
         
@@ -192,62 +204,6 @@ class LazyScrollView: UIScrollView {
             let absRect = model.absRect
             contentSize = CGSize(width: bounds.width, height: absRect.minY + model.absRect.height + 15)
         }
-    }
-    
-    var visibleRectModelInScreen: [RectModel] {
-        
-        let ascendSet = ascendYAndFindGreaterThanTop
-        
-        let descendSet = descendYAppendHeightAndFindLessThanBottom
-        
-        
-        ascendSet.intersects(descendSet)
-        
-        return
-    }
-    
-    /**
-     将所有的RectModel按顶边(y)升序排序
-     
-     @return 所有底边y大于top的model
-     */
-    var ascendYAndFindGreaterThanTop: NSSet {
-        
-        // 根据顶边(y)升序排序
-        
-        var ascendY = allModels
-        
-        
-        // 找到所有底边y大于top的model
-        
-        let top = contentOffset.y - 20
-        
-        var array: [RectModel]
-        
-        
-        for i in 0..<ascendY.count {
-            let model = ascendY[i]
-            
-            if model.absRect.minY + model.absRect.height > top {
-                array = ascendY[0...3]
-                break
-            }
-        }
-        
-        
-        let ascendSet = NSSet(array: array)
-        
-        return ascendSet
-    }
-    
-    var descendYAppendHeightAndFindLessThanBottom: NSMutableSet {
-        // 根据底边(y+height)降序排序
-        
-        return NSMutableSet()
-    }
-
-    func dequeueReusableItem(with identifier: String) -> UIView {
-        
     }
 }
 
