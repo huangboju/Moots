@@ -9,17 +9,50 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private lazy var lazyScrollView: LazyScrollView = {
+        let lazyScrollView = LazyScrollView(frame: self.view.bounds)
+        lazyScrollView.register(viewClass: TestView.self, forViewReuse: "TestView")
+        lazyScrollView.dataSource = self
+        return lazyScrollView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        setDatas()
+
+        view.addSubview(lazyScrollView)
+    }
+    
+    lazy var models: [RectModel] = []
+    lazy var viewsData: [String: String] = [:]
+
+    func setDatas() {
+        for i in 0..<500 {
+            let lazyID = "\(i / 10)/\(i % 10)"
+            let model = RectModel(absRect: CGRect(x: 10 + CGFloat(i % 2) * 120, y: CGFloat(i / 2) * 120, width: 110, height: 110), lazyID: lazyID)
+            models.append(model)
+            viewsData[lazyID] = lazyID
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+}
 
+extension ViewController: LazyScrollViewDataSource {
+    func numberOfItem(in scrollView: LazyScrollView) -> Int {
+        return models.count
+    }
 
+    func scrollView(_ scrollView: LazyScrollView, rectModelAt index: Int) -> RectModel {
+        return models[index]
+    }
+
+    func scrollView(_ scrollView: LazyScrollView, itemBy lazyID: String) -> UIView {
+        return scrollView.dequeueReusableItem(with: "TestView")
+    }
 }
 

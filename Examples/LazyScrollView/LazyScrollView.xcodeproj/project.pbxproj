@@ -16,6 +16,7 @@
 		D816D9EE1DFA932A0056132B /* UIView+LazyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9ED1DFA932A0056132B /* UIView+LazyScrollView.swift */; };
 		D816D9F11DFA995E0056132B /* RectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9F01DFA995E0056132B /* RectModel.swift */; };
 		D816D9F31DFA9A960056132B /* LazyScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D816D9F21DFA9A960056132B /* LazyScrollView.swift */; };
+		D843250B1E026ACC005D80E6 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D843250A1E026ACC005D80E6 /* TestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		D816D9EF1DFA933C0056132B /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		D816D9F01DFA995E0056132B /* RectModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectModel.swift; sourceTree = "<group>"; };
 		D816D9F21DFA9A960056132B /* LazyScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyScrollView.swift; sourceTree = "<group>"; };
+		D843250A1E026ACC005D80E6 /* TestView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				D816D9D31DFA92820056132B /* Assets.xcassets */,
 				D816D9D51DFA92820056132B /* LaunchScreen.storyboard */,
 				D816D9D81DFA92820056132B /* Info.plist */,
+				D843250A1E026ACC005D80E6 /* TestView.swift */,
 			);
 			path = LazyScrollView;
 			sourceTree = "<group>";
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D843250B1E026ACC005D80E6 /* TestView.swift in Sources */,
 				D816D9F31DFA9A960056132B /* LazyScrollView.swift in Sources */,
 				D816D9CF1DFA92820056132B /* ViewController.swift in Sources */,
 				D816D9F11DFA995E0056132B /* RectModel.swift in Sources */,

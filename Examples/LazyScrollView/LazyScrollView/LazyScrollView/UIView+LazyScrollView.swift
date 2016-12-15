@@ -12,7 +12,7 @@ extension UIView {
         static let lazyIDKey = "lazyIDkey"
     }
     
-    var lazyID: String! {
+    var lazyID: String? {
         set {
             objc_setAssociatedObject(self, Keys.lazyIDKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
         }

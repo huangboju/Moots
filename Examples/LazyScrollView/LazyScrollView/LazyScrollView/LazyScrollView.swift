@@ -54,7 +54,7 @@ class LazyScrollView: UIScrollView {
         let newVisiblelazyIDs = newVisibleViews.flatMap { $0.lazyID }
         var removeViews: [UIView] = []
         for view in visibleViews {
-            if !newVisiblelazyIDs.contains(view.lazyID) {
+            if !newVisiblelazyIDs.contains(view.lazyID ?? "") {
                removeViews.append(view)
             }
         }
@@ -82,7 +82,7 @@ class LazyScrollView: UIScrollView {
     func reloadData() {
         subviews.forEach { $0.removeFromSuperview() }
         visibleViews.removeAll()
-        
+
         updateAllRects()
     }
 
@@ -139,7 +139,7 @@ class LazyScrollView: UIScrollView {
             model = ascendingEdgeArray[midIndex]
         }
         midIndex = max(midIndex - 1, 0)
-        let array = ascendingEdgeArray[midIndex...ascendingEdgeArray.count - midIndex]
+        let array = ascendingEdgeArray[midIndex..<ascendingEdgeArray.count]
 
         return Set(array)
     }
@@ -161,7 +161,7 @@ class LazyScrollView: UIScrollView {
             model = descendingEdgeArray[midIndex]
         }
         midIndex = max(midIndex - 1, 0)
-        let array = descendingEdgeArray[midIndex...descendingEdgeArray.count - midIndex]
+        let array = descendingEdgeArray[midIndex..<descendingEdgeArray.count]
         
         return Set(array)
     }
@@ -176,7 +176,7 @@ class LazyScrollView: UIScrollView {
     func updateAllRects() {
         allModels.removeAll(keepingCapacity: true)
         numberOfItems = dataSource!.numberOfItem(in: self)
-        
+
         for i in 0..<numberOfItems {
             if let model = dataSource?.scrollView(self, rectModelAt: i) {
                 allModels.append(model)
