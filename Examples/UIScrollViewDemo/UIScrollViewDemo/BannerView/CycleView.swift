@@ -64,6 +64,14 @@ class CycleView: UIView, UIScrollViewDelegate {
             } else {
             
             }
+            
+            //        卡顿版本
+            //        let count = data.count
+            //        if scrollView.contentOffset.x == 0.0 {
+            //            scrollView.contentOffset.x = scrollView.frame.width * CGFloat(count - 2)
+            //        } else if scrollView.contentOffset.x == scrollView.frame.width * CGFloat(count - 1) {
+            //            scrollView.contentOffset.x = scrollView.frame.width
+            //        }
         }
     }
 
