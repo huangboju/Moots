@@ -8,27 +8,27 @@
 
 extension UIView {
     struct Keys {
-        static let reuseIdentifierKey = "reuseIdentifierKey"
-        static let lazyIDKey = "lazyIDkey"
+        static var reuseIdentifierKey: String? = "reuseIdentifierKey"
+        static var lazyIDKey: String? = "lazyIDkey"
     }
     
     var lazyID: String? {
         set {
-            objc_setAssociatedObject(self, Keys.lazyIDKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+            objc_setAssociatedObject(self, &Keys.lazyIDKey, newValue, .OBJC_ASSOCIATION_COPY)
         }
 
         get {
-            return objc_getAssociatedObject(self, Keys.lazyIDKey) as? String
+            return objc_getAssociatedObject(self, &Keys.lazyIDKey) as? String
         }
     }
     
     var reuseIdentifier: String? {
         set {
-            objc_setAssociatedObject(self, Keys.reuseIdentifierKey, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_COPY)
+            objc_setAssociatedObject(self, &Keys.reuseIdentifierKey, newValue, .OBJC_ASSOCIATION_COPY)
         }
 
         get {
-            return objc_getAssociatedObject(self, Keys.reuseIdentifierKey) as? String
+            return objc_getAssociatedObject(self, &Keys.reuseIdentifierKey) as? String
         }
     }
     

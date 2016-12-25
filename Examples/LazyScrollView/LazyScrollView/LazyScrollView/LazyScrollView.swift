@@ -12,7 +12,7 @@ protocol LazyScrollViewDataSource {
     
     /// 要求根据index直接返回RectModel
     func scrollView(_ scrollView: LazyScrollView, rectModelAt index: Int) -> RectModel
-    
+
     /// 返回下标所对应的view
     func scrollView(_ scrollView: LazyScrollView, itemBy lazyID: String) -> UIView
 }
@@ -95,7 +95,7 @@ class LazyScrollView: UIScrollView {
         }
         reuseSet?.insert(view)
     }
-    
+
     func dequeueReusableItem(with identifier: String) -> UIView {
         var reuseSet = reuseViews[identifier]
         if let view = reuseSet?.first {
@@ -130,7 +130,7 @@ class LazyScrollView: UIScrollView {
         var midIndex = (minIndex + maxIndex) / 2
         var model = ascendingEdgeArray[midIndex]
         while minIndex < maxIndex - 1 {
-            if model.absRect.maxY < CGFloat(minEdge) {
+            if model.absRect.minY > CGFloat(minEdge) {
                 maxIndex = midIndex
             } else {
                 minIndex = midIndex
@@ -162,7 +162,7 @@ class LazyScrollView: UIScrollView {
         }
         midIndex = max(midIndex - 1, 0)
         let array = descendingEdgeArray[midIndex..<descendingEdgeArray.count]
-        
+
         return Set(array)
     }
     
@@ -199,7 +199,7 @@ class LazyScrollView: UIScrollView {
             let model = dataSource!.scrollView(self, rectModelAt: i)
             allModels.append(model)
         }
-        
+
         if let model = allModels.last {
             let absRect = model.absRect
             contentSize = CGSize(width: bounds.width, height: absRect.minY + model.absRect.height + 15)
