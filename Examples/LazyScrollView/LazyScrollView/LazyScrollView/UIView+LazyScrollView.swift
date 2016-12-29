@@ -11,7 +11,7 @@ extension UIView {
         static var reuseIdentifierKey: String? = "reuseIdentifierKey"
         static var lazyIDKey: String? = "lazyIDkey"
     }
-    
+
     var lazyID: String? {
         set {
             objc_setAssociatedObject(self, &Keys.lazyIDKey, newValue, .OBJC_ASSOCIATION_COPY)
@@ -21,7 +21,7 @@ extension UIView {
             return objc_getAssociatedObject(self, &Keys.lazyIDKey) as? String
         }
     }
-    
+
     var reuseIdentifier: String? {
         set {
             objc_setAssociatedObject(self, &Keys.reuseIdentifierKey, newValue, .OBJC_ASSOCIATION_COPY)
@@ -31,7 +31,7 @@ extension UIView {
             return objc_getAssociatedObject(self, &Keys.reuseIdentifierKey) as? String
         }
     }
-    
+
     class func view(with lazyID: String, reuseIdentifier: String) -> UIView {
         
         let view = UIView()

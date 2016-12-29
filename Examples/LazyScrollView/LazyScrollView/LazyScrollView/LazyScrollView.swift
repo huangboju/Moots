@@ -6,7 +6,7 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
-protocol LazyScrollViewDataSource {
+protocol LazyScrollViewDataSource: class {
     /// ScrollView一共展示多少个item
     func numberOfItem(in scrollView: LazyScrollView) -> Int
     
@@ -17,20 +17,21 @@ protocol LazyScrollViewDataSource {
     func scrollView(_ scrollView: LazyScrollView, itemBy lazyID: String) -> UIView
 }
 
-protocol LazyScrollViewDelegate {
-    func scrollView(_ scrollView: LazyScrollView, didSelectItemAt index: Int)
+protocol LazyScrollViewDelegate: class {
+    func scrollView(_ scrollView: LazyScrollView, didSelectItemAt index: String)
 }
 
 class LazyScrollView: UIScrollView {
     
-    var dataSource: LazyScrollViewDataSource? {
+    weak var dataSource: LazyScrollViewDataSource? {
         didSet {
             if dataSource != nil {
                 reloadData()
             }
         }
     }
-    
+    weak var lazyDelegate: LazyScrollViewDelegate?
+
     /// 重用池
     private lazy var reuseViews: [String: Set<UIView>] = [:]
     
@@ -63,9 +64,9 @@ class LazyScrollView: UIScrollView {
             enqueueReusableView(view)
             view.removeFromSuperview()
         }
-        
+
         let alreadyVisibles = visibleViews.flatMap { $0.lazyID }
-        
+
         for model in newVisibleViews {
             if alreadyVisibles.contains(model.lazyID) {
                 continue
@@ -105,6 +106,8 @@ class LazyScrollView: UIScrollView {
             let viewClass = registerClass[identifier]
             let view = viewClass?.init()
             view?.reuseIdentifier = identifier
+            view?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapItem)))
+            view?.isUserInteractionEnabled = true
             return view!
         }
     }
@@ -203,6 +206,12 @@ class LazyScrollView: UIScrollView {
         if let model = allModels.last {
             let absRect = model.absRect
             contentSize = CGSize(width: bounds.width, height: absRect.minY + model.absRect.height + 15)
+        }
+    }
+    
+    func tapItem(sender: UITapGestureRecognizer) {
+        if let view = sender.view {
+            lazyDelegate?.scrollView(self, didSelectItemAt: view.lazyID!)
         }
     }
 }

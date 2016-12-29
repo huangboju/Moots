@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         let lazyScrollView = LazyScrollView(frame: self.view.bounds)
         lazyScrollView.register(viewClass: TestView.self, forViewReuse: "TestView")
         lazyScrollView.dataSource = self
+        lazyScrollView.lazyDelegate = self
         return lazyScrollView
     }()
 
@@ -53,6 +54,12 @@ extension ViewController: LazyScrollViewDataSource {
 
     func scrollView(_ scrollView: LazyScrollView, itemBy lazyID: String) -> UIView {
         return scrollView.dequeueReusableItem(with: "TestView")
+    }
+}
+
+extension ViewController: LazyScrollViewDelegate {
+    func scrollView(_ scrollView: LazyScrollView, didSelectItemAt index: String) {
+        print(index)
     }
 }
 
