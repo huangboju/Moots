@@ -39,6 +39,7 @@ class ViewController: UIViewController {
     
     func fetchDataFromServer() {
         let url = "http://baobab.wandoujia.com/api/v2/feed?date=1457883945551&num=7"
+        
         Alamofire.request(url).responseJSON { response in
             if let result = DATA(response.result.value).dictionaryValue["issueList"] {
                 self.data = result.map { IssueModel(dict: $0.1.dictionary) }
