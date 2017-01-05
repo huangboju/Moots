@@ -573,7 +573,14 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 注意：不能在结构体类型常量上调用变异方法，因为常量的属性不能被改变，即使想改变的是常量的变量属性也不行
 ```
 
+* 杂
+ * Self 表示引用当前实例的类型
 
+ * AnyObject可以代表任何class类型的实例
+
+ * Any可以表示任何类型。除了方法类型（function types）
+
+ * 对于生命周期中会变为nil的实例使用弱引用。相反地，对于初始化赋值后再也不会被赋值为nil的实例，使用无主引用。
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -587,15 +594,6 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 * [AsyncDisplayKit教程](https://github.com/nixzhu/dev-blog/blob/master/2014-11-22-asyncdisplaykit-tutorial-achieving-60-fps-scrolling.md)
 
 * [使用 ASDK 性能调优 - 提升 iOS 界面的渲染性能](https://github.com/Draveness/iOS-Source-Code-Analyze/blob/master/contents/AsyncDisplayKit/%E6%8F%90%E5%8D%87%20iOS%20%E7%95%8C%E9%9D%A2%E7%9A%84%E6%B8%B2%E6%9F%93%E6%80%A7%E8%83%BD%20.md)
-
-##### 杂
-* Self 表示引用当前实例的类型
-
-* AnyObject可以代表任何class类型的实例
-
-* Any可以表示任何类型。除了方法类型（function types）
-
-* 对于生命周期中会变为nil的实例使用弱引用。相反地，对于初始化赋值后再也不会被赋值为nil的实例，使用无主引用。
 
 
 
