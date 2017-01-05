@@ -778,12 +778,20 @@ navigationbar下面出来的提示框
 
 ### 其他
 
-
 <details>
   <summary>**界面跳转路由**</summary>
     <ul>
       <li>[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)</li>
       <li>[FNUrlRoute](https://github.com/Fnoz/FNUrlRoute)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**SVG**</summary>
+    <ul>
+      <li>[Snowflake](https://github.com/onmyway133/Snowflake)(Swift)</li>
+      <li>[Macaw](https://github.com/exyte/Macaw)(Swift)</li>
     </ul>
 </details>
 
@@ -822,9 +830,17 @@ Swift的JSON转换
 
 <details>
 <summary>
-  **[Macaw](https://github.com/exyte/Macaw)(Swift)**
+  **[Live](https://github.com/ltebean/Live)(Swift)**
 </summary>
-功能强大和易于使用的矢量图形Swift库与SVG支持
+直播
+</details>
+
+
+<details>
+<summary>
+  **[MLeaksFinder](https://github.com/Zepo/MLeaksFinder)(Swift)**
+</summary>
+在开发时查找iOS应用中的内存泄漏。
 </details>
 
 
