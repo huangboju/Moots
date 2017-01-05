@@ -665,7 +665,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 #### [切换淘宝源](https://ruby.taobao.org/)
 #### [卸载cocoapods](http://www.jianshu.com/p/8b61b421dd76)
 
----------------------------------------
+---------------------------------------------------------------------------------------------------------------------
 
 #常用库
 按字母排序
@@ -759,6 +759,14 @@ navigationbar下面出来的提示框
 
 <details>
 <summary>
+  **[Argo](https://github.com/thoughtbot/Argo)(Swift)**
+</summary>
+Swift的JSON转换
+</details>
+
+
+<details>
+<summary>
   **[BeeHive](https://github.com/alibaba/BeeHive)(OC)**
 </summary>
 阿里开源的解耦库
@@ -783,7 +791,33 @@ navigationbar下面出来的提示框
 
 <details>
 <summary>
+  **[Macaw](https://github.com/exyte/Macaw)(Swift)**
+</summary>
+功能强大和易于使用的矢量图形Swift库与SVG支持
+</details>
+
+
+<details>
+<summary>
   **[Peek](https://github.com/shaps80/Peek)(Swift)**
 </summary>
 Peek是一个开源库，允许您根据用户界面的规范指南轻松检查您的应用程序。 Peek可以被工程师，设计师和测试人员使用，允许开发人员花更多的时间在代码和更少的时间检查字体，颜色和布局是像素完美。
+</details>
+
+
+<details>
+<summary>
+  **[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)**
+</summary>
+Swift各个类的扩展
+</details>
+
+
+### APP源码
+
+<details>
+<summary>
+  **[kickstarter](https://github.com/kickstarter/ios-oss)(Swift)**
+</summary>
+一个众筹平台的源码
 </details>
