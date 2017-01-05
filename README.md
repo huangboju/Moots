@@ -3,8 +3,11 @@ everything is the best arrangement
 
 ## 1、常用代码
 
-#### 银行金额验证
-```swift
+<details>
+<summary>
+    #### 银行金额验证
+</summary>
+    ```swift
 extension String {
     func enteredCorrectly() -> Bool {
         if length == 0 {
@@ -32,6 +35,8 @@ extension String {
     }
 }
 ```
+</details>
+
 
 #### 多标志符字符串分割
 ```swift
