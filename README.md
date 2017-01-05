@@ -671,9 +671,11 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 ### UI
 |             库名             |             描述             |           语言             |
 |:---------------------------:|:---------------------------:|:---------------------------:|
-|      [FontAwesomeKit][]     |           各种icon           |            OC              |
-|       [GSMessages][]        | navigationbar下面出来的提示框  |           Swift             |
+|      [FontAwesomeKit][]     |           各种icon          |            OC              |
+|       [GSMessages][]        | navigationbar下面出来的提示框 |           Swift             |
 |       [MobilePlayer][]      |            播放器            |           Swift             |
+|     [MaterialComponents][]  |            谷歌控件库         |            OC              |
+|   [TinderSimpleSwipeCards][]|      类似陌陌卡片选择          |           OC               |
 
 
 ### 数据库
@@ -685,3 +687,5 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 [GSMessages]: https://github.com/wxxsw/GSMessages
 [MobilePlayer]: https://github.com/mobileplayer/mobileplayer-ios
 [SQLite.swift]: https://github.com/stars
+[MaterialComponents]: https://github.com/material-components/material-components-ios
+[TinderSimpleSwipeCards]: https://github.com/cwRichardKim/TinderSimpleSwipeCards 
