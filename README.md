@@ -466,20 +466,31 @@ extension UIButton {
 
 
 ## 2、笔记
-##### Class
-###### 1. UITableView
->在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
 
->cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = [UIColor grayColor];一般情况下，两种方式效果一样。但是在多选编辑状态，直接设置cell的背景色可以保证左侧多选框部分的背景色与cell背景色一致，而设置contentView背景色，左侧多选框的背景色会是UITableView的背景色或UITableView父视图背景色，如果需要保证颜色一致，必须设置cell的背景色而不是cell.contentView的。
+> 1. UITableView
 
-###### 2. [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
+```
+在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
 
-###### 3.UIButton setImage setBackgroundImage
-> 首先setBackgroundImage，image会随着button的大小而改变，图片自动会拉伸来适应button的大小，这个时候任然可以设置button的title，image不会挡住title；相反的的setImage，图片不会进行拉伸，原比例的显示在button上，此时再设置title，title将无法显示，因此可以根据需求选中方法
+cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = [UIColor grayColor];一般情况下，两种方式效果一样。但是在多选编辑状态，直接设置cell的背景色可以保证左侧多选框部分的背景色与cell背景色一致，而设置contentView背景色，左侧多选框的背景色会是UITableView的背景色或UITableView父视图背景色，如果需要保证颜色一致，必须设置cell的背景色而不是cell.contentView的。
+```
 
-###### 4. NSLayoutConstraint Leading left
->NSLayoutAttributeLeading/NSLayoutAttributeTrailing的区别是left/right永远是指左右，
+
+> 2. [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
+
+> 3.UIButton setImage setBackgroundImage
+
+```
+首先setBackgroundImage，image会随着button的大小而改变，图片自动会拉伸来适应button的大小，这个时候任然可以设置button的title，image不会挡住title；相反的的setImage，图片不会进行拉伸，原比例的显示在button上，此时再设置title，title将无法显示，因此可以根据需求选中方法
+```
+
+> 4. NSLayoutConstraint Leading left
+
+```
+NSLayoutAttributeLeading/NSLayoutAttributeTrailing的区别是left/right永远是指左右，
 leading/trailing在某些从右至左习惯的地区（希伯来语等）会变成，leading是右边，trailing是左边
+```
+
 
 ##### Protocol
 >delegate一般得用weak标识符，这样当delegate指向的controller被销毁时，delegate会跟着被置为nil，可以有效防止这种问题。
