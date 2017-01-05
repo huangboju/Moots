@@ -695,6 +695,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 按字母排序，点击展开为该库的描述
 
 ### UI
+<details>
+  <summary>**视频播放器**</summary>
+    <ul>
+    <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
+    <li>[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)(Swift)</li>
+    </ul>
+</details>
+
 
 <details>
   <summary>**日历**</summary>
@@ -702,6 +710,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
       <li>[GLCalendarView](https://github.com/Glow-Inc/GLCalendarView)(OC)</li>
       <li>[JTCalendar](https://github.com/jonathantribouharet/JTCalendar)(OC)</li>
       <li>[FSCalendar](https://github.com/WenchaoD/FSCalendar)(Swift)</li>
+      <li>[JTAppleCalendar](https://github.com/patchthecode/JTAppleCalendar)(Swift)</li>
     </ul>
 </details>
 
@@ -751,9 +760,57 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
+  **[ASProgressPopUpView](https://github.com/alskipp/ASProgressPopUpView)(OC)**
+</summary>
+显示弹出式视图中完成百分比的进度视图
+</details>
+
+
+<details>
+<summary>
+  **[ALCameraViewController](https://github.com/AlexLittlejohn/ALCameraViewController)(Swift)**
+</summary>
+具有自定义图像选择器和图像裁剪的摄像机视图控制器。
+</details>
+
+
+<details>
+<summary>
+  **[BouncyPageViewController](https://github.com/BohdanOrlov/BouncyPageViewController)(Swift)**
+</summary>
+具有跳动效果的页面视图控制器
+</details>
+
+
+<details>
+<summary>
+  **[ConfettiView](https://github.com/OrRon/ConfettiView)(Swift)**
+</summary>
+ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视图
+</details>
+
+
+<details>
+<summary>
+  **[DateTimePicker](https://github.com/itsmeichigo/DateTimePicker)(Swift)**
+</summary>
+日期和时间选择组件
+</details>
+
+
+<details>
+<summary>
   **[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)(OC)**
 </summary>
 用于在视图没有要显示的内容时显示空数据集的UITableView / UICollectionView超类类别
+</details>
+
+
+<details>
+<summary>
+  **[FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture)(OC)**
+</summary>
+全屏返回
 </details>
 
 
@@ -823,6 +880,14 @@ FPS显示
 
 <details>
 <summary>
+  **[KYDrawerController](https://github.com/ykyouhei/KYDrawerController)(Swift)**
+</summary>
+侧滑
+</details>
+
+
+<details>
+<summary>
   **[LTHRadioButton](https://github.com/rolandleth/LTHRadioButton)(Swift)**
 </summary>
 一个有漂亮动画的单选按钮
@@ -855,22 +920,6 @@ FPS显示
 
 <details>
 <summary>
-  **[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)**
-</summary>
-视频播放器
-</details>
-
-
-<details>
-<summary>
-  **[NextGrowingTextView](https://github.com/muukii/NextGrowingTextView)(Swift)**
-</summary>
-自适应高度的TextView
-</details>
-
-
-<details>
-<summary>
   **[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)**
 </summary>
  谷歌控件库 
@@ -879,9 +928,25 @@ FPS显示
 
 <details>
 <summary>
+  **[MXScrollView](https://github.com/cwxatlm/MXScrollView)(OC)**
+</summary>
+一款易用的可拉伸的自动循环滚动视图 集成简单易懂 自定义性强
+</details>
+
+
+<details>
+<summary>
   **[MZFormSheetController](https://github.com/m1entus/MZFormSheetController)(OC)**
 </summary>
 MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet，添加对iPhone的支持和额外的机会来设置控制器大小和感觉表单。
+</details>
+
+
+<details>
+<summary>
+  **[NextGrowingTextView](https://github.com/muukii/NextGrowingTextView)(Swift)**
+</summary>
+自适应高度的TextView
 </details>
 
 
@@ -1089,6 +1154,14 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[Nuke](https://github.com/kean/Nuke)(Swift)**
+</summary>
+强大的图像加载和缓存框架
+</details>
+
+
+<details>
+<summary>
   **[Password-keyboard](https://github.com/liuchunlao/Password-keyboard)(OC)**
 </summary>
 动态密码键盘
@@ -1149,18 +1222,26 @@ Swift各个类的扩展
 
 <details>
 <summary>
-  **[ReSwift](https://github.com/ReSwift/ReSwift)**
+  **[katana-swift](https://github.com/BendingSpoons/katana-swift)(Swift)**
 </summary>
-似乎有点牛B，待仔细研究
+跟ReSwift类似
 </details>
 
 
 <details>
 <summary>
-  **[katana-swift](https://github.com/BendingSpoons/katana-swift)(Swift)**
+  **[ReSwift](https://github.com/ReSwift/ReSwift)**
 </summary>
-跟ReSwift类似
+似乎有点牛B，待仔细研究
 </details>
+
+<details>
+<summary>
+  **[RxSwift](https://github.com/ReactiveX/RxSwift)(Swift)**
+</summary>
+响应式编程
+</details>
+
 
 
 
@@ -1190,4 +1271,12 @@ v2ex客户端
   **[VVeboTableViewDemo](https://github.com/johnil/VVeboTableViewDemo)(OC)**
 </summary>
 微博优化demo
+</details>
+
+
+<details>
+<summary>
+  **[SmileWeather](https://github.com/liu044100/SmileWeather)(OC)**
+</summary>
+天气Demo
 </details>
