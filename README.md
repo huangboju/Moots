@@ -513,7 +513,11 @@ leading/trailing在某些从右至左习惯的地区（希伯来语等）会变�
 
 ## 3、常用配置
 
-#### cocoapods
+
+<details>
+<summary>
+  **Cocoapods**
+</summary>
 ```ruby
 卸载当前版本
 sudo gem uninstall cocoapods
@@ -521,12 +525,19 @@ sudo gem uninstall cocoapods
 下载旧版本
 sudo gem install cocoapods -v 0.25.0
 ```
+</details> 
 
-#### 修改Xcode自动生成的文件注释来导出API文档
+
+<details>
+<summary>
+  **修改Xcode自动生成的文件注释来导出API文档**
+</summary>
 ```
 http://www.jianshu.com/p/d0c7d9040c93
 open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
 ```
+</details>
+
 
 #### 删除多余模拟器
 ```
