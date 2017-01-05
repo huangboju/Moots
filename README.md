@@ -722,6 +722,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
+  **[10Clock](https://github.com/joedaniels29/10Clock)(Swift)**
+</summary>
+这个控件是一个美丽的时间选择器大量启发的iOS 10“睡前”定时器。
+</details>
+
+
+<details>
+<summary>
   **[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)(OC)**
 </summary>
 用于在视图没有要显示的内容时显示空数据集的UITableView / UICollectionView超类类别
@@ -733,6 +741,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
   **[FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)(OC)**
 </summary>
 各种icon 
+</details>
+
+
+<details>
+<summary>
+  **[ForceBlur](https://github.com/Yalantis/ForceBlur)(Swift)**
+</summary>
+ForceBlur动画iOS消息应用程序
 </details>
 
 
@@ -757,6 +773,14 @@ Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
   **[KMCGeigerCounter](https://github.com/kconner/KMCGeigerCounter)(OC)**
 </summary>
 FPS显示
+</details>
+
+
+<details>
+<summary>
+  **[KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition)(OC)**
+</summary>
+美团首页，微信红包页面NavigationBar过度处理
 </details>
 
 
@@ -802,6 +826,14 @@ FPS显示
 
 <details>
 <summary>
+  **[MZFormSheetController](https://github.com/m1entus/MZFormSheetController)(OC)**
+</summary>
+MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet，添加对iPhone的支持和额外的机会来设置控制器大小和感觉表单。
+</details>
+
+
+<details>
+<summary>
   **[StatefulViewController](https://github.com/aschuch/StatefulViewController)(Swift)**
 </summary>
 基于内容，加载，错误或空状态的占位符视图
@@ -813,6 +845,14 @@ FPS显示
   **[SwipeTableView](https://github.com/Roylee-ML/SwipeTableView)(OC)**
 </summary>
 类似半糖、美丽说主页与QQ音乐歌曲列表布局效果，实现不同菜单的左右滑动切换，同时支持类似tableview的顶部工具栏悬停（既可以左右滑动，又可以上下滑动）。兼容下拉刷新，自定义 collectionview实现自适应 contentSize 还可实现瀑布流功能
+</details>
+
+
+<details>
+<summary>
+  **[TableFlip](https://github.com/mergesort/TableFlip)(Swift)**
+</summary>
+一个更简单的方法来做酷UITableView动画！
 </details>
 
 
@@ -847,10 +887,27 @@ FPS显示
 ### 其他
 
 <details>
+<summary>
+  **[SwiftPlate](https://github.com/mergesort/TableFlip)(Swift)**
+</summary>
+用命令行轻松生成跨平台Swift框架项目
+</details>
+
+
+<details>
   <summary>**界面跳转路由**</summary>
     <ul>
       <li>[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)</li>
       <li>[FNUrlRoute](https://github.com/Fnoz/FNUrlRoute)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**Swift代码生成器**</summary>
+    <ul>
+      <li>[SwiftGen](https://github.com/johnil/VVeboTableViewDemo)(Swift)</li>
+      <li>[R.swift](https://github.com/mac-cain13/R.swift)(Swift)</li>
     </ul>
 </details>
 
@@ -893,6 +950,14 @@ Swift的JSON转换
   **[Google VR](https://github.com/googlevr/gvr-ios-sdk)**
 </summary>
 谷歌VR
+</details>
+
+
+<details>
+<summary>
+  **[Quick](https://github.com/Quick/Quick)(Swift)**
+</summary>
+Swift（和Objective-C）测试框架。
 </details>
 
 
