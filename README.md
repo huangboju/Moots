@@ -467,7 +467,7 @@ extension UIButton {
 
 ## 2、笔记
 
->UITableView
+######UITableView
 
 ```
 在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
@@ -476,16 +476,15 @@ cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = 
 ```
 
 
->[iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
+######[iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
 
-
->UIButton setImage setBackgroundImage
+######UIButton setImage setBackgroundImage
 
 ```
 首先setBackgroundImage，image会随着button的大小而改变，图片自动会拉伸来适应button的大小，这个时候任然可以设置button的title，image不会挡住title；相反的的setImage，图片不会进行拉伸，原比例的显示在button上，此时再设置title，title将无法显示，因此可以根据需求选中方法
 ```
 
->NSLayoutConstraint Leading left
+######NSLayoutConstraint Leading left
 
 ```
 NSLayoutAttributeLeading/NSLayoutAttributeTrailing的区别是left/right永远是指左右，
@@ -494,16 +493,21 @@ leading/trailing在某些从右至左习惯的地区（希伯来语等）会变�
 
 
 ##### Protocol
->delegate一般得用weak标识符，这样当delegate指向的controller被销毁时，delegate会跟着被置为nil，可以有效防止这种问题。
+```
+delegate一般得用weak标识符，这样当delegate指向的controller被销毁时，delegate会跟着被置为nil，可以有效防止这种问题。
 若是使用assign标识的delegate，则注意在delegate指向的对象被销毁时，将delegate 置为nil。
 也有不将delegate置为nil，没有问题的情况。如常见的tableView，其delegate和datasource，一般不会在其他controller中使用该tableView，所以不会有这种问题。
+```
+
 
 
 ##### Struct
->实例方法中修改值类型
+```
+实例方法中修改值类型
 结构体和枚举是值类型。默认情况下，值类型的属性不可以在他的实例方法中修改
 可以用mutating（变异行为）
 注意：不能在结构体类型常量上调用变异方法，因为常量的属性不能被改变，即使想改变的是常量的变量属性也不行
+```
 
 ##### 优化
 >[UIKit性能调优实战讲解](http://www.jianshu.com/p/619cf14640f3)
