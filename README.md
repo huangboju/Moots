@@ -467,29 +467,31 @@ extension UIButton {
 
 ## 笔记
 
-###### * UITableView
+ * UITableView
 ```
 在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
 
 cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = [UIColor grayColor];一般情况下，两种方式效果一样。但是在多选编辑状态，直接设置cell的背景色可以保证左侧多选框部分的背景色与cell背景色一致，而设置contentView背景色，左侧多选框的背景色会是UITableView的背景色或UITableView父视图背景色，如果需要保证颜色一致，必须设置cell的背景色而不是cell.contentView的。
 ```
 
-###### * [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
+
+* [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
 
 
-###### **UIButton setImage setBackgroundImage**
+* UIButton setImage setBackgroundImage
 ```
 首先setBackgroundImage，image会随着button的大小而改变，图片自动会拉伸来适应button的大小，这个时候任然可以设置button的title，image不会挡住title；相反的的setImage，图片不会进行拉伸，原比例的显示在button上，此时再设置title，title将无法显示，因此可以根据需求选中方法
 ```
 
-###### **NSLayoutConstraint Leading left**
+
+* NSLayoutConstraint Leading left
 ```
 NSLayoutAttributeLeading/NSLayoutAttributeTrailing的区别是left/right永远是指左右，
 leading/trailing在某些从右至左习惯的地区（希伯来语等）会变成，leading是右边，trailing是左边
 ```
 
 
-##### **Protocol**
+* Protocol
 ```
 delegate一般得用weak标识符，这样当delegate指向的controller被销毁时，delegate会跟着被置为nil，可以有效防止这种问题。
 若是使用assign标识的delegate，则注意在delegate指向的对象被销毁时，将delegate 置为nil。
@@ -497,8 +499,7 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 ```
 
 
-
-##### **Struct**
+* Struct
 ```
 实例方法中修改值类型
 结构体和枚举是值类型。默认情况下，值类型的属性不可以在他的实例方法中修改
@@ -601,6 +602,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 #### [切换淘宝源](https://ruby.taobao.org/)
 #### [卸载cocoapods](http://www.jianshu.com/p/8b61b421dd76)
 
+---------------------------------------
 
 #常用库
 ### UI
