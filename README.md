@@ -516,7 +516,7 @@ leading/trailing在某些从右至左习惯的地区（希伯来语等）会变�
 
 <details>
 <summary>
-  **Cocoapods**
+  **Cocoapods([原理](https://objccn.io/issue-6-4/))**
 </summary>
 ```ruby
 卸载当前版本
@@ -539,18 +539,28 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 </details>
 
 
-#### 删除多余模拟器
+<details>
+<summary>
+  **删除多余模拟器**
+</summary>
 ```
 open /Library/Developer/CoreSimulator/Profiles/Runtimes
 open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
 ```
+</details>
 
-#### 修改swift文件
+
+<details>
+<summary>
+  **修改swift文件**
+</summary>
 ```
 open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
 
 open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/Cocoa\ Touch\ Class.xctemplate/UIViewControllerSwift
 ```
+</details>
+
 
 ## 4、错误处理
 1.The certificate used to sign "XXX" has either expired or has been revoked
