@@ -778,6 +778,16 @@ navigationbar下面出来的提示框
 
 ### 其他
 
+
+<details>
+  <summary>**界面跳转路由**</summary>
+    <ul>
+      <li>[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)</li>
+      <li>[FNUrlRoute](https://github.com/Fnoz/FNUrlRoute)(Swift)</li>
+    </ul>
+</details>
+
+
 <details>
 <summary>
   **[Argo](https://github.com/thoughtbot/Argo)(Swift)**
@@ -795,19 +805,18 @@ Swift的JSON转换
 
 
 <details>
-  <summary>**界面跳转路由**</summary>
-    <ul>
-      <li>[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)</li>
-      <li>[FNUrlRoute](https://github.com/Fnoz/FNUrlRoute)(Swift)</li>
-    </ul>
+<summary>
+  **[FileBrowser](https://github.com/marmelroy/FileBrowser)(Swift)**
+</summary>
+文件浏览器
 </details>
 
 
 <details>
 <summary>
-  **[FileBrowser](https://github.com/marmelroy/FileBrowser)(Swift)**
+  **[Google VR](https://github.com/googlevr/gvr-ios-sdk)**
 </summary>
-文件浏览器
+谷歌VR
 </details>
 
 
@@ -824,6 +833,14 @@ Swift的JSON转换
   **[Peek](https://github.com/shaps80/Peek)(Swift)**
 </summary>
 Peek是一个开源库，允许您根据用户界面的规范指南轻松检查您的应用程序。 Peek可以被工程师，设计师和测试人员使用，允许开发人员花更多的时间在代码和更少的时间检查字体，颜色和布局是像素完美。
+</details>
+
+
+<details>
+<summary>
+  **[ReSwift](https://github.com/ReSwift/ReSwift)**
+</summary>
+似乎有点牛B，待仔细研究
 </details>
 
 
