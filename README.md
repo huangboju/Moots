@@ -244,13 +244,21 @@ return tabBarController?.tabBar.frame.minY < view.frame.maxY
 </details>
 
 
-#### 导航栏标返回图片
+<details>
+<summary>
+  **导航栏标返回图片**
+</summary>
 ```swift
 navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
 navigationBar.backIndicatorImage = R.image.ic_nav_back()
 ```
+</details>
 
-#### tableView分割线左边到头(_UITableViewCellSeparatorView)
+
+<details>
+<summary>
+  **tableView分割线左边到头(_UITableViewCellSeparatorView)**
+</summary>
 ```swift
 //写在viewDidLoad
 if tableView.respondsToSelector(Selector("setSeparatorInset:")) {
@@ -275,8 +283,13 @@ preservesSuperviewLayoutMargins = false
 layoutMargins = UIEdgeInsetsZero
 }
 ```
+</details>
 
-#### 虚线
+
+<details>
+<summary>
+  **虚线**
+</summary>
 ```swift
 func drawDottedLine(lineView: UIView, offset: CGPoint) {
     let shapeLayer = CAShapeLayer()
@@ -295,8 +308,14 @@ func drawDottedLine(lineView: UIView, offset: CGPoint) {
     lineView.layer.addSublayer(shapeLayer)
 }
 ```
+</details>
 
-#### 部分圆角图片
+
+
+<details>
+<summary>
+  **部分圆角图片**
+</summary>
 ```swift
 func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     let imageView = UIImageView(image: image)
@@ -308,8 +327,14 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     return imageView
 }
 ```
+</details>
 
-#### 圆角图片
+
+
+<details>
+<summary>
+  **圆角图片(AlamofireImage里面有切圆角的方法)**
+</summary>
 ```
 extension UIImageView {
 
@@ -337,8 +362,13 @@ extension UIImage {
     }
 }
 ```
+</details>
 
-#### 通过字符串构建类
+
+<details>
+<summary>
+  **通过字符串构建类**
+</summary>
 ```swift
 extension String {
     func fromClassName() -> NSObject {
@@ -356,8 +386,14 @@ extension NSObject {
     }
 }
 ```
+</details>
 
-#### 修改状态栏背景颜色
+
+
+<details>
+<summary>
+  **修改状态栏背景颜色**
+</summary>
 ```swift
 func setStatusBarBackgroundColor(color: UIColor) {
     guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
@@ -374,8 +410,14 @@ swift3.0
         statusBar.backgroundColor = color
     }
 ```
+</details>
 
-#### 裁剪图片
+
+
+<details>
+<summary>
+  **裁剪图片**
+</summary>
 ```swift
 extension UIImage {
     func cutOutImageWithRect(rect: CGRect) -> UIImage {
@@ -393,8 +435,14 @@ extension UIImage {
     }
 }
 ```
+</details>
 
-#### 响应区域太小
+
+
+<details>
+<summary>
+  **响应区域太小**
+</summary>
 ```swift
 extension UIButton {
     //处理button太小
@@ -413,6 +461,9 @@ extension UIButton {
     }
 }
 ```
+</details>
+
+
 
 ## 2、笔记
 ##### Class
