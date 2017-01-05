@@ -729,6 +729,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
+  <summary>**Alert**</summary>
+    <ul>
+      <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)</li>
+    </ul>
+</details>
+
+
+<details>
 <summary>
   **[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)(OC)**
 </summary>
@@ -762,6 +770,14 @@ navigationbar下面出来的提示框
 
 <details>
 <summary>
+  **[HGCircularSlider](https://github.com/HamzaGhazouani/HGCircularSlider)(Swift)**
+</summary>
+iOS应用程序的自定义可重复使用的圆形滑块控件。
+</details>
+
+
+<details>
+<summary>
   **[Jelly](https://github.com/SebastianBoldt/Jelly)(Swift)**
 </summary>
 Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
@@ -781,6 +797,14 @@ FPS显示
   **[KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition)(OC)**
 </summary>
 美团首页，微信红包页面NavigationBar过度处理
+</details>
+
+
+<details>
+<summary>
+  **[LTHRadioButton](https://github.com/rolandleth/LTHRadioButton)(Swift)**
+</summary>
+一个有漂亮动画的单选按钮
 </details>
 
 
@@ -885,12 +909,20 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
 
 
 ### 其他
+<details>
+  <summary>**引导页**</summary>
+    <ul>
+    <li>[EAIntroView](https://github.com/ealeksandrov/EAIntroView)(OC)</li>
+    </ul>
+</details>
+
 
 <details>
-<summary>
-  **[SwiftPlate](https://github.com/mergesort/TableFlip)(Swift)**
-</summary>
-用命令行轻松生成跨平台Swift框架项目
+  <summary>**OCR（图像识别）**</summary>
+    <ul>
+      <li>[SwiftOCR](https://github.com/garnele007/SwiftOCR)(Swift)</li>
+      <li>[OCR](https://github.com/iosWellLin/OCR)(OC)</li>
+    </ul>
 </details>
 
 
@@ -955,14 +987,6 @@ Swift的JSON转换
 
 <details>
 <summary>
-  **[Quick](https://github.com/Quick/Quick)(Swift)**
-</summary>
-Swift（和Objective-C）测试框架。
-</details>
-
-
-<details>
-<summary>
   **[Live](https://github.com/ltebean/Live)(Swift)**
 </summary>
 直播
@@ -987,9 +1011,17 @@ Peek是一个开源库，允许您根据用户界面的规范指南轻松检查�
 
 <details>
 <summary>
-  **[ReSwift](https://github.com/ReSwift/ReSwift)**
+  **[SwiftyAttributes](https://github.com/eddiekaiger/SwiftyAttributes)(Swift)**
 </summary>
-似乎有点牛B，待仔细研究
+富文本字符串处理
+</details>
+
+
+<details>
+<summary>
+  **[SwiftPlate](https://github.com/mergesort/TableFlip)(Swift)**
+</summary>
+用命令行轻松生成跨平台Swift框架项目
 </details>
 
 
@@ -999,6 +1031,43 @@ Peek是一个开源库，允许您根据用户界面的规范指南轻松检查�
 </summary>
 Swift各个类的扩展
 </details>
+
+
+### 框架
+
+<details>
+  <summary>**测试框架**</summary>
+    <ul>
+    <li>[Quick](https://github.com/Quick/Quick)(Swift)</li>
+      <li>[SwiftCheck](https://github.com/typelift/SwiftCheck)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**跨平台框架**</summary>
+    <ul>
+      <li>[weex](https://github.com/alibaba/weex)</li>
+      <li>[react-native](https://github.com/facebook/react-native)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
+<summary>
+  **[ReSwift](https://github.com/ReSwift/ReSwift)**
+</summary>
+似乎有点牛B，待仔细研究
+</details>
+
+
+<details>
+<summary>
+  **[katana-swift](https://github.com/BendingSpoons/katana-swift)(Swift)**
+</summary>
+跟ReSwift类似
+</details>
+
 
 
 ### APP源码
