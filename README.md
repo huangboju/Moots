@@ -523,7 +523,7 @@ extension UIButton {
 
  * [开始](https://gold.xitu.io/entry/57e90645da2f600060dde55e)
 
- * [参考]http://yimouleng.com/2015/12/17/ios-AppStore/
+ * [参考](http://yimouleng.com/2015/12/17/ios-AppStore/)
 
  * [二次验证流程](http://openfibers.github.io/blog/2015/02/28/in-app-purchase-walk-through/)
 
