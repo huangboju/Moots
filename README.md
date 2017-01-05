@@ -5,7 +5,7 @@ everything is the best arrangement
 
 <details>
 <summary>
-####银行金额验证
+**银行金额验证**
 </summary>
 
 ```swift
@@ -39,22 +39,31 @@ extension String {
 </details>
 
 
-#### 多标志符字符串分割
+<details>
+<summary>
+  **多标志符字符串分割**
+</summary>
+
 ```swift
 let text = "abc,vfr.yyuu"
 let set = CharacterSet(charactersIn: ",.")
 print(text.components(separatedBy: set)) // ["abc", "vfr", "yyuu"]
 ```
+</details>
 
-#### [匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)
+<details>
+<summary>
+  **[匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)**
+</summary>
+
 ```swift
 let age = 19
 if 18...25 ~= age {
-print("条件满足")
+    print("条件满足")
 }
 同
 if age >= 18 && age <= 25 {
-print("条件满足")
+    print("条件满足")
 }
 同
 if case 18...25 = age {
@@ -62,8 +71,14 @@ if case 18...25 = age {
 }
 ```
 
-#### 单行代码
-```swift
+</details>
+
+<details>
+<summary>
+  **单行代码**
+</summary>
+    
+    ```swift
 let arr = (1...1024).map{ $0 * 2 }
 
 
@@ -94,6 +109,9 @@ let retulst = data.reduce(([], [])) {
 }
 // retulst ([58, 49], [82, 76, 88, 90])
 ```
+</details>
+
+
 
 #### [GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)
 ```swift
