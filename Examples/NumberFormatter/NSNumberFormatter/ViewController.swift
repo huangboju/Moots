@@ -108,6 +108,10 @@ class ViewController: UIViewController {
         view.addSubview(invertButton!)
     }
     
+    func runloop()  {
+        print("😁")
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -120,6 +124,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        perform(#selector(runloop), with: self, afterDelay: 0, inModes: [.defaultRunLoopMode])
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }

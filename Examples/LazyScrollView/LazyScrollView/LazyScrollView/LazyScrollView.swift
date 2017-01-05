@@ -8,7 +8,7 @@
 
 protocol LazyScrollViewDataSource: class {
     /// ScrollView一共展示多少个item
-    func numberOfItem(in scrollView: LazyScrollView) -> Int
+    func numberOfItems(in scrollView: LazyScrollView) -> Int
     
     /// 要求根据index直接返回RectModel
     func scrollView(_ scrollView: LazyScrollView, rectModelAt index: Int) -> RectModel
@@ -178,7 +178,7 @@ class LazyScrollView: UIScrollView {
     
     func updateAllRects() {
         allModels.removeAll(keepingCapacity: true)
-        numberOfItems = dataSource!.numberOfItem(in: self)
+        numberOfItems = dataSource!.numberOfItems(in: self)
 
         for i in 0..<numberOfItems {
             if let model = dataSource?.scrollView(self, rectModelAt: i) {
@@ -195,7 +195,7 @@ class LazyScrollView: UIScrollView {
         
         allModels.removeAll(keepingCapacity: true)
         
-        let count = dataSource!.numberOfItem(in: self)
+        let count = dataSource!.numberOfItems(in: self)
         
         for i in 0..<count {
             

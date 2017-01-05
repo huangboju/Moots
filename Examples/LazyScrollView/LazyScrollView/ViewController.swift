@@ -44,7 +44,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: LazyScrollViewDataSource {
-    func numberOfItem(in scrollView: LazyScrollView) -> Int {
+    func numberOfItems(in scrollView: LazyScrollView) -> Int {
         return models.count
     }
 

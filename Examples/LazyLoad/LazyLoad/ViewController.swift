@@ -120,6 +120,10 @@ extension ViewController: UITableViewDelegate {
         targetRect = nil
         loadImageForVisibleCells()
     }
+    
+    func runloop() {
+        print("😁😄")
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -137,6 +141,8 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        perform(#selector(runloop), with: self, afterDelay: 0, inModes: [RunLoopMode.defaultRunLoopMode])
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
