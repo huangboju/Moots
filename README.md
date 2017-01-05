@@ -668,12 +668,22 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 ---------------------------------------
 
 #常用库
+按字母排序
+
 ### UI
 <details>
 <summary>
   **[FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)(OC)**
 </summary>
 各种icon 
+</details>
+
+
+<details>
+<summary>
+  **[FSCalendar](https://github.com/WenchaoD/FSCalendar)(OC)**
+</summary>
+一个完全可定制的iOS日历，库，控件，兼容Objective-C和Swift
 </details>
 
 
@@ -690,14 +700,6 @@ navigationbar下面出来的提示框
   **[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)**
 </summary>
 视频播放器
-</details>
-
-
-<details>
-<summary>
-  **[FSCalendar](https://github.com/WenchaoD/FSCalendar)(OC)**
-</summary>
-一个完全可定制的iOS日历，库，控件，兼容Objective-C和Swift
 </details>
 
 
@@ -723,4 +725,22 @@ navigationbar下面出来的提示框
   **[SQLite.swift](https://github.com/stars)(Swift)**
 </summary>
 类似陌陌卡片选择 
+</details>
+
+
+### 其他
+
+<details>
+<summary>
+  **[BeeHive](https://github.com/alibaba/BeeHive)(OC)**
+</summary>
+阿里开源的解耦库
+</details>
+
+
+<details>
+<summary>
+  **DCURLRouter[https://github.com/DarielChen/DCURLRouter](OC)**
+</summary>
+路由跳转库
 </details>
