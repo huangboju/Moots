@@ -7,6 +7,7 @@ everything is the best arrangement
 <summary>
   **UICollectionView highlight**
 </summary>
+```swift
 // 方法一
 func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.backgroundColor = .white
@@ -30,6 +31,7 @@ func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt ind
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.contentView.backgroundColor = nil
 }
+```
 </details>
 
 
