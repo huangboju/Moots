@@ -5,6 +5,22 @@ everything is the best arrangement
 
 <details>
 <summary>
+  **泛型约束**
+</summary>
+```swift
+protocol ArrayPresenter {
+    associatedtype ViewType: UIScrollView
+    var listView: ViewType! { set get }
+}
+
+func loadMore<T: UIScrollView>(listView: T, indexPath: NSIndexPath) where T: YourProtocol {
+
+}
+```
+</details>
+
+<details>
+<summary>
 **银行金额验证**
 </summary>
 
