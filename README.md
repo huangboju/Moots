@@ -78,7 +78,7 @@ if case 18...25 = age {
   **单行代码**
 </summary>
     
-    ```swift
+```swift
 let arr = (1...1024).map{ $0 * 2 }
 
 
@@ -112,8 +112,11 @@ let retulst = data.reduce(([], [])) {
 </details>
 
 
-
-#### [GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)
+<details>
+<summary>
+  **[GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)**
+</summary>
+    
 ```swift
 extension Array {
     public func pmap(transform: (Element -> Element)) -> [Element] {
@@ -188,17 +191,28 @@ extension Array {
     }
 }
 ```
+</details>
 
 
-#### 导航栏标题设置
+<details>
+<summary>
+  **导航栏标题设置**
+</summary>
+    
 ```swift
 // 需要tabBarItem的title与导航栏title不一致,如下设置navigationbar的titile
 navigationItem.title = "示例"
 注意: 直接 title = "示例" 在tabbar切换时tabBarItem的title会变成设置
 ```
+</details>
 
-#### tabbar隐藏动画
-```
+
+<details>
+<summary>
+  **tabbar隐藏动画(同知乎)**
+</summary>
+
+```swift
 func setTabBarVisible(visible: Bool, animated: Bool) {
 
 //* This cannot be called before viewDidLayoutSubviews(), because the frame is not set before this time
@@ -227,6 +241,8 @@ var tabBarIsVisible: Bool {
 return tabBarController?.tabBar.frame.minY < view.frame.maxY
 }
 ```
+</details>
+
 
 #### 导航栏标返回图片
 ```swift
