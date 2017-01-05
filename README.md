@@ -530,7 +530,10 @@ extension UIButton {
 
  * [二次验证流程](http://openfibers.github.io/blog/2015/02/28/in-app-purchase-walk-through/)
 
-* NSURLCache（缓存）
+* NSURLCache（缓存）（http://nshipster.cn/nsurlcache/）
+```
+Alamofire零行代码实现离线缓存http://stackoverflow.com/questions/27785693/alamofire-nsurlcache-is-not-working
+```
 
 
 * UITableView
