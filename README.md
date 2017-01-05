@@ -704,6 +704,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
+  **[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)(OC)**
+</summary>
+用于在视图没有要显示的内容时显示空数据集的UITableView / UICollectionView超类类别
+</details>
+
+
+<details>
+<summary>
   **[FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)(OC)**
 </summary>
 各种icon 
@@ -715,6 +723,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
   **[GSMessages](https://github.com/wxxsw/GSMessages)(Swift)**
 </summary>
 navigationbar下面出来的提示框
+</details>
+
+
+<details>
+<summary>
+  **[Jelly](https://github.com/SebastianBoldt/Jelly)(Swift)**
+</summary>
+Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
 </details>
 
 
@@ -747,6 +763,14 @@ navigationbar下面出来的提示框
   **[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)**
 </summary>
  谷歌控件库 
+</details>
+
+
+<details>
+<summary>
+  **[SwipeTableView](https://github.com/Roylee-ML/SwipeTableView)(OC)**
+</summary>
+类似半糖、美丽说主页与QQ音乐歌曲列表布局效果，实现不同菜单的左右滑动切换，同时支持类似tableview的顶部工具栏悬停（既可以左右滑动，又可以上下滑动）。兼容下拉刷新，自定义 collectionview实现自适应 contentSize 还可实现瀑布流功能
 </details>
 
 
