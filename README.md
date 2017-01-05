@@ -697,6 +697,22 @@ navigationbar下面出来的提示框
 
 <details>
 <summary>
+  **[PhoneNumberKit](https://github.com/marmelroy/PhoneNumberKit)(Swift)**
+</summary>
+用于解析，格式化和验证国际电话号码的Swift框架。 灵感来自Google的libphonenumber。
+</details>
+
+
+<details>
+<summary>
+  **[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)**
+</summary>
+腾讯开源的控件库
+</details>
+
+
+<details>
+<summary>
   **[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)**
 </summary>
 视频播放器
@@ -717,6 +733,17 @@ navigationbar下面出来的提示框
 </summary>
 类似陌陌卡片选择 
 </details>
+
+
+### 动画
+
+<details>
+<summary>
+  **[Hero](https://github.com/lkzhao/Hero)(Swift)**
+</summary>
+动画库
+</details>
+
 
 
 ### 数据库
@@ -740,7 +767,7 @@ navigationbar下面出来的提示框
 
 <details>
 <summary>
-  **DCURLRouter[https://github.com/DarielChen/DCURLRouter](OC)**
+  **[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)**
 </summary>
 路由跳转库
 </details>
