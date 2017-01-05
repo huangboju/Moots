@@ -1,7 +1,7 @@
 # Moots
 everything is the best arrangement
 
-## 1、常用代码
+## 常用代码
 
 <details>
 <summary>
@@ -465,16 +465,16 @@ extension UIButton {
 
 
 
-## 2、笔记
+## 笔记
 
-###### **UITableView**
+###### * UITableView
 ```
 在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
 
 cell.backgroundColor = [UIColor grayColor];或cell.contentView.backgroudColor = [UIColor grayColor];一般情况下，两种方式效果一样。但是在多选编辑状态，直接设置cell的背景色可以保证左侧多选框部分的背景色与cell背景色一致，而设置contentView背景色，左侧多选框的背景色会是UITableView的背景色或UITableView父视图背景色，如果需要保证颜色一致，必须设置cell的背景色而不是cell.contentView的。
 ```
 
-###### **[iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)**
+###### * [iOS事件响应链中Hit-Test View的应用](http://www.jianshu.com/p/d8512dff2b3e)
 
 
 ###### **UIButton setImage setBackgroundImage**
@@ -524,7 +524,7 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 
 * 对于生命周期中会变为nil的实例使用弱引用。相反地，对于初始化赋值后再也不会被赋值为nil的实例，使用无主引用。
 
-## 3、常用配置
+## 常用配置
 
 
 <details>
@@ -575,7 +575,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 </details>
 
 
-## 4、错误处理
+## 错误处理
 1.The certificate used to sign "XXX" has either expired or has been revoked
 
 * [解决方法](http://www.cnblogs.com/zzugyl/p/5555695.html)
@@ -590,7 +590,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 * [解决方法2](http://www.jianshu.com/p/4c3164fe552a)
 
-## 5、其他
+## 其他
 #### [markdown语法](http://www.jianshu.com/p/f3fd881548ad)
 #### [public podspec](http://www.jianshu.com/p/98407f0c175b)
 #### [private podspec](http://www.cocoachina.com/ios/20150228/11206.html)
@@ -602,7 +602,8 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 #### [卸载cocoapods](http://www.jianshu.com/p/8b61b421dd76)
 
 
-# UI
+#常用库
+### UI
 |             库名             |             描述             |           语言             |
 |:---------------------------:|:---------------------------:|:---------------------------:|
 |      [FontAwesomeKit][]     |           各种icon           |            OC              |
@@ -610,7 +611,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 |       [MobilePlayer][]      |            播放器            |           Swift             |
 
 
-# 数据库
+### 数据库
 |             库名             |             描述             |           语言             |
 |:---------------------------:|:---------------------------:|:---------------------------:|
 |       [SQLite.swift][]      |            数据库            |           Swift             |
