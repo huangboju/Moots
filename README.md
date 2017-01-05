@@ -490,21 +490,19 @@ extension UIImage {
 
 <details>
 <summary>
-  **响应区域太小**
+  **UIButton响应区域太小**
 </summary>
 ```swift
 extension UIButton {
     //处理button太小
-    public override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         // if the button is hidden/disabled/transparent it can't be hit
-        if self.hidden || !self.userInteractionEnabled || self.alpha < 0.01 { return nil }
-
+        if self.isHidden || !self.isUserInteractionEnabled || self.alpha < 0.01 { return nil }
         // increase the hit frame to be at least as big as `minimumHitArea`
         let buttonSize = bounds.size
         let widthToAdd = max(44 - buttonSize.width, 0)
         let heightToAdd = max(44 - buttonSize.height, 0)
-        let method = CGRect.insetBy(bounds)
-        let largerFrame = method(dx: -widthToAdd / 2, dy: -heightToAdd / 2)
+        let largerFrame = bounds.insetBy(dx: -widthToAdd / 2, dy: -heightToAdd / 2)
         // perform hit test on larger frame
         return largerFrame.contains(point) ? self : nil
     }
