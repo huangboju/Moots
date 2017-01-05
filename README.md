@@ -669,23 +669,58 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 #常用库
 ### UI
-|             库名             |             描述             |           语言             |
-|:---------------------------:|:---------------------------:|:---------------------------:|
-|      [FontAwesomeKit][]     |           各种icon          |            OC              |
-|       [GSMessages][]        | navigationbar下面出来的提示框 |           Swift             |
-|       [MobilePlayer][]      |            播放器            |           Swift             |
-|     [MaterialComponents][]  |            谷歌控件库         |            OC              |
-|   [TinderSimpleSwipeCards][]|      类似陌陌卡片选择          |           OC               |
+<details>
+<summary>
+  **[FontAwesomeKit](https://github.com/PrideChung/FontAwesomeKit)(OC)**
+</summary>
+各种icon 
+</details>
+
+
+<details>
+<summary>
+  **[GSMessages](https://github.com/wxxsw/GSMessages)(Swift)**
+</summary>
+navigationbar下面出来的提示框
+</details>
+
+
+<details>
+<summary>
+  **[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)**
+</summary>
+视频播放器
+</details>
+
+
+<details>
+<summary>
+  **[FSCalendar](https://github.com/WenchaoD/FSCalendar)(OC)**
+</summary>
+一个完全可定制的iOS日历，库，控件，兼容Objective-C和Swift
+</details>
+
+
+<details>
+<summary>
+  **[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)**
+</summary>
+ 谷歌控件库 
+</details>
+
+
+<details>
+<summary>
+  **[TinderSimpleSwipeCards](https://github.com/cwRichardKim/TinderSimpleSwipeCards)(OC)**
+</summary>
+类似陌陌卡片选择 
+</details>
 
 
 ### 数据库
-|             库名             |             描述             |           语言             |
-|:---------------------------:|:---------------------------:|:---------------------------:|
-|       [SQLite.swift][]      |            数据库            |           Swift             |
-
-[FontAwesomeKit]: https://github.com/PrideChung/FontAwesomeKit
-[GSMessages]: https://github.com/wxxsw/GSMessages
-[MobilePlayer]: https://github.com/mobileplayer/mobileplayer-ios
-[SQLite.swift]: https://github.com/stars
-[MaterialComponents]: https://github.com/material-components/material-components-ios
-[TinderSimpleSwipeCards]: https://github.com/cwRichardKim/TinderSimpleSwipeCards 
+<details>
+<summary>
+  **[SQLite.swift](https://github.com/stars)(Swift)**
+</summary>
+类似陌陌卡片选择 
+</details>
