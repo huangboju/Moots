@@ -520,15 +520,17 @@ extension UIButton {
 
 
 * IAP(内购)
-[开始](https://gold.xitu.io/entry/57e90645da2f600060dde55e)
 
-http://yimouleng.com/2015/12/17/ios-AppStore/
+ * [开始](https://gold.xitu.io/entry/57e90645da2f600060dde55e)
 
-[二次验证流程](http://openfibers.github.io/blog/2015/02/28/in-app-purchase-walk-through/)
+ * [参考]http://yimouleng.com/2015/12/17/ios-AppStore/
+
+ * [二次验证流程](http://openfibers.github.io/blog/2015/02/28/in-app-purchase-walk-through/)
 
 * NSURLCache（缓存）
 
- * UITableView
+
+* UITableView
 ```
 在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
 
