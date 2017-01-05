@@ -5,9 +5,10 @@ everything is the best arrangement
 
 <details>
 <summary>
-    #### 银行金额验证
+####银行金额验证
 </summary>
-    ```swift
+
+```swift
 extension String {
     func enteredCorrectly() -> Bool {
         if length == 0 {
