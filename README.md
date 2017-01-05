@@ -700,6 +700,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
   <summary>**日历**</summary>
     <ul>
       <li>[GLCalendarView](https://github.com/Glow-Inc/GLCalendarView)(OC)</li>
+      <li>[JTCalendar](https://github.com/jonathantribouharet/JTCalendar)(OC)</li>
       <li>[FSCalendar](https://github.com/WenchaoD/FSCalendar)(Swift)</li>
     </ul>
 </details>
@@ -734,8 +735,17 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 <details>
   <summary>**Alert**</summary>
     <ul>
-      <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)</li>
+      <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)(Swift)</li>
+      <li>[Presentr](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
     </ul>
+</details>
+
+
+<details>
+<summary>
+  **[AKPickerView](https://github.com/Akkyie/AKPickerView-Swift)(Swift)**
+</summary>
+一个简单但可自定义的水平选择器视图。
 </details>
 
 
@@ -781,6 +791,14 @@ iOS应用程序的自定义可重复使用的圆形滑块控件。
 
 <details>
 <summary>
+  **[IGListKit](https://github.com/Instagram/IGListKit)(OC)**
+</summary>
+一个数据驱动的UICollectionView框架，用于构建快速灵活的列表
+</details>
+
+
+<details>
+<summary>
   **[Jelly](https://github.com/SebastianBoldt/Jelly)(Swift)**
 </summary>
 Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
@@ -808,6 +826,14 @@ FPS显示
   **[LTHRadioButton](https://github.com/rolandleth/LTHRadioButton)(Swift)**
 </summary>
 一个有漂亮动画的单选按钮
+</details>
+
+
+<details>
+<summary>
+  **[Persei](https://github.com/Yalantis/Persei)(Swift)**
+</summary>
+用Swift编写的UITableView / UICollectionView / UIScrollView的动画顶层菜单
 </details>
 
 
@@ -861,6 +887,30 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
 
 <details>
 <summary>
+  **[Reactions](https://github.com/yannickl/Reactions)(Swift)**
+</summary>
+可定制的Facebook反应控件
+</details>
+
+
+<details>
+<summary>
+  **[RHPreviewCell](https://github.com/robertherdzik/RHPreviewCell)(Swift)**
+</summary>
+长按显示隐藏图片
+</details>
+
+
+<details>
+<summary>
+  **[Ruler](https://github.com/nixzhu/Ruler)(Swift)**
+</summary>
+尺寸很重要，你需要一把尺子。
+</details>
+
+
+<details>
+<summary>
   **[StatefulViewController](https://github.com/aschuch/StatefulViewController)(Swift)**
 </summary>
 基于内容，加载，错误或空状态的占位符视图
@@ -880,6 +930,22 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
   **[TableFlip](https://github.com/mergesort/TableFlip)(Swift)**
 </summary>
 一个更简单的方法来做酷UITableView动画！
+</details>
+
+
+<details>
+<summary>
+  **[TextFieldEffects](https://github.com/raulriera/TextFieldEffects)(Swift)**
+</summary>
+自定义UITextFields效果
+</details>
+
+
+<details>
+<summary>
+  **[TimelineTableViewCell](https://github.com/kf99916/TimelineTableViewCell)(Swift)**
+</summary>
+时间轴
 </details>
 
 
@@ -912,6 +978,15 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
 
 
 ### 其他
+<details>
+  <summary>**Timer(定时器)**</summary>
+    <ul>
+    <li>[Each](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
+    <li>[SwiftTimer](https://github.com/100mango/SwiftTimer)(Swift)</li>
+    </ul>
+</details>
+
+
 <details>
   <summary>**引导页**</summary>
     <ul>
@@ -990,6 +1065,14 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[LayerPlayer](https://github.com/singro/v2ex)**
+</summary>
+探索Apple的Core Animation API的功能
+</details>
+
+
+<details>
+<summary>
   **[Live](https://github.com/ltebean/Live)(Swift)**
 </summary>
 直播
@@ -1001,6 +1084,14 @@ Swift的JSON转换
   **[MLeaksFinder](https://github.com/Zepo/MLeaksFinder)(Swift)**
 </summary>
 在开发时查找iOS应用中的内存泄漏。
+</details>
+
+
+<details>
+<summary>
+  **[Password-keyboard](https://github.com/liuchunlao/Password-keyboard)(OC)**
+</summary>
+动态密码键盘
 </details>
 
 
@@ -1080,6 +1171,14 @@ Swift各个类的扩展
   **[kickstarter](https://github.com/kickstarter/ios-oss)(Swift)**
 </summary>
 一个众筹平台的源码
+</details>
+
+
+<details>
+<summary>
+  **[v2ex](https://github.com/singro/v2ex)**
+</summary>
+v2ex客户端
 </details>
 
 
