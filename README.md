@@ -5,6 +5,37 @@ everything is the best arrangement
 
 <details>
 <summary>
+  **UICollectionView highlight**
+</summary>
+// 方法一
+func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.backgroundColor = .white
+
+        let backgroundView = UIView(frame: cell.frame)
+        backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        cell.selectedBackgroundView = backgroundView
+}
+
+func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+     collectionView.deselectItem(at: indexPath, animated: true)
+}
+
+// 方法二(有延时)
+func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+}
+
+func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath)
+        cell?.contentView.backgroundColor = nil
+}
+</details>
+
+
+
+<details>
+<summary>
   **泛型约束**
 </summary>
 ```swift
