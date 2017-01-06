@@ -812,6 +812,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
+  **[CountdownLabel](https://github.com/suzuki-0000/CountdownLabel)(Swift)**
+</summary>
+简单倒计时UILabel与变形动画，以及一些有用的功能。
+</details>
+
+
+<details>
+<summary>
   **[ConfettiView](https://github.com/OrRon/ConfettiView)(Swift)**
 </summary>
 ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视图
@@ -823,6 +831,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
   **[DateTimePicker](https://github.com/itsmeichigo/DateTimePicker)(Swift)**
 </summary>
 日期和时间选择组件
+</details>
+
+
+<details>
+<summary>
+  **[DisplaySwitcher](https://github.com/Yalantis/DisplaySwitcher)(Swift)**
+</summary>
+两个集合视图布局之间的自定义转换
 </details>
 
 
@@ -860,6 +876,14 @@ ForceBlur动画iOS消息应用程序
 
 <details>
 <summary>
+  **[GPUImage2](https://github.com/BradLarson/GPUImage2)**
+</summary>
+GPUImage 2是一个BSD授权的Swift框架，用于GPU加速的视频和图像处理。
+</details>
+
+
+<details>
+<summary>
   **[GSMessages](https://github.com/wxxsw/GSMessages)(Swift)**
 </summary>
 navigationbar下面出来的提示框
@@ -871,6 +895,14 @@ navigationbar下面出来的提示框
   **[HGCircularSlider](https://github.com/HamzaGhazouani/HGCircularSlider)(Swift)**
 </summary>
 iOS应用程序的自定义可重复使用的圆形滑块控件。
+</details>
+
+
+<details>
+<summary>
+  **[iOS-Core-Animation-Advanced-Techniques](https://github.com/kevinzhow/iOS-Core-Animation-Advanced-Techniques)**
+</summary>
+CAlayer子类及动画的介绍
 </details>
 
 
@@ -1250,6 +1282,14 @@ Swift的JSON转换
   **[Peek](https://github.com/shaps80/Peek)(Swift)**
 </summary>
 Peek是一个开源库，允许您根据用户界面的规范指南轻松检查您的应用程序。 Peek可以被工程师，设计师和测试人员使用，允许开发人员花更多的时间在代码和更少的时间检查字体，颜色和布局是像素完美。
+</details>
+
+
+<details>
+<summary>
+  **[socket.io-client-swift](https://github.com/socketio/socket.io-client-swift)(Swift)**
+</summary>
+socket连接
 </details>
 
 
