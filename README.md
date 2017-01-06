@@ -716,6 +716,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
+  <summary>**各种图表库（chart）**</summary>
+    <ul>
+    <li>[awesome-ios-chart](https://github.com/ameizi/awesome-ios-chart)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**视频播放器**</summary>
     <ul>
     <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
@@ -884,6 +892,22 @@ Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
 
 <details>
 <summary>
+  **[JSQMessagesViewController](https://github.com/jessesquires/JSQMessagesViewController)(OC)**
+</summary>
+一个优雅的消息UI库的iOS
+</details>
+
+
+<details>
+<summary>
+  **[JZNavigationExtension](https://github.com/JazysYu/JZNavigationExtension)(OC)**
+</summary>
+网页导航栏过度效果
+</details>
+
+
+<details>
+<summary>
   **[KMCGeigerCounter](https://github.com/kconner/KMCGeigerCounter)(OC)**
 </summary>
 FPS显示
@@ -911,6 +935,14 @@ FPS显示
   **[LTHRadioButton](https://github.com/rolandleth/LTHRadioButton)(Swift)**
 </summary>
 一个有漂亮动画的单选按钮
+</details>
+
+
+<details>
+<summary>
+  **[LiquidFloatingActionButton](https://github.com/yoavlt/LiquidFloatingActionButton)(Swift)**
+</summary>
+浮动按钮
 </details>
 
 
@@ -975,6 +1007,22 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
   **[Ruler](https://github.com/nixzhu/Ruler)(Swift)**
 </summary>
 尺寸很重要，你需要一把尺子。
+</details>
+
+
+<details>
+<summary>
+  **[RazzleDazzle](https://github.com/IFTTT/RazzleDazzle)(Swift)**
+</summary>
+一个简单的基于关键帧的动画框架的iOS，用Swift编写。 完美的滚动应用程序介绍。
+</details>
+
+
+<details>
+<summary>
+  **[SFFocusViewLayout](https://github.com/fdzsergio/SFFocusViewLayout)(Swift)**
+</summary>
+UICollectionViewLayout炫酷的布局
 </details>
 
 
