@@ -536,6 +536,15 @@ Alamofire零行代码实现离线缓存http://stackoverflow.com/questions/277856
 ```
 
 
+* UIImage
+```
+UIImage(named: "imageName")// caching 
+UIImage(contentsOfFile: "imageName")// no caching 
+如果你要加载一个大图片而且是一次性使用，那么就没必要缓存这个图片，用contentsOfFile足矣，这样不会浪费内存来缓存它。
+然而，在图片反复重用的情况下named是一个好得多的选择。
+```
+
+
 * UITableView
 ```
 在UITableViewCell实例上添加子视图，有两种方式：[cell  addSubview:view]或[cell.contentView addSubview:view],一般情况下，两种方式没有区别。但是在多选编辑状态，直接添加到cell上的子视图将不会移动，而添加在contentView上的子视图会随着整体右移。所以，推荐使用[cell.contentView addSubview:view]方式添加子视图。
