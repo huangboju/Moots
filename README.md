@@ -705,6 +705,17 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 ### UI
 <details>
+  <summary>**控件库(里面有你所需要的各种控件)**</summary>
+    <ul>
+    <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
+    <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
+    <li>[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)</li>
+    <li>[Material](https://github.com/CosmicMind/Material)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**视频播放器**</summary>
     <ul>
     <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
@@ -916,22 +927,6 @@ FPS显示
   **[PhoneNumberKit](https://github.com/marmelroy/PhoneNumberKit)(Swift)**
 </summary>
 用于解析，格式化和验证国际电话号码的Swift框架。 灵感来自Google的libphonenumber。
-</details>
-
-
-<details>
-<summary>
-  **[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)**
-</summary>
-腾讯开源的控件库
-</details>
-
-
-<details>
-<summary>
-  **[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)**
-</summary>
- 谷歌控件库 
 </details>
 
 
