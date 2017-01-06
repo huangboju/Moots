@@ -948,6 +948,14 @@ FPS显示
 
 <details>
 <summary>
+  **[PermissionScope](https://github.com/nickoneill/PermissionScope)(Swift)**
+</summary>
+各种权限设置
+</details>
+
+
+<details>
+<summary>
   **[Persei](https://github.com/Yalantis/Persei)(Swift)**
 </summary>
 用Swift编写的UITableView / UICollectionView / UIScrollView的动画顶层菜单
@@ -1028,6 +1036,14 @@ UICollectionViewLayout炫酷的布局
 
 <details>
 <summary>
+  **[StarWars.iOS](https://github.com/Yalantis/StarWars.iOS)(Swift)**
+</summary>
+这个组件实现过渡动画，将视图控制器破碎成小块
+</details>
+
+
+<details>
+<summary>
   **[StatefulViewController](https://github.com/aschuch/StatefulViewController)(Swift)**
 </summary>
 基于内容，加载，错误或空状态的占位符视图
@@ -1072,6 +1088,15 @@ UICollectionViewLayout炫酷的布局
 </summary>
 类似陌陌卡片选择 
 </details>
+
+
+<details>
+<summary>
+  **[TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttributedLabel)(OC)**
+</summary>
+带连接可点击的label
+</details>
+
 
 
 ### 动画
