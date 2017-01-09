@@ -705,6 +705,14 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 ### UI
 <details>
+<summary>
+  **[swift-style-guide](https://github.com/raywenderlich/swift-style-guide)**
+</summary>
+Swift代码格式
+</details>
+
+
+<details>
   <summary>**控件库(里面有你所需要的各种控件)**</summary>
     <ul>
     <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
@@ -757,6 +765,15 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
     <ul>
       <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
       <li>[PureLayout](https://github.com/PureLayout/PureLayout)(OC)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**陌陌卡片的喜欢和不喜欢**</summary>
+    <ul>
+    <li>[TinderSimpleSwipeCards](https://github.com/cwRichardKim/TinderSimpleSwipeCards)(OC)</li>
+    <li>[MDCSwipeToChoose](https://github.com/modocache/MDCSwipeToChoose)(OC)</li>
     </ul>
 </details>
 
@@ -1116,14 +1133,6 @@ UICollectionViewLayout炫酷的布局
 
 <details>
 <summary>
-  **[TinderSimpleSwipeCards](https://github.com/cwRichardKim/TinderSimpleSwipeCards)(OC)**
-</summary>
-类似陌陌卡片选择 
-</details>
-
-
-<details>
-<summary>
   **[TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttributedLabel)(OC)**
 </summary>
 带连接可点击的label
@@ -1201,6 +1210,7 @@ UICollectionViewLayout炫酷的布局
     <ul>
       <li>[Snowflake](https://github.com/onmyway133/Snowflake)(Swift)</li>
       <li>[Macaw](https://github.com/exyte/Macaw)(Swift)</li>
+      <li>[SwiftSVG](https://github.com/mchoe/SwiftSVG)(Swift)</li>
     </ul>
 </details>
 
@@ -1287,6 +1297,22 @@ Peek是一个开源库，允许您根据用户界面的规范指南轻松检查�
 
 <details>
 <summary>
+  **[PNChart-Swift](https://github.com/kevinzhow/PNChart-Swift)**
+</summary>
+一个简单而美丽的图表库用
+</details>
+
+
+<details>
+<summary>
+  **[Popover](https://github.com/corin8823/Popover)**
+</summary>
+QQ动态那种气泡弹出框
+</details>
+
+
+<details>
+<summary>
   **[socket.io-client-swift](https://github.com/socketio/socket.io-client-swift)(Swift)**
 </summary>
 socket连接
@@ -1315,6 +1341,15 @@ socket连接
 </summary>
 Swift各个类的扩展
 </details>
+
+
+<details>
+<summary>
+  **[XLPagerTabStrip](https://github.com/xmartlabs/XLPagerTabStrip)**
+</summary>
+网易那种侧滑页面
+</details>
+
 
 
 ### 框架
@@ -1366,6 +1401,14 @@ Swift各个类的扩展
 
 <details>
 <summary>
+  **[ifanr](https://github.com/iCodeForever/ifanr)**
+</summary>
+高仿 爱范儿
+</details>
+
+
+<details>
+<summary>
   **[kickstarter](https://github.com/kickstarter/ios-oss)(Swift)**
 </summary>
 一个众筹平台的源码
@@ -1377,6 +1420,14 @@ Swift各个类的扩展
   **[v2ex](https://github.com/singro/v2ex)**
 </summary>
 v2ex客户端
+</details>
+
+
+<details>
+<summary>
+  **[Yep](https://github.com/CatchChat/Yep)**
+</summary>
+一个社交软件，遇见天才
 </details>
 
 
