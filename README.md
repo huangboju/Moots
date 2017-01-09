@@ -707,8 +707,9 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 <details>
 <summary>
   **[swift-style-guide](https://github.com/raywenderlich/swift-style-guide)**
+  **[SwiftFormat](https://github.com/nicklockwood/SwiftFormat)**
 </summary>
-Swift代码格式
+Swift代码格式和自动格式化库
 </details>
 
 
@@ -764,7 +765,16 @@ Swift代码格式
   <summary>**约束**</summary>
     <ul>
       <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
+      <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
       <li>[PureLayout](https://github.com/PureLayout/PureLayout)(OC)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**转场动画**</summary>
+    <ul>
+    <li>[TransitionTreasury](https://github.com/DianQK/TransitionTreasury)(Swift)</li>
     </ul>
 </details>
 
@@ -779,10 +789,27 @@ Swift代码格式
 
 
 <details>
+  <summary>**Swift的扩展**</summary>
+    <ul>
+    <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
+    <li>[EZSwiftExtensions](https://github.com/goktugyil/EZSwiftExtensions)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
 <summary>
   **[10Clock](https://github.com/joedaniels29/10Clock)(Swift)**
 </summary>
 这个控件是一个美丽的时间选择器大量启发的iOS 10“睡前”定时器。
+</details>
+
+
+<details>
+<summary>
+  **[AImage](https://github.com/wangjwchn/AImage)**
+</summary>
+Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化。
 </details>
 
 
@@ -856,6 +883,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
   **[DisplaySwitcher](https://github.com/Yalantis/DisplaySwitcher)(Swift)**
 </summary>
 两个集合视图布局之间的自定义转换
+</details>
+
+
+<details>
+<summary>
+  **[DKImagePickerController](https://github.com/zhangao0086/DKImagePickerController)(Swift)**
+</summary>
+图片选择器
 </details>
 
 
@@ -997,6 +1032,14 @@ FPS显示
 
 <details>
 <summary>
+  **[PageControls](https://github.com/popwarsweet/PageControls)**
+</summary>
+各种PageControl
+</details>
+
+
+<details>
+<summary>
   **[PermissionScope](https://github.com/nickoneill/PermissionScope)(Swift)**
 </summary>
 各种权限设置
@@ -1016,6 +1059,14 @@ FPS显示
   **[PhoneNumberKit](https://github.com/marmelroy/PhoneNumberKit)(Swift)**
 </summary>
 用于解析，格式化和验证国际电话号码的Swift框架。 灵感来自Google的libphonenumber。
+</details>
+
+
+<details>
+<summary>
+  **[MotionBlur](https://github.com/fastred/MotionBlur)**
+</summary>
+MotionBlur允许您为iOS动画添加运动模糊效果。
 </details>
 
 
@@ -1077,6 +1128,14 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
 
 <details>
 <summary>
+  **[ReadabilityKit](https://github.com/exyte/ReadabilityKit)**
+</summary>
+Swift中的新闻，文章和全文的预览提取器
+</details>
+
+
+<details>
+<summary>
   **[SFFocusViewLayout](https://github.com/fdzsergio/SFFocusViewLayout)(Swift)**
 </summary>
 UICollectionViewLayout炫酷的布局
@@ -1096,6 +1155,21 @@ UICollectionViewLayout炫酷的布局
   **[StatefulViewController](https://github.com/aschuch/StatefulViewController)(Swift)**
 </summary>
 基于内容，加载，错误或空状态的占位符视图
+</details>
+
+<details>
+<summary>
+  **[SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)**
+</summary>
+一个非常灵活的消息栏为iOS写的Swift。
+</details>
+
+
+<details>
+<summary>
+  **[SwiftyUserDefaults](https://github.com/radex/SwiftyUserDefaults)**
+</summary>
+NSUserDefaults的现代Swift API
 </details>
 
 
@@ -1147,6 +1221,13 @@ UICollectionViewLayout炫酷的布局
   **[Hero](https://github.com/lkzhao/Hero)(Swift)**
 </summary>
 动画库
+</details>
+
+<details>
+<summary>
+  **[Spring](https://github.com/MengTo/Spring)**
+</summary>
+在Swift中简化iOS动画的库。
 </details>
 
 
@@ -1337,14 +1418,6 @@ socket连接
 
 <details>
 <summary>
-  **[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)**
-</summary>
-Swift各个类的扩展
-</details>
-
-
-<details>
-<summary>
   **[XLPagerTabStrip](https://github.com/xmartlabs/XLPagerTabStrip)**
 </summary>
 网易那种侧滑页面
@@ -1353,6 +1426,23 @@ Swift各个类的扩展
 
 
 ### 框架
+
+<details>
+<summary>
+  **[AsyncDisplayKit](https://github.com/facebook/AsyncDisplayKit)**
+</summary>
+facebook开源的界面优化框架
+</details>
+
+
+<details>
+  <summary>**及时通讯框架**</summary>
+    <ul>
+    <li>[Atlas-iOS](https://github.com/layerhq/Atlas-iOS)(OC)</li>
+    <li>[NMessenger](https://github.com/eBay/NMessenger)(Swift)</li>
+    </ul>
+</details>
+
 
 <details>
   <summary>**测试框架**</summary>
