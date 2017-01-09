@@ -733,6 +733,14 @@ Swift代码格式和自动格式化库
 
 
 <details>
+  <summary>**颜色**</summary>
+    <ul>
+    <li>[DynamicColor](https://github.com/yannickl/DynamicColor)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**视频播放器**</summary>
     <ul>
     <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
@@ -767,6 +775,16 @@ Swift代码格式和自动格式化库
       <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
       <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
       <li>[PureLayout](https://github.com/PureLayout/PureLayout)(OC)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**类似微信支付弹出一个UIViewController**</summary>
+    <ul>
+    <li>[MZFormSheetController](https://github.com/layerhq/Atlas-iOS)(OC)</li>
+    <li>[MZFormSheetPresentationController](https://github.com/m1entus)(OC)</li>
+    <li>[STPopup.swift](https://github.com/huangboju/STPopup.swift)(Swift)</li>
     </ul>
 </details>
 
@@ -904,9 +922,25 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
 
 <details>
 <summary>
+  **[ESTMusicIndicator](https://github.com/Aufree/ESTMusicIndicator)(Swift)**
+</summary>
+音乐播放指示器
+</details>
+
+
+<details>
+<summary>
   **[FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture)(OC)**
 </summary>
 全屏返回
+</details>
+
+
+<details>
+<summary>
+  **[FillableLoaders](https://github.com/poolqf/FillableLoaders)(Swift)**
+</summary>
+完全可定制的基于进度的加载器使用在Swift中编写的自定义CGPath绘制
 </details>
 
 
@@ -1072,6 +1106,22 @@ FPS显示
 
 <details>
 <summary>
+  **[PySwiftyRegex](https://github.com/cezheng/PySwiftyRegex)(Swift)**
+</summary>
+轻松地以一种Pythonic方式处理Swift中的Regex
+</details>
+
+
+<details>
+<summary>
+  **[MediumScrollFullScreen](https://github.com/pixyzehn/MediumScrollFullScreen)(Swift)**
+</summary>
+滚动隐藏NavigationBar和ToolBar
+</details>
+
+
+<details>
+<summary>
   **[MotionBlur](https://github.com/fastred/MotionBlur)**
 </summary>
 MotionBlur允许您为iOS动画添加运动模糊效果。
@@ -1083,14 +1133,6 @@ MotionBlur允许您为iOS动画添加运动模糊效果。
   **[MXScrollView](https://github.com/cwxatlm/MXScrollView)(OC)**
 </summary>
 一款易用的可拉伸的自动循环滚动视图 集成简单易懂 自定义性强
-</details>
-
-
-<details>
-<summary>
-  **[MZFormSheetController](https://github.com/m1entus/MZFormSheetController)(OC)**
-</summary>
-MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet，添加对iPhone的支持和额外的机会来设置控制器大小和感觉表单。
 </details>
 
 
@@ -1242,6 +1284,22 @@ NSUserDefaults的现代Swift API
   **[TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttributedLabel)(OC)**
 </summary>
 带连接可点击的label
+</details>
+
+
+<details>
+<summary>
+  **[Whisper](https://github.com/hyperoslo/Whisper)(Swift)**
+</summary>
+Whisper是一个组件，它将使显示消息和应用程序内通知的任务变得简单。 它里面有三个不同的视图
+</details>
+
+
+<details>
+<summary>
+  **[XLActionController](https://github.com/xmartlabs/XLActionController)(Swift)**
+</summary>
+完全可定制和可扩展的action sheet controller
 </details>
 
 
