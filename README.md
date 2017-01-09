@@ -1144,6 +1144,22 @@ UICollectionViewLayout炫酷的布局
 
 <details>
 <summary>
+  **[Siren](https://github.com/ArtSabintsev/Siren)(Swift)**
+</summary>
+当有新版本的应用程式可用时通知使用者，并提示他们升级
+</details>
+
+
+<details>
+<summary>
+  **[Sonar](https://github.com/thefuntasty/Sonar)(Swift)**
+</summary>
+雷达扫码视图
+</details>
+
+
+<details>
+<summary>
   **[StarWars.iOS](https://github.com/Yalantis/StarWars.iOS)(Swift)**
 </summary>
 这个组件实现过渡动画，将视图控制器破碎成小块
