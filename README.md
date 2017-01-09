@@ -1040,6 +1040,14 @@ FPS显示
 
 <details>
 <summary>
+  **[Panoramic](https://github.com/iSame7/Panoramic)(Swift)**
+</summary>
+重力感应控制图片
+</details>
+
+
+<details>
+<summary>
   **[PermissionScope](https://github.com/nickoneill/PermissionScope)(Swift)**
 </summary>
 各种权限设置
@@ -1091,6 +1099,14 @@ MZFormSheetController提供了一个替代本地iOS UIModalPresentationFormSheet
   **[NextGrowingTextView](https://github.com/muukii/NextGrowingTextView)(Swift)**
 </summary>
 自适应高度的TextView
+</details>
+
+
+<details>
+<summary>
+  **[NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)(Swift)**
+</summary>
+各种loading视图
 </details>
 
 
