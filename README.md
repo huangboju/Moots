@@ -787,6 +787,7 @@ Swift代码格式和自动格式化库
     <ul>
     <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
     <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
+    <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
     </ul>
 </details>
 
@@ -1802,8 +1803,9 @@ v2ex客户端
 
 
 
-### Demo
-
+<details>
+  <summary>**Demo**</summary>
+  
 <details>
 <summary>
   **[VVeboTableViewDemo](https://github.com/johnil/VVeboTableViewDemo)(OC)**
@@ -1833,4 +1835,6 @@ youtube
   **[MaskLayerDemo](https://github.com/huangboju?page=6&tab=stars)(Swift)**
 </summary>
 各种遮罩使用
+</details>
+
 </details>
