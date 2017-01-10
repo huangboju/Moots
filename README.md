@@ -745,7 +745,8 @@ Swift代码格式和自动格式化库
   <summary>**视频播放器**</summary>
     <ul>
     <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
-    <li>[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)(Swift)</li>
+    <li>[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)</li>
+    <li>[KRVideoPlayer](https://github.com/36Kr-Mobile/KRVideoPlayer)(OC)</li>
     </ul>
 </details>
 
@@ -805,6 +806,7 @@ Swift代码格式和自动格式化库
     <ul>
     <li>[TransitionTreasury](https://github.com/DianQK/TransitionTreasury)(Swift)</li>
     <li>[ADTransitionController](https://github.com/applidium/ADTransitionController)(OC)</li>
+    <li>[VCTransitionsLibrary](https://github.com/ColinEberhardt/VCTransitionsLibrary)(OC)</li>
     </ul>
 </details>
 
@@ -873,6 +875,14 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
   **[ALCameraViewController](https://github.com/AlexLittlejohn/ALCameraViewController)(Swift)**
 </summary>
 具有自定义图像选择器和图像裁剪的摄像机视图控制器。
+</details>
+
+
+<details>
+<summary>
+  **[BabyBluetooth](https://github.com/coolnameismy/BabyBluetooth)(OC)**
+</summary>
+蓝牙
 </details>
 
 
@@ -1094,6 +1104,14 @@ Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
 
 <details>
 <summary>
+  **[JVFloatLabeledTextField](https://github.com/Grouper/FlatUIKit)(OC)**
+</summary>
+进度指示器
+</details>
+
+
+<details>
+<summary>
   **[JZNavigationExtension](https://github.com/JazysYu/JZNavigationExtension)(OC)**
 </summary>
 网页导航栏过度效果
@@ -1113,6 +1131,14 @@ FPS显示
   **[KMNavigationBarTransition](https://github.com/MoZhouqi/KMNavigationBarTransition)(OC)**
 </summary>
 美团首页，微信红包页面NavigationBar过度处理
+</details>
+
+
+<details>
+<summary>
+  **[KVOController](https://github.com/coolnameismy/BabyBluetooth)(OC)**
+</summary>
+简单，现代，线程安全的键值观察iOS和OS X.
 </details>
 
 
