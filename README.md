@@ -752,6 +752,25 @@ Swift代码格式和自动格式化库
 
 
 <details>
+  <summary>**加载动画（loading）**</summary>
+    <ul>
+    <li>[FeSpinner](https://github.com/NghiaTranUIT/FeSpinner)(OC)</li>
+    <li>https://github.com/poolqf/FillableLoaders(Swift)</li>
+    <li>[NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
+  <summary>**TableView展开cell**</summary>
+    <ul>
+    <li>[SKSTableView](https://github.com/sakkaras/SKSTableView)(OC)</li>
+    <li>[ios-swift-collapsible-table-section-in-grouped-section](https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**日历**</summary>
     <ul>
       <li>[GLCalendarView](https://github.com/Glow-Inc/GLCalendarView)(OC)</li>
@@ -823,6 +842,16 @@ Swift代码格式和自动格式化库
 
 
 <details>
+  <summary>**气泡弹框**</summary>
+    <ul>
+    <li>[DXPopover](https://github.com/xiekw2010/DXPopover)(OC)</li>
+    <li>[Popover](https://github.com/corin8823/Popover)(OC)</li>
+    <li>[AMPopTip](https://github.com/andreamazz/AMPopTip)(OC)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**Swift的扩展**</summary>
     <ul>
     <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
@@ -852,6 +881,7 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
     <ul>
       <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)(Swift)</li>
       <li>[Presentr](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
+      <li>[SDCAlertView](https://github.com/sberrevoets/SDCAlertView)(Swift)</li>
     </ul>
 </details>
 
@@ -1002,14 +1032,6 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
 
 <details>
 <summary>
-  **[FillableLoaders](https://github.com/poolqf/FillableLoaders)(Swift)**
-</summary>
-完全可定制的基于进度的加载器使用在Swift中编写的自定义CGPath绘制
-</details>
-
-
-<details>
-<summary>
   **[FloatLabelFields](https://github.com/FahimF/FloatLabelFields)(Swift)**
 </summary>
 placeholder会上浮的field
@@ -1074,17 +1096,17 @@ CAlayer子类及动画的介绍
 
 <details>
 <summary>
-  **[ios-swift-collapsible-table-section-in-grouped-section](https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section)(Swift)**
+  **[IGListKit](https://github.com/Instagram/IGListKit)(OC)**
 </summary>
-类似QQ好友可以展开的cell
+一个数据驱动的UICollectionView框架，用于构建快速灵活的列表
 </details>
 
 
 <details>
 <summary>
-  **[IGListKit](https://github.com/Instagram/IGListKit)(OC)**
+  **[JDStatusBarNotification](https://github.com/calimarkus/JDStatusBarNotification)(OC)**
 </summary>
-一个数据驱动的UICollectionView框架，用于构建快速灵活的列表
+状态栏通知
 </details>
 
 
@@ -1108,7 +1130,7 @@ Jelly在iOS中提供了自定义视图控制器转换，只需几行代码
 <summary>
   **[JVFloatLabeledTextField](https://github.com/Grouper/FlatUIKit)(OC)**
 </summary>
-进度指示器
+上浮Field
 </details>
 
 
@@ -1170,6 +1192,14 @@ FPS显示
 
 <details>
 <summary>
+  **[MLEmojiLabel](https://github.com/molon/MLEmojiLabel)(OC)**
+</summary>
+自动识别网址、号码、邮箱、@、#话题#和表情的label。 可以自定义自己的表情识别正则，和对应的表情图像。(默认是识别微信的表情符号)
+</details>
+
+
+<details>
+<summary>
   **[PageControls](https://github.com/popwarsweet/PageControls)**
 </summary>
 各种PageControl
@@ -1197,22 +1227,6 @@ FPS显示
   **[Persei](https://github.com/Yalantis/Persei)(Swift)**
 </summary>
 用Swift编写的UITableView / UICollectionView / UIScrollView的动画顶层菜单
-</details>
-
-
-<details>
-<summary>
-  **[PhoneNumberKit](https://github.com/marmelroy/PhoneNumberKit)(Swift)**
-</summary>
-用于解析，格式化和验证国际电话号码的Swift框架。 灵感来自Google的libphonenumber。
-</details>
-
-
-<details>
-<summary>
-  **[PySwiftyRegex](https://github.com/cezheng/PySwiftyRegex)(Swift)**
-</summary>
-轻松地以一种Pythonic方式处理Swift中的Regex
 </details>
 
 
@@ -1258,9 +1272,17 @@ MotionBlur允许您为iOS动画添加运动模糊效果。
 
 <details>
 <summary>
-  **[NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)(Swift)**
+  **[PhoneNumberKit](https://github.com/marmelroy/PhoneNumberKit)(Swift)**
 </summary>
-各种loading视图
+用于解析，格式化和验证国际电话号码的Swift框架。 灵感来自Google的libphonenumber。
+</details>
+
+
+<details>
+<summary>
+  **[PySwiftyRegex](https://github.com/cezheng/PySwiftyRegex)(Swift)**
+</summary>
+轻松地以一种Pythonic方式处理Swift中的Regex
 </details>
 
 
@@ -1401,6 +1423,14 @@ NSUserDefaults的现代Swift API
 
 <details>
 <summary>
+  **[TPKeyboardAvoiding](https://github.com/michaeltyson/TPKeyboardAvoiding)(OC)**
+</summary>
+键盘弹出事件处理
+</details>
+
+
+<details>
+<summary>
   **[TimelineTableViewCell](https://github.com/kf99916/TimelineTableViewCell)(Swift)**
 </summary>
 时间轴
@@ -1448,7 +1478,9 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
 
 
 
-### 动画
+---------------------------------------------------------------------------------------------------------------------
+<details>
+  <summary>**动画**</summary>
 
 <details>
 <summary>
@@ -1464,11 +1496,13 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
 在Swift中简化iOS动画的库。
 </details>
 
+</details>
+
 
 
 ---------------------------------------------------------------------------------------------------------------------
-<details>
-  <summary>**其他**</summary>
+### 其他
+
 <details>
   <summary>**Timer(定时器)**</summary>
     <ul>
@@ -1558,6 +1592,14 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[DeepLinkKit](https://github.com/button/DeepLinkKit)(OC)**
+</summary>
+精湛的路由匹配，基于块的方式来处理你的深层链接。
+</details>
+
+
+<details>
+<summary>
   **[Design-Patterns-In-Swift](https://github.com/ochococo/Design-Patterns-In-Swift)(Swift)**
 </summary>
 设计模式
@@ -1614,6 +1656,14 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[NetworkEye](https://github.com/coderyi/NetworkEye)(OC)**
+</summary>
+一个iOS网络调试库，它可以监控应用程序中的HTTP请求，并显示与请求相关的信息
+</details>
+
+
+<details>
+<summary>
   **[Nuke](https://github.com/kean/Nuke)(Swift)**
 </summary>
 强大的图像加载和缓存框架
@@ -1641,14 +1691,6 @@ Peek是一个开源库，允许您根据用户界面的规范指南轻松检查�
   **[PNChart-Swift](https://github.com/kevinzhow/PNChart-Swift)**
 </summary>
 一个简单而美丽的图表库用
-</details>
-
-
-<details>
-<summary>
-  **[Popover](https://github.com/corin8823/Popover)**
-</summary>
-QQ动态那种气泡弹出框
 </details>
 
 
@@ -1690,13 +1732,11 @@ socket连接
 </summary>
 网易那种侧滑页面
 </details>
-</details>
 
 
 
 ---------------------------------------------------------------------------------------------------------------------
-<details>
-  <summary>**框架**</summary>
+### 框架
 
 <details>
 <summary>
@@ -1762,13 +1802,11 @@ facebook开源的界面优化框架
 </summary>
 一个用Swift编写的强大的，易于使用的样式框架
 </details>
-</details>
 
 
 
 ---------------------------------------------------------------------------------------------------------------------
-<details>
-  <summary>**APP源码**</summary>
+### APP源码**
 
 <details>
 <summary>
@@ -1808,13 +1846,11 @@ v2ex客户端
 </summary>
 知乎
 </details>
-</details>
 
 
 
 ------------------------------------------------------------------------------------------------
-<details>
-  <summary>**Demo**</summary>
+### Demo
   
 <details>
 <summary>
@@ -1847,4 +1883,10 @@ youtube
 各种遮罩使用
 </details>
 
+
+<details>
+<summary>
+  **[nuomi](https://github.com/lookingstars/nuomi)(OC)**
+</summary>
+仿糯米
 </details>
