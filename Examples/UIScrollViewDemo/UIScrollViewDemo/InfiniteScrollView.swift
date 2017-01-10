@@ -14,6 +14,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        delegate = self
         contentSize = CGSize(width: 5000, height: frame.height)
         labelContainerView.frame = CGRect(x: 0, y: 0, width: contentSize.width, height: contentSize.height / 2)
         addSubview(labelContainerView)
@@ -52,7 +53,8 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     }
 
     func insertLabel() -> UILabel {
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 500, height: 80))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 80))
+        label.backgroundColor = UIColor.white
         label.numberOfLines = 3
         label.text = "1024 Block Street\nShaffer, CA\n95014"
         labelContainerView.addSubview(label)
@@ -117,5 +119,27 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
             visibleLabels.removeFirst()
             firstLabel = visibleLabels[0]
         }
+    }
+    
+    func nearestTargetOffset(for offset: CGPoint) -> CGPoint {
+        let pageSize = bounds.width
+        let page = roundf(Float(offset.x / pageSize))
+        let targetX = pageSize * CGFloat(page)
+        print(offset, targetX)
+        return CGPoint(x: targetX, y: offset.y)
+    }
+
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        
+        
+        
+        let targetOffset = nearestTargetOffset(for: targetContentOffset.pointee)
+        targetContentOffset.pointee.x = targetOffset.x
+        targetContentOffset.pointee.y = targetOffset.y
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print(scrollView)
     }
 }

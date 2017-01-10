@@ -52,6 +52,7 @@ class LazyScrollView: UIScrollView {
         super.layoutSubviews()
 
         let newVisibleViews = visiableViewModels
+        
         let newVisiblelazyIDs = newVisibleViews.flatMap { $0.lazyID }
         var removeViews: [UIView] = []
         for view in visibleViews {

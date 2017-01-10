@@ -21,7 +21,8 @@ class ViewController: UIViewController {
             FriendTableViewController.self,
             PagingEnabled.self,
             InfiniteScrollViewController.self,
-            ScrollViewController.self
+            ScrollViewController.self,
+            PagingSecondController.self
         ]
     ]
 
