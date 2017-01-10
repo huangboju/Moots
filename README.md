@@ -954,6 +954,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
 
 <details>
 <summary>
+  **[FaceAware](https://github.com/BeauNouvelle/FaceAware)(Swift)**
+</summary>
+头像裁剪，使人脸居中
+</details>
+
+
+<details>
+<summary>
   **[FDFullscreenPopGesture](https://github.com/forkingdog/FDFullscreenPopGesture)(OC)**
 </summary>
 全屏返回
@@ -1436,6 +1444,22 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[Async](https://github.com/duemunk/Async)(Swift)**
+</summary>
+对GCD的封装
+</details>
+
+
+<details>
+<summary>
+  **[BluetoothKit](https://github.com/rhummelmose/BluetoothKit)(Swift)**
+</summary>
+使用BLE在iOS / OSX设备之间轻松通信
+</details>
+
+
+<details>
+<summary>
   **[BeeHive](https://github.com/alibaba/BeeHive)(OC)**
 </summary>
 阿里开源的解耦库
@@ -1455,6 +1479,14 @@ Swift的JSON转换
   **[Google VR](https://github.com/googlevr/gvr-ios-sdk)**
 </summary>
 谷歌VR
+</details>
+
+
+<details>
+<summary>
+  **[Kakapo](https://github.com/devlucky/Kakapo)(Swift)**
+</summary>
+在Swift中动态模拟服务器行为和响应
 </details>
 
 
@@ -1615,6 +1647,13 @@ facebook开源的界面优化框架
 </details>
 
 
+<details>
+<summary>
+  **[StyleKit](https://github.com/146BC/StyleKit)(Swift)**
+</summary>
+一个用Swift编写的强大的，易于使用的样式框架
+</details>
+
 
 
 ### APP源码
@@ -1667,4 +1706,12 @@ v2ex客户端
   **[SmileWeather](https://github.com/liu044100/SmileWeather)(OC)**
 </summary>
 天气Demo
+</details>
+
+
+<details>
+<summary>
+  **[youtube-iOS](https://github.com/aslanyanhaik/youtube-iOS)(Swift)**
+</summary>
+youtube
 </details>
