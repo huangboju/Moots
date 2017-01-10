@@ -780,6 +780,15 @@ Swift代码格式和自动格式化库
 
 
 <details>
+  <summary>**滚动导航栏**</summary>
+    <ul>
+    <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
+    <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
+    </ul>
+</details>
+
+
+<details>
   <summary>**类似微信支付弹出一个UIViewController**</summary>
     <ul>
     <li>[MZFormSheetController](https://github.com/layerhq/Atlas-iOS)(OC)</li>
@@ -973,6 +982,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
   **[FillableLoaders](https://github.com/poolqf/FillableLoaders)(Swift)**
 </summary>
 完全可定制的基于进度的加载器使用在Swift中编写的自定义CGPath绘制
+</details>
+
+
+<details>
+<summary>
+  **[FloatLabelFields](https://github.com/FahimF/FloatLabelFields)(Swift)**
+</summary>
+placeholder会上浮的field
 </details>
 
 
@@ -1245,6 +1262,14 @@ UICollectionViewLayout炫酷的布局
   **[Siren](https://github.com/ArtSabintsev/Siren)(Swift)**
 </summary>
 当有新版本的应用程式可用时通知使用者，并提示他们升级
+</details>
+
+
+<details>
+<summary>
+  **[SKPhotoBrowser](https://github.com/suzuki-0000/SKPhotoBrowser)(Swift)**
+</summary>
+照片浏览器
 </details>
 
 
