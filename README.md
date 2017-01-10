@@ -788,6 +788,7 @@ Swift代码格式和自动格式化库
     <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
     <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
     <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
+    <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
     </ul>
 </details>
 
@@ -1465,16 +1466,9 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
 
 
 
-### 数据库
+---------------------------------------------------------------------------------------------------------------------
 <details>
-<summary>
-  **[SQLite.swift](https://github.com/stars)(Swift)**
-</summary>
-类似陌陌卡片选择 
-</details>
-
-
-### 其他
+  <summary>**其他**</summary>
 <details>
   <summary>**Timer(定时器)**</summary>
     <ul>
@@ -1660,6 +1654,14 @@ QQ动态那种气泡弹出框
 
 <details>
 <summary>
+  **[SQLite.swift](https://github.com/stars)(Swift)**
+</summary>
+数据库
+</details>
+
+
+<details>
+<summary>
   **[socket.io-client-swift](https://github.com/socketio/socket.io-client-swift)(Swift)**
 </summary>
 socket连接
@@ -1688,10 +1690,13 @@ socket连接
 </summary>
 网易那种侧滑页面
 </details>
+</details>
 
 
 
-### 框架
+---------------------------------------------------------------------------------------------------------------------
+<details>
+  <summary>**框架**</summary>
 
 <details>
 <summary>
@@ -1757,10 +1762,13 @@ facebook开源的界面优化框架
 </summary>
 一个用Swift编写的强大的，易于使用的样式框架
 </details>
+</details>
 
 
 
-### APP源码
+---------------------------------------------------------------------------------------------------------------------
+<details>
+  <summary>**APP源码**</summary>
 
 <details>
 <summary>
@@ -1800,10 +1808,11 @@ v2ex客户端
 </summary>
 知乎
 </details>
+</details>
 
 
 
-------------------------------------------------Demo------------------------------------------------
+------------------------------------------------------------------------------------------------
 <details>
   <summary>**Demo**</summary>
   
