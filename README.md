@@ -874,6 +874,14 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 <details>
 <summary>
+  **[BubbleTransition](https://github.com/andreamazz/BubbleTransition)(Swift)**
+</summary>
+一种自定义转换，用于展开和消除具有膨胀的气泡效应的控制器。
+</details>
+
+
+<details>
+<summary>
   **[CountdownLabel](https://github.com/suzuki-0000/CountdownLabel)(Swift)**
 </summary>
 简单倒计时UILabel与变形动画，以及一些有用的功能。
@@ -906,6 +914,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
 
 <details>
 <summary>
+  **[DOFavoriteButton](https://github.com/okmr-d/DOFavoriteButton)(Swift)**
+</summary>
+点赞按钮
+</details>
+
+
+<details>
+<summary>
   **[DKImagePickerController](https://github.com/zhangao0086/DKImagePickerController)(Swift)**
 </summary>
 图片选择器
@@ -917,6 +933,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
   **[DZNEmptyDataSet](https://github.com/dzenbot/DZNEmptyDataSet)(OC)**
 </summary>
 用于在视图没有要显示的内容时显示空数据集的UITableView / UICollectionView超类类别
+</details>
+
+
+<details>
+<summary>
+  **[ElasticTransition](https://github.com/lkzhao/ElasticTransition)(Swift)**
+</summary>
+模拟弹性拖动的UIKit自定义转场。 
 </details>
 
 
@@ -973,6 +997,14 @@ GPUImage 2是一个BSD授权的Swift框架，用于GPU加速的视频和图像�
   **[GSMessages](https://github.com/wxxsw/GSMessages)(Swift)**
 </summary>
 navigationbar下面出来的提示框
+</details>
+
+
+<details>
+<summary>
+  **[HamburgerButton](https://github.com/fastred/HamburgerButton)(Swift)**
+</summary>
+有转场动画的按钮
 </details>
 
 
@@ -1300,6 +1332,14 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
   **[XLActionController](https://github.com/xmartlabs/XLActionController)(Swift)**
 </summary>
 完全可定制和可扩展的action sheet controller
+</details>
+
+
+<details>
+<summary>
+  **[ZFRippleButton](https://github.com/zoonooz/ZFRippleButton)(Swift)**
+</summary>
+自定义UIButton效果灵感来自Google Material Design
 </details>
 
 
