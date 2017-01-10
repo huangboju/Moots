@@ -968,6 +968,14 @@ ConfettiView可以在您的应用程序中创建一个炫酷的五彩纸屑视�
 
 <details>
 <summary>
+  **[DGElasticPullToRefresh](https://github.com/gontovnik/DGElasticPullToRefresh)(Swift)**
+</summary>
+带皮筋效果的下拉刷新
+</details>
+
+
+<details>
+<summary>
   **[DisplaySwitcher](https://github.com/Yalantis/DisplaySwitcher)(Swift)**
 </summary>
 两个集合视图布局之间的自定义转换
@@ -1375,6 +1383,14 @@ UICollectionViewLayout炫酷的布局
 
 <details>
 <summary>
+  **[SwiftIconFont](https://github.com/0x73/SwiftIconFont)(Swift)**
+</summary>
+像设置字体一样设置图片的大小
+</details>
+
+
+<details>
+<summary>
   **[SwiftMessages](https://github.com/SwiftKickMobile/SwiftMessages)**
 </summary>
 一个非常灵活的消息栏为iOS写的Swift。
@@ -1442,6 +1458,14 @@ NSUserDefaults的现代Swift API
   **[TTTAttributedLabel](https://github.com/TTTAttributedLabel/TTTAttributedLabel)(OC)**
 </summary>
 带连接可点击的label
+</details>
+
+
+<details>
+<summary>
+  **[UploadImage](https://github.com/MillmanY/UploadImage)(Swift)**
+</summary>
+UIImageView的图片上传指示
 </details>
 
 
@@ -1608,6 +1632,14 @@ Swift的JSON转换
 
 <details>
 <summary>
+  **[FBMemoryProfiler](https://github.com/facebook/FBMemoryProfiler)(OC)**
+</summary>
+facebook开源的内存分析器
+</details>
+
+
+<details>
+<summary>
   **[FileBrowser](https://github.com/marmelroy/FileBrowser)(Swift)**
 </summary>
 文件浏览器
@@ -1734,6 +1766,14 @@ socket连接
 </details>
 
 
+<details>
+<summary>
+  **[ZLSwipeableViewSwift](https://github.com/zhxnlai/ZLSwipeableViewSwift)(Swift)**
+</summary>
+一个简单的视图构建卡像界面灵感来自Tinder和Potluck。
+</details>
+
+
 
 ---------------------------------------------------------------------------------------------------------------------
 ### 框架
@@ -1826,6 +1866,22 @@ facebook开源的界面优化框架
 
 <details>
 <summary>
+  **[RaceMe](https://github.com/enochng1/RaceMe)(Swift)**
+</summary>
+关于跑步的
+</details>
+
+
+<details>
+<summary>
+  **[SelectionOfZhihu](https://github.com/sheepy1/SelectionOfZhihu)(Swift)**
+</summary>
+知乎
+</details>
+
+
+<details>
+<summary>
   **[v2ex](https://github.com/singro/v2ex)**
 </summary>
 v2ex客户端
@@ -1839,13 +1895,6 @@ v2ex客户端
 一个社交软件，遇见天才
 </details>
 
-
-<details>
-<summary>
-  **[SelectionOfZhihu](https://github.com/sheepy1/SelectionOfZhihu)(Swift)**
-</summary>
-知乎
-</details>
 
 
 
