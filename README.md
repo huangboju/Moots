@@ -719,6 +719,7 @@ Swift代码格式和自动格式化库
     <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
     <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
     <li>[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)</li>
+    <li>[FlatUIKit](https://github.com/Grouper/FlatUIKit)(OC)</li>
     <li>[Material](https://github.com/CosmicMind/Material)(Swift)</li>
     </ul>
 </details>
@@ -764,6 +765,7 @@ Swift代码格式和自动格式化库
   <summary>**日期处理**</summary>
     <ul>
       <li>[Timepiece](https://github.com/naoty/Timepiece)(Swift)</li>
+      <li>[SwiftMoment](https://github.com/akosma/SwiftMoment)(Swift)</li>
       <li>[DateTools](https://github.com/MatthewYork/DateTools)(OC/Swift)</li>
     </ul>
 </details>
@@ -802,6 +804,7 @@ Swift代码格式和自动格式化库
   <summary>**转场动画**</summary>
     <ul>
     <li>[TransitionTreasury](https://github.com/DianQK/TransitionTreasury)(Swift)</li>
+    <li>[ADTransitionController](https://github.com/applidium/ADTransitionController)(OC)</li>
     </ul>
 </details>
 
@@ -886,6 +889,14 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
   **[BubbleTransition](https://github.com/andreamazz/BubbleTransition)(Swift)**
 </summary>
 一种自定义转换，用于展开和消除具有膨胀的气泡效应的控制器。
+</details>
+
+
+<details>
+<summary>
+  **[CardAnimation](https://github.com/seedante/CardAnimation)(Swift)**
+</summary>
+卡片动画
 </details>
 
 
@@ -1051,6 +1062,14 @@ CAlayer子类及动画的介绍
 
 <details>
 <summary>
+  **[ios-swift-collapsible-table-section-in-grouped-section](https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section)(Swift)**
+</summary>
+类似QQ好友可以展开的cell
+</details>
+
+
+<details>
+<summary>
   **[IGListKit](https://github.com/Instagram/IGListKit)(OC)**
 </summary>
 一个数据驱动的UICollectionView框架，用于构建快速灵活的列表
@@ -1166,6 +1185,14 @@ FPS显示
   **[PySwiftyRegex](https://github.com/cezheng/PySwiftyRegex)(Swift)**
 </summary>
 轻松地以一种Pythonic方式处理Swift中的Regex
+</details>
+
+
+<details>
+<summary>
+  **[M13ProgressSuite](https://github.com/Marxon13/M13ProgressSuite)(OC)**
+</summary>
+进度指示器
 </details>
 
 
@@ -1330,6 +1357,14 @@ NSUserDefaults的现代Swift API
 
 <details>
 <summary>
+  **[TDBadgedCell](https://github.com/tmdvs/TDBadgedCell)(Swift)**
+</summary>
+带小红点的cell
+</details>
+
+
+<details>
+<summary>
   **[TextFieldEffects](https://github.com/raulriera/TextFieldEffects)(Swift)**
 </summary>
 自定义UITextFields效果
@@ -1357,6 +1392,14 @@ NSUserDefaults的现代Swift API
   **[Whisper](https://github.com/hyperoslo/Whisper)(Swift)**
 </summary>
 Whisper是一个组件，它将使显示消息和应用程序内通知的任务变得简单。 它里面有三个不同的视图
+</details>
+
+
+<details>
+<summary>
+  **[XFAssistiveTouch](https://github.com/xiaofei86/XFAssistiveTouch)(Swift)**
+</summary>
+仿系统的小白点
 </details>
 
 
@@ -1418,6 +1461,7 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
   <summary>**引导页**</summary>
     <ul>
     <li>[EAIntroView](https://github.com/ealeksandrov/EAIntroView)(OC)</li>
+    <li>[BWWalkthrough](https://github.com/ariok/BWWalkthrough)(Swift)</li>
     </ul>
 </details>
 
@@ -1488,6 +1532,14 @@ Swift的JSON转换
   **[BeeHive](https://github.com/alibaba/BeeHive)(OC)**
 </summary>
 阿里开源的解耦库
+</details>
+
+
+<details>
+<summary>
+  **[Design-Patterns-In-Swift](https://github.com/ochococo/Design-Patterns-In-Swift)(Swift)**
+</summary>
+设计模式
 </details>
 
 
@@ -1715,6 +1767,14 @@ v2ex客户端
 </details>
 
 
+<details>
+<summary>
+  **[SelectionOfZhihu](https://github.com/sheepy1/SelectionOfZhihu)(Swift)**
+</summary>
+知乎
+</details>
+
+
 
 ### Demo
 
@@ -1739,4 +1799,12 @@ v2ex客户端
   **[youtube-iOS](https://github.com/aslanyanhaik/youtube-iOS)(Swift)**
 </summary>
 youtube
+</details>
+
+
+<details>
+<summary>
+  **[MaskLayerDemo](https://github.com/huangboju?page=6&tab=stars)(Swift)**
+</summary>
+各种遮罩使用
 </details>
