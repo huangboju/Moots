@@ -787,6 +787,7 @@ Swift代码格式和自动格式化库
       <li>[Timepiece](https://github.com/naoty/Timepiece)(Swift)</li>
       <li>[SwiftMoment](https://github.com/akosma/SwiftMoment)(Swift)</li>
       <li>[DateTools](https://github.com/MatthewYork/DateTools)(OC/Swift)</li>
+      <li>[SwiftDate](https://github.com/malcommac/SwiftDate)</li>
     </ul>
 </details>
 
