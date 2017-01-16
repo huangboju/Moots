@@ -15,10 +15,11 @@ class ViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
-    
+
     lazy var data: [[String]] = [
         [
-            "get",
+            "getForUrl",
+            "getForRequest",
             "post"
         ],
         [
@@ -28,7 +29,7 @@ class ViewController: UIViewController {
             "download"
         ]
     ]
-    
+
     let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?channel=duanzi&passport=D3pXYOdJ%2BBxaWHO1/pK4OxnEOMj%2B7fVC1uf3muOsgN/L2AgtwrES0PPiPHJrLH2UePBK0dNsyevylzp8V9OOiA%3D%3D&devId=CY3plXq5jD2/czZ5NH%2BY9ginxA%2B0lR2yURfd9uV%2B1akZr3JPv6rg6oowBwVl8SLu&version=19.1&spever=false&net=wifi&lat=&lon=&ts=1482994987&sign=H3qeeO3JnenIG7O6%2BJ2mp8tGek0tTTlNXH8JJJpV2Ct48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=10&fn=1")!
     
     override func viewDidLoad() {
@@ -36,15 +37,22 @@ class ViewController: UIViewController {
         title = "URLSession"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
-        
-        let bottomLine = NELineLabel(frame: CGRect(x: 10, y: 10, width: 100, height: 1))
+
+        let bottomLine = NELineLabel(frame: CGRect(x: 0, y: 10, width: 200, height: 20))
+        bottomLine.center.x = tableView.center.x
+        bottomLine.text = "段子"
         bottomLine.textAlignment = .center
-        tableView.addSubview(bottomLine)
-    }
-    
-    func get() {
-        let session = URLSession.shared
+        bottomLine.textColor = UIColor.lightGray
+
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        footerView.addSubview(bottomLine)
         
+        tableView.tableFooterView = footerView
+        getForRequest()
+    }
+
+    func getForUrl() {
+        let session = URLSession.shared
         // 通过URL初始化task,在block内部可以直接对返回的数据进行处理
         let task = session.dataTask(with: url) { (data, response, error) in
             do {
@@ -59,7 +67,28 @@ class ViewController: UIViewController {
 
         task.resume()
     }
-    
+
+    func getForRequest()  {
+        let session = URLSession.shared
+
+        // 通过URL初始化task,在block内部可以直接对返回的数据进行处理
+        var request = URLRequest(url: url, cachePolicy: .returnCacheDataDontLoad, timeoutInterval: 1)
+        request.addValue("private", forHTTPHeaderField: "Cache-Control")
+
+        let task = session.dataTask(with: request) { (data, response, error) in
+            do {
+                if let data = data {
+                    try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                    print("✅")
+                }
+            } catch let error {
+                print(error, "⚠️")
+            }
+        }
+        
+        task.resume()
+    }
+
     // vapor
     // http://www.cocoachina.com/ios/20161031/17891.html
 
@@ -149,18 +178,18 @@ extension ViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data[section].count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
 
 extension ViewController: UITableViewDelegate {
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = data[indexPath.section][indexPath.row]
     }

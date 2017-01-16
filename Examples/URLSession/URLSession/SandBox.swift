@@ -10,6 +10,8 @@ import UIKit
 
 // http://www.superqq.com/blog/2015/07/24/nsfilemanagerwen-jian-cao-zuo-de-shi-ge-xiao-gong-neng/
 
+// http://blog.flight.dev.qunar.com/2016/11/10/ios-data-persistence-learn/#more
+
 class SandBox: UITableViewController {
     
     enum Path: String {

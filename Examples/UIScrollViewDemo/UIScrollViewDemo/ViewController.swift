@@ -22,7 +22,8 @@ class ViewController: UIViewController {
             PagingEnabled.self,
             InfiniteScrollViewController.self,
             ScrollViewController.self,
-            PagingSecondController.self
+            PagingSecondController.self,
+            ConvertController.self
         ]
     ]
 

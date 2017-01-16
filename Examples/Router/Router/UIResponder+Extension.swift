@@ -13,7 +13,7 @@ extension UIResponder {
     struct Keys {
         static let button = "button"
     }
-    
+
     struct EventName {
         static let transferNameEvent = "transferNameEvent"
     }
