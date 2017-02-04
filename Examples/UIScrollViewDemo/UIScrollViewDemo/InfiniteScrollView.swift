@@ -31,7 +31,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         let distanceFromCenter = fabs(currentOffset.x - centerOffsetX)
 
         if distanceFromCenter > (contentWidth / 4.0) {
-            
+
             contentOffset = CGPoint(x: centerOffsetX, y: currentOffset.y)
             // move content by the same amount so it appears to stay still
             for label in visibleLabels {
@@ -41,7 +41,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
             }
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         recenterIfNecessary()
@@ -70,7 +70,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
 
         return frame.maxX
     }
-    
+
     // 向右滑
     func placeNewLabel(on leftEdge: CGFloat) -> CGFloat {
         let label = insertLabel()
@@ -83,7 +83,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         
         return frame.minX
     }
-    
+
     func tileLabels(from minimumVisibleX: CGFloat, to maximumVisibleX: CGFloat) {
         if visibleLabels.isEmpty {
             placeNewLabelOnRight(minimumVisibleX)
