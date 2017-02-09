@@ -1,49 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="scy-ki-yIp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="2li-Um-4NQ">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WaterWave" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="HSP-ca-jON"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="282" y="532"/>
-        </scene>
-        <!--Item 2-->
-        <scene sceneID="xZh-8X-Pns">
-            <objects>
-                <viewController id="vR1-5Y-n9D" customClass="SecondController" customModule="WaterWave" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="S3Y-IX-GOO"/>
-                        <viewControllerLayoutGuide type="bottom" id="hpG-cj-XiA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bVz-BE-aFP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="bVP-YH-dXl"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iSw-X2-lkB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="283" y="1315"/>
-        </scene>
         <!--Item-->
         <scene sceneID="LKb-Rf-GuC">
             <objects>
@@ -59,12 +24,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nzz-7f-emk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="2026"/>
+            <point key="canvasLocation" x="-153" y="1030"/>
         </scene>
-        <!--Third Controller-->
+        <!--View Controller-->
         <scene sceneID="SJg-vc-gKD">
             <objects>
-                <viewController id="UbP-fs-YcQ" customClass="ThirdController" customModule="WaterWave" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UbP-fs-YcQ" customClass="ViewController" customModule="WaterWave" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nBg-gT-oJt"/>
                         <viewControllerLayoutGuide type="bottom" id="Dp4-D4-Fu2"/>
@@ -78,26 +43,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0S-jp-IF5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1112" y="2027"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="ZFI-IQ-hyd">
-            <objects>
-                <tabBarController id="scy-ki-yIp" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="Mju-uK-Gpq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="347-gY-nRE"/>
-                        <segue destination="vR1-5Y-n9D" kind="relationship" relationship="viewControllers" id="p6f-Z7-BM0"/>
-                        <segue destination="2li-Um-4NQ" kind="relationship" relationship="viewControllers" id="BRd-LX-BiY"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lQf-fG-UdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-669" y="988"/>
+            <point key="canvasLocation" x="748" y="1015"/>
         </scene>
     </scenes>
 </document>

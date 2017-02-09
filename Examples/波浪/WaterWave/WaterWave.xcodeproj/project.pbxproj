@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D83D41F71E4C714300CC083E /* SCSiriWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */; };
+		D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41F81E4C890900CC083E /* FirstViewController.swift */; };
+		D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */; };
 		D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */; };
 		D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */; };
 		D88B02401DB2210D0096114E /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023F1DB2210D0096114E /* ThirdController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSiriWaveformView.swift; sourceTree = "<group>"; };
+		D83D41F81E4C890900CC083E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshWaveView.swift; sourceTree = "<group>"; };
 		D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		D88B023F1DB2210D0096114E /* ThirdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
@@ -129,6 +135,9 @@
 				D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */,
 				D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */,
 				D88B023F1DB2210D0096114E /* ThirdController.swift */,
+				D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */,
+				D83D41F81E4C890900CC083E /* FirstViewController.swift */,
+				D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */,
 			);
 			path = WaterWave;
 			sourceTree = "<group>";
@@ -288,7 +297,10 @@
 				D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */,
 				D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */,
 				D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */,
+				D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */,
 				D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */,
+				D83D41F71E4C714300CC083E /* SCSiriWaveformView.swift in Sources */,
+				D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */,
 				D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
 				D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */,
