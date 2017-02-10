@@ -641,6 +641,15 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
+  <summary>**LLDB（调试）**</summary>
+    <ul>
+      <li>[iOS开发断点调试高级技巧](http://www.jianshu.com/p/8e9fc9a8ab78)</li>
+      <li>[与调试器共舞 - LLDB 的华尔兹](https://objccn.io/issue-19-2/)</li>
+    </ul>
+</details>
+
+
+<details>
 <summary>
   **删除多余模拟器**
 </summary>
