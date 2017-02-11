@@ -309,7 +309,7 @@ navigationBar.backIndicatorImage = R.image.ic_nav_back()
   **[tableView分割线左边到头](http://www.jianshu.com/p/4e9619483035)(_UITableViewCellSeparatorView)**
 </summary>
 ```swift
-//写在viewDidLoad
+//写在viewDidLoad http://www.jianshu.com/p/1274343055a7
 if tableView.respondsToSelector(Selector("setSeparatorInset:")) {
     tableView.separatorInset = UIEdgeInsetsZero
 }
