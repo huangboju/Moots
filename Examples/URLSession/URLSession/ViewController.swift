@@ -8,6 +8,8 @@
 
 import UIKit
 
+let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?channel=duanzi&passport=D3pXYOdJ%2BBxaWHO1/pK4OxnEOMj%2B7fVC1uf3muOsgN/L2AgtwrES0PPiPHJrLH2UePBK0dNsyevylzp8V9OOiA%3D%3D&devId=CY3plXq5jD2/czZ5NH%2BY9ginxA%2B0lR2yURfd9uV%2B1akZr3JPv6rg6oowBwVl8SLu&version=19.1&spever=false&net=wifi&lat=&lon=&ts=1482994987&sign=H3qeeO3JnenIG7O6%2BJ2mp8tGek0tTTlNXH8JJJpV2Ct48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=10&fn=1")!
+
 class ViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
@@ -27,10 +29,13 @@ class ViewController: UIViewController {
         ],
         [
             "download"
+        ],
+        [
+            "jokeController"
         ]
     ]
 
-    let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?channel=duanzi&passport=D3pXYOdJ%2BBxaWHO1/pK4OxnEOMj%2B7fVC1uf3muOsgN/L2AgtwrES0PPiPHJrLH2UePBK0dNsyevylzp8V9OOiA%3D%3D&devId=CY3plXq5jD2/czZ5NH%2BY9ginxA%2B0lR2yURfd9uV%2B1akZr3JPv6rg6oowBwVl8SLu&version=19.1&spever=false&net=wifi&lat=&lon=&ts=1482994987&sign=H3qeeO3JnenIG7O6%2BJ2mp8tGek0tTTlNXH8JJJpV2Ct48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=10&fn=1")!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +54,14 @@ class ViewController: UIViewController {
         
         tableView.tableFooterView = footerView
         getForRequest()
+        
+        tableView.separatorInset = .zero // 在iOS10设置这一句就能实现分割线左边到头
+    }
+    
+    func jokeController() {
+        let controller = JokeController()
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
     }
 
     func getForUrl() {
@@ -191,6 +204,13 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        // http://www.jianshu.com/p/1274343055a7
+        if indexPath.row == 0 {
+            // preservesSuperviewLayoutMargins 表明当前视图是否保留父视图的margins，设置为true，如果当前视图的margins小于父视图的margins，那么当前视图使用父视图的margins，默认为false
+            // cell如果是IB加载，preservesSuperviewLayoutMargins为false，cell如果是代码加载，preservesSuperviewLayoutMargins为true。
+            cell.preservesSuperviewLayoutMargins = false
+            cell.layoutMargins = .zero
+        }
         cell.textLabel?.text = data[indexPath.section][indexPath.row]
     }
 

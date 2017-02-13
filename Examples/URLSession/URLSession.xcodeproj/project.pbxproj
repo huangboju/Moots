@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E231E4EB5630098BC80 /* JokeController.swift */; };
+		D8516E301E4EDC320098BC80 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */; };
+		D8516E311E4EDC320098BC80 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8516E361E4F5EFB0098BC80 /* RealReachability.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E341E4F5EF70098BC80 /* RealReachability.framework */; };
+		D8516E371E4F5EFB0098BC80 /* RealReachability.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E341E4F5EF70098BC80 /* RealReachability.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8516E3D1E5010B50098BC80 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */; };
 		D8A7FE5D1E14EC450044395C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE5C1E14EC450044395C /* AppDelegate.swift */; };
 		D8A7FE5F1E14EC450044395C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE5E1E14EC450044395C /* ViewController.swift */; };
 		D8A7FE621E14EC450044395C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A7FE601E14EC450044395C /* Main.storyboard */; };
@@ -27,7 +33,26 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		D8516E321E4EDC320098BC80 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8516E311E4EDC320098BC80 /* SwiftyJSON.framework in Embed Frameworks */,
+				D8516E371E4F5EFB0098BC80 /* RealReachability.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		D8516E231E4EB5630098BC80 /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
+		D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
+		D8516E341E4F5EF70098BC80 /* RealReachability.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealReachability.framework; path = Carthage/Build/iOS/RealReachability.framework; sourceTree = "<group>"; };
+		D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		D8A7FE591E14EC450044395C /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A7FE5C1E14EC450044395C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A7FE5E1E14EC450044395C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +72,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8516E301E4EDC320098BC80 /* SwiftyJSON.framework in Frameworks */,
+				D8516E361E4F5EFB0098BC80 /* RealReachability.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D8516E251E4ED0490098BC80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8516E341E4F5EF70098BC80 /* RealReachability.framework */,
+				D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D8A7FE501E14EC450044395C = {
 			isa = PBXGroup;
 			children = (
 				D8A7FE5B1E14EC450044395C /* URLSession */,
 				D8A7FE701E14EC460044395C /* URLSessionUITests */,
 				D8A7FE5A1E14EC450044395C /* Products */,
+				D8516E251E4ED0490098BC80 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +126,8 @@
 				D8A7FE631E14EC450044395C /* Assets.xcassets */,
 				D8A7FE651E14EC450044395C /* LaunchScreen.storyboard */,
 				D8A7FE681E14EC450044395C /* Info.plist */,
+				D8516E231E4EB5630098BC80 /* JokeController.swift */,
+				D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */,
 			);
 			path = URLSession;
 			sourceTree = "<group>";
@@ -112,6 +151,7 @@
 				D8A7FE551E14EC450044395C /* Sources */,
 				D8A7FE561E14EC450044395C /* Frameworks */,
 				D8A7FE571E14EC450044395C /* Resources */,
+				D8516E321E4EDC320098BC80 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -153,6 +193,7 @@
 					D8A7FE581E14EC450044395C = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 46A8679957;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					D8A7FE6C1E14EC460044395C = {
@@ -208,7 +249,9 @@
 			files = (
 				D8A7FE5F1E14EC450044395C /* ViewController.swift in Sources */,
 				D8A7FE5D1E14EC450044395C /* AppDelegate.swift in Sources */,
+				D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */,
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,
+				D8516E3D1E5010B50098BC80 /* NetworkReachabilityManager.swift in Sources */,
 				D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -346,12 +389,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 46A8679957;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = URLSession/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -360,12 +410,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 46A8679957;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = URLSession/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

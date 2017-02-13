@@ -14,6 +14,9 @@ class FirstViewController: UIViewController {
         super.viewDidLoad()
         let v = WaterWaveView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
         view.addSubview(v)
+        
+        let waterWaveView = NYWaterWaveView(frame: CGRect(x: 0, y: 300, width: view.frame.width, height: 200))
+        view.addSubview(waterWaveView)
     }
 
     override func didReceiveMemoryWarning() {

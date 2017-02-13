@@ -10,8 +10,6 @@
 		D83D41F71E4C714300CC083E /* SCSiriWaveformView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */; };
 		D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41F81E4C890900CC083E /* FirstViewController.swift */; };
 		D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */; };
-		D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */; };
-		D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */; };
 		D88B02401DB2210D0096114E /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023F1DB2210D0096114E /* ThirdController.swift */; };
 		D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */; };
 		D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */; };
@@ -20,9 +18,12 @@
 		D8B1A3241D9CC75D0083AAA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8B1A3221D9CC75D0083AAA3 /* LaunchScreen.storyboard */; };
 		D8B1A32F1D9CC75D0083AAA3 /* WaterWaveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A32E1D9CC75D0083AAA3 /* WaterWaveTests.swift */; };
 		D8B1A33A1D9CC75D0083AAA3 /* WaterWaveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3391D9CC75D0083AAA3 /* WaterWaveUITests.swift */; };
-		D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */; };
 		D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */; };
-		D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */; };
+		D8E102DB1E51543600B05708 /* NYWaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E102D51E51543600B05708 /* NYWaterWaveView.swift */; };
+		D8E102DC1E51543600B05708 /* PullToRefreshWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E102D71E51543600B05708 /* PullToRefreshWaveView.swift */; };
+		D8E102DD1E51543600B05708 /* UIScrollView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E102D81E51543600B05708 /* UIScrollView+Extension.swift */; };
+		D8E102DE1E51543600B05708 /* WaterWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E102D91E51543600B05708 /* WaterWaveView.swift */; };
+		D8E102DF1E51543600B05708 /* WaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8E102DA1E51543600B05708 /* WaveView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,8 +47,6 @@
 		D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCSiriWaveformView.swift; sourceTree = "<group>"; };
 		D83D41F81E4C890900CC083E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
-		D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshWaveView.swift; sourceTree = "<group>"; };
-		D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
 		D88B023F1DB2210D0096114E /* ThirdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
 		D8B1A3161D9CC75D0083AAA3 /* WaterWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -62,9 +61,12 @@
 		D8B1A3351D9CC75D0083AAA3 /* WaterWaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterWaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8B1A3391D9CC75D0083AAA3 /* WaterWaveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveUITests.swift; sourceTree = "<group>"; };
 		D8B1A33B1D9CC75D0083AAA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterWaveView.swift; sourceTree = "<group>"; };
 		D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondController.swift; sourceTree = "<group>"; };
-		D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
+		D8E102D51E51543600B05708 /* NYWaterWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NYWaterWaveView.swift; sourceTree = "<group>"; };
+		D8E102D71E51543600B05708 /* PullToRefreshWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PullToRefreshWaveView.swift; sourceTree = "<group>"; };
+		D8E102D81E51543600B05708 /* UIScrollView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extension.swift"; sourceTree = "<group>"; };
+		D8E102D91E51543600B05708 /* WaterWaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterWaveView.swift; sourceTree = "<group>"; };
+		D8E102DA1E51543600B05708 /* WaveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaveView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,15 +94,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D88B023A1DB209380096114E /* PullToRefreshWave */ = {
-			isa = PBXGroup;
-			children = (
-				D88B023B1DB209760096114E /* PullToRefreshWaveView.swift */,
-				D88B023D1DB21D860096114E /* UIScrollView+Extension.swift */,
-			);
-			name = PullToRefreshWave;
-			sourceTree = "<group>";
-		};
 		D8B1A30D1D9CC75D0083AAA3 = {
 			isa = PBXGroup;
 			children = (
@@ -124,15 +117,13 @@
 		D8B1A3181D9CC75D0083AAA3 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
-				D88B023A1DB209380096114E /* PullToRefreshWave */,
-				D8B1A34D1D9CFB0D0083AAA3 /* WaveView.swift */,
+				D8E102D41E5153CC00B05708 /* Views */,
 				D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */,
 				D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */,
 				D8B1A31D1D9CC75D0083AAA3 /* Main.storyboard */,
 				D8B1A3201D9CC75D0083AAA3 /* Assets.xcassets */,
 				D8B1A3221D9CC75D0083AAA3 /* LaunchScreen.storyboard */,
 				D8B1A3251D9CC75D0083AAA3 /* Info.plist */,
-				D8B1A3471D9CC7710083AAA3 /* WaterWaveView.swift */,
 				D8B1A34B1D9CFAE50083AAA3 /* SecondController.swift */,
 				D88B023F1DB2210D0096114E /* ThirdController.swift */,
 				D83D41F61E4C714300CC083E /* SCSiriWaveformView.swift */,
@@ -158,6 +149,26 @@
 				D8B1A33B1D9CC75D0083AAA3 /* Info.plist */,
 			);
 			path = WaterWaveUITests;
+			sourceTree = "<group>";
+		};
+		D8E102D41E5153CC00B05708 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8E102D61E51543600B05708 /* PullToRefreshWave */,
+				D8E102D51E51543600B05708 /* NYWaterWaveView.swift */,
+				D8E102D91E51543600B05708 /* WaterWaveView.swift */,
+				D8E102DA1E51543600B05708 /* WaveView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D8E102D61E51543600B05708 /* PullToRefreshWave */ = {
+			isa = PBXGroup;
+			children = (
+				D8E102D71E51543600B05708 /* PullToRefreshWaveView.swift */,
+				D8E102D81E51543600B05708 /* UIScrollView+Extension.swift */,
+			);
+			path = PullToRefreshWave;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,17 +305,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D88B023E1DB21D860096114E /* UIScrollView+Extension.swift in Sources */,
+				D8E102DB1E51543600B05708 /* NYWaterWaveView.swift in Sources */,
 				D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */,
-				D8B1A34E1D9CFB0D0083AAA3 /* WaveView.swift in Sources */,
+				D8E102DC1E51543600B05708 /* PullToRefreshWaveView.swift in Sources */,
 				D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */,
 				D8B1A34C1D9CFAE50083AAA3 /* SecondController.swift in Sources */,
+				D8E102DE1E51543600B05708 /* WaterWaveView.swift in Sources */,
 				D83D41F71E4C714300CC083E /* SCSiriWaveformView.swift in Sources */,
+				D8E102DF1E51543600B05708 /* WaveView.swift in Sources */,
 				D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */,
-				D8B1A3481D9CC7710083AAA3 /* WaterWaveView.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
-				D88B023C1DB209760096114E /* PullToRefreshWaveView.swift in Sources */,
 				D88B02401DB2210D0096114E /* ThirdController.swift in Sources */,
+				D8E102DD1E51543600B05708 /* UIScrollView+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
