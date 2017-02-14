@@ -53,7 +53,7 @@ class SCViewController: UIViewController {
     func updateMeters() {
         recorder?.updateMeters()
         // pow()用来计算以x 为底的 y 次方值，然后将结果返回。设返回值为 ret，则 ret = xy。
-        let normalizedValue = pow(10, (recorder?.averagePower(forChannel: 0) ?? 0) / 20)
-        waveformView.update(with: CGFloat(normalizedValue))
+        let normalizedValue = pow(10, CGFloat(recorder?.averagePower(forChannel: 0) ?? 0) / 20)
+        waveformView.update(with: normalizedValue)
     }
 }

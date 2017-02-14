@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         title = "Wave"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
+       
     }
     
     override func didReceiveMemoryWarning() {

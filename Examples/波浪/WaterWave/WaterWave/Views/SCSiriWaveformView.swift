@@ -119,7 +119,7 @@ class SCSiriWaveformView: UIView {
             context.strokePath()
         }
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
