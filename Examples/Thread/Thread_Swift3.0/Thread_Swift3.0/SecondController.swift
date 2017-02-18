@@ -9,6 +9,10 @@
 import Eureka
 import UIKit
 
+// https://www.allaboutswift.com/dev/2016/7/12/gcd-with-swfit3
+// http://www.cnblogs.com/ludashi/p/5336169.html
+// https://justinyan.me/post/2420
+
 class SecondController: FormViewController {
 
     override func viewDidLoad() {
@@ -375,7 +379,7 @@ class SecondController: FormViewController {
     func useDispatchApply() {
         
         print("循环多次执行并行队列")
-        _ = getConcurrentQueue("cn.zeluli")
+
         DispatchQueue.concurrentPerform(iterations: 3) { (index) in
             currentThreadSleep(Double(index))
             print("第\(index)次执行，\n\(Thread.current)\n")

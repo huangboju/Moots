@@ -115,7 +115,7 @@ class ViewController: UIViewController {
     }
     
     func run(text: String) {
-        print(Thread.current.name,"run")
+        print(Thread.current.name as Any,"run")
     }
     
     func gcd() {
