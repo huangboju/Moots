@@ -35,8 +35,6 @@ class ViewController: UIViewController {
         ]
     ]
 
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "URLSession"
@@ -51,13 +49,13 @@ class ViewController: UIViewController {
 
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
         footerView.addSubview(bottomLine)
-        
+
         tableView.tableFooterView = footerView
         getForRequest()
-        
+
         tableView.separatorInset = .zero // 在iOS10设置这一句就能实现分割线左边到头
     }
-    
+
     func jokeController() {
         let controller = JokeController()
         controller.hidesBottomBarWhenPushed = true
@@ -98,7 +96,7 @@ class ViewController: UIViewController {
                 print(error, "⚠️")
             }
         }
-        
+
         task.resume()
     }
 
@@ -124,28 +122,28 @@ class ViewController: UIViewController {
         }
         task.resume()
     }
-    
+
     func getForDelegate() {
         // 使用代理方法需要设置代理,但是session的delegate属性是只读的,要想设置代理只能通过这种方式创建session
-        
+
         let session = URLSession(configuration: URLSessionConfiguration.default, delegate: self, delegateQueue: OperationQueue())
-        
+
         // 创建任务(因为要使用代理方法,就不需要block方式的初始化了)
         let task = session.dataTask(with: URLRequest(url: url))
         task.resume()
     }
-    
+
     func download() {
         print(NSHomeDirectory(), "数据库")
         let session = URLSession.shared
         let url = URL(string: "https://www.google.com.hk/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=0ahUKEwjQrLv5i5nRAhVIxFQKHaSxBfQQjRwIBw&url=%68%74%74%70%3a%2f%2f%77%77%77%2e%6b%61%6e%67%67%75%69%2e%63%6f%6d%2f%62%61%6f%6a%69%61%6e%2f%7a%74%2f%32%30%31%35%30%35%31%34%2f%32%35%36%33%36%2e%68%74%6d%6c&psig=AFQjCNGSMCV1Nfvt1JsyQognfcXchk-MMg&ust=1483090270393310")!
         let task = session.downloadTask(with: url) { (url, response, error) in
             // location是沙盒中tmp文件夹下的一个临时url,文件下载后会存到这个位置,由于tmp中的文件随时可能被删除,所以我们需要自己需要把下载的文件挪到需要的地方
-            let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last?.appending( response?.suggestedFilename ?? "") ?? ""
-            
+            let path = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last?.appending(response?.suggestedFilename ?? "") ?? ""
+
             let tmp = NSTemporaryDirectory()
             var location: String?
-            
+
             if let paths = FileManager.default.subpaths(atPath: tmp) {
                 for path in paths where path.characters.first != "." { // 剔除隐藏文件
                     print("\(tmp)/\(path)\n")
@@ -172,15 +170,15 @@ class ViewController: UIViewController {
 
 extension ViewController: URLSessionDataDelegate {
     // 1.接收到服务器的响应
-    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
+    func urlSession(_ session: URLSession, task: URLSessionTask, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping(URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         print(#function)
     }
-    
+
     // 2.接收到服务器的数据（可能调用多次）
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         print(#function)
     }
-    
+
     // 3.请求成功或者失败（如果失败，error有值）
     func urlSession(_ session: URLSession, didBecomeInvalidWithError error: Error?) {
         print(#function)

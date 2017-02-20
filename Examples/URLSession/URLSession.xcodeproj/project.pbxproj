@@ -21,6 +21,7 @@
 		D8A7FE721E14EC460044395C /* URLSessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE711E14EC460044395C /* URLSessionUITests.swift */; };
 		D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE7C1E15156B0044395C /* SandBox.swift */; };
 		D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */; };
+		D8D3F9AB1E588A7C009D02DE /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		D8A7FE731E14EC460044395C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A7FE7C1E15156B0044395C /* SandBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBox.swift; sourceTree = "<group>"; };
 		D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
+		D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 		D8A7FE5B1E14EC450044395C /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */,
 				D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */,
 				D8A7FE5C1E14EC450044395C /* AppDelegate.swift */,
 				D8A7FE5E1E14EC450044395C /* ViewController.swift */,
@@ -248,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A7FE5F1E14EC450044395C /* ViewController.swift in Sources */,
+				D8D3F9AB1E588A7C009D02DE /* UIResponder+Extension.swift in Sources */,
 				D8A7FE5D1E14EC450044395C /* AppDelegate.swift in Sources */,
 				D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */,
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,

@@ -11,6 +11,7 @@ import SwiftyJSON
 import RealReachability
 
 class Cell: UITableViewCell {
+
     override func layoutSubviews() {
         super.layoutSubviews()
         /*
@@ -19,14 +20,18 @@ class Cell: UITableViewCell {
          就可以得到
          "_defaultMarginWidth = 16"
          */
-//        print(value(forKey: "_defaultMarginWidth"))
+        //        print(value(forKey: "_defaultMarginWidth"))
     }
 }
 
 class JokeController: UITableViewController {
 
+    override var canBecomeFirstResponder: Bool {
+        return true
+    }
+
     lazy var cellHeights: [IndexPath: CGFloat] = [:]
-    
+
     var contents: [String] = [] {
         didSet {
             tableView.reloadData()
@@ -35,18 +40,16 @@ class JokeController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(getForUrl))
 
         getForUrl()
-        
 
         tableView.separatorStyle = .none
         tableView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView?.register(Cell.self, forCellReuseIdentifier: "cell")
-
     }
-    
+
     let reach = NetworkReachabilityManager()
 
     func getForUrl() {
@@ -67,27 +70,22 @@ class JokeController: UITableViewController {
          * returnCacheDataDontLoad	 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么放弃从原始地址加载数据，请求视为失败（即：“离线”模式）。
          * reloadRevalidatingCacheData*	从原始地址确认缓存数据的合法性后，缓存数据就可以使用，否则从原始地址加载。
          */
-        
-        
+
         // reloadIgnoringLocalAndRemoteCacheData 和 reloadRevalidatingCacheData没有实现
-        
-        
+
         let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData :  .returnCacheDataElseLoad
 
         var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
-        
-        
-        /*  
+
+        /*
          * public 所有内容都将被缓存
          * private 内容只缓存到私有缓存中
          * no-cache 所有内容都不会被缓存
          * no-store 所有内容都不会被缓存到缓存或Internet文件中，
          */
-        
+
         request.addValue("private", forHTTPHeaderField: "Cache-Control") // 这个头必须由服务器端指定以开启客户端的 HTTP 缓存功能。这个头的值可能包含 max-age（缓存多久），是公共 public 还是私有 private，或者不缓存 no-cache 等信息
 
-        
-        
         let task = session.dataTask(with: request) { (data, response, error) in
             self.navigationItem.rightBarButtonItem?.customView = nil
             if let data = data {
@@ -98,10 +96,8 @@ class JokeController: UITableViewController {
         }
 
         task.resume()
-        
-//        URLCache()
     }
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         return contents.count
     }
@@ -119,7 +115,21 @@ class JokeController: UITableViewController {
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.text = contents[indexPath.section]
         cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.backgroundColor = UIColor.red
+    }
+
+    func openURL(type: String) {
+        let paste = UIPasteboard.general
+        paste.string = selectedText
+        let urlStr = type.replacingOccurrences(of: "()", with: "") + "://"
+        UIApplication.shared.openURL(URL(string: urlStr)!)
+    }
+
+    func mqq() {
+        openURL(type: #function)
+    }
+
+    func wechat() {
+        openURL(type: #function)
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -128,7 +138,7 @@ class JokeController: UITableViewController {
         } else {
             let content = contents[indexPath.section]
             let height = content.heightWithConstrainedWidth(font: UIFont.systemFont(ofSize: UIFont.labelFontSize))
-            cellHeights[indexPath] = height + 16 // ？？？ 这里为什么会有误差我也不知道
+            cellHeights[indexPath] = height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
             return height
         }
     }
@@ -137,8 +147,19 @@ class JokeController: UITableViewController {
         return 5
     }
 
+    var selectedText: String?
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        if let cell = tableView.cellForRow(at: indexPath) {
+            let qqItem = UIMenuItem(title: "QQ", action: #selector(mqq))
+            let wechatItem = UIMenuItem(title: "wechat", action: #selector(wechat))
+            let menuController = UIMenuController.shared
+            menuController.menuItems = [qqItem, wechatItem]
+            menuController.setTargetRect(cell.frame, in: cell.superview!)
+            menuController.setMenuVisible(true, animated: true)
+            selectedText = cell.textLabel?.text
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -151,7 +172,7 @@ extension String {
     // 32 cell.textLabel的padding
     func heightWithConstrainedWidth(width: CGFloat = UIScreen.main.bounds.width - 32, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-//        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
+        //        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
 
         let label = UILabel(frame: CGRect(origin: .zero, size: constraintRect))
         label.text = self
@@ -160,4 +181,3 @@ extension String {
         return label.frame.height
     }
 }
-

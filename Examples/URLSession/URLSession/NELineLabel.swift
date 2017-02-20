@@ -17,19 +17,18 @@ open class NELineLabel: UILabel {
             setNeedsDisplay()
         }
     }
-    
+
     @IBInspectable
     open var lineSpace: CGFloat = 10 {
         didSet {
             setNeedsDisplay()
         }
     }
-    
+
     open var lineY: CGFloat {
         return bounds.midY - lineHeight / 2
     }
-    
-    
+
     override open func draw(_ rect: CGRect) {
         super.draw(rect)
 
@@ -40,7 +39,7 @@ open class NELineLabel: UILabel {
             textColor.setFill()
 
             var alignment = textAlignment
-            
+
             if textAlignment == .natural {
                 alignment = UIApplication.shared.userInterfaceLayoutDirection == .leftToRight ? .left : .right
             }
@@ -56,22 +55,20 @@ open class NELineLabel: UILabel {
             default:
                 debugPrint("\(textAlignment) not supported by LineLabel")
             }
-            
+
             ctx.restoreGState()
         }
-        
     }
-    
+
     func drawLineLeft(_ ctx: CGContext, lineWidth: CGFloat) {
         let leftRect = lineRect(bounds.minX, lineWidth: lineWidth)
         ctx.fill(leftRect)
-
     }
     func drawLineRight(_ ctx: CGContext, lineWidth: CGFloat) {
         let leftRect = lineRect(bounds.maxX - lineWidth, lineWidth: lineWidth)
         ctx.fill(leftRect)
     }
-    
+
     func lineRect(_ x: CGFloat, lineWidth: CGFloat) -> CGRect {
         return CGRect(x: x, y: lineY, width: lineWidth, height: lineHeight)
     }
