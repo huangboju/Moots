@@ -60,7 +60,7 @@ class JokeController: UITableViewController {
     let reach = NetworkReachabilityManager()
 
     func getForUrl() {
-        
+
         DispatchQueue.global(qos: .background).async {
             // 网络状态
             let isReachable = self.reach?.isReachable ?? false
@@ -77,7 +77,7 @@ class JokeController: UITableViewController {
             
             // reloadIgnoringLocalAndRemoteCacheData 和 reloadRevalidatingCacheData没有实现
             
-            let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData :  .returnCacheDataElseLoad
+            let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
             
             var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
             
