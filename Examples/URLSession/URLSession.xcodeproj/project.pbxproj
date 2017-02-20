@@ -21,6 +21,13 @@
 		D8A7FE721E14EC460044395C /* URLSessionUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE711E14EC460044395C /* URLSessionUITests.swift */; };
 		D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE7C1E15156B0044395C /* SandBox.swift */; };
 		D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */; };
+		D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7453A1E5AE5FF0096F0B5 /* CurveLayer.swift */; };
+		D8B745401E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7453B1E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift */; };
+		D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7453C1E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift */; };
+		D8B745421E5AE5FF0096F0B5 /* CurveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7453D1E5AE5FF0096F0B5 /* CurveView.swift */; };
+		D8B745431E5AE5FF0096F0B5 /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B7453E1E5AE5FF0096F0B5 /* LabelView.swift */; };
+		D8B745451E5AE61F0096F0B5 /* UIScrollView+Extensions .swift in Sources */ = {isa = PBXBuildFile; fileRef = D8B745441E5AE61F0096F0B5 /* UIScrollView+Extensions .swift */; };
+		D8C70D261E5AE8F70004496B /* CurveRefreshView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8C70D251E5AE8F70004496B /* CurveRefreshView.swift */; };
 		D8D3F9AB1E588A7C009D02DE /* UIResponder+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +73,14 @@
 		D8A7FE731E14EC460044395C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D8A7FE7C1E15156B0044395C /* SandBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBox.swift; sourceTree = "<group>"; };
 		D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
+		D8B7453A1E5AE5FF0096F0B5 /* CurveLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveLayer.swift; sourceTree = "<group>"; };
+		D8B7453B1E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveRefreshFooterView.swift; sourceTree = "<group>"; };
+		D8B7453C1E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveRefreshHeaderView.swift; sourceTree = "<group>"; };
+		D8B7453D1E5AE5FF0096F0B5 /* CurveView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveView.swift; sourceTree = "<group>"; };
+		D8B7453E1E5AE5FF0096F0B5 /* LabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
+		D8B745441E5AE61F0096F0B5 /* UIScrollView+Extensions .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions .swift"; sourceTree = "<group>"; };
+		D8B745461E5AE6360096F0B5 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		D8C70D251E5AE8F70004496B /* CurveRefreshView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurveRefreshView.swift; sourceTree = "<group>"; };
 		D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIResponder+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +135,7 @@
 		D8A7FE5B1E14EC450044395C /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				D8B745391E5AE5FF0096F0B5 /* PullToRefresh */,
 				D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */,
 				D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */,
 				D8A7FE5C1E14EC450044395C /* AppDelegate.swift */,
@@ -131,6 +147,7 @@
 				D8A7FE681E14EC450044395C /* Info.plist */,
 				D8516E231E4EB5630098BC80 /* JokeController.swift */,
 				D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */,
+				D8B745461E5AE6360096F0B5 /* Bridging.h */,
 			);
 			path = URLSession;
 			sourceTree = "<group>";
@@ -142,6 +159,20 @@
 				D8A7FE731E14EC460044395C /* Info.plist */,
 			);
 			path = URLSessionUITests;
+			sourceTree = "<group>";
+		};
+		D8B745391E5AE5FF0096F0B5 /* PullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				D8B7453A1E5AE5FF0096F0B5 /* CurveLayer.swift */,
+				D8C70D251E5AE8F70004496B /* CurveRefreshView.swift */,
+				D8B7453B1E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift */,
+				D8B7453C1E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift */,
+				D8B7453D1E5AE5FF0096F0B5 /* CurveView.swift */,
+				D8B7453E1E5AE5FF0096F0B5 /* LabelView.swift */,
+				D8B745441E5AE61F0096F0B5 /* UIScrollView+Extensions .swift */,
+			);
+			path = PullToRefresh;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -252,10 +283,17 @@
 			files = (
 				D8A7FE5F1E14EC450044395C /* ViewController.swift in Sources */,
 				D8D3F9AB1E588A7C009D02DE /* UIResponder+Extension.swift in Sources */,
+				D8B745451E5AE61F0096F0B5 /* UIScrollView+Extensions .swift in Sources */,
 				D8A7FE5D1E14EC450044395C /* AppDelegate.swift in Sources */,
 				D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */,
+				D8B745421E5AE5FF0096F0B5 /* CurveView.swift in Sources */,
+				D8C70D261E5AE8F70004496B /* CurveRefreshView.swift in Sources */,
+				D8B745431E5AE5FF0096F0B5 /* LabelView.swift in Sources */,
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,
+				D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */,
+				D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */,
 				D8516E3D1E5010B50098BC80 /* NetworkReachabilityManager.swift in Sources */,
+				D8B745401E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift in Sources */,
 				D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,7 +442,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -425,7 +463,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

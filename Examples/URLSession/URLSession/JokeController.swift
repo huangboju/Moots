@@ -34,6 +34,7 @@ class JokeController: UITableViewController {
 
     var contents: [String] = [] {
         didSet {
+            tableView.endRefresh()
             tableView.reloadData()
         }
     }
@@ -41,22 +42,23 @@ class JokeController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(getForUrl))
-
-        getForUrl()
-
         tableView.separatorStyle = .none
         tableView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView?.register(Cell.self, forCellReuseIdentifier: "cell")
+
+        tableView.headerRefresher() {
+            self.getForUrl()
+        }
+
+        tableView.footerRefresher {
+            self.getForUrl()
+        }
     }
 
     let reach = NetworkReachabilityManager()
 
     func getForUrl() {
         cellHeights.removeAll(keepingCapacity: true)
-        let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-        indicatorView.startAnimating()
-        navigationItem.rightBarButtonItem?.customView = indicatorView
 
         // 网络状态
         let isReachable = reach?.isReachable ?? false
@@ -87,7 +89,6 @@ class JokeController: UITableViewController {
         request.addValue("private", forHTTPHeaderField: "Cache-Control") // 这个头必须由服务器端指定以开启客户端的 HTTP 缓存功能。这个头的值可能包含 max-age（缓存多久），是公共 public 还是私有 private，或者不缓存 no-cache 等信息
 
         let task = session.dataTask(with: request) { (data, response, error) in
-            self.navigationItem.rightBarButtonItem?.customView = nil
             if let data = data {
                 if let json = JSON(data).dictionaryValue["段子"] {
                     self.contents = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
