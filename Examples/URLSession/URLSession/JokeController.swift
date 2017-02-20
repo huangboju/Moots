@@ -122,6 +122,7 @@ class JokeController: UITableViewController {
         paste.string = selectedText
         let urlStr = type.replacingOccurrences(of: "()", with: "") + "://"
         UIApplication.shared.openURL(URL(string: urlStr)!)
+        UIMenuController.shared.update()
     }
 
     func mqq() {
