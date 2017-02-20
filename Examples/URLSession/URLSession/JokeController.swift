@@ -87,9 +87,9 @@ class JokeController: UITableViewController {
              * no-cache 所有内容都不会被缓存
              * no-store 所有内容都不会被缓存到缓存或Internet文件中，
              */
-            
+
             request.addValue("private", forHTTPHeaderField: "Cache-Control") // 这个头必须由服务器端指定以开启客户端的 HTTP 缓存功能。这个头的值可能包含 max-age（缓存多久），是公共 public 还是私有 private，或者不缓存 no-cache 等信息
-            
+
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     if let json = JSON(data).dictionaryValue["段子"] {
