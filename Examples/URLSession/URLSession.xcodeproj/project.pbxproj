@@ -12,7 +12,6 @@
 		D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E231E4EB5630098BC80 /* JokeController.swift */; };
 		D8516E301E4EDC320098BC80 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */; };
 		D8516E311E4EDC320098BC80 /* SwiftyJSON.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8516E3D1E5010B50098BC80 /* NetworkReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */; };
 		D8A7FE5D1E14EC450044395C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE5C1E14EC450044395C /* AppDelegate.swift */; };
 		D8A7FE5F1E14EC450044395C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7FE5E1E14EC450044395C /* ViewController.swift */; };
 		D8A7FE621E14EC450044395C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8A7FE601E14EC450044395C /* Main.storyboard */; };
@@ -60,7 +59,6 @@
 		D83CA8B41E5BCF790063A21C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D8516E231E4EB5630098BC80 /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		D8A7FE591E14EC450044395C /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A7FE5C1E14EC450044395C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A7FE5E1E14EC450044395C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +144,6 @@
 				D8A7FE651E14EC450044395C /* LaunchScreen.storyboard */,
 				D8A7FE681E14EC450044395C /* Info.plist */,
 				D8516E231E4EB5630098BC80 /* JokeController.swift */,
-				D8516E3C1E5010B50098BC80 /* NetworkReachabilityManager.swift */,
 				D8B745461E5AE6360096F0B5 /* Bridging.h */,
 			);
 			path = URLSession;
@@ -166,8 +163,8 @@
 			children = (
 				D8B7453A1E5AE5FF0096F0B5 /* CurveLayer.swift */,
 				D8C70D251E5AE8F70004496B /* CurveRefreshView.swift */,
-				D8B7453B1E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift */,
 				D8B7453C1E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift */,
+				D8B7453B1E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift */,
 				D8B7453D1E5AE5FF0096F0B5 /* CurveView.swift */,
 				D8B7453E1E5AE5FF0096F0B5 /* LabelView.swift */,
 				D8B745441E5AE61F0096F0B5 /* UIScrollView+Extensions .swift */,
@@ -292,7 +289,6 @@
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,
 				D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */,
 				D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */,
-				D8516E3D1E5010B50098BC80 /* NetworkReachabilityManager.swift in Sources */,
 				D8B745401E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift in Sources */,
 				D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */,
 			);

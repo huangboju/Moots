@@ -6,8 +6,12 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
+
 import Alamofire
 import SwiftyJSON
+
+
+fileprivate let font = UIFont.systemFont(ofSize: 20)
 
 class Cell: UITableViewCell {
 
@@ -31,56 +35,64 @@ class JokeController: UITableViewController {
 
     var contents: [String] = [] {
         didSet {
-            tableView.endRefresh()
             tableView.reloadData()
         }
     }
-    
+
     private var isLoadingMore = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "段子"
+
         tableView.separatorStyle = .none
         tableView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView?.register(Cell.self, forCellReuseIdentifier: "cell")
 
-        tableView.headerRefresher() {
+        tableView.headerRefresher() { headerView in
             self.isLoadingMore = false
             self.getForUrl()
+            headerView.stopRefreshing()
         }
 
-        tableView.footerRefresher {
+        tableView.footerRefresher { footerView in
             self.isLoadingMore = true
             self.getForUrl()
+            footerView.stopRefreshing()
         }
     }
 
     let reach = NetworkReachabilityManager()
 
+    func AlamofireNetWork() {
+        let isReachable = self.reach?.isReachable ?? false
+        
+        let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
+        
+        var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
+        request.addValue("private", forHTTPHeaderField: "Cache-Control")
+
+        Alamofire.request(request).responseJSON { [unowned self] (data) in
+            guard let value = data.result.value else { return }
+            if let json = JSON(value).dictionaryValue["段子"] {
+                let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
+                if self.isLoadingMore {
+                    self.contents.append(contentsOf: data)
+                } else {
+                    self.contents.insert(contentsOf: data, at: 0)
+                }
+            }
+            
+        }
+    }
+
     func getForUrl() {
-        
-//        let isReachable = self.reach?.isReachable ?? false
-//
-//        let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
-//        
-//        
-//        
-//        var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
-//        request.addValue("private", forHTTPHeaderField: "Cache-Control")
-//
-//        Alamofire.request(request).responseJSON { (data) in
-//            if let json = JSON(data).dictionaryValue["段子"] {
-//                let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
-//                if self.isLoadingMore {
-//                    self.contents.append(contentsOf: data)
-//                } else {
-//                    self.contents.insert(contentsOf: data, at: 0)
-//                }
-//            }
-//            
-//        }
-        
+        AlamofireNetWork()
+//        urlsessionNetwork()
+    }
+
+    func urlsessionNetwork() {
         DispatchQueue.global(qos: .background).async {
             // 网络状态
             let isReachable = self.reach?.isReachable ?? false
@@ -107,9 +119,9 @@ class JokeController: UITableViewController {
              * no-cache 所有内容都不会被缓存
              * no-store 所有内容都不会被缓存到缓存或Internet文件中，
              */
-
+            
             request.addValue("private", forHTTPHeaderField: "Cache-Control") // 这个头必须由服务器端指定以开启客户端的 HTTP 缓存功能。这个头的值可能包含 max-age（缓存多久），是公共 public 还是私有 private，或者不缓存 no-cache 等信息
-
+            
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     if let json = JSON(data).dictionaryValue["段子"] {
@@ -122,9 +134,9 @@ class JokeController: UITableViewController {
                     }
                 }
             }
-            
             task.resume()
         }
+
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -137,21 +149,22 @@ class JokeController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor.white
+        cell.backgroundColor = UIColor(white: 0.7, alpha: 1)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.textLabel?.font = font
         cell.textLabel?.text = contents[indexPath.section]
         cell.textLabel?.numberOfLines = 0
     }
 
     func openURL(type: String) {
+        UIMenuController.shared.update()
         let paste = UIPasteboard.general
         paste.string = selectedText
         let urlStr = type.replacingOccurrences(of: "()", with: "") + "://"
         UIApplication.shared.openURL(URL(string: urlStr)!)
-        UIMenuController.shared.update()
     }
 
     func mqq() {
@@ -164,7 +177,7 @@ class JokeController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let content = contents[indexPath.section]
-        let height = content.heightWithConstrainedWidth(font: UIFont.systemFont(ofSize: UIFont.labelFontSize))
+        let height = content.heightWithConstrainedWidth(font: font)
         return height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
     }
 
@@ -201,6 +214,7 @@ extension String {
 
         let label = UILabel(frame: CGRect(origin: .zero, size: constraintRect))
         label.text = self
+        label.font = font
         label.numberOfLines = 0
         label.sizeToFit()
         return label.frame.height

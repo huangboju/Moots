@@ -7,28 +7,23 @@
 //
 
 class CurveRefreshFooterView: CurveRefreshView {
-
-    override func progressDidSet() {
+    
+    override func progressDidSet(completion: @escaping (Bool) -> ()) {
 
         let diff = associatedScrollView.contentOffset.y - (associatedScrollView.contentSize.height - associatedScrollView.frame.height) - pullDistance + 10.0
 
         if diff > 0 {
-            if !associatedScrollView.isTracking && !isHidden {
-                if !notTracking {
-                    notTracking = true
-                    loading = true
+            if !associatedScrollView.isTracking && !isHidden && !notTracking {
+                notTracking = true
+                loading = true
 
-                    // 旋转...
-                    curveView.startInfiniteRotation()
-                    UIView.animate(withDuration: 0.3, animations: { [weak self]() in
-                        guard let strongSelf = self else { return }
-
-                        strongSelf.associatedScrollView.contentInset.top = strongSelf.originOffset
-                        strongSelf.associatedScrollView.contentInset.bottom = strongSelf.pullDistance
-                    }, completion: { [weak self](finished) in
-                        self?.refreshingBlock?()
-                    })
-                }
+                // 旋转...
+                curveView.startInfiniteRotation()
+                UIView.animate(withDuration: 0.3, animations: { [weak self]() in
+                    guard let strongSelf = self else { return }
+                    strongSelf.associatedScrollView.contentInset.top = strongSelf.originOffset
+                    strongSelf.associatedScrollView.contentInset.bottom = strongSelf.pullDistance
+                    }, completion: completion)
             }
 
             if !loading {

@@ -17,9 +17,4 @@ extension UIScrollView {
         let footerView = CurveRefreshFooterView(associatedScrollView: self)
         footerView.refreshingBlock = handle
     }
-
-    func endRefresh() {
-        (viewWithTag(12580) as? CurveRefreshHeaderView)?.stopRefreshing()
-        (viewWithTag(12581) as? CurveRefreshFooterView)?.stopRefreshing()
-    }
 }

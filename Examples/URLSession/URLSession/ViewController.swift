@@ -31,9 +31,6 @@ class ViewController: UIViewController {
         [
             "download"
         ],
-        [
-            "jokeController"
-        ]
     ]
 
     override func viewDidLoad() {
