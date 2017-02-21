@@ -59,7 +59,7 @@
 		D83CA8B41E5BCF790063A21C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D8516E231E4EB5630098BC80 /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
-		D8A7FE591E14EC450044395C /* URLSession.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = URLSession.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8A7FE591E14EC450044395C /* 段子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "段子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8A7FE5C1E14EC450044395C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D8A7FE5E1E14EC450044395C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8A7FE611E14EC450044395C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -124,7 +124,7 @@
 		D8A7FE5A1E14EC450044395C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8A7FE591E14EC450044395C /* URLSession.app */,
+				D8A7FE591E14EC450044395C /* 段子.app */,
 				D8A7FE6D1E14EC460044395C /* URLSessionUITests.xctest */,
 			);
 			name = Products;
@@ -190,7 +190,7 @@
 			);
 			name = URLSession;
 			productName = URLSession;
-			productReference = D8A7FE591E14EC450044395C /* URLSession.app */;
+			productReference = D8A7FE591E14EC450044395C /* 段子.app */;
 			productType = "com.apple.product-type.application";
 		};
 		D8A7FE6C1E14EC460044395C /* URLSessionUITests */ = {
@@ -437,7 +437,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "段子";
 				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -458,7 +458,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "段子";
 				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_VERSION = 3.0;
 			};
