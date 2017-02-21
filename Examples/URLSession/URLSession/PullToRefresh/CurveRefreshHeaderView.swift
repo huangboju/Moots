@@ -23,16 +23,14 @@ class CurveRefreshHeaderView: CurveRefreshView {
                 curveView.startInfiniteRotation()
                 UIView.animate(withDuration: 0.3, animations: { [weak self] in
                     guard let strongSelf = self else { return }
-                    strongSelf.associatedScrollView.contentInset = UIEdgeInsetsMake(strongSelf.pullDistance + strongSelf.originOffset, 0, 0, 0)
+                    strongSelf.associatedScrollView.contentInset.top = strongSelf.pullDistance + strongSelf.originOffset
                 }, completion: { [weak self](_) in
-                    if let strongSelf = self {
-                        strongSelf.refreshingBlock?()
-                    }
+                    self?.refreshingBlock?()
                 })
             }
 
             if !loading {
-                curveView.transform = CGAffineTransform(rotationAngle: .pi * (diff * 2 / 180))
+                curveView.transform = CGAffineTransform(rotationAngle: .pi * (diff * 90))
             }
         } else {
             labelView.loading = false
@@ -41,7 +39,7 @@ class CurveRefreshHeaderView: CurveRefreshView {
     }
 
     override func initialize() {
-        self.tag = 1001
+        self.tag = 12580
         associatedScrollView.addObserver(self, forKeyPath: "contentOffset", options: [.new, .old], context: nil)
     }
 
@@ -65,22 +63,5 @@ extension CurveRefreshHeaderView {
         if contentOffset.y + originOffset <= 0 {
             progress = max(0.0, min(fabs(contentOffset.y + originOffset) / pullDistance, 1.0))
         }
-    }
-}
-
-extension UIView {
-    func startInfiniteRotation() {
-        transform = CGAffineTransform.identity
-        let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
-        rotationAnimation.toValue = .pi * 2.0
-        rotationAnimation.duration = 0.5
-        rotationAnimation.autoreverses = false
-        rotationAnimation.repeatCount = HUGE
-        rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
-        layer.add(rotationAnimation, forKey: "rotationAnimation")
-    }
-
-    func stopInfiniteRotation() {
-        layer.removeAllAnimations()
     }
 }

@@ -23,11 +23,10 @@ class CurveRefreshFooterView: CurveRefreshView {
                     UIView.animate(withDuration: 0.3, animations: { [weak self]() in
                         guard let strongSelf = self else { return }
 
-                        strongSelf.associatedScrollView.contentInset = UIEdgeInsetsMake(strongSelf.originOffset, 0, strongSelf.pullDistance, 0)
-                    }, completion: { [weak self](finished) -> Void in
-                        if let strongSelf = self {
-                            strongSelf.refreshingBlock?()
-                        }
+                        strongSelf.associatedScrollView.contentInset.top = strongSelf.originOffset
+                        strongSelf.associatedScrollView.contentInset.bottom = strongSelf.pullDistance
+                    }, completion: { [weak self](finished) in
+                        self?.refreshingBlock?()
                     })
                 }
             }
@@ -45,7 +44,7 @@ class CurveRefreshFooterView: CurveRefreshView {
 
     override func initialize() {
         isHidden = true
-        self.tag = 1000
+        self.tag = 12581
         associatedScrollView.addObserver(self, forKeyPath: "contentSize", options: [.new, .old], context: nil)
         labelView.state = .up
     }
@@ -66,15 +65,17 @@ extension CurveRefreshFooterView {
             }
             self.contentSize = contentSize
             isHidden = contentSize.height <= 0.0
-            frame = CGRect(x: associatedScrollView.frame.width / 2 - 200 / 2, y: contentSize.height, width: 200, height: 100)
+            frame = CGRect(x: associatedScrollView.frame.width / 2 - 100, y: contentSize.height, width: 200, height: 100)
         } else if keyPath == "contentOffset" {
             guard let contentOffset = (change?[.newKey] as AnyObject).cgPointValue, let contentSize = contentSize else {
                 return
             }
-            if contentOffset.y >= (contentSize.height - associatedScrollView.frame.height) {
-                center.y = contentSize.height + (contentOffset.y - (contentSize.height - associatedScrollView.frame.height)) / 2
+            let contentHight = contentSize.height
+            let height = contentHight - associatedScrollView.frame.height
+            if contentOffset.y >= height {
+                center.y = contentHight + (contentOffset.y - height) / 2
 
-                progress = max(0.0, min((contentOffset.y - (contentSize.height - associatedScrollView.frame.height)) / pullDistance, 1.0))
+                progress = max(0.0, min((contentOffset.y - height) / pullDistance, 1.0))
             }
         }
     }

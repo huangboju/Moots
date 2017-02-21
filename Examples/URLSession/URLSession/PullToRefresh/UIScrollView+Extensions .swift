@@ -8,18 +8,18 @@
 
 extension UIScrollView {
     func headerRefresher(handle: @escaping RefreshingBlock) {
-        let headerView = CurveRefreshHeaderView(associatedScrollView: self, withNavigationBar: true)
+        let headerView = CurveRefreshHeaderView(associatedScrollView: self)
         headerView.triggerPulling()
         headerView.refreshingBlock = handle
     }
 
     func footerRefresher(handle: @escaping RefreshingBlock) {
-        let footerView = CurveRefreshFooterView(associatedScrollView: self, withNavigationBar: true)
+        let footerView = CurveRefreshFooterView(associatedScrollView: self)
         footerView.refreshingBlock = handle
     }
 
     func endRefresh() {
-        (viewWithTag(1001) as? CurveRefreshHeaderView)?.stopRefreshing()
-        (viewWithTag(1000) as? CurveRefreshFooterView)?.stopRefreshing()
+        (viewWithTag(12580) as? CurveRefreshHeaderView)?.stopRefreshing()
+        (viewWithTag(12581) as? CurveRefreshFooterView)?.stopRefreshing()
     }
 }

@@ -6,9 +6,8 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
-import UIKit
+import Alamofire
 import SwiftyJSON
-import RealReachability
 
 class Cell: UITableViewCell {
 
@@ -60,7 +59,28 @@ class JokeController: UITableViewController {
     let reach = NetworkReachabilityManager()
 
     func getForUrl() {
-
+        
+//        let isReachable = self.reach?.isReachable ?? false
+//
+//        let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
+//        
+//        
+//        
+//        var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
+//        request.addValue("private", forHTTPHeaderField: "Cache-Control")
+//
+//        Alamofire.request(request).responseJSON { (data) in
+//            if let json = JSON(data).dictionaryValue["段子"] {
+//                let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
+//                if self.isLoadingMore {
+//                    self.contents.append(contentsOf: data)
+//                } else {
+//                    self.contents.insert(contentsOf: data, at: 0)
+//                }
+//            }
+//            
+//        }
+        
         DispatchQueue.global(qos: .background).async {
             // 网络状态
             let isReachable = self.reach?.isReachable ?? false
