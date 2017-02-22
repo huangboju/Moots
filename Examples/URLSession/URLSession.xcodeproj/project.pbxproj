@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D81CA87F1E5D1C78001DFBE3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */; };
+		D81CA8AF1E5D590C001DFBE3 /* MenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */; };
 		D83CA8B61E5BCF7E0063A21C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83CA8B41E5BCF790063A21C /* Alamofire.framework */; };
 		D83CA8B71E5BCF7E0063A21C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83CA8B41E5BCF790063A21C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E231E4EB5630098BC80 /* JokeController.swift */; };
@@ -56,6 +58,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemController.swift; sourceTree = "<group>"; };
 		D83CA8B41E5BCF790063A21C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D8516E231E4EB5630098BC80 /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */,
 				D8A7FE7E1E1B69DE0044395C /* NELineLabel.swift */,
 				D8A7FE5C1E14EC450044395C /* AppDelegate.swift */,
+				D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */,
 				D8A7FE5E1E14EC450044395C /* ViewController.swift */,
 				D8A7FE7C1E15156B0044395C /* SandBox.swift */,
 				D8A7FE601E14EC450044395C /* Main.storyboard */,
@@ -145,6 +150,7 @@
 				D8A7FE681E14EC450044395C /* Info.plist */,
 				D8516E231E4EB5630098BC80 /* JokeController.swift */,
 				D8B745461E5AE6360096F0B5 /* Bridging.h */,
+				D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */,
 			);
 			path = URLSession;
 			sourceTree = "<group>";
@@ -285,10 +291,12 @@
 				D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */,
 				D8B745421E5AE5FF0096F0B5 /* CurveView.swift in Sources */,
 				D8C70D261E5AE8F70004496B /* CurveRefreshView.swift in Sources */,
+				D81CA8AF1E5D590C001DFBE3 /* MenuItemController.swift in Sources */,
 				D8B745431E5AE5FF0096F0B5 /* LabelView.swift in Sources */,
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,
 				D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */,
 				D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */,
+				D81CA87F1E5D1C78001DFBE3 /* WebViewController.swift in Sources */,
 				D8B745401E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift in Sources */,
 				D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */,
 			);

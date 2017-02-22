@@ -31,6 +31,11 @@ class ViewController: UIViewController {
         [
             "download"
         ],
+        [
+            "webViewController",
+            "jokeController",
+            "menuItemController"
+        ]
     ]
 
     override func viewDidLoad() {
@@ -54,6 +59,18 @@ class ViewController: UIViewController {
         tableView.separatorInset = .zero // 在iOS10设置这一句就能实现分割线左边到头
     }
 
+    func menuItemController() {
+        let controller = MenuItemController()
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
+    }
+
+    func webViewController() {
+        let controller = WebViewController()
+        controller.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     func jokeController() {
         let controller = JokeController()
         controller.hidesBottomBarWhenPushed = true

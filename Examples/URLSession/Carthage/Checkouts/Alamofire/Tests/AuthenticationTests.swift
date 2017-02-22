@@ -71,9 +71,9 @@ class BasicAuthenticationTestCase: AuthenticationTestCase {
         manager.request(urlString)
             .authenticate(user: "invalid", password: "credentials")
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -95,9 +95,9 @@ class BasicAuthenticationTestCase: AuthenticationTestCase {
         manager.request(urlString)
             .authenticate(user: user, password: password)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -125,9 +125,9 @@ class BasicAuthenticationTestCase: AuthenticationTestCase {
         // When
         manager.request(urlString, headers: headers)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -160,9 +160,9 @@ class HTTPDigestAuthenticationTestCase: AuthenticationTestCase {
         manager.request(urlString)
             .authenticate(user: "invalid", password: "credentials")
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -184,9 +184,9 @@ class HTTPDigestAuthenticationTestCase: AuthenticationTestCase {
         manager.request(urlString)
             .authenticate(user: user, password: password)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 

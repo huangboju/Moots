@@ -6,10 +6,8 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
-
 import Alamofire
 import SwiftyJSON
-
 
 fileprivate let font = UIFont.systemFont(ofSize: 20)
 
@@ -67,13 +65,13 @@ class JokeController: UITableViewController {
 
     func AlamofireNetWork() {
         let isReachable = self.reach?.isReachable ?? false
-        
+
         let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
-        
+
         var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
         request.addValue("private", forHTTPHeaderField: "Cache-Control")
 
-        Alamofire.request(request).responseJSON { [unowned self] (data) in
+        Alamofire.request(request).responseJSON { [unowned self](data) in
             guard let value = data.result.value else { return }
             if let json = JSON(value).dictionaryValue["段子"] {
                 let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
@@ -83,20 +81,19 @@ class JokeController: UITableViewController {
                     self.contents.insert(contentsOf: data, at: 0)
                 }
             }
-            
         }
     }
 
     func getForUrl() {
         AlamofireNetWork()
-//        urlsessionNetwork()
+        //        urlsessionNetwork()
     }
 
     func urlsessionNetwork() {
         DispatchQueue.global(qos: .background).async {
             // 网络状态
             let isReachable = self.reach?.isReachable ?? false
-            
+
             let session = URLSession.shared
             /*
              * useProtocolCachePolicy 对特定的 URL 请求使用网络协议中实现的缓存逻辑。这是默认的策略。
@@ -106,22 +103,22 @@ class JokeController: UITableViewController {
              * returnCacheDataDontLoad	 无论缓存是否过期，先使用本地缓存数据。如果缓存中没有请求所对应的数据，那么放弃从原始地址加载数据，请求视为失败（即：“离线”模式）。
              * reloadRevalidatingCacheData*	从原始地址确认缓存数据的合法性后，缓存数据就可以使用，否则从原始地址加载。
              */
-            
+
             // reloadIgnoringLocalAndRemoteCacheData 和 reloadRevalidatingCacheData没有实现
-            
+
             let cachePolicy: URLRequest.CachePolicy = isReachable ? .reloadIgnoringLocalCacheData : .returnCacheDataElseLoad
-            
+
             var request = URLRequest(url: url, cachePolicy: cachePolicy, timeoutInterval: 1)
-            
+
             /*
              * public 所有内容都将被缓存
              * private 内容只缓存到私有缓存中
              * no-cache 所有内容都不会被缓存
              * no-store 所有内容都不会被缓存到缓存或Internet文件中，
              */
-            
+
             request.addValue("private", forHTTPHeaderField: "Cache-Control") // 这个头必须由服务器端指定以开启客户端的 HTTP 缓存功能。这个头的值可能包含 max-age（缓存多久），是公共 public 还是私有 private，或者不缓存 no-cache 等信息
-            
+
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     if let json = JSON(data).dictionaryValue["段子"] {
@@ -136,7 +133,6 @@ class JokeController: UITableViewController {
             }
             task.resume()
         }
-
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -160,18 +156,17 @@ class JokeController: UITableViewController {
     }
 
     func openURL(type: String) {
-        UIMenuController.shared.update()
         let paste = UIPasteboard.general
         paste.string = selectedText
         let urlStr = type.replacingOccurrences(of: "()", with: "") + "://"
         UIApplication.shared.openURL(URL(string: urlStr)!)
     }
 
-    func mqq() {
+    func mqq(sender: UIMenuController) {
         openURL(type: #function)
     }
 
-    func wechat() {
+    func wechat(sender: UIMenuController) {
         openURL(type: #function)
     }
 
@@ -181,8 +176,21 @@ class JokeController: UITableViewController {
         return height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
     }
 
+    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        guard section == contents.count else {
+            let customView = UIView()
+            customView.backgroundColor = UIColor.white
+            return customView
+        }
+        return super.tableView(tableView, viewForFooterInSection: section)
+    }
+
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 5
+    }
+
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.1
     }
 
     var selectedText: String?
@@ -190,6 +198,7 @@ class JokeController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
+            becomeFirstResponder()  // 这里先注释
             let qqItem = UIMenuItem(title: "QQ", action: #selector(mqq))
             let wechatItem = UIMenuItem(title: "wechat", action: #selector(wechat))
             let menuController = UIMenuController.shared

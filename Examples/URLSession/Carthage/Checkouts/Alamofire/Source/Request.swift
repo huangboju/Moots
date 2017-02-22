@@ -27,11 +27,11 @@ import Foundation
 /// A type that can inspect and optionally adapt a `URLRequest` in some manner if necessary.
 public protocol RequestAdapter {
     /// Inspects and adapts the specified `URLRequest` in some manner if necessary and returns the result.
-    ///
+    /// 
     /// - parameter urlRequest: The URL request to adapt.
-    ///
+    /// 
     /// - throws: An `Error` if the adaptation encounters an error.
-    ///
+    /// 
     /// - returns: The adapted `URLRequest`.
     func adapt(_ urlRequest: URLRequest) throws -> URLRequest
 }
@@ -45,11 +45,11 @@ public typealias RequestRetryCompletion = (_ shouldRetry: Bool, _ timeDelay: Tim
 /// and encountering an error.
 public protocol RequestRetrier {
     /// Determines whether the `Request` should be retried by calling the `completion` closure.
-    ///
+    /// 
     /// This operation is fully asychronous. Any amount of time can be taken to determine whether the request needs
     /// to be retried. The one requirement is that the completion closure is called to ensure the request is properly
     /// cleaned up after.
-    ///
+    /// 
     /// - parameter manager:    The session manager the request was executed on.
     /// - parameter request:    The request that failed due to the encountered error.
     /// - parameter error:      The error encountered when executing the request.
@@ -87,13 +87,13 @@ open class Request {
     // MARK: Properties
 
     /// The delegate for the underlying task.
-    open internal(set) var delegate: TaskDelegate {
+    open internal (set) var delegate: TaskDelegate {
         get {
-            taskDelegateLock.lock() ; defer { taskDelegateLock.unlock() }
+            taskDelegateLock.lock(); defer { taskDelegateLock.unlock() }
             return taskDelegate
         }
         set {
-            taskDelegateLock.lock() ; defer { taskDelegateLock.unlock() }
+            taskDelegateLock.lock(); defer { taskDelegateLock.unlock() }
             taskDelegate = newValue
         }
     }
@@ -111,7 +111,7 @@ open class Request {
     open var response: HTTPURLResponse? { return task?.response as? HTTPURLResponse }
 
     /// The number of times the request has been retried.
-    open internal(set) var retryCount: UInt = 0
+    open internal (set) var retryCount: UInt = 0
 
     let originalTask: TaskConvertible?
 
@@ -150,27 +150,26 @@ open class Request {
     // MARK: Authentication
 
     /// Associates an HTTP Basic credential with the request.
-    ///
+    /// 
     /// - parameter user:        The user.
     /// - parameter password:    The password.
     /// - parameter persistence: The URL credential persistence. `.ForSession` by default.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func authenticate(
         user: String,
         password: String,
         persistence: URLCredential.Persistence = .forSession)
-        -> Self
-    {
+        -> Self {
         let credential = URLCredential(user: user, password: password, persistence: persistence)
         return authenticate(usingCredential: credential)
     }
 
     /// Associates a specified credential with the request.
-    ///
+    /// 
     /// - parameter credential: The credential.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func authenticate(usingCredential credential: URLCredential) -> Self {
@@ -179,10 +178,10 @@ open class Request {
     }
 
     /// Returns a base64 encoded basic authentication credential as an authorization header tuple.
-    ///
+    /// 
     /// - parameter user:     The user.
     /// - parameter password: The password.
-    ///
+    /// 
     /// - returns: A tuple with Authorization header and credential value if encoding succeeds, `nil` otherwise.
     open static func authorizationHeader(user: String, password: String) -> (key: String, value: String)? {
         guard let data = "\(user):\(password)".data(using: .utf8) else { return nil }
@@ -196,7 +195,7 @@ open class Request {
 
     /// Resumes the request.
     open func resume() {
-        guard let task = task else { delegate.queue.isSuspended = false ; return }
+        guard let task = task else { delegate.queue.isSuspended = false; return }
 
         if startTime == nil { startTime = CFAbsoluteTimeGetCurrent() }
 
@@ -272,9 +271,9 @@ extension Request: CustomDebugStringConvertible {
         var components = ["$ curl -i"]
 
         guard let request = self.request,
-              let url = request.url,
-              let host = url.host
-        else {
+            let url = request.url,
+            let host = url.host
+            else {
             return "$ curl command could not be created"
         }
 
@@ -305,8 +304,7 @@ extension Request: CustomDebugStringConvertible {
         if session.configuration.httpShouldSetCookies {
             if
                 let cookieStorage = session.configuration.httpCookieStorage,
-                let cookies = cookieStorage.cookies(for: url), !cookies.isEmpty
-            {
+                let cookies = cookieStorage.cookies(for: url), !cookies.isEmpty {
                 let string = cookies.reduce("") { $0 + "\($1.name)=\($1.value);" }
                 components.append("-b \"\(string.substring(to: string.characters.index(before: string.endIndex)))\"")
             }
@@ -381,13 +379,13 @@ open class DataRequest: Request {
     // MARK: Stream
 
     /// Sets a closure to be called periodically during the lifecycle of the request as data is read from the server.
-    ///
+    /// 
     /// This closure returns the bytes most recently received from the server, not including data from previous calls.
     /// If this closure is set, data will only be available within this closure, and will not be saved elsewhere. It is
     /// also important to note that the server data in any `Response` object will be `nil`.
-    ///
+    /// 
     /// - parameter closure: The code to be executed periodically during the lifecycle of the request.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func stream(closure: ((Data) -> Void)? = nil) -> Self {
@@ -398,10 +396,10 @@ open class DataRequest: Request {
     // MARK: Progress
 
     /// Sets a closure to be called periodically during the lifecycle of the `Request` as data is read from the server.
-    ///
+    /// 
     /// - parameter queue:   The dispatch queue to execute the closure on.
     /// - parameter closure: The code to be executed periodically as data is read from the server.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
@@ -430,9 +428,9 @@ open class DownloadRequest: Request {
         public static let removePreviousFile = DownloadOptions(rawValue: 1 << 1)
 
         /// Creates a `DownloadFileDestinationOptions` instance with the specified raw value.
-        ///
+        /// 
         /// - parameter rawValue: The raw bitmask value for the option.
-        ///
+        /// 
         /// - returns: A new log level instance.
         public init(rawValue: UInt) {
             self.rawValue = rawValue
@@ -508,10 +506,10 @@ open class DownloadRequest: Request {
     // MARK: Progress
 
     /// Sets a closure to be called periodically during the lifecycle of the `Request` as data is read from the server.
-    ///
+    /// 
     /// - parameter queue:   The dispatch queue to execute the closure on.
     /// - parameter closure: The code to be executed periodically as data is read from the server.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func downloadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
@@ -523,16 +521,15 @@ open class DownloadRequest: Request {
 
     /// Creates a download file destination closure which uses the default file manager to move the temporary file to a
     /// file URL in the first available directory with the specified search path directory and search path domain mask.
-    ///
+    /// 
     /// - parameter directory: The search path directory. `.DocumentDirectory` by default.
     /// - parameter domain:    The search path domain mask. `.UserDomainMask` by default.
-    ///
+    /// 
     /// - returns: A download file destination closure.
     open class func suggestedDownloadDestination(
         for directory: FileManager.SearchPathDirectory = .documentDirectory,
         in domain: FileManager.SearchPathDomainMask = .userDomainMask)
-        -> DownloadFileDestination
-    {
+        -> DownloadFileDestination {
         return { temporaryURL, response in
             let directoryURLs = FileManager.default.urls(for: directory, in: domain)
 
@@ -603,13 +600,13 @@ open class UploadRequest: DataRequest {
 
     /// Sets a closure to be called periodically during the lifecycle of the `UploadRequest` as data is sent to
     /// the server.
-    ///
+    /// 
     /// After the data is sent to the server, the `progress(queue:closure:)` APIs can be used to monitor the progress
     /// of data being read from the server.
-    ///
+    /// 
     /// - parameter queue:   The dispatch queue to execute the closure on.
     /// - parameter closure: The code to be executed periodically as data is sent to the server.
-    ///
+    /// 
     /// - returns: The request.
     @discardableResult
     open func uploadProgress(queue: DispatchQueue = DispatchQueue.main, closure: @escaping ProgressHandler) -> Self {
@@ -622,26 +619,26 @@ open class UploadRequest: DataRequest {
 
 #if !os(watchOS)
 
-/// Specific type of `Request` that manages an underlying `URLSessionStreamTask`.
-@available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
-open class StreamRequest: Request {
-    enum Streamable: TaskConvertible {
-        case stream(hostName: String, port: Int)
-        case netService(NetService)
+    /// Specific type of `Request` that manages an underlying `URLSessionStreamTask`.
+    @available(iOS 9.0, macOS 10.11, tvOS 9.0, *)
+    open class StreamRequest: Request {
+        enum Streamable: TaskConvertible {
+            case stream(hostName: String, port: Int)
+            case netService(NetService)
 
-        func task(session: URLSession, adapter: RequestAdapter?, queue: DispatchQueue) throws -> URLSessionTask {
-            let task: URLSessionTask
+            func task(session: URLSession, adapter: RequestAdapter?, queue: DispatchQueue) throws -> URLSessionTask {
+                let task: URLSessionTask
 
-            switch self {
-            case let .stream(hostName, port):
-                task = queue.sync { session.streamTask(withHostName: hostName, port: port) }
-            case let .netService(netService):
-                task = queue.sync { session.streamTask(with: netService) }
+                switch self {
+                case let .stream(hostName, port):
+                    task = queue.sync { session.streamTask(withHostName: hostName, port: port) }
+                case let .netService(netService):
+                    task = queue.sync { session.streamTask(with: netService) }
+                }
+
+                return task
             }
-
-            return task
         }
     }
-}
 
 #endif

@@ -27,7 +27,7 @@ import Foundation
 extension String {
     init(count: Int, repeatedString: String) {
         var value = ""
-        for _ in 0..<count { value += repeatedString }
+        for _ in 0 ..< count { value += repeatedString }
         self = value
     }
 }

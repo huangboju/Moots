@@ -7,10 +7,10 @@
 //
 
 class CurveRefreshFooterView: CurveRefreshView {
-    
-    override func progressDidSet(completion: @escaping (Bool) -> ()) {
 
-        let diff = associatedScrollView.contentOffset.y - (associatedScrollView.contentSize.height - associatedScrollView.frame.height) - pullDistance + 10.0
+    override func progressDidSet(completion: @escaping(Bool) -> ()) {
+
+        let diff = associatedScrollView.contentOffset.y - (associatedScrollView.contentSize.height - associatedScrollView.frame.height) - pullDistance // 控制刷新距离
 
         if diff > 0 {
             if !associatedScrollView.isTracking && !isHidden && !notTracking {
@@ -23,7 +23,7 @@ class CurveRefreshFooterView: CurveRefreshView {
                     guard let strongSelf = self else { return }
                     strongSelf.associatedScrollView.contentInset.top = strongSelf.originOffset
                     strongSelf.associatedScrollView.contentInset.bottom = strongSelf.pullDistance
-                    }, completion: completion)
+                }, completion: completion)
             }
 
             if !loading {
@@ -68,7 +68,7 @@ extension CurveRefreshFooterView {
             let contentHight = contentSize.height
             let height = contentHight - associatedScrollView.frame.height
             if contentOffset.y >= height {
-                center.y = contentHight + (contentOffset.y - height) / 2
+                center.y = contentHight + (contentOffset.y - height) / 2 - 16
 
                 progress = max(0.0, min((contentOffset.y - height) / pullDistance, 1.0))
             }

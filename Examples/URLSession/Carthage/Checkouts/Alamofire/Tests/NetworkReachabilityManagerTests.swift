@@ -210,17 +210,17 @@ class NetworkReachabilityManagerTestCase: BaseTestCase {
         XCTAssertEqual(networkReachabilityStatus, .reachable(.ethernetOrWiFi))
     }
 
-#if os(iOS)
-    func testThatManagerReturnsReachableOnWWANStatusWhenIsWWAN() {
-        // Given
-        let manager = NetworkReachabilityManager()
-        let flags: SCNetworkReachabilityFlags = [.reachable, .isWWAN]
+    #if os(iOS)
+        func testThatManagerReturnsReachableOnWWANStatusWhenIsWWAN() {
+            // Given
+            let manager = NetworkReachabilityManager()
+            let flags: SCNetworkReachabilityFlags = [.reachable, .isWWAN]
 
-        // When
-        let networkReachabilityStatus = manager?.networkReachabilityStatusForFlags(flags)
+            // When
+            let networkReachabilityStatus = manager?.networkReachabilityStatusForFlags(flags)
 
-        // Then
-        XCTAssertEqual(networkReachabilityStatus, .reachable(.wwan))
-    }
-#endif
+            // Then
+            XCTAssertEqual(networkReachabilityStatus, .reachable(.wwan))
+        }
+    #endif
 }

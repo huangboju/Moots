@@ -44,7 +44,7 @@ public struct DefaultDataResponse {
     var _metrics: AnyObject?
 
     /// Creates a `DefaultDataResponse` instance from the specified parameters.
-    ///
+    /// 
     /// - Parameters:
     ///   - request:  The URL request sent to the server.
     ///   - response: The server's response to the URL request.
@@ -58,8 +58,7 @@ public struct DefaultDataResponse {
         data: Data?,
         error: Error?,
         timeline: Timeline = Timeline(),
-        metrics: AnyObject? = nil)
-    {
+        metrics: AnyObject? = nil) {
         self.request = request
         self.response = response
         self.data = data
@@ -96,21 +95,20 @@ public struct DataResponse<Value> {
     var _metrics: AnyObject?
 
     /// Creates a `DataResponse` instance with the specified parameters derived from response serialization.
-    ///
+    /// 
     /// - parameter request:  The URL request sent to the server.
     /// - parameter response: The server's response to the URL request.
     /// - parameter data:     The data returned by the server.
     /// - parameter result:   The result of response serialization.
     /// - parameter timeline: The timeline of the complete lifecycle of the `Request`. Defaults to `Timeline()`.
-    ///
+    /// 
     /// - returns: The new `DataResponse` instance.
     public init(
         request: URLRequest?,
         response: HTTPURLResponse?,
         data: Data?,
         result: Result<Value>,
-        timeline: Timeline = Timeline())
-    {
+        timeline: Timeline = Timeline()) {
         self.request = request
         self.response = response
         self.data = data
@@ -171,7 +169,7 @@ public struct DefaultDownloadResponse {
     var _metrics: AnyObject?
 
     /// Creates a `DefaultDownloadResponse` instance from the specified parameters.
-    ///
+    /// 
     /// - Parameters:
     ///   - request:        The URL request sent to the server.
     ///   - response:       The server's response to the URL request.
@@ -189,8 +187,7 @@ public struct DefaultDownloadResponse {
         resumeData: Data?,
         error: Error?,
         timeline: Timeline = Timeline(),
-        metrics: AnyObject? = nil)
-    {
+        metrics: AnyObject? = nil) {
         self.request = request
         self.response = response
         self.temporaryURL = temporaryURL
@@ -235,7 +232,7 @@ public struct DownloadResponse<Value> {
     var _metrics: AnyObject?
 
     /// Creates a `DownloadResponse` instance with the specified parameters derived from response serialization.
-    ///
+    /// 
     /// - parameter request:        The URL request sent to the server.
     /// - parameter response:       The server's response to the URL request.
     /// - parameter temporaryURL:   The temporary destination URL of the data returned from the server.
@@ -243,7 +240,7 @@ public struct DownloadResponse<Value> {
     /// - parameter resumeData:     The resume data generated if the request was cancelled.
     /// - parameter result:         The result of response serialization.
     /// - parameter timeline:       The timeline of the complete lifecycle of the `Request`. Defaults to `Timeline()`.
-    ///
+    /// 
     /// - returns: The new `DownloadResponse` instance.
     public init(
         request: URLRequest?,
@@ -252,8 +249,7 @@ public struct DownloadResponse<Value> {
         destinationURL: URL?,
         resumeData: Data?,
         result: Result<Value>,
-        timeline: Timeline = Timeline())
-    {
+        timeline: Timeline = Timeline()) {
         self.request = request
         self.response = response
         self.temporaryURL = temporaryURL
@@ -314,32 +310,32 @@ extension Response {
 
 @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DefaultDataResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
+    #if !os(watchOS)
+        /// The task metrics containing the request / response statistics.
+        public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
+    #endif
 }
 
 @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DataResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
+    #if !os(watchOS)
+        /// The task metrics containing the request / response statistics.
+        public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
+    #endif
 }
 
 @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DefaultDownloadResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
+    #if !os(watchOS)
+        /// The task metrics containing the request / response statistics.
+        public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
+    #endif
 }
 
 @available(iOS 10.0, macOS 10.12, tvOS 10.0, *)
 extension DownloadResponse: Response {
-#if !os(watchOS)
-    /// The task metrics containing the request / response statistics.
-    public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
-#endif
+    #if !os(watchOS)
+        /// The task metrics containing the request / response statistics.
+        public var metrics: URLSessionTaskMetrics? { return _metrics as? URLSessionTaskMetrics }
+    #endif
 }

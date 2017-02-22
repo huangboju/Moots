@@ -98,9 +98,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -130,9 +130,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(revokedURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -161,9 +161,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -196,9 +196,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(revokedURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -233,9 +233,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -269,9 +269,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(revokedURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -305,9 +305,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -345,9 +345,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -379,9 +379,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -407,9 +407,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -435,9 +435,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -469,9 +469,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -503,9 +503,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -531,9 +531,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -559,9 +559,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -589,9 +589,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -621,9 +621,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -651,9 +651,9 @@ class TLSEvaluationExpiredLeafCertificateTestCase: BaseTestCase {
         // When
         manager.request(expiredURLString)
             .response { resp in
-                error = resp.error
-                expectation.fulfill()
-            }
+            error = resp.error
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 

@@ -186,9 +186,9 @@ class RequestResponseTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString, parameters: ["foo": "bar"])
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -212,12 +212,12 @@ class RequestResponseTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString)
             .downloadProgress { progress in
-                progressValues.append(progress.fractionCompleted)
-            }
+            progressValues.append(progress.fractionCompleted)
+        }
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -255,15 +255,15 @@ class RequestResponseTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString)
             .downloadProgress { progress in
-                progressValues.append(progress.fractionCompleted)
-            }
+            progressValues.append(progress.fractionCompleted)
+        }
             .stream { data in
-                accumulatedData.append(data)
-            }
+            accumulatedData.append(data)
+        }
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -305,9 +305,9 @@ class RequestResponseTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString, method: .post, parameters: parameters)
             .responseJSON { closureResponse in
-                response = closureResponse
-                expectation.fulfill()
-            }
+            response = closureResponse
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -357,9 +357,9 @@ class RequestResponseTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString, method: .post, parameters: parameters)
             .responseJSON { closureResponse in
-                response = closureResponse
-                expectation.fulfill()
-            }
+            response = closureResponse
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -382,7 +382,7 @@ class RequestResponseTestCase: BaseTestCase {
 // MARK: -
 
 extension Request {
-    fileprivate func preValidate(operation: @escaping (Void) -> Void) -> Self {
+    fileprivate func preValidate(operation: @escaping(Void) -> Void) -> Self {
         delegate.queue.addOperation {
             operation()
         }
@@ -390,7 +390,7 @@ extension Request {
         return self
     }
 
-    fileprivate func postValidate(operation: @escaping (Void) -> Void) -> Self {
+    fileprivate func postValidate(operation: @escaping(Void) -> Void) -> Self {
         delegate.queue.addOperation {
             operation()
         }
@@ -412,16 +412,16 @@ class RequestExtensionTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString)
             .preValidate {
-                responses.append("preValidate")
-            }
+            responses.append("preValidate")
+        }
             .validate()
             .postValidate {
-                responses.append("postValidate")
-            }
+            responses.append("postValidate")
+        }
             .response { _ in
-                responses.append("response")
-                expectation.fulfill()
-            }
+            responses.append("response")
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -482,7 +482,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         headers["Accept-Language"] = "en-US"
 
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = headers
+            configuration.httpAdditionalHeaders = headers
 
         let manager = SessionManager(configuration: configuration)
         manager.startRequestsImmediately = false
@@ -495,7 +495,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         headers["Content-Type"] = "application/json"
 
         let configuration = URLSessionConfiguration.default
-        configuration.httpAdditionalHeaders = headers
+            configuration.httpAdditionalHeaders = headers
 
         let manager = SessionManager(configuration: configuration)
         manager.startRequestsImmediately = false
@@ -505,7 +505,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
 
     let managerDisallowingCookies: SessionManager = {
         let configuration = URLSessionConfiguration.default
-        configuration.httpShouldSetCookies = false
+            configuration.httpShouldSetCookies = false
 
         let manager = SessionManager(configuration: configuration)
         manager.startRequestsImmediately = false
@@ -524,7 +524,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let components = cURLCommandComponents(for: request)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
         XCTAssertFalse(components.contains("-X"))
         XCTAssertEqual(components.last, "\"\(urlString)\"")
     }
@@ -534,12 +534,12 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let urlString = "https://httpbin.org/get"
 
         // When
-        let headers = [ "Accept-Language": "en-GB" ]
+        let headers = ["Accept-Language": "en-GB"]
         let request = managerWithAcceptLanguageHeader.request(urlString, headers: headers)
         let components = cURLCommandComponents(for: request)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
         XCTAssertFalse(components.contains("-X"))
         XCTAssertEqual(components.last, "\"\(urlString)\"")
 
@@ -558,8 +558,8 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let components = cURLCommandComponents(for: request)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
-        XCTAssertEqual(components[3..<5], ["-X", "POST"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[3 ..< 5], ["-X", "POST"])
         XCTAssertEqual(components.last, "\"\(urlString)\"")
     }
 
@@ -578,8 +578,8 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let components = cURLCommandComponents(for: request)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
-        XCTAssertEqual(components[3..<5], ["-X", "POST"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[3 ..< 5], ["-X", "POST"])
 
         XCTAssertNotNil(request.debugDescription.range(of: "-H \"Content-Type: application/json\""))
         XCTAssertNotNil(request.debugDescription.range(of: "-d \"{"))
@@ -609,10 +609,10 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         let components = cURLCommandComponents(for: request)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
-        XCTAssertEqual(components[3..<5], ["-X", "POST"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[3 ..< 5], ["-X", "POST"])
         XCTAssertEqual(components.last, "\"\(urlString)\"")
-        XCTAssertEqual(components[5..<6], ["-b"])
+        XCTAssertEqual(components[5 ..< 6], ["-b"])
     }
 
     func testPOSTRequestWithCookiesDisabledDebugDescription() {
@@ -671,7 +671,7 @@ class RequestDebugDescriptionTestCase: BaseTestCase {
         debugPrint(request!)
 
         // Then
-        XCTAssertEqual(components[0..<3], ["$", "curl", "-i"])
+        XCTAssertEqual(components[0 ..< 3], ["$", "curl", "-i"])
         XCTAssertTrue(components.contains("-X"))
         XCTAssertEqual(components.last, "\"\(urlString)\"")
 

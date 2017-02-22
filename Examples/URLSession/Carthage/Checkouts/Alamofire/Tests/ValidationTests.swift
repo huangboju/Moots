@@ -39,18 +39,18 @@ class StatusCodeValidationTestCase: BaseTestCase {
 
         // When
         Alamofire.request(urlString)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200 ..< 300)
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200 ..< 300)
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -73,15 +73,15 @@ class StatusCodeValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate(statusCode: [200])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(statusCode: [200])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
+            downloadError = resp.error
+            expectation2.fulfill()
         }
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -114,15 +114,15 @@ class StatusCodeValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate(statusCode: [])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(statusCode: [])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
+            downloadError = resp.error
+            expectation2.fulfill()
         }
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -161,18 +161,18 @@ class ContentTypeValidationTestCase: BaseTestCase {
             .validate(contentType: ["application/json;charset=utf8"])
             .validate(contentType: ["application/json;q=0.8;charset=utf8"])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: ["application/json"])
             .validate(contentType: ["application/json;charset=utf8"])
             .validate(contentType: ["application/json;q=0.8;charset=utf8"])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -197,18 +197,18 @@ class ContentTypeValidationTestCase: BaseTestCase {
             .validate(contentType: ["application/*"])
             .validate(contentType: ["*/json"])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: ["*/*"])
             .validate(contentType: ["application/*"])
             .validate(contentType: ["*/json"])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -231,16 +231,16 @@ class ContentTypeValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate(contentType: ["application/octet-stream"])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: ["application/octet-stream"])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -273,16 +273,16 @@ class ContentTypeValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate(contentType: [])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: [])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -315,16 +315,16 @@ class ContentTypeValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate(contentType: [])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: [])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -359,8 +359,7 @@ class ContentTypeValidationTestCase: BaseTestCase {
             override func download(
                 _ urlRequest: URLRequestConvertible,
                 to destination: DownloadRequest.DownloadFileDestination? = nil)
-                -> DownloadRequest
-            {
+                -> DownloadRequest {
                 do {
                     let originalRequest = try urlRequest.asURLRequest()
                     let originalTask = DownloadRequest.Downloadable.request(originalRequest)
@@ -432,16 +431,16 @@ class ContentTypeValidationTestCase: BaseTestCase {
         manager.request(urlString, method: .delete)
             .validate(contentType: ["*/*"])
             .response { resp in
-                requestResponse = resp
-                expectation1.fulfill()
-            }
+            requestResponse = resp
+            expectation1.fulfill()
+        }
 
         manager.download(urlString, method: .delete)
             .validate(contentType: ["*/*"])
             .response { resp in
-                downloadResponse = resp
-                expectation2.fulfill()
-            }
+            downloadResponse = resp
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -478,20 +477,20 @@ class MultipleValidationTestCase: BaseTestCase {
 
         // When
         Alamofire.request(urlString)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200 ..< 300)
             .validate(contentType: ["application/json"])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
-            .validate(statusCode: 200..<300)
+            .validate(statusCode: 200 ..< 300)
             .validate(contentType: ["application/json"])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -512,20 +511,20 @@ class MultipleValidationTestCase: BaseTestCase {
 
         // When
         Alamofire.request(urlString)
-            .validate(statusCode: 400..<600)
+            .validate(statusCode: 400 ..< 600)
             .validate(contentType: ["application/octet-stream"])
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
-            .validate(statusCode: 400..<600)
+            .validate(statusCode: 400 ..< 600)
             .validate(contentType: ["application/octet-stream"])
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -556,19 +555,19 @@ class MultipleValidationTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString)
             .validate(contentType: ["application/octet-stream"])
-            .validate(statusCode: 400..<600)
+            .validate(statusCode: 400 ..< 600)
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(contentType: ["application/octet-stream"])
-            .validate(statusCode: 400..<600)
+            .validate(statusCode: 400 ..< 600)
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -635,16 +634,16 @@ class AutomaticValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validate()
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate()
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -821,29 +820,29 @@ class CustomValidationTestCase: BaseTestCase {
         // When
         Alamofire.request(urlString)
             .validate { request, response, data in
-                guard data != nil else { return .failure(ValidationError.missingData) }
-                return .success
-            }
+            guard data != nil else { return .failure(ValidationError.missingData) }
+            return .success
+        }
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate { request, response, temporaryURL, destinationURL in
-                guard let fileURL = temporaryURL else { return .failure(ValidationError.missingFile) }
+            guard let fileURL = temporaryURL else { return .failure(ValidationError.missingFile) }
 
-                do {
-                    let _ = try Data(contentsOf: fileURL)
-                    return .success
-                } catch {
-                    return .failure(ValidationError.fileReadFailed)
-                }
+            do {
+                let _ = try Data(contentsOf: fileURL)
+                return .success
+            } catch {
+                return .failure(ValidationError.fileReadFailed)
             }
+        }
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -867,17 +866,17 @@ class CustomValidationTestCase: BaseTestCase {
             .validate { _, _, _ in .failure(ValidationError.missingData) }
             .validate { _, _, _ in .failure(ValidationError.missingFile) } // should be ignored
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate { _, _, _, _ in .failure(ValidationError.missingFile) }
             .validate { _, _, _, _ in .failure(ValidationError.fileReadFailed) } // should be ignored
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -900,15 +899,15 @@ class CustomValidationTestCase: BaseTestCase {
         Alamofire.request(urlString)
             .validateDataExists()
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
+            requestError = resp.error
+            expectation1.fulfill()
         }
 
         Alamofire.download(urlString)
             .validateDataExists()
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
+            downloadError = resp.error
+            expectation2.fulfill()
         }
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -933,17 +932,17 @@ class CustomValidationTestCase: BaseTestCase {
             .validate(with: ValidationError.missingData)
             .validate(with: ValidationError.missingFile) // should be ignored
             .response { resp in
-                requestError = resp.error
-                expectation1.fulfill()
-            }
+            requestError = resp.error
+            expectation1.fulfill()
+        }
 
         Alamofire.download(urlString)
             .validate(with: ValidationError.missingFile)
             .validate(with: ValidationError.fileReadFailed) // should be ignored
             .response { resp in
-                downloadError = resp.error
-                expectation2.fulfill()
-            }
+            downloadError = resp.error
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 

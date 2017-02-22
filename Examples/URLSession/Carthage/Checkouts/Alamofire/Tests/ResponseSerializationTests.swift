@@ -736,7 +736,6 @@ class DownloadResponseSerializationTestCase: BaseTestCase {
         }
     }
 
-
     func testThatStringResponseSerializerFailsWhenFileURLIsInvalid() {
         // Given
         let serializer = DownloadRequest.stringResponseSerializer()

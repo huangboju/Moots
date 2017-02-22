@@ -8,9 +8,9 @@
 
 typealias RefreshingBlock = (CurveRefreshView) -> ()
 class CurveRefreshHeaderView: CurveRefreshView {
-    
-    override func progressDidSet(completion: @escaping (Bool) -> ())  {
-        center = CGPoint(x: center.x, y: -fabs(associatedScrollView.contentOffset.y + originOffset) / 2)
+
+    override func progressDidSet(completion: @escaping(Bool) -> ()) {
+        center.y = -fabs(associatedScrollView.contentOffset.y + originOffset) / 2
 
         let diff = fabs(associatedScrollView.contentOffset.y + originOffset) - pullDistance + 10
 
@@ -38,9 +38,9 @@ class CurveRefreshHeaderView: CurveRefreshView {
 
     override func initialize() {
         self.tag = 12580
-        associatedScrollView.addObserver(self, forKeyPath: "contentOffset", options: [.new, .old], context: nil)
     }
 
+    // 自动刷新
     func triggerPulling() {
         associatedScrollView.setContentOffset(CGPoint(x: 0, y: -pullDistance - originOffset), animated: true)
     }

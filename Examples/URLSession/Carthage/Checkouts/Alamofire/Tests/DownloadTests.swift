@@ -78,9 +78,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, to: destination)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -115,9 +115,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, to: destination)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
             .cancel()
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -143,12 +143,12 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString)
             .downloadProgress { progress in
-                progressValues.append(progress.fractionCompleted)
-            }
+            progressValues.append(progress.fractionCompleted)
+        }
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -185,9 +185,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, parameters: parameters)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -204,8 +204,7 @@ class DownloadResponseTestCase: BaseTestCase {
             let data = try? Data(contentsOf: temporaryURL),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)),
             let json = jsonObject as? [String: Any],
-            let args = json["args"] as? [String: String]
-        {
+            let args = json["args"] as? [String: String] {
             XCTAssertEqual(args["foo"], "bar")
         } else {
             XCTFail("args parameter in JSON should not be nil")
@@ -225,9 +224,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, headers: headers, to: destination)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -242,8 +241,7 @@ class DownloadResponseTestCase: BaseTestCase {
             let data = try? Data(contentsOf: fileURL),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
             let json = jsonObject as? [String: Any],
-            let headers = json["headers"] as? [String: String]
-        {
+            let headers = json["headers"] as? [String: String] {
             XCTAssertEqual(headers["Authorization"], "123456")
         } else {
             XCTFail("headers parameter in JSON should not be nil")
@@ -258,11 +256,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [])})
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, []) })
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -289,11 +287,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.createIntermediateDirectories])})
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.createIntermediateDirectories]) })
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -319,11 +317,11 @@ class DownloadResponseTestCase: BaseTestCase {
             var response: DefaultDownloadResponse?
 
             // When
-            Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [])})
+            Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, []) })
                 .response { resp in
-                    response = resp
-                    expectation.fulfill()
-                }
+                response = resp
+                expectation.fulfill()
+            }
 
             waitForExpectations(timeout: timeout, handler: nil)
 
@@ -358,11 +356,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.removePreviousFile])})
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.removePreviousFile]) })
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -391,9 +389,9 @@ class DownloadResumeDataTestCase: BaseTestCase {
         // When
         let download = Alamofire.download(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         download.cancel()
 
@@ -518,12 +516,12 @@ class DownloadResumeDataTestCase: BaseTestCase {
 
         Alamofire.download(resumingWith: resumeData)
             .downloadProgress { progress in
-                progressValues.append(progress.fractionCompleted)
-            }
+            progressValues.append(progress.fractionCompleted)
+        }
             .responseData { resp in
-                response2 = resp
-                expectation2.fulfill()
-            }
+            response2 = resp
+            expectation2.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 

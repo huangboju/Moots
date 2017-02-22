@@ -26,7 +26,7 @@ import Foundation
 
 /// `AFError` is the error type returned by Alamofire. It encompasses a few different types of errors, each with
 /// their own associated reasons.
-///
+/// 
 /// - invalidURL:                  Returned when a `URLConvertible` type fails to create a valid `URL`.
 /// - parameterEncodingFailed:     Returned when a parameter encoding object throws an error during the encoding process.
 /// - multipartEncodingFailed:     Returned when some step in the multipart encoding process fails.
@@ -34,7 +34,7 @@ import Foundation
 /// - responseSerializationFailed: Returned when a response serializer encounters an error in the serialization process.
 public enum AFError: Error {
     /// The underlying reason the parameter encoding error occurred.
-    ///
+    /// 
     /// - missingURL:                 The URL request did not have a URL to encode.
     /// - jsonEncodingFailed:         JSON serialization failed with an underlying system error during the
     ///                               encoding process.
@@ -47,7 +47,7 @@ public enum AFError: Error {
     }
 
     /// The underlying reason the multipart encoding error occurred.
-    ///
+    /// 
     /// - bodyPartURLInvalid:                   The `fileURL` provided for reading an encodable body part isn't a
     ///                                         file URL.
     /// - bodyPartFilenameInvalid:              The filename of the `fileURL` provided has either an empty
@@ -90,7 +90,7 @@ public enum AFError: Error {
     }
 
     /// The underlying reason the response validation error occurred.
-    ///
+    /// 
     /// - dataFileNil:             The data file containing the server response did not exist.
     /// - dataFileReadFailed:      The data file containing the server response could not be read.
     /// - missingContentType:      The response did not contain a `Content-Type` and the `acceptableContentTypes`
@@ -107,7 +107,7 @@ public enum AFError: Error {
     }
 
     /// The underlying reason the response serialization error occurred.
-    ///
+    /// 
     /// - inputDataNil:                    The server response contained no data.
     /// - inputDataNilOrZeroLength:        The server response contained no data or the data was zero length.
     /// - inputFileNil:                    The file containing the server response did not exist.
@@ -274,10 +274,10 @@ extension AFError.MultipartEncodingFailureReason {
     var url: URL? {
         switch self {
         case .bodyPartURLInvalid(let url), .bodyPartFilenameInvalid(let url), .bodyPartFileNotReachable(let url),
-             .bodyPartFileIsDirectory(let url), .bodyPartFileSizeNotAvailable(let url),
-             .bodyPartInputStreamCreationFailed(let url), .outputStreamCreationFailed(let url),
-             .outputStreamFileAlreadyExists(let url), .outputStreamURLInvalid(let url),
-             .bodyPartFileNotReachableWithError(let url, _), .bodyPartFileSizeQueryFailedWithError(let url, _):
+            .bodyPartFileIsDirectory(let url), .bodyPartFileSizeNotAvailable(let url),
+            .bodyPartInputStreamCreationFailed(let url), .outputStreamCreationFailed(let url),
+            .outputStreamFileAlreadyExists(let url), .outputStreamURLInvalid(let url),
+            .bodyPartFileNotReachableWithError(let url, _), .bodyPartFileSizeQueryFailedWithError(let url, _):
             return url
         default:
             return nil
@@ -287,7 +287,7 @@ extension AFError.MultipartEncodingFailureReason {
     var underlyingError: Error? {
         switch self {
         case .bodyPartFileNotReachableWithError(_, let error), .bodyPartFileSizeQueryFailedWithError(_, let error),
-             .outputStreamWriteFailed(let error), .inputStreamReadFailed(let error):
+            .outputStreamWriteFailed(let error), .inputStreamReadFailed(let error):
             return error
         default:
             return nil
@@ -388,7 +388,7 @@ extension AFError.MultipartEncodingFailureReason {
         case .bodyPartFileNotReachableWithError(let url, let error):
             return (
                 "The system returned an error while checking the provided URL for " +
-                "reachability.\nURL: \(url)\nError: \(error)"
+                    "reachability.\nURL: \(url)\nError: \(error)"
             )
         case .bodyPartFileIsDirectory(let url):
             return "The URL provided is a directory: \(url)"
@@ -397,7 +397,7 @@ extension AFError.MultipartEncodingFailureReason {
         case .bodyPartFileSizeQueryFailedWithError(let url, let error):
             return (
                 "The system returned an error while attempting to fetch the file size from the " +
-                "provided URL.\nURL: \(url)\nError: \(error)"
+                    "provided URL.\nURL: \(url)\nError: \(error)"
             )
         case .bodyPartInputStreamCreationFailed(let url):
             return "Failed to create an InputStream for the provided URL: \(url)"
@@ -446,12 +446,12 @@ extension AFError.ResponseValidationFailureReason {
         case .missingContentType(let types):
             return (
                 "Response Content-Type was missing and acceptable content types " +
-                "(\(types.joined(separator: ","))) do not match \"*/*\"."
+                    "(\(types.joined(separator: ","))) do not match \"*/*\"."
             )
         case .unacceptableContentType(let acceptableTypes, let responseType):
             return (
                 "Response Content-Type \"\(responseType)\" does not match any acceptable types: " +
-                "\(acceptableTypes.joined(separator: ","))."
+                    "\(acceptableTypes.joined(separator: ","))."
             )
         case .unacceptableStatusCode(let code):
             return "Response status code was unacceptable: \(code)."

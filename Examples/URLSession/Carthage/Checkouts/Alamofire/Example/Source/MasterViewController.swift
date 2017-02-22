@@ -48,8 +48,7 @@ class MasterViewController: UITableViewController {
 
             if
                 let navigationController = controllers.last as? UINavigationController,
-                let topViewController = navigationController.topViewController as? DetailViewController
-            {
+                let topViewController = navigationController.topViewController as? DetailViewController {
                 detailViewController = topViewController
             }
         }
@@ -60,8 +59,7 @@ class MasterViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if
             let navigationController = segue.destination as? UINavigationController,
-            let detailViewController = navigationController.topViewController as? DetailViewController
-        {
+            let detailViewController = navigationController.topViewController as? DetailViewController {
             func requestForSegue(_ segue: UIStoryboardSegue) -> Request? {
                 switch segue.identifier! {
                 case "GET":
@@ -94,4 +92,3 @@ class MasterViewController: UITableViewController {
         }
     }
 }
-

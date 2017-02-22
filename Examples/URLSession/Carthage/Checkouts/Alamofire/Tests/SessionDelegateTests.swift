@@ -141,9 +141,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -169,9 +169,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -204,9 +204,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -239,9 +239,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -274,9 +274,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -309,9 +309,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -334,7 +334,7 @@ class SessionDelegateTestCase: BaseTestCase {
         let expectation = self.expectation(description: "Request should redirect to \(redirectURLString)")
         let delegate: SessionDelegate = manager.delegate
         var redirectExpectations = [XCTestExpectation]()
-        for index in 0..<redirectCount {
+        for index in 0 ..< redirectCount {
             redirectExpectations.insert(self.expectation(description: "Redirect #\(index) callback was received"), at: 0)
         }
 
@@ -353,9 +353,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -380,7 +380,7 @@ class SessionDelegateTestCase: BaseTestCase {
 
         var redirectExpectations = [XCTestExpectation]()
 
-        for index in 0..<redirectCount {
+        for index in 0 ..< redirectCount {
             redirectExpectations.insert(self.expectation(description: "Redirect #\(index) callback was received"), at: 0)
         }
 
@@ -399,9 +399,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -434,8 +434,7 @@ class SessionDelegateTestCase: BaseTestCase {
             if
                 let originalRequest = task.originalRequest,
                 let headers = originalRequest.allHTTPHeaderFields,
-                let authorizationHeaderValue = headers["Authorization"]
-            {
+                let authorizationHeaderValue = headers["Authorization"] {
                 var mutableRequest = request
                 mutableRequest.setValue(authorizationHeaderValue, forHTTPHeaderField: "Authorization")
                 redirectedRequest = mutableRequest
@@ -451,9 +450,9 @@ class SessionDelegateTestCase: BaseTestCase {
         // When
         manager.request(urlString, headers: headers)
             .responseJSON { closureResponse in
-                response = closureResponse
-                expectation.fulfill()
-            }
+            response = closureResponse
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 

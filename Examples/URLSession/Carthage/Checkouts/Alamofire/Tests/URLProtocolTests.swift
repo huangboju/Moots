@@ -122,7 +122,7 @@ class URLProtocolTestCase: BaseTestCase {
         manager = {
             let configuration: URLSessionConfiguration = {
                 let configuration = URLSessionConfiguration.default
-                configuration.protocolClasses = [ProxyURLProtocol.self]
+                    configuration.protocolClasses = [ProxyURLProtocol.self]
                 configuration.httpAdditionalHeaders = ["session-configuration-header": "foo"]
 
                 return configuration
@@ -150,9 +150,9 @@ class URLProtocolTestCase: BaseTestCase {
         // When
         manager.request(urlRequest)
             .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+            response = resp
+            expectation.fulfill()
+        }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
