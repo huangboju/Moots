@@ -162,11 +162,11 @@ class JokeController: UITableViewController {
         UIApplication.shared.openURL(URL(string: urlStr)!)
     }
 
-    func mqq(sender: UIMenuController) {
+    func mqq() {
         openURL(type: #function)
     }
 
-    func wechat(sender: UIMenuController) {
+    func wechat() {
         openURL(type: #function)
     }
 
