@@ -1570,6 +1570,10 @@ Whisper是一个组件，它将使显示消息和应用程序内通知的任务�
     <ul>
       <li>[DCURLRouter](https://github.com/DarielChen/DCURLRouter)(OC)</li>
       <li>[WLRRoute](https://github.com/Neojoke/WLRRoute)(OC)</li>
+      <li>[HHRouter](https://github.com/lightory/HHRouter)(OC)</li>
+      <li>[JLRoutes](https://github.com/joeldev/JLRoutes)(OC)</li>
+      <li>[routable-ios](https://github.com/clayallsopp/routable-ios)(OC)</li>
+      <li>[MGJRouter](https://github.com/meili/MGJRouter)(OC)</li>
       <li>[FNUrlRoute](https://github.com/Fnoz/FNUrlRoute)(Swift)</li>
     </ul>
 </details>
