@@ -199,6 +199,12 @@ class JokeController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
         if let cell = tableView.cellForRow(at: indexPath) {
             becomeFirstResponder()  // 这里先注释
+            /*
+                The first responder is designated to receive events first. Typically, the first responder is a view object. An object becomes the first responder by doing two things:
+             
+                1. Overriding the canBecomeFirstResponder method to return YES.
+                2. Receiving a becomeFirstResponder message. If necessary, an object can send itself this message.
+             */
             let qqItem = UIMenuItem(title: "QQ", action: #selector(mqq))
             let wechatItem = UIMenuItem(title: "wechat", action: #selector(wechat))
             let menuController = UIMenuController.shared
