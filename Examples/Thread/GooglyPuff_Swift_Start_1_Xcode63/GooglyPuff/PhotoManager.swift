@@ -34,7 +34,7 @@ class PhotoManager {
     }
     return photosCopy
   }
-  
+
   func addPhoto(photo: Photo) {
     dispatch_barrier_async(concurrentPhotoQueue) { // 1
       self._photos.append(photo) // 2

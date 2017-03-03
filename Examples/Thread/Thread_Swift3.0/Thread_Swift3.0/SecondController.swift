@@ -357,17 +357,23 @@ class SecondController: FormViewController {
             }
         }
         
-        let workItem = DispatchWorkItem(flags: .barrier) {
-            print("\n第一批执行完毕后才会执行第二批\n\(Thread.current)\n")
-        }
-        
-        concurrentQueue.async(execute: workItem)
-        
-        
         for i in 0...3 {
-            concurrentQueue.async {
+            concurrentQueue.async(flags: .barrier)  {
                 self.currentThreadSleep(Double(i))
                 print("第二批：\(i.toEmoji)\(Thread.current)")
+            }
+        }
+
+        let workItem = DispatchWorkItem(flags: .barrier) {
+            print("\n第二批执行完毕后才会执行第三批\n\(Thread.current)\n")
+        }
+
+        concurrentQueue.async(execute: workItem)
+
+        for i in 0...3 {
+            concurrentQueue.async  {
+                self.currentThreadSleep(Double(i))
+                print("第三批：\(i.toEmoji)\(Thread.current)")
             }
         }
         
