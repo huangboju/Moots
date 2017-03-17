@@ -8,17 +8,13 @@
 
 import SafariServices
 
-enum Constans {
-    static let screenW = UIScreen.main.bounds.width
-}
-
 class SettingCell: UITableViewCell {
 
     override func layoutSubviews() {
         super.layoutSubviews()
         textLabel?.sizeToFit()
         let size = textLabel?.frame.size ?? .zero
-        textLabel?.frame.origin =  CGPoint(x: (Constans.screenW - size.width) / 2, y: (frame.height - size.height) / 2)
+        textLabel?.frame.origin =  CGPoint(x: (Constants.screenW - size.width) / 2, y: (frame.height - size.height) / 2)
     }
 }
 
@@ -32,9 +28,14 @@ class SettingController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        navigationController?.navigationBar.barTintColor = Constants.backgroundColor
+        
+        tableView.backgroundColor = Constants.backgroundColor
 
         title = "设置"
-        
+
         tableView.register(SettingCell.self, forCellReuseIdentifier: "cell")
         
         tableView.addSubview(qrcodeImageView)
@@ -69,12 +70,13 @@ class SettingController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
-    
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 17)
         cell.textLabel?.text = "更新"
-        cell.textLabel?.textColor = cell.tintColor
+        cell.backgroundColor = UIColor.black
+        cell.textLabel?.textColor = Constants.textColor
         return cell
     }
 

@@ -28,3 +28,49 @@ class ViewController: UIViewController {
 
 }
 
+extension DispatchQueue {
+    
+    private static var _onceTracker = [String]()
+    
+    public class func once(token: String, block: () -> Void) {
+        objc_sync_enter(self)
+        defer { objc_sync_exit(self) }
+        
+        if _onceTracker.contains(token) {
+            return
+        }
+        
+        _onceTracker.append(token)
+        block()
+    }
+}
+
+extension UINavigationController {
+
+    static let _onceToken = UUID().uuidString
+    
+    open override class func initialize(){
+        
+        if self == UINavigationController.self {
+            
+            DispatchQueue.once(token: _onceToken) {
+                let needSwizzleSelectorArr = [
+                    NSSelectorFromString("_updateInteractiveTransition:"),
+                ]
+
+                for selector in needSwizzleSelectorArr {
+                    
+                    let str = ("et_" + selector.description).replacingOccurrences(of: "__", with: "_")
+                    let originalMethod = class_getInstanceMethod(self, selector)
+                    let swizzledMethod = class_getInstanceMethod(self, Selector(str))
+                    method_exchangeImplementations(originalMethod, swizzledMethod)
+                }
+            }
+        }
+    }
+
+    func et_updateInteractiveTransition(_ percentComplete: CGFloat) {
+        print(percentComplete, "😄")
+        et_updateInteractiveTransition(percentComplete)
+    }
+}

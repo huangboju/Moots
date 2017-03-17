@@ -59,6 +59,9 @@ class JokeController: UITableViewController {
             self.getForUrl()
             footerView.stopRefreshing()
         }
+
+        navigationController?.navigationBar.barTintColor = Constants.backgroundColor
+        tabBarController?.tabBar.barTintColor = Constants.backgroundColor
     }
 
     let reach = NetworkReachabilityManager()
@@ -145,13 +148,14 @@ class JokeController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = UIColor(white: 0.7, alpha: 1)
+        cell.backgroundColor = Constants.backgroundColor
         return cell
     }
 
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.font = font
         cell.textLabel?.text = contents[indexPath.section]
+        cell.textLabel?.textColor = Constants.textColor
         cell.textLabel?.numberOfLines = 0
     }
 
@@ -218,20 +222,5 @@ class JokeController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-}
-
-extension String {
-    // 32 cell.textLabel的padding
-    func heightWithConstrainedWidth(width: CGFloat = UIScreen.main.bounds.width - 32, font: UIFont) -> CGFloat {
-        let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        //        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName: font], context: nil)
-
-        let label = UILabel(frame: CGRect(origin: .zero, size: constraintRect))
-        label.text = self
-        label.font = font
-        label.numberOfLines = 0
-        label.sizeToFit()
-        return label.frame.height
     }
 }

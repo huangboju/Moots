@@ -10,6 +10,8 @@
 		D81260671E5EA960007E6E3E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81260661E5EA960007E6E3E /* SettingController.swift */; };
 		D81CA87F1E5D1C78001DFBE3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */; };
 		D81CA8AF1E5D590C001DFBE3 /* MenuItemController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */; };
+		D81E69E71E7BB10E00C23129 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E69E61E7BB10E00C23129 /* Extensions.swift */; };
+		D81E69E91E7BB23F00C23129 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81E69E81E7BB23F00C23129 /* Constants.swift */; };
 		D83CA8B61E5BCF7E0063A21C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D83CA8B41E5BCF790063A21C /* Alamofire.framework */; };
 		D83CA8B71E5BCF7E0063A21C /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D83CA8B41E5BCF790063A21C /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8516E241E4EB5630098BC80 /* JokeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8516E231E4EB5630098BC80 /* JokeController.swift */; };
@@ -62,6 +64,8 @@
 		D81260661E5EA960007E6E3E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemController.swift; sourceTree = "<group>"; };
+		D81E69E61E7BB10E00C23129 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D81E69E81E7BB23F00C23129 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D83CA8B41E5BCF790063A21C /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D8516E231E4EB5630098BC80 /* JokeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JokeController.swift; sourceTree = "<group>"; };
 		D8516E2B1E4EDC120098BC80 /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = Carthage/Build/iOS/SwiftyJSON.framework; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				D8B745461E5AE6360096F0B5 /* Bridging.h */,
 				D81CA8AE1E5D590C001DFBE3 /* MenuItemController.swift */,
 				D81260661E5EA960007E6E3E /* SettingController.swift */,
+				D81E69E61E7BB10E00C23129 /* Extensions.swift */,
+				D81E69E81E7BB23F00C23129 /* Constants.swift */,
 			);
 			path = URLSession;
 			sourceTree = "<group>";
@@ -301,8 +307,10 @@
 				D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */,
 				D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */,
 				D81CA87F1E5D1C78001DFBE3 /* WebViewController.swift in Sources */,
+				D81E69E71E7BB10E00C23129 /* Extensions.swift in Sources */,
 				D8B745401E5AE5FF0096F0B5 /* CurveRefreshFooterView.swift in Sources */,
 				D8A7FE7F1E1B69DE0044395C /* NELineLabel.swift in Sources */,
+				D81E69E91E7BB23F00C23129 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

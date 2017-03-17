@@ -31,7 +31,7 @@ class SecondController: UIViewController {
         UIView.animate(withDuration: 0.4) {
             self.postButton.alpha = 1
         }
-        
+
         navigationController?.interactivePopGestureRecognizer?.addTarget(self, action: #selector(action))
     }
 
@@ -44,7 +44,7 @@ class SecondController: UIViewController {
         switch sender.state {
         case .changed:
             let x = sender.translation(in: view).x
-            let progress = 1 - x / view.frame.width
+            let progress = 1 - min(1, x / view.frame.width)
             postButton.alpha = progress
         default:
             UIView.animate(withDuration: 0.4) {
