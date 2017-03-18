@@ -650,9 +650,10 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-<summary>
-  **删除多余模拟器**
-</summary>
+    <summary>
+      **删除多余模拟器**
+    </summary>
+
 ```
 open /Library/Developer/CoreSimulator/Profiles/Runtimes
 open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
@@ -661,15 +662,19 @@ open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
 
 
 <details>
-<summary>
-  **修改swift文件**
-</summary>
+    <summary>
+       **修改swift文件**
+    </summary>
+
 ```
 open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
 
 open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/Cocoa\ Touch\ Class.xctemplate/UIViewControllerSwift
 ```
 </details>
+
+
+
 
 
 
