@@ -627,7 +627,7 @@ sudo gem uninstall cocoapods
 下载旧版本
 sudo gem install cocoapods -v 0.25.0
 ```
-</details> 
+</details>
 
 
 <details>
