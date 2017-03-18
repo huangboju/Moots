@@ -719,22 +719,22 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 ### UI
 <details>
-<summary>
-  **[swift-style-guide](https://github.com/raywenderlich/swift-style-guide)**
-  **[SwiftFormat](https://github.com/nicklockwood/SwiftFormat)**
-</summary>
-Swift代码格式和自动格式化库
+    <summary> 代码规范（Swift代码格式和自动格式化库） </summary>
+    <ul>
+        <li>[swift-style-guide](https://github.com/raywenderlich/swift-style-guide)</li>
+        <li>[SwiftFormat](https://github.com/nicklockwood/SwiftFormat)</li>
+    </ul>
 </details>
 
 
 <details>
   <summary>**控件库(里面有你所需要的各种控件)**</summary>
     <ul>
-    <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
-    <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
-    <li>[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)</li>
-    <li>[FlatUIKit](https://github.com/Grouper/FlatUIKit)(OC)</li>
-    <li>[Material](https://github.com/CosmicMind/Material)(Swift)</li>
+        <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
+        <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
+        <li>[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)</li>
+        <li>[FlatUIKit](https://github.com/Grouper/FlatUIKit)(OC)</li>
+        <li>[Material](https://github.com/CosmicMind/Material)(Swift)</li>
     </ul>
 </details>
 
