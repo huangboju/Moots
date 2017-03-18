@@ -614,7 +614,6 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 
 
 ## 常用配置
-
 <details>
 <summary>
   **Cocoapods[原理](https://objccn.io/issue-6-4/)**
@@ -710,7 +709,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 
-#常用库
+# 常用库
 按字母排序，点击展开为该库的描述
 
 ### UI
