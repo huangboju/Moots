@@ -1867,12 +1867,12 @@ facebook开源的界面优化框架
 
 
 ---------------------------------------------------------------------------------------------------------------------
-### APP源码**
+### APP源码
 
 <details>
-<summary>
-  **[ifanr](https://github.com/iCodeForever/ifanr)**
-</summary>
+    <summary>
+      [ifanr](https://github.com/iCodeForever/ifanr)
+    </summary>
 高仿 爱范儿
 </details>
 
