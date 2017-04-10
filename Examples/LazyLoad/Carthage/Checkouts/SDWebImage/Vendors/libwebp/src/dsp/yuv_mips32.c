@@ -28,19 +28,19 @@ static void FUNC_NAME(const uint8_t* y,                                        \
   int i, r, g, b;                                                              \
   int temp0, temp1, temp2, temp3, temp4;                                       \
   for (i = 0; i < (len >> 1); i++) {                                           \
-    temp1 = kVToR * v[0];                                                      \
-    temp3 = kVToG * v[0];                                                      \
-    temp2 = kUToG * u[0];                                                      \
-    temp4 = kUToB * u[0];                                                      \
-    temp0 = kYScale * y[0];                                                    \
-    temp1 += kRCst;                                                            \
-    temp3 -= kGCst;                                                            \
+    temp1 = MultHi(v[0], 26149);                                               \
+    temp3 = MultHi(v[0], 13320);                                               \
+    temp2 = MultHi(u[0], 6419);                                                \
+    temp4 = MultHi(u[0], 33050);                                               \
+    temp0 = MultHi(y[0], 19077);                                               \
+    temp1 -= 14234;                                                            \
+    temp3 -= 8708;                                                             \
     temp2 += temp3;                                                            \
-    temp4 += kBCst;                                                            \
+    temp4 -= 17685;                                                            \
     r = VP8Clip8(temp0 + temp1);                                               \
     g = VP8Clip8(temp0 - temp2);                                               \
     b = VP8Clip8(temp0 + temp4);                                               \
-    temp0 = kYScale * y[1];                                                    \
+    temp0 = MultHi(y[1], 19077);                                               \
     dst[R] = r;                                                                \
     dst[G] = g;                                                                \
     dst[B] = b;                                                                \
@@ -58,15 +58,15 @@ static void FUNC_NAME(const uint8_t* y,                                        \
     dst += 2 * XSTEP;                                                          \
   }                                                                            \
   if (len & 1) {                                                               \
-    temp1 = kVToR * v[0];                                                      \
-    temp3 = kVToG * v[0];                                                      \
-    temp2 = kUToG * u[0];                                                      \
-    temp4 = kUToB * u[0];                                                      \
-    temp0 = kYScale * y[0];                                                    \
-    temp1 += kRCst;                                                            \
-    temp3 -= kGCst;                                                            \
+    temp1 = MultHi(v[0], 26149);                                               \
+    temp3 = MultHi(v[0], 13320);                                               \
+    temp2 = MultHi(u[0], 6419);                                                \
+    temp4 = MultHi(u[0], 33050);                                               \
+    temp0 = MultHi(y[0], 19077);                                               \
+    temp1 -= 14234;                                                            \
+    temp3 -= 8708;                                                             \
     temp2 += temp3;                                                            \
-    temp4 += kBCst;                                                            \
+    temp4 -= 17685;                                                            \
     r = VP8Clip8(temp0 + temp1);                                               \
     g = VP8Clip8(temp0 - temp2);                                               \
     b = VP8Clip8(temp0 + temp4);                                               \
@@ -84,17 +84,20 @@ ROW_FUNC(YuvToBgraRow,     4, 2, 1, 0, 3)
 
 #undef ROW_FUNC
 
-#endif   // WEBP_USE_MIPS32
-
 //------------------------------------------------------------------------------
+// Entry point
 
 extern void WebPInitSamplersMIPS32(void);
 
-void WebPInitSamplersMIPS32(void) {
-#if defined(WEBP_USE_MIPS32)
+WEBP_TSAN_IGNORE_FUNCTION void WebPInitSamplersMIPS32(void) {
   WebPSamplers[MODE_RGB]  = YuvToRgbRow;
   WebPSamplers[MODE_RGBA] = YuvToRgbaRow;
   WebPSamplers[MODE_BGR]  = YuvToBgrRow;
   WebPSamplers[MODE_BGRA] = YuvToBgraRow;
-#endif  // WEBP_USE_MIPS32
 }
+
+#else  // !WEBP_USE_MIPS32
+
+WEBP_DSP_INIT_STUB(WebPInitSamplersMIPS32)
+
+#endif  // WEBP_USE_MIPS32

@@ -3,30 +3,30 @@
 //
 
 class DHCollectionView: UICollectionView {
-    
+
     var height: CGFloat = 66 {
         didSet {
             frame.size.height = height
             (collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize.height = height
         }
     }
-    
+
     var cellClass: UICollectionViewCell.Type = DHCollectionCell.self {
         willSet {
             registerClass(newValue, forCellWithReuseIdentifier: newValue.cellID)
         }
     }
-    
+
     var handleBack: selectedData? {
         didSet {
             backClosure = handleBack
         }
     }
-    
-    private var urlStrs: [(String?, UIImage?)]? ///图片链接
-    
+
+    private var urlStrs: [(String?, UIImage?)]? /// 图片链接
+
     private var backClosure: selectedData?
-    
+
     init(origin: CGPoint, content: [(String?, UIImage?)]) {
         super.init(frame: CGRect(origin: origin, size: CGSize(width: SCREEN_WIDTH, height: height)), collectionViewLayout: UICollectionViewFlowLayout())
         let layout = UICollectionViewFlowLayout()
@@ -44,20 +44,20 @@ class DHCollectionView: UICollectionView {
         registerClass(cellClass, forCellWithReuseIdentifier: cellClass.cellID)
         showsHorizontalScrollIndicator = false
     }
-    
+
     func selectedItem(tempItem: selectedData) {
-        self.backClosure = tempItem
+        backClosure = tempItem
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension DHCollectionView: UICollectionViewDataSource, UICollectionViewDelegate {
-    
-    //MARK: - UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+
+    // MARK: - UICollectionViewDataSource
+    func collectionView(collectionView _: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         if let count = urlStrs?.count {
             return count
         } else {
@@ -65,7 +65,7 @@ extension DHCollectionView: UICollectionViewDataSource, UICollectionViewDelegate
             return 0
         }
     }
-    
+
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellClass.cellID, forIndexPath: indexPath)
         if indexPath.row % 2 == 0 {
@@ -75,13 +75,13 @@ extension DHCollectionView: UICollectionViewDataSource, UICollectionViewDelegate
         }
         return cell
     }
-    
-    //MARK: - UICollectionViewDelegate
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+
+    // MARK: - UICollectionViewDelegate
+    func collectionView(collectionView _: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         (cell as? DHCollectionCell)?.contents = urlStrs?[indexPath.row]
     }
-    
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+
+    func collectionView(collectionView _: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let backClosure = self.backClosure {
             backClosure(indexPath)
         }
@@ -89,15 +89,15 @@ extension DHCollectionView: UICollectionViewDataSource, UICollectionViewDelegate
 }
 
 class DHCollectionCell: UICollectionViewCell {
-    
+
     var contents: (String?, UIImage?)? {
         didSet {
             iconView.setButton(contents?.0, image: contents?.1)
         }
     }
-    
+
     private let iconView = UIButton()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         iconView.bounds = CGRect(origin: CGPoint.zero, size: frame.size)
@@ -106,8 +106,8 @@ class DHCollectionCell: UICollectionViewCell {
         iconView.adjustsImageWhenDisabled = false
         contentView.addSubview(iconView)
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -126,7 +126,7 @@ extension UIButton {
         guard let titleSize = titleLabel?.bounds.size, imageSize = imageView?.bounds.size else {
             return
         }
-        
+
         let margin = abs(titleSize.width - imageSize.width) / 2
         switch direction {
         case .Left:
@@ -143,9 +143,3 @@ extension UIButton {
         }
     }
 }
-
-
-
-
-
-

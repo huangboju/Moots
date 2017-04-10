@@ -13,7 +13,12 @@
 
 #include "./dsp.h"
 
-#if defined(__ANDROID__)
+#if defined(WEBP_HAVE_NEON_RTCD)
+#include <stdio.h>
+#include <string.h>
+#endif
+
+#if defined(WEBP_ANDROID_NEON)
 #include <cpu-features.h>
 #endif
 
@@ -29,6 +34,18 @@ static WEBP_INLINE void GetCPUInfo(int cpu_info[4], int info_type) {
     "cpuid\n"
     "xchg %%edi, %%ebx\n"
     : "=a"(cpu_info[0]), "=D"(cpu_info[1]), "=c"(cpu_info[2]), "=d"(cpu_info[3])
+    : "a"(info_type), "c"(0));
+}
+#elif defined(__x86_64__) && \
+      (defined(__code_model_medium__) || defined(__code_model_large__)) && \
+      defined(__PIC__)
+static WEBP_INLINE void GetCPUInfo(int cpu_info[4], int info_type) {
+  __asm__ volatile (
+    "xchg{q}\t{%%rbx}, %q1\n"
+    "cpuid\n"
+    "xchg{q}\t{%%rbx}, %q1\n"
+    : "=a"(cpu_info[0]), "=&r"(cpu_info[1]), "=c"(cpu_info[2]),
+      "=d"(cpu_info[3])
     : "a"(info_type), "c"(0));
 }
 #elif defined(__i386__) || defined(__x86_64__)
@@ -79,13 +96,25 @@ static WEBP_INLINE uint64_t xgetbv(void) {
 
 #if defined(__i386__) || defined(__x86_64__) || defined(WEBP_MSC_SSE2)
 static int x86CPUInfo(CPUFeature feature) {
+  int max_cpuid_value;
   int cpu_info[4];
+
+  // get the highest feature value cpuid supports
+  GetCPUInfo(cpu_info, 0);
+  max_cpuid_value = cpu_info[0];
+  if (max_cpuid_value < 1) {
+    return 0;
+  }
+
   GetCPUInfo(cpu_info, 1);
   if (feature == kSSE2) {
     return 0 != (cpu_info[3] & 0x04000000);
   }
   if (feature == kSSE3) {
     return 0 != (cpu_info[2] & 0x00000001);
+  }
+  if (feature == kSSE4_1) {
+    return 0 != (cpu_info[2] & 0x00080000);
   }
   if (feature == kAVX) {
     // bits 27 (OSXSAVE) & 28 (256-bit AVX)
@@ -95,7 +124,7 @@ static int x86CPUInfo(CPUFeature feature) {
     }
   }
   if (feature == kAVX2) {
-    if (x86CPUInfo(kAVX)) {
+    if (x86CPUInfo(kAVX) && max_cpuid_value >= 7) {
       GetCPUInfo(cpu_info, 7);
       return ((cpu_info[1] & 0x00000020) == 0x00000020);
     }
@@ -118,14 +147,38 @@ VP8CPUInfo VP8GetCPUInfo = AndroidCPUInfo;
 // define a dummy function to enable turning off NEON at runtime by setting
 // VP8DecGetCPUInfo = NULL
 static int armCPUInfo(CPUFeature feature) {
-  (void)feature;
+  if (feature != kNEON) return 0;
+#if defined(__linux__) && defined(WEBP_HAVE_NEON_RTCD)
+  {
+    int has_neon = 0;
+    char line[200];
+    FILE* const cpuinfo = fopen("/proc/cpuinfo", "r");
+    if (cpuinfo == NULL) return 0;
+    while (fgets(line, sizeof(line), cpuinfo)) {
+      if (!strncmp(line, "Features", 8)) {
+        if (strstr(line, " neon ") != NULL) {
+          has_neon = 1;
+          break;
+        }
+      }
+    }
+    fclose(cpuinfo);
+    return has_neon;
+  }
+#else
   return 1;
+#endif
 }
 VP8CPUInfo VP8GetCPUInfo = armCPUInfo;
-#elif defined(WEBP_USE_MIPS32)
+#elif defined(WEBP_USE_MIPS32) || defined(WEBP_USE_MIPS_DSP_R2) || \
+      defined(WEBP_USE_MSA)
 static int mipsCPUInfo(CPUFeature feature) {
-  (void)feature;
-  return 1;
+  if ((feature == kMIPS32) || (feature == kMIPSdspR2) || (feature == kMSA)) {
+    return 1;
+  } else {
+    return 0;
+  }
+
 }
 VP8CPUInfo VP8GetCPUInfo = mipsCPUInfo;
 #else

@@ -43,6 +43,7 @@ struct VP8LTransform {
 typedef struct {
   int             color_cache_size_;
   VP8LColorCache  color_cache_;
+  VP8LColorCache  saved_color_cache_;  // for incremental
 
   int             huffman_mask_;
   int             huffman_subsample_bits_;
@@ -50,12 +51,12 @@ typedef struct {
   uint32_t       *huffman_image_;
   int             num_htree_groups_;
   HTreeGroup     *htree_groups_;
+  HuffmanCode    *huffman_tables_;
 } VP8LMetadata;
 
 typedef struct VP8LDecoder VP8LDecoder;
 struct VP8LDecoder {
   VP8StatusCode    status_;
-  VP8LDecodeState  action_;
   VP8LDecodeState  state_;
   VP8Io           *io_;
 
@@ -66,6 +67,9 @@ struct VP8LDecoder {
   uint32_t        *argb_cache_;    // Scratch buffer for temporary BGRA storage.
 
   VP8LBitReader    br_;
+  int              incremental_;   // if true, incremental decoding is expected
+  VP8LBitReader    saved_br_;      // note: could be local variables too
+  int              saved_last_pixel_;
 
   int              width_;
   int              height_;
@@ -96,8 +100,7 @@ struct ALPHDecoder;  // Defined in dec/alphai.h.
 // Decodes image header for alpha data stored using lossless compression.
 // Returns false in case of error.
 int VP8LDecodeAlphaHeader(struct ALPHDecoder* const alph_dec,
-                          const uint8_t* const data, size_t data_size,
-                          uint8_t* const output);
+                          const uint8_t* const data, size_t data_size);
 
 // Decodes *at least* 'last_row' rows of alpha. If some of the initial rows are
 // already decoded in previous call(s), it will resume decoding from where it

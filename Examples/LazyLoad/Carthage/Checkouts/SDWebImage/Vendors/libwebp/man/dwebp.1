@@ -1,5 +1,5 @@
 .\"                                      Hey, EMACS: -*- nroff -*-
-.TH DWEBP 1 "October 19, 2015"
+.TH DWEBP 1 "June 23, 2016"
 .SH NAME
 dwebp \- decompress a WebP file to an image file
 .SH SYNOPSIS
@@ -67,12 +67,11 @@ but it will make the decoding faster.
 Specify a dithering \fBstrength\fP between 0 and 100. Dithering is a
 post-processing effect applied to chroma components in lossy compression.
 It helps by smoothing gradients and avoiding banding artifacts.
-.\" TODO(jzern): restore post-v0.4.1
-.\" .TP
-.\" .BI \-alpha_dither
-.\" If the compressed file contains a transparency plane that was quantized
-.\" during compression, this flag will allow dithering the reconstructed plane
-.\" in order to generate smoother transparency gradients.
+.TP
+.BI \-alpha_dither
+If the compressed file contains a transparency plane that was quantized
+during compression, this flag will allow dithering the reconstructed plane
+in order to generate smoother transparency gradients.
 .TP
 .B \-nodither
 Disable all dithering (default).
@@ -87,16 +86,20 @@ This cropping area must be fully contained within the source rectangle.
 The top-left corner will be snapped to even coordinates if needed.
 This option is meant to reduce the memory needed for cropping large images.
 Note: the cropping is applied \fIbefore\fP any scaling.
-.\" TODO(jzern): restore post-v0.4.1
-.\" .TP
-.\" .B \-flip
-.\" Flip decoded image vertically (can be useful for OpenGL textures for instance).
 .TP
-.BI \-scale " width height
+.B \-flip
+Flip decoded image vertically (can be useful for OpenGL textures for instance).
+.TP
+\fB\-resize\fR, \fB\-scale\fI width height\fR
 Rescale the decoded picture to dimension \fBwidth\fP x \fBheight\fP. This
 option is mostly intended to reducing the memory needed to decode large images,
-when only a small version is needed (thumbnail, preview, etc.).  Note: scaling
+when only a small version is needed (thumbnail, preview, etc.). Note: scaling
 is applied \fIafter\fP cropping.
+If either (but not both) of the \fBwidth\fP or \fBheight\fP parameters is 0,
+the value will be calculated preserving the aspect-ratio.
+.TP
+.B \-quiet
+Do not print anything.
 .TP
 .B \-v
 Print extra information (decoding time in particular).
@@ -105,7 +108,7 @@ Print extra information (decoding time in particular).
 Disable all assembly optimizations.
 
 .SH BUGS
-Please report all bugs to our issue tracker:
+Please report all bugs to the issue tracker:
 https://bugs.chromium.org/p/webp
 .br
 Patches welcome! See this page to get started:
@@ -121,9 +124,10 @@ dwebp \-o output.ppm \-\- \-\-\-picture.webp
 cat picture.webp | dwebp \-o \- \-\- \- > output.ppm
 
 .SH AUTHORS
-\fBdwebp\fP was written by the WebP team.
+\fBdwebp\fP is a part of libwebp and was written by the WebP team.
 .br
-The latest source tree is available at http://www.webmproject.org/code
+The latest source tree is available at
+https://chromium.googlesource.com/webm/libwebp
 .PP
 This manual page was written by Pascal Massimino <pascal.massimino@gmail.com>,
 for the Debian project (and may be used by others).

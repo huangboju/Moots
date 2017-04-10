@@ -16,16 +16,16 @@ class DetailViewController: UIViewController {
     var classArr: [String] {
         return classCopyIvarList(className!)
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         loadUI()
     }
-    
+
     fileprivate func loadUI() {
-        
+
         title = className
     }
 
@@ -35,47 +35,44 @@ class DetailViewController: UIViewController {
         cell.textLabel?.text = property
         return cell
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return classCopyIvarList(className!).count
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    //MARK:查看类中的隐藏属性
+
+    // MARK: 查看类中的隐藏属性
     fileprivate func classCopyIvarList(_ className: String) -> [String] {
-        
+
         var classArray: [String] = []
-        
+
         let classOjbect: AnyClass! = objc_getClass(className) as? AnyClass
-        
+
         var icount: CUnsignedInt = 0
-        
+
         let ivars = class_copyIvarList(classOjbect, &icount)
         print("icount == \(icount)")
-        
-        for i in 0...(icount-1) {
+
+        for i in 0 ... (icount - 1) {
             let memberName = String(utf8String: ivar_getName(ivars?[Int(i)]))
             print("memberName == \(memberName)")
             classArray.append(memberName!)
-            
         }
-        
+
         return classArray
     }
-    
 
     /*
-    // MARK: - Navigation
+     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
 }

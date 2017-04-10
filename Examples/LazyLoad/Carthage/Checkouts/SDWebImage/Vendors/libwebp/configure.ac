@@ -1,4 +1,4 @@
-AC_INIT([libwebp], [0.4.4],
+AC_INIT([libwebp], [0.5.1],
         [https://bugs.chromium.org/p/webp],,
         [http://developers.google.com/speed/webp])
 AC_CANONICAL_HOST
@@ -28,7 +28,20 @@ AC_ARG_ENABLE([everything],
                               disabled with --disable-target]),
               [SET_IF_UNSET([enable_libwebpdecoder], [$enableval])
                SET_IF_UNSET([enable_libwebpdemux], [$enableval])
+               SET_IF_UNSET([enable_libwebpextras], [$enableval])
                SET_IF_UNSET([enable_libwebpmux], [$enableval])])
+
+dnl === If --enable-asserts is not defined, define NDEBUG
+
+AC_MSG_CHECKING(whether asserts are enabled)
+AC_ARG_ENABLE([asserts],
+              AS_HELP_STRING([--enable-asserts],
+                             [Enable assert checks]))
+if test "x${enable_asserts-no}" = "xno"; then
+  AM_CPPFLAGS="${AM_CPPFLAGS} -DNDEBUG"
+fi
+AC_MSG_RESULT(${enable_asserts-no})
+AC_SUBST([AM_CPPFLAGS])
 
 AC_ARG_WITH([pkgconfigdir], AS_HELP_STRING([--with-pkgconfigdir=DIR],
             [Path to the pkgconfig directory @<:@LIBDIR/pkgconfig@:>@]),
@@ -51,15 +64,19 @@ AC_DEFUN([TEST_AND_ADD_CFLAGS],
                             [$1="${$1} $2"],
                             [AC_MSG_RESULT([no])])
           CFLAGS="$SAVED_CFLAGS"])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-fvisibility=hidden])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wall])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wdeclaration-after-statement])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wextra])
-TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wformat-nonliteral])
-TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wformat-security])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wfloat-conversion])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wformat -Wformat-nonliteral])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wformat -Wformat-security])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wmissing-declarations])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wmissing-prototypes])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wold-style-definition])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wshadow])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wshorten-64-to-32])
+TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wunreachable-code])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wunused-but-set-variable])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wunused])
 TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-Wvla])
@@ -76,36 +93,145 @@ AS_IF([test "$GCC" = "yes" ], [
        esac
        AS_IF([test "$gcc_wht_bug" = "yes"], [
               TEST_AND_ADD_CFLAGS([AM_CFLAGS], [-frename-registers])])])
+# Use -flax-vector-conversions, if available, when building intrinsics with
+# older versions of gcc. The flag appeared in 4.3.x, but if backported, and
+# -fno-lax-vector-conversions is set, errors may occur with the intrinsics
+# files along with the older system includes, e.g., emmintrin.h.
+# Originally observed with cc (GCC) 4.2.1 20070831 patched [FreeBSD] (9.3).
+# https://bugs.chromium.org/p/webp/issues/detail?id=274
+AS_IF([test "$GCC" = "yes" ], [
+       case "$host_cpu" in
+         amd64|i?86|x86_64)
+           AC_COMPILE_IFELSE(
+             dnl only check for -flax-vector-conversions with older gcc, skip
+             dnl clang as it reports itself as 4.2.1, but the flag isn't needed.
+             [AC_LANG_SOURCE([#if !defined(__clang__) && defined(__GNUC__) && \
+                                  ((__GNUC__ << 8) | __GNUC_MINOR__) < 0x403
+                              #error old gcc
+                              #endif
+                              int main(void) { return 0; }
+                             ])],,
+              [TEST_AND_ADD_CFLAGS([INTRINSICS_CFLAGS],
+                                   [-flax-vector-conversions])])
+           ;;
+       esac])
 AC_SUBST([AM_CFLAGS])
 
 dnl === Check for machine specific flags
-TEST_AND_ADD_CFLAGS([AVX2_FLAGS], [-mavx2])
-AS_IF([test -n "$AVX2_FLAGS"], [
-  SAVED_CFLAGS=$CFLAGS
-  CFLAGS="$CFLAGS $AVX2_FLAGS"
-  AC_CHECK_HEADER([immintrin.h],
-                  [AC_DEFINE(WEBP_HAVE_AVX2, [1],
-                   [Set to 1 if AVX2 is supported])],
-                  [AVX2_FLAGS=""],
-                  dnl it's illegal to directly include avx2intrin.h, but it's
-                  dnl included conditionally in immintrin.h, tricky!
-                  [#ifndef __AVX2__
-                   #error avx2 is not enabled
-                   #endif
-                  ])
-  CFLAGS=$SAVED_CFLAGS])
-AC_SUBST([AVX2_FLAGS])
+AC_ARG_ENABLE([avx2],
+              AS_HELP_STRING([--disable-avx2],
+                             [Disable detection of AVX2 support
+                              @<:@default=auto@:>@]))
 
-TEST_AND_ADD_CFLAGS([SSE2_FLAGS], [-msse2])
-AS_IF([test -n "$SSE2_FLAGS"], [
-  SAVED_CFLAGS=$CFLAGS
-  CFLAGS="$CFLAGS $SSE2_FLAGS"
-  AC_CHECK_HEADER([emmintrin.h],
-                  [AC_DEFINE(WEBP_HAVE_SSE2, [1],
-                   [Set to 1 if SSE2 is supported])],
-                  [SSE2_FLAGS=""])
-  CFLAGS=$SAVED_CFLAGS])
-AC_SUBST([SSE2_FLAGS])
+AS_IF([test "x$enable_avx2" != "xno" -a "x$enable_sse4_1" != "xno" \
+         -a "x$enable_sse2" != "xno"], [
+  AVX2_CFLAGS="$INTRINSICS_CFLAGS $AVX2_FLAGS"
+  TEST_AND_ADD_CFLAGS([AVX2_FLAGS], [-mavx2])
+  AS_IF([test -n "$AVX2_FLAGS"], [
+    SAVED_CFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS $AVX2_FLAGS"
+    AC_CHECK_HEADER([immintrin.h],
+                    [AC_DEFINE(WEBP_HAVE_AVX2, [1],
+                     [Set to 1 if AVX2 is supported])],
+                    [AVX2_FLAGS=""],
+                    dnl it's illegal to directly include avx2intrin.h, but it's
+                    dnl included conditionally in immintrin.h, tricky!
+                    [#ifndef __AVX2__
+                     #error avx2 is not enabled
+                     #endif
+                    ])
+    CFLAGS=$SAVED_CFLAGS])
+  AC_SUBST([AVX2_FLAGS])])
+
+AC_ARG_ENABLE([sse4.1],
+              AS_HELP_STRING([--disable-sse4.1],
+                             [Disable detection of SSE4.1 support
+                              @<:@default=auto@:>@]))
+
+AS_IF([test "x$enable_sse4_1" != "xno" -a "x$enable_sse2" != "xno"], [
+  SSE41_FLAGS="$INTRINSICS_CFLAGS $SSE41_FLAGS"
+  TEST_AND_ADD_CFLAGS([SSE41_FLAGS], [-msse4.1])
+  AS_IF([test -n "$SSE41_FLAGS"], [
+    SAVED_CFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS $SSE41_FLAGS"
+    AC_CHECK_HEADER([smmintrin.h],
+                    [AC_DEFINE(WEBP_HAVE_SSE41, [1],
+                     [Set to 1 if SSE4.1 is supported])],
+                    [SSE41_FLAGS=""])
+    CFLAGS=$SAVED_CFLAGS])
+  AC_SUBST([SSE41_FLAGS])])
+
+AC_ARG_ENABLE([sse2],
+              AS_HELP_STRING([--disable-sse2],
+                             [Disable detection of SSE2 support
+                              @<:@default=auto@:>@]))
+
+AS_IF([test "x$enable_sse2" != "xno"], [
+  SSE2_FLAGS="$INTRINSICS_CFLAGS $SSE2_FLAGS"
+  TEST_AND_ADD_CFLAGS([SSE2_FLAGS], [-msse2])
+  AS_IF([test -n "$SSE2_FLAGS"], [
+    SAVED_CFLAGS=$CFLAGS
+    CFLAGS="$CFLAGS $SSE2_FLAGS"
+    AC_CHECK_HEADER([emmintrin.h],
+                    [AC_DEFINE(WEBP_HAVE_SSE2, [1],
+                     [Set to 1 if SSE2 is supported])],
+                    [SSE2_FLAGS=""])
+    CFLAGS=$SAVED_CFLAGS])
+  AC_SUBST([SSE2_FLAGS])])
+
+AC_ARG_ENABLE([neon],
+              AS_HELP_STRING([--disable-neon],
+                             [Disable detection of NEON support
+                              @<:@default=auto@:>@]))
+
+AC_ARG_ENABLE([neon_rtcd],
+              AS_HELP_STRING([--disable-neon-rtcd],
+                             [Disable runtime detection of NEON support via
+                              /proc/cpuinfo on Linux hosts
+                              @<:@default=auto@:>@]))
+# For ARM(7) hosts:
+# Both NEON flags unset and NEON support detected = build all modules with NEON
+# NEON detected with the use of -mfpu=neon = build only NEON modules with NEON
+AS_IF([test "x$enable_neon" != "xno"], [
+  case "$host_cpu" in
+    arm|armv7*)
+      dnl Test for NEON support with no flags.
+      AC_CHECK_HEADER([arm_neon.h],
+                      [AC_DEFINE(WEBP_HAVE_NEON, [1],
+                       [Set to 1 if NEON is supported])],
+                      dnl Test for NEON support using -mfpu=neon
+                      [unset ac_cv_header_arm_neon_h
+                       NEON_FLAGS="$INTRINSICS_CFLAGS $NEON_FLAGS"
+                       TEST_AND_ADD_CFLAGS([NEON_FLAGS], [-mfpu=neon])
+                       AS_IF([test -n "$NEON_FLAGS"], [
+                         SAVED_CFLAGS=$CFLAGS
+                         CFLAGS="$CFLAGS $NEON_FLAGS"
+                         AC_CHECK_HEADER([arm_neon.h],
+                           [AS_IF([test "${host_os%%-*}" = "linux" -o \
+                                        "x$enable_neon_rtcd" = "xno"], [
+                             AC_DEFINE(WEBP_HAVE_NEON, [1],
+                                       [Set to 1 if NEON is supported])],
+                                       [AC_MSG_WARN(m4_normalize([NEON runtime
+                                          cpu-detection is unavailble for
+                                          ${host_os%%-*}. Force with
+                                          CFLAGS=-mfpu=neon or
+                                          --disable-neon-rtcd.]))
+                                        enable_neon_rtcd=no
+                                        NEON_FLAGS=""])],
+                           [NEON_FLAGS=""])
+                         CFLAGS=$SAVED_CFLAGS
+                         AS_IF([test -n "$NEON_FLAGS"], [
+                           dnl If NEON is available and rtcd is disabled apply
+                           dnl  NEON_FLAGS globally.
+                           AS_IF([test "x$enable_neon_rtcd" = "xno"], [
+                             AM_CFLAGS="$AM_CFLAGS $NEON_FLAGS"
+                             NEON_FLAGS=""],
+                             [AC_DEFINE(WEBP_HAVE_NEON_RTCD, [1],
+                                        [Set to 1 if runtime detection of NEON
+                                         is enabled])])])])])
+        ;;
+    esac
+    AC_SUBST([NEON_FLAGS])])
 
 dnl === CLEAR_LIBVARS([var_pfx])
 dnl ===   Clears <var_pfx>_{INCLUDES,LIBS}.
@@ -150,7 +276,7 @@ dnl ===   AC_DEFINE'ing <define> if successful.
 AC_DEFUN([CHECK_FOR_BUILTIN],
          [AC_LANG_PUSH([C])
           AC_MSG_CHECKING([for $1])
-          AC_LINK_IFELSE([AC_LANG_PROGRAM([], [$1($2)])],
+          AC_LINK_IFELSE([AC_LANG_PROGRAM([], [(void)$1($2)])],
                          [AC_MSG_RESULT([yes])
                           AC_DEFINE([$3], [1],
                                     [Set to 1 if $1 is available])],
@@ -406,10 +532,16 @@ AS_IF([test "x$enable_gif" != "xno"], [
   LIBCHECK_EPILOGUE([GIF])
 
   if test "$gif_support" = "yes" -a \
+          "$enable_libwebpdemux" = "yes"; then
+    build_animdiff=yes
+  fi
+
+  if test "$gif_support" = "yes" -a \
           "$enable_libwebpmux" = "yes"; then
     build_gif2webp=yes
   fi
 ])
+AM_CONDITIONAL([BUILD_ANIMDIFF], [test "${build_animdiff}" = "yes"])
 AM_CONDITIONAL([BUILD_GIF2WEBP], [test "${build_gif2webp}" = "yes"])
 
 dnl === check for WIC support ===
@@ -527,6 +659,14 @@ AC_ARG_ENABLE([libwebpdecoder],
 AC_MSG_RESULT(${enable_libwebpdecoder-no})
 AM_CONDITIONAL([BUILD_LIBWEBPDECODER], [test "$enable_libwebpdecoder" = "yes"])
 
+dnl === Check whether libwebpextras should be built
+AC_MSG_CHECKING(whether libwebpextras is to be built)
+AC_ARG_ENABLE([libwebpextras],
+              AS_HELP_STRING([--enable-libwebpextras],
+                             [Build libwebpextras @<:@default=no@:>@]))
+AC_MSG_RESULT(${enable_libwebpextras-no})
+AM_CONDITIONAL([WANT_EXTRAS], [test "$enable_libwebpextras" = "yes"])
+
 dnl =========================
 
 AC_CONFIG_MACRO_DIR([m4])
@@ -535,9 +675,10 @@ AC_CONFIG_FILES([Makefile src/Makefile man/Makefile \
                  examples/Makefile src/dec/Makefile \
                  src/enc/Makefile src/dsp/Makefile \
                  src/demux/Makefile src/mux/Makefile \
-                 src/utils/Makefile \
+                 src/utils/Makefile src/extras/Makefile \
                  src/libwebp.pc src/libwebpdecoder.pc \
-                 src/demux/libwebpdemux.pc src/mux/libwebpmux.pc])
+                 src/demux/libwebpdemux.pc src/mux/libwebpmux.pc \
+                 src/extras/libwebpextras.pc])
 
 
 AC_OUTPUT
@@ -553,6 +694,7 @@ libwebp: yes
 libwebpdecoder: ${enable_libwebpdecoder-no}
 libwebpdemux: ${enable_libwebpdemux-no}
 libwebpmux: ${enable_libwebpmux-no}
+libwebpextras: ${enable_libwebpextras-no}
 
 Tools:
 cwebp : yes
@@ -568,6 +710,7 @@ dwebp : yes
   PNG  : ${png_support-no}
   WIC  : ${wic_support-no}
 GIF support : ${gif_support-no}
+anim_diff   : ${build_animdiff-no}
 gif2webp    : ${build_gif2webp-no}
 webpmux     : ${enable_libwebpmux-no}
 vwebp       : ${build_vwebp-no}

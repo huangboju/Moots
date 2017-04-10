@@ -12,7 +12,7 @@
 #ifndef WEBP_EXAMPLES_PNGDEC_H_
 #define WEBP_EXAMPLES_PNGDEC_H_
 
-#include <stdio.h>
+#include "webp/types.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -21,12 +21,14 @@ extern "C" {
 struct Metadata;
 struct WebPPicture;
 
-// Reads a PNG from 'in_file', returning the decoded output in 'pic'.
+// Reads a PNG from 'data', returning the decoded output in 'pic'.
+// Output is RGBA or YUVA, depending on pic->use_argb value.
 // If 'keep_alpha' is true and the PNG has an alpha channel, the output is RGBA
-// otherwise it will be RGB.
+// or YUVA. Otherwise, alpha channel is dropped and output is RGB or YUV.
 // Returns true on success.
-int ReadPNG(FILE* in_file, struct WebPPicture* const pic, int keep_alpha,
-            struct Metadata* const metadata);
+int ReadPNG(const uint8_t* const data, size_t data_size,
+            struct WebPPicture* const pic,
+            int keep_alpha, struct Metadata* const metadata);
 
 #ifdef __cplusplus
 }    // extern "C"

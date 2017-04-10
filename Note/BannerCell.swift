@@ -4,7 +4,7 @@
 
 class BannerCell: UICollectionViewCell {
     private let imageView = UIImageView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         imageView.frame = bounds
@@ -13,14 +13,14 @@ class BannerCell: UICollectionViewCell {
         imageView.userInteractionEnabled = true
         contentView.addSubview(imageView)
     }
-    
+
     func setData(urlStr: String) {
         if let url = NSURL(string: urlStr) {
             imageView.kf_setImageWithURL(url)
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

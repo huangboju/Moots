@@ -19,11 +19,13 @@
 
 #ifdef WEBP_HAVE_JPEG
 #include <jpeglib.h>
+#include <jerror.h>
 #include <setjmp.h>
 #include <stdlib.h>
 #include <string.h>
 
 #include "webp/encode.h"
+#include "./example_util.h"
 #include "./metadata.h"
 
 // -----------------------------------------------------------------------------
@@ -208,13 +210,65 @@ static void my_error_exit(j_common_ptr dinfo) {
   longjmp(myerr->setjmp_buffer, 1);
 }
 
-int ReadJPEG(FILE* in_file, WebPPicture* const pic, Metadata* const metadata) {
-  int ok = 0;
+typedef struct {
+  struct jpeg_source_mgr pub;
+  const uint8_t* data;
+  size_t data_size;
+} JPEGReadContext;
+
+static void ContextInit(j_decompress_ptr cinfo) {
+  JPEGReadContext* const ctx = (JPEGReadContext*)cinfo->src;
+  ctx->pub.next_input_byte = ctx->data;
+  ctx->pub.bytes_in_buffer = ctx->data_size;
+}
+
+static int ContextFill(j_decompress_ptr cinfo) {
+  // we shouldn't get here.
+  ERREXIT(cinfo, JERR_FILE_READ);
+  return 0;
+}
+
+static void ContextSkip(j_decompress_ptr cinfo, long jump_size) {
+  JPEGReadContext* const ctx = (JPEGReadContext*)cinfo->src;
+  size_t jump = (size_t)jump_size;
+  if (jump > ctx->pub.bytes_in_buffer) {  // Don't overflow the buffer.
+    jump = ctx->pub.bytes_in_buffer;
+  }
+  ctx->pub.bytes_in_buffer -= jump;
+  ctx->pub.next_input_byte += jump;
+}
+
+static void ContextTerm(j_decompress_ptr cinfo) {
+  (void)cinfo;
+}
+
+static void ContextSetup(volatile struct jpeg_decompress_struct* const cinfo,
+                         JPEGReadContext* const ctx) {
+  cinfo->src = (struct jpeg_source_mgr*)ctx;
+  ctx->pub.init_source = ContextInit;
+  ctx->pub.fill_input_buffer = ContextFill;
+  ctx->pub.skip_input_data = ContextSkip;
+  ctx->pub.resync_to_restart = jpeg_resync_to_restart;
+  ctx->pub.term_source = ContextTerm;
+  ctx->pub.bytes_in_buffer = 0;
+  ctx->pub.next_input_byte = NULL;
+}
+
+int ReadJPEG(const uint8_t* const data, size_t data_size,
+             WebPPicture* const pic, int keep_alpha,
+             Metadata* const metadata) {
+  volatile int ok = 0;
   int stride, width, height;
   volatile struct jpeg_decompress_struct dinfo;
   struct my_error_mgr jerr;
   uint8_t* volatile rgb = NULL;
   JSAMPROW buffer[1];
+  JPEGReadContext ctx;
+
+  (void)keep_alpha;
+  memset(&ctx, 0, sizeof(ctx));
+  ctx.data = data;
+  ctx.data_size = data_size;
 
   memset((j_decompress_ptr)&dinfo, 0, sizeof(dinfo));   // for setjmp sanity
   dinfo.err = jpeg_std_error(&jerr.pub);
@@ -228,7 +282,7 @@ int ReadJPEG(FILE* in_file, WebPPicture* const pic, Metadata* const metadata) {
   }
 
   jpeg_create_decompress((j_decompress_ptr)&dinfo);
-  jpeg_stdio_src((j_decompress_ptr)&dinfo, in_file);
+  ContextSetup(&dinfo, &ctx);
   if (metadata != NULL) SaveMetadataMarkers((j_decompress_ptr)&dinfo);
   jpeg_read_header((j_decompress_ptr)&dinfo, TRUE);
 
@@ -272,7 +326,6 @@ int ReadJPEG(FILE* in_file, WebPPicture* const pic, Metadata* const metadata) {
   // WebP conversion.
   pic->width = width;
   pic->height = height;
-  pic->use_argb = 1;      // store raw RGB samples
   ok = WebPPictureImportRGB(pic, rgb, stride);
   if (!ok) goto Error;
 
@@ -281,10 +334,13 @@ int ReadJPEG(FILE* in_file, WebPPicture* const pic, Metadata* const metadata) {
   return ok;
 }
 #else  // !WEBP_HAVE_JPEG
-int ReadJPEG(FILE* in_file, struct WebPPicture* const pic,
+int ReadJPEG(const uint8_t* const data, size_t data_size,
+             struct WebPPicture* const pic, int keep_alpha,
              struct Metadata* const metadata) {
-  (void)in_file;
+  (void)data;
+  (void)data_size;
   (void)pic;
+  (void)keep_alpha;
   (void)metadata;
   fprintf(stderr, "JPEG support not compiled. Please install the libjpeg "
           "development package before building.\n");

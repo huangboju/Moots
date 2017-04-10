@@ -1,5 +1,3 @@
 
-github "Alamofire/Alamofire" ~> 4.0
 github "SwiftyJSON/SwiftyJSON"
 github "rs/SDWebImage"
-github "huangboju/ADController"

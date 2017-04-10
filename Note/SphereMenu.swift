@@ -78,7 +78,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
     }
 
     func commonSetup() {
-        for i in 0..<count {
+        for i in 0 ..< count {
             let item = UIImageView(image: images![i])
             item.tag = kItemInitTag + i
             item.userInteractionEnabled = true
@@ -106,7 +106,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
         collision?.translatesReferenceBoundsIntoBoundary = true
         collision?.collisionDelegate = self
 
-        for i in 0..<count {
+        for i in 0 ..< count {
             let snap = UISnapBehavior(item: items[i], snapToPoint: center)
             snap.damping = sphereDamping
             snaps.append(snap)
@@ -136,7 +136,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
     }
 
     func tapped(gesture: UITapGestureRecognizer) {
-        if let selectedItem =  self.selectedItem {
+        if let selectedItem = self.selectedItem {
             var tag = gesture.view?.tag
             tag! -= kItemInitTag
             selectedItem(tag!)
@@ -144,7 +144,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
         shrinkSubmenu()
     }
 
-    func startTapped(gesture: UITapGestureRecognizer) {
+    func startTapped(gesture _: UITapGestureRecognizer) {
         animator?.removeBehavior(collision)
         animator?.removeBehavior(itemBehavior)
         removeSnapBehaviors()
@@ -157,7 +157,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
     }
 
     func expandSubmenu() {
-        for i in 0..<count {
+        for i in 0 ..< count {
             snapToPostionsWithIndex(i)
         }
 
@@ -167,7 +167,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
     func shrinkSubmenu() {
         animator?.removeBehavior(collision)
 
-        for i in 0..<count {
+        for i in 0 ..< count {
             snapToStartWithIndex(i)
         }
         expanded = false
@@ -184,21 +184,21 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
         } else if gesture.state == .Ended {
             bumper = touchedView
             animator?.addBehavior(collision)
-            if let index = items.indexOf({$0 as? NSObject == touchedView}) {
+            if let index = items.indexOf({ $0 as? NSObject == touchedView }) {
                 snapToPostionsWithIndex(index)
             }
         }
     }
 
-    func collisionBehavior(behavior: UICollisionBehavior, endedContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem) {
+    func collisionBehavior(behavior _: UICollisionBehavior, endedContactForItem item1: UIDynamicItem, withItem item2: UIDynamicItem) {
         animator?.addBehavior(itemBehavior)
         if !item1.isEqual(bumper) {
-            if let index = items.indexOf({$0 as? String == item1 as? String}) {
+            if let index = items.indexOf({ $0 as? String == item1 as? String }) {
                 snapToPostionsWithIndex(index)
             }
         }
         if !item2.isEqual(bumper) {
-            if let index = items.indexOf({$0 as? String == item2 as? String}) {
+            if let index = items.indexOf({ $0 as? String == item2 as? String }) {
                 snapToPostionsWithIndex(index)
             }
         }
@@ -233,8 +233,8 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
     override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
         if let startLabel = startLabel {
             if pointInside(point, withEvent: event) {
-                //[fromView convertPoint:aPoint toView:toView]
-                //就是将fromView坐标系中的一个点转换为toView中的一个点
+                // [fromView convertPoint:aPoint toView:toView]
+                // 就是将fromView坐标系中的一个点转换为toView中的一个点
                 let newPoint = convertPoint(point, toView: startLabel)
                 let test = startLabel.hitTest(newPoint, withEvent: event)
                 if let test = test {
@@ -247,7 +247,7 @@ class SphereMenu: UIView, UICollisionBehaviorDelegate {
         return super.hitTest(point, withEvent: event)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

@@ -1,5 +1,5 @@
 .\"                                      Hey, EMACS: -*- nroff -*-
-.TH GIF2WEBP 1 "October 19, 2015"
+.TH GIF2WEBP 1 "June 23, 2016"
 .SH NAME
 gif2webp \- Convert a GIF image to WebP
 .SH SYNOPSIS
@@ -54,6 +54,12 @@ additional encoding possibilities and decide on the quality gain.
 Lower value can result is faster processing time at the expense of
 larger file size and lower compression quality.
 .TP
+.BI \-min_size
+Encode image to achieve smallest size. This disables key frame insertion and
+picks the dispose method resulting in smallest output for each frame. It uses
+lossless compression by default, but can be combined with \-q, \-m, \-lossy or
+\-mixed options.
+.TP
 .BI \-kmin " int
 .TP
 .BI \-kmax " int
@@ -62,7 +68,8 @@ Specify the minimum and maximum distance between consecutive key frames
 some key frames into the output animation as needed so that this criteria is
 satisfied.
 .br
-A 'kmin' value of 0 will turn off insertion of key frames.
+A 'kmin' value of 0 will turn off insertion of key frames. A 'kmax' value of 0
+will result in all frames being key frames.
 Typical values are in the range 3 to 30. Default values are kmin = 9,
 kmax = 17 for lossless compression and kmin = 3, kmax = 5 for lossy compression.
 .br
@@ -110,7 +117,7 @@ Print extra information.
 Do not print anything.
 
 .SH BUGS
-Please report all bugs to our issue tracker:
+Please report all bugs to the issue tracker:
 https://bugs.chromium.org/p/webp
 .br
 Patches welcome! See this page to get started:
@@ -128,9 +135,10 @@ gif2webp \-lossy \-f 50 picture.gif \-o picture.webp
 gif2webp \-q 70 \-o picture.webp \-\- \-\-\-picture.gif
 
 .SH AUTHORS
-\fBgif2webp\fP was written by the WebP team.
+\fBgif2webp\fP is a part of libwebp and was written by the WebP team.
 .br
-The latest source tree is available at http://www.webmproject.org/code
+The latest source tree is available at
+https://chromium.googlesource.com/webm/libwebp
 .PP
 This manual page was written by Urvang Joshi <urvang@google.com>, for the
 Debian project (and may be used by others).

@@ -24,6 +24,7 @@
 #include <string.h>
 
 #include "webp/encode.h"
+#include "./example_util.h"
 #include "./metadata.h"
 
 static void PNGAPI error_function(png_structp png, png_const_charp error) {
@@ -131,8 +132,8 @@ static int ExtractMetadataFromPNG(png_structp png,
   for (p = 0; p < 2; ++p)  {
     png_infop const info = (p == 0) ? head_info : end_info;
     png_textp text = NULL;
-    const int num = png_get_text(png, info, &text, NULL);
-    int i;
+    const png_uint_32 num = png_get_text(png, info, &text, NULL);
+    png_uint_32 i;
     // Look for EXIF / XMP metadata.
     for (i = 0; i < num; ++i, ++text) {
       int j;
@@ -188,24 +189,42 @@ static int ExtractMetadataFromPNG(png_structp png,
   return 1;
 }
 
-int ReadPNG(FILE* in_file, WebPPicture* const pic, int keep_alpha,
-            Metadata* const metadata) {
-  volatile png_structp png;
+typedef struct {
+  const uint8_t* data;
+  size_t data_size;
+  png_size_t offset;
+} PNGReadContext;
+
+static void ReadFunc(png_structp png_ptr, png_bytep data, png_size_t length) {
+  PNGReadContext* const ctx = (PNGReadContext*)png_get_io_ptr(png_ptr);
+  if (ctx->data_size - ctx->offset < length) {
+    png_error(png_ptr, "ReadFunc: invalid read length (overflow)!");
+  }
+  memcpy(data, ctx->data + ctx->offset, length);
+  ctx->offset += length;
+}
+
+int ReadPNG(const uint8_t* const data, size_t data_size,
+            struct WebPPicture* const pic,
+            int keep_alpha, struct Metadata* const metadata) {
+  volatile png_structp png = NULL;
   volatile png_infop info = NULL;
   volatile png_infop end_info = NULL;
+  PNGReadContext context = { NULL, 0, 0 };
   int color_type, bit_depth, interlaced;
   int has_alpha;
   int num_passes;
   int p;
-  int ok = 0;
+  volatile int ok = 0;
   png_uint_32 width, height, y;
-  int stride;
+  png_uint_32 stride;
   uint8_t* volatile rgb = NULL;
 
+  context.data = data;
+  context.data_size = data_size;
+
   png = png_create_read_struct(PNG_LIBPNG_VER_STRING, 0, 0, 0);
-  if (png == NULL) {
-    goto End;
-  }
+  if (png == NULL) goto End;
 
   png_set_error_fn(png, 0, error_function, NULL);
   if (setjmp(png_jmpbuf(png))) {
@@ -219,7 +238,7 @@ int ReadPNG(FILE* in_file, WebPPicture* const pic, int keep_alpha,
   end_info = png_create_info_struct(png);
   if (end_info == NULL) goto Error;
 
-  png_init_io(png, in_file);
+  png_set_read_fn(png, &context, ReadFunc);
   png_read_info(png, info);
   if (!png_get_IHDR(png, info,
                     &width, &height, &bit_depth, &color_type, &interlaced,
@@ -268,11 +287,10 @@ int ReadPNG(FILE* in_file, WebPPicture* const pic, int keep_alpha,
     goto Error;
   }
 
-  pic->width = width;
-  pic->height = height;
-  pic->use_argb = 1;
-  ok = has_alpha ? WebPPictureImportRGBA(pic, rgb, stride)
-                 : WebPPictureImportRGB(pic, rgb, stride);
+  pic->width = (int)width;
+  pic->height = (int)height;
+  ok = has_alpha ? WebPPictureImportRGBA(pic, rgb, (int)stride)
+                 : WebPPictureImportRGB(pic, rgb, (int)stride);
 
   if (!ok) {
     goto Error;
@@ -287,9 +305,11 @@ int ReadPNG(FILE* in_file, WebPPicture* const pic, int keep_alpha,
   return ok;
 }
 #else  // !WEBP_HAVE_PNG
-int ReadPNG(FILE* in_file, struct WebPPicture* const pic, int keep_alpha,
-            struct Metadata* const metadata) {
-  (void)in_file;
+int ReadPNG(const uint8_t* const data, size_t data_size,
+            struct WebPPicture* const pic,
+            int keep_alpha, struct Metadata* const metadata) {
+  (void)data;
+  (void)data_size;
   (void)pic;
   (void)keep_alpha;
   (void)metadata;

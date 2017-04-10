@@ -11,7 +11,7 @@ import UIKit
 class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
     var visibleLabels = [UILabel]()
     let labelContainerView = UIView()
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         contentSize = CGSize(width: 5000, height: frame.height)
@@ -19,29 +19,29 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         addSubview(labelContainerView)
         labelContainerView.userInteractionEnabled = false
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
     func recenterIfNecessary() {
         let currentOffset = contentOffset
         let contentWidth = contentSize.width
         let centerOffsetX = (contentWidth - bounds.width) / 2.0
         let distanceFromCenter = fabs(currentOffset.x - centerOffsetX)
-        
-        if (distanceFromCenter > (contentWidth / 4.0)) {
-            self.contentOffset = CGPointMake(centerOffsetX, currentOffset.y)
-            
+
+        if distanceFromCenter > (contentWidth / 4.0) {
+            contentOffset = CGPointMake(centerOffsetX, currentOffset.y)
+
             // move content by the same amount so it appears to stay still
             for label in visibleLabels {
                 var center = labelContainerView.convertPoint(label.center, toView: self)
-                center.x += (centerOffsetX - currentOffset.x);
+                center.x += (centerOffsetX - currentOffset.x)
                 label.center = convertPoint(center, toView: labelContainerView)
             }
         }
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         recenterIfNecessary()
@@ -50,7 +50,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         let maximumVisibleX = visibleBounds.maxX
         tileLabelsFromMinX(minimumVisibleX, toMaxX: maximumVisibleX)
     }
-    
+
     func insertLabel() -> UILabel {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 500, height: 80))
         label.numberOfLines = 3
@@ -58,7 +58,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         labelContainerView.addSubview(label)
         return label
     }
-    
+
     func placeNewLabelOnRight(rightEdge: CGFloat) -> CGFloat {
         let label = insertLabel()
         visibleLabels.append(label) // add rightmost label at the end of the array
@@ -66,41 +66,41 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         frame.origin.x = rightEdge
         frame.origin.y = labelContainerView.bounds.height - frame.height
         label.frame = frame
-        
+
         return frame.maxX
     }
-    
+
     func placeNewLabelOnLeft(leftEdge: CGFloat) -> CGFloat {
         let label = insertLabel()
         visibleLabels.insert(label, atIndex: 0) // add leftmost label at the beginning of the array
-        
+
         var frame = label.frame
         frame.origin.x = leftEdge - frame.width
         frame.origin.y = labelContainerView.bounds.height - frame.height
         label.frame = frame
-        
+
         return CGRectGetMinX(frame)
     }
-    
+
     func tileLabelsFromMinX(minimumVisibleX: CGFloat, toMaxX maximumVisibleX: CGFloat) {
         if visibleLabels.count == 0 {
             placeNewLabelOnRight(minimumVisibleX)
         }
-        
+
         var lastLabel = visibleLabels.last
         var rightEdge = lastLabel!.frame.maxX
-        
+
         while rightEdge < maximumVisibleX {
             rightEdge = placeNewLabelOnRight(rightEdge)
         }
-        
+
         var firstLabel = visibleLabels[0]
         var leftEdge = firstLabel.frame.minX
-        
+
         while leftEdge > minimumVisibleX {
             leftEdge = placeNewLabelOnLeft(leftEdge)
         }
-        
+
         // remove labels that have fallen off right edge
         lastLabel = visibleLabels.last
         while lastLabel!.frame.minX > maximumVisibleX {
@@ -108,7 +108,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
             visibleLabels.removeLast()
             lastLabel = visibleLabels.last
         }
-        
+
         // remove labels that have fallen off left edge
         firstLabel = visibleLabels[0]
         while firstLabel.frame.maxX < minimumVisibleX {

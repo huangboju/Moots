@@ -14,7 +14,7 @@ class IconLabel: UILabel {
         didSet {
             if let iconView = iconView {
                 iconView.image = icon
-                
+
             } else {
                 iconView = UIImageView(image: icon)
             }
@@ -22,15 +22,15 @@ class IconLabel: UILabel {
             addSubview(iconView ?? UIImageView())
         }
     }
-    
+
     private var iconView: UIImageView?
-    
+
     override var text: String? {
         didSet {
             sizeToFit()
         }
     }
-    
+
     override func textRectForBounds(bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         var rect = super.textRectForBounds(UIEdgeInsetsInsetRect(bounds, edgeInsets), limitedToNumberOfLines: numberOfLines)
         rect.origin.x -= edgeInsets.left
@@ -55,7 +55,7 @@ class IconLabel: UILabel {
         }
         return rect
     }
-    
+
     override func drawTextInRect(rect: CGRect) {
         var temp = edgeInsets
         if let iconView = iconView {
@@ -66,23 +66,22 @@ class IconLabel: UILabel {
                     temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left + gap + iconView.frame.width, bottom: edgeInsets.bottom, right: edgeInsets.right)
                 } else {
                     iconView.frame.origin.x = frame.width - edgeInsets.right - iconView.frame.width
-                    temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left , bottom: edgeInsets.bottom, right: edgeInsets.right + gap + iconView.frame.width)
+                    temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left, bottom: edgeInsets.bottom, right: edgeInsets.right + gap + iconView.frame.width)
                 }
-                }, vertical: {
-                    iconView.center.x = bounds.width / 2
-                    if direction == .Top {
-                        iconView.frame.origin.y = 0
-                        temp = UIEdgeInsets(top: edgeInsets.top + gap + iconView.frame.height, left: edgeInsets.left , bottom: edgeInsets.bottom, right: edgeInsets.right )
-                    } else {
-                        iconView.frame.origin.y = edgeInsets.bottom + iconView.frame.height
-                        temp = UIEdgeInsets(top: edgeInsets.top , left: edgeInsets.left , bottom: edgeInsets.bottom + gap + iconView.frame.height, right: edgeInsets.right )
-                    }
+            }, vertical: {
+                iconView.center.x = bounds.width / 2
+                if direction == .Top {
+                    iconView.frame.origin.y = 0
+                    temp = UIEdgeInsets(top: edgeInsets.top + gap + iconView.frame.height, left: edgeInsets.left, bottom: edgeInsets.bottom, right: edgeInsets.right)
+                } else {
+                    iconView.frame.origin.y = edgeInsets.bottom + iconView.frame.height
+                    temp = UIEdgeInsets(top: edgeInsets.top, left: edgeInsets.left, bottom: edgeInsets.bottom + gap + iconView.frame.height, right: edgeInsets.right)
+                }
             })
-            
         }
         super.drawTextInRect(UIEdgeInsetsInsetRect(rect, temp))
     }
-    
+
     private func switchFunc(@noescape horizontal: () -> Void, @noescape vertical: () -> Void) {
         switch direction {
         case .Left, .Right:

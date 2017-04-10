@@ -1,21 +1,23 @@
 ///tableView分割线左边到头
-//写在viewDidLoad
+// 写在viewDidLoad
 if tableView.respondsToSelector(Selector("setSeparatorInset:")) {
     tableView.separatorInset = UIEdgeInsetsZero
 }
+
 if tableView.respondsToSelector(Selector("setLayoutMargins:")) {
     tableView.layoutMargins = UIEdgeInsetsZero
 }
 
-//写在 willDisplayCell
+// 写在 willDisplayCell
 if cell.respondsToSelector(Selector("setSeparatorInset:")) {
     cell.separatorInset = UIEdgeInsetsZero
 }
+
 if cell.respondsToSelector(Selector("setLayoutMargins:")) {
     cell.layoutMargins = UIEdgeInsetsZero
 }
 
-///虚线
+/// 虚线
 func drawDottedLine(lineView: UIView, offset: CGPoint) {
     let shapeLayer = CAShapeLayer()
     shapeLayer.bounds = lineView.bounds
@@ -33,7 +35,7 @@ func drawDottedLine(lineView: UIView, offset: CGPoint) {
     lineView.layer.addSublayer(shapeLayer)
 }
 
-///部分圆角图片
+/// 部分圆角图片
 func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     let imageView = UIImageView(image: image)
     imageView.frame = frame
@@ -44,7 +46,7 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     return imageView
 }
 
-//通过字符串构建类
+// 通过字符串构建类
 extension String {
     func fromClassName() -> NSObject {
         let className = NSBundle.mainBundle().infoDictionary!["CFBundleName"] as! String + "." + self
@@ -61,9 +63,9 @@ extension NSObject {
     }
 }
 
-///修改状态栏背景颜色
+/// 修改状态栏背景颜色
 func setStatusBarBackgroundColor(color: UIColor) {
-    guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
+    guard let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
         return
     }
     statusBar.backgroundColor = color
@@ -87,10 +89,10 @@ extension UIImage {
 }
 
 extension UIButton {
-    //处理button太小
-    public override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
+    // 处理button太小
+    public override func hitTest(point: CGPoint, withEvent _: UIEvent?) -> UIView? {
         // if the button is hidden/disabled/transparent it can't be hit
-        if self.hidden || !self.userInteractionEnabled || self.alpha < 0.01 { return nil }
+        if hidden || !userInteractionEnabled || alpha < 0.01 { return nil }
 
         // increase the hit frame to be at least as big as `minimumHitArea`
         let buttonSize = bounds.size
@@ -103,25 +105,23 @@ extension UIButton {
     }
 }
 
-//离幕渲染
-//layer.shouldRasterize = true
-//self.layer.rasterizationScale = [UIScreen mainScreen].scale;
+// 离幕渲染
+// layer.shouldRasterize = true
+// self.layer.rasterizationScale = [UIScreen mainScreen].scale;
 
+// 卸载当前版本
+// sudo gem uninstall cocoapods
+// 下载旧版本
+// sudo gem install cocoapods -v 0.25.0
 
-//卸载当前版本
-//sudo gem uninstall cocoapods
-//下载旧版本
-//sudo gem install cocoapods -v 0.25.0
+// 修改Xcode自动生成的文件注释来导出API文档
+// http://www.jianshu.com/p/d0c7d9040c93
+// open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
 
-
-//修改Xcode自动生成的文件注释来导出API文档
-//http://www.jianshu.com/p/d0c7d9040c93
-//open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
-
-//删除多余模拟器
+// 删除多余模拟器
 // /Library/Developer/CoreSimulator/Profiles/Runtimes
 
-//修改swift文件
-//open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
+// 修改swift文件
+// open /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/Swift\ File.xctemplate
 
 // Self 表示引用当前实例的类型

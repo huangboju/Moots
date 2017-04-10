@@ -15,6 +15,7 @@ ifneq ($(findstring armeabi-v7a, $(TARGET_ARCH_ABI)),)
   # instructions to be generated for armv7a code. Instead target the neon code
   # specifically.
   NEON := c.neon
+  USE_CPUFEATURES := yes
 else
   NEON := c
 endif
@@ -32,34 +33,65 @@ dec_srcs := \
     src/dec/webp.c \
 
 demux_srcs := \
+    src/demux/anim_decode.c \
     src/demux/demux.c \
 
 dsp_dec_srcs := \
     src/dsp/alpha_processing.c \
+    src/dsp/alpha_processing_mips_dsp_r2.c \
     src/dsp/alpha_processing_sse2.c \
+    src/dsp/alpha_processing_sse41.c \
+    src/dsp/argb.c \
+    src/dsp/argb_mips_dsp_r2.c \
+    src/dsp/argb_sse2.c \
     src/dsp/cpu.c \
     src/dsp/dec.c \
     src/dsp/dec_clip_tables.c \
     src/dsp/dec_mips32.c \
+    src/dsp/dec_mips_dsp_r2.c \
+    src/dsp/dec_msa.c \
     src/dsp/dec_neon.$(NEON) \
     src/dsp/dec_sse2.c \
+    src/dsp/dec_sse41.c \
+    src/dsp/filters.c \
+    src/dsp/filters_mips_dsp_r2.c \
+    src/dsp/filters_sse2.c \
     src/dsp/lossless.c \
-    src/dsp/lossless_mips32.c \
+    src/dsp/lossless_mips_dsp_r2.c \
     src/dsp/lossless_neon.$(NEON) \
     src/dsp/lossless_sse2.c \
+    src/dsp/rescaler.c \
+    src/dsp/rescaler_mips32.c \
+    src/dsp/rescaler_mips_dsp_r2.c \
+    src/dsp/rescaler_neon.$(NEON) \
+    src/dsp/rescaler_sse2.c \
     src/dsp/upsampling.c \
+    src/dsp/upsampling_mips_dsp_r2.c \
     src/dsp/upsampling_neon.$(NEON) \
     src/dsp/upsampling_sse2.c \
     src/dsp/yuv.c \
     src/dsp/yuv_mips32.c \
+    src/dsp/yuv_mips_dsp_r2.c \
     src/dsp/yuv_sse2.c \
 
 dsp_enc_srcs := \
+    src/dsp/cost.c \
+    src/dsp/cost_mips32.c \
+    src/dsp/cost_mips_dsp_r2.c \
+    src/dsp/cost_sse2.c \
     src/dsp/enc.c \
     src/dsp/enc_avx2.c \
     src/dsp/enc_mips32.c \
+    src/dsp/enc_mips_dsp_r2.c \
     src/dsp/enc_neon.$(NEON) \
     src/dsp/enc_sse2.c \
+    src/dsp/enc_sse41.c \
+    src/dsp/lossless_enc.c \
+    src/dsp/lossless_enc_mips32.c \
+    src/dsp/lossless_enc_mips_dsp_r2.c \
+    src/dsp/lossless_enc_neon.$(NEON) \
+    src/dsp/lossless_enc_sse2.c \
+    src/dsp/lossless_enc_sse41.c \
 
 enc_srcs := \
     src/enc/alpha.c \
@@ -67,10 +99,12 @@ enc_srcs := \
     src/enc/backward_references.c \
     src/enc/config.c \
     src/enc/cost.c \
+    src/enc/delta_palettization.c \
     src/enc/filter.c \
     src/enc/frame.c \
     src/enc/histogram.c \
     src/enc/iterator.c \
+    src/enc/near_lossless.c \
     src/enc/picture.c \
     src/enc/picture_csp.c \
     src/enc/picture_psnr.c \
@@ -84,6 +118,7 @@ enc_srcs := \
     src/enc/webpenc.c \
 
 mux_srcs := \
+    src/mux/anim_encode.c \
     src/mux/muxedit.c \
     src/mux/muxinternal.c \
     src/mux/muxread.c \
@@ -120,7 +155,9 @@ LOCAL_C_INCLUDES += $(LOCAL_PATH)/src
 # prefer arm over thumb mode for performance gains
 LOCAL_ARM_MODE := arm
 
-LOCAL_STATIC_LIBRARIES := cpufeatures
+ifeq ($(USE_CPUFEATURES),yes)
+  LOCAL_STATIC_LIBRARIES := cpufeatures
+endif
 
 LOCAL_MODULE := webpdecoder_static
 
@@ -212,4 +249,6 @@ endif
 
 include $(LOCAL_PATH)/examples/Android.mk
 
-$(call import-module,android/cpufeatures)
+ifeq ($(USE_CPUFEATURES),yes)
+  $(call import-module,android/cpufeatures)
+endif

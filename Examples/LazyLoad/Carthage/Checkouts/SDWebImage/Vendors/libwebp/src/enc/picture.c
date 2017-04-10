@@ -15,6 +15,7 @@
 #include <stdlib.h>
 
 #include "./vp8enci.h"
+#include "../dsp/dsp.h"
 #include "../utils/utils.h"
 
 //------------------------------------------------------------------------------
@@ -235,6 +236,8 @@ static size_t Encode(const uint8_t* rgba, int width, int height, int stride,
   WebPConfig config;
   WebPMemoryWriter wrt;
   int ok;
+
+  if (output == NULL) return 0;
 
   if (!WebPConfigPreset(&config, WEBP_PRESET_DEFAULT, quality_factor) ||
       !WebPPictureInit(&pic)) {

@@ -10,9 +10,10 @@ import UIKit
 import Alamofire
 import WebImage
 
+
 class ViewController: UIViewController {
     
-    var targetRect: NSValue?
+    var targetRect: CGRect?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
@@ -22,67 +23,72 @@ class ViewController: UIViewController {
         return tableView
     }()
     
-    fileprivate lazy var data = [IssueModel]()
+    fileprivate lazy var data = [Model]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchDataFromServer()
+        buildTestData()
 
         tableView.register(GLImageCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
     }
-    
+
     func refresh() {
         tableView.reloadSections(IndexSet(integer: 0), with: .none)
     }
-    
-    func fetchDataFromServer() {
-        let url = "http://baobab.wandoujia.com/api/v2/feed?date=1457883945551&num=7"
-        
-        Alamofire.request(url).responseJSON { response in
-            if let result = DATA(response.result.value).dictionaryValue["issueList"] {
-                self.data = result.map { IssueModel(dict: $0.1.dictionary) }
+
+    func buildTestData() {
+        // Simulate an async request
+        DispatchQueue.global().async {
+            // Data from `data.json`
+            guard let dataFilePath = Bundle.main.path(forResource: "data", ofType: "json") else { return }
+            do {
+                let item = try Data(contentsOf: URL(fileURLWithPath: dataFilePath))
+                let rootDict = DATA(data: item).dictionaryValue
+                guard let datas = rootDict["data"]?.arrayValue else { return }
+                self.data = datas.map { Model($0.dictionaryValue) }
+            } catch let error {
+                print(error)
+            }
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
 
     func loadImageForVisibleCells() {
-        let cells = tableView.visibleCells.flatMap { $0 as? GLImageCell }
+        guard let cells = tableView.visibleCells as? [GLImageCell] else { return }
         for cell in cells {
-            if let indexPath = tableView.indexPath(for: cell) {
-                setup(cell: cell, with: indexPath)
-            }
+            guard let indexPath = tableView.indexPath(for: cell) else { continue }
+            setup(cell: cell, with: indexPath)
         }
     }
-    
+
     func setup(cell: GLImageCell, with indexPath: IndexPath) {
-        let item = data[indexPath.section].itemList[indexPath.row]
-        let targetURL = URL(string: item.feed)
+        let item = data[indexPath.row].hoverURL
+        guard let targetURL = URL(string: item) else { return }
         let cellFrame = tableView.rectForRow(at: indexPath)
         if cell.photoView.sd_imageURL() != targetURL {
             cell.photoView.alpha = 0
             let manager = SDWebImageManager.shared()
-            
+            manager?.imageDownloader.setValue("http://image.baidu.com/i?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=cat&oq=cat&rsp=-1", forHTTPHeaderField: "Referer")
             var shouldLoadImage = true
-            if let targetRect = targetRect {
-                if !targetRect.cgRectValue.intersects(cellFrame) {
-                    let cache = manager?.imageCache
-                    let key = manager?.cacheKey(for: targetURL)
-                    if cache?.imageFromMemoryCache(forKey: key) != nil {
-                        shouldLoadImage = false
-                    }
+            if let targetRect = targetRect, !targetRect.intersects(cellFrame) {
+                let cache = manager?.imageCache
+                let key = manager?.cacheKey(for: targetURL)
+                if cache?.imageFromMemoryCache(forKey: key) != nil {
+                    print(targetRect)
+                    shouldLoadImage = false
                 }
             }
-            if shouldLoadImage {
-                cell.photoView.frame = CGRect(origin: .zero, size: cellFrame.size)
-                cell.photoView.sd_setImage(with: targetURL!, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
-                    UIView.animate(withDuration: 0.25, animations: {
-                        cell.photoView.alpha = 1
-                    })
+            guard shouldLoadImage else { return }
+            cell.photoView.frame = CGRect(origin: .zero, size: cellFrame.size)
+            cell.photoView.sd_setImage(with: targetURL, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
+                UIView.animate(withDuration: 0.25, animations: {
+                    cell.photoView.alpha = 1
                 })
-            }
+            })
         }
     }
 
@@ -93,56 +99,43 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 500
+        let item = data[indexPath.row]
+        return tableView.frame.width / item.width * item.height
     }
-    
+
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 200
     }
-    
+
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let imageCell = cell as? GLImageCell {
             setup(cell: imageCell, with: indexPath)
         }
     }
-    
+
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         targetRect = nil
         loadImageForVisibleCells()
     }
-    
+
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         let rect = CGRect(origin: targetContentOffset.move(), size: scrollView.frame.size)
-        targetRect = NSValue(cgRect: rect)
+        targetRect = rect
     }
-    
+
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         targetRect = nil
         loadImageForVisibleCells()
     }
-    
-    func runloop() {
-        print("😁😄")
-    }
 }
 
 extension ViewController: UITableViewDataSource {
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if data.isEmpty {
-            return 0
-        }
-        let issueModel = data[section]
-        return issueModel.itemList.count
-    }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        perform(#selector(runloop), with: self, afterDelay: 0, inModes: [RunLoopMode.defaultRunLoopMode])
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }

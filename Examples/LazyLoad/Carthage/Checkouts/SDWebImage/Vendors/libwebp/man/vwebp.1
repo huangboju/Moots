@@ -1,5 +1,5 @@
 .\"                                      Hey, EMACS: -*- nroff -*-
-.TH VWEBP 1 "October 19, 2015"
+.TH VWEBP 1 "June 23, 2016"
 .SH NAME
 vwebp \- decompress a WebP file and display it in a window
 .SH SYNOPSIS
@@ -33,11 +33,10 @@ Disable in-loop filtering.
 Specify a dithering \fBstrength\fP between 0 and 100. Dithering is a
 post-processing effect applied to chroma components in lossy compression.
 It helps by smoothing gradients and avoiding banding artifacts. Default: 50.
-.\" TODO(jzern): restore post-v0.4.1
-.\" .TP
-.\" .BI \-noalphadither
-.\" By default, quantized transparency planes are dithered during decompression,
-.\" to smooth the gradients. This flag will prevent this dithering.
+.TP
+.BI \-noalphadither
+By default, quantized transparency planes are dithered during decompression,
+to smooth the gradients. This flag will prevent this dithering.
 .TP
 .B \-mt
 Use multi-threading for decoding, if possible.
@@ -64,7 +63,7 @@ Overlay file information.
 Quit.
 
 .SH BUGS
-Please report all bugs to our issue tracker:
+Please report all bugs to the issue tracker:
 https://bugs.chromium.org/p/webp
 .br
 Patches welcome! See this page to get started:
@@ -78,9 +77,10 @@ vwebp picture.webp -mt -dither 0
 vwebp \-\- \-\-\-picture.webp
 
 .SH AUTHORS
-\fBvwebp\fP was written by the WebP team.
+\fBvwebp\fP is a part of libwebp and was written by the WebP team.
 .br
-The latest source tree is available at http://www.webmproject.org/code
+The latest source tree is available at
+https://chromium.googlesource.com/webm/libwebp
 .PP
 This manual page was written for the Debian project (and may be used by others).
 

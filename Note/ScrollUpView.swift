@@ -10,7 +10,7 @@ class ScrollUpView: UICollectionView, UICollectionViewDataSource, UICollectionVi
 
     var titles: [String]?
     var bgColor: UIColor?
-    var pageStepTime: NSTimeInterval  = 1
+    var pageStepTime: NSTimeInterval = 1
     var scrollPosition: UICollectionViewScrollPosition = .Top
 
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
@@ -29,8 +29,8 @@ class ScrollUpView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         setTheTimer()
     }
 
-    //MARK: - UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    // MARK: - UICollectionViewDataSource
+    func collectionView(collectionView _: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         if let count = titles?.count {
             return count + 1
         } else {
@@ -48,8 +48,8 @@ class ScrollUpView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         return cell
     }
 
-    //MARK: - UICollectionViewDelegate
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    // MARK: - UICollectionViewDelegate
+    func collectionView(collectionView _: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         switch indexPath.row {
         case (titles?.count)!, 0:
             (cell as? ScrollUpCell)?.setData(titles![0])
@@ -58,18 +58,18 @@ class ScrollUpView: UICollectionView, UICollectionViewDataSource, UICollectionVi
         }
     }
 
-    func collectionView(collectionView: UICollectionView, didEndDisplayingCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView _: UICollectionView, didEndDisplayingCell _: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         if indexPath.row == (titles?.count)! - 1 {
             scrollToItemAtIndexPath(NSIndexPath(forItem: 0, inSection: 0), atScrollPosition: .Top, animated: false)
         }
     }
 
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(touches _: Set<UITouch>, withEvent _: UIEvent?) {
         timer?.invalidate()
         timer = nil
     }
 
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesEnded(touches _: Set<UITouch>, withEvent _: UIEvent?) {
         setTheTimer()
     }
 
@@ -82,15 +82,15 @@ class ScrollUpView: UICollectionView, UICollectionViewDataSource, UICollectionVi
     @objc private func nextItem() {
         let indexPath = indexPathsForVisibleItems().first!
         let item = indexPath.row
-//        if item == titles!.count - 1 {
-//            scrollToItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
-//        } else {
-//            scrollToItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
-//        }
+        //        if item == titles!.count - 1 {
+        //            scrollToItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
+        //        } else {
+        //            scrollToItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
+        //        }
         scrollToItemAtIndexPath(NSIndexPath(forItem: item + 1, inSection: 0), atScrollPosition: .Bottom, animated: true)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -111,8 +111,8 @@ class ScrollUpCell: UICollectionViewCell {
     func setData(text: String) {
         title.text = text
     }
-    
-    required init?(coder aDecoder: NSCoder) {
+
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

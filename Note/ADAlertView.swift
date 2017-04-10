@@ -2,7 +2,7 @@
 //  Copyright © 2016 cmcaifu.com. All rights reserved.
 //
 
-//MARK: - ADAlertCloseButton
+// MARK: - ADAlertCloseButton
 class ADAlertCloseButton: UIButton {
     var buttonStrokeColor: UIColor?
 
@@ -28,12 +28,12 @@ class ADAlertCloseButton: UIButton {
         CGContextStrokePath(contex)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-//MARK: - ADAlertContainerView
+// MARK: - ADAlertContainerView
 class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     var cornerRadius: CGFloat?
     var containerBgColor: UIColor?
@@ -52,7 +52,6 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     override init(frame: CGRect) {
         super.init(frame: frame)
 
-
         collectionView = UICollectionView(frame: frame, collectionViewLayout: UICollectionViewLayout())
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -66,7 +65,7 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
 
         closeBtn.buttonStrokeColor = closeBtnTintColor
         closeBtn.backgroundColor = .clearColor()
-        closeBtn.addTarget(self.superview, action: #selector(ADAlertView().hide), forControlEvents: .TouchUpInside)
+        closeBtn.addTarget(superview, action: #selector(ADAlertView().hide), forControlEvents: .TouchUpInside)
 
         if let cornerRadius = self.cornerRadius {
             containerView.layer.cornerRadius = cornerRadius
@@ -96,12 +95,12 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.contentOffset = CGPoint.zero
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
     // MARK: - UICollectionViewDataSource
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView _: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return contents.count
     }
 
@@ -111,26 +110,25 @@ class ADAlertContainerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }
 
     // MARK: - UICollectionViewDelegate
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView _: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let adCell = cell as? ADCell
         adCell?.imageView.image = contents[indexPath.row]
     }
 
-    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView _: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         if let selectedIndexPath = self.selectedIndexPath {
             selectedIndexPath(indexPath)
         }
     }
 
     func selected(item: ((NSIndexPath) -> Void)) {
-        self.selectedIndexPath = item
+        selectedIndexPath = item
     }
 }
 
 class ADCell: UICollectionViewCell {
     let imageView = UIImageView()
     let textLabel = UILabel()
-
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -144,7 +142,7 @@ class ADCell: UICollectionViewCell {
         contentView.addSubview(textLabel)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
@@ -193,7 +191,7 @@ class ADAlertView: UIView {
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(statusBarOrientationDidChange), name: UIApplicationDidChangeStatusBarOrientationNotification, object: nil)
     }
 
-    convenience init () {
+    convenience init() {
         self.init(frame: CGRect.zero)
     }
 
@@ -245,12 +243,12 @@ class ADAlertView: UIView {
 
     func updateUIForKeypath() {
         containerView.contents = containerSubviews
-        containerView.selected({ [unowned self] (indexPath) in
+        containerView.selected({ [unowned self] indexPath in
             if let selectedIndePath = self.selectedIndexPath {
                 selectedIndePath(indexPath)
                 self.hide()
             }
-            })
+        })
 
         setNeedsLayout()
         setNeedsDisplay()
@@ -261,7 +259,7 @@ class ADAlertView: UIView {
         }
     }
 
-    func statusBarOrientationDidChange(notification: NSNotification) {
+    func statusBarOrientationDidChange(notification _: NSNotification) {
         if let superview = self.superview {
             frame = superview.bounds
             setNeedsDisplay()
@@ -276,8 +274,7 @@ class ADAlertView: UIView {
         }
     }
 
-
-    //layoutSubviews是调整自己子视图们的frame；而drawRect是创建自己的视图内容
+    // layoutSubviews是调整自己子视图们的frame；而drawRect是创建自己的视图内容
     override func layoutSubviews() {
         let kWidthPadding = minHorizontalPadding
         let kHeightPadding = minVertalPadding
@@ -300,7 +297,7 @@ class ADAlertView: UIView {
         containerView.center = CGPoint(x: bounds.midX, y: bounds.midY - 39)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }

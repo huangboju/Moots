@@ -38,7 +38,7 @@
 
 #include "./example_util.h"
 
-#ifdef _MSC_VER
+#if defined(_MSC_VER) && _MSC_VER < 1900
 #define snprintf _snprintf
 #endif
 
@@ -387,17 +387,15 @@ static void Help(void) {
   printf("Usage: vwebp in_file [options]\n\n"
          "Decodes the WebP image file and visualize it using OpenGL\n"
          "Options are:\n"
-         "  -version  .... print version number and exit\n"
+         "  -version ..... print version number and exit\n"
          "  -noicc ....... don't use the icc profile if present\n"
          "  -nofancy ..... don't use the fancy YUV420 upscaler\n"
          "  -nofilter .... disable in-loop filtering\n"
          "  -dither <int>  dithering strength (0..100), default=50\n"
-#if WEBP_DECODER_ABI_VERSION > 0x0204
          "  -noalphadither disable alpha plane dithering\n"
-#endif
          "  -mt .......... use multi-threading\n"
          "  -info ........ print info\n"
-         "  -h     ....... this help message\n"
+         "  -h ........... this help message\n"
          "\n"
          "Keyboard shortcuts:\n"
          "  'c' ................ toggle use of color profile\n"
@@ -416,9 +414,7 @@ int main(int argc, char *argv[]) {
     return -1;
   }
   config->options.dithering_strength = 50;
-#if WEBP_DECODER_ABI_VERSION > 0x0204
   config->options.alpha_dithering_strength = 100;
-#endif
   kParams.use_color_profile = 1;
 
   for (c = 1; c < argc; ++c) {
@@ -432,10 +428,8 @@ int main(int argc, char *argv[]) {
       config->options.no_fancy_upsampling = 1;
     } else if (!strcmp(argv[c], "-nofilter")) {
       config->options.bypass_filtering = 1;
-#if WEBP_DECODER_ABI_VERSION > 0x0204
     } else if (!strcmp(argv[c], "-noalphadither")) {
       config->options.alpha_dithering_strength = 0;
-#endif
     } else if (!strcmp(argv[c], "-dither") && c + 1 < argc) {
       config->options.dithering_strength =
           ExUtilGetInt(argv[++c], 0, &parse_error);
@@ -531,6 +525,12 @@ int main(int argc, char *argv[]) {
   // We take this into account by bumping up loop_count.
   WebPDemuxGetFrame(kParams.dmux, 0, curr);
   if (kParams.loop_count) ++kParams.loop_count;
+
+#if defined(__unix__) || defined(__CYGWIN__)
+  // Work around GLUT compositor bug.
+  // https://bugs.launchpad.net/ubuntu/+source/freeglut/+bug/369891
+  setenv("XLIB_SKIP_ARGB_VISUALS", "1", 1);
+#endif
 
   // Start display (and timer)
   glutInit(&argc, argv);

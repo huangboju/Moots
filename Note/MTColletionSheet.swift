@@ -2,7 +2,7 @@
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.
 //
 
-//!!!: 添加长按删除
+//! !!: 添加长按删除
 let buttonHight: CGFloat = 44
 
 import Kingfisher
@@ -89,7 +89,7 @@ class MTColletionSheet: UIView {
         UIView.animateWithDuration(0.25, animations: {
             self.alpha = 0
             self.cusomerView.frame.origin.y = self.SCREEN_SIZE.height
-        }) { (finished) in
+        }) { finished in
             if finished {
                 for subview in self.cusomerView.subviews {
                     subview.removeFromSuperview()
@@ -144,12 +144,12 @@ class MTColletionSheet: UIView {
                         UIView.animateWithDuration(0.25, animations: { [unowned self] in
                             self.snapedImageView.transform = CGAffineTransformIdentity
                             self.snapedImageView.frame.origin = CGPoint(x: cell.frame.minX, y: offsetY + location.y - self.deltaSize.height)
-                            }, completion: { [unowned self] (flag) in
-                                self.snapedImageView.removeFromSuperview()
-                                self.snapedImageView = nil
-                                self.currentIndexPath = nil
-                                cell.alpha = 1.0
-                            })
+                        }, completion: { [unowned self] _ in
+                            self.snapedImageView.removeFromSuperview()
+                            self.snapedImageView = nil
+                            self.currentIndexPath = nil
+                            cell.alpha = 1.0
+                        })
                     }
                 }
             default:
@@ -166,13 +166,13 @@ class MTColletionSheet: UIView {
         return UIImageView(image: image)
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
 extension MTColletionSheet: UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate {
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(collectionView _: UICollectionView, numberOfItemsInSection _: Int) -> Int {
         return listData.count
     }
 
@@ -180,7 +180,7 @@ extension MTColletionSheet: UICollectionViewDataSource, UICollectionViewDelegate
         return collectionView.dequeueReusableCellWithReuseIdentifier("cellId", forIndexPath: indexPath)
     }
 
-    func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
+    func collectionView(collectionView _: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         (cell as? CollectionSheetCell)?.setData(listData[indexPath.row])
         let backgroundView = UIView(frame: cell.frame)
         backgroundView.backgroundColor = .colorWithHex(0xDDDCDF)
@@ -195,9 +195,9 @@ extension MTColletionSheet: UICollectionViewDataSource, UICollectionViewDelegate
         }
     }
 
-    //MARK: - UIGestureRecognizerDelegate
-    //手势和UI控件之间冲突的解决方法
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+    // MARK: - UIGestureRecognizerDelegate
+    // 手势和UI控件之间冲突的解决方法
+    func gestureRecognizer(gestureRecognizer _: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
         return touch.view is MTColletionSheet
     }
 }
@@ -229,7 +229,7 @@ class CollectionSheetCell: UICollectionViewCell {
         }
     }
 
-    required init?(coder aDecoder: NSCoder) {
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
