@@ -49,5 +49,43 @@ class QuartzLineView: QuartzView {
         // Bulk call to stroke a sequence of line segments.
         // Equivalent to for(i=0 i<count i+=2) { MoveToPoint(point[i]) AddLineToPoint(point[i+1]) StrokePath() }
         context.strokeLineSegments(between: strokeSegments)
+
+        // MARK: - 镂空文字
+        let rect = frame
+        UIColor.white.setFill()
+        context.addArc(center: CGPoint(rect.midX, rect.midY), radius: rect.width/2, startAngle: 0, endAngle: 2 * .pi, clockwise: true)
+        context.fillPath()
+
+        // Manual offset may need to be adjusted depending on the length of the text
+        drawSubtractedText("Foo", in: rect, inContext: context)
+    }
+    
+    func drawSubtractedText(_ text: String, in rect: CGRect, inContext context: CGContext) {
+        // Save context state to not affect other drawing operations
+        context.saveGState()
+
+        // Magic blend mode
+        context.setBlendMode(.destinationOut)
+        
+        // This seemingly random value adjusts the text
+        // vertically so that it is centered in the circle.
+        let Y_OFFSET = CGFloat(-2 * text.characters.count + 5)
+
+        // Context translation for label
+        let LABEL_SIDE = rect.width
+        context.translateBy(x: 0, y: rect.height/2-LABEL_SIDE/2+Y_OFFSET)
+
+        // Label to center and adjust font automatically
+        let label = UILabel(frame: CGRect(0, 0, LABEL_SIDE, LABEL_SIDE))
+
+        label.font = UIFont.boldSystemFont(ofSize: 120)
+        label.adjustsFontSizeToFitWidth = true
+        label.text = text
+        label.textAlignment = .center
+        label.backgroundColor = UIColor.clear
+        label.layer.draw(in: context)
+        
+        // Restore the state of other drawing operations
+        context.restoreGState()
     }
 }
