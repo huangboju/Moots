@@ -51,4 +51,24 @@ extension CGRect {
     }
 }
 
+extension UIImage {
+    func kt_drawRectWithRoundedCorner(_ radius: CGFloat) -> UIImage {
+        
+        let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: size)
+
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, 0)
+        guard let context = UIGraphicsGetCurrentContext() else { return self }
+        let path = UIBezierPath(roundedRect: rect, byRoundingCorners: .allCorners,
+                                cornerRadii: CGSize(width: radius, height: radius))
+        context.addPath(path.cgPath)
+        context.saveGState()
+        context.clip()
+        draw(in: rect)
+        context.drawPath(using: .fillStroke)
+        context.restoreGState()
+        let output = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return output ?? self
+    }
+}
 

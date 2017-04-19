@@ -13,6 +13,12 @@ class LinesController: UIViewController {
 
         let quartzLineView = QuartzLineView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
         view.addSubview(quartzLineView)
+        
+        let image = UIImage(named: "Demo")
+
+        let imageView = UIImageView(image: image!.kt_drawRectWithRoundedCorner(image!.size.width / 2))
+        imageView.frame.origin.y = 100
+        view.addSubview(imageView)
     }
 
     override func didReceiveMemoryWarning() {
