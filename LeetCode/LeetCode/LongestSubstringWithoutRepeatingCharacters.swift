@@ -20,32 +20,34 @@ private extension String {
         return Array(self.characters)
     }
 }
+// "ppwwpwkew"
 
 func lengthOfLongestSubstring(_ s: String) -> Int {
     let charArr = s.randomAccessCharactersArray()
     let len = charArr.count
-    if len <= 1 {
-        return len
-    } else {
-        var tmpMaxLen = 1
-        var maxLen = 1
-        var hashMap = Dictionary<Character, Int>()
-        hashMap[charArr[0]] = 0
-        for i in 1 ..< len {
-            if let lastPosition = hashMap[charArr[i]] {
-                if lastPosition < i - tmpMaxLen {
-                    tmpMaxLen += 1
-                } else {
-                    tmpMaxLen = i - lastPosition
-                }
+    guard len > 1 else { return len }
+    
+    var maxLen = 1
+    var tempLen = 1
+    var hashMap = [charArr[0]: 0]
+    
+    for i in 1 ..< len {
+        if let lastPosion = hashMap[charArr[i]] {
+            if tempLen < i - lastPosion { // 这种情况 "ppwwpwkew"
+                tempLen += 1
             } else {
-                tmpMaxLen += 1
+                tempLen = i - lastPosion
             }
-            hashMap[charArr[i]] = i
-            if tmpMaxLen > maxLen {
-                maxLen = tmpMaxLen
-            }
+        } else {
+            tempLen += 1
         }
-        return maxLen
+
+        hashMap[charArr[i]] = i
+
+        if tempLen > maxLen {
+            maxLen = tempLen
+        }
     }
+
+    return maxLen
 }

@@ -11,3 +11,12 @@ import Foundation
 // https://github.com/diwu/LeetCode-Solutions-in-Swift
 
 print(twoSum([2, 7, 11, 15, 0, 9], 9))
+
+
+print(lengthOfLongestSubstring("ppwwpwkew"))
+
+print("\n\n")
+
+(0...100).forEach {
+    print($0 & 1)
+}

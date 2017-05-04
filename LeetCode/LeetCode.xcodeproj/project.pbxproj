@@ -11,6 +11,7 @@
 		D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E871EA7081E00214304 /* TwoSum.swift */; };
 		D81B3E8A1EA7083B00214304 /* AddTwoNumbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E891EA7083B00214304 /* AddTwoNumbers.swift */; };
 		D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E8B1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift */; };
+		D81B3ED61EA75F7500214304 /* findMedianSortedArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3ED51EA75F7500214304 /* findMedianSortedArrays.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		D81B3E871EA7081E00214304 /* TwoSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
 		D81B3E891EA7083B00214304 /* AddTwoNumbers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTwoNumbers.swift; sourceTree = "<group>"; };
 		D81B3E8B1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongestSubstringWithoutRepeatingCharacters.swift; sourceTree = "<group>"; };
+		D81B3ED51EA75F7500214304 /* findMedianSortedArrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findMedianSortedArrays.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				D81B3E871EA7081E00214304 /* TwoSum.swift */,
 				D81B3E891EA7083B00214304 /* AddTwoNumbers.swift */,
 				D81B3E8B1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift */,
+				D81B3ED51EA75F7500214304 /* findMedianSortedArrays.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -133,6 +136,7 @@
 				D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */,
 				D81B3E7F1EA707A200214304 /* main.swift in Sources */,
 				D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
+				D81B3ED61EA75F7500214304 /* findMedianSortedArrays.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
