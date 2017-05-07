@@ -13,10 +13,10 @@ class SecondController: UIViewController {
     lazy var postButton: AssistiveTouch = {
         let width: CGFloat = 56
         let padding: CGFloat = 25
-        let postButton = AssistiveTouch(frame: CGRect(x: (self.view.frame.width - width) - padding, y: self.view.frame.height - width - padding, width: width, height: width))
+        let postButton = AssistiveTouch(origin: CGPoint(x: (self.view.frame.width - width) - padding, y: self.view.frame.height - width - padding))
         postButton.setTitleColor(.white, for: .normal)
         postButton.setTitle("投放", for: .normal)
-        postButton.backgroundColor = UIColor.blue
+        postButton.backgroundColor = UIColor(red: 100 / 255, green: 149 / 255, blue: 237 / 255, alpha: 1)
         postButton.alpha = 0
         postButton.addTarget(self, action: #selector(submit), for: .touchUpInside)
         return postButton

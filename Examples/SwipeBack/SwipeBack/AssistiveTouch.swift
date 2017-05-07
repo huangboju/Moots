@@ -8,16 +8,14 @@ class AssistiveTouch: UIButton {
     var originPoint = CGPoint.zero
     let screen = UIScreen.main.bounds
 
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    convenience init(origin: CGPoint) {
+        self.init(frame: CGRect(origin: origin, size: CGSize(width: 56, height: 56)))
         layer.cornerRadius = frame.width / 2
+
+        // 如果有性能问题，改用shadowPath
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowOpacity = 0.26
-    }
-
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -58,14 +56,14 @@ class AssistiveTouch: UIButton {
         let width = screen.width - padding
         let height = screen.height - padding
         if center.x + offsetX >= width / 2 {
-            self.center = CGPoint(x: width - bounds.width / 2, y: center.y + offsetY)
+            center = CGPoint(x: width - bounds.width / 2, y: center.y + offsetY)
         } else {
-            self.center = CGPoint(x: bounds.width / 2 + padding, y: center.y + offsetY)
+            center = CGPoint(x: bounds.width / 2 + padding, y: center.y + offsetY)
         }
         if center.y + offsetY >= height - bounds.height / 2 {
-            self.center = CGPoint(x: center.x, y: height - bounds.height / 2)
-        } else if center.y + offsetY < bounds.size.height / 2 {
-            self.center = CGPoint(x: center.x, y: bounds.height / 2 + padding)
+            center.y = height - bounds.height / 2
+        } else if center.y + offsetY < bounds.height / 2 {
+            center.y = bounds.height / 2 + padding
         }
         UIView.commitAnimations()
     }
