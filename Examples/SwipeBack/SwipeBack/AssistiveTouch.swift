@@ -12,10 +12,10 @@ class AssistiveTouch: UIButton {
         self.init(frame: CGRect(origin: origin, size: CGSize(width: 56, height: 56)))
         layer.cornerRadius = frame.width / 2
 
-        // 如果有性能问题，改用shadowPath
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowOpacity = 0.26
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: bounds.width).cgPath
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
