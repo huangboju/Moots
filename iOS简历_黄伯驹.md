@@ -50,6 +50,7 @@
 # 接入了蒲公英的移动端测试分发平台
 # 接入阿里云推送
 # 合作制定了iOS UI规范文档
+# 适配了iOS中的 ATS
 ```
 
 #### 云投
@@ -73,15 +74,10 @@
 ```
 角色：开发人员
 职责与工作内容：
+# 合作开发
 # 使用NSTimer封装了热帖头条的Banner
 # 接入第三方登录
-```
-
-
-#### 青青岛社区
-```
-角色：开发人员
-职责与工作内容：
+# 接入友盟分享功能
 ```
 
 
@@ -117,6 +113,7 @@
 * 了解一些简单算法
 * 熟悉工厂、单列、策略、状态等常用设计模式
 * 熟练使用Swift内存管理机制及Runtime、Runloop
+* 熟练使用SwiftLint、SwiftFormat等代码格式优化工具
 * 熟练使用Swift语言开发iOS应用，熟悉[Moya](https://github.com/Moya/Moya)、[Almofire](https://github.com/Alamofire/Alamofire)、[PromiseKit](https://github.com/mxcl/PromiseKit)、[Kingfisher](https://github.com/onevcat/Kingfisher)、[Texture](https://github.com/TextureGroup/Texture)等流行库
 * 熟悉AVFoundation、Core Graphics、Autolayout、Flexbox、Core Animation及Core Text
 * 熟悉GCD/Operation及网络并发编程技术
