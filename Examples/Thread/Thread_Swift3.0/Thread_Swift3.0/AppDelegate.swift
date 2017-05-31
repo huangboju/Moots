@@ -8,6 +8,18 @@
 
 import UIKit
 
+class MyOp: BlockOperation {
+    deinit {
+        print("aaaa")
+    }
+}
+
+class Myqueue: OperationQueue {
+    deinit {
+        print("bb")
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,7 +28,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        operationTest()
+        observeApp()
+        
         return true
+    }
+    
+    func observeApp() {
+
+    }
+    
+    func operationTest() {
+        let queue = Myqueue()
+        let op = MyOp()
+
+        op.addExecutionBlock { [unowned op] in
+            for i in 0 ..< 10000 {
+                if op.isCancelled {
+                    break
+                }
+                if i == 99 {
+                    queue.cancelAllOperations()
+                }
+                print(i)
+            }
+        }
+        queue.addOperation(op)
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

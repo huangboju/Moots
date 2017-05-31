@@ -331,7 +331,7 @@ class SecondController: FormViewController {
         
         var testNumber = 0
         
-        for index in 0...9 {
+        for index in 0 ... 9 {
             concurrentQueue.async {
                 let wait = semaphoreLock.wait(timeout: .distantFuture) //上锁
                 print("wait=\(wait)")
