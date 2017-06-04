@@ -34,6 +34,9 @@ class ViewController: UIViewController {
         ],
         [
             LayoutController.self
+        ],
+        [
+            CalendarViewController.self
         ]
     ]
 

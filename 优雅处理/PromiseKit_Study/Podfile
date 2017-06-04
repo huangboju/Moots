@@ -1,0 +1,9 @@
+platform :ios, '8.0'
+use_frameworks!
+
+target "PromiseKit_Study" do
+    pod 'PromiseKit/Alamofire'
+    # pod 'Result', '~> 3.0.0'
+end
+
+

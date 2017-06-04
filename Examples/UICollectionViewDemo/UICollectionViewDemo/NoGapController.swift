@@ -22,7 +22,7 @@ class NoGapController: UIViewController {
         collectionView.backgroundColor = .white
         return collectionView
     }()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
