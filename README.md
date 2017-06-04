@@ -6,9 +6,10 @@
 
 <details>
     <summary>
-        **UICollectionView highlight**
+        <b>UICollectionView highlight</b>
     </summary>
 ```swift
+
 // 方法一
 func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         cell.backgroundColor = .white
@@ -39,7 +40,7 @@ func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt ind
 
 <details>
 <summary>
-  **泛型约束**
+  <b>泛型约束</b>
 </summary>
 ```swift
 protocol ArrayPresenter {
@@ -53,9 +54,10 @@ func loadMore<T: UIScrollView>(listView: T, indexPath: NSIndexPath) where T: You
 ```
 </details>
 
+
 <details>
 <summary>
-**银行金额验证**
+<b>银行金额验证</b>
 </summary>
 
 ```swift
@@ -91,7 +93,7 @@ extension String {
 
 <details>
 <summary>
-  **多标志符字符串分割**
+    <b>多标志符字符串分割</b>
 </summary>
 
 ```swift
@@ -103,7 +105,7 @@ print(text.components(separatedBy: set)) // ["abc", "vfr", "yyuu"]
 
 <details>
 <summary>
-  **[匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)**
+    <b>[匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)</b>
 </summary>
 
 ```swift
@@ -125,7 +127,7 @@ if case 18...25 = age {
 
 <details>
 <summary>
-  **单行代码**
+  <b>单行代码</b>
 </summary>
     
 ```swift
@@ -164,7 +166,7 @@ let retulst = data.reduce(([], [])) {
 
 <details>
 <summary>
-  **[GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)**
+  <b>[GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)</b>
 </summary>
     
 ```swift
@@ -296,7 +298,7 @@ return tabBarController?.tabBar.frame.minY < view.frame.maxY
 
 <details>
 <summary>
-  **导航栏标返回图片**
+  <b>导航栏标返回图片</b>
 </summary>
 ```swift
 navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
@@ -307,7 +309,7 @@ navigationBar.backIndicatorImage = R.image.ic_nav_back()
 
 <details>
 <summary>
-  **[tableView分割线左边到头](http://www.jianshu.com/p/4e9619483035)(_UITableViewCellSeparatorView)**
+  <b>[tableView分割线左边到头](http://www.jianshu.com/p/4e9619483035)(_UITableViewCellSeparatorView)</b>
 </summary>
 ```swift
 //写在viewDidLoad http://www.jianshu.com/p/1274343055a7
@@ -338,7 +340,7 @@ layoutMargins = UIEdgeInsetsZero
 
 <details>
 <summary>
-  **虚线**
+  <b>虚线</b>
 </summary>
 ```swift
 func drawDottedLine(lineView: UIView, offset: CGPoint) {
@@ -364,7 +366,7 @@ func drawDottedLine(lineView: UIView, offset: CGPoint) {
 
 <details>
 <summary>
-  **部分圆角图片**
+  <b>部分圆角图片</b>
 </summary>
 ```swift
 func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
@@ -383,7 +385,7 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
 
 <details>
 <summary>
-  **圆角图片([AlamofireImage](https://github.com/Alamofire/AlamofireImage)里面有切圆角的方法)**
+  <b>圆角图片([AlamofireImage](https://github.com/Alamofire/AlamofireImage)里面有切圆角的方法)</b>
 </summary>
 ```swift
 extension UIImageView {
@@ -417,7 +419,7 @@ extension UIImage {
 
 <details>
 <summary>
-  **通过字符串构建类**
+  <b>通过字符串构建类</b>
 </summary>
 ```swift
 extension String {
@@ -442,7 +444,7 @@ extension NSObject {
 
 <details>
 <summary>
-  **修改状态栏背景颜色**
+  <b>修改状态栏背景颜色</b>
 </summary>
 ```swift
 func setStatusBarBackgroundColor(color: UIColor) {
@@ -466,7 +468,7 @@ swift3.0
 
 <details>
 <summary>
-  **裁剪图片**
+  <b>裁剪图片</b>
 </summary>
 ```swift
 extension UIImage {
@@ -491,7 +493,7 @@ extension UIImage {
 
 <details>
 <summary>
-  **UIButton响应区域太小**
+  <b>UIButton响应区域太小</b>
 </summary>
 ```swift
 extension UIButton {
@@ -617,7 +619,7 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 ## 常用配置
 <details>
 <summary>
-  **Cocoapods[原理](https://objccn.io/issue-6-4/)**
+  <b>Cocoapods[原理](https://objccn.io/issue-6-4/)</b>
 </summary>
 
 ```ruby
@@ -632,7 +634,7 @@ sudo gem install cocoapods -v 0.25.0
 
 <details>
 <summary>
-  **修改Xcode自动生成的文件注释来导出API文档**
+  <b>修改Xcode自动生成的文件注释来导出API文档</b>
 </summary>
 ```
 http://www.jianshu.com/p/d0c7d9040c93
@@ -642,7 +644,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**LLDB（断点调试）**</summary>
+  <summary><b>LLDB（断点调试）</b></summary>
     <ul>
       <li>[iOS开发断点调试高级技巧](http://www.jianshu.com/p/8e9fc9a8ab78)</li>
       <li>[与调试器共舞 - LLDB 的华尔兹](https://objccn.io/issue-19-2/)</li>
@@ -653,7 +655,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
     <summary>
-      **删除多余模拟器**
+      <b>删除多余模拟器</b>
     </summary>
 
 ```
@@ -665,7 +667,7 @@ open /Users/你电脑的名字/Library/Developer/Xcode/iOS\ DeviceSupport
 
 <details>
     <summary>
-       **修改swift文件**
+       <b>修改swift文件</b>
     </summary>
 
 ```
@@ -730,7 +732,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**控件库(里面有你所需要的各种控件)**</summary>
+  <summary><b>控件库(里面有你所需要的各种控件)</b></summary>
     <ul>
         <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
         <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
@@ -742,7 +744,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**各种图表库（chart）**</summary>
+  <summary><b>各种图表库（chart）</b></summary>
     <ul>
     <li>[awesome-ios-chart](https://github.com/ameizi/awesome-ios-chart)</li>
     </ul>
@@ -750,7 +752,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**颜色**</summary>
+  <summary><b>颜色</b></summary>
     <ul>
     <li>[DynamicColor](https://github.com/yannickl/DynamicColor)(Swift)</li>
     </ul>
@@ -758,7 +760,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**视频播放器**</summary>
+  <summary><b>视频播放器</b></summary>
     <ul>
     <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
     <li>[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)</li>
@@ -768,7 +770,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**加载动画（loading）**</summary>
+  <summary><b>加载动画（loading）</b></summary>
     <ul>
     <li>[FeSpinner](https://github.com/NghiaTranUIT/FeSpinner)(OC)</li>
     <li>https://github.com/poolqf/FillableLoaders(Swift)</li>
@@ -778,7 +780,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**TableView展开cell**</summary>
+  <summary><b>TableView展开cell</b></summary>
     <ul>
     <li>[SKSTableView](https://github.com/sakkaras/SKSTableView)(OC)</li>
     <li>[ios-swift-collapsible-table-section-in-grouped-section](https://github.com/jeantimex/ios-swift-collapsible-table-section-in-grouped-section)(Swift)</li>
@@ -787,7 +789,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**日历**</summary>
+  <summary><b>日历</b></summary>
     <ul>
       <li>[GLCalendarView](https://github.com/Glow-Inc/GLCalendarView)(OC)</li>
       <li>[JTCalendar](https://github.com/jonathantribouharet/JTCalendar)(OC)</li>
@@ -799,7 +801,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**日期处理**</summary>
+  <summary><b>日期处理</b></summary>
     <ul>
       <li>[Timepiece](https://github.com/naoty/Timepiece)(Swift)</li>
       <li>[SwiftMoment](https://github.com/akosma/SwiftMoment)(Swift)</li>
@@ -810,7 +812,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**约束**</summary>
+  <summary><b>约束</b></summary>
     <ul>
       <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
       <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
@@ -820,7 +822,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**滚动导航栏**</summary>
+  <summary><b>滚动导航栏</b></summary>
     <ul>
     <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
     <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
@@ -831,7 +833,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**类似微信支付弹出一个UIViewController**</summary>
+  <summary><b>类似微信支付弹出一个UIViewController</b></summary>
     <ul>
     <li>[MZFormSheetController](https://github.com/layerhq/Atlas-iOS)(OC)</li>
     <li>[MZFormSheetPresentationController](https://github.com/m1entus)(OC)</li>
@@ -841,7 +843,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**转场动画**</summary>
+  <summary><b>转场动画</b></summary>
     <ul>
     <li>[TransitionTreasury](https://github.com/DianQK/TransitionTreasury)(Swift)</li>
     <li>[ADTransitionController](https://github.com/applidium/ADTransitionController)(OC)</li>
@@ -851,7 +853,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**陌陌卡片的喜欢和不喜欢**</summary>
+  <summary><b>陌陌卡片的喜欢和不喜欢</b></summary>
     <ul>
     <li>[TinderSimpleSwipeCards](https://github.com/cwRichardKim/TinderSimpleSwipeCards)(OC)</li>
     <li>[MDCSwipeToChoose](https://github.com/modocache/MDCSwipeToChoose)(OC)</li>
@@ -860,7 +862,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**气泡弹框**</summary>
+  <summary><b>气泡弹框</b></summary>
     <ul>
     <li>[DXPopover](https://github.com/xiekw2010/DXPopover)(OC)</li>
     <li>[Popover](https://github.com/corin8823/Popover)(OC)</li>
@@ -870,7 +872,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 <details>
-  <summary>**Swift的扩展**</summary>
+  <summary><b>Swift的扩展</b></summary>
     <ul>
     <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
     <li>[EZSwiftExtensions](https://github.com/goktugyil/EZSwiftExtensions)(Swift)</li>
@@ -895,7 +897,7 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 
 <details>
-  <summary>**Alert**</summary>
+  <summary><b>Alert</b></summary>
     <ul>
       <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)(Swift)</li>
       <li>[Presentr](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
