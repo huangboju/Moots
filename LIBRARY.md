@@ -85,13 +85,22 @@
 
 
 <details>
-  <summary><b>加载动画（loading）</b></summary>
+  <summary>
+    <b>加载动画（loading）</b>
+  </summary>
     <ul>
-    <li>[FeSpinner](https://github.com/NghiaTranUIT/FeSpinner)(OC)</li>
-    <li>https://github.com/poolqf/FillableLoaders(Swift)</li>
-    <li>[NVActivityIndicatorView](https://github.com/ninjaprox/NVActivityIndicatorView)(Swift)</li>
+        <li>
+            <a href="https://github.com/NghiaTranUIT/FeSpinner">FeSpinner</a>(OC)
+        </li>
+        <li>
+            <a href="https://github.com/poolqf/FillableLoaders">FillableLoaders</a>(Swift)
+        </li>
+        <li>
+            <a href="https://github.com/ninjaprox/NVActivityIndicatorView">NVActivityIndicatorView</a>(Swift)
+        </li>
     </ul>
 </details>
+
 
 
 <details>
