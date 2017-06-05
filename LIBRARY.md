@@ -1,6 +1,6 @@
 ### UI
 <details>
-    <summary> 代码规范（Swift代码格式和自动格式化库） </summary>
+    <summary> <b>代码规范（Swift代码格式和自动格式化库）</b> </summary>
     <ul>
         <li><a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a></li>
         <li><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></li>
