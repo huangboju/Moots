@@ -882,7 +882,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
-  **[10Clock](https://github.com/joedaniels29/10Clock)(Swift)**
+    <b><a href="https://github.com/joedaniels29/10Clock">10Clock</a>(Swift)</b>
 </summary>
 这个控件是一个美丽的时间选择器大量启发的iOS 10“睡前”定时器。
 </details>
@@ -890,7 +890,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 <details>
 <summary>
-  **[AImage](https://github.com/wangjwchn/AImage)**
+    <b><a href="https://github.com/wangjwchn/AImage">AImage</a>(Swift)</b>
 </summary>
 Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化。
 </details>
@@ -908,7 +908,7 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 <details>
 <summary>
-  **[AKPickerView](https://github.com/Akkyie/AKPickerView-Swift)(Swift)**
+    <b><a href="https://github.com/Akkyie/AKPickerView-Swift">AKPickerView</a>(Swift)</b>
 </summary>
 一个简单但可自定义的水平选择器视图。
 </details>
@@ -916,7 +916,7 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 <details>
 <summary>
-  **[ASProgressPopUpView](https://github.com/alskipp/ASProgressPopUpView)(OC)**
+    <b><a href="https://github.com/alskipp/ASProgressPopUpView">ASProgressPopUpView</a>(OC)</b>
 </summary>
 显示弹出式视图中完成百分比的进度视图
 </details>
