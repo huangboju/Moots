@@ -2,8 +2,12 @@
 <details>
     <summary> <b>代码规范（Swift代码格式和自动格式化库）</b> </summary>
     <ul>
-        <li><a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a></li>
-        <li><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></li>
+        <li>
+            <a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a>
+        </li>
+        <li>
+            <a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a>
+        </li>
     </ul>
 </details>
 
@@ -11,11 +15,22 @@
 <details>
   <summary><b>控件库(里面有你所需要的各种控件)</b></summary>
     <ul>
-        <li>[MaterialComponents](https://github.com/material-components/material-components-ios)(OC)</li>
-        <li>[Material-Controls-For-iOS](https://github.com/fpt-software/Material-Controls-For-iOS)(OC)</li>
-        <li>[QMUI_iOS](https://github.com/QMUI/QMUI_iOS)(OC)</li>
-        <li>[FlatUIKit](https://github.com/Grouper/FlatUIKit)(OC)</li>
-        <li>[Material](https://github.com/CosmicMind/Material)(Swift)</li>
+
+        <li>
+            <a href="https://github.com/material-components/material-components-ios">MaterialComponents</a>(OC)
+        </li>
+        <li>
+            <a href="https://github.com/fpt-software/Material-Controls-For-iOS">Material-Controls-For-iOS</a>(OC)
+        </li>
+        <li>
+            <a href="https://github.com/QMUI/QMUI_iOS">QMUI_iOS</a>(OC)
+        </li>
+        <li>
+            <a href="https://github.com/Grouper/FlatUIKit">FlatUIKit</a>(OC)
+        </li>
+        <li>
+            <a href="https://github.com/CosmicMind/Material">Material</a>(Swift)
+        </li>
     </ul>
 </details>
 
