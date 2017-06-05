@@ -619,7 +619,7 @@ delegate一般得用weak标识符，这样当delegate指向的controller被销�
 ## 常用配置
 <details>
 <summary>
-  <b>Cocoapods[原理](https://objccn.io/issue-6-4/)</b>
+  <b>Cocoapods<a href="https://objccn.io/issue-6-4/">原理</a></b>
 </summary>
 
 ```ruby
