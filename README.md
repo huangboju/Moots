@@ -309,7 +309,7 @@ navigationBar.backIndicatorImage = R.image.ic_nav_back()
 
 <details>
 <summary>
-  <b><a bref="http://www.jianshu.com/p/4e9619483035">tableView分割线左边到头</a>(_UITableViewCellSeparatorView)</b>
+  <b><a href="http://www.jianshu.com/p/4e9619483035">tableView分割线左边到头</a>(_UITableViewCellSeparatorView)</b>
 </summary>
 ```swift
 //写在viewDidLoad http://www.jianshu.com/p/1274343055a7
