@@ -718,5 +718,5 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
 
 
 
-# 常用库
+# [常用库](https://github.com/huangboju/Moots/blob/master/LIBRARY.md)
 按字母排序，点击展开为该库的描述
