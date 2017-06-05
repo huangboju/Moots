@@ -105,7 +105,7 @@ print(text.components(separatedBy: set)) // ["abc", "vfr", "yyuu"]
 
 <details>
 <summary>
-    <b>[匹配模式](http://swift.gg/2016/06/06/pattern-matching-4/)</b>
+    <b><a href="http://swift.gg/2016/06/06/pattern-matching-4/">匹配模式</a></b>
 </summary>
 
 ```swift
@@ -166,7 +166,7 @@ let retulst = data.reduce(([], [])) {
 
 <details>
 <summary>
-  <b>[GCD map函数](http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html)</b>
+  <b><a bref="http://moreindirection.blogspot.it/2015/07/gcd-and-parallel-collections-in-swift.html">GCD map函数</a></b>
 </summary>
     
 ```swift
@@ -248,7 +248,7 @@ extension Array {
 
 <details>
 <summary>
-  **导航栏标题设置**
+    <b>导航栏标题设置</b>
 </summary>
     
 ```swift
@@ -261,7 +261,7 @@ navigationItem.title = "示例"
 
 <details>
 <summary>
-  **tabbar隐藏动画(同知乎)**
+  <b>tabbar隐藏动画(同知乎)</b>
 </summary>
 
 ```swift
