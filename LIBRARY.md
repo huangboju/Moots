@@ -123,7 +123,6 @@
         <li>
             <a href="https://github.com/Glow-Inc/GLCalendarView">GLCalendarView</a>(OC)
         </li>
-
         <li>
             <a href="https://github.com/jonathantribouharet/JTCalendar">JTCalendar</a>(OC)
         </li>
