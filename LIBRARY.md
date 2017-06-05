@@ -40,9 +40,13 @@
 
 
 <details>
-  <summary><b>各种图表库（chart）</b></summary>
+  <summary>
+    <b>各种图表库（chart）</b>
+  </summary>
     <ul>
-    <li>[awesome-ios-chart](https://github.com/ameizi/awesome-ios-chart)</li>
+        <li>
+            <a href="https://github.com/ameizi/awesome-ios-chart">awesome-ios-chart</a>
+        </li>
     </ul>
 </details>
 
