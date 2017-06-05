@@ -1,6 +1,8 @@
 ### UI
 <details>
-    <summary> <b>代码规范（Swift代码格式和自动格式化库）</b> </summary>
+    <summary>
+        <b>代码规范（Swift代码格式和自动格式化库）</b>
+    </summary>
     <ul>
         <li>
             <a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a>
@@ -13,26 +15,29 @@
 
 
 <details>
-  <summary><b>控件库(里面有你所需要的各种控件)</b></summary>
+  <summary>
+    <b>控件库(里面有你所需要的各种控件)</b>
+  </summary>
     <ul>
 
         <li>
-            <a href="https://github.com/material-components/material-components-ios">MaterialComponents</a>(OC)
+            <a href="https://github.com/material-components/material-components-ios">MaterialComponents(OC)</a>
         </li>
         <li>
-            <a href="https://github.com/fpt-software/Material-Controls-For-iOS">Material-Controls-For-iOS</a>(OC)
+            <a href="https://github.com/fpt-software/Material-Controls-For-iOS">Material-Controls-For-iOS(OC)</a>
         </li>
         <li>
-            <a href="https://github.com/QMUI/QMUI_iOS">QMUI_iOS</a>(OC)
+            <a href="https://github.com/QMUI/QMUI_iOS">QMUI_iOS(OC)</a>
         </li>
         <li>
-            <a href="https://github.com/Grouper/FlatUIKit">FlatUIKit</a>(OC)
+            <a href="https://github.com/Grouper/FlatUIKit">FlatUIKit(OC)</a>
         </li>
         <li>
-            <a href="https://github.com/CosmicMind/Material">Material</a>(Swift)
+            <a href="https://github.com/CosmicMind/Material">Material(Swift)</a>
         </li>
     </ul>
 </details>
+
 
 
 <details>
@@ -41,6 +46,7 @@
     <li>[awesome-ios-chart](https://github.com/ameizi/awesome-ios-chart)</li>
     </ul>
 </details>
+
 
 
 <details>
