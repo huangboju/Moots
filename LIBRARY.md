@@ -20,19 +20,19 @@
   </summary>
     <ul>
         <li>
-            <a href="https://github.com/material-components/material-components-ios">MaterialComponents(OC)</a>
+            <a href="https://github.com/material-components/material-components-ios">MaterialComponents</a>(OC)
         </li>
         <li>
-            <a href="https://github.com/fpt-software/Material-Controls-For-iOS">Material-Controls-For-iOS(OC)</a>
+            <a href="https://github.com/fpt-software/Material-Controls-For-iOS">Material-Controls-For-iOS</a>(OC)
         </li>
         <li>
-            <a href="https://github.com/QMUI/QMUI_iOS">QMUI_iOS(OC)</a>
+            <a href="https://github.com/QMUI/QMUI_iOS">QMUI_iOS</a>(OC)
         </li>
         <li>
-            <a href="https://github.com/Grouper/FlatUIKit">FlatUIKit(OC)</a>
+            <a href="https://github.com/Grouper/FlatUIKit">FlatUIKit</a>(OC)
         </li>
         <li>
-            <a href="https://github.com/CosmicMind/Material">Material(Swift)</a>
+            <a href="https://github.com/CosmicMind/Material">Material</a>(Swift)
         </li>
     </ul>
 </details>
