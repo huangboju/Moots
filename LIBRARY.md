@@ -118,7 +118,9 @@
 
 
 <details>
-  <summary><b>日历库</b></summary>
+  <summary>
+        <b>日历库</b>
+  </summary>
     <ul>
         <li>
             <a href="https://github.com/Glow-Inc/GLCalendarView">GLCalendarView</a>(OC)
@@ -141,18 +143,31 @@
 
 
 <details>
-  <summary><b>日期处理</b></summary>
+  <summary>
+        <b>时间格式化处理</b>
+  </summary>
     <ul>
-      <li>[Timepiece](https://github.com/naoty/Timepiece)(Swift)</li>
-      <li>[SwiftMoment](https://github.com/akosma/SwiftMoment)(Swift)</li>
-      <li>[DateTools](https://github.com/MatthewYork/DateTools)(OC/Swift)</li>
-      <li>[SwiftDate](https://github.com/malcommac/SwiftDate)</li>
+      <li>
+            <a href="https://github.com/naoty/Timepiece">Timepiece</a>(Swift)
+      </li>
+      <li>
+            <a href="https://github.com/akosma/SwiftMoment">SwiftMoment</a>(Swift)
+      </li>
+      <li>
+            <a href="https://github.com/MatthewYork/DateTools">DateTools</a>(OC/Swift)
+      </li>
+      <li>
+            <a href="https://github.com/malcommac/SwiftDate">SwiftDate</a>(Swift)
+      </li>
     </ul>
 </details>
 
 
+
 <details>
-  <summary><b>约束</b></summary>
+  <summary>
+        <b>约束</b>
+  </summary>
     <ul>
       <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
       <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
