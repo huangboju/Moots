@@ -2,8 +2,8 @@
 <details>
     <summary> 代码规范（Swift代码格式和自动格式化库） </summary>
     <ul>
-        <li>[swift-style-guide](https://github.com/raywenderlich/swift-style-guide)</li>
-        <li>[SwiftFormat](https://github.com/nicklockwood/SwiftFormat)</li>
+        <li><a href="https://github.com/raywenderlich/swift-style-guide">swift-style-guide</a></li>
+        <li><a href="https://github.com/nicklockwood/SwiftFormat">SwiftFormat</a></li>
     </ul>
 </details>
 
