@@ -53,11 +53,16 @@
 
 
 <details>
-  <summary><b>颜色</b></summary>
+  <summary>
+    <b>颜色</b>
+  </summary>
     <ul>
-    <li>[DynamicColor](https://github.com/yannickl/DynamicColor)(Swift)</li>
+        <li>
+            <a href="https://github.com/yannickl/DynamicColor">DynamicColor</a>(Swift)
+        </li>
     </ul>
 </details>
+
 
 
 <details>
