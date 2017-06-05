@@ -385,7 +385,7 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
 
 <details>
 <summary>
-  <b>圆角图片([AlamofireImage](https://github.com/Alamofire/AlamofireImage)里面有切圆角的方法)</b>
+  <b>圆角图片(<a bref="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a>里面有切圆角的方法)</b>
 </summary>
 ```swift
 extension UIImageView {
