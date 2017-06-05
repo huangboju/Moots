@@ -66,13 +66,22 @@
 
 
 <details>
-  <summary><b>视频播放器</b></summary>
+  <summary>
+    <b>视频播放器</b>
+  </summary>
     <ul>
-    <li>[BMPlayer](https://github.com/BrikerMan/BMPlayer)(Swift)</li>
-    <li>[MobilePlayer](https://github.com/mobileplayer/mobileplayer-ios)(Swift)</li>
-    <li>[KRVideoPlayer](https://github.com/36Kr-Mobile/KRVideoPlayer)(OC)</li>
+        <li>
+            <a href="https://github.com/BrikerMan/BMPlayer">BMPlayer</a>(Swift)
+        </li>
+        <li>
+            <a href="https://github.com/mobileplayer/mobileplayer-ios">MobilePlayer</a>(Swift)
+        </li>
+        <li>
+            <a href="https://github.com/36Kr-Mobile/KRVideoPlayer">KRVideoPlayer</a>(OC)
+        </li>
     </ul>
 </details>
+
 
 
 <details>
