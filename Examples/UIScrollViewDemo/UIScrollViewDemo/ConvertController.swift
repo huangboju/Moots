@@ -14,10 +14,7 @@ class ConvertController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.white
-        
-        
-        
-        
+
         let greenViewOrigin = CGPoint(x: 150, y: 100)
         let blueViewOrigin = CGPoint(x: 30, y: 75)
         

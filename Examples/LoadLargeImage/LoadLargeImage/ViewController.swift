@@ -67,7 +67,7 @@ class ViewController: UIViewController {
             free( destBitmapData )
             NSLog("failed to create the output bitmap context!")
         }
-        
+
         destContext.translateBy(x: 0, y: destResolution.height)
         destContext.scaleBy( x: 1.0, y: -1.0)
         

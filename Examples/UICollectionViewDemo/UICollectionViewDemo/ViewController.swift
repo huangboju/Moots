@@ -70,9 +70,11 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.tintColor = UIColor.red
+        cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"

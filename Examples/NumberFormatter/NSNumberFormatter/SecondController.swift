@@ -19,7 +19,7 @@ class SecondController: UIViewController, HeaderViewPresenter {
         tableView.delegate = self
         return tableView
     }()
-    
+
     lazy var data: [Item] = [
         Item(methodName: "bankCardNumber", desc: "分割16位银行卡号"),
         Item(methodName: "currencyDisplay", desc: "货币显示"),

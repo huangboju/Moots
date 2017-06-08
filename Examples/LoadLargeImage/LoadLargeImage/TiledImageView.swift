@@ -24,7 +24,7 @@ class TiledImageView: UIView {
             tiledLayer.tileSize = CGSize(width: 512.0, height: 512.0)
         }
     }
-    
+
     override class var layerClass: AnyClass {
         return CATiledLayer.self
     }

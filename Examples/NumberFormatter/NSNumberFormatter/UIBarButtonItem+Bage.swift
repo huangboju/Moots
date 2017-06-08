@@ -32,7 +32,7 @@ extension UIBarButtonItem {
                 defaultOriginX = superview!.frame.width - badge!.frame.width
             }
         }
-        
+
         superview?.addSubview(badge!)
         badgeOriginX = defaultOriginX + 3
     }
@@ -49,13 +49,13 @@ extension UIBarButtonItem {
             updateBadgeValue(animated: true)
         }
     }
-    
+
     var badgeExpectedSize: CGSize {
         let frameLabel = duplicateLabel(labelToCopy: badge!)
         frameLabel.sizeToFit()
         return frameLabel.frame.size
     }
-    
+
     func updateBadgeFrame() {
 
         let expectedLabelSize = badgeExpectedSize

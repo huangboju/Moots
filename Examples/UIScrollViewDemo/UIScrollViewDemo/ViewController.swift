@@ -23,7 +23,9 @@ class ViewController: UIViewController {
             InfiniteScrollViewController.self,
             ScrollViewController.self,
             PagingSecondController.self,
-            ConvertController.self
+            ConvertController.self,
+            MootsController.self,
+            MootsControllerWithLayout.self
         ]
     ]
 
@@ -93,6 +95,7 @@ extension ViewController: UITableViewDelegate {
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
         if let controller = controllerName.fromClassName() as? UIViewController {
             controller.title = controllerName
+            controller.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(controller, animated: true)
         }
     }
