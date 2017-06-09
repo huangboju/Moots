@@ -23,7 +23,7 @@ private let itemWidth: CGFloat = 16
 private let itemHeight: CGFloat = 66
 private let padding: CGFloat = 0
 
-private let itemCount = 200
+private let itemCount = 10000
 
 private let titleSpace: CGFloat = flat((1 - goldenRatio) * reulerViewHeight)
 
@@ -100,7 +100,7 @@ class RulerView1: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
         textLabel.alpha = 0
         UIView.animate(withDuration: 0.25) {
             self.textLabel.alpha = 1
-            self.textLabel.text = String(format: "%.2f", Double(index * 100))
+            self.textLabel.text = String(format: "%.2f", max(Double(index * 100), 0))
         }
 
         rulerViewDelegate?.didSelectItem(with: Int(index))

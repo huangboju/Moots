@@ -170,6 +170,7 @@
 				D8123AED1EE7FA8C00EAAA63 /* MootsLayout.swift */,
 				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
 				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
+				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
 				D8A731FA1DED6E28005DF7C8 /* LaunchScreen.storyboard */,
@@ -178,7 +179,6 @@
 				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
-				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";

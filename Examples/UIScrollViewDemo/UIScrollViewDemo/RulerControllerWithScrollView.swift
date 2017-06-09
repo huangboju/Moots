@@ -79,7 +79,7 @@ class RulerControllerWithScrollView: UIViewController, UIScrollViewDelegate {
         let contentView = UIView()
         return contentView
     }()
-    
+
     func nearestTargetOffset(for offset: CGPoint) -> CGPoint {
         let pageSize: CGFloat = DIAMETER + MARGIN
         let page = roundf(Float(offset.x / pageSize))

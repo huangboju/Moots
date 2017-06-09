@@ -36,7 +36,6 @@ class MootsCollectionCell: UICollectionViewCell {
                 textLabel?.center.x = line.frame.minX
                 contentView.addSubview(textLabel!)
 
-                // 用0.6大概是黄金比
                 line.frame.size.height = flat(frame.height * goldenRatio)
             } else {
                 line.frame.size.height = flat(frame.height * goldenRatio * goldenRatio)
