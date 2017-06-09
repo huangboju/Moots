@@ -36,7 +36,7 @@ class RulerView1: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     weak var rulerViewDelegate: RulerViewDelegate?
 
     private lazy var collectionView: UICollectionView = {
-        let layout = MootsLayout()
+        let layout = RulerLayout()
         layout.scrollDirection = .horizontal
         layout.itemSize = CGSize(width: itemWidth, height: itemHeight)
         layout.minimumLineSpacing = padding
@@ -95,11 +95,13 @@ class RulerView1: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+
         let index = (scrollView.contentOffset.x + scrollView.contentInset.left) / itemWidth
 
         textLabel.alpha = 0
         UIView.animate(withDuration: 0.25) {
             self.textLabel.alpha = 1
+            // 这里有次显示为负数，做一下特殊处理
             self.textLabel.text = String(format: "%.2f", max(Double(index * 100), 0))
         }
 

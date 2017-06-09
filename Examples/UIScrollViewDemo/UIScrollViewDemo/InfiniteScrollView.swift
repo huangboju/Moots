@@ -1,6 +1,6 @@
 //
 //  InfiniteScrollView.swift
-//  MootsLayout_Demo
+//  RulerLayout_Demo
 //
 //  Created by 伯驹 黄 on 16/4/5.
 //  Copyright © 2016年 xiAo_Ju. All rights reserved.

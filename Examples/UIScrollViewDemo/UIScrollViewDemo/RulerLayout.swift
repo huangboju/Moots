@@ -4,7 +4,7 @@
 
 import UIKit
 
-class MootsLayout: UICollectionViewFlowLayout {
+class RulerLayout: UICollectionViewFlowLayout {
     
 //    var usingScale = false
 //    
