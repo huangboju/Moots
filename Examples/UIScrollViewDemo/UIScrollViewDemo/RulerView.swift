@@ -23,7 +23,7 @@ class RulerView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
         collectionView.delegate = self
         let margin = (self.frame.width - itemWidth) / 2
         collectionView.contentInset = UIEdgeInsets(top: 0, left: margin, bottom: 0, right: margin)
-        collectionView.backgroundColor = UIColor.green
+        collectionView.backgroundColor = UIColor.white
         return collectionView
     }()
 
@@ -44,7 +44,7 @@ class RulerView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
         super.init(frame: frame)
         addSubview(collectionView)
         collectionView.register(MootsCollectionCell.self, forCellWithReuseIdentifier: "cellID")
-        addSubview(textLabel)
+//        addSubview(textLabel)
         layer.addSublayer(verticalLine)
     }
 
@@ -53,13 +53,13 @@ class RulerView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return 10000
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         print(indexPath.row)
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellID", for: indexPath)
-        cell.backgroundColor = UIColor.gray
+        cell.backgroundColor = UIColor.lightGray
         return cell
     }
 

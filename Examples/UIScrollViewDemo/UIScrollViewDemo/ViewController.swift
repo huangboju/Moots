@@ -24,8 +24,9 @@ class ViewController: UIViewController {
             ScrollViewController.self,
             PagingSecondController.self,
             ConvertController.self,
-            MootsController.self,
-            MootsControllerWithLayout.self
+            RulerControllerWithScrollView.self,
+            RulerController.self,
+            RulerControllerWithLayout.self
         ]
     ]
 

@@ -1,5 +1,5 @@
 //
-//  MootsController.swift
+//  RulerController.swift
 //  UIScrollViewDemo
 //
 //  Created by 伯驹 黄 on 2017/6/7.
@@ -37,9 +37,9 @@ class MootsCollectionCell: UICollectionViewCell {
                 contentView.addSubview(textLabel!)
 
                 // 用0.6大概是黄金比
-                line.frame.size.height = frame.height * 0.6
+                line.frame.size.height = flat(frame.height * goldenRatio)
             } else {
-                line.frame.size.height = frame.height * 0.6 * 0.6
+                line.frame.size.height = flat(frame.height * goldenRatio * goldenRatio)
             }
             line.frame.origin.y = frame.height - line.frame.height
         }
@@ -50,7 +50,7 @@ class MootsCollectionCell: UICollectionViewCell {
     }
 }
 
-class MootsController: UIViewController {
+class RulerController: UIViewController {
 
 
     override func viewDidLoad() {

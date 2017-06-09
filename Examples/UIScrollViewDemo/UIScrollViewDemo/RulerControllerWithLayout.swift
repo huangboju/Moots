@@ -1,5 +1,5 @@
 //
-//  MootsControllerWithLayout.swift
+//  RulerControllerWithLayout.swift
 //  UIScrollViewDemo
 //
 //  Created by 伯驹 黄 on 2017/6/8.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MootsControllerWithLayout: UIViewController {
+class RulerControllerWithLayout: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

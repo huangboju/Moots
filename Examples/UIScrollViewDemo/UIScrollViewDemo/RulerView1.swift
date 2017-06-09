@@ -8,6 +8,13 @@
 
 import UIKit
 
+func flat(_ value: CGFloat) -> CGFloat {
+    let s = UIScreen.main.scale
+    return ceil(value * s) / s
+}
+
+let goldenRatio: CGFloat = 0.618
+
 private let reulerViewHeight: CGFloat = 132
 
 private let bottomLineMinY = (reulerViewHeight + itemHeight + titleSpace) / 2
@@ -16,9 +23,9 @@ private let itemWidth: CGFloat = 16
 private let itemHeight: CGFloat = 66
 private let padding: CGFloat = 0
 
-private let itemCount = 20
+private let itemCount = 200
 
-private let titleSpace: CGFloat = 44
+private let titleSpace: CGFloat = flat((1 - goldenRatio) * reulerViewHeight)
 
 protocol RulerViewDelegate: class {
     func didSelectItem(with index: Int)
@@ -66,6 +73,7 @@ class RulerView1: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
 
     convenience init(origin: CGPoint) {
         self.init(frame: CGRect(origin: origin, size: CGSize(width: UIScreen.main.bounds.width, height: reulerViewHeight)))
+
         backgroundColor = UIColor.white
         addSubview(collectionView)
         collectionView.register(MootsCollectionCell.self, forCellWithReuseIdentifier: "cellID")
@@ -88,7 +96,13 @@ class RulerView1: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let index = (scrollView.contentOffset.x + scrollView.contentInset.left) / itemWidth
-        textLabel.text = String(format: "%.2f", Double(index * 100))
+
+        textLabel.alpha = 0
+        UIView.animate(withDuration: 0.25) {
+            self.textLabel.alpha = 1
+            self.textLabel.text = String(format: "%.2f", Double(index * 100))
+        }
+
         rulerViewDelegate?.didSelectItem(with: Int(index))
     }
 }

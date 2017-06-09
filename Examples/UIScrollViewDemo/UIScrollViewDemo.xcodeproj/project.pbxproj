@@ -11,10 +11,11 @@
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
 		D8123AEE1EE7FA8C00EAAA63 /* MootsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AED1EE7FA8C00EAAA63 /* MootsLayout.swift */; };
-		D8123AF01EE7FBB300EAAA63 /* MootsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AEF1EE7FBB300EAAA63 /* MootsController.swift */; };
+		D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */; };
 		D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF11EE8D42400EAAA63 /* RulerView.swift */; };
 		D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */; };
-		D8123AF61EE8D49D00EAAA63 /* MootsControllerWithLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF51EE8D49D00EAAA63 /* MootsControllerWithLayout.swift */; };
+		D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */; };
+		D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */; };
 		D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824104A1E24B0010005E324 /* PagingSecondController.swift */; };
 		D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */; };
 		D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */; };
@@ -72,10 +73,11 @@
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
 		D8123AED1EE7FA8C00EAAA63 /* MootsLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MootsLayout.swift; sourceTree = "<group>"; };
-		D8123AEF1EE7FBB300EAAA63 /* MootsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MootsController.swift; sourceTree = "<group>"; };
+		D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerController.swift; sourceTree = "<group>"; };
 		D8123AF11EE8D42400EAAA63 /* RulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerView.swift; sourceTree = "<group>"; };
 		D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerView1.swift; sourceTree = "<group>"; };
-		D8123AF51EE8D49D00EAAA63 /* MootsControllerWithLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MootsControllerWithLayout.swift; sourceTree = "<group>"; };
+		D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerControllerWithLayout.swift; sourceTree = "<group>"; };
+		D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerControllerWithScrollView.swift; sourceTree = "<group>"; };
 		D824104A1E24B0010005E324 /* PagingSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingSecondController.swift; sourceTree = "<group>"; };
 		D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
 		D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -166,8 +168,8 @@
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8123AED1EE7FA8C00EAAA63 /* MootsLayout.swift */,
-				D8123AEF1EE7FBB300EAAA63 /* MootsController.swift */,
-				D8123AF51EE8D49D00EAAA63 /* MootsControllerWithLayout.swift */,
+				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
+				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
 				D8A731FA1DED6E28005DF7C8 /* LaunchScreen.storyboard */,
@@ -176,6 +178,7 @@
 				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
+				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 			files = (
 				D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
+				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
@@ -326,8 +330,8 @@
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
-				D8123AF61EE8D49D00EAAA63 /* MootsControllerWithLayout.swift in Sources */,
-				D8123AF01EE7FBB300EAAA63 /* MootsController.swift in Sources */,
+				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
+				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,

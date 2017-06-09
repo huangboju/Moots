@@ -7,7 +7,7 @@ import UIKit
 class TouchDelegateView: UIView {
     
     var touchDelegateView: UIView?
-    
+
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         if let touchDelegateView = touchDelegateView {
             if self.point(inside: point, with: event) {
