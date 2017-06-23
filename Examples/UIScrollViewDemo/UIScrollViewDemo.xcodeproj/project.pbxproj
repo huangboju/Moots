@@ -16,6 +16,7 @@
 		D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */; };
 		D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */; };
 		D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */; };
+		D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81A60BB1EF7759F00398173 /* DayPickerView.swift */; };
 		D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D824104A1E24B0010005E324 /* PagingSecondController.swift */; };
 		D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */; };
 		D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */; };
@@ -78,6 +79,7 @@
 		D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerView1.swift; sourceTree = "<group>"; };
 		D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerControllerWithLayout.swift; sourceTree = "<group>"; };
 		D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulerControllerWithScrollView.swift; sourceTree = "<group>"; };
+		D81A60BB1EF7759F00398173 /* DayPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayPickerView.swift; sourceTree = "<group>"; };
 		D824104A1E24B0010005E324 /* PagingSecondController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingSecondController.swift; sourceTree = "<group>"; };
 		D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvertController.swift; sourceTree = "<group>"; };
 		D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
+				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
+				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,

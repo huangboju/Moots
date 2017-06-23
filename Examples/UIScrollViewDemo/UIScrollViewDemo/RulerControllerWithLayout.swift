@@ -20,8 +20,12 @@ class RulerControllerWithLayout: UIViewController {
         let rulerView = RulerView1(origin: CGPoint(x: 0, y: 100))
 
         view.addSubview(rulerView)
+
+        let items = (1...30).map { "\($0)" }
+        let daypicker = DayPicker(origin: CGPoint(x: 0, y: 400), items: items)
+        view.addSubview(daypicker)
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

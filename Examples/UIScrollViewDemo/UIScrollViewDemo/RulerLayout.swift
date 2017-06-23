@@ -6,25 +6,27 @@ import UIKit
 
 class RulerLayout: UICollectionViewFlowLayout {
     
-//    var usingScale = false
-//    
-//    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-//        let temp = super.layoutAttributesForElements(in: rect)
-//        if usingScale {
-//            for attribute in temp! {
-//                let distance = abs(attribute.center.x - collectionView!.frame.width * 0.5 - collectionView!.contentOffset.x)
-//                var scale: CGFloat = 0.8
-//                let w = (collectionView!.frame.width + itemSize.width) * 0.8
-//                if distance >= w {
-//                    scale = 0.8
-//                } else {
-//                    scale = scale + (1 - distance / w) * 0.2
-//                }
-//                attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
-//            }
-//        }
-//        return temp
-//    }
+    var usingScale = false
+    
+    private let _scale: CGFloat = 0.6
+
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let temp = super.layoutAttributesForElements(in: rect)
+        if usingScale {
+            for attribute in temp! {
+                let distance = abs(attribute.center.x - collectionView!.frame.width * 0.5 - collectionView!.contentOffset.x)
+                var scale: CGFloat = _scale
+                let w = (collectionView!.frame.width + itemSize.width) * _scale
+                if distance >= w {
+                    scale = _scale
+                } else {
+                    scale = scale + (1 - distance / w) * (1 - _scale)
+                }
+                attribute.transform = CGAffineTransform(scaleX: scale, y: scale)
+            }
+        }
+        return temp
+    }
 
     override func targetContentOffset(forProposedContentOffset proposedContentOffset: CGPoint, withScrollingVelocity velocity: CGPoint) -> CGPoint {
         let rect = CGRect(origin: proposedContentOffset, size: collectionView!.frame.size)

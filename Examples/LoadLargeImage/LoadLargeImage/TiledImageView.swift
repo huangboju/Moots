@@ -18,7 +18,6 @@ class TiledImageView: UIView {
         imageRect = CGRect(x: 0, y: 0, width: cgImage.width, height: cgImage.height)
         imageScale = scale
         if let tiledLayer = layer as? CATiledLayer {
-            print(tiledLayer)
             tiledLayer.levelsOfDetail = 4
             tiledLayer.levelsOfDetailBias = 4
             tiledLayer.tileSize = CGSize(width: 512.0, height: 512.0)
