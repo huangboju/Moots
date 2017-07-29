@@ -101,11 +101,13 @@ class SandBox: UITableViewController {
 
     func writeFile() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        let iOSPath = documentsPath + "/iOS.txt"
+        let iOSPath = documentsPath + "/iOS.json"
 
-        let content = "写入数据"
+        guard let dataFilePath = Bundle.main.path(forResource: "test", ofType: "json") else { return }
+        let data = try? Data(contentsOf: URL(fileURLWithPath: dataFilePath))
         do {
-            try content.write(toFile: iOSPath, atomically: true, encoding: String.Encoding.utf8)
+            try data?.write(to: URL(fileURLWithPath: iOSPath))
+//            try content.write(toFile: iOSPath, atomically: true, encoding: .utf8)
         } catch let error {
             print("❌\(error)")
         }
@@ -263,14 +265,14 @@ class SandBox: UITableViewController {
     func addContents() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
-        let sourcePath = documentsPath + "/iOS.txt"
+        let sourcePath = documentsPath + "/iOS.json"
 
         do {
             let fileHandle = try FileHandle(forUpdating: URL(fileURLWithPath: sourcePath))
 
             fileHandle.seekToEndOfFile() // 将节点跳到文件的末尾
 
-            let data = "追加的数据".data(using: String.Encoding.utf8)
+            let data = "追加的数据".data(using: .utf8)
 
             fileHandle.write(data!) // 追加写入数据
 

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */; };
+		BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */; };
+		BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */; };
+		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
+		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
+		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -70,6 +76,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
+		BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCollectionViewController.swift; sourceTree = "<group>"; };
+		BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSelfSizing.swift; sourceTree = "<group>"; };
+		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
+		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
+		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +140,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE15A5BF1F23643F00F9F4F1 /* ExpandingCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */,
+				BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */,
+			);
+			path = ExpandingCollectionView;
+			sourceTree = "<group>";
+		};
 		D8076CBC1DF272C6008ACB34 /* BannerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +180,7 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE15A5BF1F23643F00F9F4F1 /* ExpandingCollectionView */,
 				D8076CBC1DF272C6008ACB34 /* BannerView */,
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
@@ -182,6 +204,10 @@
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
 				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
+				BE41600E1F1DD997007B619B /* AutoLayoutController.swift */,
+				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
+				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
+				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -323,12 +349,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */,
+				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
+				BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
+				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
+				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
@@ -339,8 +369,10 @@
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
+				BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
+				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,

@@ -8,6 +8,10 @@ class TestController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true, completion: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

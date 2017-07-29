@@ -38,9 +38,9 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
 
     let encoding = URLEncoding.default
 
-        // MARK: Tests - Parameter Types
+    // MARK: Tests - Parameter Types
 
-        func testURLParameterEncodeNilParameters() {
+    func testURLParameterEncodeNilParameters() {
         do {
             // Given, When
             let urlRequest = try encoding.encode(self.urlRequest, with: nil)
@@ -506,7 +506,7 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
             // Given
             let repeatedCount = 2_000
             let url = URL(string: "https://example.com/movies")!
-            let parameters = ["chinese": String(count: repeatedCount, repeatedString: "一二三四五六七八九十")]
+            let parameters = ["chinese": String(repeating: "一二三四五六七八九十", count: repeatedCount)]
 
             // When
             let urlRequest = try encoding.encode(URLRequest(url: url), with: parameters)
@@ -514,7 +514,7 @@ class URLParameterEncodingTestCase: ParameterEncodingTestCase {
             // Then
             var expected = "chinese="
 
-            for _ in 0 ..< repeatedCount {
+            for _ in 0..<repeatedCount {
                 expected += "%E4%B8%80%E4%BA%8C%E4%B8%89%E5%9B%9B%E4%BA%94%E5%85%AD%E4%B8%83%E5%85%AB%E4%B9%9D%E5%8D%81"
             }
 
@@ -596,9 +596,9 @@ class JSONParameterEncodingTestCase: ParameterEncodingTestCase {
 
     let encoding = JSONEncoding.default
 
-        // MARK: Tests
+    // MARK: Tests
 
-        func testJSONParameterEncodeNilParameters() {
+    func testJSONParameterEncodeNilParameters() {
         do {
             // Given, When
             let URLRequest = try encoding.encode(self.urlRequest, with: nil)
@@ -712,9 +712,9 @@ class PropertyListParameterEncodingTestCase: ParameterEncodingTestCase {
 
     let encoding = PropertyListEncoding.default
 
-        // MARK: Tests
+    // MARK: Tests
 
-        func testPropertyListParameterEncodeNilParameters() {
+    func testPropertyListParameterEncodeNilParameters() {
         do {
             // Given, When
             let urlRequest = try encoding.encode(self.urlRequest, with: nil)

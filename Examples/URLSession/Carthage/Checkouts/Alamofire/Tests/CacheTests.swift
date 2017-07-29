@@ -28,9 +28,9 @@ import XCTest
 
 /// This test case tests all implemented cache policies against various `Cache-Control` header values. These tests
 /// are meant to cover the main cases of `Cache-Control` header usage, but are by no means exhaustive.
-/// 
+///
 /// These tests work as follows:
-/// 
+///
 /// - Set up an `URLCache`
 /// - Set up an `Alamofire.SessionManager`
 /// - Execute requests for all `Cache-Control` header values to prime the `NSURLCache` with cached responses
@@ -38,11 +38,11 @@ import XCTest
 /// - Execute another round of the same requests with a given `URLRequestCachePolicy`
 /// - Verify whether the response came from the cache or from the network
 ///     - This is determined by whether the cached response timestamp matches the new response timestamp
-/// 
+///
 /// An important thing to note is the difference in behavior between iOS and macOS. On iOS, a response with
 /// a `Cache-Control` header value of `no-store` is still written into the `NSURLCache` where on macOS, it is not.
 /// The different tests below reflect and demonstrate this behavior.
-/// 
+///
 /// For information about `Cache-Control` HTTP headers, please refer to RFC 2616 - Section 14.9.
 class CacheTestCase: BaseTestCase {
 
@@ -94,7 +94,7 @@ class CacheTestCase: BaseTestCase {
         manager = {
             let configuration: URLSessionConfiguration = {
                 let configuration = URLSessionConfiguration.default
-                    configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
+                configuration.httpAdditionalHeaders = SessionManager.defaultHTTPHeaders
                 configuration.requestCachePolicy = .useProtocolCachePolicy
                 configuration.urlCache = urlCache
 
@@ -120,14 +120,14 @@ class CacheTestCase: BaseTestCase {
 
     // MARK: - Cache Priming Methods
 
-    /** 
-     Executes a request for all `Cache-Control` header values to load the response into the `URLCache`.
+    /**
+        Executes a request for all `Cache-Control` header values to load the response into the `URLCache`.
 
-     This implementation leverages dispatch groups to execute all the requests as well as wait an additional
-     second before returning. This ensures the cache contains responses for all requests that are at least
-     one second old. This allows the tests to distinguish whether the subsequent responses come from the cache
-     or the network based on the timestamp of the response.
-     */
+        This implementation leverages dispatch groups to execute all the requests as well as wait an additional
+        second before returning. This ensures the cache contains responses for all requests that are at least
+        one second old. This allows the tests to distinguish whether the subsequent responses come from the cache
+        or the network based on the timestamp of the response.
+    */
     func primeCachedResponses() {
         let dispatchGroup = DispatchGroup()
         let serialQueue = DispatchQueue(label: "org.alamofire.cache-tests")
@@ -183,8 +183,9 @@ class CacheTestCase: BaseTestCase {
         cacheControl: String,
         cachePolicy: NSURLRequest.CachePolicy = .useProtocolCachePolicy,
         queue: DispatchQueue = DispatchQueue.main,
-        completion: @escaping(URLRequest?, HTTPURLResponse?) -> Void)
-        -> URLRequest {
+        completion: @escaping (URLRequest?, HTTPURLResponse?) -> Void)
+        -> URLRequest
+    {
         let urlRequest = self.urlRequest(cacheControl: cacheControl, cachePolicy: cachePolicy)
         let request = manager.request(urlRequest)
 
@@ -203,7 +204,8 @@ class CacheTestCase: BaseTestCase {
     func executeTest(
         cachePolicy: NSURLRequest.CachePolicy,
         cacheControl: String,
-        shouldReturnCachedResponse: Bool) {
+        shouldReturnCachedResponse: Bool)
+    {
         // Given
         let expectation = self.expectation(description: "GET request to httpbin")
         var response: HTTPURLResponse?
@@ -240,15 +242,15 @@ class CacheTestCase: BaseTestCase {
     // MARK: - Cache Helper Methods
 
     private func isCachedResponseForNoStoreHeaderExpected() -> Bool {
-        #if os(iOS)
-            if #available(iOS 8.3, *) {
-                return false
-            } else {
-                return true
-            }
-        #else
+    #if os(iOS)
+        if #available(iOS 8.3, *) {
             return false
-        #endif
+        } else {
+            return true
+        }
+    #else
+        return false
+    #endif
     }
 
     // MARK: - Tests

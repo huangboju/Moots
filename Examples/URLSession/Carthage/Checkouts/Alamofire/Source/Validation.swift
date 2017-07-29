@@ -31,7 +31,7 @@ extension Request {
     fileprivate typealias ErrorReason = AFError.ResponseValidationFailureReason
 
     /// Used to represent whether validation was successful or encountered an error resulting in a failure.
-    /// 
+    ///
     /// - success: The validation was successful.
     /// - failure: The validation failed encountering the provided error.
     public enum ValidationResult {
@@ -72,7 +72,7 @@ extension Request {
 
     // MARK: Properties
 
-    fileprivate var acceptableStatusCodes: [Int] { return Array(200 ..< 300) }
+    fileprivate var acceptableStatusCodes: [Int] { return Array(200..<300) }
 
     fileprivate var acceptableContentTypes: [String] {
         if let accept = request?.value(forHTTPHeaderField: "Accept") {
@@ -88,7 +88,8 @@ extension Request {
         statusCode acceptableStatusCodes: S,
         response: HTTPURLResponse)
         -> ValidationResult
-    where S.Iterator.Element == Int {
+        where S.Iterator.Element == Int
+    {
         if acceptableStatusCodes.contains(response.statusCode) {
             return .success
         } else {
@@ -104,13 +105,14 @@ extension Request {
         response: HTTPURLResponse,
         data: Data?)
         -> ValidationResult
-    where S.Iterator.Element == String {
+        where S.Iterator.Element == String
+    {
         guard let data = data, data.count > 0 else { return .success }
 
         guard
             let responseContentType = response.mimeType,
             let responseMIMEType = MIMEType(responseContentType)
-            else {
+        else {
             for contentType in acceptableContentTypes {
                 if let mimeType = MIMEType(contentType), mimeType.isWildcard {
                     return .success
@@ -152,11 +154,11 @@ extension DataRequest {
     public typealias Validation = (URLRequest?, HTTPURLResponse, Data?) -> ValidationResult
 
     /// Validates the request, using the specified closure.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter validation: A closure to validate the request.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate(_ validation: @escaping Validation) -> Self {
@@ -164,7 +166,8 @@ extension DataRequest {
             if
                 let response = self.response,
                 self.delegate.error == nil,
-                case let .failure(error) = validation(self.request, response, self.delegate.data) {
+                case let .failure(error) = validation(self.request, response, self.delegate.data)
+            {
                 self.delegate.error = error
             }
         }
@@ -175,11 +178,11 @@ extension DataRequest {
     }
 
     /// Validates that the response has a status code in the specified sequence.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter range: The range of acceptable status codes.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
@@ -189,11 +192,11 @@ extension DataRequest {
     }
 
     /// Validates that the response has a content type in the specified sequence.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter contentType: The acceptable content types, which may specify wildcard types and/or subtypes.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
@@ -204,9 +207,9 @@ extension DataRequest {
 
     /// Validates that the response has a status code in the default acceptable range of 200...299, and that the content
     /// type matches any specified in the Accept HTTP header field.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate() -> Self {
@@ -227,11 +230,11 @@ extension DownloadRequest {
         -> ValidationResult
 
     /// Validates the request, using the specified closure.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter validation: A closure to validate the request.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate(_ validation: @escaping Validation) -> Self {
@@ -243,7 +246,8 @@ extension DownloadRequest {
             if
                 let response = self.response,
                 self.delegate.error == nil,
-                case let .failure(error) = validation(request, response, temporaryURL, destinationURL) {
+                case let .failure(error) = validation(request, response, temporaryURL, destinationURL)
+            {
                 self.delegate.error = error
             }
         }
@@ -254,11 +258,11 @@ extension DownloadRequest {
     }
 
     /// Validates that the response has a status code in the specified sequence.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter range: The range of acceptable status codes.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate<S: Sequence>(statusCode acceptableStatusCodes: S) -> Self where S.Iterator.Element == Int {
@@ -268,11 +272,11 @@ extension DownloadRequest {
     }
 
     /// Validates that the response has a content type in the specified sequence.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - parameter contentType: The acceptable content types, which may specify wildcard types and/or subtypes.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate<S: Sequence>(contentType acceptableContentTypes: S) -> Self where S.Iterator.Element == String {
@@ -294,9 +298,9 @@ extension DownloadRequest {
 
     /// Validates that the response has a status code in the default acceptable range of 200...299, and that the content
     /// type matches any specified in the Accept HTTP header field.
-    /// 
+    ///
     /// If validation fails, subsequent calls to response handlers will have an associated error.
-    /// 
+    ///
     /// - returns: The request.
     @discardableResult
     public func validate() -> Self {

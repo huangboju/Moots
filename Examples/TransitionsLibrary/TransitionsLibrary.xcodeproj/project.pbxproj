@@ -7,16 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1875581F19EF2B00635B7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1875571F19EF2B00635B7B /* ViewController.swift */; };
+		BE18755B1F19EF8000635B7B /* PortalAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18755A1F19EF8000635B7B /* PortalAnimationController.swift */; };
+		BE18755D1F19EFA700635B7B /* ExpandedController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18755C1F19EFA700635B7B /* ExpandedController.swift */; };
+		BE18755F1F19F33F00635B7B /* ExpandAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18755E1F19F33F00635B7B /* ExpandAnimator.swift */; };
 		D89215AD1D755C5B00BF49AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215AC1D755C5B00BF49AF /* AppDelegate.swift */; };
-		D89215AF1D755C5B00BF49AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215AE1D755C5B00BF49AF /* ViewController.swift */; };
 		D89215B21D755C5B00BF49AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89215B01D755C5B00BF49AF /* Main.storyboard */; };
 		D89215B41D755C5B00BF49AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D89215B31D755C5B00BF49AF /* Assets.xcassets */; };
 		D89215B71D755C5B00BF49AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D89215B51D755C5B00BF49AF /* LaunchScreen.storyboard */; };
 		D89215C21D755C5B00BF49AF /* TransitionsLibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215C11D755C5B00BF49AF /* TransitionsLibraryTests.swift */; };
 		D89215CD1D755C5B00BF49AF /* TransitionsLibraryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215CC1D755C5B00BF49AF /* TransitionsLibraryUITests.swift */; };
 		D89215DF1D755D4000BF49AF /* ReversibleAnimationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215DE1D755D4000BF49AF /* ReversibleAnimationTransitioning.swift */; };
-		D89215E11D755F4300BF49AF /* PortalAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215E01D755F4300BF49AF /* PortalAnimationController.swift */; };
-		D89215E31D756D4900BF49AF /* MainNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215E21D756D4900BF49AF /* MainNav.swift */; };
+		D89215E11D755F4300BF49AF /* PortalAnimationTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215E01D755F4300BF49AF /* PortalAnimationTransitioning.swift */; };
 		D89215E51D756F8300BF49AF /* TestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D89215E41D756F8300BF49AF /* TestController.swift */; };
 /* End PBXBuildFile section */
 
@@ -38,9 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE1875571F19EF2B00635B7B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BE18755A1F19EF8000635B7B /* PortalAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalAnimationController.swift; sourceTree = "<group>"; };
+		BE18755C1F19EFA700635B7B /* ExpandedController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandedController.swift; sourceTree = "<group>"; };
+		BE18755E1F19F33F00635B7B /* ExpandAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandAnimator.swift; sourceTree = "<group>"; };
 		D89215A91D755C5B00BF49AF /* TransitionsLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransitionsLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D89215AC1D755C5B00BF49AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D89215AE1D755C5B00BF49AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D89215B11D755C5B00BF49AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D89215B31D755C5B00BF49AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D89215B61D755C5B00BF49AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,8 +58,7 @@
 		D89215CE1D755C5B00BF49AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D89215DC1D755CD400BF49AF /* Bridging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		D89215DE1D755D4000BF49AF /* ReversibleAnimationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReversibleAnimationTransitioning.swift; sourceTree = "<group>"; };
-		D89215E01D755F4300BF49AF /* PortalAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalAnimationController.swift; sourceTree = "<group>"; };
-		D89215E21D756D4900BF49AF /* MainNav.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNav.swift; sourceTree = "<group>"; };
+		D89215E01D755F4300BF49AF /* PortalAnimationTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortalAnimationTransitioning.swift; sourceTree = "<group>"; };
 		D89215E41D756F8300BF49AF /* TestController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +87,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1875591F19EF5100635B7B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE18755A1F19EF8000635B7B /* PortalAnimationController.swift */,
+				BE18755C1F19EFA700635B7B /* ExpandedController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		D89215A01D755C5B00BF49AF = {
 			isa = PBXGroup;
 			children = (
@@ -106,10 +119,11 @@
 		D89215AB1D755C5B00BF49AF /* TransitionsLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				BE1875591F19EF5100635B7B /* Controllers */,
 				D89215DD1D755CEB00BF49AF /* Classes */,
 				D89215DC1D755CD400BF49AF /* Bridging.h */,
 				D89215AC1D755C5B00BF49AF /* AppDelegate.swift */,
-				D89215AE1D755C5B00BF49AF /* ViewController.swift */,
+				BE1875571F19EF2B00635B7B /* ViewController.swift */,
 				D89215B01D755C5B00BF49AF /* Main.storyboard */,
 				D89215B31D755C5B00BF49AF /* Assets.xcassets */,
 				D89215B51D755C5B00BF49AF /* LaunchScreen.storyboard */,
@@ -141,8 +155,8 @@
 			isa = PBXGroup;
 			children = (
 				D89215DE1D755D4000BF49AF /* ReversibleAnimationTransitioning.swift */,
-				D89215E01D755F4300BF49AF /* PortalAnimationController.swift */,
-				D89215E21D756D4900BF49AF /* MainNav.swift */,
+				D89215E01D755F4300BF49AF /* PortalAnimationTransitioning.swift */,
+				BE18755E1F19F33F00635B7B /* ExpandAnimator.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -281,12 +295,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D89215E11D755F4300BF49AF /* PortalAnimationController.swift in Sources */,
-				D89215AF1D755C5B00BF49AF /* ViewController.swift in Sources */,
+				BE18755D1F19EFA700635B7B /* ExpandedController.swift in Sources */,
+				D89215E11D755F4300BF49AF /* PortalAnimationTransitioning.swift in Sources */,
+				BE18755F1F19F33F00635B7B /* ExpandAnimator.swift in Sources */,
 				D89215DF1D755D4000BF49AF /* ReversibleAnimationTransitioning.swift in Sources */,
 				D89215E51D756F8300BF49AF /* TestController.swift in Sources */,
+				BE1875581F19EF2B00635B7B /* ViewController.swift in Sources */,
 				D89215AD1D755C5B00BF49AF /* AppDelegate.swift in Sources */,
-				D89215E31D756D4900BF49AF /* MainNav.swift in Sources */,
+				BE18755B1F19EF8000635B7B /* PortalAnimationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

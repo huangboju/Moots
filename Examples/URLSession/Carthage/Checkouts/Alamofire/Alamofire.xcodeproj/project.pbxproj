@@ -57,8 +57,6 @@
 		4C43669C1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43669A1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift */; };
 		4C43669D1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43669A1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift */; };
 		4C43669E1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C43669A1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift */; };
-		4C4CBE7B1BAF700C0024D659 /* String+AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBE7A1BAF700C0024D659 /* String+AlamofireTests.swift */; };
-		4C4CBE7C1BAF700C0024D659 /* String+AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBE7A1BAF700C0024D659 /* String+AlamofireTests.swift */; };
 		4C574E6A1C67D207000B3128 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C574E691C67D207000B3128 /* Timeline.swift */; };
 		4C574E6B1C67D207000B3128 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C574E691C67D207000B3128 /* Timeline.swift */; };
 		4C574E6C1C67D207000B3128 /* Timeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C574E691C67D207000B3128 /* Timeline.swift */; };
@@ -121,7 +119,6 @@
 		4C743D331C22772F00BCB23E /* valid-dns-name.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4C812C521B535F540017E0BF /* valid-dns-name.cer */; };
 		4C743D341C22772F00BCB23E /* valid-uri.cer in Resources */ = {isa = PBXBuildFile; fileRef = 4C812C531B535F540017E0BF /* valid-uri.cer */; };
 		4C80F9F81BB730EF001B46D2 /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0B62501BB1001C009302D3 /* Response.swift */; };
-		4C80F9F91BB730F6001B46D2 /* String+AlamofireTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4CBE7A1BAF700C0024D659 /* String+AlamofireTests.swift */; };
 		4C811F8D1B51856D00E0F59A /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C811F8C1B51856D00E0F59A /* ServerTrustPolicy.swift */; };
 		4C811F8E1B51856D00E0F59A /* ServerTrustPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C811F8C1B51856D00E0F59A /* ServerTrustPolicy.swift */; };
 		4C9DCE781CB1BCE2003E6463 /* SessionDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9DCE771CB1BCE2003E6463 /* SessionDelegateTests.swift */; };
@@ -304,7 +301,6 @@
 		4C3D00531C66A63000D1F709 /* NetworkReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManager.swift; sourceTree = "<group>"; };
 		4C3D00571C66A8B900D1F709 /* NetworkReachabilityManagerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachabilityManagerTests.swift; sourceTree = "<group>"; };
 		4C43669A1D7BB93D00C38AAD /* DispatchQueue+Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Alamofire.swift"; sourceTree = "<group>"; };
-		4C4CBE7A1BAF700C0024D659 /* String+AlamofireTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+AlamofireTests.swift"; sourceTree = "<group>"; };
 		4C574E691C67D207000B3128 /* Timeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timeline.swift; sourceTree = "<group>"; };
 		4C811F8C1B51856D00E0F59A /* ServerTrustPolicy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerTrustPolicy.swift; sourceTree = "<group>"; };
 		4C812C3A1B535F220017E0BF /* alamofire-root-ca.cer */ = {isa = PBXFileReference; lastKnownFileType = file; name = "alamofire-root-ca.cer"; path = "alamofire.org/alamofire-root-ca.cer"; sourceTree = "<group>"; };
@@ -332,6 +328,14 @@
 		4CDE2C421AF89F0900BABAE5 /* Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Validation.swift; sourceTree = "<group>"; };
 		4CDE2C451AF89FF300BABAE5 /* ResponseSerialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResponseSerialization.swift; sourceTree = "<group>"; };
 		4CE2724E1AF88FB500F1D59A /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
+		4CE292311EF4A393008DA555 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		4CE292321EF4A393008DA555 /* CHANGELOG.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
+		4CE292331EF4A393008DA555 /* CONTRIBUTING.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = CONTRIBUTING.md; sourceTree = "<group>"; };
+		4CE292351EF4A397008DA555 /* Alamofire 2.0 Migration Guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Alamofire 2.0 Migration Guide.md"; sourceTree = "<group>"; };
+		4CE292361EF4A397008DA555 /* Alamofire 3.0 Migration Guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Alamofire 3.0 Migration Guide.md"; sourceTree = "<group>"; };
+		4CE292371EF4A397008DA555 /* Alamofire 4.0 Migration Guide.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Alamofire 4.0 Migration Guide.md"; sourceTree = "<group>"; };
+		4CE292391EF4B12B008DA555 /* Alamofire.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = Alamofire.podspec; sourceTree = "<group>"; };
+		4CE2923A1EF4B12B008DA555 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		4CF626EF1BA7CB3E0011A099 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CF626F81BA7CB3E0011A099 /* Alamofire tvOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Alamofire tvOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CFB028F1D7CF28F0056F249 /* FileManager+AlamofireTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FileManager+AlamofireTests.swift"; sourceTree = "<group>"; };
@@ -554,7 +558,6 @@
 			children = (
 				31ED52E61D73889D00199085 /* AFError+AlamofireTests.swift */,
 				4CFB028F1D7CF28F0056F249 /* FileManager+AlamofireTests.swift */,
-				4C4CBE7A1BAF700C0024D659 /* String+AlamofireTests.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -607,6 +610,36 @@
 				4CDE2C421AF89F0900BABAE5 /* Validation.swift */,
 			);
 			name = Features;
+			sourceTree = "<group>";
+		};
+		4CE292301EF4A386008DA555 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4CE292321EF4A393008DA555 /* CHANGELOG.md */,
+				4CE292331EF4A393008DA555 /* CONTRIBUTING.md */,
+				4CE292311EF4A393008DA555 /* README.md */,
+				4CE292341EF4A397008DA555 /* Documentation */,
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+		4CE292341EF4A397008DA555 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4CE292351EF4A397008DA555 /* Alamofire 2.0 Migration Guide.md */,
+				4CE292361EF4A397008DA555 /* Alamofire 3.0 Migration Guide.md */,
+				4CE292371EF4A397008DA555 /* Alamofire 4.0 Migration Guide.md */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		4CE292381EF4B116008DA555 /* Deployment */ = {
+			isa = PBXGroup;
+			children = (
+				4CE292391EF4B12B008DA555 /* Alamofire.podspec */,
+				4CE2923A1EF4B12B008DA555 /* Package.swift */,
+			);
+			name = Deployment;
 			sourceTree = "<group>";
 		};
 		4CFB02E81D7D2FA20056F249 /* Responses */ = {
@@ -667,6 +700,8 @@
 		F8111E2919A95C8B0040E7D1 = {
 			isa = PBXGroup;
 			children = (
+				4CE292381EF4B116008DA555 /* Deployment */,
+				4CE292301EF4A386008DA555 /* Documentation */,
 				F8111E3519A95C8B0040E7D1 /* Source */,
 				F8111E3F19A95C8B0040E7D1 /* Tests */,
 				F8111E3419A95C8B0040E7D1 /* Products */,
@@ -905,7 +940,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = Alamofire;
 				TargetAttributes = {
 					4CCB207C1D45563900C64D5B = {
@@ -913,31 +948,31 @@
 					};
 					4CF626EE1BA7CB3E0011A099 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					4CF626F71BA7CB3E0011A099 = {
 						CreatedOnToolsVersion = 7.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					4DD67C0A1A5C55C900ED2280 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Manual;
 					};
 					E4202FCD1B667AA100C997FB = {
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					F8111E3219A95C8B0040E7D1 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					F8111E3D19A95C8B0040E7D1 = {
 						CreatedOnToolsVersion = 6.0;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 					F829C6B11A7A94F100A2CD59 = {
 						CreatedOnToolsVersion = 6.1.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0900;
 					};
 				};
 			};
@@ -1169,7 +1204,6 @@
 				4CF627211BA7CC240011A099 /* TLSEvaluationTests.swift in Sources */,
 				4CF627221BA7CC240011A099 /* UploadTests.swift in Sources */,
 				4C9DCE7A1CB1BCE2003E6463 /* SessionDelegateTests.swift in Sources */,
-				4C80F9F91BB730F6001B46D2 /* String+AlamofireTests.swift in Sources */,
 				4CF6271E1BA7CC240011A099 /* MultipartFormDataTests.swift in Sources */,
 				31ED52EA1D73891C00199085 /* AFError+AlamofireTests.swift in Sources */,
 				4CF627201BA7CC240011A099 /* ServerTrustPolicyTests.swift in Sources */,
@@ -1269,7 +1303,6 @@
 				4C33A1431B52089C00873DFF /* ServerTrustPolicyTests.swift in Sources */,
 				4C341BBA1B1A865A00C1B34D /* CacheTests.swift in Sources */,
 				4C9DCE781CB1BCE2003E6463 /* SessionDelegateTests.swift in Sources */,
-				4C4CBE7B1BAF700C0024D659 /* String+AlamofireTests.swift in Sources */,
 				4CA028C51B7466C500C84163 /* ResultTests.swift in Sources */,
 				31ED52E81D73891B00199085 /* AFError+AlamofireTests.swift in Sources */,
 				4CCFA79A1B2BE71600B6F460 /* URLProtocolTests.swift in Sources */,
@@ -1297,7 +1330,6 @@
 				4C33A1441B52089C00873DFF /* ServerTrustPolicyTests.swift in Sources */,
 				4C341BBB1B1A865A00C1B34D /* CacheTests.swift in Sources */,
 				4C9DCE791CB1BCE2003E6463 /* SessionDelegateTests.swift in Sources */,
-				4C4CBE7C1BAF700C0024D659 /* String+AlamofireTests.swift in Sources */,
 				4CA028C61B7466C500C84163 /* ResultTests.swift in Sources */,
 				31ED52E91D73891C00199085 /* AFError+AlamofireTests.swift in Sources */,
 				4CCFA79B1B2BE71600B6F460 /* URLProtocolTests.swift in Sources */,
@@ -1519,14 +1551,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1557,6 +1597,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;
@@ -1575,14 +1616,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_INTEGER = YES;
+				CLANG_UNDEFINED_BEHAVIOR_SANITIZER_NULLABILITY = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -1605,6 +1654,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Off;
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 9.0;

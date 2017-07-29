@@ -124,7 +124,7 @@ class SessionManagerTestCase: BaseTestCase {
     func testInitializerWithSpecifiedArguments() {
         // Given
         let configuration = URLSessionConfiguration.default
-            let delegate = SessionDelegate()
+        let delegate = SessionDelegate()
         let serverTrustPolicyManager = ServerTrustPolicyManager(policies: [:])
 
         // When
@@ -145,7 +145,7 @@ class SessionManagerTestCase: BaseTestCase {
         let delegate = SessionDelegate()
         let session: URLSession = {
             let configuration = URLSessionConfiguration.default
-                return URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
+            return URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
         }()
 
         // When
@@ -165,7 +165,7 @@ class SessionManagerTestCase: BaseTestCase {
         let delegate = SessionDelegate()
         let session: URLSession = {
             let configuration = URLSessionConfiguration.default
-                return URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
+            return URLSession(configuration: configuration, delegate: delegate, delegateQueue: nil)
         }()
 
         let serverTrustPolicyManager = ServerTrustPolicyManager(policies: [:])
@@ -187,7 +187,7 @@ class SessionManagerTestCase: BaseTestCase {
         let delegate = SessionDelegate()
         let session: URLSession = {
             let configuration = URLSessionConfiguration.default
-                return URLSession(configuration: configuration, delegate: SessionDelegate(), delegateQueue: nil)
+            return URLSession(configuration: configuration, delegate: SessionDelegate(), delegateQueue: nil)
         }()
 
         // When
@@ -202,7 +202,7 @@ class SessionManagerTestCase: BaseTestCase {
         let delegate = SessionDelegate()
         let session: URLSession = {
             let configuration = URLSessionConfiguration.default
-                return URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
+            return URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         }()
 
         // When
@@ -246,7 +246,7 @@ class SessionManagerTestCase: BaseTestCase {
             guard
                 let afInfo = Bundle(for: SessionManager.self).infoDictionary,
                 let build = afInfo["CFBundleShortVersionString"]
-                else { return "Unknown" }
+            else { return "Unknown" }
 
             return "Alamofire/\(build)"
         }()
@@ -272,9 +272,9 @@ class SessionManagerTestCase: BaseTestCase {
         // When
         manager.request(urlRequest)
             .response { resp in
-            response = resp.response
-            expectation.fulfill()
-        }
+                response = resp.response
+                expectation.fulfill()
+            }
             .resume()
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -592,9 +592,9 @@ class SessionManagerTestCase: BaseTestCase {
         let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -623,9 +623,9 @@ class SessionManagerTestCase: BaseTestCase {
         sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -660,9 +660,9 @@ class SessionManagerTestCase: BaseTestCase {
         sessionManager.download("https://httpbin.org/basic-auth/user/password", to: destination)
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -691,9 +691,9 @@ class SessionManagerTestCase: BaseTestCase {
         sessionManager.upload(uploadData, to: "https://httpbin.org/post")
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -721,9 +721,9 @@ class SessionManagerTestCase: BaseTestCase {
         let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -750,9 +750,9 @@ class SessionManagerTestCase: BaseTestCase {
         let request = sessionManager.request("https://httpbin.org/basic-auth/user/password")
             .validate()
             .responseJSON { jsonResponse in
-            response = jsonResponse
-            expectation.fulfill()
-        }
+                response = jsonResponse
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -787,12 +787,12 @@ class SessionManagerConfigurationHeadersTestCase: BaseTestCase {
         // Given, When, Then
         executeAuthorizationHeaderTest(for: .ephemeral)
     }
-
-    //    ⚠️ This test has been removed as a result of rdar://26870455 in Xcode 8 Seed 1
-    //    func testThatBackgroundConfigurationHeadersAreSentWithRequest() {
-    //        // Given, When, Then
-    //        executeAuthorizationHeaderTest(for: .background)
-    //    }
+#if os(macOS)
+    func testThatBackgroundConfigurationHeadersAreSentWithRequest() {
+        // Given, When, Then
+        executeAuthorizationHeaderTest(for: .background)
+    }
+#endif
 
     private func executeAuthorizationHeaderTest(for type: ConfigurationType) {
         // Given
@@ -801,56 +801,56 @@ class SessionManagerConfigurationHeadersTestCase: BaseTestCase {
                 let configuration: URLSessionConfiguration
 
                 switch type {
-            case .default:
-                configuration = .default
-        case .ephemeral:
-            configuration = .ephemeral
-        case .background:
-            let identifier = "org.alamofire.test.manager-configuration-tests"
-            configuration = .background(withIdentifier: identifier)
+                case .default:
+                    configuration = .default
+                case .ephemeral:
+                    configuration = .ephemeral
+                case .background:
+                    let identifier = "org.alamofire.test.manager-configuration-tests"
+                    configuration = .background(withIdentifier: identifier)
+                }
+
+                var headers = SessionManager.defaultHTTPHeaders
+                headers["Authorization"] = "Bearer 123456"
+                configuration.httpAdditionalHeaders = headers
+
+                return configuration
+            }()
+
+            return SessionManager(configuration: configuration)
+        }()
+
+        let expectation = self.expectation(description: "request should complete successfully")
+
+        var response: DataResponse<Any>?
+
+        // When
+        manager.request("https://httpbin.org/headers")
+            .responseJSON { closureResponse in
+                response = closureResponse
+                expectation.fulfill()
+            }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        if let response = response {
+            XCTAssertNotNil(response.request, "request should not be nil")
+            XCTAssertNotNil(response.response, "response should not be nil")
+            XCTAssertNotNil(response.data, "data should not be nil")
+            XCTAssertTrue(response.result.isSuccess, "result should be a success")
+
+            if
+                let response = response.result.value as? [String: Any],
+                let headers = response["headers"] as? [String: String],
+                let authorization = headers["Authorization"]
+            {
+                XCTAssertEqual(authorization, "Bearer 123456", "authorization header value does not match")
+            } else {
+                XCTFail("failed to extract authorization header value")
+            }
+        } else {
+            XCTFail("response should not be nil")
         }
-
-        var headers = SessionManager.defaultHTTPHeaders
-        headers["Authorization"] = "Bearer 123456"
-        configuration.httpAdditionalHeaders = headers
-
-        return configuration
-    }()
-
-    return SessionManager(configuration: configuration)
-}()
-
-let expectation = self.expectation(description: "request should complete successfully")
-
-var response: DataResponse<Any>?
-
-// When
-manager.request("https://httpbin.org/headers")
-    .responseJSON { closureResponse in
-    response = closureResponse
-    expectation.fulfill()
-}
-
-waitForExpectations(timeout: timeout, handler: nil)
-
-// Then
-if let response = response {
-    XCTAssertNotNil(response.request, "request should not be nil")
-    XCTAssertNotNil(response.response, "response should not be nil")
-    XCTAssertNotNil(response.data, "data should not be nil")
-    XCTAssertTrue(response.result.isSuccess, "result should be a success")
-
-    // The `as NSString` cast is necessary due to a compiler bug. See the following rdar for more info.
-    // - https://openradar.appspot.com/radar?id=5517037090635776
-    if
-        let headers = (response.result.value as AnyObject?)?["headers" as NSString] as? [String: String],
-        let authorization = headers["Authorization"] {
-        XCTAssertEqual(authorization, "Bearer 123456", "authorization header value does not match")
-    } else {
-        XCTFail("failed to extract authorization header value")
     }
-} else {
-    XCTFail("response should not be nil")
-}
-}
 }

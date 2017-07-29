@@ -78,9 +78,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, to: destination)
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -115,9 +115,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, to: destination)
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
             .cancel()
 
         waitForExpectations(timeout: timeout, handler: nil)
@@ -143,12 +143,12 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString)
             .downloadProgress { progress in
-            progressValues.append(progress.fractionCompleted)
-        }
+                progressValues.append(progress.fractionCompleted)
+            }
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -185,9 +185,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, parameters: parameters)
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -204,7 +204,8 @@ class DownloadResponseTestCase: BaseTestCase {
             let data = try? Data(contentsOf: temporaryURL),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions(rawValue: 0)),
             let json = jsonObject as? [String: Any],
-            let args = json["args"] as? [String: String] {
+            let args = json["args"] as? [String: String]
+        {
             XCTAssertEqual(args["foo"], "bar")
         } else {
             XCTFail("args parameter in JSON should not be nil")
@@ -224,9 +225,9 @@ class DownloadResponseTestCase: BaseTestCase {
         // When
         Alamofire.download(urlString, headers: headers, to: destination)
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -241,7 +242,8 @@ class DownloadResponseTestCase: BaseTestCase {
             let data = try? Data(contentsOf: fileURL),
             let jsonObject = try? JSONSerialization.jsonObject(with: data, options: []),
             let json = jsonObject as? [String: Any],
-            let headers = json["headers"] as? [String: String] {
+            let headers = json["headers"] as? [String: String]
+        {
             XCTAssertEqual(headers["Authorization"], "123456")
         } else {
             XCTFail("headers parameter in JSON should not be nil")
@@ -256,11 +258,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, []) })
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [])})
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -287,11 +289,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.createIntermediateDirectories]) })
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.createIntermediateDirectories])})
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -317,11 +319,11 @@ class DownloadResponseTestCase: BaseTestCase {
             var response: DefaultDownloadResponse?
 
             // When
-            Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, []) })
+            Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [])})
                 .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
+                    response = resp
+                    expectation.fulfill()
+                }
 
             waitForExpectations(timeout: timeout, handler: nil)
 
@@ -356,11 +358,11 @@ class DownloadResponseTestCase: BaseTestCase {
         var response: DefaultDownloadResponse?
 
         // When
-        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.removePreviousFile]) })
+        Alamofire.download("https://httpbin.org/get", to: { _, _ in (fileURL, [.removePreviousFile])})
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -389,9 +391,9 @@ class DownloadResumeDataTestCase: BaseTestCase {
         // When
         let download = Alamofire.download(urlString)
             .response { resp in
-            response = resp
-            expectation.fulfill()
-        }
+                response = resp
+                expectation.fulfill()
+            }
 
         download.cancel()
 
@@ -516,12 +518,12 @@ class DownloadResumeDataTestCase: BaseTestCase {
 
         Alamofire.download(resumingWith: resumeData)
             .downloadProgress { progress in
-            progressValues.append(progress.fractionCompleted)
-        }
+                progressValues.append(progress.fractionCompleted)
+            }
             .responseData { resp in
-            response2 = resp
-            expectation2.fulfill()
-        }
+                response2 = resp
+                expectation2.fulfill()
+            }
 
         waitForExpectations(timeout: timeout, handler: nil)
 
@@ -539,5 +541,174 @@ class DownloadResumeDataTestCase: BaseTestCase {
         XCTAssertNil(response2?.result.error)
 
         progressValues.forEach { XCTAssertGreaterThanOrEqual($0, 0.4) }
+    }
+}
+
+// MARK: -
+
+class DownloadResponseMapTestCase: BaseTestCase {
+    func testThatMapTransformsSuccessValue() {
+        // Given
+        let urlString = "https://httpbin.org/get"
+        let expectation = self.expectation(description: "request should succeed")
+
+        var response: DownloadResponse<String>?
+
+        // When
+        Alamofire.download(urlString, parameters: ["foo": "bar"]).responseJSON { resp in
+            response = resp.map { json in
+                // json["args"]["foo"] is "bar": use this invariant to test the map function
+                return ((json as? [String: Any])?["args"] as? [String: Any])?["foo"] as? String ?? "invalid"
+            }
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertNotNil(response?.request)
+        XCTAssertNotNil(response?.response)
+        XCTAssertNotNil(response?.temporaryURL)
+        XCTAssertNil(response?.destinationURL)
+        XCTAssertNil(response?.resumeData)
+        XCTAssertNil(response?.error)
+        XCTAssertEqual(response?.result.value, "bar")
+
+        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
+            XCTAssertNotNil(response?.metrics)
+        }
+    }
+
+    func testThatMapPreservesFailureError() {
+        // Given
+        let urlString = "https://invalid-url-here.org/this/does/not/exist"
+        let expectation = self.expectation(description: "request should fail with 404")
+
+        var response: DownloadResponse<String>?
+
+        // When
+        Alamofire.download(urlString, parameters: ["foo": "bar"]).responseJSON { resp in
+            response = resp.map { _ in "ignored" }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertNotNil(response?.request)
+        XCTAssertNil(response?.response)
+        XCTAssertNil(response?.temporaryURL)
+        XCTAssertNil(response?.destinationURL)
+        XCTAssertNil(response?.resumeData)
+        XCTAssertNotNil(response?.error)
+        XCTAssertEqual(response?.result.isFailure, true)
+
+        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
+            XCTAssertNotNil(response?.metrics)
+        }
+    }
+}
+
+// MARK: -
+
+class DownloadResponseFlatMapTestCase: BaseTestCase {
+    func testThatFlatMapTransformsSuccessValue() {
+        // Given
+        let urlString = "https://httpbin.org/get"
+        let expectation = self.expectation(description: "request should succeed")
+
+        var response: DownloadResponse<String>?
+
+        // When
+        Alamofire.download(urlString, parameters: ["foo": "bar"]).responseJSON { resp in
+            response = resp.flatMap { json in
+                // json["args"]["foo"] is "bar": use this invariant to test the map function
+                return ((json as? [String: Any])?["args"] as? [String: Any])?["foo"] as? String ?? "invalid"
+            }
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertNotNil(response?.request)
+        XCTAssertNotNil(response?.response)
+        XCTAssertNotNil(response?.temporaryURL)
+        XCTAssertNil(response?.destinationURL)
+        XCTAssertNil(response?.resumeData)
+        XCTAssertNil(response?.error)
+        XCTAssertEqual(response?.result.value, "bar")
+
+        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
+            XCTAssertNotNil(response?.metrics)
+        }
+    }
+
+    func testThatFlatMapCatchesTransformationError() {
+        // Given
+        struct TransformError: Error {}
+
+        let urlString = "https://httpbin.org/get"
+        let expectation = self.expectation(description: "request should succeed")
+
+        var response: DownloadResponse<String>?
+
+        // When
+        Alamofire.download(urlString, parameters: ["foo": "bar"]).responseJSON { resp in
+            response = resp.flatMap { json in
+                throw TransformError()
+            }
+
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertNotNil(response?.request)
+        XCTAssertNotNil(response?.response)
+        XCTAssertNotNil(response?.temporaryURL)
+        XCTAssertNil(response?.destinationURL)
+        XCTAssertNil(response?.resumeData)
+        if let error = response?.result.error {
+            XCTAssertTrue(error is TransformError)
+        } else {
+            XCTFail("flatMap should catch the transformation error")
+        }
+
+        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
+            XCTAssertNotNil(response?.metrics)
+        }
+    }
+
+    func testThatFlatMapPreservesFailureError() {
+        // Given
+        let urlString = "https://invalid-url-here.org/this/does/not/exist"
+        let expectation = self.expectation(description: "request should fail with 404")
+
+        var response: DownloadResponse<String>?
+
+        // When
+        Alamofire.download(urlString, parameters: ["foo": "bar"]).responseJSON { resp in
+            response = resp.flatMap { _ in "ignored" }
+            expectation.fulfill()
+        }
+
+        waitForExpectations(timeout: timeout, handler: nil)
+
+        // Then
+        XCTAssertNotNil(response?.request)
+        XCTAssertNil(response?.response)
+        XCTAssertNil(response?.temporaryURL)
+        XCTAssertNil(response?.destinationURL)
+        XCTAssertNil(response?.resumeData)
+        XCTAssertNotNil(response?.error)
+        XCTAssertEqual(response?.result.isFailure, true)
+
+        if #available(iOS 10.0, macOS 10.12, tvOS 10.0, *) {
+            XCTAssertNotNil(response?.metrics)
+        }
     }
 }

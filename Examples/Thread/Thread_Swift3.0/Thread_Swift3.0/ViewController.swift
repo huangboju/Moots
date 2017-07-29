@@ -229,7 +229,7 @@ class ViewController: UIViewController {
     }
     
     func delay() {
-        
+
         let time: TimeInterval = 2.0
         let delay = DispatchTime.now() + time
         DispatchQueue.global().asyncAfter(deadline: delay) {

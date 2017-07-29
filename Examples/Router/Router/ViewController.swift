@@ -24,7 +24,7 @@ class ViewController: UIViewController {
             "8",
             "9",
         ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "UIResponder"

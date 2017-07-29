@@ -26,7 +26,12 @@ class ViewController: UIViewController {
             ConvertController.self,
             RulerControllerWithScrollView.self,
             RulerController.self,
-            RulerControllerWithLayout.self
+            RulerControllerWithLayout.self,
+            AutoLayoutController.self,
+            CollectionViewSelfSizing.self,
+            TableViewSelfsizing.self,
+            LayoutTrasition.self,
+            ExpandingCollectionViewController.self
         ]
     ]
 
