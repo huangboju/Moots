@@ -8,9 +8,6 @@
 
 import UIKit
 
-// 文件操作
-// http://www.superqq.com/blog/2015/07/24/nsfilemanagerwen-jian-cao-zuo-de-shi-ge-xiao-gong-neng/
-
 // QunarFlight团队博客~iOS 中数据持久化的几种方式
 // http://blog.flight.dev.qunar.com/2016/11/10/ios-data-persistence-learn/#more
 
@@ -246,7 +243,7 @@ class SandBox: UITableViewController {
         let fileManager = FileManager.default
 
             // 当前文件夹下的所有文件
-            if let paths = fileManager.subpaths(atPath: documentsPath) {
+        if let paths = fileManager.subpaths(atPath: documentsPath) {
             for path in paths where path.characters.first != "." { // 剔除隐藏文件
                 print("\(documentsPath)/\(path)\n")
             }
