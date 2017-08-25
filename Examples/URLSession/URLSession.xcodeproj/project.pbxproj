@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE695BD21F3C88FE00F20C44 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE695BD11F3C88FE00F20C44 /* Service.swift */; };
 		BE6CCC971F2B81DF00444615 /* test.json in Resources */ = {isa = PBXBuildFile; fileRef = BE6CCC961F2B81DF00444615 /* test.json */; };
 		D81260671E5EA960007E6E3E /* SettingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81260661E5EA960007E6E3E /* SettingController.swift */; };
 		D81CA87F1E5D1C78001DFBE3 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */; };
@@ -62,6 +63,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE695BD11F3C88FE00F20C44 /* Service.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		BE6CCC961F2B81DF00444615 /* test.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = test.json; sourceTree = "<group>"; };
 		D81260661E5EA960007E6E3E /* SettingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingController.swift; sourceTree = "<group>"; };
 		D81CA87E1E5D1C78001DFBE3 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE695BD01F3C88BC00F20C44 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BE695BD11F3C88FE00F20C44 /* Service.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		D8516E251E4ED0490098BC80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +155,7 @@
 		D8A7FE5B1E14EC450044395C /* URLSession */ = {
 			isa = PBXGroup;
 			children = (
+				BE695BD01F3C88BC00F20C44 /* Network */,
 				BE6CCC961F2B81DF00444615 /* test.json */,
 				D8B745391E5AE5FF0096F0B5 /* PullToRefresh */,
 				D8D3F9AA1E588A7C009D02DE /* UIResponder+Extension.swift */,
@@ -307,6 +318,7 @@
 				D8C70D261E5AE8F70004496B /* CurveRefreshView.swift in Sources */,
 				D81CA8AF1E5D590C001DFBE3 /* MenuItemController.swift in Sources */,
 				D8B745431E5AE5FF0096F0B5 /* LabelView.swift in Sources */,
+				BE695BD21F3C88FE00F20C44 /* Service.swift in Sources */,
 				D8A7FE7D1E15156B0044395C /* SandBox.swift in Sources */,
 				D8B745411E5AE5FF0096F0B5 /* CurveRefreshHeaderView.swift in Sources */,
 				D8B7453F1E5AE5FF0096F0B5 /* CurveLayer.swift in Sources */,

@@ -12,6 +12,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBOutlet weak var tableView: UITableView!
     var classArray = [
+        "UIPickerView",
         "UIDatePicker",
         "UITextField",
         "UISlider",
