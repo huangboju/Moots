@@ -13,7 +13,7 @@ class MenuItemController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.register(MenuItemCell.self, forCellReuseIdentifier: "reuseIdentifier")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "reuseIdentifier")
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -39,9 +39,25 @@ class MenuItemController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, performAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) {
+        let board = UIPasteboard.general
+        board.string = indexPath.row.description
+    }
+    
+    override func tableView(_ tableView: UITableView, canPerformAction action: Selector, forRowAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+        if action == #selector(UIResponderStandardEditActions.copy(_:)) {
+            return true
+        }
+        return false
+    }
+    
+    override func tableView(_ tableView: UITableView, shouldShowMenuForRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 }
 
 class MenuItemCell: UITableViewCell {
+    
     /*!
      *  是此cell成为可以第一相应着
      *

@@ -11,6 +11,10 @@ import UIKit
 // QunarFlight团队博客~iOS 中数据持久化的几种方式
 // http://blog.flight.dev.qunar.com/2016/11/10/ios-data-persistence-learn/#more
 
+// JSONSerialization
+// http://www.hangge.com/blog/cache/detail_647.html
+// http://swiftcafe.io/2015/07/18/swift-json
+
 class SandBox: UITableViewController {
 
     enum Path: String {
@@ -45,6 +49,9 @@ class SandBox: UITableViewController {
         [
             "addContents",
             "findContents"
+        ],
+        [
+            "writeToJSON"
         ]
     ]
 
@@ -91,7 +98,7 @@ class SandBox: UITableViewController {
         let fileManager = FileManager.default
             let iOSDirectory = documentsPath + "/iOS.txt"
         print("📃\(iOSDirectory)\n\n")
-        let contents = "新建文件".data(using: String.Encoding.utf8)
+        let contents = "新建文件".data(using: .utf8)
         let isSuccess = fileManager.createFile(atPath: iOSDirectory, contents: contents, attributes: nil)
         print(isSuccess ? "✅" : "❌")
     }
@@ -303,6 +310,41 @@ class SandBox: UITableViewController {
         } catch let error {
             print("❌\(error)")
         }
+    }
+    
+    func writeToJSON() {
+        //Swift对象
+        let user:[String: Any] = [
+            "uname": "张三",
+            "tel": ["mobile": "138", "home": "010"]
+        ]
+        //首先判断能不能转换
+        if !JSONSerialization.isValidJSONObject(user) {
+            print("is not a valid json object")
+            return
+        }
+        
+        //利用自带的json库转换成Data
+        //如果设置options为JSONSerialization.WritingOptions.prettyPrinted，则打印格式更好阅读
+
+        do {
+            let data = try JSONSerialization.data(withJSONObject: user, options: .prettyPrinted)
+            let documentsPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+            let iOSPath = documentsPath + "/iOS.json"
+            try data.write(to: URL(fileURLWithPath: iOSPath))
+            print("✅✅✅", iOSPath)
+        } catch let error {
+            print("❌\(error)")
+        }
+
+//        //把Data对象转换回JSON对象
+//        let json = try? JSONSerialization.jsonObject(with: data!,
+//                                                     options:.allowFragments) as! [String: Any]
+//        print("Json Object:", json)
+//        //验证JSON对象可用性
+//        let uname = json?["uname"]
+//        let mobile = (json?["tel"] as! [String: Any])["mobile"]
+//        print("get Json Object:","uname: \(uname), mobile: \(mobile)")
     }
 
     override func didReceiveMemoryWarning() {

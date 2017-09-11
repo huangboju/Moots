@@ -45,6 +45,8 @@ class JokeController: UITableViewController {
         title = "段子"
 
         tableView.separatorStyle = .none
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
         tableView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView?.register(Cell.self, forCellReuseIdentifier: "cell")
 
@@ -62,6 +64,14 @@ class JokeController: UITableViewController {
 
         navigationController?.navigationBar.barTintColor = Constants.backgroundColor
         tabBarController?.tabBar.barTintColor = Constants.backgroundColor
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(moreAction))
+    }
+
+    func moreAction() {
+        let vc = ViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
 
     let reach = NetworkReachabilityManager()
@@ -149,14 +159,11 @@ class JokeController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         cell.backgroundColor = Constants.backgroundColor
-        return cell
-    }
-
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.textLabel?.font = font
         cell.textLabel?.text = contents[indexPath.section]
         cell.textLabel?.textColor = Constants.textColor
         cell.textLabel?.numberOfLines = 0
+        return cell
     }
 
     func openURL(type: String) {
@@ -174,11 +181,11 @@ class JokeController: UITableViewController {
         openURL(type: #function)
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let content = contents[indexPath.section]
-        let height = content.heightWithConstrainedWidth(font: font)
-        return height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
-    }
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        let content = contents[indexPath.section]
+//        let height = content.heightWithConstrainedWidth(font: font)
+//        return height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
+//    }
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard section == contents.count else {

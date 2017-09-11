@@ -24,14 +24,19 @@ class ViewController: UIViewController {
             ScrollViewController.self,
             PagingSecondController.self,
             ConvertController.self,
-            RulerControllerWithScrollView.self,
-            RulerController.self,
-            RulerControllerWithLayout.self,
             AutoLayoutController.self,
             CollectionViewSelfSizing.self,
             TableViewSelfsizing.self,
             LayoutTrasition.self,
-            ExpandingCollectionViewController.self
+            ExpandingCollectionViewController.self,
+        ],
+        [
+            RulerControllerWithScrollView.self,
+            RulerController.self,
+            RulerControllerWithLayout.self
+        ],
+        [
+            CardViewController.self
         ]
     ]
 

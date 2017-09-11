@@ -8,8 +8,7 @@
 
 import UIKit
 
-// let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?channel=duanzi&passport=D3pXYOdJ%2BBxaWHO1/pK4OxnEOMj%2B7fVC1uf3muOsgN/L2AgtwrES0PPiPHJrLH2UePBK0dNsyevylzp8V9OOiA%3D%3D&devId=CY3plXq5jD2/czZ5NH%2BY9ginxA%2B0lR2yURfd9uV%2B1akZr3JPv6rg6oowBwVl8SLu&version=19.1&spever=false&net=wifi&lat=&lon=&ts=1482994987&sign=H3qeeO3JnenIG7O6%2BJ2mp8tGek0tTTlNXH8JJJpV2Ct48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=10&fn=1")!
-let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?size=10")!
+ let url = URL(string: "http://c.m.163.com/recommend/getChanListNews?channel=duanzi&passport=D3pXYOdJ%2BBxaWHO1/pK4OxnEOMj%2B7fVC1uf3muOsgN/L2AgtwrES0PPiPHJrLH2UePBK0dNsyevylzp8V9OOiA%3D%3D&devId=CY3plXq5jD2/czZ5NH%2BY9ginxA%2B0lR2yURfd9uV%2B1akZr3JPv6rg6oowBwVl8SLu&version=19.1&spever=false&net=wifi&lat=&lon=&ts=1482994987&sign=H3qeeO3JnenIG7O6%2BJ2mp8tGek0tTTlNXH8JJJpV2Ct48ErR02zJ6/KXOnxX046I&encryption=1&canal=appstore&offset=0&size=10&fn=1")!
 
 class ViewController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
@@ -50,8 +49,13 @@ class ViewController: UIViewController {
         bottomLine.textAlignment = .center
         bottomLine.textColor = UIColor.lightGray
 
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 44))
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
         footerView.addSubview(bottomLine)
+        
+        let copyLabel = UICopyLabel(frame: CGRect(x: 80, y: 60, width: 100, height: 44))
+        copyLabel.backgroundColor = .blue
+        copyLabel.text = "UICopyLabel"
+        footerView.addSubview(copyLabel)
 
         tableView.tableFooterView = footerView
         getForRequest()
