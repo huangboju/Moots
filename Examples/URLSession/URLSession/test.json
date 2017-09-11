@@ -1,8 +1,22 @@
 {
-    "NrObjects" : "7",
-    "NrScenes" : "5",
-    "Scenes" : [
-        { "dataType" : "label", "position" : [20, 20, 300, 300], "value" : "Hello" },
-        { "dataType" : "label", "position" : [20, 60, 300, 300], "value" : "Hi There" }
-    ]
+    "api": [
+            {
+                "id": "1234",
+                "timestamp": "2312412"
+            },
+            {
+                "id": "1234",
+                "timestamp": "2312412"
+            }
+            ],
+    "domain": [
+               {
+                "id": "1234",
+                "timestamp": "2312412"
+               },
+               {
+                "id": "1234",
+                "timestamp": "2312412"
+               }
+               ]
 }

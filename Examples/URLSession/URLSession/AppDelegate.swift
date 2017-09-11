@@ -16,8 +16,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window?.backgroundColor = UIColor.white
-
+        getData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: .UIPasteboardChanged, object: nil)
+        
         return true
+    }
+
+    func pastechanged(_ notification: Notification) {
+        print(notification.object)
+    }
+
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print(url, sourceApplication ?? "😆", annotation)
+        return true
+    }
+    
+    func getData() {
+
+        let documentsPath = Bundle.main.path(forResource: "test", ofType: "json")
+        let urlPath = URL(fileURLWithPath: documentsPath!)
+        do {
+            let data = try Data(contentsOf: urlPath)
+            guard let result = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+                return
+            }
+
+            let apis = result["api"] as? [[String: String]]
+            let domains = result["domain"] as? [[String: String]]
+
+        } catch let error {
+            print("❌❌❌", error)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

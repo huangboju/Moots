@@ -80,6 +80,8 @@ class ViewController: UIViewController {
         view.addSubview(tableView)
         
         barButton()
+        
+//        button()
     }
     
     func barButton() {
@@ -168,7 +170,7 @@ extension ViewController {
             "currencyPlural(货币形式)": NumberFormatter.Style.currencyPlural,
             "currencyAccounting(会计计数)": NumberFormatter.Style.currencyAccounting
         ]
-        
+
         for item in dict {
             print("⚠️\(item.key)")
             let str = NumberFormatter.localizedString(from: number, number: item.value)

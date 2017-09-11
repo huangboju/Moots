@@ -13,6 +13,9 @@
 		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
 		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
+		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
+		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
+		BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -82,6 +85,9 @@
 		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
 		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
+		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
+		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleLabel.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */,
 				BE15A5BF1F23643F00F9F4F1 /* ExpandingCollectionView */,
 				D8076CBC1DF272C6008ACB34 /* BannerView */,
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
@@ -208,6 +215,8 @@
 				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
 				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
 				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
+				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
+				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -355,11 +364,13 @@
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
+				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
+				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
@@ -369,6 +380,7 @@
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
+				BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */,
 				BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,

@@ -96,7 +96,7 @@ extension SecondController {
     var isNaN: Bool {
         return inputNumber.doubleValue.isNaN
     }
-    
+
     func bankCardNumber() {
         let formatter = NumberFormatter()
         // 分隔位数,会受numberStyle的影响，currency，decimal是3位
