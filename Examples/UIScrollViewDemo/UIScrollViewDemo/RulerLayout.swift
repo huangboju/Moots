@@ -7,7 +7,7 @@ import UIKit
 class RulerLayout: UICollectionViewFlowLayout {
     
     var usingScale = false
-    
+
     private let _scale: CGFloat = 0.6
 
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

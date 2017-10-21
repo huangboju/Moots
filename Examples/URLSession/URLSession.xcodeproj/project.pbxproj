@@ -476,7 +476,7 @@
 				INFOPLIST_FILE = URLSession/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession;
 				PRODUCT_NAME = "段子";
 				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -497,7 +497,7 @@
 				INFOPLIST_FILE = URLSession/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession.URLSession;
+				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.URLSession;
 				PRODUCT_NAME = "段子";
 				SWIFT_OBJC_BRIDGING_HEADER = URLSession/Bridging.h;
 				SWIFT_VERSION = 3.0;

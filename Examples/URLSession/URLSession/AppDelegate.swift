@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
         window?.backgroundColor = UIColor.white
-        getData()
+//        getData()
         
         NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: .UIPasteboardChanged, object: nil)
         
@@ -28,27 +28,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        print("🍀")
         print(url, sourceApplication ?? "😆", annotation)
         return true
     }
     
-    func getData() {
-
-        let documentsPath = Bundle.main.path(forResource: "test", ofType: "json")
-        let urlPath = URL(fileURLWithPath: documentsPath!)
-        do {
-            let data = try Data(contentsOf: urlPath)
-            guard let result = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
-                return
-            }
-
-            let apis = result["api"] as? [[String: String]]
-            let domains = result["domain"] as? [[String: String]]
-
-        } catch let error {
-            print("❌❌❌", error)
-        }
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+        
+        print("🍀")
+        print(url, options)
+        
+        return true
     }
+
+//    func getData() {
+//
+//        let documentsPath = Bundle.main.path(forResource: "test", ofType: "json")
+//        let urlPath = URL(fileURLWithPath: documentsPath!)
+//        do {
+//            let data = try Data(contentsOf: urlPath)
+//            guard let result = try JSONSerialization.jsonObject(with: data) as? [String: Any] else {
+//                return
+//            }
+//
+//            let apis = result["api"] as? [[String: String]]
+//            let domains = result["domain"] as? [[String: String]]
+//
+//        } catch let error {
+//            print("❌❌❌", error)
+//        }
+//    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -70,12 +79,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
-
-        print(url, options)
-
-        return true
     }
 }

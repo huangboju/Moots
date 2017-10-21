@@ -19,15 +19,85 @@ class ViewController: UIViewController {
 //        operationDependency()
 //        test()
 //        delay()
-        semaphoreGroup()
+//        semaphoreGroup()
+//        dispatchIO()
+//        listenFile()
+
+        let formattedString = "A string"
+        let data = Array(formattedString.utf8).withUnsafeBytes {
+            DispatchData(bytes: $0)
+        }
     }
-    
+
+    func listenFile() {
+        let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "json")!)
+        let monitoredDirectoryFileDescriptor = open(fileURL.path, O_EVTONLY)
+
+        let directoryMonitorSource = DispatchSource.makeFileSystemObjectSource(fileDescriptor: monitoredDirectoryFileDescriptor, eventMask: .write)
+
+        directoryMonitorSource.setEventHandler {
+            print("change file")
+        }
+
+        directoryMonitorSource.setCancelHandler {
+            close(monitoredDirectoryFileDescriptor)
+        }
+
+        directoryMonitorSource.resume()
+    }
+
+
+    // http://www.jianshu.com/p/073bc1399677
+    func dispatchIO() {
+
+        let queue = DispatchQueue(label: "pipeQ")
+        let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "json")!)
+        let fileDescriptor = open(fileURL.path, O_RDWR)
+
+        let io = DispatchIO(type: .stream, fileDescriptor: fileDescriptor, queue: queue) { (error) in
+            print(error)
+        }
+
+        io.setLimit(highWater: 1024)
+        io.read(offset: 0, length: 8, queue: queue) { (done, data, error) in
+            if let data = data {
+                data.enumerateBytes { (aa, b, f) in
+                    print(String(data: Data(buffer: aa), encoding: .utf8))
+                }
+                print("thread : \(Thread.current), data length : \(data.count), return value : \(error)")
+                self.demoIOWrite(data: data)
+            }
+        }
+
+//        DispatchIO.read(fromFileDescriptor: fileDescriptor, maxLength: -1, runningHandlerOn: queue) {
+//            (data, num) -> Void in
+//            print("thread : \(Thread.current), data length : \(data.count), return value : \(num)")
+//
+//            // 调用下面的异步写
+//            self.demoIOWrite(data: data)
+//        }
+    }
+
+    func demoIOWrite(data: DispatchData) {
+
+        let queue = DispatchQueue(label: "demo.async_queue", attributes: .concurrent)
+
+        let fileURL = URL(fileURLWithPath: Bundle.main.path(forResource: "data", ofType: "json")!)
+        let fileDescriptor = open(fileURL.path, O_RDWR)
+        DispatchIO.write(toFileDescriptor: fileDescriptor, data: data, runningHandlerOn: queue) {
+            (data, num) -> Void in
+            print("thread : \(Thread.current), data length : \(data), return value : \(num)")
+        }
+    }
+
     func semaphoreGroup() {
         let group = DispatchGroup()
+
         let semaphore = DispatchSemaphore(value: 10)
-        
+
         let queue = DispatchQueue.global()
-        for i in 0..<100 {
+
+        for i in 0 ..< 100 {
             print(semaphore.wait(timeout: .distantFuture))
             queue.async(group: group) {
                 print(i)
@@ -35,11 +105,12 @@ class ViewController: UIViewController {
                 semaphore.signal()
             }
         }
+
         group.notify(queue: queue) { 
-                print("😄")
+            print("😄")
         }
     }
-    
+
     func semaphore() {
         let semaphore = DispatchSemaphore(value: 0)
         let queue = DispatchQueue(label: "StudyBlocks")
@@ -49,30 +120,30 @@ class ViewController: UIViewController {
             }
             semaphore.signal()
         }
-        
+
         semaphore.wait()
-        
+
         for j in 0..<5 {
             print(">> Main Data:", j)
         }
     }
-    
+
     let sem = DispatchSemaphore(value: 2)
-    
+
     func multitasking() {
         DispatchQueue.global().async {
             self.task_first()
         }
-        
+
         DispatchQueue.global().async {
             self.task_second()
         }
-        
+
         DispatchQueue.global().async {
             self.task_third()
         }
     }
-    
+
     func task_first(){
         sem.wait()
         print("First task starting")
@@ -80,7 +151,7 @@ class ViewController: UIViewController {
         print("First task is done")
         sem.signal()
     }
-    
+
     func task_second(){
         sem.wait()
         print("Second task starting")
@@ -88,7 +159,7 @@ class ViewController: UIViewController {
         print("Second task is done")
         sem.signal()
     }
-    
+
     func task_third(){
         sem.wait()
         print("Thrid task starting")
@@ -96,31 +167,32 @@ class ViewController: UIViewController {
         print("Thrid task is done", #function)
         sem.signal()
     }
-    
+
     func quickThread() {
          Thread.detachNewThreadSelector(#selector(autoRun), toTarget: self, with: "1")
     }
-    
-    func autoRun(text: String) {
+
+    @objc func autoRun(text: String) {
         for i in 0 ..< 10 {
             print(Thread.current,"autoRun", i)
             Thread.exit()
         }
     }
-    
+
     func thread() {
         let thread = Thread(target: self, selector: #selector(run), object: "1")
         thread.name = "myThread"
         thread.start()
     }
-    
-    func run(text: String) {
+
+    @objc func run(text: String) {
         print(Thread.current.name as Any,"run")
     }
-    
+
     func gcd() {
         let queue = DispatchQueue(label: "myQueue")
         print("之前", Thread.current)
+
         queue.async {
             print("sync之前", Thread.current)
             queue.sync {
@@ -128,9 +200,10 @@ class ViewController: UIViewController {
             }
             print("sync之后", Thread.current)
         }
+
         print("之后", Thread.current)
     }
-    
+
     func gcdGroup() {
         let group = DispatchGroup()
         let queue = DispatchQueue.global()
@@ -139,75 +212,82 @@ class ViewController: UIViewController {
                 print("1",Thread.current)
             }
         }
-        
+
         queue.async(group: group) {
             for _ in 0..<8 {
                 print("2", Thread.current)
             }
         }
-        
+
         DispatchQueue.main.async(group: group) {
             for _ in 0..<5 {
                 print("main", Thread.current)
             }
         }
-        
+
         group.notify(queue: DispatchQueue.main) {
             print("完成", Thread.current)
         }
     }
-    
+
     func operation() {
+
         let operation = BlockOperation { 
             print(Thread.current)
         }
-        
-        for i in 0..<5 {
+
+        for i in 0 ..< 5 {
             operation.addExecutionBlock {
                 NSLog("第%ld次 - %@", i, Thread.current)
             }
         }
-        
+
         operation.start()
     }
-    
+
+
     func operationQueue() {
+
         let queue = OperationQueue()
-        queue.maxConcurrentOperationCount = 1
+        queue.maxConcurrentOperationCount = 2
         let operation = BlockOperation {
             NSLog("%@", Thread.current)
         }
-        for i in 0..<5 {
+
+        for i in 0 ..< 5 {
             operation.addExecutionBlock {
                 NSLog("第%ld次 - %@", i, Thread.current)
             }
         }
         queue.addOperation(operation)
     }
-    
+
     func operationDependency() {
         //1.任务一：下载图片
         let operation1 = BlockOperation {
             NSLog("下载图片 - %@", Thread.current)
             Thread.sleep(forTimeInterval: 1.0)
         }
+
         //2.任务二：打水印
         let operation2 = BlockOperation {
             NSLog("打水印   - %@", Thread.current)
             Thread.sleep(forTimeInterval: 1.0)
         }
+
         //3.任务三：上传图片
         let operation3 = BlockOperation {
             NSLog("上传图片 - %@", Thread.current)
             Thread.sleep(forTimeInterval: 1.0)
         }
+
         operation2.addDependency(operation1)//任务二依赖任务一
         operation3.addDependency(operation2)    //任务三依赖任务二
         //5.创建队列并加入任务
         let queue = OperationQueue()
         queue.addOperations([operation3, operation2, operation1], waitUntilFinished: false)
     }
-    
+
     func test() {
         var lastTicket = 10
         DispatchQueue.global().async {
@@ -217,7 +297,7 @@ class ViewController: UIViewController {
             ticket -= 1
             lastTicket = ticket
         }
-        
+
         let operation = BlockOperation { () in
             var ticket = lastTicket
             Thread.sleep(forTimeInterval: 1)
@@ -227,7 +307,8 @@ class ViewController: UIViewController {
         }
         operation.start()
     }
-    
+
+
     func delay() {
 
         let time: TimeInterval = 2.0
@@ -236,7 +317,8 @@ class ViewController: UIViewController {
             print("global 2 秒后输出", Thread.current)
         }
         print(Date())
-        let dispatchTime = DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
+
+        let dispatchTime = DispatchTime.now() + 2
         DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
             print("2 秒后输出", Date(), Thread.current)
         }
@@ -244,7 +326,6 @@ class ViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 }
 

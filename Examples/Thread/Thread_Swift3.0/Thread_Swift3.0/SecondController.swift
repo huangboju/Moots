@@ -103,13 +103,14 @@ class SecondController: UIViewController {
             switch tag {
             case "同步执行串行队列":
                 performQueuesUseSynchronization(getSerialQueue("syn.serial.queue"))
-            case "同步执行并行队列":   performQueuesUseSynchronization(getConcurrentQueue("syn.concurrent.queue"))
+            case "同步执行并行队列":
+                performQueuesUseSynchronization(getConcurrentQueue("syn.concurrent.queue"))
             case "异步执行串行队列":
                 performQueuesUseAsynchronization(getSerialQueue("asyn.serial.queue"))
             case "异步执行并行队列":
                 performQueuesUseAsynchronization(getConcurrentQueue("asyn.concurrent.queue"))
             case "延迟执行":
-                    deferPerform(1)
+                deferPerform(1)
             case "设置全局队列的优先级":
                 globalQueuePriority()
             case "设置自建队列优先级":
@@ -352,7 +353,7 @@ class SecondController: UIViewController {
             let concurrentQueue = getConcurrentQueue("cn.zeluli")
             
             //创建信号量
-            let semaphoreLock = DispatchSemaphore(value: 1)
+            let semaphoreLock = DispatchSemaphore(value: 2)
             
             var testNumber = 0
             
@@ -500,10 +501,11 @@ class SecondController: UIViewController {
             // deadline 结束时间
             // interval 时间间隔
             // leeway  时间精度
-            source.scheduleRepeating(deadline: .now(), interval: 1, leeway: .nanoseconds(0))
-
+//            source.schedule(deadline: .now(), leeway: .nanoseconds(0))
+            source.schedule(deadline: .now(), repeating: 1, leeway: .nanoseconds(0))
+//            source.scheduleRepeating(deadline: .now(), interval: 1, leeway: .nanoseconds(0))
             var timeout = 10    //倒计时时间
-            
+
             //设置要处理的事件, 在我们上面创建的queue队列中进行执行
             
             source.setEventHandler {
