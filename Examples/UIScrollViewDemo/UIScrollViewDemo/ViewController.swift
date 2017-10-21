@@ -66,11 +66,12 @@ class ViewController: UIViewController {
         let array = NSArray(objects: "2.0", "2.3", "3.0", "4.0", "10")
         
         
-        let sum = array.value(forKeyPath: "@sum.floatValue")
-        
-        let avg = array.value(forKeyPath: "@avg.floatValue")
-        let max = array.value(forKeyPath: "@max.floatValue")
-        let min = array.value(forKeyPath: "@min.floatValue")
+        guard let sum = array.value(forKeyPath: "@sum.floatValue"),
+              let avg = array.value(forKeyPath: "@avg.floatValue"),
+              let max = array.value(forKeyPath: "@max.floatValue"),
+              let min = array.value(forKeyPath: "@min.floatValue") else {
+            return
+        }
 
         print(sum, avg, max, min)
     }

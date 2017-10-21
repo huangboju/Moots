@@ -15,7 +15,7 @@ class ViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
-    
+
     lazy var data: [[UIViewController.Type]] = [
         [
             GapController.self,

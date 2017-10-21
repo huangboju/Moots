@@ -25,7 +25,7 @@ class LayoutTrasition: UIViewController {
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
     }
 
-    func buttonAction(sender: UIButton) {
+    @objc func buttonAction(sender: UIButton) {
         sender.isSelected = !sender.isSelected
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
             sender.snp.updateConstraints { (make) in

@@ -73,7 +73,7 @@ class BannerView: UIView {
     fileprivate func setTheTimer() {
         if isAllowLooping {
             timer = DispatchSource.makeTimerSource(queue: .main)
-            timer?.scheduleRepeating(deadline: .now() + .seconds(pageStepTime), interval: .seconds(pageStepTime))
+            timer?.schedule(deadline: .now() + .seconds(pageStepTime), repeating: .seconds(pageStepTime))
             timer?.setEventHandler {
                 self.nextItem()
             }
