@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */; };
+		BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */; };
+		BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */; };
 		BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */; };
 		BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */; };
 		BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */; };
 		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
 		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
+		BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */; };
+		BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
 		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
 		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
@@ -79,11 +84,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutMainController.swift; sourceTree = "<group>"; };
+		BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStackViewController.swift; sourceTree = "<group>"; };
+		BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
 		BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCollectionViewController.swift; sourceTree = "<group>"; };
 		BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSelfSizing.swift; sourceTree = "<group>"; };
 		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
 		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
+		BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackViewController.swift; sourceTree = "<group>"; };
+		BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEqualWidthViewsController.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
 		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
 		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +156,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE1093F31F9B4E9E00CD4804 /* AutoLayout */ = {
+			isa = PBXGroup;
+			children = (
+				BE1093F61F9B509400CD4804 /* AutoLayoutCookbook */,
+				BE41600E1F1DD997007B619B /* AutoLayoutController.swift */,
+				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
+				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
+				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
+				BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */,
+			);
+			path = AutoLayout;
+			sourceTree = "<group>";
+		};
+		BE1093F61F9B509400CD4804 /* AutoLayoutCookbook */ = {
+			isa = PBXGroup;
+			children = (
+				BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */,
+				BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */,
+				BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */,
+				BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */,
+			);
+			path = AutoLayoutCookbook;
+			sourceTree = "<group>";
+		};
 		BE15A5BF1F23643F00F9F4F1 /* ExpandingCollectionView */ = {
 			isa = PBXGroup;
 			children = (
@@ -186,13 +220,14 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE1093F31F9B4E9E00CD4804 /* AutoLayout */,
 				BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */,
 				BE15A5BF1F23643F00F9F4F1 /* ExpandingCollectionView */,
 				D8076CBC1DF272C6008ACB34 /* BannerView */,
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
+				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
 				D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */,
-				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
 				D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */,
 				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
 				D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */,
@@ -211,10 +246,6 @@
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
 				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
-				BE41600E1F1DD997007B619B /* AutoLayoutController.swift */,
-				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
-				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
-				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
 				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 			);
@@ -360,13 +391,16 @@
 			files = (
 				D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */,
 				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
+				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
+				BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */,
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
+				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
@@ -387,10 +421,12 @@
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
+				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
+				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
