@@ -17,7 +17,7 @@ class ConvertController: UIViewController {
 
         let greenViewOrigin = CGPoint(x: 150, y: 100)
         let blueViewOrigin = CGPoint(x: 30, y: 75)
-        
+
         let redView = UIView(frame: CGRect(x: 0, y: 80, width: view.frame.width, height: view.frame.width))
         redView.backgroundColor = UIColor.red
         view.addSubview(redView)
