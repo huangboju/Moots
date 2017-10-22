@@ -37,7 +37,12 @@ class AutoLayoutMainController: UIViewController {
             SimpleStackViewController.self,
             NestedStackViewController.self,
             DynamicStackViewController.self,
-            TwoEqualWidthViewsController.self
+            TwoEqualWidthViewsController.self,
+            TwoDifferentWidthViews.self,
+            TwoViewsWithComplexWidths.self,
+            SimpleLabelAndTextField.self,
+            DynamicHeightLabelAndTextField.self,
+            FixedHeightColumns.self
         ]
     ]
     
