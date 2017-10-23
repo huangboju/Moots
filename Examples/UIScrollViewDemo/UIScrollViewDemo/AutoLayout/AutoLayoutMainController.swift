@@ -42,7 +42,12 @@ class AutoLayoutMainController: UIViewController {
             TwoViewsWithComplexWidths.self,
             SimpleLabelAndTextField.self,
             DynamicHeightLabelAndTextField.self,
-            FixedHeightColumns.self
+            FixedHeightColumns.self,
+            DynamicHeightColumns.self,
+            TwoEqualWidthButtons.self,
+            ThreeEqualWidthButtons.self,
+            EqualWhiteSpace.self,
+            ButtonsSizeClass.self
         ]
     ]
     
