@@ -31,7 +31,7 @@ class ButtonsSizeClass: AutoLayoutBaseController {
             topButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             topButtonLandscapeTrailing = topButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         }
-        
+
         do {
             bottomLayoutGuide.topAnchor.constraint(equalTo: bottomButton.bottomAnchor, constant: 20).isActive = true
             bottomButton.widthAnchor.constraint(equalTo: topButton.widthAnchor).isActive = true
