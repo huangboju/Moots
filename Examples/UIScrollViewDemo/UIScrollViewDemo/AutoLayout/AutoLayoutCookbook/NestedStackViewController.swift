@@ -63,8 +63,10 @@ class NestedStackViewController: AutoLayoutBaseController {
         ]
 
         let imageView = UIImageView()
+        
         imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 48), for: .horizontal)
         imageView.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 48), for: .vertical)
+
         imageView.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
         imageView.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
         imageView.image = UIImage(named: "square_flowers")

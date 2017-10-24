@@ -47,7 +47,8 @@ class AutoLayoutMainController: UIViewController {
             TwoEqualWidthButtons.self,
             ThreeEqualWidthButtons.self,
             EqualWhiteSpace.self,
-            ButtonsSizeClass.self
+            ButtonsSizeClass.self,
+            GroupingViews.self
         ]
     ]
     
