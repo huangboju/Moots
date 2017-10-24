@@ -24,6 +24,7 @@
 		BE3654091F9C8462001A8432 /* SimpleLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654081F9C8462001A8432 /* SimpleLabelAndTextField.swift */; };
 		BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
+		BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */; };
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
 		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
@@ -112,6 +113,7 @@
 		BE3654081F9C8462001A8432 /* SimpleLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabelAndTextField.swift; sourceTree = "<group>"; };
 		BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightLabelAndTextField.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
+		BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewsAndAspectFitMode.swift; sourceTree = "<group>"; };
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
 		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 				BEBDCB4D1F9CB890009762A8 /* EqualWhiteSpace.swift */,
 				BEBDCB4F1F9D94F9009762A8 /* ButtonsSizeClass.swift */,
 				BE6169D61F9DD23E00746C5E /* GroupingViews.swift */,
+				BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */,
 			);
 			path = AutoLayoutCookbook;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */,
 				D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */,
 				BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */,
 				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
