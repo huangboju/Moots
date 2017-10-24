@@ -25,50 +25,70 @@ class GroupingViews: AutoLayoutBaseController {
         let activateLabel = generateLabel(with: "Activate")
         dummyView.addSubview(activateLabel)
         
-        let switchControl1 = UISwitch()
-        dummyView.addSubview(switchControl1)
-        
-        let stabilizeLabel = generateLabel(with: "Stabilize")
-        dummyView.addSubview(stabilizeLabel)
-
-
-        let switchControl2 = UISwitch()
-        dummyView.addSubview(switchControl2)
-
         let skewLabel = generateLabel(with: "Skew")
         dummyView.addSubview(skewLabel)
-        
-        let switchControl3 = UISwitch()
+
+        let switchControl1 = generateSwitch()
+        dummyView.addSubview(switchControl1)
+
+
+        let switchControl2 = generateSwitch()
+        dummyView.addSubview(switchControl2)
+
+
+        let switchControl3 = generateSwitch()
         dummyView.addSubview(switchControl3)
+
+        let stabilizeLabel = generateLabel(with: "Stabilize")
+        dummyView.addSubview(stabilizeLabel)
         
         do {
             textLabel.topAnchor.constraint(equalTo: dummyView.topAnchor).isActive = true
-            textLabel.leadingAnchor.constraint(equalTo: dummyView.leadingAnchor).isActive = true
-            textLabel.trailingAnchor.constraint(equalTo: dummyView.trailingAnchor).isActive = true
+            textLabel.leadingAnchor.constraint(equalTo: dummyView.leadingAnchor, constant: 8).isActive = true
+            dummyView.trailingAnchor.constraint(equalTo: textLabel.trailingAnchor, constant: 8).isActive = true
         }
-        
+
         do {
-            activateLabel.leadingAnchor.constraint(equalTo: dummyView.leadingAnchor).isActive = true
+            activateLabel.leadingAnchor.constraint(equalTo: textLabel.leadingAnchor).isActive = true
             switchControl1.centerYAnchor.constraint(equalTo: activateLabel.centerYAnchor).isActive = true
-            switchControl1.trailingAnchor.constraint(equalTo: dummyView.trailingAnchor).isActive = true
-            switchControl1.leadingAnchor.constraint(equalTo: activateLabel.trailingAnchor).isActive = true
-            switchControl1.topAnchor.constraint(equalTo: dummyView.bottomAnchor).isActive = true
+            switchControl1.trailingAnchor.constraint(equalTo: textLabel.trailingAnchor).isActive = true
+            switchControl1.leadingAnchor.constraint(equalTo: activateLabel.trailingAnchor, constant: 8).isActive = true
+            switchControl1.topAnchor.constraint(equalTo: textLabel.bottomAnchor, constant: 8).isActive = true
         }
-        
+
         do {
-            switchControl2.topAnchor.constraint(equalTo: switchControl1.bottomAnchor).isActive = true
+            stabilizeLabel.leadingAnchor.constraint(equalTo: textLabel.leadingAnchor).isActive = true
+            switchControl2.topAnchor.constraint(equalTo: switchControl1.bottomAnchor, constant: 8).isActive = true
+            switchControl2.leadingAnchor.constraint(equalTo: stabilizeLabel.trailingAnchor, constant: 8).isActive = true
+            switchControl2.centerYAnchor.constraint(equalTo: stabilizeLabel.centerYAnchor).isActive = true
+            switchControl2.trailingAnchor.constraint(equalTo: textLabel.trailingAnchor).isActive = true
         }
-        
+
         do {
-            stabilizeLabel.leadingAnchor.constraint(equalTo: dummyView.leadingAnchor).isActive = true
+            skewLabel.leadingAnchor.constraint(equalTo: textLabel.leadingAnchor).isActive = true
+            switchControl3.trailingAnchor.constraint(equalTo: textLabel.trailingAnchor).isActive = true
+            switchControl3.leadingAnchor.constraint(equalTo: skewLabel.trailingAnchor, constant: 8).isActive = true
+            switchControl3.bottomAnchor.constraint(equalTo: dummyView.bottomAnchor).isActive = true
+            switchControl3.centerYAnchor.constraint(equalTo: skewLabel.centerYAnchor).isActive = true
+            switchControl3.topAnchor.constraint(equalTo: switchControl2.bottomAnchor, constant: 8).isActive = true
         }
     }
 
     private func generateLabel(with text: String) -> UILabel {
         let label = UILabel()
         label.text = text
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
+        label.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }
+    
+    private func generateSwitch() -> UISwitch {
+        let switchControl = UISwitch()
+        switchControl.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        switchControl.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        return switchControl
     }
 
     private func generatDummyView() -> UIView {
