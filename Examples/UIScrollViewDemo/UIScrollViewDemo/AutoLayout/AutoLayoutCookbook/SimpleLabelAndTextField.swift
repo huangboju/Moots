@@ -28,7 +28,7 @@ class SimpleLabelAndTextField: AutoLayoutBaseController {
 
         textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8).isActive = true
         textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
         textField.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor).isActive = true
     }
 }

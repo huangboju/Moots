@@ -71,13 +71,15 @@ class NestedStackViewController: AutoLayoutBaseController {
         imageView.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
         imageView.image = UIImage(named: "square_flowers")
         contentStackView.addArrangedSubview(imageView)
-        imageView.addConstraint(NSLayoutConstraint(item: imageView,
-                                                   attribute: .height,
-                                                   relatedBy: .equal,
-                                                   toItem: imageView,
-                                                   attribute: .width,
-                                                   multiplier: 1,
-                                                   constant: 0))
+        imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor, multiplier: 1).isActive = true
+        // 等同上面一句
+//        imageView.addConstraint(NSLayoutConstraint(item: imageView,
+//                                                   attribute: .height,
+//                                                   relatedBy: .equal,
+//                                                   toItem: imageView,
+//                                                   attribute: .width,
+//                                                   multiplier: 1,
+//                                                   constant: 0))
 
         let fieldsStackView = normalStackView
         fieldsStackView.spacing = 8
