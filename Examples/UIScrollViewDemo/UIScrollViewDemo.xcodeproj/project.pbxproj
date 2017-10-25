@@ -25,6 +25,9 @@
 		BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
 		BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */; };
+		BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */; };
+		BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */; };
+		BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */; };
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
 		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
@@ -114,6 +117,9 @@
 		BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightLabelAndTextField.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
 		BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewsAndAspectFitMode.swift; sourceTree = "<group>"; };
+		BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioImageView.swift; sourceTree = "<group>"; };
+		BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextAndReadability.swift; sourceTree = "<group>"; };
+		BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingWithScrollViews.swift; sourceTree = "<group>"; };
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
 		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -212,6 +218,9 @@
 				BEBDCB4F1F9D94F9009762A8 /* ButtonsSizeClass.swift */,
 				BE6169D61F9DD23E00746C5E /* GroupingViews.swift */,
 				BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */,
+				BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */,
+				BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */,
+				BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */,
 			);
 			path = AutoLayoutCookbook;
 			sourceTree = "<group>";
@@ -370,7 +379,7 @@
 				TargetAttributes = {
 					D8A731ED1DED6E28005DF7C8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = 46A8679957;
+						DevelopmentTeam = 3NFVM7S86S;
 						ProvisioningStyle = Automatic;
 					};
 					D8A732011DED6E28005DF7C8 = {
@@ -454,6 +463,7 @@
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
+				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
@@ -468,7 +478,9 @@
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
+				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
+				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
@@ -627,7 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46A8679957;
+				DEVELOPMENT_TEAM = 3NFVM7S86S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -645,7 +657,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 46A8679957;
+				DEVELOPMENT_TEAM = 3NFVM7S86S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

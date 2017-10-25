@@ -49,7 +49,10 @@ class AutoLayoutMainController: UIViewController {
             EqualWhiteSpace.self,
             ButtonsSizeClass.self,
             GroupingViews.self,
-            ImageViewsAndAspectFitMode.self
+            ImageViewsAndAspectFitMode.self,
+            AspectRatioImageView.self,
+            DynamicTextAndReadability.self,
+            WorkingWithScrollViews.self
         ]
     ]
     

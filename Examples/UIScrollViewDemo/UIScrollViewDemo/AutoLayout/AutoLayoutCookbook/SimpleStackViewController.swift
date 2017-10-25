@@ -22,8 +22,8 @@ class SimpleStackViewController: AutoLayoutBaseController {
 
         stackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         stackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        stackView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 100).isActive = true
-        stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor).isActive = true
+        stackView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
 
         let titleLabel = UILabel()
         titleLabel.text = "Flowers"
@@ -31,6 +31,7 @@ class SimpleStackViewController: AutoLayoutBaseController {
         stackView.addArrangedSubview(titleLabel)
 
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         stackView.addArrangedSubview(imageView)
         imageView.image = UIImage(named: "flowers")
 
