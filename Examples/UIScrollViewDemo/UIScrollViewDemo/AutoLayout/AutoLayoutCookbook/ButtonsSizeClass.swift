@@ -49,46 +49,30 @@ class ButtonsSizeClass: AutoLayoutBaseController {
     
     // MARK: - UIApplicationDidChangeStatusBarOrientationNotification
     @objc func orientationDidChange() {
-        let isLandscape: Bool
-        
         switch UIApplication.shared.statusBarOrientation {
         case .landscapeLeft, .landscapeRight:
-            isLandscape = true
+            topButtonLandscapeTrailing.isActive = false
+            topButtonLandscapeBottom.isActive = false
+            bottomButtonLandscapeLeading.isActive = false
 
-//            topButtonLandscapeTrailing.isActive = false
-//            topButtonLandscapeBottom.isActive = false
-//            bottomButtonLandscapeLeading.isActive = false
-//
-//            bottomButtonLandscapeBottom.isActive = true
-//            bottomButtonPortraitLeading.isActive = true
+            bottomButtonLandscapeBottom.isActive = true
+            bottomButtonPortraitLeading.isActive = true
 
         default:
-            isLandscape = false
+            bottomButtonLandscapeBottom.isActive = false
+            bottomButtonPortraitLeading.isActive = false
 
-//            bottomButtonLandscapeBottom.isActive = false
-//            bottomButtonPortraitLeading.isActive = false
-//
-//            topButtonLandscapeTrailing.isActive = true
-//            topButtonLandscapeBottom.isActive = true
-//            bottomButtonLandscapeLeading.isActive = true
+            topButtonLandscapeTrailing.isActive = true
+            topButtonLandscapeBottom.isActive = true
+            bottomButtonLandscapeLeading.isActive = true
         }
 
         
         // http://www.cocoachina.com/bbs/read.php?tid=111832
 
         // 标记为需要重新布局，异步调用layoutIfNeeded刷新布局，不立即刷新，但layoutSubviews一定会被调用
-        topButton.setNeedsLayout()
-        bottomButton.setNeedsLayout()
-        
-        // layoutIfNeeded方法：如果，有需要刷新的标记，立即调用layoutSubviews进行布局（如果没有标记，不会调用layoutSubviews
-
-        // 这样写有警告，必须先关闭,必须加上 setNeedsLayout
-        bottomButtonLandscapeBottom.isActive = isLandscape
-        bottomButtonPortraitLeading.isActive = isLandscape
-
-        topButtonLandscapeTrailing.isActive = !isLandscape
-        topButtonLandscapeBottom.isActive = !isLandscape
-        bottomButtonLandscapeLeading.isActive = !isLandscape
+//
+//        // layoutIfNeeded方法：如果，有需要刷新的标记，立即调用layoutSubviews进行布局（如果没有标记，不会调用layoutSubviews
     }
 
     private func generatButton(with title: String) -> UIButton {
