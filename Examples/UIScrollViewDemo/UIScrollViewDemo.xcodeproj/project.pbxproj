@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
+		BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */; };
 		BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */; };
 		BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */; };
 		BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */; };
@@ -32,6 +33,8 @@
 		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
 		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
 		BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */; };
+		BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB635121FA4A3F600525EBB /* AnimatingChangesViewController.swift */; };
+		BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB635141FA4AA6C00525EBB /* UIKitDynamicsViewController.swift */; };
 		BEBDCB4A1F9CB4DA009762A8 /* TwoEqualWidthButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCB491F9CB4DA009762A8 /* TwoEqualWidthButtons.swift */; };
 		BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCB4B1F9CB731009762A8 /* ThreeEqualWidthButtons.swift */; };
 		BEBDCB4E1F9CB890009762A8 /* EqualWhiteSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCB4D1F9CB890009762A8 /* EqualWhiteSpace.swift */; };
@@ -101,6 +104,7 @@
 /* Begin PBXFileReference section */
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
+		BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassSpecificLayouts.swift; sourceTree = "<group>"; };
 		BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutMainController.swift; sourceTree = "<group>"; };
 		BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStackViewController.swift; sourceTree = "<group>"; };
 		BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +128,8 @@
 		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
 		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
 		BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoubleLabel.swift; sourceTree = "<group>"; };
+		BEB635121FA4A3F600525EBB /* AnimatingChangesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatingChangesViewController.swift; sourceTree = "<group>"; };
+		BEB635141FA4AA6C00525EBB /* UIKitDynamicsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitDynamicsViewController.swift; sourceTree = "<group>"; };
 		BEBDCB491F9CB4DA009762A8 /* TwoEqualWidthButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEqualWidthButtons.swift; sourceTree = "<group>"; };
 		BEBDCB4B1F9CB731009762A8 /* ThreeEqualWidthButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeEqualWidthButtons.swift; sourceTree = "<group>"; };
 		BEBDCB4D1F9CB890009762A8 /* EqualWhiteSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EqualWhiteSpace.swift; sourceTree = "<group>"; };
@@ -221,6 +227,9 @@
 				BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */,
 				BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */,
 				BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */,
+				BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */,
+				BEB635121FA4A3F600525EBB /* AnimatingChangesViewController.swift */,
+				BEB635141FA4AA6C00525EBB /* UIKitDynamicsViewController.swift */,
 			);
 			path = AutoLayoutCookbook;
 			sourceTree = "<group>";
@@ -455,6 +464,8 @@
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
+				BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */,
+				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
@@ -467,6 +478,7 @@
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
+				BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,

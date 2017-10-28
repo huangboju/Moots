@@ -52,7 +52,10 @@ class AutoLayoutMainController: UIViewController {
             ImageViewsAndAspectFitMode.self,
             AspectRatioImageView.self,
             DynamicTextAndReadability.self,
-            WorkingWithScrollViews.self
+            WorkingWithScrollViews.self,
+            SizeClassSpecificLayouts.self,
+            AnimatingChangesViewController.self,
+            UIKitDynamicsViewController.self
         ]
     ]
     
