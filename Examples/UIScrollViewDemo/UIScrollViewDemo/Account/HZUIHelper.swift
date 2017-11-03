@@ -13,6 +13,7 @@ class HZUIHelper {
     static func generateNormalButton(with title: String? = nil, target: Any?, action: Selector) -> UIButton {
         let button = UIButton()
         button.addTarget(target, action: action, for: .touchUpInside)
+        button.setTitle(title, for: .normal)
         return button
     }
     

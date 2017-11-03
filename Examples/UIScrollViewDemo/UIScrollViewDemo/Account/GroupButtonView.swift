@@ -9,13 +9,20 @@
 import UIKit
 
 class GroupButtonView: UIView {
-    func generatGroupView(with titles: (String, String)) {
-        let leftButton = generatButton(with: titles.0, action: #selector(leftButtonAction))
+    
+    typealias GroupButtonViewItem = (title: String, action: Selector)
+    
+    var leftButton: UIButton!
+    var rightButton: UIButton!
+    
+    convenience init(target: Any, items: (GroupButtonViewItem, GroupButtonViewItem)) {
+        self.init(frame: .zero)
+        leftButton = generatButton(with: items.0.title, target: target, action: items.0.action)
         addSubview(leftButton)
         leftButton.snp.makeConstraints { (make) in
-            make.top.equalToSuperview()
-            make.trailing.equalTo(snp.centerX).offset(-15)
-            make.width.equalTo(130)
+            make.top.bottom.equalToSuperview()
+            make.trailing.equalTo(snp.centerX).offset(-10)
+            make.leading.equalToSuperview()
         }
 
         let vLine = UIView()
@@ -24,24 +31,26 @@ class GroupButtonView: UIView {
         vLine.snp.makeConstraints { (make) in
             make.height.equalTo(17)
             make.width.equalTo(1)
-            make.centerY.equalTo(leftButton.snp.centerY)
+            make.center.equalToSuperview()
         }
 
-        let rightButton = generatButton(with: titles.1, action: #selector(rightButtonAction))
+        rightButton = generatButton(with: items.1.title, target: target, action: items.1.action)
         addSubview(rightButton)
         rightButton.snp.makeConstraints { (make) in
             make.centerY.equalTo(leftButton.snp.centerY)
-            make.leading.equalTo(snp.centerX).offset(15)
-            make.width.equalTo(leftButton)
+            make.leading.equalTo(snp.centerX).offset(10)
+            make.trailing.equalToSuperview()
         }
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        rightButton.contentEdgeInsets.left = -(rightButton.frame.width - rightButton.intrinsicContentSize.width) / 2
+        leftButton.contentEdgeInsets.right = -(leftButton.frame.width - leftButton.intrinsicContentSize.width) / 2
+    }
 
-    @objc func leftButtonAction() {}
-
-    @objc func rightButtonAction() {}
-
-    private func generatButton(with title: String, action: Selector) -> UIButton {
-        let button = HZUIHelper.generateNormalButton(with: title, target: self, action: action)
+    private func generatButton(with title: String?, target: Any, action: Selector) -> UIButton {
+        let button = HZUIHelper.generateNormalButton(with: title, target: target, action: action)
         button.setTitleColor(UIColor(hex: 0x7E3886), for: .normal)
         button.titleLabel?.font = UIFontMake(13)
         return button
