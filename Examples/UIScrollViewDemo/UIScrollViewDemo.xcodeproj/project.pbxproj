@@ -52,6 +52,7 @@
 		BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */; };
 		BEBE4A1D1FAC3CCE00A9CA9A /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */; };
 		BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */; };
+		BEBE4A211FAC487B00A9CA9A /* GroupButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -160,6 +161,7 @@
 		BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZUIHelper.swift; sourceTree = "<group>"; };
 		BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
 		BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterSelfSizing.swift; sourceTree = "<group>"; };
+		BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupButtonView.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				BEBE4A101FAC13FE00A9CA9A /* PasswordCell.swift */,
 				BEBE4A121FAC182E00A9CA9A /* AccountCell.swift */,
 				BEBE4A141FAC19FF00A9CA9A /* VerificationCodeCell.swift */,
+				BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -548,6 +551,7 @@
 				BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */,
 				BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
+				BEBE4A211FAC487B00A9CA9A /* GroupButtonView.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
