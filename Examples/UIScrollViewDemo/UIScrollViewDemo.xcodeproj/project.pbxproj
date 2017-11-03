@@ -53,6 +53,9 @@
 		BEBE4A1D1FAC3CCE00A9CA9A /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */; };
 		BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */; };
 		BEBE4A211FAC487B00A9CA9A /* GroupButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */; };
+		BEBE4A231FAC5D1000A9CA9A /* PasswordSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */; };
+		BEBE4A251FAC5DB200A9CA9A /* CodeSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */; };
+		BEBE4A271FAC60E800A9CA9A /* CodeSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -162,6 +165,9 @@
 		BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
 		BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterSelfSizing.swift; sourceTree = "<group>"; };
 		BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupButtonView.swift; sourceTree = "<group>"; };
+		BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInFooterView.swift; sourceTree = "<group>"; };
+		BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSignInFooterView.swift; sourceTree = "<group>"; };
+		BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSignInController.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -288,6 +294,9 @@
 				BEBE4A121FAC182E00A9CA9A /* AccountCell.swift */,
 				BEBE4A141FAC19FF00A9CA9A /* VerificationCodeCell.swift */,
 				BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */,
+				BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */,
+				BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */,
+				BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -516,6 +525,7 @@
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
 				BEBE4A191FAC3C3F00A9CA9A /* AccountFooterView.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
+				BEBE4A231FAC5D1000A9CA9A /* PasswordSignInFooterView.swift in Sources */,
 				BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */,
 				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
@@ -526,6 +536,7 @@
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				BEBE4A111FAC13FE00A9CA9A /* PasswordCell.swift in Sources */,
+				BEBE4A251FAC5DB200A9CA9A /* CodeSignInFooterView.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
@@ -534,6 +545,7 @@
 				BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */,
 				BEBE4A1D1FAC3CCE00A9CA9A /* NELineLabel.swift in Sources */,
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,
+				BEBE4A271FAC60E800A9CA9A /* CodeSignInController.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,

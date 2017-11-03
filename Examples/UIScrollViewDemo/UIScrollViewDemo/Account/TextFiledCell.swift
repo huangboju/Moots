@@ -90,5 +90,5 @@ class TextFiledCell: UITableViewCell, Updatable {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func update(viewData: TmpItem) {}
+    func update(viewData: NoneItem) {}
 }

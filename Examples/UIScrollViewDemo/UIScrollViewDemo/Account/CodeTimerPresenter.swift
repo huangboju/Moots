@@ -18,9 +18,8 @@ protocol VerificationCodePresenter: class {
 
 extension VerificationCodePresenter {
     func waitingCode(button: UIButton) {
-        if button.isSelected { return }
 
-        button.isSelected = true
+        button.isEnabled = false
         var _timeOut = 60
         timer = DispatchSource.makeTimerSource(queue: .main)
         timer?.schedule(wallDeadline: .now(), repeating: .seconds(1))
@@ -30,7 +29,7 @@ extension VerificationCodePresenter {
                 button.titleLabel?.text = "\(_timeOut == 60 ? 60 : _timeOut % 60)秒后重新获取"
             } else {
                 button.titleLabel?.text = "获取验证码"
-                button.isSelected = false
+                button.isSelected = true
                 self.timer?.cancel()
             }
             _timeOut -= 1

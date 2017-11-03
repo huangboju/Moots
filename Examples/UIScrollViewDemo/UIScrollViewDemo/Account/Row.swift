@@ -8,7 +8,7 @@
 
 import UIKit
 
-struct TmpItem {}
+struct NoneItem {}
 
 protocol Updatable: class {
     
