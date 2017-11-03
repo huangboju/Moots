@@ -8,8 +8,6 @@
 
 import UIKit
 
-private let SCREEN_WIDTH = UIScreen.main.bounds.width
-
 protocol LinerCardViewDelegate: class {
     func didSelectItem(at index: Int, model: String)
 }

@@ -43,21 +43,29 @@ class ViewController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
 
-        let bottomLine = NELineLabel(frame: CGRect(x: 0, y: 10, width: 200, height: 20))
-        bottomLine.center.x = tableView.center.x
+        let bottomLine = NELineLabel()
         bottomLine.text = "段子"
         bottomLine.textAlignment = .center
-        bottomLine.textColor = UIColor.lightGray
+        bottomLine.textColor = .lightGray
+        bottomLine.lineColor = .red
 
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 200))
         footerView.addSubview(bottomLine)
         
+        tableView.tableFooterView = footerView
+
+        bottomLine.translatesAutoresizingMaskIntoConstraints = false
+        bottomLine.widthAnchor.constraint(equalToConstant: 300).isActive = true
+        bottomLine.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        bottomLine.centerXAnchor.constraint(equalTo: tableView.centerXAnchor).isActive = true
+        bottomLine.topAnchor.constraint(equalTo: footerView.topAnchor).isActive = true
+
         let copyLabel = UICopyLabel(frame: CGRect(x: 80, y: 60, width: 100, height: 44))
         copyLabel.backgroundColor = .blue
         copyLabel.text = "UICopyLabel"
         footerView.addSubview(copyLabel)
 
-        tableView.tableFooterView = footerView
+        
         getForRequest()
 
         tableView.separatorInset = .zero // 在iOS10设置这一句就能实现分割线左边到头

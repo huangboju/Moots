@@ -22,6 +22,9 @@ class CycleViewController: UIViewController {
             PagingEnabled.self,
             InfiniteScrollViewController.self,
             ScrollViewController.self
+        ],
+        [
+            SignInController.self
         ]
     ]
 

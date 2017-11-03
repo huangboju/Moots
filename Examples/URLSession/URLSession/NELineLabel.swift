@@ -17,6 +17,12 @@ open class NELineLabel: UILabel {
             setNeedsDisplay()
         }
     }
+    
+    open var  lineColor: UIColor = .lightGray {
+        didSet {
+            setNeedsDisplay()
+        }
+    }
 
     @IBInspectable
     open var lineSpace: CGFloat = 10 {
@@ -36,7 +42,7 @@ open class NELineLabel: UILabel {
 
         if rect.width > size.width, let ctx = UIGraphicsGetCurrentContext() {
             ctx.saveGState()
-            textColor.setFill()
+            lineColor.setFill()
 
             var alignment = textAlignment
 

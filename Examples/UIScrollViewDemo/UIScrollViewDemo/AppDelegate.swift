@@ -6,6 +6,10 @@
 //  Copyright © 2016年 伯驹 黄. All rights reserved.
 //
 
+let UIFontMake: (CGFloat) -> UIFont = { UIFont.systemFont(ofSize: $0) }
+
+let SCREEN_WIDTH = UIScreen.main.bounds.width
+
 import UIKit
 
 @UIApplicationMain
@@ -15,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        
         return true
     }
 
