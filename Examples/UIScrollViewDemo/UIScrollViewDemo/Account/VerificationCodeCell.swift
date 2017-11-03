@@ -10,6 +10,8 @@ import UIKit
 
 class VerificationCodeCell: TextFiledCell, VerificationCodePresenter {
     var timer: DispatchSourceTimer?
+    
+    private var hadGetCode = false
 
     override func didInitialzed() {
 
@@ -17,9 +19,10 @@ class VerificationCodeCell: TextFiledCell, VerificationCodePresenter {
         codeButton.setTitle("获取验证码", for: .normal)
         codeButton.frame.size = CGSize(width: 90, height: codeButton.intrinsicContentSize.height)
         codeButton.titleLabel?.font = UIFontMake(13)
+        codeButton.titleLabel?.adjustsFontSizeToFitWidth = true
         codeButton.contentEdgeInsets.right = (codeButton.intrinsicContentSize.width - codeButton.frame.width) / 2
         codeButton.setTitleColor(UIColor(hex: 0x753581), for: .normal)
-        codeButton.setTitleColor(UIColor(hex: 0x999999), for: .selected)
+        codeButton.setTitleColor(UIColor(hex: 0x999999), for: .disabled)
         codeButton.addTarget(self, action: #selector(requestCodeAction), for: .touchUpInside)
 
         let vLine = UIView()
@@ -35,7 +38,11 @@ class VerificationCodeCell: TextFiledCell, VerificationCodePresenter {
 
     @objc
     private func requestCodeAction(sender: UIButton) {
+        if hadGetCode {
+            return
+        }
         waitingCode(button: sender)
+        hadGetCode = true
     }
 
     deinit {

@@ -25,7 +25,7 @@ class AccountFooterView: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 300))
 
-        button = HZUIHelper.generateNormalButton(with: "登录", target: self, action: #selector(buttonAction))
+        button = HZUIHelper.generateNormalButton(title: "登录", target: self, action: #selector(buttonAction))
         button.backgroundColor = UIColor(hex: 0xA356AB)
 //        button.highlightedBackgroundColor = button.backgroundColor?.qmui_transition(to: UIColor(white: 0.3, alpha: 0.3), progress: 1)
         button.layer.cornerRadius = 5
@@ -59,7 +59,7 @@ class AccountFooterView: UIView {
     }
 
     open func creatGroupButtonView() -> GroupButtonView? {
-        return GroupButtonView(target: self, items: (("验证码登录", #selector(wechatAction)), ("忘记密码", #selector(wechatAction))))
+        return nil
     }
 
     
@@ -85,7 +85,7 @@ class AccountFooterView: UIView {
         var tmpBtn: UIButton?
 
         for (i, name) in names.enumerated() {
-            let button = HZUIHelper.generateNormalButton(with: "ic_btn_\(name)", target: self, action: Selector("\(name)Action"))
+            let button = HZUIHelper.generateNormalButton(imageName: "ic_btn_\(name)", target: self, action: Selector("\(name)Action"))
             containerView.addSubview(button)
 
             let dummyView = UIView()
@@ -95,14 +95,14 @@ class AccountFooterView: UIView {
                 button.snp.makeConstraints({ (make) in
                     make.size.top.equalTo(tmpBtn)
                     make.leading.equalTo(tmpDummyView.snp.trailing)
-                })
-                dummyView.snp.makeConstraints({ (make) in
-                    make.width.equalTo(tmpDummyView)
-                    make.leading.equalTo(button.snp.trailing)
                     if i == names.count - 1 {
                         // 最后一个
                         make.trailing.equalToSuperview()
                     }
+                })
+                dummyView.snp.makeConstraints({ (make) in
+                    make.width.equalTo(tmpDummyView)
+                    make.leading.equalTo(button.snp.trailing)
                 })
             } else {
                 // 第一次

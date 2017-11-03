@@ -24,7 +24,8 @@ class CycleViewController: UIViewController {
             ScrollViewController.self
         ],
         [
-            SignInController.self
+            SignInController.self,
+            CodeSignInController.self
         ]
     ]
 

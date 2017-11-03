@@ -51,16 +51,15 @@ class SignInController: GroupTableController {
         let headerView = AccountHeaderView()
         tableView.tableHeaderView = headerView
 
-        let footerView = AccountFooterView()
+        let footerView = PasswordSignInFooterView()
         tableView.tableFooterView = footerView
 
         tableView.separatorStyle = .none
 
         items = [
             [
-                Row<AccountCell>(viewData: TmpItem()),
-                Row<PasswordCell>(viewData: TmpItem()),
-                Row<VerificationCodeCell>(viewData: TmpItem())
+                Row<AccountCell>(viewData: NoneItem()),
+                Row<PasswordCell>(viewData: NoneItem()),
             ]
         ]
     }
