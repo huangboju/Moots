@@ -71,6 +71,7 @@ extension CycleViewController: UITableViewDelegate {
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
         if let controller = controllerName.fromClassName() as? UIViewController {
             controller.title = controllerName
+            controller.hidesBottomBarWhenPushed = true
             navigationController?.pushViewController(controller, animated: true)
         }
     }

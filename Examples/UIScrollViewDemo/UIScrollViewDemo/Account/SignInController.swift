@@ -45,16 +45,17 @@ extension UITableView {
 
 class SignInController: GroupTableController {
     override func initSubviews() {
-        
+
+        tableView.backgroundColor = .white
+
         let headerView = AccountHeaderView()
         tableView.tableHeaderView = headerView
-        tableView.backgroundColor = .white
 
         let footerView = AccountFooterView()
         tableView.tableFooterView = footerView
 
         tableView.separatorStyle = .none
-        
+
         items = [
             [
                 Row<AccountCell>(viewData: TmpItem()),
