@@ -25,7 +25,7 @@ class AccountFooterView: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 300))
 
-        button = HZUIHelper.generateNormalButton(target: self, action: #selector(buttonAction))
+        button = HZUIHelper.generateNormalButton(with: "登录", target: self, action: #selector(buttonAction))
         button.backgroundColor = UIColor(hex: 0xA356AB)
 //        button.highlightedBackgroundColor = button.backgroundColor?.qmui_transition(to: UIColor(white: 0.3, alpha: 0.3), progress: 1)
         button.layer.cornerRadius = 5
@@ -46,17 +46,31 @@ class AccountFooterView: UIView {
             make.centerX.equalTo(snp.centerX)
         }
         
-        generatOtherSocialView()
+        creatOtherSocialView()
+
+        if let groupButtonView = creatGroupButtonView() {
+            addSubview(groupButtonView)
+            groupButtonView.snp.makeConstraints({ (make) in
+                make.trailing.equalTo(-16).priority(.high)
+                make.leading.equalTo(16)
+                make.top.equalTo(button.snp.bottom).offset(10)
+            })
+        }
     }
+
+    open func creatGroupButtonView() -> GroupButtonView? {
+        return GroupButtonView(target: self, items: (("验证码登录", #selector(wechatAction)), ("忘记密码", #selector(wechatAction))))
+    }
+
     
-    func generatOtherSocialView() {
+    private func creatOtherSocialView() {
         let containerView = UIView()
         addSubview(containerView)
         containerView.snp.makeConstraints { (make) in
-            make.leading.equalTo(68)
-            make.trailing.equalTo(-68).priority(.high)
-            make.bottom.equalToSuperview().offset(-58)
-            make.top.equalTo(tipLabel.snp.bottom).offset(19)
+            make.leading.equalTo(34)
+            make.trailing.equalTo(-34).priority(.high)
+            make.bottom.equalToSuperview().offset(-29)
+            make.top.equalTo(tipLabel.snp.bottom).offset(10)
         }
 
 
