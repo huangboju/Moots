@@ -17,6 +17,15 @@ class AutoLayoutBaseController: UIViewController {
     func initSubviews() {}
 }
 
+class AutoLayoutMainCell: UITableViewCell {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        separatorInset = .zero
+        preservesSuperviewLayoutMargins = false
+        layoutMargins = .zero
+    }
+}
+
 class AutoLayoutMainController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
@@ -32,6 +41,7 @@ class AutoLayoutMainController: UIViewController {
             TableViewSelfsizing.self,
             LayoutTrasition.self,
             ExpandingCollectionViewController.self,
+            TableViewFooterSelfSizing.self
         ],
         [
             SimpleStackViewController.self,
@@ -58,13 +68,13 @@ class AutoLayoutMainController: UIViewController {
             UIKitDynamicsViewController.self
         ]
     ]
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "\(classForCoder)"
 
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(AutoLayoutMainCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
     }
 }

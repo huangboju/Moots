@@ -15,7 +15,7 @@ extension UIFont {
 }
 
 class DoubleLabel: UIView {
-    
+
     private let topLabel = UILabel()
     private let bottomLabel = UILabel()
 
@@ -85,15 +85,15 @@ class DoubleLabel: UIView {
 
         addSubview(topLabel)
         topLabel.snp.makeConstraints { (make) in
-            make.leading.trailing.equalTo(0)
-            make.top.equalTo(0)
+            make.leading.trailing.equalToSuperview()
+            make.top.equalToSuperview()
         }
 
         addSubview(bottomLabel)
         bottomLabel.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(topLabel)
             make.firstBaseline.equalTo(topLabel.snp.lastBaseline).offset(lineSpacing)
-            make.bottom.equalTo(0)
+            make.bottom.equalToSuperview()
         }
     }
 

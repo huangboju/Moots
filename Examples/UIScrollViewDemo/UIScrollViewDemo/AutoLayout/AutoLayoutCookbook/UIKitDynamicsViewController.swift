@@ -118,7 +118,7 @@ class UIKitDynamicsViewController: AutoLayoutBaseController {
         animator.addBehavior(gravity)
         animator.addBehavior(collision)
     }
-    
+
     private func generateLabel(with text: String) -> UILabel {
         let label = UILabel()
         label.text = text
