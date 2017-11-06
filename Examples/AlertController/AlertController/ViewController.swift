@@ -32,14 +32,24 @@ class ViewController: UIViewController {
         attachment.bounds = CGRect(x: 0, y: 0, width: 30, height: 30)
 
         let alertControllerTitleStr = NSMutableAttributedString(string: "测试")
+        
         alertControllerTitleStr.append(NSAttributedString(attachment: attachment))
+        
         alertControllerTitleStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location: 0, length: 2))
-        alertController.setValue(alertControllerTitleStr, forKey: "attributedTitle")
+        
+        
+        
         let alertControllerMessageStr = NSMutableAttributedString(string: "今天天气好晴朗")
+
         alertControllerMessageStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location: 0, length: 4))
+        
         alertController.setValue(alertControllerMessageStr, forKey: "attributedMessage")
-        ok.setValue(UIColor.red, forKey: "titleTextColor")
+
+        ok.setValue(UIColor.blue, forKey: "titleTextColor")
+
         present(alertController, animated: true) {
         }
+
+        alertController.setValue(alertControllerTitleStr, forKey: "attributedTitle")
     }
 }

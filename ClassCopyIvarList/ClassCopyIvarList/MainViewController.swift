@@ -25,7 +25,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         "UIProgressView",
         "UIAlertAction",
         "UIViewController",
-        "UIRefreshControl"
+        "UIRefreshControl",
+        "UIAlertController"
     ]
 
     override func viewDidLoad() {

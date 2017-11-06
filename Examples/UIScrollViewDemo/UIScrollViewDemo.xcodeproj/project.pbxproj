@@ -24,6 +24,20 @@
 		BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654061F9C8088001A8432 /* TwoViewsWithComplexWidths.swift */; };
 		BE3654091F9C8462001A8432 /* SimpleLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654081F9C8462001A8432 /* SimpleLabelAndTextField.swift */; };
 		BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */; };
+		BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A2A1FAFF422001F097D /* TextFiledCell.swift */; };
+		BE3D3A2E1FAFF423001F097D /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A2B1FAFF422001F097D /* AccountCell.swift */; };
+		BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A2C1FAFF423001F097D /* PasswordCell.swift */; };
+		BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A301FAFF4A5001F097D /* PasswordSignInFooterView.swift */; };
+		BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A311FAFF4A5001F097D /* AccountHeaderView.swift */; };
+		BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A321FAFF4A5001F097D /* GroupButtonView.swift */; };
+		BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A331FAFF4A6001F097D /* CodeSignInFooterView.swift */; };
+		BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A341FAFF4A6001F097D /* AccountFooterView.swift */; };
+		BE3D3A3B1FAFF4A6001F097D /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A351FAFF4A6001F097D /* NELineLabel.swift */; };
+		BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A3C1FAFF4AF001F097D /* AdjustedPasswordCell.swift */; };
+		BE3D3A3F1FAFF4AF001F097D /* VerificationCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A3D1FAFF4AF001F097D /* VerificationCodeCell.swift */; };
+		BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A401FAFF4B9001F097D /* SignUpController.swift */; };
+		BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */; };
+		BE3D3A451FAFF4B9001F097D /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A421FAFF4B9001F097D /* SignInController.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
 		BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */; };
 		BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */; };
@@ -41,21 +55,10 @@
 		BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBDCB4F1F9D94F9009762A8 /* ButtonsSizeClass.swift */; };
 		BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A011FAC083F00A9CA9A /* Row.swift */; };
 		BEBE4A041FAC083F00A9CA9A /* GroupTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */; };
-		BEBE4A061FAC085D00A9CA9A /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A051FAC085D00A9CA9A /* SignInController.swift */; };
-		BEBE4A081FAC093400A9CA9A /* TextFiledCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A071FAC093400A9CA9A /* TextFiledCell.swift */; };
-		BEBE4A0A1FAC0A2400A9CA9A /* AccountHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A091FAC0A2400A9CA9A /* AccountHeaderView.swift */; };
-		BEBE4A111FAC13FE00A9CA9A /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A101FAC13FE00A9CA9A /* PasswordCell.swift */; };
-		BEBE4A131FAC182E00A9CA9A /* AccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A121FAC182E00A9CA9A /* AccountCell.swift */; };
-		BEBE4A151FAC19FF00A9CA9A /* VerificationCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A141FAC19FF00A9CA9A /* VerificationCodeCell.swift */; };
 		BEBE4A171FAC1B9A00A9CA9A /* CodeTimerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A161FAC1B9A00A9CA9A /* CodeTimerPresenter.swift */; };
-		BEBE4A191FAC3C3F00A9CA9A /* AccountFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A181FAC3C3E00A9CA9A /* AccountFooterView.swift */; };
 		BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */; };
-		BEBE4A1D1FAC3CCE00A9CA9A /* NELineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */; };
 		BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */; };
-		BEBE4A211FAC487B00A9CA9A /* GroupButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */; };
-		BEBE4A231FAC5D1000A9CA9A /* PasswordSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */; };
-		BEBE4A251FAC5DB200A9CA9A /* CodeSignInFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */; };
-		BEBE4A271FAC60E800A9CA9A /* CodeSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */; };
+		BEBE4A2C1FAC68B400A9CA9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -136,6 +139,20 @@
 		BE3654061F9C8088001A8432 /* TwoViewsWithComplexWidths.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoViewsWithComplexWidths.swift; sourceTree = "<group>"; };
 		BE3654081F9C8462001A8432 /* SimpleLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleLabelAndTextField.swift; sourceTree = "<group>"; };
 		BE36540B1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightLabelAndTextField.swift; sourceTree = "<group>"; };
+		BE3D3A2A1FAFF422001F097D /* TextFiledCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFiledCell.swift; sourceTree = "<group>"; };
+		BE3D3A2B1FAFF422001F097D /* AccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
+		BE3D3A2C1FAFF423001F097D /* PasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
+		BE3D3A301FAFF4A5001F097D /* PasswordSignInFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PasswordSignInFooterView.swift; sourceTree = "<group>"; };
+		BE3D3A311FAFF4A5001F097D /* AccountHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
+		BE3D3A321FAFF4A5001F097D /* GroupButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupButtonView.swift; sourceTree = "<group>"; };
+		BE3D3A331FAFF4A6001F097D /* CodeSignInFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSignInFooterView.swift; sourceTree = "<group>"; };
+		BE3D3A341FAFF4A6001F097D /* AccountFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFooterView.swift; sourceTree = "<group>"; };
+		BE3D3A351FAFF4A6001F097D /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
+		BE3D3A3C1FAFF4AF001F097D /* AdjustedPasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdjustedPasswordCell.swift; sourceTree = "<group>"; };
+		BE3D3A3D1FAFF4AF001F097D /* VerificationCodeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerificationCodeCell.swift; sourceTree = "<group>"; };
+		BE3D3A401FAFF4B9001F097D /* SignUpController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpController.swift; sourceTree = "<group>"; };
+		BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSignInController.swift; sourceTree = "<group>"; };
+		BE3D3A421FAFF4B9001F097D /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
 		BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewsAndAspectFitMode.swift; sourceTree = "<group>"; };
 		BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioImageView.swift; sourceTree = "<group>"; };
@@ -153,21 +170,10 @@
 		BEBDCB4F1F9D94F9009762A8 /* ButtonsSizeClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSizeClass.swift; sourceTree = "<group>"; };
 		BEBE4A011FAC083F00A9CA9A /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupTableController.swift; sourceTree = "<group>"; };
-		BEBE4A051FAC085D00A9CA9A /* SignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
-		BEBE4A071FAC093400A9CA9A /* TextFiledCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFiledCell.swift; sourceTree = "<group>"; };
-		BEBE4A091FAC0A2400A9CA9A /* AccountHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountHeaderView.swift; sourceTree = "<group>"; };
-		BEBE4A101FAC13FE00A9CA9A /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
-		BEBE4A121FAC182E00A9CA9A /* AccountCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountCell.swift; sourceTree = "<group>"; };
-		BEBE4A141FAC19FF00A9CA9A /* VerificationCodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationCodeCell.swift; sourceTree = "<group>"; };
 		BEBE4A161FAC1B9A00A9CA9A /* CodeTimerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeTimerPresenter.swift; sourceTree = "<group>"; };
-		BEBE4A181FAC3C3E00A9CA9A /* AccountFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountFooterView.swift; sourceTree = "<group>"; };
 		BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZUIHelper.swift; sourceTree = "<group>"; };
-		BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NELineLabel.swift; sourceTree = "<group>"; };
 		BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterSelfSizing.swift; sourceTree = "<group>"; };
-		BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupButtonView.swift; sourceTree = "<group>"; };
-		BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordSignInFooterView.swift; sourceTree = "<group>"; };
-		BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSignInFooterView.swift; sourceTree = "<group>"; };
-		BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeSignInController.swift; sourceTree = "<group>"; };
+		BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -278,25 +284,59 @@
 			path = ExpandingCollectionView;
 			sourceTree = "<group>";
 		};
+		BE3D3A271FAFF3BD001F097D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE3D3A461FAFF4C0001F097D /* FooterViews */,
+				BE3D3A321FAFF4A5001F097D /* GroupButtonView.swift */,
+				BE3D3A351FAFF4A6001F097D /* NELineLabel.swift */,
+				BE3D3A281FAFF3D1001F097D /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE3D3A281FAFF3D1001F097D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BE3D3A3C1FAFF4AF001F097D /* AdjustedPasswordCell.swift */,
+				BE3D3A3D1FAFF4AF001F097D /* VerificationCodeCell.swift */,
+				BE3D3A2B1FAFF422001F097D /* AccountCell.swift */,
+				BE3D3A2C1FAFF423001F097D /* PasswordCell.swift */,
+				BE3D3A2A1FAFF422001F097D /* TextFiledCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BE3D3A291FAFF413001F097D /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */,
+				BE3D3A421FAFF4B9001F097D /* SignInController.swift */,
+				BE3D3A401FAFF4B9001F097D /* SignUpController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE3D3A461FAFF4C0001F097D /* FooterViews */ = {
+			isa = PBXGroup;
+			children = (
+				BE3D3A341FAFF4A6001F097D /* AccountFooterView.swift */,
+				BE3D3A311FAFF4A5001F097D /* AccountHeaderView.swift */,
+				BE3D3A331FAFF4A6001F097D /* CodeSignInFooterView.swift */,
+				BE3D3A301FAFF4A5001F097D /* PasswordSignInFooterView.swift */,
+			);
+			path = FooterViews;
+			sourceTree = "<group>";
+		};
 		BEBE4A001FAC07F900A9CA9A /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				BEBE4A1C1FAC3CCE00A9CA9A /* NELineLabel.swift */,
+				BE3D3A291FAFF413001F097D /* Controllers */,
+				BE3D3A271FAFF3BD001F097D /* Views */,
 				BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */,
-				BEBE4A181FAC3C3E00A9CA9A /* AccountFooterView.swift */,
 				BEBE4A161FAC1B9A00A9CA9A /* CodeTimerPresenter.swift */,
 				BEBE4A011FAC083F00A9CA9A /* Row.swift */,
 				BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */,
-				BEBE4A051FAC085D00A9CA9A /* SignInController.swift */,
-				BEBE4A071FAC093400A9CA9A /* TextFiledCell.swift */,
-				BEBE4A091FAC0A2400A9CA9A /* AccountHeaderView.swift */,
-				BEBE4A101FAC13FE00A9CA9A /* PasswordCell.swift */,
-				BEBE4A121FAC182E00A9CA9A /* AccountCell.swift */,
-				BEBE4A141FAC19FF00A9CA9A /* VerificationCodeCell.swift */,
-				BEBE4A201FAC487B00A9CA9A /* GroupButtonView.swift */,
-				BEBE4A221FAC5D1000A9CA9A /* PasswordSignInFooterView.swift */,
-				BEBE4A241FAC5DB200A9CA9A /* CodeSignInFooterView.swift */,
-				BEBE4A261FAC60E800A9CA9A /* CodeSignInController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -361,6 +401,7 @@
 				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
 				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
 				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
+				BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -507,74 +548,77 @@
 				BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */,
 				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
+				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
 				BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */,
 				BEBDCB4A1F9CB4DA009762A8 /* TwoEqualWidthButtons.swift in Sources */,
 				BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */,
 				BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
 				BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */,
+				BE3D3A3B1FAFF4A6001F097D /* NELineLabel.swift in Sources */,
 				BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */,
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				BE3654091F9C8462001A8432 /* SimpleLabelAndTextField.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
+				BE3D3A451FAFF4B9001F097D /* SignInController.swift in Sources */,
 				BEBDCB4E1F9CB890009762A8 /* EqualWhiteSpace.swift in Sources */,
 				BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
-				BEBE4A151FAC19FF00A9CA9A /* VerificationCodeCell.swift in Sources */,
+				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
-				BEBE4A191FAC3C3F00A9CA9A /* AccountFooterView.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
-				BEBE4A231FAC5D1000A9CA9A /* PasswordSignInFooterView.swift in Sources */,
 				BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */,
 				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
+				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
-				BEBE4A111FAC13FE00A9CA9A /* PasswordCell.swift in Sources */,
-				BEBE4A251FAC5DB200A9CA9A /* CodeSignInFooterView.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
 				BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */,
-				BEBE4A1D1FAC3CCE00A9CA9A /* NELineLabel.swift in Sources */,
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,
-				BEBE4A271FAC60E800A9CA9A /* CodeSignInController.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
-				BEBE4A081FAC093400A9CA9A /* TextFiledCell.swift in Sources */,
 				BEBE4A171FAC1B9A00A9CA9A /* CodeTimerPresenter.swift in Sources */,
-				BEBE4A0A1FAC0A2400A9CA9A /* AccountHeaderView.swift in Sources */,
-				BEBE4A061FAC085D00A9CA9A /* SignInController.swift in Sources */,
+				BEBE4A2C1FAC68B400A9CA9A /* Extensions.swift in Sources */,
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
-				BEBE4A131FAC182E00A9CA9A /* AccountCell.swift in Sources */,
+				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
+				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
 				BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */,
+				BE3D3A2E1FAFF423001F097D /* AccountCell.swift in Sources */,
 				BEBE4A041FAC083F00A9CA9A /* GroupTableController.swift in Sources */,
 				BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */,
+				BE3D3A3F1FAFF4AF001F097D /* VerificationCodeCell.swift in Sources */,
 				BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */,
 				BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
-				BEBE4A211FAC487B00A9CA9A /* GroupButtonView.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
 				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
+				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
+				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
+				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
+				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
+				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

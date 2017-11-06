@@ -15,7 +15,7 @@ class TextFiledCell: UITableViewCell, Updatable {
     final var inputText: String? {
         return textField.text
     }
-    
+
     final func setField(with item: FileItem) {
         var attri: NSAttributedString?
         if let placeholder = item.placeholder {
