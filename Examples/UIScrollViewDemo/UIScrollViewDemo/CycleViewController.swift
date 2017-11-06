@@ -15,7 +15,7 @@ class CycleViewController: UIViewController {
         tableView.delegate = self
         return tableView
     }()
-    
+
     lazy var data: [[UIViewController.Type]] = [
         [
             FriendTableViewController.self,
@@ -25,7 +25,8 @@ class CycleViewController: UIViewController {
         ],
         [
             SignInController.self,
-            CodeSignInController.self
+            CodeSignInController.self,
+            SignUpController.self
         ]
     ]
 

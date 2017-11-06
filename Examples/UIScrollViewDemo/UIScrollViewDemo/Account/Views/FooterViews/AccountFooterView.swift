@@ -25,7 +25,7 @@ class AccountFooterView: UIView {
     override init(frame: CGRect) {
         super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 300))
 
-        button = HZUIHelper.generateNormalButton(title: "登录", target: self, action: #selector(buttonAction))
+        button = HZUIHelper.generateNormalButton(title: "登录", target: viewController(), action: #selector(SignActionPresenter.signInAction))
         button.backgroundColor = UIColor(hex: 0xA356AB)
 //        button.highlightedBackgroundColor = button.backgroundColor?.qmui_transition(to: UIColor(white: 0.3, alpha: 0.3), progress: 1)
         button.layer.cornerRadius = 5
@@ -53,7 +53,7 @@ class AccountFooterView: UIView {
             groupButtonView.snp.makeConstraints({ (make) in
                 make.trailing.equalTo(-16).priority(.high)
                 make.leading.equalTo(16)
-                make.top.equalTo(button.snp.bottom).offset(10)
+                make.top.equalTo(button.snp.bottom).offset(20)
             })
         }
     }
@@ -80,7 +80,7 @@ class AccountFooterView: UIView {
             "qq",
             "alipay"
         ]
-        
+
         var tmpDummyView: UIView?
         var tmpBtn: UIButton?
 
@@ -136,8 +136,6 @@ class AccountFooterView: UIView {
     @objc private func alipayAction() {
     
     }
-
-     @objc open func buttonAction() {}
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

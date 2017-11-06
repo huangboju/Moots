@@ -139,7 +139,20 @@ extension UICollectionViewFlowLayout {
 }
 
 extension UIView {
-    var viewController: UIViewController? {
+//    var viewController: UIViewController? {
+//        var viewController: UIViewController?
+//        var next = self.next
+//        while next != nil {
+//            if next!.isKind(of: UIViewController.self) {
+//                viewController = next as? UIViewController
+//                break
+//            }
+//            next = next?.next
+//        }
+//        return viewController
+//    }
+
+    public func viewController<T: UIViewController>() -> T? {
         var viewController: UIViewController?
         var next = self.next
         while next != nil {
@@ -149,7 +162,7 @@ extension UIView {
             }
             next = next?.next
         }
-        return viewController
+        return viewController as? T
     }
 }
 

@@ -43,7 +43,13 @@ extension UITableView {
     }
 }
 
-class SignInController: GroupTableController {
+@objc
+protocol SignActionPresenter: class {
+    
+    func signInAction()
+}
+
+class SignInController: GroupTableController, SignActionPresenter {
     override func initSubviews() {
 
         tableView.backgroundColor = .white
@@ -62,6 +68,11 @@ class SignInController: GroupTableController {
                 Row<PasswordCell>(viewData: NoneItem()),
             ]
         ]
+    }
+    
+    @objc
+    func signInAction() {
+        
     }
 
     override func viewDidLayoutSubviews() {
