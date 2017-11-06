@@ -42,30 +42,36 @@ class VerificationCodeCell: TextFiledCell, VerificationCodePresenter {
             
             let alert = viewController()?.showAlert(actionTitle: "立即接听语音", title: "", message: "\n\n\n使用语音验证，您将受到来自华住会官方的告知验证码的固定电话，请安心接听") { (_) in
 
-            }.action("继续短信验证") { (_) in
-
+            }.action("继续短信验证") { [weak self] (_) in
+                self?.hadGetCode = false
             }.action("关闭")
 
-            let image = UIImage(named: "ic_alert_attachment")
-            let attachment = NSTextAttachment()
-            attachment.image = image
-            attachment.bounds = CGRect(origin: .zero, size: image!.size)
-    
             let headerView = UIView()
-            headerView.layer.cornerRadius = 10
-            headerView.backgroundColor = .red
             alert?.view.addSubview(headerView)
             headerView.snp.makeConstraints({ (make) in
                 make.top.equalToSuperview()
-                make.leading.trailing.equalToSuperview()
+                make.leading.equalTo(27)
+                make.trailing.equalTo(-27)
                 make.height.equalTo(70)
             })
 
-            alert?.actions.forEach { $0.setValue(UIColor(hex: 0x7E3886), forKey: "titleTextColor") }
+            let imageView = UIImageView(image: UIImage(named: "ic_alert_attachment"))
+            headerView.addSubview(imageView)
+            imageView.snp.makeConstraints({ (make) in
+                make.leading.equalToSuperview()
+            })
 
-            let alertControllerTitleStr = NSMutableAttributedString(string: "华住会官网语音验证")
-            alertControllerTitleStr.insert(NSAttributedString(attachment: attachment), at: 0)
-//            alert?.setValue(alertControllerTitleStr, forKey: "attributedTitle")
+            let titleLabel = UILabel()
+            titleLabel.font = UIFont.boldSystemFont(ofSize: 15)
+            titleLabel.textColor = UIColor(hex: 0x333333)
+            titleLabel.text = "华住会官网语音验证"
+            headerView.addSubview(titleLabel)
+            titleLabel.snp.makeConstraints({ (make) in
+                make.trailing.top.bottom.equalToSuperview()
+                make.leading.equalTo(imageView.snp.trailing).offset(10)
+                make.centerY.equalTo(imageView.snp.centerY)
+            })
+            alert?.actions.forEach { $0.setValue(UIColor(hex: 0x7E3886), forKey: "titleTextColor") }
             
             return
         }
