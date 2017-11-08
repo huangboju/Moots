@@ -21,7 +21,7 @@ class SignUpController: GroupTableController, SignActionPresenter {
         
         tableView.separatorStyle = .none
         
-        items = [
+        rows = [
             [
                 Row<AccountCell>(viewData: NoneItem()),
                 Row<VerificationCodeCell>(viewData: NoneItem()),

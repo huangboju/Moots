@@ -50,19 +50,30 @@ class DoubleLabel: UIView {
     /// Default 10
     var lineSpacing: CGFloat = 10 {
         didSet {
-            bottomLabel.snp.updateConstraints { (make) in
-                make.firstBaseline.equalTo(topLabel.snp.lastBaseline).offset(lineSpacing)
-            }
+            setNeedsLayout()
         }
     }
 
     var textAlignment: NSTextAlignment = .center
 
+    var topAttributText: NSAttributedString? {
+        didSet {
+            topLabel.attributedText = topAttributText
+        }
+    }
+
+    var bottomAttributText: NSAttributedString? {
+        didSet {
+            bottomLabel.attributedText = bottomAttributText
+        }
+    }
+    
     var topText: String? {
         didSet {
             topLabel.text = topText
         }
     }
+
     var bottomText: String? {
         didSet {
             bottomLabel.text = bottomText
@@ -72,7 +83,7 @@ class DoubleLabel: UIView {
     convenience init(alignment: NSTextAlignment = .center) {
         self.init(frame: .zero, alignment: alignment)
     }
-    
+
     init(frame: CGRect, alignment: NSTextAlignment = .center) {
         super.init(frame: frame)
         textAlignment = alignment
@@ -84,15 +95,21 @@ class DoubleLabel: UIView {
         bottomLabel.textAlignment = alignment
 
         addSubview(topLabel)
+        
+
+        addSubview(bottomLabel)
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         topLabel.snp.makeConstraints { (make) in
             make.leading.trailing.equalToSuperview()
             make.top.equalToSuperview()
         }
 
-        addSubview(bottomLabel)
         bottomLabel.snp.makeConstraints { (make) in
             make.leading.trailing.equalTo(topLabel)
-            make.firstBaseline.equalTo(topLabel.snp.lastBaseline).offset(lineSpacing)
+            make.top.equalTo(topLabel.snp.bottom).offset(lineSpacing)
             make.bottom.equalToSuperview()
         }
     }

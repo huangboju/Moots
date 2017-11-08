@@ -20,7 +20,7 @@ class CodeSignInController: GroupTableController, SignActionPresenter {
         let footerView = CodeSignInFooterView()
         tableView.tableFooterView = footerView
 
-        items = [
+        rows = [
             [
                 Row<AccountCell>(viewData: NoneItem()),
                 Row<VerificationCodeCell>(viewData: NoneItem()),

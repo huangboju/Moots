@@ -15,6 +15,18 @@
 		BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */; };
 		BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */; };
 		BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */; };
+		BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18BBA21FB0382500B03048 /* CaptchaCell.swift */; };
+		BE1B154D1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */; };
+		BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B154E1FB2A1AC00862271 /* GirdView.swift */; };
+		BE1B15541FB2A41A00862271 /* UICollectionView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15511FB2A41A00862271 /* UICollectionView+Reusable.swift */; };
+		BE1B15551FB2A41A00862271 /* UITableView+Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15521FB2A41A00862271 /* UITableView+Reusable.swift */; };
+		BE1B15561FB2A41A00862271 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15531FB2A41A00862271 /* Reusable.swift */; };
+		BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15571FB2A45500862271 /* NibOwnerLoadable.swift */; };
+		BE1B155A1FB2A45500862271 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15581FB2A45500862271 /* NibLoadable.swift */; };
+		BE1B155C1FB2A4BB00862271 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; };
+		BE1B155E1FB2A4BF00862271 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BE1B15601FB2A59400862271 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B155F1FB2A59400862271 /* IconTextView.swift */; };
+		BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */; };
 		BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */; };
 		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
 		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
@@ -59,6 +71,16 @@
 		BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */; };
 		BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */; };
 		BEBE4A2C1FAC68B400A9CA9A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */; };
+		BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */; };
+		BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E78A1FB3356D00A44CD7 /* SignUpSuccessController.swift */; };
+		BEC5E78D1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */; };
+		BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */; };
+		BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */; };
+		BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */; };
+		BED1CCF51FB2E585002FE096 /* VerifyCoInfoHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF41FB2E584002FE096 /* VerifyCoInfoHeaderView.swift */; };
+		BED1CCF71FB2E6C6002FE096 /* MyCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */; };
+		BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */; };
+		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -114,6 +136,7 @@
 			files = (
 				D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */,
 				D8A732241DED7124005DF7C8 /* Alamofire.framework in Embed Frameworks */,
+				BE1B155E1FB2A4BF00862271 /* Kingfisher.framework in Embed Frameworks */,
 				D8A732261DED7124005DF7C8 /* Chameleon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -130,6 +153,18 @@
 		BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
 		BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCollectionViewController.swift; sourceTree = "<group>"; };
+		BE18BBA21FB0382500B03048 /* CaptchaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaCell.swift; sourceTree = "<group>"; };
+		BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoSuccessController.swift; sourceTree = "<group>"; };
+		BE1B154E1FB2A1AC00862271 /* GirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GirdView.swift; sourceTree = "<group>"; };
+		BE1B15511FB2A41A00862271 /* UICollectionView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Reusable.swift"; sourceTree = "<group>"; };
+		BE1B15521FB2A41A00862271 /* UITableView+Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITableView+Reusable.swift"; sourceTree = "<group>"; };
+		BE1B15531FB2A41A00862271 /* Reusable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
+		BE1B15571FB2A45500862271 /* NibOwnerLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibOwnerLoadable.swift; sourceTree = "<group>"; };
+		BE1B15581FB2A45500862271 /* NibLoadable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibLoadable.swift; sourceTree = "<group>"; };
+		BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kingfisher.framework; path = Carthage/Build/iOS/Kingfisher.framework; sourceTree = "<group>"; };
+		BE1B155F1FB2A59400862271 /* IconTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTextView.swift; sourceTree = "<group>"; };
+		BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoController.swift; sourceTree = "<group>"; };
+		BE1B15631FB2A5E700862271 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
 		BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSelfSizing.swift; sourceTree = "<group>"; };
 		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
 		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
@@ -174,6 +209,16 @@
 		BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HZUIHelper.swift; sourceTree = "<group>"; };
 		BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewFooterSelfSizing.swift; sourceTree = "<group>"; };
 		BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsActiveCell.swift; sourceTree = "<group>"; };
+		BEC5E78A1FB3356D00A44CD7 /* SignUpSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessController.swift; sourceTree = "<group>"; };
+		BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessHeaderView.swift; sourceTree = "<group>"; };
+		BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCell.swift; sourceTree = "<group>"; };
+		BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoFieldCell.swift; sourceTree = "<group>"; };
+		BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoInfoVerifyCell.swift; sourceTree = "<group>"; };
+		BED1CCF41FB2E584002FE096 /* VerifyCoInfoHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoHeaderView.swift; sourceTree = "<group>"; };
+		BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyController.swift; sourceTree = "<group>"; };
+		BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoInfoCell.swift; sourceTree = "<group>"; };
+		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +261,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE1B155C1FB2A4BB00862271 /* Kingfisher.framework in Frameworks */,
 				D8A732271DED7124005DF7C8 /* SnapKit.framework in Frameworks */,
 				D8A732231DED7124005DF7C8 /* Alamofire.framework in Frameworks */,
 				D8A732251DED7124005DF7C8 /* Chameleon.framework in Frameworks */,
@@ -284,6 +330,32 @@
 			path = ExpandingCollectionView;
 			sourceTree = "<group>";
 		};
+		BE1B154B1FB1B0AD00862271 /* CompanyCard */ = {
+			isa = PBXGroup;
+			children = (
+				BED1CCF31FB2E579002FE096 /* Views */,
+				BED1CCEC1FB2D847002FE096 /* Cells */,
+				BE1B154E1FB2A1AC00862271 /* GirdView.swift */,
+				BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */,
+				BE1B155F1FB2A59400862271 /* IconTextView.swift */,
+				BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */,
+				BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */,
+			);
+			path = CompanyCard;
+			sourceTree = "<group>";
+		};
+		BE1B15501FB2A40300862271 /* Reusable */ = {
+			isa = PBXGroup;
+			children = (
+				BE1B15581FB2A45500862271 /* NibLoadable.swift */,
+				BE1B15571FB2A45500862271 /* NibOwnerLoadable.swift */,
+				BE1B15531FB2A41A00862271 /* Reusable.swift */,
+				BE1B15511FB2A41A00862271 /* UICollectionView+Reusable.swift */,
+				BE1B15521FB2A41A00862271 /* UITableView+Reusable.swift */,
+			);
+			path = Reusable;
+			sourceTree = "<group>";
+		};
 		BE3D3A271FAFF3BD001F097D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -291,6 +363,7 @@
 				BE3D3A321FAFF4A5001F097D /* GroupButtonView.swift */,
 				BE3D3A351FAFF4A6001F097D /* NELineLabel.swift */,
 				BE3D3A281FAFF3D1001F097D /* Cells */,
+				BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -303,6 +376,7 @@
 				BE3D3A2B1FAFF422001F097D /* AccountCell.swift */,
 				BE3D3A2C1FAFF423001F097D /* PasswordCell.swift */,
 				BE3D3A2A1FAFF422001F097D /* TextFiledCell.swift */,
+				BE18BBA21FB0382500B03048 /* CaptchaCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -313,6 +387,7 @@
 				BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */,
 				BE3D3A421FAFF4B9001F097D /* SignInController.swift */,
 				BE3D3A401FAFF4B9001F097D /* SignUpController.swift */,
+				BEC5E78A1FB3356D00A44CD7 /* SignUpSuccessController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -339,6 +414,27 @@
 				BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */,
 			);
 			path = Account;
+			sourceTree = "<group>";
+		};
+		BED1CCEC1FB2D847002FE096 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */,
+				BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */,
+				BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */,
+				BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */,
+				BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */,
+				BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BED1CCF31FB2E579002FE096 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BED1CCF41FB2E584002FE096 /* VerifyCoInfoHeaderView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D8076CBC1DF272C6008ACB34 /* BannerView */ = {
@@ -372,6 +468,8 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE1B15501FB2A40300862271 /* Reusable */,
+				BE1B154B1FB1B0AD00862271 /* CompanyCard */,
 				BEBE4A001FAC07F900A9CA9A /* Account */,
 				BE1093F31F9B4E9E00CD4804 /* AutoLayout */,
 				BEA009901F5D5CAA00CB07CF /* DoubleLabel.swift */,
@@ -402,6 +500,7 @@
 				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
 				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 				BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */,
+				BE1B15631FB2A5E700862271 /* Bridging.h */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -430,6 +529,7 @@
 		D8A7322A1DED7128005DF7C8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */,
 				D8A732201DED7124005DF7C8 /* Alamofire.framework */,
 				D8A732211DED7124005DF7C8 /* Chameleon.framework */,
 				D8A732221DED7124005DF7C8 /* SnapKit.framework */,
@@ -545,13 +645,17 @@
 			files = (
 				BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */,
 				D8A731F41DED6E28005DF7C8 /* ViewController.swift in Sources */,
+				BED1CCF71FB2E6C6002FE096 /* MyCompanyController.swift in Sources */,
 				BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */,
 				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
+				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
 				BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */,
 				BEBDCB4A1F9CB4DA009762A8 /* TwoEqualWidthButtons.swift in Sources */,
 				BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */,
+				BEC5E78D1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift in Sources */,
+				BE1B155A1FB2A45500862271 /* NibLoadable.swift in Sources */,
 				BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
 				BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */,
@@ -563,6 +667,7 @@
 				BE3D3A451FAFF4B9001F097D /* SignInController.swift in Sources */,
 				BEBDCB4E1F9CB890009762A8 /* EqualWhiteSpace.swift in Sources */,
 				BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */,
+				BED1CCF51FB2E585002FE096 /* VerifyCoInfoHeaderView.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
 				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
@@ -575,6 +680,7 @@
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
+				BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
@@ -587,11 +693,16 @@
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
+				BE1B15601FB2A59400862271 /* IconTextView.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
+				BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */,
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
+				BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */,
 				BEBE4A171FAC1B9A00A9CA9A /* CodeTimerPresenter.swift in Sources */,
 				BEBE4A2C1FAC68B400A9CA9A /* Extensions.swift in Sources */,
+				BE1B154D1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift in Sources */,
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
+				BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
 				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
 				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
@@ -599,24 +710,33 @@
 				BE3D3A2E1FAFF423001F097D /* AccountCell.swift in Sources */,
 				BEBE4A041FAC083F00A9CA9A /* GroupTableController.swift in Sources */,
 				BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */,
+				BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */,
 				BE3D3A3F1FAFF4AF001F097D /* VerificationCodeCell.swift in Sources */,
 				BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */,
 				BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */,
+				BE1B15541FB2A41A00862271 /* UICollectionView+Reusable.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
+				BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */,
+				BE1B15551FB2A41A00862271 /* UITableView+Reusable.swift in Sources */,
 				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
 				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,
+				BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
+				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
+				BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */,
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
+				BE1B15561FB2A41A00862271 /* Reusable.swift in Sources */,
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
+				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
@@ -781,6 +901,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = UIScrollViewDemo/Bridging.h;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
@@ -799,6 +920,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = UIScrollViewDemo/Bridging.h;
 				SWIFT_VERSION = 4.0;
 			};
 			name = Release;

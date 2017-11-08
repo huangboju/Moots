@@ -9,6 +9,8 @@
 let UIFontMake: (CGFloat) -> UIFont = { UIFont.systemFont(ofSize: $0) }
 
 let SCREEN_WIDTH = UIScreen.main.bounds.width
+let PADDING: CGFloat = 16
+
 
 import UIKit
 
@@ -19,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
         
         return true
     }

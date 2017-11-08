@@ -1,9 +1,9 @@
 //
-//  Row.swift
-//  ConfigurableTableViewController
+//  HZUIHelper.swift
+//  HtinnsFlat
 //
-//  Created by Arkadiusz Holko on 03-01-16.
-//  Copyright © 2016 Arkadiusz Holko. All rights reserved.
+//  Created by 黄伯驹 on 2017/11/2.
+//  Copyright © 2017年 hangting. All rights reserved.
 //
 
 import UIKit
@@ -17,11 +17,17 @@ protocol Updatable: class {
     func update(viewData: ViewData)
 }
 
-protocol RowType {
+extension Updatable {
+    func update(viewData: NoneItem) {}
+}
 
+protocol RowType {
+    
+    var tag: String { get }
+    
     var reuseIdentifier: String { get }
     var cellClass: AnyClass { get }
-
+    
     func update(cell: UITableViewCell)
     
     
@@ -30,14 +36,17 @@ protocol RowType {
 
 class Row<Cell> where Cell: Updatable, Cell: UITableViewCell {
 
+    let tag: String
+    
     let viewData: Cell.ViewData
     let reuseIdentifier = "\(Cell.classForCoder())"
     let cellClass: AnyClass = Cell.self
 
-    init(viewData: Cell.ViewData) {
+    init(viewData: Cell.ViewData, tag: String = "") {
         self.viewData = viewData
+        self.tag = tag
     }
-
+    
     func cell<T: UITableViewCell>() -> T {
         guard let cell = _cell as? T else {
             fatalError("cell 类型错误")
@@ -55,6 +64,6 @@ class Row<Cell> where Cell: Updatable, Cell: UITableViewCell {
     }
 }
 
-extension Row: RowType {
+extension Row: RowType {}
 
-}
+
