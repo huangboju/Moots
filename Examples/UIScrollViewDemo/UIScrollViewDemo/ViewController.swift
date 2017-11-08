@@ -121,23 +121,6 @@ extension String {
     }
 }
 
-extension UICollectionViewFlowLayout {
-    /// 修正collection布局有缝隙
-    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
-        let totalSpace = (colCount - 1) * space
-        let itemWidth = (rect.width - totalSpace) / colCount
-        var realItemWidth = floor(itemWidth) + 0.5
-        if realItemWidth < itemWidth {
-            realItemWidth += 0.5
-        }
-        let realWidth = colCount * realItemWidth + totalSpace
-        let pointX = (realWidth - rect.width) / 2
-        rect.origin.x = -pointX
-        rect.size.width = realWidth
-        return (rect.width - totalSpace) / colCount
-    }
-}
-
 extension UIView {
 //    var viewController: UIViewController? {
 //        var viewController: UIViewController?
@@ -155,12 +138,12 @@ extension UIView {
     public func viewController<T: UIViewController>() -> T? {
         var viewController: UIViewController?
         var next = self.next
-        while next != nil {
-            if next!.isKind(of: UIViewController.self) {
+        while let _next = next {
+            if _next.isKind(of: UIViewController.self) {
                 viewController = next as? UIViewController
                 break
             }
-            next = next?.next
+            next = _next.next
         }
         return viewController as? T
     }

@@ -2,3 +2,4 @@
 github "Alamofire/Alamofire" ~> 4.0
 github "SnapKit/SnapKit" ~> 3.0.2
 github "ViccAlexander/Chameleon"
+github "onevcat/Kingfisher" ~> 4.0

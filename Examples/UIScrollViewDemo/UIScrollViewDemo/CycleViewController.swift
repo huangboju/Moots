@@ -26,7 +26,13 @@ class CycleViewController: UIViewController {
         [
             SignInController.self,
             CodeSignInController.self,
-            SignUpController.self
+            SignUpController.self,
+            SignUpSuccessController.self
+        ],
+        [
+            VerifyCoInfoSuccessController.self,
+            VerifyCoInfoController.self,
+            MyCompanyController.self
         ]
     ]
 

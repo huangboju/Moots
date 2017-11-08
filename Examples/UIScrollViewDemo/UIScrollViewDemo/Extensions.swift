@@ -61,3 +61,78 @@ extension UIAlertController {
         return self
     }
 }
+
+extension UIColor {
+    // 纯色图片
+    public func image(size: CGSize, cornerRadius: CGFloat) -> UIImage {
+        //        let size = size.flatted
+        
+        let opaque = (cornerRadius == 0.0)
+        UIGraphicsBeginImageContextWithOptions(size, opaque, 0)
+        let context = UIGraphicsGetCurrentContext()
+        context?.setFillColor(cgColor)
+        
+        if cornerRadius > 0 {
+            let path = UIBezierPath(roundedRect: size.rect, cornerRadius: cornerRadius)
+            path.addClip()
+            path.fill()
+        } else {
+            context?.fill(size.rect)
+        }
+        
+        let resultImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resultImage!
+    }
+}
+
+extension UITableView {
+    
+    /** Resize a tableView header to according to the auto layout of its contents.
+     - This method can resize a headerView according to changes in a dynamically set text label. Simply place this method inside viewDidLayoutSubviews.
+     - To animate constrainsts, wrap a tableview.beginUpdates and .endUpdates, followed by a UIView.animateWithDuration block around constraint changes.
+     */
+    func sizeHeaderToFit() {
+        guard let headerView = tableHeaderView else {
+            return
+        }
+        let oldHeight = headerView.frame.height
+        
+        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        
+        headerView.frame.size.height = height
+        contentSize.height += (height - oldHeight)
+        headerView.layoutIfNeeded()
+        
+    }
+    
+    func sizeFooterToFit() {
+        guard let footerView = tableFooterView else {
+            return
+        }
+        let oldHeight = footerView.frame.height
+        let height = footerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        
+        footerView.frame.size.height = height
+        contentSize.height += (height - oldHeight)
+        footerView.layoutIfNeeded()
+    }
+}
+
+extension UICollectionViewFlowLayout {
+    /// 修正collection布局有缝隙
+    func fixSlit(rect: inout CGRect, colCount: CGFloat, space: CGFloat = 0) -> CGFloat {
+        let totalSpace = (colCount - 1) * space
+        let itemWidth = (rect.width - totalSpace) / colCount
+        let fixValue = 1 / UIScreen.main.scale
+        var realItemWidth = floor(itemWidth) + fixValue
+        if realItemWidth < itemWidth {
+            realItemWidth += fixValue
+        }
+        let realWidth = colCount * realItemWidth + totalSpace
+        let pointX = (realWidth - rect.width) / 2
+        rect.origin.x = -pointX
+        rect.size.width = realWidth
+        return (rect.width - totalSpace) / colCount
+    }
+}
