@@ -43,19 +43,24 @@ class MyCompanyController: UIViewController {
 
         view.addSubview(myCoRightsRecommendView)
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(test))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(showReminderView))
     }
 
     @objc
-    func test() {
+    func showReminderView() {
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration(0.3)
+        UIView.setAnimationCurve(.easeInOut)
+
         formView.beginUpdates()
-        UIView.animate(withDuration: 0.1) {
-            self.formView.tableHeaderView?.alpha = 1
-            self.formView.tableHeaderView?.frame.size.height = 63
-        }
+        self.formView.tableHeaderView?.alpha = 1
+        self.formView.tableHeaderView?.frame.size.height = 63
         formView.endUpdates()
 
-        formView.frame.size.height += 63
+        UIView.commitAnimations()
+
+        self.formView.frame.size.height += 63
+
         myCoRightsRecommendView.freshView()
     }
 
