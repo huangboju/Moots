@@ -30,6 +30,13 @@ class MyCoInfoCell: UITableViewCell, Updatable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
+        
+        let dummyView = UIView()
+        contentView.addSubview(dummyView)
+        dummyView.snp.makeConstraints { (make) in
+            make.height.equalTo(92).priority(.high)
+            make.edges.equalToSuperview()
+        }
 
         HZUIHelper.generateBottomLine(in: contentView)
 
@@ -45,7 +52,7 @@ class MyCoInfoCell: UITableViewCell, Updatable {
             make.top.equalTo(iconView)
             make.leading.equalTo(iconView.snp.trailing).offset(8)
         }
-        
+
         contentView.addSubview(badgeLabel)
         badgeLabel.snp.makeConstraints { (make) in
             make.top.equalTo(iconView)
@@ -62,11 +69,6 @@ class MyCoInfoCell: UITableViewCell, Updatable {
         editButton.snp.makeConstraints { (make) in
             make.trailing.equalTo(-PADDING)
             make.top.equalTo(iconView)
-        }
-
-        contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(92)
-            make.leading.trailing.equalToSuperview()
         }
     }
 

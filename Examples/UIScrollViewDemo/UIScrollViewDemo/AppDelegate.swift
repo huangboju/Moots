@@ -7,6 +7,7 @@
 //
 
 let UIFontMake: (CGFloat) -> UIFont = { UIFont.systemFont(ofSize: $0) }
+let UIFontBoldMake: (CGFloat) -> UIFont = { UIFont.boldSystemFont(ofSize: $0) }
 
 let SCREEN_WIDTH = UIScreen.main.bounds.width
 let PADDING: CGFloat = 16

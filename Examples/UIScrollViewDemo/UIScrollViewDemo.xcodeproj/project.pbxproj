@@ -78,6 +78,8 @@
 		BEC5E7911FB41EE300A44CD7 /* CollectionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */; };
 		BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */; };
 		BEC5E7961FB4290C00A44CD7 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7951FB4290C00A44CD7 /* FormView.swift */; };
+		BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */; };
+		BEC5E79C1FB4545E00A44CD7 /* MyCompanyFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */; };
 		BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */; };
 		BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */; };
 		BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */; };
@@ -220,6 +222,8 @@
 		BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListController.swift; sourceTree = "<group>"; };
 		BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendView.swift; sourceTree = "<group>"; };
 		BEC5E7951FB4290C00A44CD7 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
+		BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendTitleCell.swift; sourceTree = "<group>"; };
+		BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyFormHeaderView.swift; sourceTree = "<group>"; };
 		BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoFieldCell.swift; sourceTree = "<group>"; };
 		BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoInfoVerifyCell.swift; sourceTree = "<group>"; };
@@ -436,6 +440,7 @@
 				BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */,
 				BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */,
 				BEC5E78E1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift */,
+				BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -445,6 +450,7 @@
 			children = (
 				BED1CCF41FB2E584002FE096 /* VerifyCoInfoHeaderView.swift */,
 				BE1B154E1FB2A1AC00862271 /* GirdView.swift */,
+				BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -676,6 +682,7 @@
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				BE3654091F9C8462001A8432 /* SimpleLabelAndTextField.swift in Sources */,
 				D8A731F21DED6E28005DF7C8 /* AppDelegate.swift in Sources */,
+				BEC5E79C1FB4545E00A44CD7 /* MyCompanyFormHeaderView.swift in Sources */,
 				BE3D3A451FAFF4B9001F097D /* SignInController.swift in Sources */,
 				BEBDCB4E1F9CB890009762A8 /* EqualWhiteSpace.swift in Sources */,
 				BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */,
@@ -684,6 +691,7 @@
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
 				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
+				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
 				BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */,
 				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,

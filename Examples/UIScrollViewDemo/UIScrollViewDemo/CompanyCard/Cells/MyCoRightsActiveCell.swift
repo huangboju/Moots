@@ -14,9 +14,10 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
         doubleLabel.bottomFont = UIFontMake(14)
         doubleLabel.topTextColor = UIColor(hex: 0x4A4A4A)
         doubleLabel.bottomTextColor = UIColor(hex: 0x4A4A4A)
+        doubleLabel.textAlignment = .left
         return doubleLabel
     }()
-    
+
     private lazy var topLine: UIView = {
         let topLine = generateLine()
         return topLine
@@ -30,6 +31,13 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
+        let dummyView = UIView()
+        contentView.addSubview(dummyView)
+        dummyView.snp.makeConstraints { (make) in
+            make.height.equalTo(108).priority(.high)
+            make.edges.equalToSuperview()
+        }
+        
         selectionStyle = .none
 
         let imageView = UIImageView(image: UIImage(named: "ic_my_coInfo_active"))
@@ -37,28 +45,20 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
         imageView.snp.makeConstraints { (make) in
             make.leading.equalTo(28)
             make.centerY.equalToSuperview()
+            make.width.equalTo(imageView.snp.height)
         }
-        
+
         contentView.addSubview(doubleLabel)
         doubleLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
-            make.leading.equalTo(imageView.snp.trailing).offset(32)
+            make.leading.equalTo(imageView.snp.trailing).offset(20)
             make.trailing.equalTo(-PADDING)
-            make.top.equalTo(15)
         }
 
         doubleLabel.topText = "给华为同事送金卡"
 
         doubleLabel.bottomNumberOfLines = 2
-        doubleLabel.bottomText = """
-        当他注册后您将获得100积分
-        入住后您再获得200积分
-        """
-
-        contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(108)
-            make.leading.trailing.equalToSuperview()
-        }
+        doubleLabel.bottomText = "aaaaaa"
 
         contentView.addSubview(topLine)
         contentView.addSubview(bottomLine)
@@ -73,7 +73,7 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
             make.height.equalTo(topLine)
         }
     }
-    
+
     private func generateLine() -> UIView {
         let line = UIView()
         line.backgroundColor = UIColor(white: 0.95, alpha: 1)

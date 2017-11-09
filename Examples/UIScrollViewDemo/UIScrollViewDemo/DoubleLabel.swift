@@ -68,7 +68,12 @@ class DoubleLabel: UIView {
         }
     }
 
-    var textAlignment: NSTextAlignment = .center
+    var textAlignment: NSTextAlignment = .center {
+        didSet {
+            topLabel.textAlignment = textAlignment
+            bottomLabel.textAlignment = textAlignment
+        }
+    }
 
     var topAttributText: NSAttributedString? {
         didSet {

@@ -22,7 +22,7 @@ class CoInfoVerifyCell: UITableViewCell, Updatable {
         dummyLayer.backgroundColor = UIColor.white.cgColor
         dummyLayer.frame = CGSize(width: SCREEN_WIDTH, height: 29).rect
         contentView.layer.addSublayer(dummyLayer)
-        
+
         backgroundColor = .groupTableViewBackground
 
         contentView.addSubview(button)
