@@ -12,9 +12,19 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
         let doubleLabel = DoubleLabel()
         doubleLabel.topFont = UIFontMake(18)
         doubleLabel.bottomFont = UIFontMake(14)
-        doubleLabel.topColor = UIColor(hex: 0x4A4A4A)
-        doubleLabel.bottomColor = UIColor(hex: 0x4A4A4A)
+        doubleLabel.topTextColor = UIColor(hex: 0x4A4A4A)
+        doubleLabel.bottomTextColor = UIColor(hex: 0x4A4A4A)
         return doubleLabel
+    }()
+    
+    private lazy var topLine: UIView = {
+        let topLine = generateLine()
+        return topLine
+    }()
+    
+    private lazy var bottomLine: UIView = {
+        let bottomLine = generateLine()
+        return bottomLine
     }()
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -32,18 +42,42 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
         contentView.addSubview(doubleLabel)
         doubleLabel.snp.makeConstraints { (make) in
             make.centerY.equalToSuperview()
+            make.leading.equalTo(imageView.snp.trailing).offset(32)
             make.trailing.equalTo(-PADDING)
             make.top.equalTo(15)
         }
 
         doubleLabel.topText = "给华为同事送金卡"
 
-//        doubleLabel.bottomAttributText = aaa.html2AttributedString
+        doubleLabel.bottomNumberOfLines = 2
+        doubleLabel.bottomText = """
+        当他注册后您将获得100积分
+        入住后您再获得200积分
+        """
 
         contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(92)
+            make.height.equalTo(108)
             make.leading.trailing.equalToSuperview()
         }
+        
+        contentView.addSubview(topLine)
+        contentView.addSubview(bottomLine)
+
+        topLine.snp.makeConstraints { (make) in
+            make.leading.top.trailing.equalToSuperview()
+            make.height.equalTo(8)
+        }
+
+        bottomLine.snp.makeConstraints { (make) in
+            make.leading.bottom.trailing.equalToSuperview()
+            make.height.equalTo(topLine)
+        }
+    }
+    
+    private func generateLine() -> UIView {
+        let line = UIView()
+        line.backgroundColor = UIColor(white: 0.95, alpha: 1)
+        return line
     }
 
     required init?(coder aDecoder: NSCoder) {

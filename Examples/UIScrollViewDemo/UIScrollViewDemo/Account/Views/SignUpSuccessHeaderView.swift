@@ -66,13 +66,13 @@ class SignUpSuccessHeaderView: UIView {
             make.leading.equalTo(24)
             make.centerY.equalTo(40)
         }
-        
+
         addSubview(discountView)
         discountView.snp.makeConstraints { (make) in
             make.leading.equalTo(iconTextView)
             make.top.equalTo(iconTextView.snp.bottom).offset(33)
         }
-        
+
         addSubview(integralView)
         integralView.snp.makeConstraints { (make) in
             make.leading.equalTo(iconTextView)

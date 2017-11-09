@@ -40,8 +40,8 @@ class VerifyCoInfoHeaderView: UIView {
     
     private lazy var doubleLabel: DoubleLabel = {
         let doubleLabel = DoubleLabel()
-        doubleLabel.topColor = .white
-        doubleLabel.bottomColor = .white
+        doubleLabel.topTextColor = .white
+        doubleLabel.bottomTextColor = .white
         doubleLabel.textAlignment = .center
         return doubleLabel
     }()
@@ -75,11 +75,11 @@ class VerifyCoInfoHeaderView: UIView {
                 make.center.equalToSuperview()
             })
         case .canBebound, .toBeEmailed, .sentMail, .activated:
-            
+
             doubleLabel.topFont = UIFontMake(14)
             doubleLabel.bottomFont = UIFontMake(18)
             doubleLabel.topText = "验证企业邮箱升级会员等级"
-            
+
             doubleLabel.snp.makeConstraints({ (make) in
                 make.top.equalTo(40) // 33 = 15 + 18
                 make.centerX.equalToSuperview()
@@ -99,17 +99,17 @@ class VerifyCoInfoHeaderView: UIView {
             make.bottom.equalToSuperview().offset(-29)
             make.top.equalTo(doubleLabel.snp.bottom).offset(10)
         }
-        
+
         let names = [
             "房费8.8折",
             "免费早餐",
             "2倍积分",
             "延时退房至14:00"
         ]
-        
+
         var tmpDummyView: UIView?
         var rightsTextView: IconTextView?
-        
+
         for (i, name) in names.enumerated() {
             let iconTextView = IconTextView()
             iconTextView.text = name
@@ -118,10 +118,10 @@ class VerifyCoInfoHeaderView: UIView {
             iconTextView.interval = 3
             iconTextView.textFont = UIFontMake(13)
             containerView.addSubview(iconTextView)
-            
+
             let dummyView = UIView()
             containerView.addSubview(dummyView)
-            
+
             if let tmpDummyView = tmpDummyView, let rightsTextView = rightsTextView {
                 iconTextView.snp.makeConstraints({ (make) in
                     make.top.equalTo(rightsTextView)

@@ -10,8 +10,8 @@ class MyCoInfoCell: UITableViewCell, Updatable {
     
     private lazy var doubleLabel: DoubleLabel = {
         let doubleLabel = DoubleLabel()
-        doubleLabel.topColor = UIColor(hex: 0x4A4A4A)
-        doubleLabel.bottomColor = UIColor(hex: 0x4A4A4A)
+        doubleLabel.topTextColor = UIColor(hex: 0x4A4A4A)
+        doubleLabel.bottomTextColor = UIColor(hex: 0x4A4A4A)
         
         doubleLabel.topFont = UIFontMake(16)
         doubleLabel.bottomFont = UIFontMake(13)

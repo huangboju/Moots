@@ -29,7 +29,7 @@ class GroupTableController: UIViewController {
         tableView.delegate = self
         
         initSubviews()
-        
+
         registerCells()
     }
     

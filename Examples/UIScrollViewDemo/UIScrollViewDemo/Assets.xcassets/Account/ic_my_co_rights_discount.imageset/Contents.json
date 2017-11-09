@@ -6,12 +6,12 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_company@2x.png",
+      "filename" : "积分icon@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon_company@3x.png",
+      "filename" : "companyinterests_integral.png",
       "scale" : "3x"
     }
   ],

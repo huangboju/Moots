@@ -18,9 +18,9 @@ class SignUpController: GroupTableController, SignActionPresenter {
         
         let footerView = PasswordSignInFooterView()
         tableView.tableFooterView = footerView
-        
+
         tableView.separatorStyle = .none
-        
+
         rows = [
             [
                 Row<AccountCell>(viewData: NoneItem()),
