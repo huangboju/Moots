@@ -132,7 +132,6 @@ extension MyCoRightsRecommendView: UICollectionViewDelegateFlowLayout {
         guard var size = headerView?.contentSize else {
             return .zero
         }
-        print(size)
         size.height -= 64
         return size
     }

@@ -80,6 +80,7 @@
 		BEC5E7961FB4290C00A44CD7 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7951FB4290C00A44CD7 /* FormView.swift */; };
 		BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */; };
 		BEC5E79C1FB4545E00A44CD7 /* MyCompanyFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */; };
+		BEC5E79E1FB45EFE00A44CD7 /* MemberAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */; };
 		BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */; };
 		BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */; };
 		BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */; };
@@ -224,6 +225,7 @@
 		BEC5E7951FB4290C00A44CD7 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendTitleCell.swift; sourceTree = "<group>"; };
 		BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyFormHeaderView.swift; sourceTree = "<group>"; };
+		BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAlertView.swift; sourceTree = "<group>"; };
 		BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoFieldCell.swift; sourceTree = "<group>"; };
 		BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoInfoVerifyCell.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 				BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */,
 				BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */,
 				BEC5E7951FB4290C00A44CD7 /* FormView.swift */,
+				BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -725,6 +728,7 @@
 				D8123AF21EE8D42400EAAA63 /* RulerView.swift in Sources */,
 				BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
+				BEC5E79E1FB45EFE00A44CD7 /* MemberAlertView.swift in Sources */,
 				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
 				BEC5E78F1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift in Sources */,
 				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
