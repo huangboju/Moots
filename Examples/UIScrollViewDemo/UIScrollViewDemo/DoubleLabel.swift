@@ -18,6 +18,20 @@ class DoubleLabel: UIView {
 
     private let topLabel = UILabel()
     private let bottomLabel = UILabel()
+    
+    /// Default 1
+    var topNumberOfLines = 1 {
+        didSet {
+            topLabel.numberOfLines = topNumberOfLines
+        }
+    }
+    
+    /// Default 1
+    var bottomNumberOfLines = 1 {
+        didSet {
+            bottomLabel.numberOfLines = bottomNumberOfLines
+        }
+    }
 
     /// Default 14 systemFont
     var topFont = UIFont.systemFont {
@@ -34,16 +48,16 @@ class DoubleLabel: UIView {
     }
 
     /// Default UIColor.darkText
-    var topColor = UIColor.darkText {
+    var topTextColor = UIColor.darkText {
         didSet {
-            topLabel.textColor = topColor
+            topLabel.textColor = topTextColor
         }
     }
 
     /// Default UIColor.darkText
-    var bottomColor = UIColor.darkText {
+    var bottomTextColor = UIColor.darkText {
         didSet {
-            bottomLabel.textColor = topColor
+            bottomLabel.textColor = topTextColor
         }
     }
 

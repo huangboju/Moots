@@ -39,7 +39,7 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     }
 
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
         collectionView.delegate =  self
         collectionView.dataSource = self
         collectionView.register(C.self, forCellWithReuseIdentifier: "cellID")
@@ -52,13 +52,17 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         layout.itemSize = CGSize(width: flat(SCREEN_WIDTH / CGFloat(items.count)), height: 0)
         layout.minimumInteritemSpacing = 0
 
+        collectionView.collectionViewLayout = layout
+
         addSubview(collectionView)
+        backgroundColor = .red
 
         self.items = items
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        collectionView.frame = bounds
         layout.itemSize.height = frame.height
     }
 
@@ -96,27 +100,40 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
 
 class GirdViewCell: UICollectionViewCell, GirdCellType {
 
-    private let imageView = UIImageView()
-    private let titleLabel = UILabel()
+    private lazy var imageView: UIImageView = {
+        let imageView = UIImageView()
+        return imageView
+    }()
+
+    private lazy var titleLabel: UILabel = {
+        let titleLabel = UILabel()
+        titleLabel.textAlignment = .center
+        titleLabel.textColor = UIColor(hex: 0x4A4A4A)
+        titleLabel.font = UIFontMake(12)
+        return titleLabel
+    }()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
         backgroundColor = .white
+        
+        let superView = UIView()
+        contentView.addSubview(superView)
+        superView.snp.makeConstraints { (make) in
+            make.center.equalToSuperview()
+        }
+        
+        superView.addSubview(imageView)
+        superView.addSubview(titleLabel)
 
-        contentView.addSubview(imageView)
-        imageView.contentMode = .scaleAspectFit
         imageView.snp.makeConstraints { (make) in
             make.top.centerX.equalToSuperview()
         }
 
-        contentView.addSubview(titleLabel)
-        titleLabel.textAlignment = .center
-        titleLabel.textColor = UIColor(hex: 0x4A4A4A)
-        titleLabel.font = UIFont.systemFont
         titleLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(imageView)
-            make.top.equalTo(imageView.snp.bottom).offset(9)
+            make.top.equalTo(imageView.snp.bottom).offset(16)
+            make.bottom.centerX.equalToSuperview()
         }
     }
 

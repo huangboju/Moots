@@ -17,6 +17,7 @@ class MyCompanyController: GroupTableController {
         rows = [
             [
                 Row<MyCoInfoCell>(viewData: NoneItem()),
+                Row<MyCoRightsCell>(viewData: NoneItem()),
                 Row<MyCoRightsActiveCell>(viewData: NoneItem())
             ]
         ]

@@ -14,7 +14,7 @@ class VerifyCoInfoSuccessController: GroupTableController {
         tableView.tableHeaderView = headerView
 
         let footerView = HZUIHelper.generateFooterButton(with: "完成", target: self, action: #selector(doneAction))
-        
+
         tableView.tableFooterView = footerView
     }
 
@@ -28,7 +28,7 @@ class VerifyInterestsHeaderView: UIView {
     private lazy var iconTextView: IconTextView = {
         let iconTextView = IconTextView()
         iconTextView.text = "邮件已发送"
-        iconTextView.image = UIImage(named: "icon_emotion")
+        iconTextView.image = UIImage(named: "ic_email_sent")
         iconTextView.textFont = UIFontMake(18)
         iconTextView.textColor = UIColor(hex: 0x333333)
         return iconTextView
@@ -50,9 +50,12 @@ class VerifyInterestsHeaderView: UIView {
     }()
 
     override init(frame: CGRect) {
-        super.init(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 170))
+        let size = CGSize(width: SCREEN_WIDTH, height: 225)
+        super.init(frame: size.rect)
 
-        backgroundColor = .white
+        let plateLayer = CALayer(frame: CGSize(width: size.width, height: size.height - 25).rect)
+        plateLayer.backgroundColor = UIColor.white.cgColor
+        layer.addSublayer(plateLayer)
 
         addSubview(iconTextView)
         iconTextView.snp.makeConstraints { (make) in
@@ -72,7 +75,7 @@ class VerifyInterestsHeaderView: UIView {
             make.centerX.equalToSuperview()
         }
     }
-    
+
     @objc
     private func buttonAction() {
         
@@ -80,5 +83,12 @@ class VerifyInterestsHeaderView: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension CALayer {
+    convenience init(frame: CGRect) {
+        self.init()
+        self.frame = frame
     }
 }

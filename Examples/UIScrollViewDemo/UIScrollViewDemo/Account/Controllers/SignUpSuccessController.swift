@@ -9,12 +9,11 @@
 class SignUpSuccessController: GroupTableController {
     override func initSubviews() {
         tableView.tableHeaderView = SignUpSuccessHeaderView()
-        
-        
+
         let footerView = HZUIHelper.generateFooterButton(with: "立即开启华住会", target: self, action: #selector(startHZClub))
         tableView.tableFooterView = footerView
     }
-    
+
     @objc
     private func startHZClub() {
         
