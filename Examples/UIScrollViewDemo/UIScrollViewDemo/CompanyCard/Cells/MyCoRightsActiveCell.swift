@@ -7,7 +7,7 @@
 //
 
 class MyCoRightsActiveCell: UITableViewCell, Updatable {
-    
+
     private lazy var doubleLabel: DoubleLabel = {
         let doubleLabel = DoubleLabel()
         doubleLabel.topFont = UIFontMake(18)
@@ -59,7 +59,7 @@ class MyCoRightsActiveCell: UITableViewCell, Updatable {
             make.height.equalTo(108)
             make.leading.trailing.equalToSuperview()
         }
-        
+
         contentView.addSubview(topLine)
         contentView.addSubview(bottomLine)
 

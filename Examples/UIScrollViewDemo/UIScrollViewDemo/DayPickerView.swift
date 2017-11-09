@@ -15,6 +15,10 @@ extension CGSize {
     var rect: CGRect {
         return CGRect(origin: .zero, size: self)
     }
+    
+    var flatted: CGSize {
+        return CGSize(width: flat(width), height: flat(height))
+    }
 }
 
 class DayPicker: UIView {
