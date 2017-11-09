@@ -17,7 +17,7 @@ class MyCoInfoCell: UITableViewCell, Updatable {
         doubleLabel.bottomFont = UIFontMake(13)
         return doubleLabel
     }()
-    
+
     private lazy var badgeLabel: UILabel = {
         let badgeLabel = UILabel()
         badgeLabel.font = UIFontMake(9)

@@ -48,13 +48,13 @@ class IconTextView: UIView {
             textLabel.textColor = textColor
         }
     }
-    
+
     var textFont: UIFont = UIFont.systemFont(ofSize: UIFont.labelFontSize) {
         didSet {
             textLabel.font = textFont
         }
     }
-    
+
     var interval: CGFloat = 10 {
         didSet {
             setNeedsLayout()

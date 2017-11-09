@@ -28,6 +28,9 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
 
     public weak var girdItemDelegate: GirdViewDelegate?
 
+    /// Default items.count
+    public var numberOfCols = 0
+
     public var items: [C.ViewData] = []
 
     public var layout = UICollectionViewFlowLayout() {
@@ -39,7 +42,7 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     }
 
     private lazy var collectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewLayout())
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate =  self
         collectionView.dataSource = self
         collectionView.register(C.self, forCellWithReuseIdentifier: "cellID")
@@ -49,21 +52,22 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     convenience init(items: [C.ViewData]) {
         self.init(frame: .zero)
 
-        layout.itemSize = CGSize(width: flat(SCREEN_WIDTH / CGFloat(items.count)), height: 0)
+        numberOfCols = items.count
+
         layout.minimumInteritemSpacing = 0
 
         collectionView.collectionViewLayout = layout
 
         addSubview(collectionView)
-        backgroundColor = .red
+        collectionView.backgroundColor = .white
 
         self.items = items
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        layout.itemSize = CGSize(width: flat(SCREEN_WIDTH / CGFloat(numberOfCols)), height: frame.height)
         collectionView.frame = bounds
-        layout.itemSize.height = frame.height
     }
 
     public func refreshUI() {
@@ -123,7 +127,7 @@ class GirdViewCell: UICollectionViewCell, GirdCellType {
         superView.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
-        
+
         superView.addSubview(imageView)
         superView.addSubview(titleLabel)
 

@@ -74,6 +74,10 @@
 		BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */; };
 		BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E78A1FB3356D00A44CD7 /* SignUpSuccessController.swift */; };
 		BEC5E78D1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */; };
+		BEC5E78F1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E78E1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift */; };
+		BEC5E7911FB41EE300A44CD7 /* CollectionListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */; };
+		BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */; };
+		BEC5E7961FB4290C00A44CD7 /* FormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7951FB4290C00A44CD7 /* FormView.swift */; };
 		BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */; };
 		BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */; };
 		BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */; };
@@ -212,6 +216,10 @@
 		BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsActiveCell.swift; sourceTree = "<group>"; };
 		BEC5E78A1FB3356D00A44CD7 /* SignUpSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessController.swift; sourceTree = "<group>"; };
 		BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpSuccessHeaderView.swift; sourceTree = "<group>"; };
+		BEC5E78E1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendCell.swift; sourceTree = "<group>"; };
+		BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionListController.swift; sourceTree = "<group>"; };
+		BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendView.swift; sourceTree = "<group>"; };
+		BEC5E7951FB4290C00A44CD7 /* FormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormView.swift; sourceTree = "<group>"; };
 		BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoFieldCell.swift; sourceTree = "<group>"; };
 		BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoInfoVerifyCell.swift; sourceTree = "<group>"; };
@@ -335,7 +343,6 @@
 			children = (
 				BED1CCF31FB2E579002FE096 /* Views */,
 				BED1CCEC1FB2D847002FE096 /* Cells */,
-				BE1B154E1FB2A1AC00862271 /* GirdView.swift */,
 				BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */,
 				BE1B155F1FB2A59400862271 /* IconTextView.swift */,
 				BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */,
@@ -364,6 +371,8 @@
 				BE3D3A351FAFF4A6001F097D /* NELineLabel.swift */,
 				BE3D3A281FAFF3D1001F097D /* Cells */,
 				BEC5E78C1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift */,
+				BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */,
+				BEC5E7951FB4290C00A44CD7 /* FormView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -412,6 +421,7 @@
 				BEBE4A161FAC1B9A00A9CA9A /* CodeTimerPresenter.swift */,
 				BEBE4A011FAC083F00A9CA9A /* Row.swift */,
 				BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */,
+				BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -425,6 +435,7 @@
 				BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */,
 				BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */,
 				BEC5E7881FB3010A00A44CD7 /* MyCoRightsActiveCell.swift */,
+				BEC5E78E1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -433,6 +444,7 @@
 			isa = PBXGroup;
 			children = (
 				BED1CCF41FB2E584002FE096 /* VerifyCoInfoHeaderView.swift */,
+				BE1B154E1FB2A1AC00862271 /* GirdView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -678,6 +690,7 @@
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
+				BEC5E7911FB41EE300A44CD7 /* CollectionListController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */,
@@ -705,6 +718,7 @@
 				BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */,
 				D889759C1DEEA8E1005384F4 /* ScrollViewController.swift in Sources */,
 				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
+				BEC5E78F1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift in Sources */,
 				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
 				BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */,
 				BE3D3A2E1FAFF423001F097D /* AccountCell.swift in Sources */,
@@ -733,11 +747,13 @@
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
 				BE1B15561FB2A41A00862271 /* Reusable.swift in Sources */,
+				BEC5E7961FB4290C00A44CD7 /* FormView.swift in Sources */,
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
+				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
