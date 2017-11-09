@@ -44,7 +44,7 @@ class MyCoRightsRecommendViewCell: UICollectionViewCell, Reusable {
         let width = bounds.width
         
         imageView.frame = CGSize(width: width, height: 125).rect
-        
+
         titleLabel.frame = CGRect(x: 11, y: imageView.frame.maxY + 6, width: width - 22, height: 20)
 
         pormtLabel.frame = CGRect(x: titleLabel.frame.minX, y: titleLabel.frame.maxY + 2, width: width - 22, height: 17)
@@ -69,31 +69,43 @@ class MyCoRightsRecommendView: UIView {
     
     private let layout = UICollectionViewFlowLayout()
     
-    private lazy var collectionView: UICollectionView = {
-        self.layout.minimumLineSpacing = 11
-        self.layout.minimumInteritemSpacing = 3
-
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.backgroundColor = .white
-        collectionView.register(cellType: MyCoRightsRecommendViewCell.self)
-
-        return collectionView
-    }()
+    private(set) var collectionView: UICollectionView!
 
     override func layoutSubviews() {
         super.layoutSubviews()
         collectionView.frame = bounds
 
-        layout.headerReferenceSize = CGSize(width: bounds.width, height: 388)
         layout.itemSize = CGSize(width: (bounds.width - 3) / 2, height: 181)
     }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
 
+        collectionView = {
+            self.layout.minimumLineSpacing = 11
+            self.layout.minimumInteritemSpacing = 3
+
+            let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.layout)
+            collectionView.dataSource = self
+            collectionView.delegate = self
+            collectionView.backgroundColor = .white
+            collectionView.register(cellType: MyCoRightsRecommendViewCell.self)
+
+            return collectionView
+        }()
+
         addSubview(collectionView)
+    }
+
+    private weak var headerView: FormView?
+
+    public func addHeaderView(_ headerView: FormView) {
+        self.headerView = headerView
+        collectionView.addSubview(headerView)
+    }
+    
+    public func freshView() {
+        collectionView.reloadData()
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -113,4 +125,16 @@ extension MyCoRightsRecommendView: UICollectionViewDataSource {
     }
 }
 
-extension MyCoRightsRecommendView: UICollectionViewDelegate {}
+extension MyCoRightsRecommendView: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        headerView?.layoutIfNeeded()
+        // 导航栏似乎有影响
+        guard var size = headerView?.contentSize else {
+            return .zero
+        }
+        print(size)
+        size.height -= 64
+        return size
+    }
+}
+

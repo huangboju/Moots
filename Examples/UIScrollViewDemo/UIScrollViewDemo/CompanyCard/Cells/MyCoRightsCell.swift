@@ -15,7 +15,7 @@ class MyCoRightsCell: UITableViewCell, Updatable {
         descLabel.text = "华住金会员权益"
         return descLabel
     }()
-    
+
     private lazy var girdView: GirdView<GirdViewCell> = {
         let girdView = GirdView<GirdViewCell>(items: MyCoRightsCell.items)
         return girdView
@@ -25,6 +25,13 @@ class MyCoRightsCell: UITableViewCell, Updatable {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
+        
+        let dummyView = UIView()
+        contentView.addSubview(dummyView)
+        dummyView.snp.makeConstraints { (make) in
+            make.height.equalTo(187).priority(.high)
+            make.edges.equalToSuperview()
+        }
 
         contentView.addSubview(descLabel)
         descLabel.snp.makeConstraints { (make) in
@@ -37,11 +44,6 @@ class MyCoRightsCell: UITableViewCell, Updatable {
             make.leading.trailing.equalToSuperview()
             make.top.equalTo(descLabel.snp.bottom).offset(30)
             make.bottom.equalTo(-32)
-        }
-
-        contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(187)
-            make.leading.trailing.equalToSuperview()
         }
     }
 

@@ -66,8 +66,17 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        layout.itemSize = CGSize(width: flat(SCREEN_WIDTH / CGFloat(numberOfCols)), height: frame.height)
+
         collectionView.frame = bounds
+
+        let oldSize = layout.itemSize
+        if oldSize != layout.itemSize {
+            collectionView.reloadData()
+        }
+
+        let width = collectionView.fixSlit(cols: numberOfCols)
+
+        layout.itemSize = CGSize(width: width, height: bounds.height)
     }
 
     public func refreshUI() {
