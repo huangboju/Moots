@@ -9,14 +9,21 @@
 class CoInfoVerifyCell: UITableViewCell, Updatable {
     
     private lazy var button: UIButton = {
-        let button = HZUIHelper.generateDarkButton(with: "立即验证", target: viewController(), action: #selector(VerifyCoInfoController.verifyAction))
+        let button = HZUIHelper.generateDarkButton(with: "立即验证", target: viewController(), action: #selector(CoVerifyActionable.verifyAction))
         return button
     }()
-    
+
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
+        
+        let dummyView = UIView()
+        contentView.addSubview(dummyView)
+        dummyView.snp.makeConstraints { (make) in
+            make.height.equalTo(140)
+            make.edges.equalToSuperview()
+        }
         
         let dummyLayer = CALayer()
         dummyLayer.backgroundColor = UIColor.white.cgColor
@@ -31,11 +38,6 @@ class CoInfoVerifyCell: UITableViewCell, Updatable {
             make.trailing.equalTo(-PADDING)
             make.height.equalTo(44)
             make.bottom.equalToSuperview()
-        }
-
-        contentView.snp.makeConstraints { (make) in
-            make.height.equalTo(140)
-            make.leading.trailing.equalToSuperview()
         }
     }
 

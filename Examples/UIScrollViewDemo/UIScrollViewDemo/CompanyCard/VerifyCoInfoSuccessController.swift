@@ -48,13 +48,16 @@ class VerifyInterestsHeaderView: UIView {
         button.titleLabel?.font = UIFontMake(13)
         return button
     }()
+    
+    private lazy var plateLayer: CALayer = {
+        let plateLayer = CALayer()
+        plateLayer.backgroundColor = UIColor.white.cgColor
+        return plateLayer
+    }()
 
     override init(frame: CGRect) {
-        let size = CGSize(width: SCREEN_WIDTH, height: 225)
-        super.init(frame: size.rect)
+        super.init(frame: CGSize(width: SCREEN_WIDTH, height: 225).rect)
 
-        let plateLayer = CALayer(frame: CGSize(width: size.width, height: size.height - 25).rect)
-        plateLayer.backgroundColor = UIColor.white.cgColor
         layer.addSublayer(plateLayer)
 
         addSubview(iconTextView)
@@ -74,6 +77,11 @@ class VerifyInterestsHeaderView: UIView {
             make.top.equalTo(tipLabel.snp.bottom).offset(8)
             make.centerX.equalToSuperview()
         }
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        plateLayer.frame = CGSize(width: frame.width, height: frame.height - 25).rect
     }
 
     @objc
