@@ -17,10 +17,16 @@ public class NotificationNames {
 
 public class NotificationName: NotificationNames {
     // TODO: Can we use protocols to ensure ValueType is a compatible type?
+
     public let _key: String
-    
+
     public init(_ key: String) {
         self._key = key
+        super.init()
+    }
+
+    public init(name: NSNotification.Name) {
+        self._key = name.rawValue
         super.init()
     }
 }
@@ -33,14 +39,22 @@ extension NotificationCenter {
 
 
 extension UIViewController {
+    func addObserver(with selector: Selector, name: NSNotification.Name, object: Any? = nil) {
+        NotificationCenter.default.addObserver(self, selector: selector, name: name, object: object)
+    }
+
     func addObserver(with selector: Selector, name: NotificationName, object: Any? = nil) {
-        NotificationCenter.default.addObserver(self, selector: selector, name: NSNotification.Name(rawValue: name._key), object: object)
+        addObserver(with: selector, name: NSNotification.Name(rawValue: name._key), object: object)
     }
-    
+
+    func postNotification(name: NSNotification.Name, object: Any? = nil) {
+        NotificationCenter.default.post(name: name, object: object)
+    }
+
     func postNotification(name: NotificationName, object: Any? = nil) {
-        NotificationCenter.default.post(name: NSNotification.Name(rawValue: name._key), object: object)
+        postNotification(name: NSNotification.Name(rawValue: name._key), object: object)
     }
-    
+
     func removeNotification() {
         NotificationCenter.default.removeObserver(self)
     }

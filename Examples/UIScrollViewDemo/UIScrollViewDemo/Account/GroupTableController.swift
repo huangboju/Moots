@@ -32,8 +32,8 @@ class GroupTableController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
 
-        addObserver(with: #selector(keyboardWillShow), name: NotificationName(NSNotification.Name.UIKeyboardWillShow.rawValue))
-        addObserver(with: #selector(keyboardDidHide), name: NotificationName(NSNotification.Name.UIKeyboardWillHide.rawValue))
+        addObserver(with: #selector(keyboardWillShow), name: .UIKeyboardWillShow)
+        addObserver(with: #selector(keyboardDidHide), name: .UIKeyboardWillHide)
 
         initSubviews()
     }
@@ -79,7 +79,7 @@ class GroupTableController: UIViewController {
         }
         return footerView
     }
-    
+
     private func registerCells() {
         rows.flatMap { $0 }.forEach { tableView.register($0.cellClass, forCellReuseIdentifier: $0.reuseIdentifier) }
     }
