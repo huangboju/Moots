@@ -27,9 +27,12 @@ class CompanyInfoCell: UITableViewCell, Updatable {
             make.leading.equalToSuperview().offset(PADDING)
             make.top.equalTo(30)
         }
-
-        contentView.snp.makeConstraints { (make) in
+        
+        let dummyView = UIView()
+        contentView.addSubview(dummyView)
+        dummyView.snp.makeConstraints { (make) in
             make.height.equalTo(60)
+            make.edges.equalToSuperview()
         }
     }
     

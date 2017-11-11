@@ -12,6 +12,10 @@ class GroupTableController: UIViewController {
     
     let tableView = UITableView(frame: .zero, style: .grouped)
     
+    private var oldBottomInset: CGFloat?
+    
+    private var tap: UITapGestureRecognizer?
+
     var rows: [[RowType]] = [] {
         didSet {
             registerCells()
@@ -27,19 +31,20 @@ class GroupTableController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        initSubviews()
 
-        registerCells()
+        addObserver(with: #selector(keyboardWillShow), name: NotificationName(NSNotification.Name.UIKeyboardWillShow.rawValue))
+        addObserver(with: #selector(keyboardDidHide), name: NotificationName(NSNotification.Name.UIKeyboardWillHide.rawValue))
+
+        initSubviews()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
     }
-    
+
     open func initSubviews() {}
-    
+
     final func row(at indexPath: IndexPath) -> RowType {
         return rows[indexPath.section][indexPath.row]
     }
@@ -99,3 +104,58 @@ extension GroupTableController: UITableViewDataSource {
 }
 
 extension GroupTableController: UITableViewDelegate {}
+
+extension GroupTableController {
+    @objc
+    private func keyboardWillShow(_ notification: NSNotification) {
+        tap = UITapGestureRecognizer(target: self, action: #selector(tapGesture))
+        tableView.addGestureRecognizer(tap!)
+
+        let keyBoardInfo = notification.userInfo!
+        let endFrame = keyBoardInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        
+        let keyBoardFrame = tableView.window!.convert(endFrame.cgRectValue, to: tableView.superview)
+        let newBottomInset = tableView.frame.minY + tableView.frame.height - keyBoardFrame.minY
+        var tableInsets = tableView.contentInset
+        var scrollIndicatorInsets = tableView.scrollIndicatorInsets
+        oldBottomInset = oldBottomInset ?? tableInsets.bottom
+        if newBottomInset > oldBottomInset! {
+            tableInsets.bottom = newBottomInset
+            scrollIndicatorInsets.bottom = tableInsets.bottom
+            UIView.beginAnimations(nil, context: nil)
+            UIView.setAnimationDuration((keyBoardInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double))
+            UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: (keyBoardInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int))!)
+            tableView.contentInset = tableInsets
+            tableView.scrollIndicatorInsets = scrollIndicatorInsets
+            UIView.commitAnimations()
+        }
+    }
+
+    @objc
+    private func keyboardDidHide(_ notification: NSNotification) {
+        
+        if let tap = tap {
+            tableView.removeGestureRecognizer(tap)
+        }
+
+        guard let oldBottom = oldBottomInset else { return }
+        let keyBoardInfo = notification.userInfo!
+        var tableInsets = tableView.contentInset
+        var scrollIndicatorInsets = tableView.scrollIndicatorInsets
+        tableInsets.bottom = oldBottom
+        scrollIndicatorInsets.bottom = tableInsets.bottom
+        oldBottomInset = nil
+        UIView.beginAnimations(nil, context: nil)
+        UIView.setAnimationDuration((keyBoardInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double))
+        UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: (keyBoardInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int))!)
+        tableView.contentInset = tableInsets
+        tableView.scrollIndicatorInsets = scrollIndicatorInsets
+        UIView.commitAnimations()
+    }
+
+    @objc
+    private func tapGesture(_ sender: UITapGestureRecognizer) {
+        tableView.removeGestureRecognizer(sender)
+        view.endEditing(true)
+    }
+}

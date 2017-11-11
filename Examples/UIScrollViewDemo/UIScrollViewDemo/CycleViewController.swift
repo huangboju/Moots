@@ -32,7 +32,9 @@ class CycleViewController: UIViewController {
         [
             VerifyCoInfoSuccessController.self,
             VerifyCoInfoController.self,
-            MyCompanyController.self
+            NotCompanyUserController.self,
+            MyCompanyController.self,
+            MemberAlertViewController.self
         ]
     ]
 

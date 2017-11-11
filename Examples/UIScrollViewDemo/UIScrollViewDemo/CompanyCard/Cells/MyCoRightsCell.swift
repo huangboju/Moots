@@ -6,6 +6,44 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
+struct GirdRightsItem {
+    let imageName: String
+    let title: String
+    let selectorName: String
+    
+    private static let imageNames = [
+        "discount",
+        "integral",
+        "breakfast",
+        "checkout"
+    ]
+    
+    private static let coTitles = [
+        "8.8折优惠",
+        "2倍积分",
+        "1份早餐",
+        "14:00退房",
+    ]
+    
+    private static let memberTitles = [
+        "房费8.8折",
+        "免费早餐",
+        "2倍积分",
+    ]
+
+    static var coItems: [GirdRightsItem] {
+        return zip(imageNames, coTitles).map {
+            GirdRightsItem(imageName: "ic_my_co_rights_\($0.0)", title: $0.1, selectorName: "coRightsStyle")
+        }
+    }
+
+    static var memberItems: [GirdRightsItem] {
+        return zip(imageNames, memberTitles).map {
+            GirdRightsItem(imageName: "ic_my_co_rights_\($0.0)", title: $0.1, selectorName: "memberRightsStyle")
+        }
+    }
+}
+
 class MyCoRightsCell: UITableViewCell, Updatable {
     
     private lazy var descLabel: UILabel = {
@@ -16,8 +54,8 @@ class MyCoRightsCell: UITableViewCell, Updatable {
         return descLabel
     }()
 
-    private lazy var girdView: GirdView<GirdViewCell> = {
-        let girdView = GirdView<GirdViewCell>(items: MyCoRightsCell.items)
+    private lazy var girdView: GirdView<CoRightsGirdViewCell> = {
+        let girdView = GirdView<CoRightsGirdViewCell>(items: GirdRightsItem.coItems)
         return girdView
     }()
 
@@ -47,17 +85,6 @@ class MyCoRightsCell: UITableViewCell, Updatable {
         }
     }
 
-    static var items: [GirdItem] {
-        let contets = [
-            ("8.8折优惠", "discount"),
-            ("2倍积分", "integral"),
-            ("1份早餐", "breakfast"),
-            ("14:00退房", "checkout")
-        ]
-
-        return contets.map { GirdItem(imageName: "ic_my_co_rights_\($0.1)", title: $0.0) }
-    }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

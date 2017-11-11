@@ -57,7 +57,7 @@ class DoubleLabel: UIView {
     /// Default UIColor.darkText
     var bottomTextColor = UIColor.darkText {
         didSet {
-            bottomLabel.textColor = topTextColor
+            bottomLabel.textColor = bottomTextColor
         }
     }
 

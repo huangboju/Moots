@@ -55,6 +55,7 @@
 		BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */; };
 		BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */; };
 		BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */; };
+		BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FCA651FB6903900E1C3F0 /* NotCompanyUserController.swift */; };
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */; };
 		BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA0098E1F5D545800CB07CF /* CardViewController.swift */; };
@@ -81,6 +82,8 @@
 		BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */; };
 		BEC5E79C1FB4545E00A44CD7 /* MyCompanyFormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */; };
 		BEC5E79E1FB45EFE00A44CD7 /* MemberAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */; };
+		BEC5E7A01FB5488B00A44CD7 /* CoRightsGirdViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E79F1FB5488B00A44CD7 /* CoRightsGirdViewCell.swift */; };
+		BEC5E7A21FB54ADB00A44CD7 /* MemberAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC5E7A11FB54ADB00A44CD7 /* MemberAlertViewController.swift */; };
 		BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */; };
 		BED1CCF01FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */; };
 		BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */; };
@@ -200,6 +203,7 @@
 		BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioImageView.swift; sourceTree = "<group>"; };
 		BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextAndReadability.swift; sourceTree = "<group>"; };
 		BE4B79B91F9F614E00C9662D /* WorkingWithScrollViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkingWithScrollViews.swift; sourceTree = "<group>"; };
+		BE4FCA651FB6903900E1C3F0 /* NotCompanyUserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotCompanyUserController.swift; sourceTree = "<group>"; };
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinerCardView.swift; sourceTree = "<group>"; };
 		BEA0098E1F5D545800CB07CF /* CardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 		BEC5E7971FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsRecommendTitleCell.swift; sourceTree = "<group>"; };
 		BEC5E79B1FB4545D00A44CD7 /* MyCompanyFormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyFormHeaderView.swift; sourceTree = "<group>"; };
 		BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAlertView.swift; sourceTree = "<group>"; };
+		BEC5E79F1FB5488B00A44CD7 /* CoRightsGirdViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoRightsGirdViewCell.swift; sourceTree = "<group>"; };
+		BEC5E7A11FB54ADB00A44CD7 /* MemberAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberAlertViewController.swift; sourceTree = "<group>"; };
 		BED1CCED1FB2D859002FE096 /* CompanyInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCEF1FB2DBE7002FE096 /* VerifyCoInfoFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoFieldCell.swift; sourceTree = "<group>"; };
 		BED1CCF11FB2E31B002FE096 /* CoInfoVerifyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoInfoVerifyCell.swift; sourceTree = "<group>"; };
@@ -353,6 +359,8 @@
 				BE1B155F1FB2A59400862271 /* IconTextView.swift */,
 				BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */,
 				BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */,
+				BEC5E7A11FB54ADB00A44CD7 /* MemberAlertViewController.swift */,
+				BE4FCA651FB6903900E1C3F0 /* NotCompanyUserController.swift */,
 			);
 			path = CompanyCard;
 			sourceTree = "<group>";
@@ -380,6 +388,7 @@
 				BEC5E7931FB4222E00A44CD7 /* MyCoRightsRecommendView.swift */,
 				BEC5E7951FB4290C00A44CD7 /* FormView.swift */,
 				BEC5E79D1FB45EFE00A44CD7 /* MemberAlertView.swift */,
+				BEC5E79F1FB5488B00A44CD7 /* CoRightsGirdViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -674,6 +683,7 @@
 				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
 				BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */,
 				BEBDCB4A1F9CB4DA009762A8 /* TwoEqualWidthButtons.swift in Sources */,
+				BEC5E7A21FB54ADB00A44CD7 /* MemberAlertViewController.swift in Sources */,
 				BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */,
 				BEC5E78D1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift in Sources */,
 				BE1B155A1FB2A45500862271 /* NibLoadable.swift in Sources */,
@@ -705,6 +715,7 @@
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */,
+				BEC5E7A01FB5488B00A44CD7 /* CoRightsGirdViewCell.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
@@ -766,6 +777,7 @@
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
+				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
