@@ -168,3 +168,25 @@ extension UICollectionView {
         return (frame.width - totalSpace) / colCount
     }
 }
+
+extension UIViewController {
+    var visibleViewControllerIfExist: UIViewController? {
+        
+        if let presentedViewController = presentedViewController {
+            return presentedViewController.visibleViewControllerIfExist
+        }
+        if let nav = self as? UINavigationController {
+            return nav.topViewController?.visibleViewControllerIfExist
+        }
+        if let tabbar = self as? UITabBarController {
+            return tabbar.selectedViewController?.visibleViewControllerIfExist
+        }
+
+        if isViewLoaded && view.window != nil {
+            return self
+        } else {
+            print("qmui_visibleViewControllerIfExist:，找不到可见的viewController。self = \(self), view.window = \(String(describing: view.window))")
+            return nil
+        }
+    }
+}

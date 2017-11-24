@@ -40,6 +40,18 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
             collectionView.reloadData()
         }
     }
+    
+    public var cellBackgroundColor: UIColor? {
+        didSet {
+            refreshUI()
+        }
+    }
+    
+    override var backgroundColor: UIColor? {
+        didSet {
+            collectionView.backgroundColor = backgroundColor
+        }
+    }
 
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
@@ -59,7 +71,6 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         collectionView.collectionViewLayout = layout
 
         addSubview(collectionView)
-        collectionView.backgroundColor = .white
 
         self.items = items
     }
@@ -101,7 +112,8 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
     }
 
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.backgroundColor = .white
+
+        cell.backgroundColor = cellBackgroundColor
 
         let backgroundView = UIView(frame: cell.bounds)
         backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 1)

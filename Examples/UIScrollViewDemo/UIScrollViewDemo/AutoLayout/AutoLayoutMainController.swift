@@ -41,7 +41,8 @@ class AutoLayoutMainController: UIViewController {
             TableViewSelfsizing.self,
             LayoutTrasition.self,
             ExpandingCollectionViewController.self,
-            TableViewFooterSelfSizing.self
+            TableViewFooterSelfSizing.self,
+            HiddenLayoutTestController.self
         ],
         [
             SimpleStackViewController.self,

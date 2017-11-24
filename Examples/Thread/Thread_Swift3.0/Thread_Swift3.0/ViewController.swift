@@ -23,10 +23,24 @@ class ViewController: UIViewController {
 //        dispatchIO()
 //        listenFile()
 
-        let formattedString = "A string"
-        let data = Array(formattedString.utf8).withUnsafeBytes {
-            DispatchData(bytes: $0)
+//        let formattedString = "A string"
+//        let data = Array(formattedString.utf8).withUnsafeBytes {
+//            DispatchData(bytes: $0)
+//        }
+        
+        serialQueue()
+    }
+
+    func serialQueue() {
+        let serialQueue = DispatchQueue(label: "", qos: .default)
+        serialQueue.async {
+            print(1)
         }
+        print(2)
+        serialQueue.async {
+            print(3)
+        }
+        print(4)
     }
 
     func listenFile() {

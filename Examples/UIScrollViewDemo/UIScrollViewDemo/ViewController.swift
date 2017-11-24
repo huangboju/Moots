@@ -37,6 +37,9 @@ class ViewController: UIViewController {
         ],
         [
             CardViewController.self
+        ],
+        [
+            BubbleViewController.self
         ]
     ]
 

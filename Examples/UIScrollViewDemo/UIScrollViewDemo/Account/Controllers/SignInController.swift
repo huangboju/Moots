@@ -27,6 +27,7 @@ class SignInController: GroupTableController, SignActionPresenter {
         tableView.tableFooterView = footerView
 
 //        HZUIHelper.renderTranslucentNav(in: self)
+        
 
         rows = [
             [

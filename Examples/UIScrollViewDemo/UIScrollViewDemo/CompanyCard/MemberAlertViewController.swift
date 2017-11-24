@@ -12,12 +12,28 @@ class MemberAlertViewController: UIViewController {
         
         view.backgroundColor = .blue
 
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showAlertAction))
+        
+        let item = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(showAlertAction))
+        let item1 = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(showPriceAction))
+        
+        navigationItem.rightBarButtonItems = [item, item1]
+    }
+
+    @objc
+    func testAction() {
+        print("aaaa")
+    }
+    
+    @objc
+    func showPriceAction() {
+        let priceAlert = MemberPriceAlert()
+        priceAlert.show()
     }
 
     @objc
     func showAlertAction() {
-        let alert = MemberAlertView()
+        let alert = MemberComponentAlertView()
+//        let alert = MemberAlertView()
         alert.show()
     }
 }

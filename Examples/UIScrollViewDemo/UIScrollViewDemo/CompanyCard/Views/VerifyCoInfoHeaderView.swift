@@ -85,12 +85,16 @@ class VerifyCoInfoHeaderView: UIView {
             make.top.equalTo(doubleLabel.snp.bottom).offset(10)
         }
 
-        let names = [
+        var names = [
             "房费8.8折",
             "免费早餐",
             "2倍积分",
             "延时退房至14:00"
         ]
+        
+        if SCREEN_WIDTH == 320 {
+            names.removeLast()
+        }
 
         var tmpDummyView: UIView?
         var rightsTextView: IconTextView?

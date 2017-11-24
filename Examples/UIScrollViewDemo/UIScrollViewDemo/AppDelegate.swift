@@ -15,6 +15,36 @@ let PADDING: CGFloat = 16
 
 import UIKit
 
+enum ValidateType {
+    case email, phoneNumber, idCard, password, number, englishName
+}
+
+extension String {
+    func validate(with type: ValidateType, autoShowAlert: Bool = true) -> Bool {
+        let regular: String
+        switch type {
+        case .email:
+            regular = "^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$"
+        case .phoneNumber:
+            regular = "^1(3[0-9]|4[57]|5[0-35-9]|8[0-9]|7[0-9])\\d{8}$"
+        case .idCard:
+            regular = "^(^\\d{15}$|^\\d{18}$|^\\d{17}(\\d|X|x))$"
+        case .number:
+            regular = "^\\d+(\\.\\d+)?$"
+        case .password:
+            regular = "^(?![0-9]+$)(?![a-zA-Z]+$)[a-zA-Z0-9]{8,20}"
+        case .englishName:
+            regular = "^[a-zA-Z\\u4E00-\\u9FA5]{2,20}"
+        }
+        let regexEmail = NSPredicate(format: "SELF MATCHES %@", regular)
+        if regexEmail.evaluate(with: self) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -22,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        
+
         return true
     }
 
