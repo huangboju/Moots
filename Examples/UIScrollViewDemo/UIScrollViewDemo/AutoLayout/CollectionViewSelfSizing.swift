@@ -29,6 +29,8 @@ class CollectionViewSelfSizing: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blue
+        
+        
 
         for _ in 0 ..< 10 {
             items.append("I'm trying to get self sizing UICollectionViewCells working with Auto Layout, but I can't seem to get the cells to size themselves to the content. I'm having trouble understanding how the cell's size is updated from the contents of what's inside the cell's contentView.")

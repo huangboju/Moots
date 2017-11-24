@@ -25,13 +25,7 @@ class TextFiledCell: UITableViewCell, Updatable {
         }
         textField.attributedPlaceholder = attri
 
-        guard let icon = UIImage(named: item.iconName) else {
-            textField.leftView = nil
-            textField.leftViewMode = .never
-            return
-        }
-        imageView?.image = icon
-        textField.leftViewMode = .always
+        imageView?.image = UIImage(named: item.iconName)
     }
 
     final func setRightView(with rightView: UIView?) {

@@ -28,7 +28,7 @@ class GroupTableController: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 44
         view.addSubview(tableView)
-        
+
         tableView.dataSource = self
         tableView.delegate = self
 
@@ -105,6 +105,7 @@ extension GroupTableController: UITableViewDataSource {
 
 extension GroupTableController: UITableViewDelegate {}
 
+// MARK - Keyboard
 extension GroupTableController {
     @objc
     private func keyboardWillShow(_ notification: NSNotification) {

@@ -50,6 +50,9 @@ class VerifyCoInfoController: GroupTableController, CoVerifyActionable {
                 Row<VerifyCoInfoNotNeededCell>(viewData: NoneItem())
             ]
         ]
+
+        let headerView: VerifyCoInfoHeaderView? = tableHeaderView()
+        headerView?.model = "华住金会员权益"
     }
 
     @objc
@@ -59,9 +62,6 @@ class VerifyCoInfoController: GroupTableController, CoVerifyActionable {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
-        let headerView: VerifyCoInfoHeaderView? = tableHeaderView()
-        headerView?.model = "华住金会员权益"
     }
 }
 
