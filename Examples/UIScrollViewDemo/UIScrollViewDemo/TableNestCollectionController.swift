@@ -113,9 +113,9 @@ class TableNestCollectionCell: UITableViewCell {
 
             collectionView.layoutIfNeeded()
             let height = collectionView.collectionViewLayout.collectionViewContentSize.height
-            let aaa = dummyView.heightAnchor.constraint(equalToConstant: height)
-            aaa.priority = UILayoutPriority(999)
-            aaa.isActive = true
+            let heightAnchor = dummyView.heightAnchor.constraint(equalToConstant: height)
+            heightAnchor.priority = UILayoutPriority(999)
+            heightAnchor.isActive = true
         }
     }
 }
