@@ -329,6 +329,7 @@
 			children = (
 				BE1093F61F9B509400CD4804 /* AutoLayoutCookbook */,
 				BE41600E1F1DD997007B619B /* AutoLayoutController.swift */,
+				BED604BD1FD14C420099151E /* TableNestCollectionController.swift */,
 				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
 				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
@@ -543,7 +544,6 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BED604BD1FD14C420099151E /* TableNestCollectionController.swift */,
 				BE1B15501FB2A40300862271 /* Reusable */,
 				BE1B154B1FB1B0AD00862271 /* CompanyCard */,
 				BEBE4A001FAC07F900A9CA9A /* Account */,
