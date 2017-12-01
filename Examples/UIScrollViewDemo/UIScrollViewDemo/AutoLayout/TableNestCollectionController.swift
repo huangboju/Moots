@@ -111,6 +111,7 @@ class TableNestCollectionCell: UITableViewCell {
         didSet {
             collectionView.reloadData()
 
+            // http://www.cocoachina.com/bbs/read.php?tid=111832
             collectionView.layoutIfNeeded()
             let height = collectionView.collectionViewLayout.collectionViewContentSize.height
             let heightAnchor = dummyView.heightAnchor.constraint(equalToConstant: height)
