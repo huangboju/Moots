@@ -37,6 +37,9 @@ class ViewController: UIViewController {
         ],
         [
             CalendarViewController.self
+        ],
+        [
+            TableNestCollectionController.self
         ]
     ]
 

@@ -103,6 +103,7 @@
 		BED1CCF71FB2E6C6002FE096 /* MyCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */; };
 		BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */; };
 		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
+		BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BD1FD14C420099151E /* TableNestCollectionController.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -263,6 +264,7 @@
 		BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyController.swift; sourceTree = "<group>"; };
 		BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
+		BED604BD1FD14C420099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BED604BD1FD14C420099151E /* TableNestCollectionController.swift */,
 				BE1B15501FB2A40300862271 /* Reusable */,
 				BE1B154B1FB1B0AD00862271 /* CompanyCard */,
 				BEBE4A001FAC07F900A9CA9A /* Account */,
@@ -725,6 +728,7 @@
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
 				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
+				BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */,
 				BE4FCA791FB93D3800E1C3F0 /* MemberComponentAlertView.swift in Sources */,
 				BE95F4F41FC404DC0033D83B /* ResetPasswrodCell.swift in Sources */,
 				BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */,

@@ -67,7 +67,7 @@ class MyCoRightsRecommendView: UIView {
     
     public var data: [String] = []
     
-    private let layout = UICollectionViewFlowLayout()
+    private let layout = MyCollectionViewLayout()
     
     private(set) var collectionView: UICollectionView!
 
@@ -90,7 +90,7 @@ class MyCoRightsRecommendView: UIView {
             collectionView.delegate = self
             collectionView.backgroundColor = .white
             collectionView.register(cellType: MyCoRightsRecommendViewCell.self)
-
+            collectionView.register(MyCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
             return collectionView
         }()
 
@@ -103,7 +103,7 @@ class MyCoRightsRecommendView: UIView {
         self.headerView = headerView
         collectionView.addSubview(headerView)
     }
-    
+
     public func freshView() {
         collectionView.reloadData()
     }
@@ -123,6 +123,10 @@ extension MyCoRightsRecommendView: UICollectionViewDataSource {
         cell.updateCell()
         return cell
     }
+
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
+    }
 }
 
 extension MyCoRightsRecommendView: UICollectionViewDelegateFlowLayout {
@@ -133,7 +137,40 @@ extension MyCoRightsRecommendView: UICollectionViewDelegateFlowLayout {
             return .zero
         }
         size.height -= 64
-        return size
+        return CGSize(width: SCREEN_WIDTH, height: size.height)
+    }
+}
+
+class MyCollectionHeaderView: UICollectionReusableView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = .red
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class MyCollectionViewLayout: UICollectionViewFlowLayout {
+    
+    override func prepare() {
+        super.prepare()
+        
+    }
+    
+    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+        let attrs = super.layoutAttributesForElements(in: rect)
+
+        if let aaa = attrs {
+            for attr in aaa {
+                if attr.representedElementKind == UICollectionElementKindSectionHeader {
+                    print(attr)
+                }
+            }
+        }
+
+        return attrs
     }
 }
 

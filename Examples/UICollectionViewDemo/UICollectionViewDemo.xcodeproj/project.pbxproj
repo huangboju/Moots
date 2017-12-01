@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BED604BC1FD129800099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BB1FD129800099151E /* TableNestCollectionController.swift */; };
 		D813FFC41DEC215900B81BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFC31DEC215900B81BA9 /* AppDelegate.swift */; };
 		D813FFC61DEC215900B81BA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFC51DEC215900B81BA9 /* ViewController.swift */; };
 		D813FFC91DEC215900B81BA9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D813FFC71DEC215900B81BA9 /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BED604BB1FD129800099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		D813FFC01DEC215900B81BA9 /* UICollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D813FFC31DEC215900B81BA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D813FFC51DEC215900B81BA9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				D8ED296D1DF808B100AA03E9 /* UIButton+Extension.swift */,
 				D8ED29711DF80D9200AA03E9 /* IconLabelController.swift */,
 				D8ED29731DF810B500AA03E9 /* IconLabelCell.swift */,
+				BED604BB1FD129800099151E /* TableNestCollectionController.swift */,
 			);
 			path = UICollectionViewDemo;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 				D813FFE41DEC22A500B81BA9 /* GapController.swift in Sources */,
 				D8ED29701DF8090100AA03E9 /* IconLabel.swift in Sources */,
 				D8ED29741DF810B500AA03E9 /* IconLabelCell.swift in Sources */,
+				BED604BC1FD129800099151E /* TableNestCollectionController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
