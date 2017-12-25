@@ -9,7 +9,7 @@
         <b>UICollectionView highlight</b>
     </summary>
 
-    ```swift
+```swift
         // 方法一
         func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
                 cell.backgroundColor = .white
@@ -33,7 +33,8 @@
                 let cell = collectionView.cellForItem(at: indexPath)
                 cell?.contentView.backgroundColor = nil
         }
-  ```
+```
+
 </details>
 
 
@@ -42,6 +43,7 @@
     <summary>
         <b>泛型约束</b>
     </summary>
+
 ```swift
 protocol ArrayPresenter {
     associatedtype ViewType: UIScrollView
@@ -52,6 +54,7 @@ func loadMore<T: UIScrollView>(listView: T, indexPath: NSIndexPath) where T: You
 
 }
 ```
+
 </details>
 
 
@@ -298,20 +301,24 @@ return tabBarController?.tabBar.frame.minY < view.frame.maxY
 
 
 <details>
-<summary>
-  <b>导航栏标返回图片</b>
-</summary>
+  <summary>
+    <b>导航栏标返回图片</b>
+  </summary>
+
 ```swift
 navigationBar.backIndicatorTransitionMaskImage = R.image.ic_nav_back()
 navigationBar.backIndicatorImage = R.image.ic_nav_back()
 ```
+
 </details>
 
 
+
 <details>
-<summary>
-  <b><a href="http://www.jianshu.com/p/4e9619483035">tableView分割线左边到头</a>(_UITableViewCellSeparatorView)</b>
-</summary>
+      <summary>
+        <b><a href="http://www.jianshu.com/p/4e9619483035">tableView分割线左边到头</a>(_UITableViewCellSeparatorView)</b>
+      </summary>
+
 ```swift
 //写在viewDidLoad http://www.jianshu.com/p/1274343055a7
 if tableView.respondsToSelector(Selector("setSeparatorInset:")) {
@@ -336,13 +343,15 @@ preservesSuperviewLayoutMargins = false
 layoutMargins = UIEdgeInsetsZero
 }
 ```
+
 </details>
 
 
 <details>
-<summary>
-  <b>虚线</b>
-</summary>
+      <summary>
+        <b>虚线</b>
+      </summary>
+
 ```swift
 func drawDottedLine(lineView: UIView, offset: CGPoint) {
     let shapeLayer = CAShapeLayer()
@@ -366,9 +375,10 @@ func drawDottedLine(lineView: UIView, offset: CGPoint) {
 
 
 <details>
-<summary>
-  <b>部分圆角图片</b>
-</summary>
+    <summary>
+      <b>部分圆角图片</b>
+    </summary>
+
 ```swift
 func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
     let imageView = UIImageView(image: image)
@@ -385,9 +395,10 @@ func cornerImage(frame: CGRect, image: UIImage, Radii: CGSize) -> UIImageView {
 
 
 <details>
-<summary>
-  <b>圆角图片(<a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a>里面有切圆角的方法)</b>
-</summary>
+    <summary>
+      <b>圆角图片(<a href="https://github.com/Alamofire/AlamofireImage">AlamofireImage</a>里面有切圆角的方法)</b>
+    </summary>
+
 ```swift
 extension UIImageView {
 
@@ -419,9 +430,10 @@ extension UIImage {
 
 
 <details>
-<summary>
-  <b>通过字符串构建类</b>
-</summary>
+  <summary>
+      <b>通过字符串构建类</b>
+  </summary>
+
 ```swift
 extension String {
     func fromClassName() -> NSObject {
@@ -447,6 +459,7 @@ extension NSObject {
 <summary>
   <b>修改状态栏背景颜色</b>
 </summary>
+
 ```swift
 func setStatusBarBackgroundColor(color: UIColor) {
     guard  let statusBar = UIApplication.sharedApplication().valueForKey("statusBarWindow")?.valueForKey("statusBar") as? UIView else {
@@ -468,9 +481,10 @@ swift3.0
 
 
 <details>
-<summary>
-  <b>裁剪图片</b>
-</summary>
+    <summary>
+      <b>裁剪图片</b>
+    </summary>
+
 ```swift
 extension UIImage {
     func cutOutImageWithRect(rect: CGRect) -> UIImage {
@@ -493,9 +507,10 @@ extension UIImage {
 
 
 <details>
-<summary>
-  <b>UIButton响应区域太小</b>
-</summary>
+    <summary>
+      <b>UIButton响应区域太小</b>
+    </summary>
+
 ```swift
 extension UIButton {
     //处理button太小
