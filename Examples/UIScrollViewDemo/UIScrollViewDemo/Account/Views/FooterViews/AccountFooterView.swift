@@ -45,7 +45,7 @@ class AccountFooterView: UIView {
             make.width.equalTo(230)
             make.centerX.equalTo(snp.centerX)
         }
-        
+
         creatOtherSocialView()
 
         if let groupButtonView = creatGroupButtonView() {
@@ -118,8 +118,7 @@ class AccountFooterView: UIView {
             tmpBtn = button
         }
     }
-    
-    
+
     // MARK: - Actions
     @objc private func wechatAction() {
 
@@ -128,7 +127,7 @@ class AccountFooterView: UIView {
     @objc private func weiboAction() {
         
     }
-    
+
     @objc private func qqAction() {
         
     }

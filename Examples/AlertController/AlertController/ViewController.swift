@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         button.addTarget(self, action: #selector(action), for: .touchUpInside)
         button.backgroundColor = .green
         view.addSubview(button)
+        
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
     }
 
     func action() {
