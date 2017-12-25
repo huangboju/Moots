@@ -658,10 +658,14 @@ sudo gem install cocoapods -v 0.25.0
 
 <details>
 <summary>
-  <b>修改Xcode自动生成的文件注释来导出API文档</b>
+  <b>
+    <a href="http://www.jianshu.com/p/d0c7d9040c93">
+      修改Xcode自动生成的文件注释来导出API文档
+    </a>
+  </b>
 </summary>
+
 ```
-http://www.jianshu.com/p/d0c7d9040c93
 open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source
 ```
 </details>
