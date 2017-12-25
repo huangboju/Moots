@@ -9,7 +9,7 @@
         <b>UICollectionView highlight</b>
     </summary>
 
-```swift
+<code>
 
 // 方法一
 func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
@@ -34,15 +34,15 @@ func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt ind
         let cell = collectionView.cellForItem(at: indexPath)
         cell?.contentView.backgroundColor = nil
 }
-```
+</code>
 </details>
 
 
 
 <details>
-  <summary>
-    <b>泛型约束</b>
-  </summary>
+    <summary>
+        <b>泛型约束</b>
+    </summary>
 ```swift
 protocol ArrayPresenter {
     associatedtype ViewType: UIScrollView
@@ -56,10 +56,11 @@ func loadMore<T: UIScrollView>(listView: T, indexPath: NSIndexPath) where T: You
 </details>
 
 
+
 <details>
-<summary>
-<b>银行金额验证</b>
-</summary>
+    <summary>
+         <b>银行金额验证</b>
+    </summary>
 
 ```swift
 extension String {
