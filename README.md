@@ -40,9 +40,9 @@ func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt ind
 
 
 <details>
-<summary>
-  <b>泛型约束</b>
-</summary>
+  <summary>
+    <b>泛型约束</b>
+  </summary>
 ```swift
 protocol ArrayPresenter {
     associatedtype ViewType: UIScrollView
