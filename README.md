@@ -9,32 +9,31 @@
         <b>UICollectionView highlight</b>
     </summary>
 
-<code>
+    ```swift
+        // 方法一
+        func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+                cell.backgroundColor = .white
 
-// 方法一
-func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.backgroundColor = .white
+                let backgroundView = UIView(frame: cell.frame)
+                backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+                cell.selectedBackgroundView = backgroundView
+        }
 
-        let backgroundView = UIView(frame: cell.frame)
-        backgroundView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-        cell.selectedBackgroundView = backgroundView
-}
+        func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+             collectionView.deselectItem(at: indexPath, animated: true)
+        }
 
-func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-     collectionView.deselectItem(at: indexPath, animated: true)
-}
+        // 方法二(有延时)
+        func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+                let cell = collectionView.cellForItem(at: indexPath)
+                cell?.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        }
 
-// 方法二(有延时)
-func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.contentView.backgroundColor = UIColor(white: 0.9, alpha: 1)
-}
-
-func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath)
-        cell?.contentView.backgroundColor = nil
-}
-</code>
+        func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+                let cell = collectionView.cellForItem(at: indexPath)
+                cell?.contentView.backgroundColor = nil
+        }
+  ```
 </details>
 
 
