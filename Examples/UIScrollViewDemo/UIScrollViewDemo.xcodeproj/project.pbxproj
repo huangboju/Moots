@@ -104,6 +104,7 @@
 		BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */; };
 		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
 		BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BD1FD14C420099151E /* TableNestCollectionController.swift */; };
+		BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -265,6 +266,7 @@
 		BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
 		BED604BD1FD14C420099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
+		BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSelfsizingController.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -336,6 +338,7 @@
 				BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */,
 				BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */,
 				BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */,
+				BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -777,6 +780,7 @@
 				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
+				BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
 				BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */,
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,

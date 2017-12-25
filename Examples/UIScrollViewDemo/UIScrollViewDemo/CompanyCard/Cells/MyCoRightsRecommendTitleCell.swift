@@ -20,6 +20,10 @@ class MyCoRightsRecommendTitleCell: UITableViewCell, Updatable {
         super.layoutSubviews()
         textLabel?.frame.origin.x = 19
     }
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

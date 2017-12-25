@@ -11,6 +11,7 @@ import UIKit
 class AutoLayoutBaseController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         initSubviews()
     }
 
@@ -43,7 +44,8 @@ class AutoLayoutMainController: UIViewController {
             ExpandingCollectionViewController.self,
             TableViewFooterSelfSizing.self,
             HiddenLayoutTestController.self,
-            TableNestCollectionController.self
+            TableNestCollectionController.self,
+            TextViewSelfsizingController.self
         ],
         [
             SimpleStackViewController.self,

@@ -57,6 +57,7 @@ class GirdView<C>: UIView, UICollectionViewDataSource, UICollectionViewDelegate 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate =  self
         collectionView.dataSource = self
+        collectionView.backgroundColor = .clear
         collectionView.register(C.self, forCellWithReuseIdentifier: "cellID")
         return collectionView
     }()

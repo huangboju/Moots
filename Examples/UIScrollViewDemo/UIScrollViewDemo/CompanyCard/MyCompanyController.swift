@@ -9,7 +9,7 @@
 class MyCompanyController: UIViewController {
     
     static let formViewHeight: CGFloat = 434
-    
+
     private lazy var formView: FormView = {
         let formView = FormView()
         let headerView = MyCompanyFormHeaderView(frame: CGSize(width: SCREEN_WIDTH, height: 0.1).rect)
@@ -18,6 +18,7 @@ class MyCompanyController: UIViewController {
         formView.separatorStyle = .none
         formView.isScrollEnabled = false
         formView.backgroundColor = .white
+        formView.delegate = self
 
         formView.rows = [
             [
@@ -69,5 +70,11 @@ class MyCompanyController: UIViewController {
 
         formView.frame = CGSize(width: view.bounds.width, height: type(of: self).formViewHeight).rect
         myCoRightsRecommendView.frame = view.bounds
+    }
+}
+
+extension MyCompanyController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(#function)
     }
 }
