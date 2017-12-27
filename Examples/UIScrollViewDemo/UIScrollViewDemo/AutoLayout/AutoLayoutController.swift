@@ -29,7 +29,22 @@ class AutoLayoutController: UIViewController {
         centerView()
         
         twoEqual()
+        
+//        initTextLabel()
 
+    }
+    
+    func initTextLabel() {
+        let textLabel = UILabel()
+        textLabel.textAlignment = .center
+        textLabel.numberOfLines = 3
+        textLabel.text = "Reveal是iOS开发工具中的神器之一，它能够在应用程序运行过程中"
+        view.addSubview(textLabel)
+        textLabel.snp.makeConstraints { (make) in
+            make.leading.equalTo(15)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view.snp.centerX)
+        }
     }
 
     func twoEqual() {

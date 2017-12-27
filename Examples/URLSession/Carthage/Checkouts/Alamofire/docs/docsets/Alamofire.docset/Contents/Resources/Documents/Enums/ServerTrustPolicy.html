@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ServerTrustPolicy Enum Reference</title>
+    <title>ServerTrustPolicy Enumeration Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset="utf-8">
@@ -16,7 +16,7 @@
 
     <a name="//apple_ref/swift/Enum/ServerTrustPolicy" class="dashAnchor"></a>
 
-    <a title="ServerTrustPolicy Enum Reference"></a>
+    <a title="ServerTrustPolicy Enumeration Reference"></a>
 
     <header class="header">
       <p class="header-col header-col--primary">
@@ -50,7 +50,7 @@
     <p class="breadcrumbs">
       <a class="breadcrumb" href="../index.html">Alamofire Reference</a>
       <img class="carat" src="../img/carat.png" />
-      ServerTrustPolicy Enum Reference
+      ServerTrustPolicy Enumeration Reference
     </p>
 
     <div class="content-wrapper">
@@ -110,7 +110,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Enums.html">Enums</a>
+            <a class="nav-group-name-link" href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Enums/AFError.html">AFError</a>
@@ -244,7 +244,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Structs.html">Structs</a>
+            <a class="nav-group-name-link" href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Structs/DataResponse.html">DataResponse</a>
@@ -282,7 +282,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="../Typealiases.html">Typealiases</a>
+            <a class="nav-group-name-link" href="../Typealiases.html">Type Aliases</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Typealiases.html#/s:9Alamofire11HTTPHeadersa">HTTPHeaders</a>
@@ -370,7 +370,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">performDefaultEvaluation</span><span class="p">(</span><span class="nv">validateHost</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -401,7 +401,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">performRevokedEvaluation</span><span class="p">(</span><span class="nv">validateHost</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">revocationFlags</span><span class="p">:</span> <span class="kt">CFOptionFlags</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -432,7 +432,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">pinCertificates</span><span class="p">(</span><span class="nv">certificates</span><span class="p">:</span> <span class="p">[</span><span class="kt">SecCertificate</span><span class="p">],</span> <span class="nv">validateCertificateChain</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">validateHost</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -463,7 +463,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">pinPublicKeys</span><span class="p">(</span><span class="nv">publicKeys</span><span class="p">:</span> <span class="p">[</span><span class="kt">SecKey</span><span class="p">],</span> <span class="nv">validateCertificateChain</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">,</span> <span class="nv">validateHost</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -494,7 +494,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">disableEvaluation</span></code></pre>
 
                         </div>
                       </div>
@@ -525,7 +525,7 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">ServerTrustPolicy</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="nf">customEvaluation</span><span class="p">((</span><span class="n">_</span> <span class="nv">serverTrust</span><span class="p">:</span> <span class="kt">SecTrust</span><span class="p">,</span> <span class="n">_</span> <span class="nv">host</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -724,8 +724,8 @@ to route all communication over an HTTPS connection with pinning enabled.</p>
       </article>
     </div>
     <section class="footer">
-      <p>&copy; 2017 <a class="link" href="http://alamofire.org/" target="_blank" rel="external">Alamofire Software Foundation</a>. All rights reserved. (Last updated: 2017-08-25)</p>
-      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+      <p>&copy; 2017 <a class="link" href="http://alamofire.org/" target="_blank" rel="external">Alamofire Software Foundation</a>. All rights reserved. (Last updated: 2017-12-03)</p>
+      <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
     </section>
   </body>
 </div>
