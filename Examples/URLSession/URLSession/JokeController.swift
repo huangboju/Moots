@@ -181,12 +181,6 @@ class JokeController: UITableViewController {
         openURL(type: #function)
     }
 
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        let content = contents[indexPath.section]
-//        let height = content.heightWithConstrainedWidth(font: font)
-//        return height + 16 // ？？？ 这里为什么会有误差我也不知道(如果用自己自定义的label不会出现)
-//    }
-
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         guard section == contents.count else {
             let customView = UIView()
