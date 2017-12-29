@@ -14,6 +14,7 @@
 </details>
 
 
+
 <details>
   <summary>
     <b>控件库(里面有你所需要的各种控件)</b>
@@ -104,7 +105,9 @@
 
 
 <details>
-  <summary><b>TableView展开cell</b></summary>
+  <summary>
+    <b>TableView展开cell</b>
+  </summary>
     <ul>
         <li>
             <a href="https://github.com/sakkaras/SKSTableView">SKSTableView</a>(OC)
@@ -169,26 +172,22 @@
         <b>约束</b>
   </summary>
     <ul>
-      <li>
-        <a href="https://github.com/SnapKit/SnapKit">SnapKit</a>(Swift)
-      </li>
-      <li>
-        <a href="https://github.com/stevestreza/Relayout">Relayout</a>(Swift)
-      </li>
-      <li>
-        <a href="https://github.com/PureLayout/PureLayout">PureLayout</a>(OC)
-      </li>
+      <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
+      <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
+      <li>[PureLayout](https://github.com/PureLayout/PureLayout)(OC)</li>
     </ul>
 </details>
 
 
 <details>
-  <summary><b>滚动导航栏</b></summary>
+  <summary>
+    <b>滚动导航栏</b>
+  </summary>
     <ul>
-    <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
-    <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
-    <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
-    <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
+      <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
+      <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
+      <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
+      <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
     </ul>
 </details>
 
@@ -233,32 +232,40 @@
 
 
 <details>
-  <summary><b>Swift的扩展</b></summary>
+  <summary>
+    <b>Swift的扩展</b>
+  </summary>
     <ul>
-    <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
-    <li>[EZSwiftExtensions](https://github.com/goktugyil/EZSwiftExtensions)(Swift)</li>
+      <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
+      <li>[EZSwiftExtensions](https://github.com/goktugyil/EZSwiftExtensions)(Swift)</li>
     </ul>
 </details>
 
 
 <details>
-<summary>
-    <b><a href="https://github.com/joedaniels29/10Clock">10Clock</a>(Swift)</b>
-</summary>
+  <summary>
+    <b>
+      <a href="https://github.com/joedaniels29/10Clock">10Clock</a>(Swift)
+    </b>
+  </summary>
 这个控件是一个美丽的时间选择器大量启发的iOS 10“睡前”定时器。
 </details>
 
 
 <details>
 <summary>
-    <b><a href="https://github.com/wangjwchn/AImage">AImage</a>(Swift)</b>
+    <b>
+      <a href="https://github.com/wangjwchn/AImage">AImage</a>(Swift)
+    </b>
 </summary>
 Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化。
 </details>
 
 
 <details>
-  <summary><b>Alert</b></summary>
+  <summary>
+    <b>Alert</b>
+  </summary>
     <ul>
       <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)(Swift)</li>
       <li>[Presentr](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
@@ -277,17 +284,19 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 <details>
 <summary>
-    <b><a href="https://github.com/alskipp/ASProgressPopUpView">ASProgressPopUpView</a>(OC)</b>
+    <b>
+      <a href="https://github.com/alskipp/ASProgressPopUpView">ASProgressPopUpView</a>(OC)
+    </b>
 </summary>
-显示弹出式视图中完成百分比的进度视图
+  显示弹出式视图中完成百分比的进度视图
 </details>
 
 
 <details>
-<summary>
-  **[ALCameraViewController](https://github.com/AlexLittlejohn/ALCameraViewController)(Swift)**
-</summary>
-具有自定义图像选择器和图像裁剪的摄像机视图控制器。
+  <summary>
+    **[ALCameraViewController](https://github.com/AlexLittlejohn/ALCameraViewController)(Swift)**
+  </summary>
+  具有自定义图像选择器和图像裁剪的摄像机视图控制器。
 </details>
 
 
