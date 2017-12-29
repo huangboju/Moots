@@ -220,11 +220,19 @@
 
 
 <details>
-  <summary><b>转场动画</b></summary>
+  <summary>
+    <b>转场动画</b>
+  </summary>
     <ul>
-    <li>[TransitionTreasury](https://github.com/DianQK/TransitionTreasury)(Swift)</li>
-    <li>[ADTransitionController](https://github.com/applidium/ADTransitionController)(OC)</li>
-    <li>[VCTransitionsLibrary](https://github.com/ColinEberhardt/VCTransitionsLibrary)(OC)</li>
+      <li>
+        <a href="https://github.com/DianQK/TransitionTreasury">TransitionTreasury</a>(Swift)
+      </li>
+      <li>
+        <a href="https://github.com/applidium/ADTransitionController">ADTransitionController</a>(OC)
+      </li>
+      <li>
+        <a href="https://github.com/ColinEberhardt/VCTransitionsLibrary">VCTransitionsLibrary</a>(OC)
+      </li>
     </ul>
 </details>
 
