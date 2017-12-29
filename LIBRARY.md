@@ -179,7 +179,7 @@
           <a href="https://github.com/stevestreza/Relayout">Relayout</a>(Swift)
       </li>
       <li>
-          <a href="(https://github.com/PureLayout/PureLayout">PureLayout</a>(OC)
+          <a href="https://github.com/PureLayout/PureLayout">PureLayout</a>(OC)
       </li>
     </ul>
 </details>
@@ -190,10 +190,15 @@
     <b>滚动导航栏</b>
   </summary>
     <ul>
-      <li>[TLYShyNavBar](https://github.com/telly/TLYShyNavBar)(OC)</li>
-      <li>[AMScrollingNavbar](https://github.com/andreamazz/AMScrollingNavbar)(Swift)</li>
-      <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
-      <li>[BLKFlexibleHeightBar](https://github.com/bryankeller/BLKFlexibleHeightBar)(OC)</li>
+      <li>
+        <a href="https://github.com/telly/TLYShyNavBar">TLYShyNavBar</a>(OC)
+      </li>
+      <li>
+        <a href="https://github.com/andreamazz/AMScrollingNavbar">AMScrollingNavbar</a>(Swift)
+      </li>
+      <li>
+        <a href="https://github.com/bryankeller/BLKFlexibleHeightBar">BLKFlexibleHeightBar</a>(OC)
+      </li>
     </ul>
 </details>
 
