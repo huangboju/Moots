@@ -273,8 +273,12 @@
     <b>Swift的扩展</b>
   </summary>
     <ul>
-      <li>[SwifterSwift](https://github.com/omaralbeik/SwifterSwift)(Swift)</li>
-      <li>[EZSwiftExtensions](https://github.com/goktugyil/EZSwiftExtensions)(Swift)</li>
+      <li>
+        <a href="https://github.com/omaralbeik/SwifterSwift">SwifterSwift</a>(Swift)
+      </li>
+      <li>
+        <a href="https://github.com/goktugyil/EZSwiftExtensions">EZSwiftExtensions</a>(Swift)
+      </li>
     </ul>
 </details>
 
