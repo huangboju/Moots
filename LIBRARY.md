@@ -240,8 +240,12 @@
 <details>
   <summary><b>陌陌卡片的喜欢和不喜欢</b></summary>
     <ul>
-    <li>[TinderSimpleSwipeCards](https://github.com/cwRichardKim/TinderSimpleSwipeCards)(OC)</li>
-    <li>[MDCSwipeToChoose](https://github.com/modocache/MDCSwipeToChoose)(OC)</li>
+      <li>
+        <a href="https://github.com/cwRichardKim/TinderSimpleSwipeCards">TinderSimpleSwipeCards</a>(OC)
+      </li>
+      <li>
+        <a href="https://github.com/modocache/MDCSwipeToChoose">MDCSwipeToChoose</a>(OC)
+      </li>
     </ul>
 </details>
 
