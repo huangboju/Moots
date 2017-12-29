@@ -308,16 +308,24 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
     <b>Alert</b>
   </summary>
     <ul>
-      <li>[CDAlertView](https://github.com/candostdagdeviren/CDAlertView)(Swift)</li>
-      <li>[Presentr](https://github.com/IcaliaLabs/Presentr)(Swift)</li>
-      <li>[SDCAlertView](https://github.com/sberrevoets/SDCAlertView)(Swift)</li>
+      <li>
+        <a href="https://github.com/candostdagdeviren/CDAlertView">CDAlertView</a>(Swift)
+      </li>
+      <li>
+        <a href="https://github.com/IcaliaLabs/Presentr">Presentr</a>(Swift)
+      </li>
+      <li>
+        <a href="https://github.com/sberrevoets/SDCAlertView">SDCAlertView</a>(Swift)
+      </li>
     </ul>
 </details>
 
 
 <details>
 <summary>
-    <b><a href="https://github.com/Akkyie/AKPickerView-Swift">AKPickerView</a>(Swift)</b>
+    <b>
+      <a href="https://github.com/Akkyie/AKPickerView-Swift">AKPickerView</a>(Swift)
+    </b>
 </summary>
 一个简单但可自定义的水平选择器视图。
 </details>
