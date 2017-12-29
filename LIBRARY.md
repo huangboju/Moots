@@ -151,16 +151,16 @@
   </summary>
     <ul>
       <li>
-            <a href="https://github.com/naoty/Timepiece">Timepiece</a>(Swift)
+          <a href="https://github.com/naoty/Timepiece">Timepiece</a>(Swift)
       </li>
       <li>
-            <a href="https://github.com/akosma/SwiftMoment">SwiftMoment</a>(Swift)
+          <a href="https://github.com/akosma/SwiftMoment">SwiftMoment</a>(Swift)
       </li>
       <li>
-            <a href="https://github.com/MatthewYork/DateTools">DateTools</a>(OC/Swift)
+          <a href="https://github.com/MatthewYork/DateTools">DateTools</a>(OC/Swift)
       </li>
       <li>
-            <a href="https://github.com/malcommac/SwiftDate">SwiftDate</a>(Swift)
+          <a href="https://github.com/malcommac/SwiftDate">SwiftDate</a>(Swift)
       </li>
     </ul>
 </details>
@@ -172,9 +172,15 @@
         <b>约束</b>
   </summary>
     <ul>
-      <li>[SnapKit](https://github.com/SnapKit/SnapKit)(Swift)</li>
-      <li>[Relayout](https://github.com/stevestreza/Relayout)(Swift)</li>
-      <li>[PureLayout](https://github.com/PureLayout/PureLayout)(OC)</li>
+      <li>
+          <a href="https://github.com/SnapKit/SnapKit">SnapKit</a>(Swift)
+      </li>
+      <li>
+          <a href="https://github.com/stevestreza/Relayout">Relayout</a>(Swift)
+      </li>
+      <li>
+          <a href="(https://github.com/PureLayout/PureLayout">PureLayout</a>(OC)
+      </li>
     </ul>
 </details>
 
