@@ -204,7 +204,9 @@
 
 
 <details>
-  <summary><b>类似微信支付弹出一个UIViewController</b></summary>
+  <summary>
+    <b>类似微信支付弹出一个UIViewController</b>
+  </summary>
     <ul>
       <li>
         <a href="https://github.com/layerhq/Atlas-iOS">MZFormSheetController</a>(OC)
@@ -307,24 +309,26 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
   <summary>
     <b>Alert</b>
   </summary>
-    <ul>
-      <li>
+  <ul>
+    <li>
         <a href="https://github.com/candostdagdeviren/CDAlertView">CDAlertView</a>(Swift)
-      </li>
-      <li>
+    </li>
+    <li>
         <a href="https://github.com/IcaliaLabs/Presentr">Presentr</a>(Swift)
-      </li>
-      <li>
+    </li>
+    <li>
         <a href="https://github.com/sberrevoets/SDCAlertView">SDCAlertView</a>(Swift)
-      </li>
-    </ul>
+    </li>
+  </ul>
 </details>
 
 
 <details>
 <summary>
     <b>
-      <a href="https://github.com/Akkyie/AKPickerView-Swift">AKPickerView</a>(Swift)
+      <a href="https://github.com/Akkyie/AKPickerView-Swift">
+        AKPickerView
+      </a>(Swift)
     </b>
 </summary>
 一个简单但可自定义的水平选择器视图。
@@ -332,27 +336,37 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 
 
 <details>
-<summary>
+  <summary>
     <b>
-      <a href="https://github.com/alskipp/ASProgressPopUpView">ASProgressPopUpView</a>(OC)
+      <a href="https://github.com/alskipp/ASProgressPopUpView">
+        ASProgressPopUpView
+      </a>(OC)
     </b>
-</summary>
+  </summary>
   显示弹出式视图中完成百分比的进度视图
 </details>
 
 
 <details>
   <summary>
-    **[ALCameraViewController](https://github.com/AlexLittlejohn/ALCameraViewController)(Swift)**
+    <b>
+      <a href="https://github.com/AlexLittlejohn/ALCameraViewController">
+        ALCameraViewController
+      </a>(Swift)
+    </b>
   </summary>
   具有自定义图像选择器和图像裁剪的摄像机视图控制器。
 </details>
 
 
 <details>
-<summary>
-  **[BabyBluetooth](https://github.com/coolnameismy/BabyBluetooth)(OC)**
-</summary>
+  <summary>
+    <b>
+      <a href="https://github.com/coolnameismy/BabyBluetooth">
+        BabyBluetooth
+      </a>(OC)
+    </b>
+  </summary>
 蓝牙
 </details>
 
