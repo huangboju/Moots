@@ -30,8 +30,8 @@ class LayoutTrasition: UIViewController {
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
             sender.snp.updateConstraints { (make) in
                 make.height.width.equalTo(sender.isSelected ? 200 : 80)
-                self.view.layoutIfNeeded()
             }
+            sender.layoutIfNeeded()
         }, completion: nil)
     }
 }
