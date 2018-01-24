@@ -17,12 +17,12 @@ class TextViewSelfsizingCell: UITableViewCell, Reusable {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         selectionStyle = .none
 
         contentView.addSubview(textView)
 
         textView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 15).isActive = true
+
         textView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15).isActive = true
         textView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
         textView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true

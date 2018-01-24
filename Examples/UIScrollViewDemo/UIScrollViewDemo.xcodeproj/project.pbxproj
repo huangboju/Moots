@@ -63,6 +63,7 @@
 		BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FCA811FB9434F00E1C3F0 /* CoRightsFrameView.swift */; };
 		BE4FCA8F1FB96A6A00E1C3F0 /* MemberPriceAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4FCA8E1FB96A6A00E1C3F0 /* MemberPriceAlert.swift */; };
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
+		BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */; };
 		BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */; };
 		BE894E821FBD3BC900585DF6 /* HiddenLayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */; };
 		BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */; };
@@ -225,6 +226,7 @@
 		BE4FCA811FB9434F00E1C3F0 /* CoRightsFrameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoRightsFrameView.swift; sourceTree = "<group>"; };
 		BE4FCA8E1FB96A6A00E1C3F0 /* MemberPriceAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberPriceAlert.swift; sourceTree = "<group>"; };
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
+		BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
 		BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewController.swift; sourceTree = "<group>"; };
 		BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLayoutTestController.swift; sourceTree = "<group>"; };
 		BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
@@ -329,9 +331,9 @@
 		BE1093F31F9B4E9E00CD4804 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
+				BE75381620076B01003FE13E /* TableNestCollectionController */,
 				BE1093F61F9B509400CD4804 /* AutoLayoutCookbook */,
 				BE41600E1F1DD997007B619B /* AutoLayoutController.swift */,
-				BED604BD1FD14C420099151E /* TableNestCollectionController.swift */,
 				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
 				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
@@ -473,6 +475,15 @@
 				BE4FCA811FB9434F00E1C3F0 /* CoRightsFrameView.swift */,
 			);
 			path = MemberAlert;
+			sourceTree = "<group>";
+		};
+		BE75381620076B01003FE13E /* TableNestCollectionController */ = {
+			isa = PBXGroup;
+			children = (
+				BED604BD1FD14C420099151E /* TableNestCollectionController.swift */,
+				BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */,
+			);
+			path = TableNestCollectionController;
 			sourceTree = "<group>";
 		};
 		BEBE4A001FAC07F900A9CA9A /* Account */ = {
@@ -842,6 +853,7 @@
 				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
 				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
+				BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
