@@ -12,6 +12,8 @@
 		81E3F7B31CEB25C000D746F4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3F7B11CEB25C000D746F4 /* Main.storyboard */; };
 		81E3F7B51CEB25C000D746F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E3F7B41CEB25C000D746F4 /* Assets.xcassets */; };
 		81E3F7B81CEB25C000D746F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E3F7B61CEB25C000D746F4 /* LaunchScreen.storyboard */; };
+		BE348FAC201C890A00310EF9 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE348FAB201C890A00310EF9 /* MainController.swift */; };
+		BEF78BF6201D9B700050BA31 /* InputBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF78BF5201D9B700050BA31 /* InputBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		81E3F7B41CEB25C000D746F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E3F7B71CEB25C000D746F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E3F7B91CEB25C000D746F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE348FAB201C890A00310EF9 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		BEF78BF5201D9B700050BA31 /* InputBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				81E3F7B41CEB25C000D746F4 /* Assets.xcassets */,
 				81E3F7B61CEB25C000D746F4 /* LaunchScreen.storyboard */,
 				81E3F7B91CEB25C000D746F4 /* Info.plist */,
+				BE348FAB201C890A00310EF9 /* MainController.swift */,
+				BEF78BF5201D9B700050BA31 /* InputBarController.swift */,
 			);
 			path = ExUIDatePicker;
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEF78BF6201D9B700050BA31 /* InputBarController.swift in Sources */,
 				81E3F7B01CEB25C000D746F4 /* ViewController.swift in Sources */,
+				BE348FAC201C890A00310EF9 /* MainController.swift in Sources */,
 				81E3F7AE1CEB25C000D746F4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
