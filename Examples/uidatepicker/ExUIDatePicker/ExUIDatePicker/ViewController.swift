@@ -183,6 +183,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = UIColor.white
 
         classPickerView = ClassPickerView(frame: CGRect(x: 16, y: 100, width: view.frame.width - 32, height: 44))
         classPickerView.backgroundColor = UIColor.red
@@ -195,9 +197,9 @@ class ViewController: UIViewController {
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        classPickerView.becomeFirstResponder()
+//        classPickerView.becomeFirstResponder()
 
-//        datePickerView.becomeFirstResponder()
+        datePickerView.becomeFirstResponder()
     }
     
 
