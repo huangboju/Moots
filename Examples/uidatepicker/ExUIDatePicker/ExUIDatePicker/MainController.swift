@@ -39,7 +39,8 @@ class MainController: UIViewController {
     lazy var data: [[UIViewController.Type]] = [
         [
             ViewController.self,
-            InputBarController.self
+            InputBarController.self,
+            InputBar1Controller.self
         ]
     ]
 
