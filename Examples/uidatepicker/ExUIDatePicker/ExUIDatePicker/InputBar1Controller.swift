@@ -10,7 +10,7 @@ import UIKit
 
 class InputBar1: UIView {
     
-    let bar = InputBar(frame: CGRect(x: 0, y: 0, width: width, height: 44))
+    let bar = InputBar(frame: CGRect(x: 0, y: 0, width: width, height: 47))
     
     override var inputAccessoryView: UIView? {
         return bar
@@ -20,6 +20,13 @@ class InputBar1: UIView {
     override func becomeFirstResponder() -> Bool {
         let result = super.becomeFirstResponder()
         bar.textView.becomeFirstResponder()
+        return result
+    }
+
+    @discardableResult
+    override func resignFirstResponder() -> Bool {
+        let result = super.resignFirstResponder()
+        bar.textView.resignFirstResponder()
         return result
     }
     
@@ -38,9 +45,16 @@ class InputBar1Controller: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(inputBar1)
+        let item1 = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(editAction))
+        let item2 = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(closeAction))
+        navigationItem.rightBarButtonItems = [item1, item2]
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    func editAction() {
         inputBar1.becomeFirstResponder()
+    }
+    
+    func closeAction() {
+        inputBar1.resignFirstResponder()
     }
 }
