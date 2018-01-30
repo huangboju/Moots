@@ -17,7 +17,7 @@ class InputBar: UIView, UITextViewDelegate {
     lazy var textView: UITextView = {
         let textView = UITextView()
         textView.delegate = self
-        textView.layer.borderWidth = 1
+        textView.layer.borderWidth = 0.5
         textView.layer.cornerRadius = 5
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.isScrollEnabled = false
@@ -33,12 +33,27 @@ class InputBar: UIView, UITextViewDelegate {
     }()
     
     private lazy var emojiButton: UIButton = {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "icon_emotion"), for: .normal)
-        button.addTarget(self, action: #selector(showEmojiKeyboard), for: .touchUpInside)
+        let button = InputBar.generateButton(with: "icon_emotion")
         return button
     }()
+    
+    private lazy var secondButton: UIButton = {
+        let button = InputBar.generateButton(with: "icon_emotion")
+        return button
+    }()
+    
+    private lazy var thirdButton: UIButton = {
+        let button = InputBar.generateButton(with: "icon_emotion")
+        return button
+    }()
+    
+    static func generateButton(with imageName: String) -> UIButton {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: imageName), for: .normal)
+        button.addTarget(self, action: #selector(showEmojiKeyboard), for: .touchUpInside)
+        return button
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -53,18 +68,31 @@ class InputBar: UIView, UITextViewDelegate {
         visualView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         visualView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
+        let margin: CGFloat = 8
 
-        addSubview(textView)
-        textView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        textView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        textView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 50).isActive = true
-        textView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        
         addSubview(emojiButton)
-        emojiButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8).isActive = true
+        emojiButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: margin).isActive = true
         emojiButton.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-    }
     
+        addSubview(textView)
+        textView.leadingAnchor.constraint(equalTo: emojiButton.trailingAnchor, constant: margin).isActive = true
+        textView.topAnchor.constraint(equalTo: topAnchor, constant: 6).isActive = true
+        textView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+
+        addSubview(secondButton)
+        secondButton.leadingAnchor.constraint(equalTo: textView.trailingAnchor, constant: margin).isActive = true
+        secondButton.widthAnchor.constraint(equalTo: emojiButton.widthAnchor).isActive = true
+        secondButton.heightAnchor.constraint(equalTo: emojiButton.heightAnchor).isActive = true
+        secondButton.centerYAnchor.constraint(equalTo: emojiButton.centerYAnchor).isActive = true
+
+        addSubview(thirdButton)
+        thirdButton.leadingAnchor.constraint(equalTo: secondButton.trailingAnchor, constant: margin).isActive = true
+        thirdButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -margin).isActive = true
+        thirdButton.widthAnchor.constraint(equalTo: emojiButton.widthAnchor).isActive = true
+        thirdButton.heightAnchor.constraint(equalTo: emojiButton.heightAnchor).isActive = true
+        thirdButton.centerYAnchor.constraint(equalTo: emojiButton.centerYAnchor).isActive = true
+    }
+
     func textViewDidChange(_ textView: UITextView) {
         invalidateIntrinsicContentSize()
     }
@@ -75,14 +103,13 @@ class InputBar: UIView, UITextViewDelegate {
         if sender.isSelected {
             let keyboardView = UIView(frame: CGRect(x: 0, y: 0, width: width, height: 200))
             keyboardView.backgroundColor = .red
-            textView.resignFirstResponder()
             textView.inputView = keyboardView
         } else {
             textView.inputView = nil
         }
         textView.reloadInputViews()
     }
-    
+
     override var intrinsicContentSize: CGSize {
         // Calculate intrinsicContentSize that will fit all the text
         let textSize = textView.contentSize
