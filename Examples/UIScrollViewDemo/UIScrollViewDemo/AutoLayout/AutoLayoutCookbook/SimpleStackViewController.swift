@@ -7,9 +7,28 @@
 //
 
 import UIKit
+import Alamofire
 
 class SimpleStackViewController: AutoLayoutBaseController {
     
+    let label = UILabel()
+    
+    var resuest: DataRequest?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("🍑🍑🍑🍑")
+        resuest = Alamofire.request("https://httpbin.org/get").response { (response) in
+            print("🐏🐏🐏🐏")
+            self.label.text = ""
+        }
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        resuest?.cancel()
+    }
+
     override func initSubviews() {
         
         let stackView = UIStackView()
