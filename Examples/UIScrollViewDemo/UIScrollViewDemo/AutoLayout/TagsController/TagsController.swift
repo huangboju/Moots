@@ -88,7 +88,8 @@ class TagsController: UIViewController {
         let layout = UICollectionViewLeftAlignedLayout()
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8
-        layout.estimatedItemSize = CGSize(width: 100, height: 100)
+        // ios10 以下用这个会crash
+//        layout.estimatedItemSize = CGSize(width: 100, height: 100)
         layout.itemSize = CGSize(width: 51, height: 51)
         layout.headerReferenceSize = CGSize(width: self.view.frame.width, height: 35)
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
