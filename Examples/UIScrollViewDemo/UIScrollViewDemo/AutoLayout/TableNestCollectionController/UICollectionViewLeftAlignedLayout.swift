@@ -16,6 +16,7 @@ extension UICollectionViewLayoutAttributes {
 }
 
 class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
+    
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
         var attributesCopy: [UICollectionViewLayoutAttributes] = []
@@ -36,7 +37,7 @@ class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
         
-        if let currentItemAttributes = super.layoutAttributesForItem(at: indexPath as IndexPath)?.copy() as? UICollectionViewLayoutAttributes {
+        if let currentItemAttributes = super.layoutAttributesForItem(at: indexPath)?.copy() as? UICollectionViewLayoutAttributes {
             let sectionInset = evaluatedSectionInsetForItem(at: indexPath.section)
             let isFirstItemInSection = indexPath.item == 0
             let layoutWidth = collectionView!.frame.width - sectionInset.left - sectionInset.right
