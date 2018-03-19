@@ -19,18 +19,17 @@
     UIViewController *fromVC = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
 
     UIView *containerView = [transitionContext containerView];
-    [containerView addSubview:toVC.view];
     [containerView addSubview:fromVC.view];
-
-    UIColor *oldColor = fromVC.view.backgroundColor;
-    fromVC.view.backgroundColor = [UIColor clearColor];
-
+    [containerView addSubview:toVC.view];
+    
     CGRect rect = fromVC.view.frame;
+
+    toVC.view.frame = CGRectMake(rect.origin.x, 150 - 74, rect.size.width, rect.size.height);
 
     [UIView animateWithDuration:[self transitionDuration:transitionContext] delay:0.05 usingSpringWithDamping:1 initialSpringVelocity:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         fromVC.view.frame = CGRectMake(rect.origin.x, -150 + 74, rect.size.width, rect.size.height);
+        toVC.view.frame = CGRectMake(rect.origin.x, 0, rect.size.width, rect.size.height);
     } completion:^(BOOL finished) {
-        fromVC.view.backgroundColor = oldColor;
         [fromVC.view removeFromSuperview];
         [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
     }];
