@@ -46,7 +46,8 @@ class AutoLayoutMainController: UIViewController {
             HiddenLayoutTestController.self,
             TableNestCollectionController.self,
             TagsController.self,
-            TextViewSelfsizingController.self
+            TextViewSelfsizingController.self,
+            AlignmentRectController.self
         ],
         [
             SimpleStackViewController.self,
