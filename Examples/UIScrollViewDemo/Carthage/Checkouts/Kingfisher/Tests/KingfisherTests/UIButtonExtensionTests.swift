@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 15/4/17.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -71,9 +71,9 @@ class UIButtonExtensionTests: XCTestCase {
         
         cleanDefaultCache()
         
-        button.kf.setImage(with: url, for: .highlighted, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> () in
+        button.kf.setImage(with: url, for: .highlighted, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> Void in
             progressBlockIsCalled = true
-        }) { (image, error, cacheType, imageURL) -> () in
+        }) { (image, error, cacheType, imageURL) -> Void in
             expectation.fulfill()
             
             XCTAssert(progressBlockIsCalled, "progressBlock should be called at least once.")
@@ -94,9 +94,9 @@ class UIButtonExtensionTests: XCTestCase {
         let url = Foundation.URL(string: URLString)!
         
         var progressBlockIsCalled = false
-        button.kf.setBackgroundImage(with: url, for: .normal, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> () in
+        button.kf.setBackgroundImage(with: url, for: .normal, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> Void in
             progressBlockIsCalled = true
-            }) { (image, error, cacheType, imageURL) -> () in
+            }) { (image, error, cacheType, imageURL) -> Void in
                 expectation.fulfill()
                 
                 XCTAssert(progressBlockIsCalled, "progressBlock should be called at least once.")
@@ -117,9 +117,9 @@ class UIButtonExtensionTests: XCTestCase {
         let stub = stubRequest("GET", URLString).andReturn(200)?.withBody(testImageData)?.delay()
         let url = URL(string: URLString)!
 
-        button.kf.setImage(with: url, for: UIControlState.highlighted, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> () in
+        button.kf.setImage(with: url, for: UIControlState.highlighted, placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> Void in
                 
-            }) { (image, error, cacheType, imageURL) -> () in
+            }) { (image, error, cacheType, imageURL) -> Void in
                 XCTAssertNotNil(error)
                 XCTAssertEqual(error?.code, NSURLErrorCancelled)
 
@@ -140,9 +140,9 @@ class UIButtonExtensionTests: XCTestCase {
         let stub = stubRequest("GET", URLString).andReturn(200)?.withBody(testImageData)?.delay()
         let url = URL(string: URLString)!
         
-        button.kf.setBackgroundImage(with: url, for: UIControlState(), placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> () in
+        button.kf.setBackgroundImage(with: url, for: UIControlState(), placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> Void in
             XCTFail("Progress block should not be called.")
-            }) { (image, error, cacheType, imageURL) -> () in
+            }) { (image, error, cacheType, imageURL) -> Void in
                 XCTAssertNotNil(error)
                 XCTAssertEqual(error?.code, NSURLErrorCancelled)
                 
@@ -160,9 +160,9 @@ class UIButtonExtensionTests: XCTestCase {
         let expectation = self.expectation(description: "wait for downloading image")
         
         let url: URL? = nil
-        button.kf.setBackgroundImage(with: url, for: UIControlState(), placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> () in
+        button.kf.setBackgroundImage(with: url, for: UIControlState(), placeholder: nil, options: nil, progressBlock: { (receivedSize, totalSize) -> Void in
             XCTFail("Progress block should not be called.")
-        }) { (image, error, cacheType, imageURL) -> () in
+        }) { (image, error, cacheType, imageURL) -> Void in
             XCTAssertNil(image)
             XCTAssertNil(error)
             XCTAssertEqual(cacheType, CacheType.none)
