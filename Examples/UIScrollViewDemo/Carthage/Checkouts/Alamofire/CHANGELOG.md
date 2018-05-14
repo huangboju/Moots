@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 `Alamofire` adheres to [Semantic Versioning](http://semver.org/).
 
 #### 4.x Releases
+- `4.7.x` Releases - [4.7.0](#470) | [4.7.1](#471) | [4.7.2](#472)
+- `4.6.x` Releases - [4.6.0](#460)
 - `4.5.x` Releases - [4.5.0](#450) | [4.5.1](#451)
 - `4.4.x` Releases - [4.4.0](#440)
 - `4.3.x` Releases - [4.3.0](#430)
@@ -31,6 +33,76 @@ All notable changes to this project will be documented in this file.
 - `1.0.x` Releases - [1.0.0](#100) | [1.0.1](#101)
 
 ---
+## [4.7.2](https://github.com/Alamofire/Alamofire/releases/tag/4.7.2)
+Released on 2018-4-15. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/issues?utf8=✓&q=milestone%3A4.7.2).
+
+#### Fixed
+- Leak of `Requests` after retry.
+  - Fixed by [Artem Shimankski](https://github.com/mrdepth) in Pull Request [#2412](https://github.com/Alamofire/Alamofire/pull/2412).
+
+## [4.7.1](https://github.com/Alamofire/Alamofire/releases/tag/4.7.1)
+Released on 2018-3-31. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/issues?utf8=✓&q=milestone%3A4.7.1).
+
+#### Updated
+- Project for Xcode 9.3 and Swift 4.1 release versions.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#2473](https://github.com/Alamofire/Alamofire/pull/2473).
+
+#### Fixed
+- Quote escaping in cURL representation.
+  - Fixed by [Jonah](https://github.com/jonah-williams) in Pull Request [#2474](https://github.com/Alamofire/Alamofire/pull/2474).
+
+## [4.7.0](https://github.com/Alamofire/Alamofire/releases/tag/4.7.0)
+Released on 2018-3-5. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/issues?utf8=✓&q=milestone%3A4.7.0).
+
+#### Added
+- Open accessibility to `NetworkReachabilityManager`
+  - Added by [Pär Strindevall](https://github.com/parski) in Pull Request [#2393](https://github.com/Alamofire/Alamofire/pull/2393).
+- Configurable parameter encoding for `URLEncoding`
+  - Added by [Morten Heiberg](https://github.com/heiberg) in Pull Request [#2431](https://github.com/Alamofire/Alamofire/pull/2431).
+- Response `Data` to `.DidComplete` notification.
+  - Added by [Sven Driemecker](https://github.com/svendr) in Pull Request [#2427](https://github.com/Alamofire/Alamofire/pull/2427).
+- Radar link for `URLSessionTaskMetrics` bug on watchOS.
+  - Added by [Christian Noon](https://github.com/cnoon) in Pull Request [#2387](https://github.com/Alamofire/Alamofire/pull/2387).
+
+#### Updated
+- Project for Xcode 9.3 and Swift 4.1.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Request [#2441](https://github.com/Alamofire/Alamofire/pull/2441).
+- OS versions affected by resume data bug.
+  - Updated by [Aaron Brager](https://github.com/getaaron) in Pull Request [#2389](https://github.com/Alamofire/Alamofire/pull/2389).
+
+#### Fixed
+- Typos in `ResultTests`.
+  - Fixed by [Aleph Retamal](https://github.com/alaphao) in Pull Request [#2416](https://github.com/Alamofire/Alamofire/pull/2416).
+
+## [4.6.0](https://github.com/Alamofire/Alamofire/releases/tag/4.6.0)
+Released on 2017-12-3. All issues associated with this milestone can be found using this [filter](https://github.com/Alamofire/Alamofire/issues?utf8=✓&q=milestone%3A4.6.0).
+
+#### Added
+- Error mapping functions to `Response` types.
+  - Added by [Jon Shier](https://github.com/jshier) in Pull Request
+  [#2361](https://github.com/Alamofire/Alamofire/pull/2361).
+- Separation of Usage and Advanced Usage docs from README.
+  - Added by [Jon Shier](https://github.com/jshier) in Pull Request 
+  [#2360](https://github.com/Alamofire/Alamofire/pull/2360).
+  
+#### Updated
+- Travis CI and Ruby dependencies.
+  - Updated by [Jon Shier](https://github.com/jshier) in Pull Requests
+  [#2361](https://github.com/Alamofire/Alamofire/pull/2361), [#2302](https://github.com/Alamofire/Alamofire/pull/2302), [#2345](https://github.com/Alamofire/Alamofire/pull/2345).
+- Swift Package Manager instructions.
+  - Updated by [Ryosuke Hayashi](https://github.com/hayashikun) in Pull Request
+  [#2341](https://github.com/Alamofire/Alamofire/pull/2341).
+  
+#### Fixed
+- `#session-manager` link in Advanced Usage docs.
+  - Fixed by [Naeem Shaikh](https://github.com/naeemshaikh90) in Pull Request
+  [#2373](https://github.com/Alamofire/Alamofire/pull/2373).
+- Missing `@discardableResult`.
+  - Fixed by [Aron Cedercrantz](https://github.com/rastersize) in Pull Request
+  [#2338](https://github.com/Alamofire/Alamofire/pull/2338).
+- Colon placement.
+  - Fixed by [Issarapong Poesua](https://github.com/Dekablade01) in Pull Request
+  [#2329](https://github.com/Alamofire/Alamofire/pull/2329).
 
 ## [4.5.1](https://github.com/Alamofire/Alamofire/releases/tag/4.5.1)
 Released on 2017-09-06. All issues associated with this milestone can be found using this

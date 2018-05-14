@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         
         alertController.setValue(alertControllerMessageStr, forKey: "attributedMessage")
 
-        ok.setValue(UIColor.blue, forKey: "titleTextColor")
+        ok.setValue(UIColor.red, forKey: "titleTextColor")
 
         present(alertController, animated: true) {
         }
