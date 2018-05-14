@@ -4,7 +4,7 @@
 //
 //  Created by Wei Wang on 16/1/4.
 //
-//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
+//  Copyright (c) 2018 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -54,6 +54,7 @@ class KingfisherOptionsInfoTests: XCTestCase {
         
         XCTAssertEqual(options.downloadPriority, URLSessionTask.defaultPriority)
         XCTAssertFalse(options.forceRefresh)
+        XCTAssertFalse(options.fromMemoryCacheOrRefresh)
         XCTAssertFalse(options.cacheMemoryOnly)
         XCTAssertFalse(options.backgroundDecode)
         XCTAssertEqual(options.callbackDispatchQueue.label, DispatchQueue.main.label)
@@ -84,6 +85,7 @@ class KingfisherOptionsInfoTests: XCTestCase {
             .transition(transition),
             .downloadPriority(0.8),
             .forceRefresh,
+            .fromMemoryCacheOrRefresh,
             .cacheMemoryOnly,
             .onlyFromCache,
             .backgroundDecode,
@@ -108,6 +110,7 @@ class KingfisherOptionsInfoTests: XCTestCase {
         
         XCTAssertEqual(options.downloadPriority, 0.8)
         XCTAssertTrue(options.forceRefresh)
+        XCTAssertTrue(options.fromMemoryCacheOrRefresh)
         XCTAssertTrue(options.cacheMemoryOnly)
         XCTAssertTrue(options.onlyFromCache)
         XCTAssertTrue(options.backgroundDecode)
