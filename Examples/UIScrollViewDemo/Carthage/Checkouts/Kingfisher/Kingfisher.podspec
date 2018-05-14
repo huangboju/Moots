@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "Kingfisher"
-  s.version      = "4.2.0"
+  s.version      = "4.7.0"
   s.summary      = "A lightweight and pure Swift implemented library for downloading and cacheing image from the web."
 
   s.description  = <<-DESC
@@ -25,6 +25,8 @@ Pod::Spec.new do |s|
   s.authors            = { "onevcat" => "onevcat@gmail.com" }
   s.social_media_url   = "http://twitter.com/onevcat"
 
+  s.swift_version = "4.0"
+
   s.ios.deployment_target = "8.0"
   s.tvos.deployment_target = "9.0"
   s.osx.deployment_target = "10.10"
@@ -46,9 +48,8 @@ Pod::Spec.new do |s|
                             ]
   s.ios.exclude_files = "Sources/NSButton+Kingfisher.swift"
   s.tvos.exclude_files = "Sources/NSButton+Kingfisher.swift"
-  
+
   s.requires_arc = true
   s.framework = "CFNetwork"
 
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
 end
