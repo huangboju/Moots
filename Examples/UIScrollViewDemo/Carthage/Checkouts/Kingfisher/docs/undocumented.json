@@ -2,35 +2,56 @@
   "warnings": [
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
-      "line": 94,
+      "line": 78,
+      "symbol": "AnimatedImageView.RepeatCount.once",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
+      "line": 79,
+      "symbol": "AnimatedImageView.RepeatCount.finite",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
+      "line": 80,
+      "symbol": "AnimatedImageView.RepeatCount.infinite",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
+      "line": 152,
       "symbol": "AnimatedImageView.image",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
-      "line": 110,
+      "line": 168,
       "symbol": "AnimatedImageView.isAnimating",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
-      "line": 135,
+      "line": 197,
       "symbol": "AnimatedImageView.display(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
-      "line": 143,
+      "line": 205,
       "symbol": "AnimatedImageView.didMoveToWindow()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/AnimatedImageView.swift",
-      "line": 148,
+      "line": 210,
       "symbol": "AnimatedImageView.didMoveToSuperview()",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -57,6 +78,13 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Filter.swift",
+      "line": 82,
+      "symbol": "Filter.ColorElement",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/FormatIndicatedCacheSerializer.swift",
       "line": 54,
       "symbol": "FormatIndicatedCacheSerializer.png",
@@ -75,6 +103,13 @@
       "line": 56,
       "symbol": "FormatIndicatedCacheSerializer.gif",
       "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
+      "line": null,
+      "symbol": "DataProxy",
+      "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
     {
@@ -100,35 +135,56 @@
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
-      "line": 453,
+      "line": 350,
+      "symbol": "Kingfisher.image(withBlendMode:alpha:backgroundColor:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
+      "line": 516,
       "symbol": "Kingfisher.crop(to:anchorOn:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
-      "line": 687,
+      "line": 765,
       "symbol": "DataProxy",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
-      "line": 696,
+      "line": 773,
+      "symbol": "Data.CompatibleType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
+      "line": 774,
       "symbol": "Data.kf",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
-      "line": 723,
+      "line": 801,
       "symbol": "CGSizeProxy",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
-      "line": 732,
+      "line": 809,
+      "symbol": "CGSize.CompatibleType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Image.swift",
+      "line": 810,
       "symbol": "CGSize.kf",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -163,112 +219,119 @@
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageCache.swift",
-      "line": 621,
+      "line": 632,
       "symbol": "ImageCache.cachePath(forComputedKey:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageCache.swift",
-      "line": 659,
+      "line": 670,
       "symbol": "ImageCache.CacheCheckResult.cached",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageCache.swift",
-      "line": 660,
+      "line": 671,
       "symbol": "ImageCache.CacheCheckResult.cacheType",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageCache.swift",
-      "line": 702,
+      "line": 713,
       "symbol": "Kingfisher.shared",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 35,
+      "line": null,
+      "symbol": "RectCorner",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
+      "line": 39,
       "symbol": "ImageProcessItem.image",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 36,
+      "line": 40,
       "symbol": "ImageProcessItem.data",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 143,
+      "line": 147,
       "symbol": "RectCorner",
       "symbol_kind": "source.lang.swift.decl.struct",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 145,
+      "line": 149,
       "symbol": "RectCorner.topLeft",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 146,
+      "line": 150,
       "symbol": "RectCorner.topRight",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 147,
+      "line": 151,
       "symbol": "RectCorner.bottomLeft",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 148,
+      "line": 152,
       "symbol": "RectCorner.bottomRight",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 149,
+      "line": 153,
       "symbol": "RectCorner.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 239,
+      "line": 356,
       "symbol": "ContentMode.none",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 240,
+      "line": 357,
       "symbol": "ContentMode.aspectFit",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageProcessor.swift",
-      "line": 241,
+      "line": 358,
       "symbol": "ContentMode.aspectFill",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/ImageView+Kingfisher.swift",
-      "line": 234,
+      "line": 239,
       "symbol": "Kingfisher.placeholder",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -278,6 +341,13 @@
       "line": null,
       "symbol": "Indicator",
       "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Indicator.swift",
+      "line": 36,
+      "symbol": "IndicatorView",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
@@ -332,7 +402,7 @@
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
       "line": null,
-      "symbol": "Kingfisher",
+      "symbol": "Color",
       "symbol_kind": "source.lang.swift.decl.extension",
       "warning": "undocumented"
     },
@@ -397,6 +467,48 @@
       "line": null,
       "symbol": "Kingfisher",
       "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": null,
+      "symbol": "Kingfisher",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 39,
+      "symbol": "Image",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 40,
+      "symbol": "Color",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 42,
+      "symbol": "ImageView",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 43,
+      "symbol": "View",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 44,
+      "symbol": "Button",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
@@ -422,6 +534,13 @@
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
+      "line": 59,
+      "symbol": "KingfisherCompatible.CompatibleType",
+      "symbol_kind": "source.lang.swift.decl.associatedtype",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/Kingfisher.swift",
       "line": 60,
       "symbol": "KingfisherCompatible.kf",
       "symbol_kind": "source.lang.swift.decl.var.instance",
@@ -436,6 +555,20 @@
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/KingfisherManager.swift",
+      "line": 33,
+      "symbol": "DownloadProgressBlock",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/KingfisherManager.swift",
+      "line": 34,
+      "symbol": "CompletionHandler",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/KingfisherManager.swift",
       "line": 40,
       "symbol": "RetrieveImageTask.empty",
       "symbol_kind": "source.lang.swift.decl.var.static",
@@ -443,14 +576,14 @@
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/KingfisherOptionsInfo.swift",
-      "line": 317,
+      "line": 348,
       "symbol": "Collection.onlyLoadFirstFrame",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/KingfisherOptionsInfo.swift",
-      "line": 321,
+      "line": 352,
       "symbol": "Collection.cacheOriginalImage",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
@@ -488,6 +621,13 @@
       "line": 24,
       "symbol": "StringProxy",
       "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/onevcat/Dropbox/github/Kingfisher/Sources/String+MD5.swift",
+      "line": 32,
+      "symbol": "String.CompatibleType",
+      "symbol_kind": "source.lang.swift.decl.typealias",
       "warning": "undocumented"
     },
     {
