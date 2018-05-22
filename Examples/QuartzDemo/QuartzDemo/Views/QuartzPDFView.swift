@@ -8,11 +8,11 @@
 
 class QuartzPDFView: QuartzView {
     var pdfDocument: CGPDFDocument {
-        let pdfURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "Quartz.pdf" as CFString!, nil, nil)
+        let pdfURL = CFBundleCopyResourceURL(CFBundleGetMainBundle(), "Quartz.pdf" as CFString, nil, nil)
         return CGPDFDocument(pdfURL!)!
     }
 
-    override func draw(in context: CGContext) {
+    override func draw(in context:  CGContext) {
         // PDF page drawing expects a Lower-Left coordinate system, so we flip the coordinate system
         // before we start drawing.
         context.translateBy(x: 0.0, y: bounds.height)
