@@ -69,7 +69,7 @@ class QuartzLineView: QuartzView {
         
         // This seemingly random value adjusts the text
         // vertically so that it is centered in the circle.
-        let Y_OFFSET = CGFloat(-2 * text.characters.count + 5)
+        let Y_OFFSET = CGFloat(-2 * text.count + 5)
 
         // Context translation for label
         let LABEL_SIDE = rect.width

@@ -124,8 +124,8 @@ extension BlendingController:  UIPickerViewDelegate {
             squareString = "█"
         }
         let attributes = [
-            NSForegroundColorAttributeName : colors[row],
-            NSBackgroundColorAttributeName : UIColor.lightGray
+            NSAttributedStringKey.foregroundColor : colors[row],
+            NSAttributedStringKey.backgroundColor : UIColor.lightGray
         ]
         let attributedString = NSAttributedString(string: squareString!, attributes: attributes)
         return attributedString
