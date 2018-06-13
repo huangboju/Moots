@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SecondVC: UIViewController {
+class SecondVC: UIViewController, UIGestureRecognizerDelegate {
     
     private lazy var dismissAnimator: DismissAnimator = {
         return DismissAnimator()
@@ -20,6 +20,7 @@ class SecondVC: UIViewController {
         view.backgroundColor = .white
 
         let pan = UIPanGestureRecognizer(target: self, action: #selector(panGesture))
+        pan.delegate = self
         view.addGestureRecognizer(pan)
     }
 
@@ -28,7 +29,6 @@ class SecondVC: UIViewController {
         let progress = edgePan.translation(in: view).x / view.bounds.width
 
         if edgePan.state == .began {
-            if edgePan.velocity(in: view).x < 0 { return }
             dismissAnimator.begin()
             transitioningDelegate = dismissAnimator
             dismiss(animated: true, completion: nil)

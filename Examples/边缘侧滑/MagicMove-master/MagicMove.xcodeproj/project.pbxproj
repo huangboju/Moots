@@ -23,6 +23,7 @@
 		F7E5739420CFE859002519FC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739320CFE859002519FC /* MyViewController.swift */; };
 		F7E5739620D0EC75002519FC /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739520D0EC75002519FC /* DismissTransition.swift */; };
 		F7E5739820D0ED79002519FC /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739720D0ED79002519FC /* DismissAnimator.swift */; };
+		F7E5739A20D0F742002519FC /* MyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739920D0F742002519FC /* MyPresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		F7E5739320CFE859002519FC /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		F7E5739520D0EC75002519FC /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
 		F7E5739720D0ED79002519FC /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		F7E5739920D0F742002519FC /* MyPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				A8FF09B11B5372E300BD2C74 /* Images.xcassets */,
 				A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */,
 				A8FF09A81B5372E300BD2C74 /* Supporting Files */,
+				F7E5739920D0F742002519FC /* MyPresentationController.swift */,
 			);
 			path = MagicMove;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 				F7E5739220CFC5FA002519FC /* PresentingTransion.swift in Sources */,
 				F7E5739420CFE859002519FC /* MyViewController.swift in Sources */,
 				A8FF09CF1B5399AD00BD2C74 /* MMCollectionViewCell.swift in Sources */,
+				F7E5739A20D0F742002519FC /* MyPresentationController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
