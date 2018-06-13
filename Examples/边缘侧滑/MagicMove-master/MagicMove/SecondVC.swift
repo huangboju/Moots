@@ -35,7 +35,7 @@ class SecondVC: UIViewController {
         } else if edgePan.state == .changed {
             dismissAnimator.update(progress)
         } else if edgePan.state == .cancelled || edgePan.state == .ended {
-            if progress > 0.5 {
+            if progress > 0.2 {
                 dismissAnimator.finish()
             } else {
                 dismissAnimator.cancel()
