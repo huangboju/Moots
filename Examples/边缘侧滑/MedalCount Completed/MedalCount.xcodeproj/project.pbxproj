@@ -163,7 +163,7 @@
 				TargetAttributes = {
 					0E15D2231D2ADA7E00A2E90B = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 6K2XWV4368;
+						DevelopmentTeam = 6E5E8VY4L7;
 						DevelopmentTeamName = "Ron Kliffer";
 						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
@@ -357,6 +357,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
 				INFOPLIST_FILE = MedalCount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronkliffer.MedalCount;
@@ -370,6 +371,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
 				INFOPLIST_FILE = MedalCount/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ronkliffer.MedalCount;
