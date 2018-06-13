@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PushAnimator: NSObject {
+class PresentingAnimator: NSObject {
     private var percentDrivenTransition: UIPercentDrivenInteractiveTransition?
 
     func begin() {
@@ -32,13 +32,13 @@ class PushAnimator: NSObject {
     }
 }
 
-extension PushAnimator: UIViewControllerTransitioningDelegate {
+extension PresentingAnimator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        return MagicMovePushTransion()
+        return PresentingTransion()
     }
 
     func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if animator is MagicMovePushTransion {
+        if animator is PresentingTransion {
             return percentDrivenTransition
         } else {
             return nil

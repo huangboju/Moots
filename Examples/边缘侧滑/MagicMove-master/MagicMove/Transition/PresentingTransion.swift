@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MagicMovePushTransion: NSObject, UIViewControllerAnimatedTransitioning {
+class PresentingTransion: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return TimeInterval(UINavigationControllerHideShowBarDuration)
     }
