@@ -3,8 +3,7 @@
 
 import UIKit
 
-class DismissAnimator : NSObject {
-}
+class DismissAnimator : NSObject {}
 
 extension DismissAnimator : UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
