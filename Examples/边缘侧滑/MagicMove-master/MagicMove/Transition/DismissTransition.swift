@@ -23,7 +23,7 @@ extension DismissTransition: UIViewControllerAnimatedTransitioning {
 
         let containerView = transitionContext.containerView
         containerView.addSubview(fromView)
-        
+
         UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
             fromView.frame.origin.x = containerView.frame.width
             containerView.backgroundColor = UIColor(white: 0, alpha: 0)
