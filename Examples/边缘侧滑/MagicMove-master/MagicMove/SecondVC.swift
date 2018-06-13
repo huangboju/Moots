@@ -10,13 +10,37 @@ import UIKit
 
 class SecondVC: UIViewController {
     
+    private lazy var dismissAnimator: DismissAnimator = {
+        return DismissAnimator()
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = .white
+
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(panGesture))
+        view.addGestureRecognizer(pan)
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        dismiss(animated: true, completion: nil)
+
+    @objc func panGesture(_ edgePan: UIPanGestureRecognizer) {
+
+        let progress = edgePan.translation(in: view).x / view.bounds.width
+
+        if edgePan.state == .began {
+            if edgePan.velocity(in: view).x < 0 { return }
+            dismissAnimator.begin()
+            transitioningDelegate = dismissAnimator
+            dismiss(animated: true, completion: nil)
+        } else if edgePan.state == .changed {
+            dismissAnimator.update(progress)
+        } else if edgePan.state == .cancelled || edgePan.state == .ended {
+            if progress > 0.5 {
+                dismissAnimator.finish()
+            } else {
+                dismissAnimator.cancel()
+            }
+            dismissAnimator.invalidate()
+        }
     }
 }
