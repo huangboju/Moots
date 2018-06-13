@@ -10,8 +10,8 @@ import UIKit
 
 class MyViewController: UIViewController {
     
-    private lazy var pushAnimator: PushAnimator = {
-        return PushAnimator()
+    private lazy var pushAnimator: PresentingAnimator = {
+        return PresentingAnimator()
     }()
 
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ class MyViewController: UIViewController {
         edgePan.edges = .right
         view.addGestureRecognizer(edgePan)
     }
-    
+
     @objc
     func showNewVC() {
         let vc = SecondVC()
