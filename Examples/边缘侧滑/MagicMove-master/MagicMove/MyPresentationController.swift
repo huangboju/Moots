@@ -14,14 +14,24 @@ class MyPresentationController: UIPresentationController {
         return .custom
     }
     
+    private lazy var dismissAnimator: DismissAnimator = {
+        return DismissAnimator()
+    }()
+    
     private lazy var dimmingView: UIView = {
         let dimmingView = UIView()
         dimmingView.translatesAutoresizingMaskIntoConstraints = false
         dimmingView.backgroundColor = UIColor(white: 0, alpha: 0.5)
         dimmingView.alpha = 0
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandle))
+        dimmingView.addGestureRecognizer(tap)
         return dimmingView
     }()
-    
+
+    @objc func tapHandle() {
+        presentingViewController.dismiss(animated: true)
+    }
+
     override var frameOfPresentedViewInContainerView: CGRect {
         var frame: CGRect = .zero
         frame.size = size(forChildContentContainer: presentedViewController, withParentContainerSize: containerView!.bounds.size)
@@ -33,7 +43,7 @@ class MyPresentationController: UIPresentationController {
         containerView?.insertSubview(dimmingView, at: 0)
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "V:|[dimmingView]|", options: [], metrics: nil, views: ["dimmingView": dimmingView]))
         NSLayoutConstraint.activate(NSLayoutConstraint.constraints(withVisualFormat: "H:|[dimmingView]|", options: [], metrics: nil, views: ["dimmingView": dimmingView]))
-        
+
         guard let coordinator = presentedViewController.transitionCoordinator else {
             dimmingView.alpha = 1.0
             return

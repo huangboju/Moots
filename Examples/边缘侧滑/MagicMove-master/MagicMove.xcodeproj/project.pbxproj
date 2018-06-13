@@ -106,11 +106,11 @@
 				A8FF09CA1B538CB600BD2C74 /* DetailViewController.swift */,
 				F7E5739320CFE859002519FC /* MyViewController.swift */,
 				BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */,
+				F7E5739920D0F742002519FC /* MyPresentationController.swift */,
 				A8FF09AE1B5372E300BD2C74 /* Main.storyboard */,
 				A8FF09B11B5372E300BD2C74 /* Images.xcassets */,
 				A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */,
 				A8FF09A81B5372E300BD2C74 /* Supporting Files */,
-				F7E5739920D0F742002519FC /* MyPresentationController.swift */,
 			);
 			path = MagicMove;
 			sourceTree = "<group>";
