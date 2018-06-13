@@ -10,17 +10,17 @@ import UIKit
 
 class MyViewController: UIViewController {
     
-    var percentDrivenTransition: UIPercentDrivenInteractiveTransition?
+    private lazy var pushAnimator: PushAnimator = {
+        return PushAnimator()
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = UIColor.red
 
-        navigationController?.delegate = self
-
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(showNewVC))
-        
+
         //手势监听器
         let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(edgePanGesture))
         edgePan.edges = .right
@@ -29,46 +29,29 @@ class MyViewController: UIViewController {
     
     @objc
     func showNewVC() {
-        let vc = MyViewController()
+        let vc = SecondVC()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+
     @objc func edgePanGesture(edgePan: UIScreenEdgePanGestureRecognizer) {
         let progress = abs(edgePan.translation(in: view).x / view.bounds.width)
 
         if edgePan.state == .began {
-            percentDrivenTransition = UIPercentDrivenInteractiveTransition()
-            let vc = MyViewController()
-//            vc.hidesBottomBarWhenPushed = true
-            navigationController?.pushViewController(vc, animated: true)
+            pushAnimator.begin()
+            let vc = SecondVC()
+            vc.modalPresentationStyle = .custom
+            vc.transitioningDelegate = pushAnimator
+            present(vc, animated: true, completion: nil)
         } else if edgePan.state == .changed {
-            percentDrivenTransition?.update(progress)
+            pushAnimator.update(progress)
         } else if edgePan.state == .cancelled || edgePan.state == .ended {
             if progress > 0.5 {
-                percentDrivenTransition?.finish()
+                pushAnimator.finish()
             } else {
-                percentDrivenTransition?.cancel()
+                pushAnimator.cancel()
             }
-            percentDrivenTransition = nil
-        }
-    }
-}
-
-extension MyViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        if operation == .push {
-            return MagicMovePushTransion()
-        } else {
-            return nil
-        }
-    }
-    
-    func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if animationController is MagicMovePushTransion {
-            return percentDrivenTransition
-        } else {
-            return nil
+            pushAnimator.invalidate()
         }
     }
 }
