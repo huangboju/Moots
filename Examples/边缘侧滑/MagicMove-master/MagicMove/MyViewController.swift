@@ -46,7 +46,7 @@ class MyViewController: UIViewController {
         } else if edgePan.state == .changed {
             pushAnimator.update(progress)
         } else if edgePan.state == .cancelled || edgePan.state == .ended {
-            if progress > 0.5 {
+            if progress > 0.2 {
                 pushAnimator.finish()
             } else {
                 pushAnimator.cancel()
