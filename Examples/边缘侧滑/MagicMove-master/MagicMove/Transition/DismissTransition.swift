@@ -8,12 +8,11 @@
 
 import UIKit
 
-class DismissTransition : NSObject {
-}
+class DismissTransition : NSObject {}
 
 extension DismissTransition: UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return 0.25
+        return 0.5
     }
 
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {

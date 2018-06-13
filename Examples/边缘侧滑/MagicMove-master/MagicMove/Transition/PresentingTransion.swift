@@ -10,7 +10,7 @@ import UIKit
 
 class PresentingTransion: NSObject, UIViewControllerAnimatedTransitioning {
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
-        return TimeInterval(UINavigationControllerHideShowBarDuration)
+        return 0.5
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
