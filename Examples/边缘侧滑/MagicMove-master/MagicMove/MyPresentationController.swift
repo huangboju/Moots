@@ -14,10 +14,6 @@ class MyPresentationController: UIPresentationController {
         return .custom
     }
     
-    private lazy var dismissAnimator: DismissAnimator = {
-        return DismissAnimator()
-    }()
-    
     private lazy var dimmingView: UIView = {
         let dimmingView = UIView()
         dimmingView.translatesAutoresizingMaskIntoConstraints = false

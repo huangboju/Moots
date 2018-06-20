@@ -14,7 +14,6 @@ class PresentingTransion: NSObject, UIViewControllerAnimatedTransitioning {
     }
     
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
-        //1.获取动画的源控制器和目标控制器
         guard let toView = transitionContext.view(forKey: .to),
               let toVC = transitionContext.viewController(forKey: .to) else {
             return
@@ -25,9 +24,7 @@ class PresentingTransion: NSObject, UIViewControllerAnimatedTransitioning {
         let containerView = transitionContext.containerView
         containerView.addSubview(toView)
 
-        let containerViewSize = containerView.frame.size
-
-        let x = containerViewSize.width - toView.bounds.minX
+        let x = containerView.frame.width - toView.bounds.minX
         toView.frame.origin.x = x
 
         UIView.animate(withDuration: transitionDuration(using: transitionContext), delay: 0, options: .curveEaseInOut, animations: {
