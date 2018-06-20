@@ -19,6 +19,7 @@
 		A8FF09D11B53A1AC00BD2C74 /* MagicMovePopTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09D01B53A1AC00BD2C74 /* MagicMovePopTransion.swift */; };
 		BE0B49CC20D0B97C00D27AD7 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */; };
 		BE1D2BBA20D0E2EC00D6E440 /* PresentingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BB920D0E2EC00D6E440 /* PresentingAnimator.swift */; };
+		BE1DED1A20DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */; };
 		F7E5739220CFC5FA002519FC /* PresentingTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739120CFC5FA002519FC /* PresentingTransion.swift */; };
 		F7E5739420CFE859002519FC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739320CFE859002519FC /* MyViewController.swift */; };
 		F7E5739620D0EC75002519FC /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739520D0EC75002519FC /* DismissTransition.swift */; };
@@ -53,6 +54,7 @@
 		A8FF09D01B53A1AC00BD2C74 /* MagicMovePopTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMovePopTransion.swift; sourceTree = "<group>"; };
 		BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
 		BE1D2BB920D0E2EC00D6E440 /* PresentingAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingAnimator.swift; sourceTree = "<group>"; };
+		BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
 		F7E5739120CFC5FA002519FC /* PresentingTransion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingTransion.swift; sourceTree = "<group>"; };
 		F7E5739320CFE859002519FC /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
 		F7E5739520D0EC75002519FC /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 				A8FF09B11B5372E300BD2C74 /* Images.xcassets */,
 				A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */,
 				A8FF09A81B5372E300BD2C74 /* Supporting Files */,
+				BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */,
 			);
 			path = MagicMove;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				BE0B49CC20D0B97C00D27AD7 /* SecondVC.swift in Sources */,
 				F7E5739620D0EC75002519FC /* DismissTransition.swift in Sources */,
 				F7E5739820D0ED79002519FC /* DismissAnimator.swift in Sources */,
+				BE1DED1A20DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift in Sources */,
 				A8FF09AB1B5372E300BD2C74 /* AppDelegate.swift in Sources */,
 				F7E5739220CFC5FA002519FC /* PresentingTransion.swift in Sources */,
 				F7E5739420CFE859002519FC /* MyViewController.swift in Sources */,
