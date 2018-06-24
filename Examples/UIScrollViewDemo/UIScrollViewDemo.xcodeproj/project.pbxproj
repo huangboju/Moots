@@ -30,6 +30,7 @@
 		BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */; };
 		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
 		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
+		BE22B46F20DF9A7F0032490A /* ResizableImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */; };
 		BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */; };
 		BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */; };
 		BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654041F9C7F72001A8432 /* TwoDifferentWidthViews.swift */; };
@@ -195,6 +196,7 @@
 		BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSelfSizing.swift; sourceTree = "<group>"; };
 		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
 		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
+		BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageVC.swift; sourceTree = "<group>"; };
 		BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackViewController.swift; sourceTree = "<group>"; };
 		BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEqualWidthViewsController.swift; sourceTree = "<group>"; };
 		BE3654041F9C7F72001A8432 /* TwoDifferentWidthViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDifferentWidthViews.swift; sourceTree = "<group>"; };
@@ -606,6 +608,7 @@
 				BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */,
 				BE1B15631FB2A5E700862271 /* Bridging.h */,
 				BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */,
+				BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -770,6 +773,7 @@
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
 				BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */,
 				BE3D3A3B1FAFF4A6001F097D /* NELineLabel.swift in Sources */,
+				BE22B46F20DF9A7F0032490A /* ResizableImageVC.swift in Sources */,
 				BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */,
 				D8123AF81EEA300F00EAAA63 /* RulerControllerWithScrollView.swift in Sources */,
 				BE3654091F9C8462001A8432 /* SimpleLabelAndTextField.swift in Sources */,
