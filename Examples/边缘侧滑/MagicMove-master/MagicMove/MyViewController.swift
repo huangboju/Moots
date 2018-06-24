@@ -39,8 +39,13 @@ class MyViewController: UIViewController {
 
     @objc
     func showNewVC() {
-        let vc = MyViewController()
-        vc.hidesBottomBarWhenPushed = true
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = SecondVC()
+        vc.modalPresentationStyle = .custom
+        vc.transitioningDelegate = pushAnimator
+        self.present(vc, animated: true, completion: nil)
+
+//        let vc = MyViewController()
+//        vc.hidesBottomBarWhenPushed = true
+//        navigationController?.pushViewController(vc, animated: true)
     }
 }

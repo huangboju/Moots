@@ -36,7 +36,7 @@ extension PresentingAnimator: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PresentingTransion()
     }
-    
+
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return DismissTransition(duration: 0.25)
     }
@@ -48,7 +48,7 @@ extension PresentingAnimator: UIViewControllerTransitioningDelegate {
             return nil
         }
     }
-    
+
     func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
         return MyPresentationController(presentedViewController: presented, presenting: presenting)
     }
