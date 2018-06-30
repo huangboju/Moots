@@ -98,13 +98,11 @@ class TableViewSelfsizingCell: UITableViewCell {
                 constraint.deactivate()
                 myLabel.snp.updateConstraints({ (make) in
                     make.top.equalTo(30)
-                    make.bottom.equalTo(-30)
                 })
             } else {
                 constraint.activate()
                 myLabel.snp.updateConstraints({ (make) in
                     make.top.equalTo(8)
-                    make.bottom.equalTo(-8)
                 })
             }
         }
@@ -112,13 +110,13 @@ class TableViewSelfsizingCell: UITableViewCell {
 
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         contentView.addSubview(myLabel)
         myLabel.numberOfLines = 0
         myLabel.snp.makeConstraints { (make) in
             make.leadingMargin.equalTo(16)
-            make.trailingMargin.equalTo(-16)
+            make.center.equalToSuperview()
             make.top.equalTo(8)
-            make.bottom.equalTo(-8)
             constraint = make.height.equalTo(80).priority(999).constraint
         }
     }
