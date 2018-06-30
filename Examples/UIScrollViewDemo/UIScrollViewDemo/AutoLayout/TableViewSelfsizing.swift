@@ -67,8 +67,16 @@ extension TableViewSelfsizing: UITableViewDelegate {
         var item = data[indexPath.section][indexPath.row]
         item.flag = !item.flag
         data[indexPath.section][indexPath.row] = item
-
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        
+        guard let cell = tableView.cellForRow(at: indexPath) as? TableViewSelfsizingCell else { return }
+        cell.isExpanding = item.flag
+        
+        // 4
+        tableView.beginUpdates()
+        tableView.endUpdates()
+        
+        // 5
+        tableView.scrollToRow(at: indexPath, at: .top, animated: true)
     }
 }
 
