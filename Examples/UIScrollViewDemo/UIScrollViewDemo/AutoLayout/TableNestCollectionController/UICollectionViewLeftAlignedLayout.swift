@@ -9,70 +9,70 @@
 import UIKit
 extension UICollectionViewLayoutAttributes {
     func leftAlignFrameWithSectionInset(_ sectionInset: UIEdgeInsets){
-        var frame = self.frame
         frame.origin.x = sectionInset.left
-        self.frame = frame
     }
 }
 
 class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        
-        var attributesCopy: [UICollectionViewLayoutAttributes] = []
-        if let attributes = super.layoutAttributesForElements(in: rect) {
-            attributes.forEach({ attributesCopy.append($0.copy() as! UICollectionViewLayoutAttributes) })
+
+        guard let originalAttributes = super.layoutAttributesForElements(in: rect) else {
+            return nil
         }
-        
-        for attributes in attributesCopy {
-            if attributes.representedElementKind == nil {
-                let indexpath = attributes.indexPath
-                if let attr = layoutAttributesForItem(at: indexpath) {
-                    attributes.frame = attr.frame
-                }
+
+        var updatedAttributes = originalAttributes
+
+        for attributes in updatedAttributes {
+            guard attributes.representedElementKind == nil else {
+                continue
+            }
+            guard let index = updatedAttributes.index(of: attributes) else {
+                continue
+            }
+            if let attr = layoutAttributesForItem(at: attributes.indexPath) {
+                updatedAttributes[index] = attr
             }
         }
-        return attributesCopy
+        return updatedAttributes
     }
     
     override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        
-        if let currentItemAttributes = super.layoutAttributesForItem(at: indexPath)?.copy() as? UICollectionViewLayoutAttributes {
-            let sectionInset = evaluatedSectionInsetForItem(at: indexPath.section)
-            let isFirstItemInSection = indexPath.item == 0
-            let layoutWidth = collectionView!.frame.width - sectionInset.left - sectionInset.right
-            
-            if isFirstItemInSection {
-                currentItemAttributes.leftAlignFrameWithSectionInset(sectionInset)
-                return currentItemAttributes
-            }
-            
-            let previousIndexPath = IndexPath(row: indexPath.item - 1, section: indexPath.section)
-            
-            let previousFrame = layoutAttributesForItem(at: previousIndexPath)?.frame ?? CGRect.zero
-            let previousFrameRightPoint = previousFrame.origin.x + previousFrame.width
-            let currentFrame = currentItemAttributes.frame
-            let strecthedCurrentFrame = CGRect(x: sectionInset.left,
-                                                    y: currentFrame.origin.y,
-                                                    width: layoutWidth,
-                                                    height: currentFrame.size.height)
-            // if the current frame, once left aligned to the left and stretched to the full collection view
-            // widht intersects the previous frame then they are on the same line
-            let isFirstItemInRow = !previousFrame.intersects(strecthedCurrentFrame)
-            
-            if (isFirstItemInRow) {
-                // make sure the first item on a line is left aligned
-                currentItemAttributes.leftAlignFrameWithSectionInset(sectionInset)
-                return currentItemAttributes
-            }
-            
-            var frame = currentItemAttributes.frame
-            frame.origin.x = previousFrameRightPoint + evaluatedMinimumInteritemSpacing(at: indexPath.section)
-            currentItemAttributes.frame = frame
-            return currentItemAttributes
-            
+
+        guard let currentItemAttributes = super.layoutAttributesForItem(at: indexPath) else {
+            return nil
         }
-        return nil
+
+        let sectionInset = evaluatedSectionInsetForItem(at: indexPath.section)
+        let isFirstItemInSection = indexPath.item == 0
+        let layoutWidth = collectionView!.frame.width - sectionInset.left - sectionInset.right
+
+        if isFirstItemInSection {
+            currentItemAttributes.leftAlignFrameWithSectionInset(sectionInset)
+            return currentItemAttributes
+        }
+
+        let previousIndexPath = IndexPath(row: indexPath.item - 1, section: indexPath.section)
+        
+        let previousFrame = layoutAttributesForItem(at: previousIndexPath)?.frame ?? .zero
+        let previousFrameRightPoint = previousFrame.minX + previousFrame.width
+        let currentFrame = currentItemAttributes.frame
+        let strecthedCurrentFrame = CGRect(x: sectionInset.left,
+                                           y: currentFrame.minY,
+                                           width: layoutWidth,
+                                           height: currentFrame.height)
+        // if the current frame, once left aligned to the left and stretched to the full collection view
+        // widht intersects the previous frame then they are on the same line
+        let isFirstItemInRow = !previousFrame.intersects(strecthedCurrentFrame)
+        
+        if isFirstItemInRow {
+            // make sure the first item on a line is left aligned
+            currentItemAttributes.leftAlignFrameWithSectionInset(sectionInset)
+            return currentItemAttributes
+        }
+
+        currentItemAttributes.frame.origin.x = previousFrameRightPoint + evaluatedMinimumInteritemSpacing(at: indexPath.section)
+        return currentItemAttributes
     }
     
     func evaluatedMinimumInteritemSpacing(at sectionIndex:Int) -> CGFloat {
@@ -85,7 +85,7 @@ class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
         return minimumInteritemSpacing
         
     }
-    
+
     func evaluatedSectionInsetForItem(at index: Int) -> UIEdgeInsets {
         if let delegate = collectionView?.delegate as? UICollectionViewDelegateFlowLayout {
             let insetForSection = delegate.collectionView?(collectionView!, layout: self, insetForSectionAt: index)
