@@ -150,10 +150,10 @@ class SandBox: UITableViewController {
             if fileManager.fileExists(atPath: iOSPath) {
             do {
                 let att = try fileManager.attributesOfItem(atPath: iOSPath)
-                let size = att[FileAttributeKey.size]
-                let creationDate = att[FileAttributeKey.creationDate]
-                let ownerAccountName = att[FileAttributeKey.ownerAccountName]
-                let modificationDate = att[FileAttributeKey.modificationDate]
+                let size = att[.size]
+                let creationDate = att[.creationDate]
+                let ownerAccountName = att[.ownerAccountName]
+                let modificationDate = att[.modificationDate]
 
                 print("size=\(size)", "creationDate=\(creationDate)", "ownerAccountName=\(ownerAccountName)", "modificationDate=\(modificationDate)")
             } catch let error {
