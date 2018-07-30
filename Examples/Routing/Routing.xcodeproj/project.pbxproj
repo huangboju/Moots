@@ -28,6 +28,7 @@
 		BE9E12C5210C59EE002AD7D0 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E12C4210C59EE002AD7D0 /* MainViewModel.swift */; };
 		BE9E12C7210C5A1A002AD7D0 /* MainModuleBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E12C6210C5A1A002AD7D0 /* MainModuleBuilder.swift */; };
 		BE9E12CA210C5CFD002AD7D0 /* AppSettingsRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E12C9210C5CFD002AD7D0 /* AppSettingsRoute.swift */; };
+		BE9E12CC210DBC83002AD7D0 /* ProfileControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9E12CB210DBC83002AD7D0 /* ProfileControlelr.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		BE9E12C4210C59EE002AD7D0 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		BE9E12C6210C5A1A002AD7D0 /* MainModuleBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainModuleBuilder.swift; sourceTree = "<group>"; };
 		BE9E12C9210C5CFD002AD7D0 /* AppSettingsRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsRoute.swift; sourceTree = "<group>"; };
+		BE9E12CB210DBC83002AD7D0 /* ProfileControlelr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileControlelr.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				BE9E12BA210C115D002AD7D0 /* SettingsViewController.swift */,
+				BE9E12CB210DBC83002AD7D0 /* ProfileControlelr.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				BE9E12A5210C074B002AD7D0 /* Router.swift in Sources */,
 				BE9E12A8210C08BF002AD7D0 /* Transition.swift in Sources */,
 				BE9E12AE210C0F78002AD7D0 /* ModalTransition.swift in Sources */,
+				BE9E12CC210DBC83002AD7D0 /* ProfileControlelr.swift in Sources */,
 				BE9E12CA210C5CFD002AD7D0 /* AppSettingsRoute.swift in Sources */,
 				BE9E12BD210C1CAE002AD7D0 /* SettingsViewModel.swift in Sources */,
 				BE9E12C7210C5A1A002AD7D0 /* MainModuleBuilder.swift in Sources */,
