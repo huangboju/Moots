@@ -18,6 +18,7 @@ extension UIResponder {
         static let transferNameEvent = "transferNameEvent"
     }
 
+    @objc
     func router(with eventName: String, userInfo: [String: Any]) {
         if let next = next {
             next.router(with: eventName, userInfo: userInfo)

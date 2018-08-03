@@ -18,7 +18,7 @@ class ViewController: UIViewController {
         return textFiled
     }()
     
-    lazy var fn = throttle(delay: 0.4, action: performSearch)
+    lazy var fn = throttle(delay: 0.05, action: performSearch)
     
     lazy var debounced = debounce(delay: 0.4, action: performSearch)
 
@@ -43,6 +43,9 @@ class ViewController: UIViewController {
     
     @objc func editingChangedAction(_ sender: UITextField) {
 
+//        NSObject.cancelPreviousPerformRequests(withTarget: self, selector: #selector(performSearch), object: nil)
+//        perform(#selector(performSearch), with: nil, afterDelay: 0.2)
+        
 //        🍀🍀🍀 j 🍀🍀🍀
 //        🍀🍀🍀 j j 🍀🍀🍀
 //        🍀🍀🍀 j j j j 🍀🍀🍀
@@ -50,6 +53,9 @@ class ViewController: UIViewController {
 //        🍀🍀🍀 j j j j j j j j j 🍀🍀🍀
 
 //        fn()
+//        dispatch_throttle(0.1) {
+//            self.performSearch()
+//        }
         
 //        debounced()
     }

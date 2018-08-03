@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
         print("icount == \(icount)")
 
         for i in 0 ... (icount - 1) {
-            let memberName = String(utf8String: ivar_getName(ivars?[Int(i)]))
+            let memberName = String(utf8String: ivar_getName((ivars?[Int(i)])!)!) ?? ""
             print("memberName == \(memberName)")
             classArray.append(memberName!)
         }
