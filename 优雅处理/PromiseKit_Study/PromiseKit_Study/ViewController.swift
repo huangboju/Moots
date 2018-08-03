@@ -26,9 +26,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        threeRequest().always {
-//            print("完成啦")
-//        }
+        threeRequest().ensure {
+            print("完成啦")
+        }.catch {
+            print($0)
+        }
 
 
 //        firstly {
@@ -45,13 +47,13 @@ class ViewController: UIViewController {
     }
 
     func request(with parameters: [String: Any]) -> Promise<NSDictionary> {
-        return Promise { fulfill, reject in
+        return Promise { seal in
             Alamofire.request("https://httpbin.org/get", method: .get, parameters: parameters).validate().responseJSON() { (response) in
                 switch response.result {
                 case .success(let dict):
-                    fulfill(dict as! NSDictionary)
+                    seal.fulfill(dict as! NSDictionary)
                 case .failure(let error):
-                    reject(error)
+                    seal.reject(error)
                 }
             }
         }
@@ -66,53 +68,57 @@ class ViewController: UIViewController {
             }.then { (v) -> Promise<NSDictionary> in
                 print("🍀🍀", v)
                 return self.request(with: ["test3": "third"])
-            }.then { (v) in
+            }.done { (v) in
                 print("🍀🍀🍀", v)
-            }.catch { (error) in
-                print(error)
             }
     }
 
     func afterTest() {
-//        after(interval: 1.5).then { _ in
-//            // 1.5 seconds later!
-//        }
+        after(seconds: 1.5).done {
+            
+        }
     }
     
     func raceTest() {
-        race(loginPromise(), loginPromise()).then { winner in
-             print(winner)
-        }.catch { error in
-            print(error)
+        firstly {
+            race(loginPromise(), loginPromise())
+        }.done {
+            print($0)
+        }.catch {
+            print($0)
         }
     }
 
     func whenTest() {
-        when(fulfilled: sessionPromise(), loginPromise()).then { (data, dict) in
-            print(data, dict)
-        }.catch { (error) in
-            
+        firstly {
+            when(fulfilled: sessionPromise(), loginPromise())
+        }.done { result1, result2 in
+            print(result1, result2)
+        }.catch {
+            print($0)
         }
     }
 
     let url = URL(string: "http://www.tngou.net/api/area/province")!
 
     func AlamofireWithPromise() {
-        Alamofire.request(url, method: .get, parameters: ["type": "all"]).responseJSON().then { (result) in
-            print(result)
-        }.catch { (error) in
-                print(error)
+        firstly {
+            Alamofire.request(url, method: .get, parameters: ["type": "all"]).responseJSON()
+        }.done { result1 in
+            print(result1)
+        }.catch {
+            print($0)
         }
     }
 
     func loginPromise() -> Promise<NSDictionary> {
-        return Promise { fulfill, reject in
+        return Promise { seal in
             Alamofire.request("https://httpbin.org/get", method: .get, parameters: ["foo": "bar"]).validate().responseJSON() { (response) in
                 switch response.result {
                 case .success(let dict):
-                    fulfill(dict as! NSDictionary)
+                    seal.fulfill(dict as! NSDictionary)
                 case .failure(let error):
-                    reject(error)
+                    seal.reject(error)
                 }
             }
         }
@@ -121,26 +127,24 @@ class ViewController: UIViewController {
     func sessionTest() {
         firstly {
             sessionPromise()
-        }.then(on: DispatchQueue.global()) { data -> Promise<[String: Any]> in
+        }.then(on: .global()) { data -> Promise<[String: Any]> in
             print("global queue", Thread.current)
-            return Promise<[String: Any]> { (fulfill, reject) in
+            return Promise<[String: Any]> { seal in
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-                        fulfill(json as! [String : Any])
+                        seal.fulfill(json as! [String : Any])
                 } catch {
-                        reject(error)
+                        seal.reject(error)
                 }
             }
-        }.always {
+        }.ensure {
             print("1111", Thread.current)
-        }.then { (json) in
+        }.done { json in
             print(json, Thread.current)
-        }.always {
-            print("always", Thread.current)
-        }.catch { (error) in
-            print(error)
-        }.always {
-            print("😁")
+        }.ensure {
+            
+        }.catch {
+            print($0)
         }
     }
 
@@ -157,12 +161,12 @@ class ViewController: UIViewController {
 
 extension URLSession {
     func promise(_ url: URL) -> Promise<Data> {
-        return Promise<Data> { (fulfill, reject) in
+        return Promise<Data> { seal in
             dataTask(with: url) { (data, _, error) in
                 if let data = data {
-                    fulfill(data)
+                    seal.fulfill(data)
                 } else if let error = error {
-                    reject(error)
+                    seal.reject(error)
                 }
             }.resume()
         }
