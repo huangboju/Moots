@@ -30,7 +30,7 @@ class ButtonCell: UITableViewCell {
         accessoryView = button
     }
 
-    func buttonAction(sender: UIButton) {
+    @objc func buttonAction(sender: UIButton) {
         sender.router(with: EventName.transferNameEvent, userInfo: [Keys.button: indexPath])
     }
 
