@@ -45,16 +45,22 @@ class SimpleStackViewController: AutoLayoutBaseController {
         stackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
 
         let titleLabel = UILabel()
+        titleLabel.backgroundColor = .red
         titleLabel.text = "Flowers"
+        titleLabel.alpha = 0
         titleLabel.textAlignment = .center
+        titleLabel.setContentCompressionResistancePriority(UILayoutPriority(751), for: .vertical)
+        titleLabel.setContentHuggingPriority(UILayoutPriority(249), for: .vertical)
         stackView.addArrangedSubview(titleLabel)
 
         let imageView = UIImageView()
+        imageView.backgroundColor = .green
         imageView.contentMode = .scaleAspectFit
         stackView.addArrangedSubview(imageView)
         imageView.image = UIImage(named: "flowers")
 
         let button = UIButton(type: .system)
+        button.backgroundColor = .blue
         button.setTitle("Edit", for: .normal)
         stackView.addArrangedSubview(button)
     }
