@@ -37,7 +37,7 @@ class VC2: UIViewController {
         dismissVCLeftToRight(self)
     }
     
-    func gesture(_ sender: UIScreenEdgePanGestureRecognizer) {
+    @objc func gesture(_ sender: UIScreenEdgePanGestureRecognizer) {
         dismissVCOnPanGesture(self, sender, interactor!)
     }
 }

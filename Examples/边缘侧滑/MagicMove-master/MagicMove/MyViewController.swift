@@ -43,9 +43,5 @@ class MyViewController: UIViewController {
         vc.modalPresentationStyle = .custom
         vc.transitioningDelegate = pushAnimator
         self.present(vc, animated: true, completion: nil)
-
-//        let vc = MyViewController()
-//        vc.hidesBottomBarWhenPushed = true
-//        navigationController?.pushViewController(vc, animated: true)
     }
 }
