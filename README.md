@@ -675,7 +675,7 @@ open /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Deve
       <li><a href="http://www.jianshu.com/p/8e9fc9a8ab78">iOS开发断点调试高级技巧</a></li>
       <li><a href="https://objccn.io/issue-19-2/">与调试器共舞 - LLDB 的华尔兹</a></li>
       <li>http://www.imlifengfeng.com/blog/?p=622</li>
-      <li><a href="https://mp.weixin.qq.com/s?__biz=MzA3ODg4MDk0Ng==&mid=2651113734&idx=1&sn=c8cbf0b79732b3235cec3f1059dc84ce">你知道怎么用LLDB调试Swift吗？</a></li>
+      <li><a href="https://mp.weixin.qq.com/s?__biz=MzUxMzcxMzE5Ng==&mid=2247488196&amp;idx=1&amp;sn=5b8bb5fe650ddbdff803c7a50f7dbfaf&source=41#wechat_redirect">你知道怎么用LLDB调试Swift吗？</a></li>
     </ul>
 </details>
 
