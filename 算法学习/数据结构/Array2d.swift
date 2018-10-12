@@ -1,6 +1,9 @@
-public func Array2D<T>() {
+public struct Array2D<T> {
+
     public let columns: Int
+
     public let rows: Int
+
     fileprivate var array: [T]
     
     public init(columns: Int, rows: Int, initialValue: T) {
