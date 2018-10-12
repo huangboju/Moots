@@ -5,11 +5,11 @@ public struct Stack<T> {
       array.append(element)
     }
 
-    public mutating pop() -> T? {
+    public mutating func pop() -> T? {
       return array.popLast()
     }
 
-    public var isEmpty: BOOl {
+    public var isEmpty: Bool {
       return array.isEmpty
     }
 
