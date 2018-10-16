@@ -12,3 +12,7 @@ var bits = BitSet(size: 140)
 
 print(bits)
 
+var a = FixedSizeArray(maxSize: 10, defaultValue: 0)
+
+print(a[5])
+
