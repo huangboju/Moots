@@ -17,6 +17,9 @@ print(lengthOfLongestSubstring("ppwwpwkew"))
 
 print("\n\n")
 
-(0...100).forEach {
-    print($0 & 1)
-}
+//(0...100).forEach {
+//    print($0 & 1)
+//}
+
+
+print(findMin(3, target: 5, arr: [1, 4, 5, 6, 7, 8]))
