@@ -12,6 +12,7 @@
 		F71AB96A2170A11F008309FC /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9672170A11F008309FC /* BitSet.swift */; };
 		F71AB96B2170A11F008309FC /* Array2d.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9682170A11F008309FC /* Array2d.swift */; };
 		F71AB96C2170A11F008309FC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9692170A11F008309FC /* Stack.swift */; };
+		F7411991217ACEBF002FDB76 /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7411990217ACEBF002FDB76 /* LinkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +34,7 @@
 		F71AB9672170A11F008309FC /* BitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitSet.swift; path = ../../BitSet.swift; sourceTree = "<group>"; };
 		F71AB9682170A11F008309FC /* Array2d.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array2d.swift; path = ../../Array2d.swift; sourceTree = "<group>"; };
 		F71AB9692170A11F008309FC /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../../Stack.swift; sourceTree = "<group>"; };
+		F7411990217ACEBF002FDB76 /* LinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				F71AB9692170A11F008309FC /* Stack.swift */,
 				F71AB9602170A0DF008309FC /* main.swift */,
 				BEA255A72172D4FE005FE07C /* FixedSizeArray.swift */,
+				F7411990217ACEBF002FDB76 /* LinkList.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F71AB96C2170A11F008309FC /* Stack.swift in Sources */,
+				F7411991217ACEBF002FDB76 /* LinkList.swift in Sources */,
 				F71AB96A2170A11F008309FC /* BitSet.swift in Sources */,
 				F71AB96B2170A11F008309FC /* Array2d.swift in Sources */,
 				F71AB9612170A0DF008309FC /* main.swift in Sources */,

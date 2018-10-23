@@ -22,20 +22,17 @@ import Foundation
     ]
  */
 
-func bestSpace(_ a: [Int], target: Int) -> [[Int]] {
-    var temp = a[0]
-    var reuslt: [[Int]] = [[temp]]
+func bestSpace(_ a: [Int], target: Int) -> [Int] {
+    let interval = 1
+    var temp = a[0] + interval
+    var reuslt = [temp]
     var row = 0
     for (i, n) in a.dropFirst().enumerated() {
-        if temp < target {
-            temp += n
-            reuslt[row].append(n)
-        } else if temp == target {
-            temp = 0
-            row += 1
-        } else {
+        if temp > target {
             temp -= n
-            let total = reuslt[row].reduce(0, +)
+        } else {
+            temp += (n + interval)
+            reuslt.append(n)
         }
     }
 
