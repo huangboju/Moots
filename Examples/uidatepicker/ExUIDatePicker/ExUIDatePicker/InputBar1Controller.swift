@@ -50,11 +50,11 @@ class InputBar1Controller: UIViewController {
         navigationItem.rightBarButtonItems = [item1, item2]
     }
 
-    func editAction() {
+    @objc func editAction() {
         inputBar1.becomeFirstResponder()
     }
     
-    func closeAction() {
+    @objc func closeAction() {
         inputBar1.resignFirstResponder()
     }
 }
