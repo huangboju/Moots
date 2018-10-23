@@ -23,3 +23,18 @@ print("\n\n")
 
 
 print(findMin(3, target: 5, arr: [1, 4, 5, 6, 7, 8]))
+
+
+print("找零")
+print(solve(73))
+
+
+
+print("🍀🍀🍀🍀🍀🍀🍀🍀🍀")
+
+// 硬币面值预先已经按降序排列
+let coinValue = [25, 21, 10, 5, 1]
+// 需要找零的面值
+let money = 65
+
+makeChange(coinValue, money)
