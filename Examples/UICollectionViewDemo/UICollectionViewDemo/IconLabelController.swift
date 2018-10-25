@@ -46,7 +46,7 @@ class IconLabelController: UIViewController {
         }
     }
 
-    let directions: [NSLayoutAttribute] = [
+    let directions: [NSLayoutConstraint.Attribute] = [
         .top,
         .bottom,
         .left,
