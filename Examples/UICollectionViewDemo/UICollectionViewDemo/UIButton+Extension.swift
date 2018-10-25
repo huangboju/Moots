@@ -10,7 +10,7 @@ import UIKit
 
 extension UIButton {
 
-    func set(_ title: String?, with image: UIImage?, direction: NSLayoutAttribute = .top, interval: CGFloat = 10.0) {
+    func set(_ title: String?, with image: UIImage?, direction: NSLayoutConstraint.Attribute = .top, interval: CGFloat = 10.0) {
         setTitle(title, for: .normal)
         setImage(image, for: .normal)
         adjustsImageWhenHighlighted = false
