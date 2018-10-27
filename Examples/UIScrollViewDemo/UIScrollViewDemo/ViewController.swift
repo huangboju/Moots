@@ -42,6 +42,10 @@ class ViewController: UIViewController {
             BubbleViewController.self,
             ResizableImageVC.self,
             TableNestCollectionController.self
+        ],
+        [
+            MaskShapeLayerVC.self,
+            MaskViewVC.self
         ]
     ]
 

@@ -143,6 +143,9 @@
 		D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
+		F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */; };
+		F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF221845883008448E3 /* MaskViewVC.swift */; };
+		F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF5218458A6008448E3 /* MaskView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -310,6 +313,9 @@
 		D8A732221DED7124005DF7C8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
+		F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskShapeLayerVC.swift; sourceTree = "<group>"; };
+		F79C0AF221845883008448E3 /* MaskViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
+		F79C0AF5218458A6008448E3 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -574,6 +580,7 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F79C0AEF2184574D008448E3 /* Controllers */,
 				BE1B15501FB2A40300862271 /* Reusable */,
 				BE1B154B1FB1B0AD00862271 /* CompanyCard */,
 				BEBE4A001FAC07F900A9CA9A /* Account */,
@@ -583,28 +590,22 @@
 				D8076CBC1DF272C6008ACB34 /* BannerView */,
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
 				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
-				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
 				D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */,
 				D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */,
-				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
-				D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */,
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8123AED1EE7FA8C00EAAA63 /* RulerLayout.swift */,
 				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
-				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
 				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
 				D8A731FA1DED6E28005DF7C8 /* LaunchScreen.storyboard */,
 				D8A731FD1DED6E28005DF7C8 /* Info.plist */,
 				D824104A1E24B0010005E324 /* PagingSecondController.swift */,
-				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
 				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
 				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
-				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 				BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */,
 				BE1B15631FB2A5E700862271 /* Bridging.h */,
 				BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */,
@@ -643,6 +644,30 @@
 				D8A732221DED7124005DF7C8 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F79C0AEF2184574D008448E3 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F79C0AF421845895008448E3 /* MaskView */,
+				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
+				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
+				D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */,
+				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
+				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
+				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
+				F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F79C0AF421845895008448E3 /* MaskView */ = {
+			isa = PBXGroup;
+			children = (
+				F79C0AF221845883008448E3 /* MaskViewVC.swift */,
+				F79C0AF5218458A6008448E3 /* MaskView.swift */,
+			);
+			path = MaskView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -788,6 +813,7 @@
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
 				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
+				F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */,
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
@@ -803,6 +829,7 @@
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
 				BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */,
 				BEC5E7A01FB5488B00A44CD7 /* CoRightsGirdViewCell.swift in Sources */,
+				F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
 				BE95F4F21FC402310033D83B /* ResetPasswordFieldCell.swift in Sources */,
@@ -833,6 +860,7 @@
 				BEC5E79E1FB45EFE00A44CD7 /* MemberAlertView.swift in Sources */,
 				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
 				BEC5E78F1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift in Sources */,
+				F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */,
 				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
 				BEA0098D1F5D515E00CB07CF /* LinerCardView.swift in Sources */,
 				BE3D3A2E1FAFF423001F097D /* AccountCell.swift in Sources */,
