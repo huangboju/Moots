@@ -46,7 +46,7 @@ class LinerCardView: UIView {
         layout.scrollDirection = .horizontal
 
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
-        collectionView.decelerationRate = UIScrollViewDecelerationRateFast
+        collectionView.decelerationRate = UIScrollView.DecelerationRate.fast
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(CardViewCell.self, forCellWithReuseIdentifier: self.cellIdentifier)

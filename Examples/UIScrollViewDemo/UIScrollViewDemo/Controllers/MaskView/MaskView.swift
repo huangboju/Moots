@@ -89,7 +89,7 @@ class MaskView: UIView {
         maskColor = UIColor(white: 0, alpha: 0.5) // 50% transparent black
         
         fillLayer.path = overlayPath.cgPath
-        fillLayer.fillRule = kCAFillRuleEvenOdd
+        fillLayer.fillRule = .evenOdd
         fillLayer.fillColor = maskColor?.cgColor
 
     }

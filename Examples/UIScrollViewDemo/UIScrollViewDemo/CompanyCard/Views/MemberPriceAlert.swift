@@ -33,7 +33,7 @@ class MemberPriceCell: UITableViewCell, Updatable {
         return discountLabel
     }()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
 
         contentView.addSubview(memberBage)

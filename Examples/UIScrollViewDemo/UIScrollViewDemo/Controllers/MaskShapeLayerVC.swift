@@ -122,7 +122,7 @@ class MaskShapeLayerVC: UIViewController {
         let slider = UISlider(frame: CGRect(x: 20, y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width - 40, height: 10))
         slider.minimumValue = 0
         slider.maximumValue = 1
-        slider.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: UIControlEvents.valueChanged)
+        slider.addTarget(self, action: #selector(sliderValueChanged(sender:)), for: UIControl.Event.valueChanged)
         view.addSubview(slider)
     }
     
