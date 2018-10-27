@@ -25,15 +25,15 @@ class GroupTableController: UIViewController {
     final override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
         view.addSubview(tableView)
 
         tableView.dataSource = self
         tableView.delegate = self
 
-        addObserver(with: #selector(keyboardWillShow), name: .UIKeyboardWillShow)
-        addObserver(with: #selector(keyboardDidHide), name: .UIKeyboardWillHide)
+        addObserver(with: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification)
+        addObserver(with: #selector(keyboardDidHide), name: UIResponder.keyboardWillHideNotification)
 
         initSubviews()
     }
@@ -113,7 +113,7 @@ extension GroupTableController {
         tableView.addGestureRecognizer(tap!)
 
         let keyBoardInfo = notification.userInfo!
-        let endFrame = keyBoardInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue
+        let endFrame = keyBoardInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue
         
         let keyBoardFrame = tableView.window!.convert(endFrame.cgRectValue, to: tableView.superview)
         let newBottomInset = tableView.frame.minY + tableView.frame.height - keyBoardFrame.minY
@@ -124,8 +124,8 @@ extension GroupTableController {
             tableInsets.bottom = newBottomInset
             scrollIndicatorInsets.bottom = tableInsets.bottom
             UIView.beginAnimations(nil, context: nil)
-            UIView.setAnimationDuration((keyBoardInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double))
-            UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: (keyBoardInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int))!)
+            UIView.setAnimationDuration((keyBoardInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double))
+            UIView.setAnimationCurve(UIView.AnimationCurve(rawValue: (keyBoardInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! Int))!)
             tableView.contentInset = tableInsets
             tableView.scrollIndicatorInsets = scrollIndicatorInsets
             UIView.commitAnimations()
@@ -147,8 +147,8 @@ extension GroupTableController {
         scrollIndicatorInsets.bottom = tableInsets.bottom
         oldBottomInset = nil
         UIView.beginAnimations(nil, context: nil)
-        UIView.setAnimationDuration((keyBoardInfo[UIKeyboardAnimationDurationUserInfoKey] as! Double))
-        UIView.setAnimationCurve(UIViewAnimationCurve(rawValue: (keyBoardInfo[UIKeyboardAnimationCurveUserInfoKey] as! Int))!)
+        UIView.setAnimationDuration((keyBoardInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as! Double))
+        UIView.setAnimationCurve(UIView.AnimationCurve(rawValue: (keyBoardInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as! Int))!)
         tableView.contentInset = tableInsets
         tableView.scrollIndicatorInsets = scrollIndicatorInsets
         UIView.commitAnimations()
