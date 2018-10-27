@@ -8,7 +8,7 @@
 
 class MyCoRightsRecommendTitleCell: UITableViewCell, Updatable {
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         backgroundColor = .yellow
         textLabel?.text = "为您推荐"
