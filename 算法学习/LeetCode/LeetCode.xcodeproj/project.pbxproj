@@ -13,7 +13,6 @@
 		D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E8B1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift */; };
 		D81B3ED61EA75F7500214304 /* findMedianSortedArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3ED51EA75F7500214304 /* findMedianSortedArrays.swift */; };
 		F72C75AA217DFE580031DD64 /* MinCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C75A9217DFE580031DD64 /* MinCount.swift */; };
-		F741197C2179A669002FDB76 /* GreedyActivitySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = F741197B2179A669002FDB76 /* GreedyActivitySelector.swift */; };
 		F7E4164E217492B1004409CF /* BestSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E4164D217492B1004409CF /* BestSpace.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,7 +36,6 @@
 		D81B3E8B1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongestSubstringWithoutRepeatingCharacters.swift; sourceTree = "<group>"; };
 		D81B3ED51EA75F7500214304 /* findMedianSortedArrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findMedianSortedArrays.swift; sourceTree = "<group>"; };
 		F72C75A9217DFE580031DD64 /* MinCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinCount.swift; sourceTree = "<group>"; };
-		F741197B2179A669002FDB76 /* GreedyActivitySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreedyActivitySelector.swift; sourceTree = "<group>"; };
 		F7E4164D217492B1004409CF /* BestSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSpace.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +69,6 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
-				F741197A2179A64B002FDB76 /* Greedy */,
 				D81B3E7E1EA707A200214304 /* main.swift */,
 				D81B3E871EA7081E00214304 /* TwoSum.swift */,
 				D81B3E891EA7083B00214304 /* AddTwoNumbers.swift */,
@@ -81,14 +78,6 @@
 				F72C75A9217DFE580031DD64 /* MinCount.swift */,
 			);
 			path = LeetCode;
-			sourceTree = "<group>";
-		};
-		F741197A2179A64B002FDB76 /* Greedy */ = {
-			isa = PBXGroup;
-			children = (
-				F741197B2179A669002FDB76 /* GreedyActivitySelector.swift */,
-			);
-			path = Greedy;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,11 +107,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 1000;
 				ORGANIZATIONNAME = "伯驹 黄";
 				TargetAttributes = {
 					D81B3E7A1EA707A200214304 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 1000;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -150,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81B3E8A1EA7083B00214304 /* AddTwoNumbers.swift in Sources */,
-				F741197C2179A669002FDB76 /* GreedyActivitySelector.swift in Sources */,
 				D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */,
 				D81B3E7F1EA707A200214304 /* main.swift in Sources */,
 				D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
@@ -172,15 +161,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -220,15 +217,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -248,6 +253,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
 		};
@@ -255,7 +261,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -263,7 +270,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
