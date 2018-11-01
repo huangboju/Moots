@@ -9,7 +9,7 @@
 import Foundation
 
 func makeChange(_ values: [Int], _ money: Int) {
-    // 保存每一个面值找零所需的最小硬币数，0号单元舍弃不用，所以要多加1
+    // 保存每一个面值找零所需的最小硬币数，0号单元舍弃不用，所以要多加
     var coinsUsed = [Int](repeating: 0, count: money + 1)
     var coinTrack = [Int](repeating: 0, count: money + 1)
     var last = 0
