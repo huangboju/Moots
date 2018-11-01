@@ -27,7 +27,6 @@ func makeChange(_ values: [Int], _ money: Int) {
                     minCoins = temp
                     last = i
                 }
-                
             }
         }
         // 保存最小硬币数
@@ -36,7 +35,6 @@ func makeChange(_ values: [Int], _ money: Int) {
         print("面值为 :\(cents)的最小硬币数 : \(coinsUsed[cents])")
         trackPrint(cents, coinTrack)
     }
-    print(coinTrack)
 }
 
 func trackPrint(_ m: Int, _ coinTrack: [Int]) {
