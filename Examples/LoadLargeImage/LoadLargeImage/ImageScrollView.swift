@@ -19,7 +19,7 @@ class ImageScrollView: UIScrollView {
         
         showsVerticalScrollIndicator = false
         showsHorizontalScrollIndicator = false
-        decelerationRate = UIScrollViewDecelerationRateFast
+        decelerationRate = UIScrollView.DecelerationRate.fast
         delegate = self
         maximumZoomScale = 5.0
         minimumZoomScale = 0.25
@@ -50,7 +50,7 @@ class ImageScrollView: UIScrollView {
             backgroundImageView?.contentMode = .scaleAspectFit
             
             addSubview(backgroundImageView!)
-            sendSubview(toBack: backgroundImageView!)
+            sendSubviewToBack(backgroundImageView!)
             
             frontTiledView = TiledImageView(frame: imageRect, image: image, scale: imageScale)
             addSubview(frontTiledView!)
