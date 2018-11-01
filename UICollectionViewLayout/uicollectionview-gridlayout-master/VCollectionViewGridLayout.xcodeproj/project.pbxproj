@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B1E86A3717C41C3B009BD250 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E86A3617C41C3B009BD250 /* Foundation.framework */; };
+		B1E86A3C17C41C3B009BD250 /* VCollectionViewGridLayout.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = B1E86A3B17C41C3B009BD250 /* VCollectionViewGridLayout.h */; };
+		B1E86A3E17C41C3B009BD250 /* VCollectionViewGridLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B1E86A3D17C41C3B009BD250 /* VCollectionViewGridLayout.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B1E86A3117C41C3B009BD250 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/${PRODUCT_NAME}";
+			dstSubfolderSpec = 16;
+			files = (
+				B1E86A3C17C41C3B009BD250 /* VCollectionViewGridLayout.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		861240B41934FBB60028A7B7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		861240B51934FBB60028A7B7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		861240B61934FBB60028A7B7 /* VCollectionViewGridLayout.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VCollectionViewGridLayout.podspec; sourceTree = "<group>"; };
+		B1E86A3317C41C3B009BD250 /* libVCollectionViewGridLayout.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libVCollectionViewGridLayout.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1E86A3617C41C3B009BD250 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B1E86A3A17C41C3B009BD250 /* VCollectionViewGridLayout-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VCollectionViewGridLayout-Prefix.pch"; sourceTree = "<group>"; };
+		B1E86A3B17C41C3B009BD250 /* VCollectionViewGridLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VCollectionViewGridLayout.h; sourceTree = "<group>"; };
+		B1E86A3D17C41C3B009BD250 /* VCollectionViewGridLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VCollectionViewGridLayout.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B1E86A3017C41C3B009BD250 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E86A3717C41C3B009BD250 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B1E86A2A17C41C3B009BD250 = {
+			isa = PBXGroup;
+			children = (
+				861240B41934FBB60028A7B7 /* LICENSE */,
+				861240B51934FBB60028A7B7 /* README.md */,
+				861240B61934FBB60028A7B7 /* VCollectionViewGridLayout.podspec */,
+				B1E86A3817C41C3B009BD250 /* VCollectionViewGridLayout */,
+				B1E86A3517C41C3B009BD250 /* Frameworks */,
+				B1E86A3417C41C3B009BD250 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B1E86A3417C41C3B009BD250 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B1E86A3317C41C3B009BD250 /* libVCollectionViewGridLayout.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B1E86A3517C41C3B009BD250 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B1E86A3617C41C3B009BD250 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B1E86A3817C41C3B009BD250 /* VCollectionViewGridLayout */ = {
+			isa = PBXGroup;
+			children = (
+				B1E86A3B17C41C3B009BD250 /* VCollectionViewGridLayout.h */,
+				B1E86A3D17C41C3B009BD250 /* VCollectionViewGridLayout.m */,
+				B1E86A3917C41C3B009BD250 /* Supporting Files */,
+			);
+			path = VCollectionViewGridLayout;
+			sourceTree = "<group>";
+		};
+		B1E86A3917C41C3B009BD250 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B1E86A3A17C41C3B009BD250 /* VCollectionViewGridLayout-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B1E86A3217C41C3B009BD250 /* VCollectionViewGridLayout */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B1E86A4117C41C3B009BD250 /* Build configuration list for PBXNativeTarget "VCollectionViewGridLayout" */;
+			buildPhases = (
+				B1E86A2F17C41C3B009BD250 /* Sources */,
+				B1E86A3017C41C3B009BD250 /* Frameworks */,
+				B1E86A3117C41C3B009BD250 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VCollectionViewGridLayout;
+			productName = VCollectionViewGridLayout;
+			productReference = B1E86A3317C41C3B009BD250 /* libVCollectionViewGridLayout.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B1E86A2B17C41C3B009BD250 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Vast.com, Inc";
+			};
+			buildConfigurationList = B1E86A2E17C41C3B009BD250 /* Build configuration list for PBXProject "VCollectionViewGridLayout" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B1E86A2A17C41C3B009BD250;
+			productRefGroup = B1E86A3417C41C3B009BD250 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B1E86A3217C41C3B009BD250 /* VCollectionViewGridLayout */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B1E86A2F17C41C3B009BD250 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B1E86A3E17C41C3B009BD250 /* VCollectionViewGridLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B1E86A3F17C41C3B009BD250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B1E86A4017C41C3B009BD250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B1E86A4217C41C3B009BD250 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VCollectionViewGridLayout.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VCollectionViewGridLayout/VCollectionViewGridLayout-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B1E86A4317C41C3B009BD250 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/VCollectionViewGridLayout.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "VCollectionViewGridLayout/VCollectionViewGridLayout-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B1E86A2E17C41C3B009BD250 /* Build configuration list for PBXProject "VCollectionViewGridLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E86A3F17C41C3B009BD250 /* Debug */,
+				B1E86A4017C41C3B009BD250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B1E86A4117C41C3B009BD250 /* Build configuration list for PBXNativeTarget "VCollectionViewGridLayout" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B1E86A4217C41C3B009BD250 /* Debug */,
+				B1E86A4317C41C3B009BD250 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B1E86A2B17C41C3B009BD250 /* Project object */;
+}

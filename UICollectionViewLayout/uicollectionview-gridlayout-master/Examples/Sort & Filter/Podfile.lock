@@ -1,0 +1,17 @@
+PODS:
+  - TLIndexPathTools (0.3.0)
+  - VCollectionViewGridLayout (0.0.2):
+    - TLIndexPathTools
+
+DEPENDENCIES:
+  - VCollectionViewGridLayout (from `../..`)
+
+EXTERNAL SOURCES:
+  VCollectionViewGridLayout:
+    :path: ../..
+
+SPEC CHECKSUMS:
+  TLIndexPathTools: 5903766696d849f57236d9a85c5af438057b35e8
+  VCollectionViewGridLayout: 7e87e0e8f646c656d60997cdac0788d63969465a
+
+COCOAPODS: 0.32.1
