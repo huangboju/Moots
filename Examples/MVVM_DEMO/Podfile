@@ -1,8 +1,0 @@
-platform:ios,'9.0'
-use_frameworks!
-
-target 'MVVM_DEMO' do
-    pod 'PermissionScope', :git => 'https://github.com/nickoneill/PermissionScope.git', :branch => 'swift3'
-    pod 'TLYShyNavBar'
-    pod 'AlamofireObjectMapper'
-end
