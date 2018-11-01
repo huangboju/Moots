@@ -20,3 +20,5 @@ print("\n\n")
 (0...100).forEach {
     print($0 & 1)
 }
+
+print(bubbleSort([2, 7, 11, 15, 0, 9]))
