@@ -92,23 +92,23 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     
     /// MARK: Undo Manager Actions
     func registerUndoAddFigure(_ figure: FigureView) {
-        (undoManager.prepare(withInvocationTarget: self) as AnyObject).removeFigure(figure)
+        (undoManager.prepare(withInvocationTarget: self) as? ViewController)?.removeFigure(figure)
         undoManager.setActionName("Add Figure")
     }
     
     func registerUndoRemoveFigure(_ figure: FigureView) {
-        (undoManager.prepare(withInvocationTarget: self) as AnyObject).addFigure(figure)
+        (undoManager.prepare(withInvocationTarget: self) as? ViewController)?.addFigure(figure)
         undoManager.setActionName("Remove Figure")
     }
     
     func registerUndoMoveFigure(_ figure: FigureView) {
-        (undoManager.prepare(withInvocationTarget: self) as AnyObject).moveFigure(figure, center: figure.center)
+        (undoManager.prepare(withInvocationTarget: self) as? ViewController)?.moveFigure(figure, center: figure.center)
         undoManager.setActionName("Move to \(figure.center)")
     }
     
     
     /// MARK: Gesture Recognizer
-    func handleDoubleTapGesture(recognizer: UITapGestureRecognizer) {
+    @objc func handleDoubleTapGesture(recognizer: UITapGestureRecognizer) {
         let figureView = recognizer.view as! FigureView
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -122,7 +122,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         self.present(figureSettingsVC, animated: true, completion: nil)
     }
     
-    func handleFigureLongPressGesture(recognizer: UILongPressGestureRecognizer) {
+    @objc func handleFigureLongPressGesture(recognizer: UILongPressGestureRecognizer) {
         let figure = recognizer.view as! FigureView
         switch recognizer.state {
         case .began:

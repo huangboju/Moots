@@ -135,12 +135,12 @@ class FigureSettingsViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(undoManagerDidRedoNotification), name: .NSUndoManagerDidRedoChange, object: figure.undoManager)
     }
     
-    func undoManagerDidUndoNotification() {
+    @objc func undoManagerDidUndoNotification() {
         updateUndoAndRedoButtons()
         figure.recordBeginChanges()
     }
     
-    func undoManagerDidRedoNotification() {
+    @objc func undoManagerDidRedoNotification() {
         updateUndoAndRedoButtons()
         figure.recordBeginChanges()
     }
