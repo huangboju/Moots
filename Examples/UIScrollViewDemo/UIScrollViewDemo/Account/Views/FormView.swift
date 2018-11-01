@@ -17,7 +17,7 @@ class FormView: UITableView {
     convenience init(frame: CGRect) {
         self.init(frame: frame, style: .grouped)
 
-        rowHeight = UITableViewAutomaticDimension
+        rowHeight = UITableView.automaticDimension
         estimatedRowHeight = 44
 
         dataSource = self

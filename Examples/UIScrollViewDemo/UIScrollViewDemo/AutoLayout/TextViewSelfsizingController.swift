@@ -15,7 +15,7 @@ class TextViewSelfsizingCell: UITableViewCell, Reusable {
         return textView
     }()
     
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         selectionStyle = .none
 
@@ -51,7 +51,7 @@ class TextViewSelfsizingController: AutoLayoutBaseController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 100
         tableView.register(TextViewSelfsizingCell.self, forCellReuseIdentifier: "cell")
         return tableView

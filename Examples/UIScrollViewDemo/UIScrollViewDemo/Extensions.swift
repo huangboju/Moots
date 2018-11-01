@@ -60,7 +60,7 @@ extension UIViewController {
     }
 
     @discardableResult
-    func showAlert(actionTitle: String = "确定", title: String? = nil, message: String?, style: UIAlertControllerStyle = .alert, handle: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+    func showAlert(actionTitle: String = "确定", title: String? = nil, message: String?, style: UIAlertController.Style = .alert, handle: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: style)
         present(alert, animated: true, completion: nil)
         return alert.action(actionTitle, handle)
@@ -69,7 +69,7 @@ extension UIViewController {
 
 extension UIAlertController {
     @discardableResult
-    func action(_ title: String, style: UIAlertActionStyle = .`default`, _ handle: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
+    func action(_ title: String, style: UIAlertAction.Style = .`default`, _ handle: ((UIAlertAction) -> Void)? = nil) -> UIAlertController {
         let action = UIAlertAction(title: title, style: style, handler: handle)
         addAction(action)
         return self
@@ -112,7 +112,7 @@ extension UITableView {
         }
         let oldHeight = headerView.frame.height
         
-        let height = headerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = headerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         
         headerView.frame.size.height = height
         contentSize.height += (height - oldHeight)
@@ -125,7 +125,7 @@ extension UITableView {
             return
         }
         let oldHeight = footerView.frame.height
-        let height = footerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+        let height = footerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
         
         footerView.frame.size.height = height
         contentSize.height += (height - oldHeight)

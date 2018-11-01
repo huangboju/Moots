@@ -1,0 +1,26 @@
+platform :ios, '9.0'
+
+target 'ArticleFeed' do
+  use_frameworks!
+
+  # Architecture
+  pod 'ReactorKit'
+  pod 'SectionReactor', :path => '../../SectionReactor.podspec'
+
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  pod 'RxDataSources'
+  pod 'Differentiator'
+  pod 'RxViewController'
+
+  # Misc.
+  pod 'Then'
+  pod 'ManualLayout'
+  pod 'SnapKit'
+  pod 'ReusableKit'
+  pod 'UICollectionViewFlexLayout'
+  pod 'CGFloatLiteral'
+  pod 'SwiftyColor'
+  pod 'LoremIpsum'
+end

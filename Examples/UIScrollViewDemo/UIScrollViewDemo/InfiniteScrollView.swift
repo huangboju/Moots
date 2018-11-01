@@ -28,7 +28,7 @@ class InfiniteScrollView: UIScrollView, UIScrollViewDelegate {
         let currentOffset = contentOffset
         let contentWidth = contentSize.width
         let centerOffsetX = (contentWidth - bounds.width) / 2.0
-        let distanceFromCenter = fabs(currentOffset.x - centerOffsetX)
+        let distanceFromCenter = abs(currentOffset.x - centerOffsetX)
 
         if distanceFromCenter > (contentWidth / 4.0) {
 

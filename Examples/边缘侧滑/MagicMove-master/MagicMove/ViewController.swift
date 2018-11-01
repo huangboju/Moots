@@ -37,14 +37,14 @@ class ViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        selectedCell = collectionView.cellForItem(at: indexPath) as! MMCollectionViewCell
+        selectedCell = collectionView.cellForItem(at: indexPath) as? MMCollectionViewCell
 
         performSegue(withIdentifier: "detail", sender: nil)
     }
 }
 
 extension ViewController: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         if operation == .push {
             return MagicMoveTransion()
         } else {

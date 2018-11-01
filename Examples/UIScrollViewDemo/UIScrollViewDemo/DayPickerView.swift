@@ -67,7 +67,7 @@ class DayPickerCell: UICollectionViewCell {
         let textLayer = CXETextLayer()
         textLayer.frame = self.bounds
         textLayer.bounds = self.bounds
-        textLayer.alignmentMode = kCAAlignmentCenter
+        textLayer.alignmentMode = .center
         textLayer.foregroundColor = UIColor.white.cgColor
         textLayer.backgroundColor = UIColor.red.cgColor
         textLayer.cornerRadius = self.bounds.width / 2

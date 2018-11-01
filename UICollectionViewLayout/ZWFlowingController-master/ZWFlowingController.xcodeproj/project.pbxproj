@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8F26AD4A1F7E1197002310BF /* FWSearchCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F26AD491F7E1197002310BF /* FWSearchCollectionCell.m */; };
+		8F26AD4D1F7E11B6002310BF /* FWSearchCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F26AD4C1F7E11B6002310BF /* FWSearchCollectionData.m */; };
+		8F41295B1F7CED8F00DE2AC0 /* DomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4129301F7CED8F00DE2AC0 /* DomeViewController.m */; };
+		8F41295C1F7CED8F00DE2AC0 /* skype.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129351F7CED8F00DE2AC0 /* skype.png */; };
+		8F41295D1F7CED8F00DE2AC0 /* skype@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129361F7CED8F00DE2AC0 /* skype@2x.png */; };
+		8F41295E1F7CED8F00DE2AC0 /* skype@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129371F7CED8F00DE2AC0 /* skype@3x.png */; };
+		8F41295F1F7CED8F00DE2AC0 /* status_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129381F7CED8F00DE2AC0 /* status_off.png */; };
+		8F4129601F7CED8F00DE2AC0 /* status_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129391F7CED8F00DE2AC0 /* status_off@2x.png */; };
+		8F4129611F7CED8F00DE2AC0 /* status_off@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F41293A1F7CED8F00DE2AC0 /* status_off@3x.png */; };
+		8F4129621F7CED8F00DE2AC0 /* status_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F41293B1F7CED8F00DE2AC0 /* status_on.png */; };
+		8F4129631F7CED8F00DE2AC0 /* status_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F41293C1F7CED8F00DE2AC0 /* status_on@2x.png */; };
+		8F4129641F7CED8F00DE2AC0 /* status_on@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F41293D1F7CED8F00DE2AC0 /* status_on@3x.png */; };
+		8F41296B1F7CED8F00DE2AC0 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129441F7CED8F00DE2AC0 /* youtube.png */; };
+		8F41296C1F7CED8F00DE2AC0 /* youtube@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129451F7CED8F00DE2AC0 /* youtube@2x.png */; };
+		8F41296D1F7CED8F00DE2AC0 /* youtube@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F4129461F7CED8F00DE2AC0 /* youtube@3x.png */; };
+		8F41296E1F7CED8F00DE2AC0 /* FWAppCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F41294B1F7CED8F00DE2AC0 /* FWAppCollectionData.m */; };
+		8F41296F1F7CED8F00DE2AC0 /* FWButtonCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F41294D1F7CED8F00DE2AC0 /* FWButtonCollectionData.m */; };
+		8F4129701F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F41294F1F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.m */; };
+		8F4129711F7CED8F00DE2AC0 /* FWTimelineCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4129511F7CED8F00DE2AC0 /* FWTimelineCollectionData.m */; };
+		8F4129721F7CED8F00DE2AC0 /* FWAppCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4129541F7CED8F00DE2AC0 /* FWAppCollectionCell.m */; };
+		8F4129731F7CED8F00DE2AC0 /* FWButtonCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4129561F7CED8F00DE2AC0 /* FWButtonCollectionCell.m */; };
+		8F4129741F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F4129581F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.m */; };
+		8F4129751F7CED8F00DE2AC0 /* FWTimelineCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F41295A1F7CED8F00DE2AC0 /* FWTimelineCollectionCell.m */; };
+		8FEAA6571F7CA3E500865029 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA6561F7CA3E500865029 /* main.m */; };
+		8FEAA65A1F7CA3E500865029 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA6591F7CA3E500865029 /* AppDelegate.m */; };
+		8FEAA6621F7CA3E500865029 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FEAA6611F7CA3E500865029 /* Assets.xcassets */; };
+		8FEAA6701F7CA3E500865029 /* ZWFlowingControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA66F1F7CA3E500865029 /* ZWFlowingControllerTests.m */; };
+		8FEAA67B1F7CA3E500865029 /* ZWFlowingControllerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA67A1F7CA3E500865029 /* ZWFlowingControllerUITests.m */; };
+		8FEAA68E1F7CA52600865029 /* ZWBaseCollectionData.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA68D1F7CA52600865029 /* ZWBaseCollectionData.m */; };
+		8FEAA6911F7CA73200865029 /* ZWBaseCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA6901F7CA73200865029 /* ZWBaseCollectionCell.m */; };
+		8FEAA6971F7CABB400865029 /* ZWBaseCollectionSection.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA6961F7CABB400865029 /* ZWBaseCollectionSection.m */; };
+		8FEAA6A01F7CBF1A00865029 /* ZWBaseFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA69F1F7CBF1A00865029 /* ZWBaseFlowLayout.m */; };
+		8FEAA7431F7CD9F300865029 /* ZWBaseFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FEAA7421F7CD9F300865029 /* ZWBaseFlowController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8FEAA66C1F7CA3E500865029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FEAA64A1F7CA3E500865029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FEAA6511F7CA3E500865029;
+			remoteInfo = ZWFlowingController;
+		};
+		8FEAA6771F7CA3E500865029 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8FEAA64A1F7CA3E500865029 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8FEAA6511F7CA3E500865029;
+			remoteInfo = ZWFlowingController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8F26AD481F7E1197002310BF /* FWSearchCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSearchCollectionCell.h; sourceTree = "<group>"; };
+		8F26AD491F7E1197002310BF /* FWSearchCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSearchCollectionCell.m; sourceTree = "<group>"; };
+		8F26AD4B1F7E11B6002310BF /* FWSearchCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWSearchCollectionData.h; sourceTree = "<group>"; };
+		8F26AD4C1F7E11B6002310BF /* FWSearchCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWSearchCollectionData.m; sourceTree = "<group>"; };
+		8F41292F1F7CED8F00DE2AC0 /* DomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DomeViewController.h; sourceTree = "<group>"; };
+		8F4129301F7CED8F00DE2AC0 /* DomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DomeViewController.m; sourceTree = "<group>"; };
+		8F4129351F7CED8F00DE2AC0 /* skype.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skype.png; sourceTree = "<group>"; };
+		8F4129361F7CED8F00DE2AC0 /* skype@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skype@2x.png"; sourceTree = "<group>"; };
+		8F4129371F7CED8F00DE2AC0 /* skype@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "skype@3x.png"; sourceTree = "<group>"; };
+		8F4129381F7CED8F00DE2AC0 /* status_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_off.png; sourceTree = "<group>"; };
+		8F4129391F7CED8F00DE2AC0 /* status_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_off@2x.png"; sourceTree = "<group>"; };
+		8F41293A1F7CED8F00DE2AC0 /* status_off@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_off@3x.png"; sourceTree = "<group>"; };
+		8F41293B1F7CED8F00DE2AC0 /* status_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = status_on.png; sourceTree = "<group>"; };
+		8F41293C1F7CED8F00DE2AC0 /* status_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_on@2x.png"; sourceTree = "<group>"; };
+		8F41293D1F7CED8F00DE2AC0 /* status_on@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "status_on@3x.png"; sourceTree = "<group>"; };
+		8F4129441F7CED8F00DE2AC0 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		8F4129451F7CED8F00DE2AC0 /* youtube@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youtube@2x.png"; sourceTree = "<group>"; };
+		8F4129461F7CED8F00DE2AC0 /* youtube@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youtube@3x.png"; sourceTree = "<group>"; };
+		8F41294A1F7CED8F00DE2AC0 /* FWAppCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAppCollectionData.h; sourceTree = "<group>"; };
+		8F41294B1F7CED8F00DE2AC0 /* FWAppCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppCollectionData.m; sourceTree = "<group>"; };
+		8F41294C1F7CED8F00DE2AC0 /* FWButtonCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWButtonCollectionData.h; sourceTree = "<group>"; };
+		8F41294D1F7CED8F00DE2AC0 /* FWButtonCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWButtonCollectionData.m; sourceTree = "<group>"; };
+		8F41294E1F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPortsInfoCollectionData.h; sourceTree = "<group>"; };
+		8F41294F1F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPortsInfoCollectionData.m; sourceTree = "<group>"; };
+		8F4129501F7CED8F00DE2AC0 /* FWTimelineCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTimelineCollectionData.h; sourceTree = "<group>"; };
+		8F4129511F7CED8F00DE2AC0 /* FWTimelineCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTimelineCollectionData.m; sourceTree = "<group>"; };
+		8F4129531F7CED8F00DE2AC0 /* FWAppCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWAppCollectionCell.h; sourceTree = "<group>"; };
+		8F4129541F7CED8F00DE2AC0 /* FWAppCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWAppCollectionCell.m; sourceTree = "<group>"; };
+		8F4129551F7CED8F00DE2AC0 /* FWButtonCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWButtonCollectionCell.h; sourceTree = "<group>"; };
+		8F4129561F7CED8F00DE2AC0 /* FWButtonCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWButtonCollectionCell.m; sourceTree = "<group>"; };
+		8F4129571F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWPortsInfoCollectionCell.h; sourceTree = "<group>"; };
+		8F4129581F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWPortsInfoCollectionCell.m; sourceTree = "<group>"; };
+		8F4129591F7CED8F00DE2AC0 /* FWTimelineCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FWTimelineCollectionCell.h; sourceTree = "<group>"; };
+		8F41295A1F7CED8F00DE2AC0 /* FWTimelineCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FWTimelineCollectionCell.m; sourceTree = "<group>"; };
+		8FEAA6521F7CA3E500865029 /* ZWFlowingController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZWFlowingController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEAA6561F7CA3E500865029 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8FEAA6581F7CA3E500865029 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../../../AppDelegate.h; sourceTree = "<group>"; };
+		8FEAA6591F7CA3E500865029 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../../../AppDelegate.m; sourceTree = "<group>"; };
+		8FEAA6611F7CA3E500865029 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../Assets.xcassets; sourceTree = "<group>"; };
+		8FEAA6661F7CA3E500865029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FEAA66B1F7CA3E500865029 /* ZWFlowingControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWFlowingControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEAA66F1F7CA3E500865029 /* ZWFlowingControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWFlowingControllerTests.m; sourceTree = "<group>"; };
+		8FEAA6711F7CA3E500865029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FEAA6761F7CA3E500865029 /* ZWFlowingControllerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZWFlowingControllerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8FEAA67A1F7CA3E500865029 /* ZWFlowingControllerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZWFlowingControllerUITests.m; sourceTree = "<group>"; };
+		8FEAA67C1F7CA3E500865029 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FEAA68C1F7CA52600865029 /* ZWBaseCollectionData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseCollectionData.h; sourceTree = "<group>"; };
+		8FEAA68D1F7CA52600865029 /* ZWBaseCollectionData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseCollectionData.m; sourceTree = "<group>"; };
+		8FEAA68F1F7CA73200865029 /* ZWBaseCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseCollectionCell.h; sourceTree = "<group>"; };
+		8FEAA6901F7CA73200865029 /* ZWBaseCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseCollectionCell.m; sourceTree = "<group>"; };
+		8FEAA6951F7CABB400865029 /* ZWBaseCollectionSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseCollectionSection.h; sourceTree = "<group>"; };
+		8FEAA6961F7CABB400865029 /* ZWBaseCollectionSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseCollectionSection.m; sourceTree = "<group>"; };
+		8FEAA69E1F7CBF1A00865029 /* ZWBaseFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseFlowLayout.h; sourceTree = "<group>"; };
+		8FEAA69F1F7CBF1A00865029 /* ZWBaseFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseFlowLayout.m; sourceTree = "<group>"; };
+		8FEAA7411F7CD9F300865029 /* ZWBaseFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWBaseFlowController.h; sourceTree = "<group>"; };
+		8FEAA7421F7CD9F300865029 /* ZWBaseFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWBaseFlowController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8FEAA64F1F7CA3E500865029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6681F7CA3E500865029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6731F7CA3E500865029 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8F41292D1F7CED8F00DE2AC0 /* Dome */ = {
+			isa = PBXGroup;
+			children = (
+				8F4129761F7CEDAA00DE2AC0 /* Others */,
+				8F41292E1F7CED8F00DE2AC0 /* Controller */,
+				8F4129311F7CED8F00DE2AC0 /* icons */,
+				8F4129491F7CED8F00DE2AC0 /* Model */,
+				8F4129521F7CED8F00DE2AC0 /* View */,
+			);
+			name = Dome;
+			path = ZWFlowingController/Dome;
+			sourceTree = "<group>";
+		};
+		8F41292E1F7CED8F00DE2AC0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8F41292F1F7CED8F00DE2AC0 /* DomeViewController.h */,
+				8F4129301F7CED8F00DE2AC0 /* DomeViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8F4129311F7CED8F00DE2AC0 /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				8F4129341F7CED8F00DE2AC0 /* home_page */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		8F4129341F7CED8F00DE2AC0 /* home_page */ = {
+			isa = PBXGroup;
+			children = (
+				8F4129351F7CED8F00DE2AC0 /* skype.png */,
+				8F4129361F7CED8F00DE2AC0 /* skype@2x.png */,
+				8F4129371F7CED8F00DE2AC0 /* skype@3x.png */,
+				8F4129381F7CED8F00DE2AC0 /* status_off.png */,
+				8F4129391F7CED8F00DE2AC0 /* status_off@2x.png */,
+				8F41293A1F7CED8F00DE2AC0 /* status_off@3x.png */,
+				8F41293B1F7CED8F00DE2AC0 /* status_on.png */,
+				8F41293C1F7CED8F00DE2AC0 /* status_on@2x.png */,
+				8F41293D1F7CED8F00DE2AC0 /* status_on@3x.png */,
+				8F4129441F7CED8F00DE2AC0 /* youtube.png */,
+				8F4129451F7CED8F00DE2AC0 /* youtube@2x.png */,
+				8F4129461F7CED8F00DE2AC0 /* youtube@3x.png */,
+			);
+			path = home_page;
+			sourceTree = "<group>";
+		};
+		8F4129491F7CED8F00DE2AC0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8F26AD4B1F7E11B6002310BF /* FWSearchCollectionData.h */,
+				8F26AD4C1F7E11B6002310BF /* FWSearchCollectionData.m */,
+				8F41294A1F7CED8F00DE2AC0 /* FWAppCollectionData.h */,
+				8F41294B1F7CED8F00DE2AC0 /* FWAppCollectionData.m */,
+				8F41294C1F7CED8F00DE2AC0 /* FWButtonCollectionData.h */,
+				8F41294D1F7CED8F00DE2AC0 /* FWButtonCollectionData.m */,
+				8F41294E1F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.h */,
+				8F41294F1F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.m */,
+				8F4129501F7CED8F00DE2AC0 /* FWTimelineCollectionData.h */,
+				8F4129511F7CED8F00DE2AC0 /* FWTimelineCollectionData.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8F4129521F7CED8F00DE2AC0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8F26AD481F7E1197002310BF /* FWSearchCollectionCell.h */,
+				8F26AD491F7E1197002310BF /* FWSearchCollectionCell.m */,
+				8F4129531F7CED8F00DE2AC0 /* FWAppCollectionCell.h */,
+				8F4129541F7CED8F00DE2AC0 /* FWAppCollectionCell.m */,
+				8F4129551F7CED8F00DE2AC0 /* FWButtonCollectionCell.h */,
+				8F4129561F7CED8F00DE2AC0 /* FWButtonCollectionCell.m */,
+				8F4129571F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.h */,
+				8F4129581F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.m */,
+				8F4129591F7CED8F00DE2AC0 /* FWTimelineCollectionCell.h */,
+				8F41295A1F7CED8F00DE2AC0 /* FWTimelineCollectionCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8F4129761F7CEDAA00DE2AC0 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA6611F7CA3E500865029 /* Assets.xcassets */,
+				8FEAA6581F7CA3E500865029 /* AppDelegate.h */,
+				8FEAA6591F7CA3E500865029 /* AppDelegate.m */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		8FEAA6491F7CA3E500865029 = {
+			isa = PBXGroup;
+			children = (
+				8FEAA6541F7CA3E500865029 /* ZWFlowingController */,
+				8FEAA66E1F7CA3E500865029 /* ZWFlowingControllerTests */,
+				8FEAA6791F7CA3E500865029 /* ZWFlowingControllerUITests */,
+				8FEAA6531F7CA3E500865029 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8FEAA6531F7CA3E500865029 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA6521F7CA3E500865029 /* ZWFlowingController.app */,
+				8FEAA66B1F7CA3E500865029 /* ZWFlowingControllerTests.xctest */,
+				8FEAA6761F7CA3E500865029 /* ZWFlowingControllerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8FEAA6541F7CA3E500865029 /* ZWFlowingController */ = {
+			isa = PBXGroup;
+			children = (
+				8F41292D1F7CED8F00DE2AC0 /* Dome */,
+				8FEAA6881F7CA4CE00865029 /* ZWFlowingController */,
+				8FEAA6551F7CA3E500865029 /* Supporting Files */,
+			);
+			path = ZWFlowingController;
+			sourceTree = "<group>";
+		};
+		8FEAA6551F7CA3E500865029 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA6561F7CA3E500865029 /* main.m */,
+				8FEAA6661F7CA3E500865029 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8FEAA66E1F7CA3E500865029 /* ZWFlowingControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA66F1F7CA3E500865029 /* ZWFlowingControllerTests.m */,
+				8FEAA6711F7CA3E500865029 /* Info.plist */,
+			);
+			path = ZWFlowingControllerTests;
+			sourceTree = "<group>";
+		};
+		8FEAA6791F7CA3E500865029 /* ZWFlowingControllerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA67A1F7CA3E500865029 /* ZWFlowingControllerUITests.m */,
+				8FEAA67C1F7CA3E500865029 /* Info.plist */,
+			);
+			path = ZWFlowingControllerUITests;
+			sourceTree = "<group>";
+		};
+		8FEAA6881F7CA4CE00865029 /* ZWFlowingController */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA6891F7CA4CE00865029 /* Controller */,
+				8FEAA68A1F7CA4CE00865029 /* Model */,
+				8FEAA68B1F7CA4CE00865029 /* View */,
+			);
+			path = ZWFlowingController;
+			sourceTree = "<group>";
+		};
+		8FEAA6891F7CA4CE00865029 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA7411F7CD9F300865029 /* ZWBaseFlowController.h */,
+				8FEAA7421F7CD9F300865029 /* ZWBaseFlowController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8FEAA68A1F7CA4CE00865029 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA68C1F7CA52600865029 /* ZWBaseCollectionData.h */,
+				8FEAA68D1F7CA52600865029 /* ZWBaseCollectionData.m */,
+				8FEAA6951F7CABB400865029 /* ZWBaseCollectionSection.h */,
+				8FEAA6961F7CABB400865029 /* ZWBaseCollectionSection.m */,
+				8FEAA69E1F7CBF1A00865029 /* ZWBaseFlowLayout.h */,
+				8FEAA69F1F7CBF1A00865029 /* ZWBaseFlowLayout.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8FEAA68B1F7CA4CE00865029 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8FEAA68F1F7CA73200865029 /* ZWBaseCollectionCell.h */,
+				8FEAA6901F7CA73200865029 /* ZWBaseCollectionCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8FEAA6511F7CA3E500865029 /* ZWFlowingController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEAA67F1F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingController" */;
+			buildPhases = (
+				8FEAA64E1F7CA3E500865029 /* Sources */,
+				8FEAA64F1F7CA3E500865029 /* Frameworks */,
+				8FEAA6501F7CA3E500865029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZWFlowingController;
+			productName = ZWFlowingController;
+			productReference = 8FEAA6521F7CA3E500865029 /* ZWFlowingController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8FEAA66A1F7CA3E500865029 /* ZWFlowingControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEAA6821F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingControllerTests" */;
+			buildPhases = (
+				8FEAA6671F7CA3E500865029 /* Sources */,
+				8FEAA6681F7CA3E500865029 /* Frameworks */,
+				8FEAA6691F7CA3E500865029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FEAA66D1F7CA3E500865029 /* PBXTargetDependency */,
+			);
+			name = ZWFlowingControllerTests;
+			productName = ZWFlowingControllerTests;
+			productReference = 8FEAA66B1F7CA3E500865029 /* ZWFlowingControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8FEAA6751F7CA3E500865029 /* ZWFlowingControllerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8FEAA6851F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingControllerUITests" */;
+			buildPhases = (
+				8FEAA6721F7CA3E500865029 /* Sources */,
+				8FEAA6731F7CA3E500865029 /* Frameworks */,
+				8FEAA6741F7CA3E500865029 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8FEAA6781F7CA3E500865029 /* PBXTargetDependency */,
+			);
+			name = ZWFlowingControllerUITests;
+			productName = ZWFlowingControllerUITests;
+			productReference = 8FEAA6761F7CA3E500865029 /* ZWFlowingControllerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8FEAA64A1F7CA3E500865029 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = liunianhuaguoyanxi;
+				TargetAttributes = {
+					8FEAA6511F7CA3E500865029 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					8FEAA66A1F7CA3E500865029 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FEAA6511F7CA3E500865029;
+					};
+					8FEAA6751F7CA3E500865029 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8FEAA6511F7CA3E500865029;
+					};
+				};
+			};
+			buildConfigurationList = 8FEAA64D1F7CA3E500865029 /* Build configuration list for PBXProject "ZWFlowingController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8FEAA6491F7CA3E500865029;
+			productRefGroup = 8FEAA6531F7CA3E500865029 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8FEAA6511F7CA3E500865029 /* ZWFlowingController */,
+				8FEAA66A1F7CA3E500865029 /* ZWFlowingControllerTests */,
+				8FEAA6751F7CA3E500865029 /* ZWFlowingControllerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8FEAA6501F7CA3E500865029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F41296C1F7CED8F00DE2AC0 /* youtube@2x.png in Resources */,
+				8F4129641F7CED8F00DE2AC0 /* status_on@3x.png in Resources */,
+				8F41296D1F7CED8F00DE2AC0 /* youtube@3x.png in Resources */,
+				8F41296B1F7CED8F00DE2AC0 /* youtube.png in Resources */,
+				8F4129621F7CED8F00DE2AC0 /* status_on.png in Resources */,
+				8F4129601F7CED8F00DE2AC0 /* status_off@2x.png in Resources */,
+				8F41295D1F7CED8F00DE2AC0 /* skype@2x.png in Resources */,
+				8F4129611F7CED8F00DE2AC0 /* status_off@3x.png in Resources */,
+				8F41295C1F7CED8F00DE2AC0 /* skype.png in Resources */,
+				8F41295E1F7CED8F00DE2AC0 /* skype@3x.png in Resources */,
+				8F41295F1F7CED8F00DE2AC0 /* status_off.png in Resources */,
+				8F4129631F7CED8F00DE2AC0 /* status_on@2x.png in Resources */,
+				8FEAA6621F7CA3E500865029 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6691F7CA3E500865029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6741F7CA3E500865029 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8FEAA64E1F7CA3E500865029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F41296F1F7CED8F00DE2AC0 /* FWButtonCollectionData.m in Sources */,
+				8F26AD4A1F7E1197002310BF /* FWSearchCollectionCell.m in Sources */,
+				8FEAA7431F7CD9F300865029 /* ZWBaseFlowController.m in Sources */,
+				8F4129721F7CED8F00DE2AC0 /* FWAppCollectionCell.m in Sources */,
+				8FEAA6911F7CA73200865029 /* ZWBaseCollectionCell.m in Sources */,
+				8F4129711F7CED8F00DE2AC0 /* FWTimelineCollectionData.m in Sources */,
+				8F4129751F7CED8F00DE2AC0 /* FWTimelineCollectionCell.m in Sources */,
+				8F41295B1F7CED8F00DE2AC0 /* DomeViewController.m in Sources */,
+				8FEAA65A1F7CA3E500865029 /* AppDelegate.m in Sources */,
+				8F41296E1F7CED8F00DE2AC0 /* FWAppCollectionData.m in Sources */,
+				8FEAA6571F7CA3E500865029 /* main.m in Sources */,
+				8FEAA68E1F7CA52600865029 /* ZWBaseCollectionData.m in Sources */,
+				8F4129701F7CED8F00DE2AC0 /* FWPortsInfoCollectionData.m in Sources */,
+				8FEAA6971F7CABB400865029 /* ZWBaseCollectionSection.m in Sources */,
+				8F26AD4D1F7E11B6002310BF /* FWSearchCollectionData.m in Sources */,
+				8F4129741F7CED8F00DE2AC0 /* FWPortsInfoCollectionCell.m in Sources */,
+				8F4129731F7CED8F00DE2AC0 /* FWButtonCollectionCell.m in Sources */,
+				8FEAA6A01F7CBF1A00865029 /* ZWBaseFlowLayout.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6671F7CA3E500865029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FEAA6701F7CA3E500865029 /* ZWFlowingControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8FEAA6721F7CA3E500865029 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FEAA67B1F7CA3E500865029 /* ZWFlowingControllerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8FEAA66D1F7CA3E500865029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FEAA6511F7CA3E500865029 /* ZWFlowingController */;
+			targetProxy = 8FEAA66C1F7CA3E500865029 /* PBXContainerItemProxy */;
+		};
+		8FEAA6781F7CA3E500865029 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8FEAA6511F7CA3E500865029 /* ZWFlowingController */;
+			targetProxy = 8FEAA6771F7CA3E500865029 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		8FEAA67D1F7CA3E500865029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8FEAA67E1F7CA3E500865029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8FEAA6801F7CA3E500865029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ZWFlowingController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8FEAA6811F7CA3E500865029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = ZWFlowingController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingController;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8FEAA6831F7CA3E500865029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZWFlowingControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZWFlowingController.app/ZWFlowingController";
+			};
+			name = Debug;
+		};
+		8FEAA6841F7CA3E500865029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = ZWFlowingControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingControllerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ZWFlowingController.app/ZWFlowingController";
+			};
+			name = Release;
+		};
+		8FEAA6861F7CA3E500865029 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZWFlowingControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZWFlowingController;
+			};
+			name = Debug;
+		};
+		8FEAA6871F7CA3E500865029 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = ZWFlowingControllerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.base.reader.ZWFlowingControllerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ZWFlowingController;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8FEAA64D1F7CA3E500865029 /* Build configuration list for PBXProject "ZWFlowingController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEAA67D1F7CA3E500865029 /* Debug */,
+				8FEAA67E1F7CA3E500865029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEAA67F1F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEAA6801F7CA3E500865029 /* Debug */,
+				8FEAA6811F7CA3E500865029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEAA6821F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEAA6831F7CA3E500865029 /* Debug */,
+				8FEAA6841F7CA3E500865029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8FEAA6851F7CA3E500865029 /* Build configuration list for PBXNativeTarget "ZWFlowingControllerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8FEAA6861F7CA3E500865029 /* Debug */,
+				8FEAA6871F7CA3E500865029 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8FEAA64A1F7CA3E500865029 /* Project object */;
+}
