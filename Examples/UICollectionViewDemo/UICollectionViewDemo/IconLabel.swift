@@ -33,7 +33,7 @@ class IconLabel: UILabel {
 
     override func textRect(forBounds bounds: CGRect, limitedToNumberOfLines numberOfLines: Int) -> CGRect {
         // 2
-        var rect = super.textRect(forBounds: UIEdgeInsetsInsetRect(bounds, edgeInsets), limitedToNumberOfLines: numberOfLines)
+        var rect = super.textRect(forBounds: bounds.inset(by: edgeInsets), limitedToNumberOfLines: numberOfLines)
         let h = edgeInsets.left + edgeInsets.right
         let v = edgeInsets.bottom + edgeInsets.top
         let w = max(rect.width, iconView?.frame.width ?? 0)
@@ -80,6 +80,6 @@ class IconLabel: UILabel {
                 }
             }
         }
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, temp))
+        super.drawText(in: rect.inset(by: temp))
     }
 }

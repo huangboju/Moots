@@ -49,7 +49,7 @@ class DatePickerView: UIView {
         datePicker.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
 
-    func datePickerChanged(_ datePicker: UIDatePicker) {
+    @objc func datePickerChanged(_ datePicker: UIDatePicker) {
         print(datePicker.date, #function)
     }
 
@@ -74,7 +74,7 @@ class DatePickerView: UIView {
         return accessoryView
     }
 
-    func doneAction() {
+    @objc func doneAction() {
         resignFirstResponder()
     }
 }
@@ -170,7 +170,7 @@ class ClassPickerView: UIView, UIPickerViewDataSource, UIPickerViewDelegate {
         return accessoryView
     }
 
-    func doneAction() {
+    @objc func doneAction() {
         resignFirstResponder()
     }
 }
