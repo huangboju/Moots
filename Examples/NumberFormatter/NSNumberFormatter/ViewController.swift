@@ -110,7 +110,7 @@ class ViewController: UIViewController {
         view.addSubview(invertButton!)
     }
     
-    func runloop()  {
+    @objc func runloop()  {
         print("😁")
     }
     
@@ -126,7 +126,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        perform(#selector(runloop), with: self, afterDelay: 0, inModes: [.defaultRunLoopMode])
+        perform(#selector(runloop), with: self, afterDelay: 0, inModes: [RunLoop.Mode.default])
         return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     }
 }
