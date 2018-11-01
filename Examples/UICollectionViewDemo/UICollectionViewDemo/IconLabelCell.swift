@@ -10,7 +10,7 @@ import UIKit
 
 class IconLabelCell: UICollectionViewCell {
     
-    var direction: NSLayoutAttribute? {
+    var direction: NSLayoutConstraint.Attribute? {
         didSet {
             if let direction = direction {
                 button.set("知乎", with: UIImage(named: "icon"), direction: direction)

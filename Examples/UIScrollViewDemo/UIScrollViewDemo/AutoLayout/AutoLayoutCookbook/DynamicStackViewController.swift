@@ -72,7 +72,7 @@ class DynamicStackViewController: AutoLayoutBaseController {
         
         let dateLabel = UILabel()
         dateLabel.text = date
-        dateLabel.font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        dateLabel.font = UIFont.preferredFont(forTextStyle: UIFont.TextStyle.body)
         
         let numberLabel = UILabel()
         numberLabel.text = number
@@ -81,7 +81,7 @@ class DynamicStackViewController: AutoLayoutBaseController {
         numberLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: UILayoutPriority.defaultHigh.rawValue - 1), for: .horizontal)
 
         let deleteButton = UIButton(type: .roundedRect)
-        deleteButton.setTitle("Delete", for: UIControlState())
+        deleteButton.setTitle("Delete", for: UIControl.State())
         deleteButton.addTarget(self, action: #selector(deleteStackView), for: .touchUpInside)
 
         stack.addArrangedSubview(dateLabel)

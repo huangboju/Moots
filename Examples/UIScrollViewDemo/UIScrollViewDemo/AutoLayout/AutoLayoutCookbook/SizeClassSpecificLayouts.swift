@@ -65,7 +65,7 @@ class SizeClassSpecificLayouts: AutoLayoutBaseController {
 
         orientationDidChange()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: .UIApplicationDidChangeStatusBarOrientation, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
     }
     
     // MARK: - UIApplicationDidChangeStatusBarOrientationNotification

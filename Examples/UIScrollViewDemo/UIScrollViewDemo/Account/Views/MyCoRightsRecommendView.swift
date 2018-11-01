@@ -90,7 +90,7 @@ class MyCoRightsRecommendView: UIView {
             collectionView.delegate = self
             collectionView.backgroundColor = .white
             collectionView.register(cellType: MyCoRightsRecommendViewCell.self)
-            collectionView.register(MyCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
+            collectionView.register(MyCollectionHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
             return collectionView
         }()
 
@@ -164,7 +164,7 @@ class MyCollectionViewLayout: UICollectionViewFlowLayout {
 
         if let aaa = attrs {
             for attr in aaa {
-                if attr.representedElementKind == UICollectionElementKindSectionHeader {
+                if attr.representedElementKind == UICollectionView.elementKindSectionHeader {
                     print(attr)
                 }
             }

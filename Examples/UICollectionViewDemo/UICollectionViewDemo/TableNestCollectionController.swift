@@ -12,7 +12,7 @@ class TableNestCollectionController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = UITableView.automaticDimension
         tableView.rowHeight = 100
         tableView.register(TableNestCollectionCell.self, forCellReuseIdentifier: "cell")
         return tableView
@@ -72,7 +72,7 @@ class TableNestCollectionCell: UITableViewCell {
         return dummyView
     }()
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
