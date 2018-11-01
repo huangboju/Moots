@@ -34,7 +34,7 @@ class FigureView: UIView {
         return privateUndoManager
     }
     
-    var cornerRadius: CGFloat {
+    @objc var cornerRadius: CGFloat {
         set {
             layer.cornerRadius = newValue
         }
