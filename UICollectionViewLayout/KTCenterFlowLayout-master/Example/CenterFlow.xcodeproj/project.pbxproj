@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CF0E9DA41AE914A300754C1D /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF0E9DA31AE914A300754C1D /* Launch.storyboard */; };
+		CF12786A1D10D155007BD3CC /* KTHeaderFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1278691D10D155007BD3CC /* KTHeaderFooterView.m */; };
+		CF1EDF8D1CDA54EA004D7709 /* KTAwesomeSizingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF1EDF8C1CDA54EA004D7709 /* KTAwesomeSizingCell.m */; };
+		CF2A543419E702E500BAFA7F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2A543319E702E500BAFA7F /* main.m */; };
+		CF2A543719E702E500BAFA7F /* KTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2A543619E702E500BAFA7F /* KTAppDelegate.m */; };
+		CF2A543F19E702E500BAFA7F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF2A543E19E702E500BAFA7F /* Images.xcassets */; };
+		CF2A545919E704C700BAFA7F /* KTBasicCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2A545819E704C700BAFA7F /* KTBasicCollectionViewController.m */; };
+		CF2A545C19E7061300BAFA7F /* KTAwesomeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CF2A545B19E7061300BAFA7F /* KTAwesomeCell.m */; };
+		CF2A545E19E7084100BAFA7F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF2A545D19E7084100BAFA7F /* Default-568h@2x.png */; };
+		CFA1AADE1CDA724B00373D0E /* tabbar-image.png in Resources */ = {isa = PBXBuildFile; fileRef = CFA1AADB1CDA724B00373D0E /* tabbar-image.png */; };
+		CFA1AADF1CDA724B00373D0E /* tabbar-image@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFA1AADC1CDA724B00373D0E /* tabbar-image@2x.png */; };
+		CFA1AAE01CDA724B00373D0E /* tabbar-image@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = CFA1AADD1CDA724B00373D0E /* tabbar-image@3x.png */; };
+		CFD354581CD942170009443A /* KTCenterFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD354571CD942170009443A /* KTCenterFlowLayout.m */; };
+		CFD3545B1CD9485A0009443A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3545A1CD9485A0009443A /* Constants.m */; };
+		CFD3545E1CD949780009443A /* KTVariableHeightCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD3545D1CD949780009443A /* KTVariableHeightCollectionViewController.m */; };
+		CFD354611CD94AA70009443A /* KTSelfSizingCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CFD354601CD94AA70009443A /* KTSelfSizingCollectionViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19FE6FBDF1A7F0531B0558FC /* libPods-CenterFlow.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CenterFlow.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA0FF2F233AC4708DDDF959F /* libPods-CenterFlowTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CenterFlowTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF0E9DA31AE914A300754C1D /* Launch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		CF1278681D10D155007BD3CC /* KTHeaderFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTHeaderFooterView.h; sourceTree = "<group>"; };
+		CF1278691D10D155007BD3CC /* KTHeaderFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTHeaderFooterView.m; sourceTree = "<group>"; };
+		CF1EDF8B1CDA54EA004D7709 /* KTAwesomeSizingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAwesomeSizingCell.h; sourceTree = "<group>"; };
+		CF1EDF8C1CDA54EA004D7709 /* KTAwesomeSizingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAwesomeSizingCell.m; sourceTree = "<group>"; };
+		CF2A542E19E702E500BAFA7F /* CenterFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CenterFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF2A543219E702E500BAFA7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2A543319E702E500BAFA7F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CF2A543519E702E500BAFA7F /* KTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KTAppDelegate.h; sourceTree = "<group>"; };
+		CF2A543619E702E500BAFA7F /* KTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTAppDelegate.m; sourceTree = "<group>"; };
+		CF2A543E19E702E500BAFA7F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CF2A545719E704C700BAFA7F /* KTBasicCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTBasicCollectionViewController.h; sourceTree = "<group>"; };
+		CF2A545819E704C700BAFA7F /* KTBasicCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTBasicCollectionViewController.m; sourceTree = "<group>"; };
+		CF2A545A19E7061300BAFA7F /* KTAwesomeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTAwesomeCell.h; sourceTree = "<group>"; };
+		CF2A545B19E7061300BAFA7F /* KTAwesomeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTAwesomeCell.m; sourceTree = "<group>"; };
+		CF2A545D19E7084100BAFA7F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		CFA1AADB1CDA724B00373D0E /* tabbar-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-image.png"; sourceTree = "<group>"; };
+		CFA1AADC1CDA724B00373D0E /* tabbar-image@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-image@2x.png"; sourceTree = "<group>"; };
+		CFA1AADD1CDA724B00373D0E /* tabbar-image@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar-image@3x.png"; sourceTree = "<group>"; };
+		CFD354561CD942170009443A /* KTCenterFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KTCenterFlowLayout.h; path = ../../KTCenterFlowLayout.h; sourceTree = "<group>"; };
+		CFD354571CD942170009443A /* KTCenterFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KTCenterFlowLayout.m; path = ../../KTCenterFlowLayout.m; sourceTree = "<group>"; };
+		CFD354591CD9485A0009443A /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CFD3545A1CD9485A0009443A /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		CFD3545C1CD949780009443A /* KTVariableHeightCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTVariableHeightCollectionViewController.h; sourceTree = "<group>"; };
+		CFD3545D1CD949780009443A /* KTVariableHeightCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTVariableHeightCollectionViewController.m; sourceTree = "<group>"; };
+		CFD3545F1CD94AA70009443A /* KTSelfSizingCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTSelfSizingCollectionViewController.h; sourceTree = "<group>"; };
+		CFD354601CD94AA70009443A /* KTSelfSizingCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTSelfSizingCollectionViewController.m; sourceTree = "<group>"; };
+		D7C963BB7B28CF1B2966D389 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CF2A542B19E702E500BAFA7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0405686C57B14B068693DE2D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				19FE6FBDF1A7F0531B0558FC /* libPods-CenterFlow.a */,
+				BA0FF2F233AC4708DDDF959F /* libPods-CenterFlowTests.a */,
+				D7C963BB7B28CF1B2966D389 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF2A542519E702E500BAFA7F = {
+			isa = PBXGroup;
+			children = (
+				CF2A543019E702E500BAFA7F /* CenterFlow */,
+				CF2A542F19E702E500BAFA7F /* Products */,
+				0405686C57B14B068693DE2D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CF2A542F19E702E500BAFA7F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CF2A542E19E702E500BAFA7F /* CenterFlow.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF2A543019E702E500BAFA7F /* CenterFlow */ = {
+			isa = PBXGroup;
+			children = (
+				CFA1AADB1CDA724B00373D0E /* tabbar-image.png */,
+				CFA1AADC1CDA724B00373D0E /* tabbar-image@2x.png */,
+				CFA1AADD1CDA724B00373D0E /* tabbar-image@3x.png */,
+				CFD354561CD942170009443A /* KTCenterFlowLayout.h */,
+				CFD354571CD942170009443A /* KTCenterFlowLayout.m */,
+				CF2A545D19E7084100BAFA7F /* Default-568h@2x.png */,
+				CF2A543519E702E500BAFA7F /* KTAppDelegate.h */,
+				CF2A543619E702E500BAFA7F /* KTAppDelegate.m */,
+				CF2A543E19E702E500BAFA7F /* Images.xcassets */,
+				CF2A543119E702E500BAFA7F /* Supporting Files */,
+				CF2A545719E704C700BAFA7F /* KTBasicCollectionViewController.h */,
+				CF2A545819E704C700BAFA7F /* KTBasicCollectionViewController.m */,
+				CF2A545A19E7061300BAFA7F /* KTAwesomeCell.h */,
+				CF2A545B19E7061300BAFA7F /* KTAwesomeCell.m */,
+				CF0E9DA31AE914A300754C1D /* Launch.storyboard */,
+				CFD354591CD9485A0009443A /* Constants.h */,
+				CFD3545A1CD9485A0009443A /* Constants.m */,
+				CFD3545C1CD949780009443A /* KTVariableHeightCollectionViewController.h */,
+				CFD3545D1CD949780009443A /* KTVariableHeightCollectionViewController.m */,
+				CFD3545F1CD94AA70009443A /* KTSelfSizingCollectionViewController.h */,
+				CFD354601CD94AA70009443A /* KTSelfSizingCollectionViewController.m */,
+				CF1EDF8B1CDA54EA004D7709 /* KTAwesomeSizingCell.h */,
+				CF1EDF8C1CDA54EA004D7709 /* KTAwesomeSizingCell.m */,
+				CF1278681D10D155007BD3CC /* KTHeaderFooterView.h */,
+				CF1278691D10D155007BD3CC /* KTHeaderFooterView.m */,
+			);
+			path = CenterFlow;
+			sourceTree = "<group>";
+		};
+		CF2A543119E702E500BAFA7F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CF2A543219E702E500BAFA7F /* Info.plist */,
+				CF2A543319E702E500BAFA7F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CF2A542D19E702E500BAFA7F /* CenterFlow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CF2A545119E702E500BAFA7F /* Build configuration list for PBXNativeTarget "CenterFlow" */;
+			buildPhases = (
+				CF2A542A19E702E500BAFA7F /* Sources */,
+				CF2A542B19E702E500BAFA7F /* Frameworks */,
+				CF2A542C19E702E500BAFA7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CenterFlow;
+			productName = CenterFlow;
+			productReference = CF2A542E19E702E500BAFA7F /* CenterFlow.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CF2A542619E702E500BAFA7F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = keighl;
+				TargetAttributes = {
+					CF2A542D19E702E500BAFA7F = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+				};
+			};
+			buildConfigurationList = CF2A542919E702E500BAFA7F /* Build configuration list for PBXProject "CenterFlow" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF2A542519E702E500BAFA7F;
+			productRefGroup = CF2A542F19E702E500BAFA7F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CF2A542D19E702E500BAFA7F /* CenterFlow */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CF2A542C19E702E500BAFA7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFA1AADF1CDA724B00373D0E /* tabbar-image@2x.png in Resources */,
+				CF2A543F19E702E500BAFA7F /* Images.xcassets in Resources */,
+				CF2A545E19E7084100BAFA7F /* Default-568h@2x.png in Resources */,
+				CF0E9DA41AE914A300754C1D /* Launch.storyboard in Resources */,
+				CFA1AADE1CDA724B00373D0E /* tabbar-image.png in Resources */,
+				CFA1AAE01CDA724B00373D0E /* tabbar-image@3x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CF2A542A19E702E500BAFA7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF2A543719E702E500BAFA7F /* KTAppDelegate.m in Sources */,
+				CFD354611CD94AA70009443A /* KTSelfSizingCollectionViewController.m in Sources */,
+				CF1EDF8D1CDA54EA004D7709 /* KTAwesomeSizingCell.m in Sources */,
+				CF12786A1D10D155007BD3CC /* KTHeaderFooterView.m in Sources */,
+				CFD354581CD942170009443A /* KTCenterFlowLayout.m in Sources */,
+				CF2A545C19E7061300BAFA7F /* KTAwesomeCell.m in Sources */,
+				CFD3545E1CD949780009443A /* KTVariableHeightCollectionViewController.m in Sources */,
+				CF2A545919E704C700BAFA7F /* KTBasicCollectionViewController.m in Sources */,
+				CF2A543419E702E500BAFA7F /* main.m in Sources */,
+				CFD3545B1CD9485A0009443A /* Constants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CF2A544F19E702E500BAFA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CF2A545019E702E500BAFA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CF2A545219E702E500BAFA7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CenterFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CF2A545319E702E500BAFA7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CenterFlow/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CF2A542919E702E500BAFA7F /* Build configuration list for PBXProject "CenterFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2A544F19E702E500BAFA7F /* Debug */,
+				CF2A545019E702E500BAFA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CF2A545119E702E500BAFA7F /* Build configuration list for PBXNativeTarget "CenterFlow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF2A545219E702E500BAFA7F /* Debug */,
+				CF2A545319E702E500BAFA7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CF2A542619E702E500BAFA7F /* Project object */;
+}
