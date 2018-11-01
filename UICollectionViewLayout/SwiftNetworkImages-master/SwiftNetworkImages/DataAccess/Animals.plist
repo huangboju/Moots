@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>sectionName</key>
+		<string></string>
+		<key>sectionImages</key>
+		<array>
+        </array>
+	</dict>
+	<dict>
+		<key>sectionName</key>
+		<string>Dogs</string>
+		<key>sectionImages</key>
+		<array>
+			<dict>
+				<key>imageCaption</key>
+				<string>Dog sleeping</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2012/11/07/17/58/dog-65263_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Golden retriever</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2016/04/20/22/27/golden-retriever-1342251_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Tired dog</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/07/17/03/37/dog-848390_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Lets go Home</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/10/04/19/03/bordeaux-971620_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Snow and Eyes</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2016/01/11/14/44/lunas-eyes-and-the-snow-flakes-1133707_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Howl</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2013/09/18/01/24/dog-183288_960_720.jpg</string>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>sectionName</key>
+		<string>Cats</string>
+		<key>sectionImages</key>
+		<array>
+			<dict>
+				<key>imageCaption</key>
+				<string>Domestic Cat</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/04/17/09/36/domestic-cat-726989_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Sleeping cat</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/01/06/19/30/cat-590684_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Cat</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/11/16/14/43/cat-1045782_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Cat Snow</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2013/09/29/12/38/cat-188088_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Somali</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2014/07/24/18/40/cat-401124_960_720.jpg</string>
+			</dict>
+			<dict>
+				<key>imageCaption</key>
+				<string>Mirror</string>
+				<key>imageURL</key>
+				<string>https://pixabay.com/static/uploads/photo/2015/03/29/11/05/cat-697113_960_720.jpg</string>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>
