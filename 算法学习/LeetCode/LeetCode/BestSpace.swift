@@ -23,35 +23,38 @@ import Foundation
  */
 
 func bestSpace(_ a: [Int], target: Int) -> [Int] {
-    let interval = 1
-    var temp = a[0] + interval
-    var reuslt = [temp]
-    var row = 0
+    var result: [Int] = []
+    var sum = a[0]
     for (i, n) in a.dropFirst().enumerated() {
-        if temp > target {
-            temp -= n
-        } else {
-            temp += (n + interval)
-            reuslt.append(n)
-        }
-    }
-
-    return reuslt
-}
-
-func findMin(_ total: Int, target: Int, arr: [Int]) -> Int {
-    if total >= target { return total }
-
-    var result = -1
-    var min = Int.max
-    for item in arr {
-        let n = target - total - item
-        if n >= 0 {
-            if min > n {
-                min = n
-                result = item
+        let value = 10 + n
+        sum += value
+        if sum > target {
+            sum -= value
+            for m in i + 1 ..< a.count {
+                
             }
+        } else {
+            result.append(n)
         }
     }
+    
     return result
 }
+
+func moveZeroes(_ nums: inout [Int]) {
+    var fast = 0
+    var slow = 0
+    let n = nums.count
+    
+    while fast < n {
+        if nums[fast] != 0 {
+            nums[slow] = nums[fast]
+            slow += 1
+        }
+        fast += 1
+    }
+    for i in slow ..< n {
+        nums[i] = 0
+    }
+}
+
