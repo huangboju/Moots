@@ -58,15 +58,28 @@ moveZeroes(&n)
 print(n)
 
 
-print("🍀🍀🍀 背包问题 1 单次选择+最大体积 🍀🍀🍀")
-print(backPack1(11, a: [2, 3, 5, 7]))
+print("\n🍀🍀🍀 背包问题 I 单次选择+最大体积 🍀🍀🍀")
+//print(backPack1(11, a: [2, 3, 3, 7]))
+
+print("\n🍀🍀🍀 背包问题 II 单次选择+最大价值 🍀🍀🍀")
+let size = [2, 3, 5, 7]
+let value = [1, 5, 2, 4]
+//print(backPackII(10, a: size, v: value))
+
+print("\n🍀🍀🍀 背包问题 III 重复选择+最大价值 🍀🍀🍀")
+//print(backPackIII(10, a: size, v: value))
+
+print("\n🍀🍀🍀 背包问题 IV 重复选择+唯一排列+装满可能性总数 🍀🍀🍀")
+//print(backPackIV(7, a: [2, 3, 6, 7]))
+
+print("\n🍀🍀🍀 背包问题 V 单次选择+装满可能性总数 🍀🍀🍀")
+//print(backPackV(7, nums: [1, 2, 3, 3, 7]))
+
+print("\n🍀🍀🍀 背包问题 VI 重复选择+唯一排列+装满可能性总数 🍀🍀🍀")
+print(backPackVI(4, nums: [1, 2, 4]))
 
 
-print("🍀🍀🍀 背包问题 2 单次选择+装满可能性总数 🍀🍀🍀")
-print(backPackII(7, nums: [1, 2, 3, 3, 7]))
 
 
-print("🍀🍀🍀 背包问题 5 最大重量+所有可能结果 🍀🍀🍀")
-print(backPackV(4, nums: [1, 2, 4]))
 
 
