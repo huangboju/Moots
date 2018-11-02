@@ -9,6 +9,15 @@
 import Foundation
 
 func makeChange(_ values: [Int], _ money: Int) {
+    func trackPrint(_ m: Int, _ coinTrack: [Int]) {
+        if ( m == 0) {
+            return
+        } else {
+            print(m, coinTrack[m])
+            trackPrint(m - coinTrack[m], coinTrack)
+        }
+    }
+
     // 保存每一个面值找零所需的最小硬币数，0号单元舍弃不用，所以要多加
     var coinsUsed = [Int](repeating: 0, count: money + 1)
     var coinTrack = [Int](repeating: 0, count: money + 1)
@@ -34,14 +43,5 @@ func makeChange(_ values: [Int], _ money: Int) {
         coinTrack[cents] = values[last]
         print("面值为 :\(cents)的最小硬币数 : \(coinsUsed[cents])")
         trackPrint(cents, coinTrack)
-    }
-}
-
-func trackPrint(_ m: Int, _ coinTrack: [Int]) {
-    if ( m == 0) {
-        return
-    } else {
-        print(m, coinTrack[m])
-        trackPrint(m - coinTrack[m], coinTrack)
     }
 }
