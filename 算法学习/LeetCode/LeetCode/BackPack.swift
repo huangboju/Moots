@@ -68,12 +68,12 @@ public func backPackII(_ m: Int, size: [Int], value: [Int]) -> Int {
 ///You cannot divide item into small pieces and the total size of items you choose should smaller or equal to m.
 ///Example
 ///Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack with size 10. The maximum value is 15
-public func backPackIII(_ m: Int, a: [Int], v: [Int]) -> Int {
+public func backPackIII(_ m: Int, size: [Int], value: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: m + 1)
-    for (n, value) in zip(a, v) {
-        for j in (1 ... m) {
+    for (n, v) in zip(size, value) {
+        for j in 1 ... m {
             if j >= n {
-                result[j] = max(result[j], result[j - n] + value)
+                result[j] = max(result[j], result[j - n] + v)
             }
         }
     }
