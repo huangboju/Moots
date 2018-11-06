@@ -118,7 +118,7 @@ public func backPackV(_ m: Int, nums: [Int]) -> Int {
         for j in (1 ... m).reversed() {
             if j >= n {
                 result[j] += result[j - n]
-                print(result, j)
+                print(j, result, n)
             }
         }
         print("\n")
