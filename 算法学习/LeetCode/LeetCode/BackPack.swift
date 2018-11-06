@@ -23,9 +23,9 @@ public func backPack1(_ m: Int, a: [Int]) -> Int {
 
     var result: [Int] = Array(repeating: 0, count: m + 1)
     for v in a {
-        for j in (1 ... m).reversed() where j >= v {
-            result[j] = max(result[j-v] + v, result[j])
-            print(j, result, v)
+        for volume in (1 ... m).reversed() where volume >= v {
+            result[volume] = max(result[volume-v] + v, result[volume])
+            print(volume, result, v)
         }
         print("\n")
     }
@@ -46,9 +46,9 @@ public func backPack1(_ m: Int, a: [Int]) -> Int {
 ///Given 4 items with size [2, 3, 5, 7] and value [1, 5, 2, 4], and a backpack with size 10. The maximum value is 9.
 ///Challenge
 ///O(n x m) memory is acceptable, can you do it in O(m) memory?
-public func backPackII(_ m: Int, a: [Int], v: [Int]) -> Int {
+public func backPackII(_ m: Int, size: [Int], value: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: m + 1)
-    for (n, value) in zip(a, v) {
+    for (n, value) in zip(size, value) {
         for j in (1 ... m).reversed() {
             if j >= n {
                 result[j] = max(result[j], result[j - n] + value)
