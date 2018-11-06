@@ -59,12 +59,12 @@ print(n)
 
 
 print("\n🍀🍀🍀 背包问题 I 单次选择+最大体积 🍀🍀🍀")
-//print(backPack1(11, a: [2, 3, 3, 7]))
+//print(backPack1(11, a: [1, 3, 3, 7]))
 
 print("\n🍀🍀🍀 背包问题 II 单次选择+最大价值 🍀🍀🍀")
 let size = [2, 3, 5, 7]
 let value = [1, 5, 2, 4]
-//print(backPackII(10, a: size, v: value))
+print(backPackII(10, size: size, value: value))
 
 print("\n🍀🍀🍀 背包问题 III 重复选择+最大价值 🍀🍀🍀")
 //print(backPackIII(10, a: size, v: value))
@@ -76,7 +76,7 @@ print("\n🍀🍀🍀 背包问题 V 单次选择+装满可能性总数 🍀🍀
 //print(backPackV(7, nums: [1, 2, 3, 3, 7]))
 
 print("\n🍀🍀🍀 背包问题 VI 重复选择+唯一排列+装满可能性总数 🍀🍀🍀")
-print(backPackVI(4, nums: [1, 2, 4]))
+//print(backPackVI(4, nums: [1, 2, 4]))
 
 
 
