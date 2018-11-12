@@ -151,6 +151,11 @@
 		F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */; };
 		F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */; };
 		F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */; };
+		F7A41CD92199A0B100D0A3C3 /* SwipeFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD82199A0B100D0A3C3 /* SwipeFirstViewController.swift */; };
+		F7A41CDB2199A10D00D0A3C3 /* SwipeTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CDA2199A10D00D0A3C3 /* SwipeTransitionDelegate.swift */; };
+		F7A41CDD2199A18400D0A3C3 /* SwipeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CDC2199A18400D0A3C3 /* SwipeTransitionAnimator.swift */; };
+		F7A41CDF2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CDE2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift */; };
+		F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,6 +331,11 @@
 		F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveFirstViewController.swift; sourceTree = "<group>"; };
 		F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTransitionAnimator.swift; sourceTree = "<group>"; };
 		F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveSecondViewController.swift; sourceTree = "<group>"; };
+		F7A41CD82199A0B100D0A3C3 /* SwipeFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeFirstViewController.swift; sourceTree = "<group>"; };
+		F7A41CDA2199A10D00D0A3C3 /* SwipeTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTransitionDelegate.swift; sourceTree = "<group>"; };
+		F7A41CDC2199A18400D0A3C3 /* SwipeTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTransitionAnimator.swift; sourceTree = "<group>"; };
+		F7A41CDE2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTransitionInteractionController.swift; sourceTree = "<group>"; };
+		F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -685,9 +695,9 @@
 		F7A41CCD21999C3C00D0A3C3 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41CD72199A07C00D0A3C3 /* Swipe */,
 				F7A41CCE21999C5500D0A3C3 /* CrossDissolve */,
 				F7A41CCF21999C7400D0A3C3 /* TransitionMenuController.swift */,
-				F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */,
 			);
 			path = Transitions;
 			sourceTree = "<group>";
@@ -697,8 +707,21 @@
 			children = (
 				F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */,
 				F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */,
+				F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */,
 			);
 			path = CrossDissolve;
+			sourceTree = "<group>";
+		};
+		F7A41CD72199A07C00D0A3C3 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CD82199A0B100D0A3C3 /* SwipeFirstViewController.swift */,
+				F7A41CDA2199A10D00D0A3C3 /* SwipeTransitionDelegate.swift */,
+				F7A41CDC2199A18400D0A3C3 /* SwipeTransitionAnimator.swift */,
+				F7A41CDE2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift */,
+				F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */,
+			);
+			path = Swipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -815,12 +838,15 @@
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
 				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
+				F7A41CD92199A0B100D0A3C3 /* SwipeFirstViewController.swift in Sources */,
 				BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */,
 				BE4FCA791FB93D3800E1C3F0 /* MemberComponentAlertView.swift in Sources */,
 				BE95F4F41FC404DC0033D83B /* ResetPasswrodCell.swift in Sources */,
 				BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */,
 				BEBDCB4A1F9CB4DA009762A8 /* TwoEqualWidthButtons.swift in Sources */,
+				F7A41CDB2199A10D00D0A3C3 /* SwipeTransitionDelegate.swift in Sources */,
 				BEC5E7A21FB54ADB00A44CD7 /* MemberAlertViewController.swift in Sources */,
+				F7A41CDD2199A18400D0A3C3 /* SwipeTransitionAnimator.swift in Sources */,
 				BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */,
 				BEC5E78D1FB3359600A44CD7 /* SignUpSuccessHeaderView.swift in Sources */,
 				BE1B155A1FB2A45500862271 /* NibLoadable.swift in Sources */,
@@ -840,6 +866,7 @@
 				BEBDCB4E1F9CB890009762A8 /* EqualWhiteSpace.swift in Sources */,
 				BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */,
 				BED1CCF51FB2E585002FE096 /* VerifyCoInfoHeaderView.swift in Sources */,
+				F7A41CDF2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
 				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
@@ -924,6 +951,7 @@
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
+				F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */,
 				BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */,
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
