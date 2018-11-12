@@ -25,10 +25,23 @@ public func backPack1(_ m: Int, a: [Int]) -> Int {
     for v in a {
         for volume in (1 ... m).reversed() where volume >= v {
             result[volume] = max(result[volume-v] + v, result[volume])
-            print(volume, result, v)
         }
-        print("\n")
+        print(v, result, "\n")
     }
+//    for v in a {
+//        for volume in (1 ... m) {
+//            if volume >= v {
+//                let n = result[volume]
+//                if n + v <= volume {
+//                    result[volume] = n + v
+//                } else {
+//                    let t = result[volume - v]
+//                    result[volume] = max(n, v + t)
+//                }
+//            }
+//        }
+//        print(v, result, "\n")
+//    }
     return result[m]
 }
 

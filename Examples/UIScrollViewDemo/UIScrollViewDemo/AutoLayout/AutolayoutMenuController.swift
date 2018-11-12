@@ -1,33 +1,14 @@
 //
-//  AutoLayoutMainController.swift
+//  AutolayoutMenuController.swift
 //  UIScrollViewDemo
 //
-//  Created by 黄伯驹 on 2017/10/21.
-//  Copyright © 2017年 伯驹 黄. All rights reserved.
+//  Created by xiAo_Ju on 2018/11/12.
+//  Copyright © 2018 伯驹 黄. All rights reserved.
 //
 
 import UIKit
 
-class AutoLayoutBaseController: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .white
-        initSubviews()
-    }
-
-    func initSubviews() {}
-}
-
-class AutoLayoutMainCell: UITableViewCell {
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        separatorInset = .zero
-        preservesSuperviewLayoutMargins = false
-        layoutMargins = .zero
-    }
-}
-
-class AutoLayoutMainController: UIViewController {
+class AutolayoutMenuController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
         tableView.dataSource = self
@@ -36,19 +17,6 @@ class AutoLayoutMainController: UIViewController {
     }()
     
     lazy var data: [[UIViewController.Type]] = [
-        [
-            AutoLayoutController.self,
-            CollectionViewSelfSizing.self,
-            TableViewSelfsizing.self,
-            LayoutTrasition.self,
-            ExpandingCollectionViewController.self,
-            TableViewFooterSelfSizing.self,
-            HiddenLayoutTestController.self,
-            TableNestCollectionController.self,
-            TagsController.self,
-            TextViewSelfsizingController.self,
-            AlignmentRectController.self
-        ],
         [
             SimpleStackViewController.self,
             NestedStackViewController.self,
@@ -74,22 +42,22 @@ class AutoLayoutMainController: UIViewController {
             UIKitDynamicsViewController.self
         ]
     ]
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "\(classForCoder)"
-
+        
         tableView.register(AutoLayoutMainCell.self, forCellReuseIdentifier: "cell")
         view.addSubview(tableView)
     }
 }
 
-extension AutoLayoutMainController: UITableViewDataSource {
+extension AutolayoutMenuController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data[section].count
     }
@@ -99,13 +67,13 @@ extension AutoLayoutMainController: UITableViewDataSource {
     }
 }
 
-extension AutoLayoutMainController: UITableViewDelegate {
+extension AutolayoutMenuController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.accessoryType = .disclosureIndicator
         cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
     }
-
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"

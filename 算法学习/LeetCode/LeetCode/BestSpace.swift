@@ -8,38 +8,9 @@
 
 import Foundation
 
-/*
-    let n = [1, 4, 7, 9, 2, 31, 21, 13, 12, 6, 8, 9]
- 
-    target = 32
- 
-    input:
-    [
-        [1, 4, 7, 9, 2, 8],
-        [31],
-        [21, 9],
-        [13, 12, 6]
-    ]
- */
-
-func bestSpace(_ a: [Int], target: Int) -> [Int] {
-    var result: [Int] = []
-    var sum = a[0]
-    for (i, n) in a.dropFirst().enumerated() {
-        let value = 10 + n
-        sum += value
-        if sum > target {
-            sum -= value
-            for m in i + 1 ..< a.count {
-                
-            }
-        } else {
-            result.append(n)
-        }
-    }
-    
-    return result
-}
+//func bestSpace(_ a: [Int], target: Int) -> [Int] {
+//    
+//}
 
 func moveZeroes(_ nums: inout [Int]) {
     var fast = 0
