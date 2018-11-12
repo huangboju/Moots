@@ -147,6 +147,10 @@
 		F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF221845883008448E3 /* MaskViewVC.swift */; };
 		F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF5218458A6008448E3 /* MaskView.swift */; };
 		F7A41CCC21999A5500D0A3C3 /* AutolayoutMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CCB21999A5500D0A3C3 /* AutolayoutMenuController.swift */; };
+		F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CCF21999C7400D0A3C3 /* TransitionMenuController.swift */; };
+		F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */; };
+		F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */; };
+		F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -318,6 +322,10 @@
 		F79C0AF221845883008448E3 /* MaskViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
 		F79C0AF5218458A6008448E3 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		F7A41CCB21999A5500D0A3C3 /* AutolayoutMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutMenuController.swift; sourceTree = "<group>"; };
+		F7A41CCF21999C7400D0A3C3 /* TransitionMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionMenuController.swift; sourceTree = "<group>"; };
+		F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveFirstViewController.swift; sourceTree = "<group>"; };
+		F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveTransitionAnimator.swift; sourceTree = "<group>"; };
+		F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossDissolveSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -582,6 +590,7 @@
 		D8A731F01DED6E28005DF7C8 /* UIScrollViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41CCD21999C3C00D0A3C3 /* Transitions */,
 				F79C0AEF2184574D008448E3 /* Controllers */,
 				BE1B15501FB2A40300862271 /* Reusable */,
 				BE1B154B1FB1B0AD00862271 /* CompanyCard */,
@@ -671,6 +680,25 @@
 				F79C0AF5218458A6008448E3 /* MaskView.swift */,
 			);
 			path = MaskView;
+			sourceTree = "<group>";
+		};
+		F7A41CCD21999C3C00D0A3C3 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CCE21999C5500D0A3C3 /* CrossDissolve */,
+				F7A41CCF21999C7400D0A3C3 /* TransitionMenuController.swift */,
+				F7A41CD321999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		F7A41CCE21999C5500D0A3C3 /* CrossDissolve */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CD121999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift */,
+				F7A41CD521999EE400D0A3C3 /* CrossDissolveSecondViewController.swift */,
+			);
+			path = CrossDissolve;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -818,6 +846,7 @@
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
 				F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */,
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
+				F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
 				BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */,
@@ -875,6 +904,7 @@
 				BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */,
 				BE1B15541FB2A41A00862271 /* UICollectionView+Reusable.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
+				F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
@@ -887,6 +917,7 @@
 				F7A41CCC21999A5500D0A3C3 /* AutolayoutMenuController.swift in Sources */,
 				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,
 				BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */,
+				F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
@@ -900,6 +931,7 @@
 				BEC5E7961FB4290C00A44CD7 /* FormView.swift in Sources */,
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
+				F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
