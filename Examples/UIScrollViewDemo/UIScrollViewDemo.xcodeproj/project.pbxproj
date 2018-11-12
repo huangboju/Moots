@@ -10,7 +10,7 @@
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
 		BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */; };
-		BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */; };
+		BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F41F9B4F9100CD4804 /* MainMenuController.swift */; };
 		BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */; };
 		BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */; };
 		BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */; };
@@ -146,6 +146,7 @@
 		F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */; };
 		F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF221845883008448E3 /* MaskViewVC.swift */; };
 		F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF5218458A6008448E3 /* MaskView.swift */; };
+		F7A41CCC21999A5500D0A3C3 /* AutolayoutMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CCB21999A5500D0A3C3 /* AutolayoutMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,7 +180,7 @@
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
 		BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassSpecificLayouts.swift; sourceTree = "<group>"; };
-		BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutMainController.swift; sourceTree = "<group>"; };
+		BE1093F41F9B4F9100CD4804 /* MainMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuController.swift; sourceTree = "<group>"; };
 		BE1093F71F9B50B900CD4804 /* SimpleStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleStackViewController.swift; sourceTree = "<group>"; };
 		BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
 		BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
@@ -316,6 +317,7 @@
 		F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskShapeLayerVC.swift; sourceTree = "<group>"; };
 		F79C0AF221845883008448E3 /* MaskViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
 		F79C0AF5218458A6008448E3 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
+		F7A41CCB21999A5500D0A3C3 /* AutolayoutMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutolayoutMenuController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,11 +352,12 @@
 				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
 				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
-				BE1093F41F9B4F9100CD4804 /* AutoLayoutMainController.swift */,
+				BE1093F41F9B4F9100CD4804 /* MainMenuController.swift */,
 				BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */,
 				BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */,
 				BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */,
 				BE55D95D20941CC3004C748E /* AlignmentRectController.swift */,
+				F7A41CCB21999A5500D0A3C3 /* AutolayoutMenuController.swift */,
 			);
 			path = AutoLayout;
 			sourceTree = "<group>";
@@ -881,6 +884,7 @@
 				BE1B15551FB2A41A00862271 /* UITableView+Reusable.swift in Sources */,
 				BE4FCA801FB9433500E1C3F0 /* MemberAlertTitleCell.swift in Sources */,
 				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
+				F7A41CCC21999A5500D0A3C3 /* AutolayoutMenuController.swift in Sources */,
 				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,
 				BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
@@ -898,7 +902,7 @@
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
-				BE1093F51F9B4F9100CD4804 /* AutoLayoutMainController.swift in Sources */,
+				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
 				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
 				BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */,
