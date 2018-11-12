@@ -22,13 +22,46 @@ import Foundation
 public func backPack1(_ m: Int, a: [Int]) -> Int {
 
     var result: [Int] = Array(repeating: 0, count: m + 1)
+    ///1 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ///
+    ///3 [0, 1, 1, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+    ///
+    ///3 [0, 1, 1, 3, 4, 4, 6, 7, 7, 7, 7, 7]
+    ///
+    ///6 [0, 1, 1, 3, 4, 4, 6, 7, 7, 9, 10, 10]
     for v in a {
-        for volume in (1 ... m).reversed() where volume >= v {
-            result[volume] = max(result[volume-v] + v, result[volume])
-            print(volume, result, v)
+        for volume in (1 ... m).reversed() {
+            if volume >= v {
+                result[volume] = max(result[volume-v] + v, result[volume])
+            }
         }
-        print("\n")
+        print(v, result, "\n")
     }
+    
+    /// 1 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ///
+    /// 3 [0, 1, 1, 3, 4, 4, 4, 4, 4, 4, 4, 4]
+    ///
+    /// 3 [0, 1, 1, 3, 4, 4, 6, 7, 7, 7, 7, 7]
+    ///
+    /// 6 [0, 1, 1, 3, 4, 4, 6, 7, 7, 9, 10, 10]
+    
+    for v in a {
+        for volume in 1 ... m {
+            if volume >= v {
+                let n = result[volume]
+                result[volume] = v
+                if n + v <= volume {
+                    result[volume] = n + v
+                } else {
+                    result[volume] = result[volume - v] + v
+                }
+            }
+        }
+        print(v, result, "\n")
+    }
+    
+    
     return result[m]
 }
 
@@ -57,7 +90,6 @@ public func backPackII(_ m: Int, size: [Int], value: [Int]) -> Int {
     }
     return result[m]
 }
-
 
 
 
