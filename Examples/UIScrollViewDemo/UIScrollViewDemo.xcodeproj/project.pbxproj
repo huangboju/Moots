@@ -352,7 +352,6 @@
 				BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */,
 				BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */,
 				BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */,
-				BE1093F41F9B4F9100CD4804 /* MainMenuController.swift */,
 				BEBE4A1E1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift */,
 				BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */,
 				BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */,
@@ -595,24 +594,17 @@
 				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
 				D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */,
 				D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */,
-				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
-				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8123AED1EE7FA8C00EAAA63 /* RulerLayout.swift */,
-				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
-				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
 				D8A731FA1DED6E28005DF7C8 /* LaunchScreen.storyboard */,
 				D8A731FD1DED6E28005DF7C8 /* Info.plist */,
-				D824104A1E24B0010005E324 /* PagingSecondController.swift */,
 				D8123AF11EE8D42400EAAA63 /* RulerView.swift */,
 				D8123AF31EE8D44D00EAAA63 /* RulerView1.swift */,
 				D81A60BB1EF7759F00398173 /* DayPickerView.swift */,
 				BEA0098C1F5D515E00CB07CF /* LinerCardView.swift */,
 				BEBE4A2B1FAC68B400A9CA9A /* Extensions.swift */,
 				BE1B15631FB2A5E700862271 /* Bridging.h */,
-				BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */,
-				BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */,
 			);
 			path = UIScrollViewDemo;
 			sourceTree = "<group>";
@@ -660,6 +652,14 @@
 				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 				F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */,
+				BE1093F41F9B4F9100CD4804 /* MainMenuController.swift */,
+				BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */,
+				BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */,
+				D824104A1E24B0010005E324 /* PagingSecondController.swift */,
+				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
+				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
+				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
+				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
