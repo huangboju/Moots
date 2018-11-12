@@ -59,7 +59,11 @@ print(n)
 
 
 print("\n🍀🍀🍀 背包问题 I 单次选择+最大体积 🍀🍀🍀")
+<<<<<<< HEAD
 //print(backPack1(11, a: [2, 3, 6, 7]))
+=======
+print(backPack1(11, a: [1, 3, 3, 6, 2, 10]))
+>>>>>>> 8d531382ba91adc28ee7828fb728188f45ba914d
 
 print("\n🍀🍀🍀 背包问题 II 单次选择+最大价值 🍀🍀🍀")
 let size = [2, 3, 5, 7]
