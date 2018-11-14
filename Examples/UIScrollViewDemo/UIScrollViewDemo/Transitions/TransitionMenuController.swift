@@ -19,7 +19,8 @@ class TransitionMenuController: UIViewController {
     lazy var data: [[UIViewController.Type]] = [
         [
             CrossDissolveFirstViewController.self,
-            SwipeFirstViewController.self
+            SwipeFirstViewController.self,
+            CustomPresentationFirstViewController.self
         ]
     ]
     

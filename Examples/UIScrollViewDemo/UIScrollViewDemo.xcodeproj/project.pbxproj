@@ -156,6 +156,9 @@
 		F7A41CDD2199A18400D0A3C3 /* SwipeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CDC2199A18400D0A3C3 /* SwipeTransitionAnimator.swift */; };
 		F7A41CDF2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CDE2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift */; };
 		F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */; };
+		F7A41CE5219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE4219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift */; };
+		F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE6219AD18B00D0A3C3 /* CustomPresentationController.swift */; };
+		F7A41CE9219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -336,6 +339,9 @@
 		F7A41CDC2199A18400D0A3C3 /* SwipeTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTransitionAnimator.swift; sourceTree = "<group>"; };
 		F7A41CDE2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTransitionInteractionController.swift; sourceTree = "<group>"; };
 		F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeSecondViewController.swift; sourceTree = "<group>"; };
+		F7A41CE4219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationFirstViewController.swift; sourceTree = "<group>"; };
+		F7A41CE6219AD18B00D0A3C3 /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
+		F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationSecondViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -695,6 +701,7 @@
 		F7A41CCD21999C3C00D0A3C3 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41CE3219AD12100D0A3C3 /* CustomPresentation */,
 				F7A41CD72199A07C00D0A3C3 /* Swipe */,
 				F7A41CCE21999C5500D0A3C3 /* CrossDissolve */,
 				F7A41CCF21999C7400D0A3C3 /* TransitionMenuController.swift */,
@@ -722,6 +729,16 @@
 				F7A41CE02199B54D00D0A3C3 /* SwipeSecondViewController.swift */,
 			);
 			path = Swipe;
+			sourceTree = "<group>";
+		};
+		F7A41CE3219AD12100D0A3C3 /* CustomPresentation */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CE4219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift */,
+				F7A41CE6219AD18B00D0A3C3 /* CustomPresentationController.swift */,
+				F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */,
+			);
+			path = CustomPresentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -881,11 +898,13 @@
 				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
+				F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				BE95F4F61FC40BC30033D83B /* VerifyPhoneNumberController.swift in Sources */,
 				BEC5E7911FB41EE300A44CD7 /* CollectionListController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
 				D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */,
+				F7A41CE9219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift in Sources */,
 				BEC5E7891FB3010A00A44CD7 /* MyCoRightsActiveCell.swift in Sources */,
 				BEC5E7A01FB5488B00A44CD7 /* CoRightsGirdViewCell.swift in Sources */,
 				F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */,
@@ -904,6 +923,7 @@
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				BE1B15601FB2A59400862271 /* IconTextView.swift in Sources */,
+				F7A41CE5219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				BE4FCA7C1FB942FB00E1C3F0 /* MemberComponentBtnCell.swift in Sources */,
 				BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */,
