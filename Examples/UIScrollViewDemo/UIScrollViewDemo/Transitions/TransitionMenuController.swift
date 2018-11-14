@@ -8,6 +8,9 @@
 
 import UIKit
 
+// https://blog.csdn.net/tianweitao/article/details/80314598
+// http://biuer.club/2018/02/28/UIModalPresentationStyle-%E5%90%84%E7%A7%8D%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%8C%BA%E5%88%AB/
+
 class TransitionMenuController: UIViewController {
     fileprivate lazy var tableView: UITableView = {
         let tableView = UITableView(frame: self.view.frame, style: .grouped)
