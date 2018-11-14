@@ -21,7 +21,8 @@ class TransitionMenuController: UIViewController {
             CrossDissolveFirstViewController.self,
             SwipeFirstViewController.self,
             CustomPresentationFirstViewController.self,
-            AdaptivePresentationFirstViewController.self
+            AdaptivePresentationFirstViewController.self,
+            SlideTransitionTabBarVC.self
         ]
     ]
     

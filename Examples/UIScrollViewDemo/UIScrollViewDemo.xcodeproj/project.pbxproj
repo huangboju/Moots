@@ -162,6 +162,13 @@
 		F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CEB219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift */; };
 		F7A41CEE219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CED219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift */; };
 		F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */; };
+		F7A41CF3219BCF6700D0A3C3 /* SlideTransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CF2219BCF6700D0A3C3 /* SlideTransitionDelegate.swift */; };
+		F7A41CF5219BD60400D0A3C3 /* SlideTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CF4219BD60400D0A3C3 /* SlideTransitionAnimator.swift */; };
+		F7A41CF7219BD83300D0A3C3 /* SlideTransitionInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CF6219BD83300D0A3C3 /* SlideTransitionInteractionController.swift */; };
+		F7A41CF9219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CF8219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift */; };
+		F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFA219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift */; };
+		F7A41CFD219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFC219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift */; };
+		F7A41CFF219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFE219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -348,6 +355,13 @@
 		F7A41CEB219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationFirstViewController.swift; sourceTree = "<group>"; };
 		F7A41CED219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationSecondViewController.swift; sourceTree = "<group>"; };
 		F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationController.swift; sourceTree = "<group>"; };
+		F7A41CF2219BCF6700D0A3C3 /* SlideTransitionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionDelegate.swift; sourceTree = "<group>"; };
+		F7A41CF4219BD60400D0A3C3 /* SlideTransitionAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionAnimator.swift; sourceTree = "<group>"; };
+		F7A41CF6219BD83300D0A3C3 /* SlideTransitionInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionInteractionController.swift; sourceTree = "<group>"; };
+		F7A41CF8219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionTabBarVC.swift; sourceTree = "<group>"; };
+		F7A41CFA219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionFirstVC.swift; sourceTree = "<group>"; };
+		F7A41CFC219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionSecondVC.swift; sourceTree = "<group>"; };
+		F7A41CFE219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionThirdVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -707,6 +721,7 @@
 		F7A41CCD21999C3C00D0A3C3 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41CF1219BCF2B00D0A3C3 /* Slide */,
 				F7A41CEA219BC57100D0A3C3 /* AdaptivePresentationFirstViewController */,
 				F7A41CE3219AD12100D0A3C3 /* CustomPresentation */,
 				F7A41CD72199A07C00D0A3C3 /* Swipe */,
@@ -756,6 +771,20 @@
 				F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */,
 			);
 			path = AdaptivePresentationFirstViewController;
+			sourceTree = "<group>";
+		};
+		F7A41CF1219BCF2B00D0A3C3 /* Slide */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CF2219BCF6700D0A3C3 /* SlideTransitionDelegate.swift */,
+				F7A41CF4219BD60400D0A3C3 /* SlideTransitionAnimator.swift */,
+				F7A41CF6219BD83300D0A3C3 /* SlideTransitionInteractionController.swift */,
+				F7A41CF8219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift */,
+				F7A41CFA219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift */,
+				F7A41CFC219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift */,
+				F7A41CFE219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift */,
+			);
+			path = Slide;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -888,6 +917,7 @@
 				BE3A65E5202C3B0E0001C432 /* TagsController.swift in Sources */,
 				D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */,
 				BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */,
+				F7A41CFD219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift in Sources */,
 				BE3D3A3B1FAFF4A6001F097D /* NELineLabel.swift in Sources */,
 				BE22B46F20DF9A7F0032490A /* ResizableImageVC.swift in Sources */,
 				BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */,
@@ -906,6 +936,7 @@
 				BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */,
 				BEBDCB4C1F9CB731009762A8 /* ThreeEqualWidthButtons.swift in Sources */,
 				F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */,
+				F7A41CFF219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift in Sources */,
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
 				F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
@@ -943,6 +974,7 @@
 				F7A41CE5219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift in Sources */,
 				D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */,
 				BE4FCA7C1FB942FB00E1C3F0 /* MemberComponentBtnCell.swift in Sources */,
+				F7A41CF3219BCF6700D0A3C3 /* SlideTransitionDelegate.swift in Sources */,
 				BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */,
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
 				BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */,
@@ -967,6 +999,7 @@
 				BEBE4A1B1FAC3C6E00A9CA9A /* HZUIHelper.swift in Sources */,
 				BEBE4A1F1FAC426700A9CA9A /* TableViewFooterSelfSizing.swift in Sources */,
 				BE1B15541FB2A41A00862271 /* UICollectionView+Reusable.swift in Sources */,
+				F7A41CF9219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
 				F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
@@ -984,6 +1017,7 @@
 				F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */,
+				F7A41CF5219BD60400D0A3C3 /* SlideTransitionAnimator.swift in Sources */,
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
@@ -999,7 +1033,9 @@
 				D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */,
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */,
+				F7A41CF7219BD83300D0A3C3 /* SlideTransitionInteractionController.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
+				F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
