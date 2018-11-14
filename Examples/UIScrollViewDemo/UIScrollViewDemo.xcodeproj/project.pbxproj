@@ -159,6 +159,9 @@
 		F7A41CE5219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE4219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift */; };
 		F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE6219AD18B00D0A3C3 /* CustomPresentationController.swift */; };
 		F7A41CE9219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */; };
+		F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CEB219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift */; };
+		F7A41CEE219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CED219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift */; };
+		F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -342,6 +345,9 @@
 		F7A41CE4219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationFirstViewController.swift; sourceTree = "<group>"; };
 		F7A41CE6219AD18B00D0A3C3 /* CustomPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationController.swift; sourceTree = "<group>"; };
 		F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPresentationSecondViewController.swift; sourceTree = "<group>"; };
+		F7A41CEB219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationFirstViewController.swift; sourceTree = "<group>"; };
+		F7A41CED219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationSecondViewController.swift; sourceTree = "<group>"; };
+		F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdaptivePresentationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -701,6 +707,7 @@
 		F7A41CCD21999C3C00D0A3C3 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F7A41CEA219BC57100D0A3C3 /* AdaptivePresentationFirstViewController */,
 				F7A41CE3219AD12100D0A3C3 /* CustomPresentation */,
 				F7A41CD72199A07C00D0A3C3 /* Swipe */,
 				F7A41CCE21999C5500D0A3C3 /* CrossDissolve */,
@@ -739,6 +746,16 @@
 				F7A41CE8219AEE2A00D0A3C3 /* CustomPresentationSecondViewController.swift */,
 			);
 			path = CustomPresentation;
+			sourceTree = "<group>";
+		};
+		F7A41CEA219BC57100D0A3C3 /* AdaptivePresentationFirstViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F7A41CEB219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift */,
+				F7A41CED219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift */,
+				F7A41CEF219BC6D100D0A3C3 /* AdaptivePresentationController.swift */,
+			);
+			path = AdaptivePresentationFirstViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -966,12 +983,14 @@
 				BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */,
 				F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
+				F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */,
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */,
+				F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */,
 				BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */,
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
@@ -984,6 +1003,7 @@
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
+				F7A41CEE219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift in Sources */,
 				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
 				BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
