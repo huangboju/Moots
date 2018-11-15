@@ -67,7 +67,7 @@ extension TransitionMenuController: UITableViewDelegate {
             controller.title = controllerName
             controller.hidesBottomBarWhenPushed = true
             controller.view.backgroundColor = .white
-            navigationController?.pushViewController(controller, animated: true)
+            show(controller, sender: nil)
         }
     }
 }
