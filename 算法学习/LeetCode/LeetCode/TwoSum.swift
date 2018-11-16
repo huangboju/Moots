@@ -18,15 +18,15 @@ func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
     var dict = [Int: Int]()
     var result = [Int]()
     
-    for i in 0 ..< nums.count {
+    for (i, n) in nums.enumerated() {
         
-        let numOfFind = target - nums[i]
+        let numOfFind = target - n
         
         if let numOfFindIdx = dict[numOfFind] {
             result.append(numOfFindIdx)
             result.append(i)
         } else {
-            dict[nums[i]] = i
+            dict[n] = i
         }
     }
     
