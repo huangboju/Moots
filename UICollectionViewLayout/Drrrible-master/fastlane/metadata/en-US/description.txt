@@ -1,1 +1,0 @@
-Drrrible is an open-sourced unofficial Dribbble application. Check out the source code on https://github.com/devxoul/Drrrible
