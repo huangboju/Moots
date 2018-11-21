@@ -438,11 +438,15 @@ class SecondController: UIViewController {
         
         print("循环多次执行并行队列")
         
-        DispatchQueue.concurrentPerform(iterations: 3) { (index) in
-            currentThreadSleep(Double(index))
-            print("第\(index)次执行，\n\(Thread.current)\n")
+        DispatchQueue.global(qos: .background).async {
+            DispatchQueue.concurrentPerform(iterations: 3) { index in
+                self.currentThreadSleep(Double(index))
+                print("第\(index)次执行，\n\(Thread.current)\n")
+            }
+            DispatchQueue.main.async {
+                self.ended()
+            }
         }
-        ended()
     }
     
     //暂停和重启队列
