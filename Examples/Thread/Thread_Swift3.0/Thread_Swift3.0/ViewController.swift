@@ -28,7 +28,48 @@ class ViewController: UIViewController {
 //            DispatchData(bytes: $0)
 //        }
         
-        serialQueue()
+//        serialQueue()
+        setTargetQueue()
+    }
+    
+    func setTargetQueue() {
+        // 设置优先级
+        
+//        //给serialQueueHigh设定DISPATCH_QUEUE_PRIORITY_HIGH优先级
+//        let serialQueueHigh = DispatchQueue(label: "cn.zeluli.serial1")
+//        DispatchQueue.global(qos: .userInitiated).setTarget(queue: serialQueueHigh)
+//
+//        let serialQueueLow = DispatchQueue(label: "cn.zeluli.serial1")
+//        DispatchQueue.global(qos: .utility).setTarget(queue: serialQueueLow)
+//
+//        serialQueueLow.async {
+//            print("低：\(Thread.current)")
+//        }
+//
+//        serialQueueHigh.async {
+//            print("高：\(Thread.current)")
+//        }
+        
+        // 执行层次
+        let targetQueue  = DispatchQueue(label: "com.gcd.setTargetQueue2.targetSerialQueue")
+
+        let serialQueue1 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue1", target: targetQueue)
+        let serialQueue2 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue2", target: targetQueue)
+        let serialQueue3 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue3", target: targetQueue)
+        let serialQueue4 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue4", target: targetQueue)
+        
+        serialQueue1.async {
+            print(1, Thread.current)
+        }
+        serialQueue2.async {
+            print(2, Thread.current)
+        }
+        serialQueue3.async {
+            print(3, Thread.current)
+        }
+        serialQueue4.async {
+            print(4, Thread.current)
+        }
     }
 
     func serialQueue() {
