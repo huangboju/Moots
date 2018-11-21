@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         let serialQueue2 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue2", target: targetQueue)
         let serialQueue3 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue3", target: targetQueue)
         let serialQueue4 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue4", target: targetQueue)
-        
+
         serialQueue1.async {
             print(1, Thread.current)
         }
