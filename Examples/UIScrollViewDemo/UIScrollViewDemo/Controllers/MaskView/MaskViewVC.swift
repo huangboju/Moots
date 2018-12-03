@@ -11,9 +11,17 @@ import UIKit
 class MaskViewVC: UIViewController {
     
     private lazy var maskView: MaskView = {
-        let maskView = MaskView(frame: self.view.bounds)
+        var rect = self.view.bounds
+        rect.size.height = 400
+        let maskView = MaskView(frame: rect)
         maskView.maskColor = UIColor(white: 0, alpha: 0.6)
         return maskView
+    }()
+    
+    private lazy var maskView2: MaskView = {
+        let maskView2 = MaskView(frame: CGRect(x: 100, y: 500, width: 52, height: 52))
+        maskView2.maskColor = UIColor.red
+        return maskView2
     }()
 
     override func viewDidLoad() {
@@ -26,5 +34,8 @@ class MaskViewVC: UIViewController {
         maskView.addTransparentOvalRect(CGRect(x: 140, y: 220, width: 150, height: 100))
         
         view.addSubview(maskView)
+        
+        maskView2.addTransparentRoundedRect(CGRect(x: 2, y: 2, width: 48, height: 48), byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: 2, height: 2))
+        view.addSubview(maskView2)
     }
 }
