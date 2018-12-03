@@ -112,8 +112,7 @@ class MaskView: UIView {
     
     private func refreshMask() {
         overlayPath = currentOverlayPath()
-        
-        fillLayer.frame = bounds
+
         fillLayer.path = overlayPath.cgPath
         fillLayer.fillColor = maskColor?.cgColor
     }
