@@ -23,6 +23,12 @@ class MaskViewVC: UIViewController {
         maskView2.maskColor = UIColor.red
         return maskView2
     }()
+    
+    private lazy var shapeMaskLayer: ShapeMaskLayer = {
+        let shapeMaskLayer = ShapeMaskLayer(rect: CGRect(x: 200, y: 500, width: 52, height: 52))
+        shapeMaskLayer.maskColor = UIColor.green
+        return shapeMaskLayer
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,5 +43,8 @@ class MaskViewVC: UIViewController {
         
         maskView2.addTransparentRoundedRect(CGRect(x: 2, y: 2, width: 48, height: 48), byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: 2, height: 2))
         view.addSubview(maskView2)
+        
+        shapeMaskLayer.addTransparentRoundedRect(CGRect(x: 2, y: 2, width: 48, height: 48), byRoundingCorners: [.topRight, .bottomRight], cornerRadii: CGSize(width: 2, height: 2))
+        view.layer.addSublayer(shapeMaskLayer)
     }
 }
