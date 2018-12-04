@@ -169,6 +169,7 @@
 		F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFA219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift */; };
 		F7A41CFD219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFC219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift */; };
 		F7A41CFF219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A41CFE219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift */; };
+		F7B15AA421B62EF3002DF9C0 /* ShapeMaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B15AA321B62EF3002DF9C0 /* ShapeMaskLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -362,6 +363,7 @@
 		F7A41CFA219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionFirstVC.swift; sourceTree = "<group>"; };
 		F7A41CFC219BEF6400D0A3C3 /* SlideTransitionSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionSecondVC.swift; sourceTree = "<group>"; };
 		F7A41CFE219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideTransitionThirdVC.swift; sourceTree = "<group>"; };
+		F7B15AA321B62EF3002DF9C0 /* ShapeMaskLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeMaskLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -714,6 +716,7 @@
 			children = (
 				F79C0AF221845883008448E3 /* MaskViewVC.swift */,
 				F79C0AF5218458A6008448E3 /* MaskView.swift */,
+				F7B15AA321B62EF3002DF9C0 /* ShapeMaskLayer.swift */,
 			);
 			path = MaskView;
 			sourceTree = "<group>";
@@ -1034,6 +1037,7 @@
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */,
 				F7A41CF7219BD83300D0A3C3 /* SlideTransitionInteractionController.swift in Sources */,
+				F7B15AA421B62EF3002DF9C0 /* ShapeMaskLayer.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
