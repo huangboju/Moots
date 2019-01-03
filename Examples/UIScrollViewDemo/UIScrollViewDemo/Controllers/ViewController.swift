@@ -46,6 +46,9 @@ class ViewController: UIViewController {
         [
             MaskShapeLayerVC.self,
             MaskViewVC.self
+        ],
+        [
+            BlurController.self
         ]
     ]
 

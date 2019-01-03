@@ -82,3 +82,5 @@ print("\n\n\n")
 print(combinationSum2([10, 2, 7, 6, 5], 11))
 
 
+
+print(minSubArrayLen(s: 7, nums: [2,3,1,2,4,3]))
