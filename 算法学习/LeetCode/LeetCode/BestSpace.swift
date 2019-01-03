@@ -9,6 +9,6 @@
 import Foundation
 
 
-func bestSpace(_ a: [Int], target: Int) -> [Int] {
-    
-}
+//func bestSpace(_ a: [Int], target: Int) -> [Int] {
+//    
+//}
