@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            ViewController.self,
+            MotionBlurVC.self,
         ]
     ]
     
