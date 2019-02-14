@@ -12,6 +12,7 @@
 		BEA7BD5B22159B5D00AEE980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5922159B5D00AEE980 /* Main.storyboard */; };
 		BEA7BD5D22159B5E00AEE980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5C22159B5E00AEE980 /* Assets.xcassets */; };
 		BEA7BD6022159B5E00AEE980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5E22159B5E00AEE980 /* LaunchScreen.storyboard */; };
+		BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BEA7BD5C22159B5E00AEE980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA7BD5F22159B5E00AEE980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7BD6122159B5E00AEE980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionBlurVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		BEA7BD5422159B5D00AEE980 /* CoreImageStudy */ = {
 			isa = PBXGroup;
 			children = (
+				BEA7BD6722159C4C00AEE980 /* Controllers */,
 				BEA7BD5522159B5D00AEE980 /* AppDelegate.swift */,
 				BEA7BD5722159B5D00AEE980 /* ViewController.swift */,
 				BEA7BD5922159B5D00AEE980 /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				BEA7BD6122159B5E00AEE980 /* Info.plist */,
 			);
 			path = CoreImageStudy;
+			sourceTree = "<group>";
+		};
+		BEA7BD6722159C4C00AEE980 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,6 +148,7 @@
 			files = (
 				BEA7BD5822159B5D00AEE980 /* ViewController.swift in Sources */,
 				BEA7BD5622159B5D00AEE980 /* AppDelegate.swift in Sources */,
+				BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

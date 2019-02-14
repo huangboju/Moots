@@ -29,6 +29,7 @@ class SizeClassSpecificLayouts: AutoLayoutBaseController {
         do {
             redView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
             redViewTrailingConstraint = redView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+            redViewTrailingConstraint.isActive = true
             redView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             redViewBottomConstraintH = redView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20)
         }
@@ -46,12 +47,14 @@ class SizeClassSpecificLayouts: AutoLayoutBaseController {
 
         do {
             greenViewTopConstraint = greenView.topAnchor.constraint(equalTo: redView.bottomAnchor, constant: 8)
+            greenViewTopConstraint.isActive = true
             greenViewLeadingConstraintH = greenView.leadingAnchor.constraint(equalTo: redView.trailingAnchor, constant: 8)
             greenView.heightAnchor.constraint(equalTo: redView.heightAnchor).isActive = true
             greenView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
             greenViewTopConstraintH = greenView.topAnchor.constraint(equalTo: redView.topAnchor)
             greenView.widthAnchor.constraint(equalTo: redView.widthAnchor).isActive = true
             greenViewLeadingConstraint = greenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
+            greenViewLeadingConstraint.isActive = true
             greenView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
         }
 
@@ -62,29 +65,23 @@ class SizeClassSpecificLayouts: AutoLayoutBaseController {
             greenLabel.centerXAnchor.constraint(equalTo: greenView.centerXAnchor).isActive = true
             greenLabel.centerYAnchor.constraint(equalTo: greenView.centerYAnchor).isActive = true
         }
-
-        orientationDidChange()
-
-        NotificationCenter.default.addObserver(self, selector: #selector(orientationDidChange), name: UIApplication.didChangeStatusBarOrientationNotification, object: nil)
     }
     
-    // MARK: - UIApplicationDidChangeStatusBarOrientationNotification
-    @objc func orientationDidChange() {
-        switch UIApplication.shared.statusBarOrientation {
-        case .landscapeLeft, .landscapeRight:
-            
+    // https://onevcat.com/2014/07/ios-ui-unique/
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        if newCollection.verticalSizeClass == .compact {
             greenViewTopConstraint.isActive = false
             redViewTrailingConstraint.isActive = false
             greenViewLeadingConstraint.isActive = false
-
+            
             redViewBottomConstraintH.isActive = true
             greenViewTopConstraintH.isActive = true
             greenViewLeadingConstraintH.isActive = true
-        default:
+        } else {
             redViewBottomConstraintH.isActive = false
             greenViewTopConstraintH.isActive = false
             greenViewLeadingConstraintH.isActive = false
-
+            
             greenViewTopConstraint.isActive = true
             redViewTrailingConstraint.isActive = true
             greenViewLeadingConstraint.isActive = true
