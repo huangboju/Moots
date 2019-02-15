@@ -21,11 +21,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "CoreImage"
         
         view.addSubview(tableView)
         
         let filterNames = CIFilter.filterNames(inCategory: kCICategoryBuiltIn) as [String]
+        title = "CoreImage(\(filterNames.count))"
         data.append(filterNames)
     }
 }
@@ -47,18 +47,15 @@ extension ViewController: UITableViewDataSource {
 extension ViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let filterName = self.filterName(at: indexPath)
-        let subStr = vcName(with: filterName)
-        cell.textLabel?.text = filterName
-        cell.accessoryType = subStr.fromClassName != nil ? .disclosureIndicator : .none
+        cell.textLabel?.text = filterName(at: indexPath)
+        cell.accessoryType = .disclosureIndicator
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         defer { tableView.deselectRow(at: indexPath, animated: false) }
         let filterName = self.filterName(at: indexPath)
-        let subStr = vcName(with: filterName)
-        guard let controller = subStr.fromClassName else { return }
-        controller.title = filterName
+        let controller = FilterDetailVC()
+        controller.filterName = filterName
         controller.hidesBottomBarWhenPushed = true
         controller.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelClicked))
         showDetailViewController(LandscapeNav(rootViewController: controller), sender: nil)
