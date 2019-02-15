@@ -31,7 +31,7 @@ class DisplayView: UIView {
         backgroundColor = .white
 
         let stackView = UIStackView(arrangedSubviews: [originalImageView, processedImageView])
-        stackView.axis = .vertical
+        stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.spacing = 10
         stackView.translatesAutoresizingMaskIntoConstraints = false
