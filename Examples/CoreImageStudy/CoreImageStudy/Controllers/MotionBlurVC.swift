@@ -29,20 +29,29 @@ class MotionBlurVC: UIViewController {
     }
 }
 
-extension UIView {
-    var safeBottomAnchor: NSLayoutYAxisAnchor {
-        if #available(iOS 11.0, *) {
-            return safeAreaLayoutGuide.bottomAnchor
-        } else {
-            return bottomAnchor
-        }
-    }
-    
-    var safeTopAnchor: NSLayoutYAxisAnchor {
-        if #available(iOS 11.0, *) {
-            return safeAreaLayoutGuide.topAnchor
-        } else {
-            return topAnchor
-        }
+extension UIImage {
+    var motionBlur: UIImage? {
+        // 1. 将UIImage转换成CIImage
+        
+//        let ciImage = CIImage(cgImage: self)
+//
+//        // 2. 创建滤镜
+//        self.filter = CIFilter(name: "CIMotionBlur", parameters: [kCIInputImageKey: ciImage])
+//        // 设置相关参数
+//        [self.filter setValue:@(10.f) forKey:@"inputRadius"];
+//
+//        // 3. 渲染并输出CIImage
+//        CIImage *outputImage = [self.filter outputImage];
+//
+//        // 4. 获取绘制上下文
+//        self.context = [CIContext contextWithOptions:nil];
+//
+//        // 5. 创建输出CGImage
+//        CGImageRef cgImage = [self.context createCGImage:outputImage fromRect:[outputImage extent]];
+//        UIImage *image = [UIImage imageWithCGImage:cgImage];
+//        // 6. 释放CGImage
+//        CGImageRelease(cgImage);
+        
+        return nil
     }
 }
