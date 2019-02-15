@@ -39,3 +39,12 @@ extension UIColor {
         self.init(red: red, green: green, blue: blue, alpha: alpha)
     }
 }
+
+extension String {
+    var fromClassName: UIViewController? {
+        guard let prefix = Bundle.main.infoDictionary?["CFBundleName"] as? String else { return nil }
+        let className = prefix + "." + self
+        guard let aClass = NSClassFromString(className) as? UIViewController.Type else { return nil }
+        return aClass.init()
+    }
+}
