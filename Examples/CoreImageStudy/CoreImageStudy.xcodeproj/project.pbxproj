@@ -16,6 +16,7 @@
 		BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6A2215A08900AEE980 /* DisplayView.swift */; };
 		BEA7BD6F2215B46B00AEE980 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6E2215B46B00AEE980 /* Extensions.swift */; };
 		F7E555852216AABF003767C9 /* LandscapeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E555842216AABF003767C9 /* LandscapeNav.swift */; };
+		F7E555882216ACBF003767C9 /* LandscapeTransitionAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E555872216ACBF003767C9 /* LandscapeTransitionAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		BEA7BD6A2215A08900AEE980 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		BEA7BD6E2215B46B00AEE980 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F7E555842216AABF003767C9 /* LandscapeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNav.swift; sourceTree = "<group>"; };
+		F7E555872216ACBF003767C9 /* LandscapeTransitionAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LandscapeTransitionAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		BEA7BD5422159B5D00AEE980 /* CoreImageStudy */ = {
 			isa = PBXGroup;
 			children = (
+				F7E555862216ACAE003767C9 /* Transition */,
 				BEA7BD6722159C4C00AEE980 /* Controllers */,
 				BEA7BD5522159B5D00AEE980 /* AppDelegate.swift */,
 				BEA7BD5722159B5D00AEE980 /* ViewController.swift */,
@@ -82,6 +85,14 @@
 				BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		F7E555862216ACAE003767C9 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				F7E555872216ACBF003767C9 /* LandscapeTransitionAnimator.swift */,
+			);
+			path = Transition;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */,
 				BEA7BD5622159B5D00AEE980 /* AppDelegate.swift in Sources */,
 				BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */,
+				F7E555882216ACBF003767C9 /* LandscapeTransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
