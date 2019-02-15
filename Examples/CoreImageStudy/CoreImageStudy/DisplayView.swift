@@ -9,6 +9,18 @@
 import UIKit
 
 class DisplayView: UIView {
+    
+    public var originalImage: UIImage? {
+        didSet {
+            originalImageView.image = originalImage
+        }
+    }
+    
+    public var processedImage: UIImage? {
+        didSet {
+            processedImageView.image = processedImage
+        }
+    }
 
     private lazy var originalImageView: ContentView = {
         let imageView = ContentView()
@@ -65,6 +77,8 @@ class ContentView: UIView {
     
     private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.clipsToBounds = true
+        imageView.contentMode = .scaleAspectFill
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = UIColor(white: 0.85, alpha: 1)
         return imageView
@@ -75,6 +89,7 @@ class ContentView: UIView {
         textLabel.font = UIFont.boldSystemFont(ofSize: 48)
         textLabel.translatesAutoresizingMaskIntoConstraints = false
         textLabel.textColor = .white
+        textLabel.setContentCompressionResistancePriority(UILayoutPriority(rawValue: 751), for: NSLayoutConstraint.Axis.vertical)
         return textLabel
     }()
     
