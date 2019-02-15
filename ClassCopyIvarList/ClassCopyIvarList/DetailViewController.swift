@@ -60,7 +60,7 @@ class DetailViewController: UIViewController {
         for i in 0 ... (icount - 1) {
             let memberName = String(utf8String: ivar_getName((ivars?[Int(i)])!)!) ?? ""
             print("memberName == \(memberName)")
-            classArray.append(memberName!)
+            classArray.append(memberName)
         }
 
         return classArray

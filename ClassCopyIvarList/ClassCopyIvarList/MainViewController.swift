@@ -33,7 +33,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let activity = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        let activity = UIActivityIndicatorView(style: .whiteLarge)
         activity.setValue(UIColor.red, forKey: "color")
         activity.setValue(50, forKey: "width")
         view.addSubview(activity)
