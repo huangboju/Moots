@@ -12,7 +12,7 @@
 		BEA7BD5B22159B5D00AEE980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5922159B5D00AEE980 /* Main.storyboard */; };
 		BEA7BD5D22159B5E00AEE980 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5C22159B5E00AEE980 /* Assets.xcassets */; };
 		BEA7BD6022159B5E00AEE980 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD5E22159B5E00AEE980 /* LaunchScreen.storyboard */; };
-		BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */; };
+		BEA7BD6922159C6200AEE980 /* FilterDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6822159C6200AEE980 /* FilterDetailVC.swift */; };
 		BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6A2215A08900AEE980 /* DisplayView.swift */; };
 		BEA7BD6F2215B46B00AEE980 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6E2215B46B00AEE980 /* Extensions.swift */; };
 		F7E555852216AABF003767C9 /* LandscapeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E555842216AABF003767C9 /* LandscapeNav.swift */; };
@@ -27,7 +27,7 @@
 		BEA7BD5C22159B5E00AEE980 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEA7BD5F22159B5E00AEE980 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEA7BD6122159B5E00AEE980 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionBlurVC.swift; sourceTree = "<group>"; };
+		BEA7BD6822159C6200AEE980 /* FilterDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDetailVC.swift; sourceTree = "<group>"; };
 		BEA7BD6A2215A08900AEE980 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		BEA7BD6E2215B46B00AEE980 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F7E555842216AABF003767C9 /* LandscapeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNav.swift; sourceTree = "<group>"; };
@@ -82,7 +82,7 @@
 		BEA7BD6722159C4C00AEE980 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */,
+				BEA7BD6822159C6200AEE980 /* FilterDetailVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -171,7 +171,7 @@
 				BEA7BD5822159B5D00AEE980 /* ViewController.swift in Sources */,
 				BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */,
 				BEA7BD5622159B5D00AEE980 /* AppDelegate.swift in Sources */,
-				BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */,
+				BEA7BD6922159C6200AEE980 /* FilterDetailVC.swift in Sources */,
 				F7E555882216ACBF003767C9 /* LandscapeTransitionAnimator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
