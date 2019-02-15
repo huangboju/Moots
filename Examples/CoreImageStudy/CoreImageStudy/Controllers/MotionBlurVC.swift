@@ -21,6 +21,10 @@ class MotionBlurVC: UIViewController {
         
         view.backgroundColor = .white
         
+        let image = UIImage(named: "test1")
+        displayView.originalImage = image
+        displayView.processedImage = image?.motionBlur
+        
         view.addSubview(displayView)
         displayView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         displayView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
@@ -33,25 +37,23 @@ extension UIImage {
     var motionBlur: UIImage? {
         // 1. 将UIImage转换成CIImage
         
-//        let ciImage = CIImage(cgImage: self)
-//
-//        // 2. 创建滤镜
-//        self.filter = CIFilter(name: "CIMotionBlur", parameters: [kCIInputImageKey: ciImage])
-//        // 设置相关参数
-//        [self.filter setValue:@(10.f) forKey:@"inputRadius"];
-//
-//        // 3. 渲染并输出CIImage
-//        CIImage *outputImage = [self.filter outputImage];
-//
-//        // 4. 获取绘制上下文
-//        self.context = [CIContext contextWithOptions:nil];
-//
-//        // 5. 创建输出CGImage
-//        CGImageRef cgImage = [self.context createCGImage:outputImage fromRect:[outputImage extent]];
-//        UIImage *image = [UIImage imageWithCGImage:cgImage];
-//        // 6. 释放CGImage
-//        CGImageRelease(cgImage);
+        let ciImage = CIImage(cgImage: self.cgImage!)
+
+        // 2. 创建滤镜
+        let filter = CIFilter(name: "CIMotionBlur", parameters: [kCIInputImageKey: ciImage])
+        // 设置相关参数
+        filter?.setValue(10, forKey: "inputRadius")
+
+        // 3. 渲染并输出CIImage
+        guard let outputImage = filter?.outputImage else { return nil }
+
+        // 4. 获取绘制上下文
+        let context = CIContext(options: nil)
+
+        // 5. 创建输出CGImage
         
-        return nil
+        guard let cgImage = context.createCGImage(outputImage, from: outputImage.extent) else { return nil }
+
+        return UIImage(cgImage: cgImage)
     }
 }
