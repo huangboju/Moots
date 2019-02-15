@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="6Va-s4-dWc">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="8D1-ju-Q48">
+            <objects>
+                <tabBarController title="Tab Bar Controller" id="6Va-s4-dWc" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="yf6-TC-g1W">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="RMx-3f-FxP" kind="relationship" relationship="viewControllers" id="i1h-hT-WgP"/>
+                        <segue destination="ad0-5S-A34" kind="relationship" relationship="viewControllers" id="ydD-71-dNd"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yr1-oj-OxU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1038" y="-630"/>
+        </scene>
+        <!--Photo Filter Navigation-->
+        <scene sceneID="Vv2-YX-Fx7">
+            <objects>
+                <navigationController title="Photo Filter Navigation" hidesBarsWhenVerticallyCompact="YES" id="ad0-5S-A34" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Photos" image="photos-icon.png" id="sVY-uf-YeD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qg3-go-NVY">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="jrW-HE-CDl" kind="relationship" relationship="rootViewController" id="ImH-4X-9A4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U1T-gU-c9s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="-1088"/>
+        </scene>
+        <!--Photo Filters-->
+        <scene sceneID="unp-uT-vsj">
+            <objects>
+                <viewController title="Photo Filters" providesPresentationContextTransitionStyle="YES" id="jrW-HE-CDl" customClass="PhotoFilterViewController" customModule="Core_Image_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eZI-Ha-SF5"/>
+                        <viewControllerLayoutGuide type="bottom" id="B7d-zF-OYX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="22I-54-rjI">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <glkView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QP-ir-F11" customClass="FilteredImageView" customModule="Core_Image_Explorer" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="387"/>
+                                <color key="backgroundColor" red="0.15450246632099152" green="0.15450246632099152" blue="0.15450246632099152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </glkView>
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="M8I-hx-lza">
+                                <rect key="frame" x="0.0" y="417" width="600" height="100"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.14999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="4gP-Wq-oua"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="610" id="pCi-1V-iaR"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="2" minimumInteritemSpacing="2" id="tGX-GX-aJN">
+                                    <size key="itemSize" width="66" height="86"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoFilterCell" id="eWj-93-1Dg" customClass="PhotoFilterCollectionViewCell" customModule="Core_Image_Explorer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="7" width="66" height="86"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="86"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="jrW-HE-CDl" id="g5J-7J-yhs"/>
+                                    <outlet property="delegate" destination="jrW-HE-CDl" id="g9x-fw-Ow0"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15000000596046448" green="0.15000000596046448" blue="0.15000000596046448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="M8I-hx-lza" firstAttribute="top" secondItem="6QP-ir-F11" secondAttribute="bottom" id="AH2-Bm-EWT"/>
+                            <constraint firstItem="6QP-ir-F11" firstAttribute="top" secondItem="eZI-Ha-SF5" secondAttribute="bottom" id="AfE-e8-5Zp"/>
+                            <constraint firstAttribute="width" secondItem="M8I-hx-lza" secondAttribute="width" priority="500" id="AlS-cW-YBL"/>
+                            <constraint firstAttribute="centerX" secondItem="M8I-hx-lza" secondAttribute="centerX" id="GXR-22-y2B"/>
+                            <constraint firstAttribute="centerX" secondItem="6QP-ir-F11" secondAttribute="centerX" id="eU6-Jp-yu7"/>
+                            <constraint firstAttribute="width" secondItem="6QP-ir-F11" secondAttribute="width" id="sOY-6l-vMu"/>
+                            <constraint firstItem="M8I-hx-lza" firstAttribute="bottom" secondItem="B7d-zF-OYX" secondAttribute="top" id="wqe-iK-j7r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo Filters" id="OIv-r7-qEY"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="filteredImageView" destination="6QP-ir-F11" id="348-eB-ncO"/>
+                        <outlet property="photoFilterCollectionView" destination="M8I-hx-lza" id="IOv-5a-UU4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gwa-2a-uVL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="-1088"/>
+        </scene>
+        <!--Image Filter Navigation-->
+        <scene sceneID="pY4-Hu-kfo">
+            <objects>
+                <navigationController title="Image Filter Navigation" hidesBarsWhenVerticallyCompact="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Filters" image="filter-icon.png" id="Rwu-V0-Vxx"/>
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7bK-jq-Zjz" kind="relationship" relationship="rootViewController" id="tsl-Nk-0bq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8fS-aE-onr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-226" y="-86"/>
+        </scene>
+        <!--Image Filter Details-->
+        <scene sceneID="yUG-lL-AsK">
+            <objects>
+                <viewController title="Image Filter Details" id="JEX-9P-axG" customClass="FilterDetailViewController" customModule="Core_Image_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SYR-Wa-9uf"/>
+                        <viewControllerLayoutGuide type="bottom" id="GAO-Cl-Wes"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="svH-Pt-448">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.15293483436107635" green="0.15293483436107635" blue="0.15293483436107635" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Some Filter" id="6Bb-5F-f5z"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1387" y="-86"/>
+        </scene>
+        <!--Core Image Filters-->
+        <scene sceneID="smW-Zh-WAh">
+            <objects>
+                <tableViewController title="Core Image Filters" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="FilterListViewController" customModule="Core_Image_Explorer" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="r7i-6Z-zg0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SystemFilterCell" textLabel="Arm-wq-HPj" style="IBUITableViewCellStyleDefault" id="WCw-Qf-5nD">
+                                <rect key="frame" x="0.0" y="22" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WCw-Qf-5nD" id="37f-cq-3Eg">
+                                    <rect key="frame" x="0.0" y="0.0" width="376" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Arm-wq-HPj">
+                                            <rect key="frame" x="20" y="0.0" width="356" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <segue destination="JEX-9P-axG" kind="show" identifier="showDetail" id="5Ko-2b-tEn"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="7bK-jq-Zjz" id="Gho-Na-rnu"/>
+                            <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Core Image Filters" id="Zdf-7t-Un8"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="569" y="-86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="filter-icon.png" width="30" height="30"/>
+        <image name="photos-icon.png" width="30" height="30"/>
+    </resources>
+</document>
