@@ -58,7 +58,13 @@ extension ViewController: UITableViewDelegate {
         let controller = data[indexPath.section][indexPath.row].init()
         controller.title = "\(controller.classForCoder)"
         controller.hidesBottomBarWhenPushed = true
-        show(controller, sender: nil)
+        controller.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelClicked))
+        showDetailViewController(LandscapeNav(rootViewController: controller), sender: nil)
+    }
+
+    @objc
+    func cancelClicked(sender: UIBarButtonItem) {
+        dismiss(animated: true, completion: nil)
     }
 }
 

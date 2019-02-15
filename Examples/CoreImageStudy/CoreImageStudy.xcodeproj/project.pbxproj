@@ -15,6 +15,7 @@
 		BEA7BD6922159C6200AEE980 /* MotionBlurVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */; };
 		BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6A2215A08900AEE980 /* DisplayView.swift */; };
 		BEA7BD6F2215B46B00AEE980 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD6E2215B46B00AEE980 /* Extensions.swift */; };
+		F7E555852216AABF003767C9 /* LandscapeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E555842216AABF003767C9 /* LandscapeNav.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		BEA7BD6822159C6200AEE980 /* MotionBlurVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionBlurVC.swift; sourceTree = "<group>"; };
 		BEA7BD6A2215A08900AEE980 /* DisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayView.swift; sourceTree = "<group>"; };
 		BEA7BD6E2215B46B00AEE980 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F7E555842216AABF003767C9 /* LandscapeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandscapeNav.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				BEA7BD6122159B5E00AEE980 /* Info.plist */,
 				BEA7BD6A2215A08900AEE980 /* DisplayView.swift */,
 				BEA7BD6E2215B46B00AEE980 /* Extensions.swift */,
+				F7E555842216AABF003767C9 /* LandscapeNav.swift */,
 			);
 			path = CoreImageStudy;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEA7BD6F2215B46B00AEE980 /* Extensions.swift in Sources */,
+				F7E555852216AABF003767C9 /* LandscapeNav.swift in Sources */,
 				BEA7BD5822159B5D00AEE980 /* ViewController.swift in Sources */,
 				BEA7BD6B2215A08900AEE980 /* DisplayView.swift in Sources */,
 				BEA7BD5622159B5D00AEE980 /* AppDelegate.swift in Sources */,
@@ -302,8 +306,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
 				INFOPLIST_FILE = CoreImageStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -312,6 +316,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.CoreImageStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS wildcard dev";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -321,8 +326,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CoreImageStudy/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -331,6 +336,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.CoreImageStudy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
