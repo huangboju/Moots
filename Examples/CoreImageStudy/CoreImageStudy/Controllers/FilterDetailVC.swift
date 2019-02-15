@@ -8,7 +8,13 @@
 
 import UIKit
 
-class MotionBlurVC: UIViewController {
+class FilterDetailVC: UIViewController {
+    
+    public var filterName: String = "CIMotionBlur" {
+        didSet {
+            title = filterName
+        }
+    }
     
     private lazy var displayView: DisplayView = {
         let displayView = DisplayView()
@@ -23,7 +29,7 @@ class MotionBlurVC: UIViewController {
         
         let image = UIImage(named: "test1")
         displayView.originalImage = image
-        displayView.processedImage = image?.motionBlur
+        displayView.processedImage = image?.filter(with: filterName)
         
         view.addSubview(displayView)
         displayView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
@@ -34,13 +40,13 @@ class MotionBlurVC: UIViewController {
 }
 
 extension UIImage {
-    var motionBlur: UIImage? {
+    func filter(with name: String) -> UIImage? {
         // 1. 将UIImage转换成CIImage
         
         let ciImage = CIImage(cgImage: self.cgImage!)
 
         // 2. 创建滤镜
-        let filter = CIFilter(name: "CIMotionBlur", parameters: [kCIInputImageKey: ciImage])
+        let filter = CIFilter(name: name, parameters: [kCIInputImageKey: ciImage])
         // 设置相关参数
         filter?.setValue(10, forKey: "inputRadius")
 
