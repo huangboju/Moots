@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE449E1F22193337007FC371 /* CollisionGravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE449E1E22193337007FC371 /* CollisionGravityVC.swift */; };
+		BE449E21221937F5007FC371 /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE449E20221937F5007FC371 /* AttachmentsVC.swift */; };
 		BEA7BD7D2216EB0400AEE980 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD7C2216EB0400AEE980 /* AppDelegate.swift */; };
 		BEA7BD7F2216EB0400AEE980 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA7BD7E2216EB0400AEE980 /* ViewController.swift */; };
 		BEA7BD822216EB0400AEE980 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEA7BD802216EB0400AEE980 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE449E1E22193337007FC371 /* CollisionGravityVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionGravityVC.swift; sourceTree = "<group>"; };
+		BE449E20221937F5007FC371 /* AttachmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
 		BEA7BD792216EB0400AEE980 /* DynamicsCatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicsCatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEA7BD7C2216EB0400AEE980 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEA7BD7E2216EB0400AEE980 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				BEA7BD912217A61D00AEE980 /* GravityVC.swift */,
+				BE449E1E22193337007FC371 /* CollisionGravityVC.swift */,
+				BE449E20221937F5007FC371 /* AttachmentsVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			files = (
 				BEA7BD7F2216EB0400AEE980 /* ViewController.swift in Sources */,
 				BEA7BD922217A61D00AEE980 /* GravityVC.swift in Sources */,
+				BE449E1F22193337007FC371 /* CollisionGravityVC.swift in Sources */,
+				BE449E21221937F5007FC371 /* AttachmentsVC.swift in Sources */,
 				BEA7BD8F2217A5AA00AEE980 /* DecorationView.swift in Sources */,
 				BEA7BD7D2216EB0400AEE980 /* AppDelegate.swift in Sources */,
 			);

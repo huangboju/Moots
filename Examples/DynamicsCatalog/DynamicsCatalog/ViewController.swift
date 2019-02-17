@@ -19,7 +19,9 @@ class ViewController: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            GravityVC.self
+            GravityVC.self,
+            CollisionGravityVC.self,
+            AttachmentsVC.self
         ]
     ]
     
