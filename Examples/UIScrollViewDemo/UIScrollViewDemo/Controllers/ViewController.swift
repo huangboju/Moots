@@ -49,6 +49,9 @@ class ViewController: UIViewController {
         ],
         [
             BlurController.self
+        ],
+        [
+            WindowVC.self
         ]
     ]
 
