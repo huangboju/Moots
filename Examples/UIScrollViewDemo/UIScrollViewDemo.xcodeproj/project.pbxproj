@@ -143,6 +143,7 @@
 		D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
+		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
 		F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */; };
 		F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF221845883008448E3 /* MaskViewVC.swift */; };
@@ -338,6 +339,7 @@
 		D8A732221DED7124005DF7C8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
+		F72C3893221CEE3E00E081D3 /* WindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowVC.swift; sourceTree = "<group>"; };
 		F754780521DCC217004D3D32 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
 		F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskShapeLayerVC.swift; sourceTree = "<group>"; };
 		F79C0AF221845883008448E3 /* MaskViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
@@ -710,6 +712,7 @@
 				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 				F754780521DCC217004D3D32 /* BlurController.swift */,
+				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */,
 				D8A7321A1DED6E8A005DF7C8 /* Frirend.swift in Sources */,
 				BEB635151FA4AA6C00525EBB /* UIKitDynamicsViewController.swift in Sources */,
+				F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */,
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
