@@ -90,26 +90,7 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem?.badgeMinSize = 1
         navigationItem.leftBarButtonItem?.badgeBGColor = UIColor.red
     }
-    
-    func button() {
-        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        effectView.frame = view.bounds
-        view.addSubview(effectView)
-        
-        let button = AYVibrantButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100), style: AYVibrantButtonStyleTranslucent)
-        button?.vibrancyEffect = nil
-        button?.text = "Any Color"
-        button?.font = UIFont.systemFont(ofSize: 18)
-        button?.tintColor = UIColor.black
-        view.addSubview(button!)
-        
-        let invertButton = AYVibrantButton(frame: CGRect(x: 100, y: 210, width: 100, height: 100), style: AYVibrantButtonStyleInvert)
-        invertButton?.vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .light))
-        invertButton?.text = "Invert"
-        invertButton?.font = UIFont.systemFont(ofSize: 18)
-        view.addSubview(invertButton!)
-    }
-    
+
     @objc func runloop()  {
         print("😁")
     }
