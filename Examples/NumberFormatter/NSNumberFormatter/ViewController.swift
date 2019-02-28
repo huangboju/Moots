@@ -90,26 +90,7 @@ class ViewController: UIViewController {
         navigationItem.leftBarButtonItem?.badgeMinSize = 1
         navigationItem.leftBarButtonItem?.badgeBGColor = UIColor.red
     }
-    
-    func button() {
-        let effectView = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-        effectView.frame = view.bounds
-        view.addSubview(effectView)
-        
-        let button = AYVibrantButton(frame: CGRect(x: 100, y: 100, width: 100, height: 100), style: AYVibrantButtonStyleTranslucent)
-        button?.vibrancyEffect = nil
-        button?.text = "Any Color"
-        button?.font = UIFont.systemFont(ofSize: 18)
-        button?.tintColor = UIColor.black
-        view.addSubview(button!)
-        
-        let invertButton = AYVibrantButton(frame: CGRect(x: 100, y: 210, width: 100, height: 100), style: AYVibrantButtonStyleInvert)
-        invertButton?.vibrancyEffect = UIVibrancyEffect(blurEffect: UIBlurEffect(style: .light))
-        invertButton?.text = "Invert"
-        invertButton?.font = UIFont.systemFont(ofSize: 18)
-        view.addSubview(invertButton!)
-    }
-    
+
     @objc func runloop()  {
         print("😁")
     }
@@ -154,7 +135,7 @@ extension ViewController {
      *  desc:  数字的风格
      */
 
-    func numberStyle() {
+    @objc func numberStyle() {
         let number = NSNumber(value: 1234567.8369)
         let number1 = NSNumber(value: 1234567.4344)
         
@@ -187,7 +168,7 @@ extension ViewController {
      */
     
     // open var locale: Locale!
-    func locale() {
+    @objc func locale() {
         let formatter = NumberFormatter()
         print(formatter.locale)
         formatter.locale = Locale(identifier: "fr_FR")
@@ -205,7 +186,7 @@ extension ViewController {
      */
     
     // open var generatesDecimalNumbers: Bool
-    func generatesDecimalNumbers() {
+    @objc func generatesDecimalNumbers() {
         let numberFormatter = NumberFormatter()
         numberFormatter.generatesDecimalNumbers = true
         let str = numberFormatter.number(from: "1234.56878")
@@ -222,7 +203,7 @@ extension ViewController {
      */
     
     // open var formatterBehavior: NumberFormatter.Behavior
-    func formatterBehavior() {
+    @objc func formatterBehavior() {
         let formatter = NumberFormatter()
         print(formatter.formatterBehavior)
     }
@@ -233,7 +214,7 @@ extension ViewController {
      */
     
     // open var negativeFormat: String!
-    func negativeFormat() {
+    @objc func negativeFormat() {
         let formatter = NumberFormatter()
         print(formatter.negativeFormat)
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -249,7 +230,7 @@ extension ViewController {
      */
     
     // open var textAttributesForNegativeValues: [String : Any]?
-    func textAttributesForNegativeValues() {
+    @objc func textAttributesForNegativeValues() {
         let formatter = NumberFormatter()
         print(formatter.textAttributesForNegativeValues as Any)
     }
@@ -261,7 +242,7 @@ extension ViewController {
      */
     
     // open var positiveFormat: String!
-    func positiveFormat() {
+    @objc func positiveFormat() {
         let formatter = NumberFormatter()
         print(formatter.positiveFormat)
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -277,7 +258,7 @@ extension ViewController {
      */
     
     // open var textAttributesForPositiveValues: [String : Any]?
-    func textAttributesForPositiveValues() {
+    @objc func textAttributesForPositiveValues() {
         let formatter = NumberFormatter()
         print(formatter.textAttributesForPositiveValues as Any)
     }
@@ -290,7 +271,7 @@ extension ViewController {
      */
     
     // open var allowsFloats: Bool
-    func allowsFloats() {
+    @objc func allowsFloats() {
         let formatter = NumberFormatter()
         let str = formatter.number(from: "1237868794.56878")
         print(str!) // 1237868794.56878
@@ -306,7 +287,7 @@ extension ViewController {
      */
     
     // open var decimalSeparator: String!
-    func decimalSeparator() {
+    @objc func decimalSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.decimalSeparator)
@@ -323,7 +304,7 @@ extension ViewController {
      */
     
     // open var alwaysShowsDecimalSeparator: Bool
-    func alwaysShowsDecimalSeparator() {
+    @objc func alwaysShowsDecimalSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.alwaysShowsDecimalSeparator)
@@ -338,7 +319,7 @@ extension ViewController {
      */
     
     // open var currencyDecimalSeparator: String!
-    func currencyDecimalSeparator() {
+    @objc func currencyDecimalSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.currencyDecimalSeparator)
@@ -357,7 +338,7 @@ extension ViewController {
      */
     
     // open var usesGroupingSeparator: Bool
-    func usesGroupingSeparator() {
+    @objc func usesGroupingSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.usesGroupingSeparator)
@@ -375,7 +356,7 @@ extension ViewController {
      */
     
     // open var groupingSeparator: String!
-    func groupingSeparator() {
+    @objc func groupingSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.groupingSeparator)
@@ -393,7 +374,7 @@ extension ViewController {
      */
     
     // open var zeroSymbol: String?
-    func zeroSymbol() {
+    @objc func zeroSymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.zeroSymbol as Any)
@@ -412,7 +393,7 @@ extension ViewController {
      */
     
     // open var textAttributesForZero: [String : Any]?
-    func textAttributesForZero() {
+    @objc func textAttributesForZero() {
         let formatter = NumberFormatter()
         print(formatter.textAttributesForZero as Any)
     }
@@ -424,7 +405,7 @@ extension ViewController {
      */
     
     // open var nilSymbol: String
-    func nilSymbol() {
+    @objc func nilSymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.nilSymbol)
@@ -441,7 +422,7 @@ extension ViewController {
      */
     
     // open var textAttributesForNil: [String : Any]?
-    func textAttributesForNil() {
+    @objc func textAttributesForNil() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNil as Any)
@@ -455,7 +436,7 @@ extension ViewController {
     
     // open var notANumberSymbol: String!
     
-    func notANumberSymbol() {
+    @objc func notANumberSymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.notANumberSymbol)
@@ -469,7 +450,7 @@ extension ViewController {
     
     // open var textAttributesForNotANumber: [String : Any]?
     
-    func textAttributesForNotANumber() {
+    @objc func textAttributesForNotANumber() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNotANumber as Any)
@@ -482,7 +463,7 @@ extension ViewController {
      */
     
     // open var positiveInfinitySymbol: String
-    func positiveInfinitySymbol() {
+    @objc func positiveInfinitySymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.positiveInfinitySymbol)
@@ -494,7 +475,7 @@ extension ViewController {
      */
     
     // open var textAttributesForPositiveInfinity: [String : Any]?
-    func textAttributesForPositiveInfinity() {
+    @objc func textAttributesForPositiveInfinity() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForPositiveInfinity as Any)
@@ -507,7 +488,7 @@ extension ViewController {
      */
     
     // open var negativeInfinitySymbol: String
-    func negativeInfinitySymbol() {
+    @objc func negativeInfinitySymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.negativeInfinitySymbol)
@@ -520,7 +501,7 @@ extension ViewController {
      */
     
     // open var textAttributesForNegativeInfinity: [String : Any]?
-    func textAttributesForNegativeInfinity() {
+    @objc func textAttributesForNegativeInfinity() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.textAttributesForNegativeInfinity as Any)
@@ -534,7 +515,7 @@ extension ViewController {
     
     // open var positivePrefix: String!
     
-    func positivePrefix() {
+    @objc func positivePrefix() {
         let formatter = NumberFormatter()
         print(formatter.positivePrefix, "😁")
         let str = formatter.string(from: 123456)
@@ -550,7 +531,7 @@ extension ViewController {
      */
     
     // open var positiveSuffix: String!
-    func positiveSuffix() {
+    @objc func positiveSuffix() {
         let formatter = NumberFormatter()
         print(formatter.positiveSuffix, "😁")
         let str = formatter.string(from: 123456)
@@ -569,7 +550,7 @@ extension ViewController {
      */
     
     // open var negativePrefix: String!
-    func negativePrefix() {
+    @objc func negativePrefix() {
         let formatter = NumberFormatter()
         print(formatter.negativePrefix, "😁")
         let str = formatter.string(from: -123456)
@@ -586,7 +567,7 @@ extension ViewController {
      */
     
     // open var negativeSuffix: String!
-    func negativeSuffix() {
+    @objc func negativeSuffix() {
         let formatter = NumberFormatter()
         print(formatter.negativeSuffix, "😁")
         let str = formatter.string(from: -123456)
@@ -604,7 +585,7 @@ extension ViewController {
      */
 
     // open var currencyCode: String!
-    func currencyCode() {
+    @objc func currencyCode() {
         let formatter = NumberFormatter()
         print(formatter.currencyCode)
     }
@@ -617,7 +598,7 @@ extension ViewController {
      */
     
     // open var currencySymbol: String!
-    func currencySymbol() {
+    @objc func currencySymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.currencySymbol)
@@ -635,7 +616,7 @@ extension ViewController {
      */
     
     // open var internationalCurrencySymbol: String!
-    func internationalCurrencySymbol() {
+    @objc func internationalCurrencySymbol() {
         let formatter = NumberFormatter()
         //        formatter.locale = Locale(identifier: "de_DE")
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -653,7 +634,7 @@ extension ViewController {
      */
     
     // open var percentSymbol: String!
-    func percentSymbol() {
+    @objc func percentSymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.percent
         print(formatter.percentSymbol)
@@ -671,7 +652,7 @@ extension ViewController {
      */
     
     // open var perMillSymbol: String!
-    func perMillSymbol() {
+    @objc func perMillSymbol() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.percent
         print(formatter.perMillSymbol)
@@ -684,7 +665,7 @@ extension ViewController {
      */
     
     //  open var minusSign: String!
-    func minusSign() {
+    @objc func minusSign() {
         let formatter = NumberFormatter()
         print(formatter.minusSign)
     }
@@ -697,7 +678,7 @@ extension ViewController {
      */
     
     // open var plusSign: String!
-    func plusSign() {
+    @objc func plusSign() {
         let formatter = NumberFormatter()
         print(formatter.plusSign)
     }
@@ -710,7 +691,7 @@ extension ViewController {
      */
     
     // open var exponentSymbol: String!
-    func exponentSymbol() {
+    @objc func exponentSymbol() {
         let formatter = NumberFormatter()
         print(formatter.exponentSymbol)
     }
@@ -723,7 +704,7 @@ extension ViewController {
      */
     
     // open var groupingSize: Int
-    func groupingSize() {
+    @objc func groupingSize() {
         
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
@@ -742,7 +723,7 @@ extension ViewController {
      */
     
     // open var secondaryGroupingSize: Int
-    func secondaryGroupingSize() {
+    @objc func secondaryGroupingSize() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.secondaryGroupingSize)
@@ -760,7 +741,7 @@ extension ViewController {
      */
     
     // @NSCopying open var multiplier: NSNumber?
-    func multiplier() {
+    @objc func multiplier() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.multiplier as Any)
@@ -778,7 +759,7 @@ extension ViewController {
      */
     
     // open var formatWidth: Int
-    func formatWidth() {
+    @objc func formatWidth() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.formatWidth)
@@ -797,7 +778,7 @@ extension ViewController {
     
     // open var paddingCharacter: String!
     
-    func paddingCharacter() {
+    @objc func paddingCharacter() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.paddingCharacter)
@@ -816,7 +797,7 @@ extension ViewController {
      */
     
     // open var paddingPosition: NumberFormatter.PadPosition
-    func paddingPosition() {
+    @objc func paddingPosition() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.paddingPosition == .beforePrefix)
@@ -836,7 +817,7 @@ extension ViewController {
      */
     
     // open var roundingMode: NumberFormatter.RoundingMode
-    func roundingMode() {
+    @objc func roundingMode() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.roundingMode == .halfEven)
@@ -855,7 +836,7 @@ extension ViewController {
      */
     
     // @NSCopying open var roundingIncrement: NSNumber!
-    func roundingIncrement() {
+    @objc func roundingIncrement() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.roundingIncrement)
@@ -872,7 +853,7 @@ extension ViewController {
      *  desc: 整数最少位数
      */
     // open var minimumIntegerDigits: Int
-    func minimumIntegerDigits() {
+    @objc func minimumIntegerDigits() {
         
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
@@ -891,7 +872,7 @@ extension ViewController {
      */
     
     // open var maximumIntegerDigits: Int
-    func maximumIntegerDigits() {
+    @objc func maximumIntegerDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.maximumIntegerDigits)
@@ -909,7 +890,7 @@ extension ViewController {
      */
     
     // open var minimumFractionDigits: Int
-    func minimumFractionDigits() {
+    @objc func minimumFractionDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.minimumFractionDigits)
@@ -928,7 +909,7 @@ extension ViewController {
      */
     
     // open var maximumFractionDigits: Int
-    func maximumFractionDigits() {
+    @objc func maximumFractionDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.maximumFractionDigits)
@@ -948,7 +929,7 @@ extension ViewController {
     
     // @NSCopying open var minimum: NSNumber?
     
-    func minimum() {
+    @objc func minimum() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.minimum as Any)
@@ -961,7 +942,7 @@ extension ViewController {
      */
     
     // @NSCopying open var maximum: NSNumber?
-    func maximum() {
+    @objc func maximum() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         print(formatter.maximum as Any)
@@ -974,7 +955,7 @@ extension ViewController {
      */
     
     // open var currencyGroupingSeparator: String!
-    func currencyGroupingSeparator() {
+    @objc func currencyGroupingSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.currencyGroupingSeparator as Any)
@@ -992,7 +973,7 @@ extension ViewController {
      */
     
     // open var isLenient: Bool
-    func isLenient() {
+    @objc func isLenient() {
         let formatter = NumberFormatter()
         print(formatter.isLenient)
     }
@@ -1004,7 +985,7 @@ extension ViewController {
      */
     
     // open var usesSignificantDigits: Bool
-    func usesSignificantDigits() {
+    @objc func usesSignificantDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.usesSignificantDigits)
@@ -1022,7 +1003,7 @@ extension ViewController {
      */
     
     // open var minimumSignificantDigits: Int
-    func minimumSignificantDigits() {
+    @objc func minimumSignificantDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.minimumSignificantDigits)
@@ -1040,7 +1021,7 @@ extension ViewController {
      */
     
     // open var maximumSignificantDigits: Int
-    func maximumSignificantDigits() {
+    @objc func maximumSignificantDigits() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         print(formatter.maximumSignificantDigits)
@@ -1061,7 +1042,7 @@ extension ViewController {
      */
     
     // open var isPartialStringValidationEnabled: Bool
-    func isPartialStringValidationEnabled() {
+    @objc func isPartialStringValidationEnabled() {
         let formatter = NumberFormatter()
         print(formatter.isPartialStringValidationEnabled)
     }

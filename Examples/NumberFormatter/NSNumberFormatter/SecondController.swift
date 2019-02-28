@@ -97,7 +97,7 @@ extension SecondController {
         return inputNumber.doubleValue.isNaN
     }
 
-    func bankCardNumber() {
+    @objc func bankCardNumber() {
         let formatter = NumberFormatter()
         // 分隔位数,会受numberStyle的影响，currency，decimal是3位
         formatter.groupingSize = 4
@@ -112,7 +112,7 @@ extension SecondController {
         displayLabel?.text = formatter.string(from: number)
     }
     
-    func currencyDisplay() {
+    @objc func currencyDisplay() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         formatter.currencySymbol = "" // 注释这一句前面可以有货币符号
@@ -123,7 +123,7 @@ extension SecondController {
     }
     
     // 从64.01开始，NSNumber(value: 64.01).description得到是这样“64.01000000000001”到“99.01”都是有bug的，可能不准确，请注意。
-    func accurateDisplay() {
+    @objc func accurateDisplay() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         
@@ -138,7 +138,7 @@ extension SecondController {
         displayLabel?.text = formatter.string(from: n)
     }
     
-    func changeDetails() {
+    @objc func changeDetails() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         formatter.currencySymbol = ""
@@ -152,7 +152,7 @@ extension SecondController {
         displayLabel?.text = negativeText + "\n\n" + positiveText
     }
     
-    func percent() {
+    @objc func percent() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.percent
         let n: NSNumber = isNaN ?
@@ -162,7 +162,7 @@ extension SecondController {
         displayLabel?.text = formatter.string(from: n)
     }
     
-    func customizingGroupingSeparator() {
+    @objc func customizingGroupingSeparator() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.decimal
         let n: NSNumber = isNaN ?
@@ -173,7 +173,7 @@ extension SecondController {
         displayLabel?.text = formatter.string(from: n)
     }
     
-    func currencyStrToNumber() {
+    @objc func currencyStrToNumber() {
         let formatter = NumberFormatter()
         formatter.numberStyle = NumberFormatter.Style.currency
         let text = formatter.string(from: inputNumber)
@@ -192,7 +192,7 @@ extension SecondController {
         halfUp  向最接近的整数舍入，或如果等距离，则离开零。  0.5->1, 1.5->2
      */
     //
-    func rounding() {
+    @objc func rounding() {
         let formatter = NumberFormatter()
         formatter.roundingMode = .halfUp
         let n: NSNumber = isNaN ?
