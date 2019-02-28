@@ -22,6 +22,7 @@ class GameScene: SKScene {
     var dt: TimeInterval = 0
     let zombieMovePointsPerSec: CGFloat = 480.0
     var velocity = CGPoint.zero
+    var lastTouchLocation: CGPoint?
     
     override init(size: CGSize) {
         let maxAspectRatio:CGFloat = 16.0/9.0 // 1
@@ -55,20 +56,18 @@ class GameScene: SKScene {
         lastUpdateTime = currentTime
         move(sprite: zombie, velocity: velocity)
         boundsCheckZombie()
+        rotate(zombie, direction: velocity)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
+        guard let touch = touches.first else { return }
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation)
+        lastTouchLocation = touchLocation
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
+        guard let touch = touches.first else { return }
         let touchLocation = touch.location(in: self)
         sceneTouched(touchLocation)
     }
@@ -79,15 +78,16 @@ class GameScene: SKScene {
 
     func move(sprite: SKSpriteNode, velocity: CGPoint) {
         // 1
-        let amountToMove = CGPoint(x: velocity.x * CGFloat(dt),
-                                   y: velocity.y * CGFloat(dt))
+        let amountToMove = velocity * CGFloat(dt)
         print("Amount to move: \(amountToMove)")
         // 2
-        sprite.position = CGPoint(
-            x: sprite.position.x + amountToMove.x,
-            y: sprite.position.y + amountToMove.y)
+        sprite.position += amountToMove
     }
     
+    func rotate(_ sprite: SKSpriteNode, direction: CGPoint) {
+        sprite.zRotation = atan2(direction.y, direction.x)
+    }
+
     func moveZombieToward(_ location: CGPoint) {
         let offset = CGPoint(x: location.x - zombie.position.x,
                              y: location.y - zombie.position.y)
