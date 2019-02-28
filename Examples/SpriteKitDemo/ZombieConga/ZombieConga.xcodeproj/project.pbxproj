@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE1B8F9B22276285003A688A /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B8F9A22276285003A688A /* MyUtils.swift */; };
 		BE449E4322215DA6007FC371 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE449E4222215DA6007FC371 /* AppDelegate.swift */; };
 		BE449E4722215DA6007FC371 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = BE449E4622215DA6007FC371 /* Actions.sks */; };
 		BE449E4922215DA6007FC371 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE449E4822215DA6007FC371 /* GameScene.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BE1B8F9A22276285003A688A /* MyUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
 		BE449E3F22215DA6007FC371 /* ZombieConga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZombieConga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE449E4222215DA6007FC371 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE449E4622215DA6007FC371 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				BE449E5122215DA8007FC371 /* LaunchScreen.storyboard */,
 				BE449E5422215DA8007FC371 /* Info.plist */,
 				BE47C3312222C1FB00BF706E /* Utilities.swift */,
+				BE1B8F9A22276285003A688A /* MyUtils.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE449E4922215DA6007FC371 /* GameScene.swift in Sources */,
+				BE1B8F9B22276285003A688A /* MyUtils.swift in Sources */,
 				BE449E4B22215DA6007FC371 /* GameViewController.swift in Sources */,
 				BE47C3322222C1FB00BF706E /* Utilities.swift in Sources */,
 				BE449E4322215DA6007FC371 /* AppDelegate.swift in Sources */,
