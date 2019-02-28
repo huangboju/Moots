@@ -847,8 +847,8 @@
 				TargetAttributes = {
 					D8A731ED1DED6E28005DF7C8 = {
 						CreatedOnToolsVersion = 8.1;
-						DevelopmentTeam = D2CVGDWDEG;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 6E5E8VY4L7;
+						ProvisioningStyle = Manual;
 					};
 					D8A732011DED6E28005DF7C8 = {
 						CreatedOnToolsVersion = 8.1;
@@ -1211,7 +1211,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1221,6 +1222,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollVie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "iOS wildcard dev";
 				SWIFT_OBJC_BRIDGING_HEADER = UIScrollViewDemo/Bridging.h;
 				SWIFT_VERSION = 4.2;
 			};
@@ -1230,7 +1232,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D2CVGDWDEG;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1240,6 +1243,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollVie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = UIScrollViewDemo/Bridging.h;
 				SWIFT_VERSION = 4.2;
 			};
