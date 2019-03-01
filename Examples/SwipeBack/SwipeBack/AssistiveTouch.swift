@@ -68,7 +68,7 @@ class AssistiveTouch: UIButton {
         UIView.commitAnimations()
     }
 
-    override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControlEvents) {
+    override func addTarget(_ target: Any?, action: Selector, for controlEvents: UIControl.Event) {
         addGestureRecognizer(UITapGestureRecognizer(target: target, action: action))
     }
 }
