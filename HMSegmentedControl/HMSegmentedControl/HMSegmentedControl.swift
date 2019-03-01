@@ -45,14 +45,14 @@ public class HMSegmentedControl: UIControl {
     /**
      Text attributes to apply to item title text.
      */
-    public var titleTextAttributes: [String: Any]?
+    public var titleTextAttributes: [NSAttributedString.Key: Any]?
     
     /*
      Text attributes to apply to selected item title text.
      
      Attributes not set in this dictionary are inherited from `titleTextAttributes`.
      */
-    public var selectedTitleTextAttributes: [String: Any]?
+    public var selectedTitleTextAttributes: [NSAttributedString.Key: Any]?
     
     /**
      Segmented control background color.
@@ -340,7 +340,7 @@ public class HMSegmentedControl: UIControl {
             size = titleFormatter(self, title, index, selected).size()
         } else if titleFormatter == nil {
             let titleAttrs = selected ? resultingSelectedTitleTextAttributes : resultingTitleTextAttributes
-            size = (title as NSString).size(attributes: titleAttrs)
+            size = (title as NSString).size(withAttributes: titleAttrs)
         } else {
             //            size = [(NSAttributedString *)title size]
         }
@@ -356,10 +356,10 @@ public class HMSegmentedControl: UIControl {
             var titleAttrs = selected ? resultingSelectedTitleTextAttributes : resultingTitleTextAttributes
             
             // the color should be cast to CGColor in order to avoid invalid context on iOS7
-            let titleColor = titleAttrs[NSForegroundColorAttributeName]
+            let titleColor = titleAttrs[NSAttributedString.Key.foregroundColor]
             
             if let titleColor = titleColor {
-                titleAttrs[NSForegroundColorAttributeName] = (titleColor as AnyObject).cgColor
+                titleAttrs[NSAttributedString.Key.foregroundColor] = (titleColor as AnyObject).cgColor
             }
             
             return NSAttributedString(string: title, attributes: titleAttrs)
@@ -433,10 +433,10 @@ public class HMSegmentedControl: UIControl {
                 
                 let titleLayer = CATextLayer()
                 titleLayer.frame = _rect
-                titleLayer.alignmentMode = kCAAlignmentCenter
+                titleLayer.alignmentMode = CATextLayerAlignmentMode.center
                 
                 if isLowVersion {
-                    titleLayer.truncationMode = kCATruncationEnd
+                    titleLayer.truncationMode = CATextLayerTruncationMode.end
                 }
                 titleLayer.string = attributedTitle(at: idx)
                 
@@ -535,11 +535,11 @@ public class HMSegmentedControl: UIControl {
                 
                 let titleLayer = CATextLayer()
                 titleLayer.frame = textRect
-                titleLayer.alignmentMode = kCAAlignmentCenter
+                titleLayer.alignmentMode = CATextLayerAlignmentMode.center
                 titleLayer.string = attributedTitle(at: idx)
                 
                 if isLowVersion {
-                    titleLayer.truncationMode = kCATruncationEnd
+                    titleLayer.truncationMode = CATextLayerTruncationMode.end
                 }
                 let imageLayer = CALayer()
                 imageLayer.frame = imageRect
@@ -949,7 +949,7 @@ public class HMSegmentedControl: UIControl {
                 CATransaction.begin()
                 CATransaction.setAnimationDuration(0.15)
                 
-                CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear))
+                CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear))
                 setArrowFrame()
                 selectionIndicatorBoxLayer.frame = frameForSelectionIndicator
                 selectionIndicatorStripLayer.frame = frameForSelectionIndicator
@@ -986,10 +986,10 @@ public class HMSegmentedControl: UIControl {
     }
     
     // MARK: - Styling Support
-    var resultingTitleTextAttributes: [String: Any] {
-        var resultingAttrs: [String: Any] = [
-            NSFontAttributeName: UIFont.systemFont(ofSize: 19),
-            NSForegroundColorAttributeName: UIColor.black
+    var resultingTitleTextAttributes: [NSAttributedString.Key: Any] {
+        var resultingAttrs: [NSAttributedString.Key: Any] = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19),
+            NSAttributedString.Key.foregroundColor: UIColor.black
         ]
         
         if let titleTextAttributes = titleTextAttributes {
@@ -999,7 +999,7 @@ public class HMSegmentedControl: UIControl {
         return resultingAttrs
     }
     
-    var resultingSelectedTitleTextAttributes: [String: Any] {
+    var resultingSelectedTitleTextAttributes: [NSAttributedString.Key: Any] {
         var resultingAttrs = resultingTitleTextAttributes
 
         if let selectedTitleTextAttributes = selectedTitleTextAttributes {

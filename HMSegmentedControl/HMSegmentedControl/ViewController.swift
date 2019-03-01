@@ -32,14 +32,14 @@ class ViewController: UIViewController {
         segmentedControl1.verticalDividerColor = UIColor.black
         segmentedControl1.verticalDividerWidth = 1.0
         segmentedControl1.titleFormatter = { (segmentedControl, title, index, selected) in
-            let attString = NSAttributedString(string: title, attributes: [NSForegroundColorAttributeName: UIColor.blue])
+            let attString = NSAttributedString(string: title, attributes: [NSAttributedString.Key.foregroundColor: UIColor.blue])
             return attString
         }
         segmentedControl1.addTarget(self, action: #selector(segmentedControlChangedValue), for: .valueChanged)
         view.addSubview(segmentedControl1)
         
-        let images = (1...4).flatMap { UIImage(named: "\($0)") }
-        let selectedImages = (1...4).flatMap { UIImage(named: "\($0)-selected") }
+        let images = (1...4).compactMap { UIImage(named: "\($0)") }
+        let selectedImages = (1...4).compactMap { UIImage(named: "\($0)-selected") }
         let segmentedControl2 = HMSegmentedControl(sectionImages: images, sectionSelectedImages: selectedImages)
         segmentedControl2.frame = CGRect(x: 0, y: 180, width: viewWidth, height: 50)
         segmentedControl2.selectionIndicatorHeight = 4.0
@@ -57,7 +57,7 @@ class ViewController: UIViewController {
         }
         segmentedControl3.selectionIndicatorHeight = 4.0
         segmentedControl3.backgroundColor = UIColor(red: 0.1, green: 0.4, blue: 0.8, alpha: 1)
-        segmentedControl3.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
+        segmentedControl3.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         segmentedControl3.selectionIndicatorColor = UIColor(red: 0.5, green: 0.8, blue: 1, alpha: 1)
         segmentedControl3.selectionIndicatorBoxColor = UIColor.black
         segmentedControl3.selectionIndicatorBoxOpacity = 1.0
@@ -69,7 +69,7 @@ class ViewController: UIViewController {
         view.addSubview(segmentedControl3)
     }
 
-    func segmentedControlChangedValue() {
+    @objc func segmentedControlChangedValue() {
         
     }
 
