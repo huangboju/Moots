@@ -10,9 +10,9 @@ typealias RefreshingBlock = (CurveRefreshView) -> ()
 class CurveRefreshHeaderView: CurveRefreshView {
 
     override func progressDidSet(completion: @escaping(Bool) -> ()) {
-        center.y = -fabs(associatedScrollView.contentOffset.y + originOffset) / 2
+        center.y = -abs(associatedScrollView.contentOffset.y + originOffset) / 2
 
-        let diff = fabs(associatedScrollView.contentOffset.y + originOffset) - pullDistance + 10
+        let diff = abs(associatedScrollView.contentOffset.y + originOffset) - pullDistance + 10
 
         if diff > 0 {
             if !associatedScrollView.isTracking && !notTracking {
@@ -56,7 +56,7 @@ extension CurveRefreshHeaderView {
         guard let contentOffset = (change?[NSKeyValueChangeKey.newKey] as AnyObject).cgPointValue else { return }
 
         if contentOffset.y + originOffset <= 0 {
-            progress = max(0.0, min(fabs(contentOffset.y + originOffset) / pullDistance, 1.0))
+            progress = max(0.0, min(abs(contentOffset.y + originOffset) / pullDistance, 1.0))
         }
     }
 }

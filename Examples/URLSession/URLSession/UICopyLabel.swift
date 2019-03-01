@@ -28,7 +28,7 @@ class UICopyLabel: UILabel {
         addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(showMenu)))
     }
     
-    func showMenu(sender: UILongPressGestureRecognizer) {
+    @objc func showMenu(sender: UILongPressGestureRecognizer) {
         switch sender.state {
         case .began:
             becomeFirstResponder()

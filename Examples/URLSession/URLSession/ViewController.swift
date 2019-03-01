@@ -172,7 +172,7 @@ class ViewController: UIViewController {
             var location: String?
 
             if let paths = FileManager.default.subpaths(atPath: tmp) {
-                for path in paths where path.characters.first != "." { // 剔除隐藏文件
+                for path in paths where path.first != "." { // 剔除隐藏文件
                     print("\(tmp)/\(path)\n")
                     location = "\(tmp)/\(path)"
                 }

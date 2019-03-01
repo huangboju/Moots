@@ -82,7 +82,7 @@ class MenuItemCell: UITableViewCell {
         return true
     }
 
-    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPress)))
     }
@@ -92,7 +92,7 @@ class MenuItemCell: UITableViewCell {
     }
 
     // http://nshipster.cn/uimenucontroller/
-    func longPress(sender: UILongPressGestureRecognizer) {
+    @objc func longPress(sender: UILongPressGestureRecognizer) {
         if sender.state == .began {
             self.becomeFirstResponder() // 这句很重要
             let menuController = UIMenuController.shared
@@ -104,11 +104,11 @@ class MenuItemCell: UITableViewCell {
         }
     }
 
-    func test1() {
+    @objc func test1() {
         print(#function)
     }
 
-    func test2() {
+    @objc func test2() {
         print(#function)
     }
 }

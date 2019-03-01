@@ -64,7 +64,7 @@ class WebViewController: UIViewController, WKScriptMessageHandler, WKNavigationD
         let textLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 100))
         textLabel.backgroundColor = UIColor.red
         webView.addSubview(textLabel)
-        webView.sendSubview(toBack: textLabel)
+        webView.sendSubviewToBack(textLabel)
 
         webView.scrollView.delegate = self
     }
@@ -84,7 +84,7 @@ class WebViewController: UIViewController, WKScriptMessageHandler, WKNavigationD
         }
     }
 
-    func nextPage() {
+    @objc func nextPage() {
         if self.webView.canGoForward {
             self.webView.goForward()
         }
