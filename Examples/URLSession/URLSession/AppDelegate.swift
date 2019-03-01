@@ -13,18 +13,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         window?.backgroundColor = UIColor.white
 //        getData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: .UIPasteboardChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: UIPasteboard.changedNotification, object: nil)
         
         return true
     }
 
-    func pastechanged(_ notification: Notification) {
-        print(notification.object)
+    @objc func pastechanged(_ notification: Notification) {
+        print(notification.object ?? "")
     }
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey: Any] = [:]) -> Bool {
         
         print("🍀")
         print(url, options)

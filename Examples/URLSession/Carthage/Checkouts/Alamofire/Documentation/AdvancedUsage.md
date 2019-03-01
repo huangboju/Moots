@@ -333,7 +333,7 @@ class AccessTokenAdapter: RequestAdapter {
         }
 
         return urlRequest
-	}
+    }
 }
 ```
 
@@ -495,7 +495,7 @@ Alamofire provides built-in response serialization for data, strings, JSON, and 
 Alamofire.request(...).responseData { (resp: DataResponse<Data>) in ... }
 Alamofire.request(...).responseString { (resp: DataResponse<String>) in ... }
 Alamofire.request(...).responseJSON { (resp: DataResponse<Any>) in ... }
-Alamofire.request(...).responsePropertyList { resp: DataResponse<Any>) in ... }
+Alamofire.request(...).responsePropertyList { (resp: DataResponse<Any>) in ... }
 ```
 
 Those responses wrap deserialized *values* (Data, String, Any) or *errors* (network, validation errors), as well as *meta-data* (URL request, HTTP headers, status code, [metrics](#statistical-metrics), ...).
@@ -910,6 +910,22 @@ Whether you need to set the `NSExceptionRequiresForwardSecrecy` to `NO` depends 
 
 > It is recommended to always use valid certificates in production environments.
 
+#### Using Self-Signed Certificates with Local Networking
+
+If you are attempting to connect to a server running on your localhost, and you are using self-signed certificates, you will need to add the following to your `Info.plist`.
+
+```xml
+<dict>
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsLocalNetworking</key>
+        <true/>
+    </dict>
+</dict>
+```
+
+According to [Apple documentation](https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW35), setting `NSAllowsLocalNetworking` to `YES` allows loading of local resources without disabling ATS for the rest of your app.
+
 ### Network Reachability
 
 The `NetworkReachabilityManager` listens for reachability changes of hosts and addresses for both WWAN and WiFi network interfaces.
@@ -935,5 +951,3 @@ There are some important things to remember when using network reachability to d
     - Even though the network requests may still fail, this is a good moment to retry them.
 - The network reachability status can be useful for determining why a network request may have failed.
     - If a network request fails, it is more useful to tell the user that the network request failed due to being offline rather than a more technical error, such as "request timed out."
-
-> It is recommended to check out [WWDC 2012 Session 706, "Networking Best Practices"](https://developer.apple.com/videos/play/wwdc2012-706/) for more info.

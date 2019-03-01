@@ -62,7 +62,7 @@ class CurveRefreshView: UIView {
         let controller = associatedScrollView.viewController
         let bottom = controller.tabBarController?.tabBar.frame.height ?? 0
 
-        UIView.animate(withDuration: 0.1, delay: 0.0, options: UIViewAnimationOptions(), animations: { [weak self] in
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: UIView.AnimationOptions(), animations: { [weak self] in
             guard let strongSelf = self else { return }
             strongSelf.alpha = 0.0
             strongSelf.associatedScrollView.contentInset.top = strongSelf.originOffset
@@ -113,7 +113,7 @@ extension UIView {
         rotationAnimation.duration = 0.5
         rotationAnimation.autoreverses = false
         rotationAnimation.repeatCount = HUGE
-        rotationAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+        rotationAnimation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
         layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
 
