@@ -40,7 +40,7 @@ class SecondController: UIViewController {
         postButton.removeFromSuperview()
     }
 
-    func action(sender: UIScreenEdgePanGestureRecognizer) {
+    @objc func action(sender: UIScreenEdgePanGestureRecognizer) {
         switch sender.state {
         case .changed:
             let x = sender.translation(in: view).x
@@ -53,7 +53,7 @@ class SecondController: UIViewController {
         }
     }
 
-    func submit() {
+    @objc func submit() {
         
     }
     
