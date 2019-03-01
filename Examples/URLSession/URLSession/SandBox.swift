@@ -76,7 +76,7 @@ class SandBox: UITableViewController {
             path = NSTemporaryDirectory()
         }
 
-        print("📂\(path)\n\n")
+        print("📂\(String(describing: path))\n\n")
     }
 
     // 创建文件夹
@@ -155,7 +155,7 @@ class SandBox: UITableViewController {
                 let ownerAccountName = att[.ownerAccountName]
                 let modificationDate = att[.modificationDate]
 
-                print("size=\(size)", "creationDate=\(creationDate)", "ownerAccountName=\(ownerAccountName)", "modificationDate=\(modificationDate)")
+                print("size=\(String(describing: size))", "creationDate=\(String(describing: creationDate))", "ownerAccountName=\(String(describing: ownerAccountName))", "modificationDate=\(String(describing: modificationDate))")
             } catch let error {
                 print("❌\(error)")
             }
@@ -251,7 +251,7 @@ class SandBox: UITableViewController {
 
             // 当前文件夹下的所有文件
         if let paths = fileManager.subpaths(atPath: documentsPath) {
-            for path in paths where path.characters.first != "." { // 剔除隐藏文件
+            for path in paths where path.first != "." { // 剔除隐藏文件
                 print("\(documentsPath)/\(path)\n")
             }
         }
@@ -306,7 +306,7 @@ class SandBox: UITableViewController {
 
             fileHandle.closeFile()
 
-            print("✅\(contents)")
+            print("✅\(String(describing: contents))")
         } catch let error {
             print("❌\(error)")
         }

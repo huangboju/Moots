@@ -45,7 +45,7 @@ class JokeController: UITableViewController {
         title = "段子"
 
         tableView.separatorStyle = .none
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200
         tableView?.backgroundColor = UIColor(white: 0.95, alpha: 1)
         tableView?.register(Cell.self, forCellReuseIdentifier: "cell")
@@ -68,7 +68,7 @@ class JokeController: UITableViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(moreAction))
     }
 
-    func moreAction() {
+    @objc func moreAction() {
         let vc = ViewController()
         vc.hidesBottomBarWhenPushed = true
         navigationController?.pushViewController(vc, animated: true)
@@ -85,9 +85,9 @@ class JokeController: UITableViewController {
         request.addValue("private", forHTTPHeaderField: "Cache-Control")
 
         Alamofire.request(request).responseJSON { [unowned self](data) in
-            guard let value = data.result.value else { return }
+            guard let value = data.value else { return }
             if let json = JSON(value).dictionaryValue["段子"] {
-                let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
+                let data = json.arrayValue.compactMap { $0.dictionaryValue["digest"]?.stringValue }
                 if self.isLoadingMore {
                     self.contents.append(contentsOf: data)
                 } else {
@@ -135,7 +135,7 @@ class JokeController: UITableViewController {
             let task = session.dataTask(with: request) { (data, response, error) in
                 if let data = data {
                     if let json = JSON(data).dictionaryValue["段子"] {
-                        let data = json.arrayValue.flatMap { $0.dictionaryValue["digest"]?.stringValue }
+                        let data = json.arrayValue.compactMap { $0.dictionaryValue["digest"]?.stringValue }
                         if self.isLoadingMore {
                             self.contents.append(contentsOf: data)
                         } else {
@@ -173,11 +173,11 @@ class JokeController: UITableViewController {
         UIApplication.shared.openURL(URL(string: urlStr)!)
     }
 
-    func mqq() {
+    @objc func mqq() {
         openURL(type: #function)
     }
 
-    func wechat() {
+    @objc func wechat() {
         openURL(type: #function)
     }
 

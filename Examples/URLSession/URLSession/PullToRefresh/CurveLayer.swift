@@ -40,7 +40,7 @@ class CurveLayer: CALayer {
         let arrowPath = UIBezierPath()
 
         let x = frame.width / 2 - Radius
-        let piValue = CGFloat(M_PI * 9 / 10)
+        let piValue = CGFloat.pi * CGFloat(9 / 10)
 
         if progress <= 0.5 {
             let pointA = CGPoint(x: x, y: CenterY - Space + (1 - 2 * progress) * (CenterY - LineLength) + LineLength)
@@ -57,7 +57,7 @@ class CurveLayer: CALayer {
             let pointB = CGPoint(x: x, y: CenterY - Space)
             curvePath1.move(to: pointA)
             curvePath1.addLine(to: pointB)
-            curvePath1.addArc(withCenter: CGPoint(x: frame.width / 2, y: CenterY - Space), radius: Radius, startAngle: .pi, endAngle: CGFloat(M_PI) + (piValue * (progress - 0.5) * 2), clockwise: true)
+            curvePath1.addArc(withCenter: CGPoint(x: frame.width / 2, y: CenterY - Space), radius: Radius, startAngle: .pi, endAngle: CGFloat.pi + (piValue * (progress - 0.5) * 2), clockwise: true)
 
             // arrow
             arrowPath.move(to: curvePath1.currentPoint)

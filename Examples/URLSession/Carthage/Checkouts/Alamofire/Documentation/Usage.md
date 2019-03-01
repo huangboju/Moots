@@ -28,7 +28,7 @@ Alamofire.request("https://httpbin.org/get").responseJSON { response in
 }
 ```
 
-In the above example, the `responseJSON` handler is appended to the `Request` to be executed once the `Request` is complete. Rather than blocking execution to wait for a response from the server, a [callback](http://en.wikipedia.org/wiki/Callback_%28computer_programming%29) in the form of a closure is specified to handle the response once it's received. The result of a request is only available inside the scope of a response closure. Any execution contingent on the response or data received from the server must be done within a response closure.
+In the above example, the `responseJSON` handler is appended to the `Request` to be executed once the `Request` is complete. Rather than blocking execution to wait for a response from the server, a [callback](https://en.wikipedia.org/wiki/Callback_%28computer_programming%29) in the form of a closure is specified to handle the response once it's received. The result of a request is only available inside the scope of a response closure. Any execution contingent on the response or data received from the server must be done within a response closure.
 
 > Networking in Alamofire is done _asynchronously_. Asynchronous programming may be a source of frustration to programmers unfamiliar with the concept, but there are [very good reasons](https://developer.apple.com/library/ios/qa/qa1693/_index.html) for doing it this way.
 
@@ -203,7 +203,7 @@ Response Caching is handled on the system framework level by [`URLCache`](https:
 
 ### HTTP Methods
 
-The `HTTPMethod` enumeration lists the HTTP methods defined in [RFC 7231 §4.3](http://tools.ietf.org/html/rfc7231#section-4.3):
+The `HTTPMethod` enumeration lists the HTTP methods defined in [RFC 7231 §4.3](https://tools.ietf.org/html/rfc7231#section-4.3):
 
 ```swift
 public enum HTTPMethod: String {
@@ -279,6 +279,38 @@ Alamofire.request("https://httpbin.org/post", method: .post, parameters: paramet
 // HTTP body: foo=bar&baz[]=a&baz[]=1&qux[x]=1&qux[y]=2&qux[z]=3
 ```
 
+##### Configuring the Encoding of `Bool` Parameters
+
+The `URLEncoding.BoolEncoding` enumeration provides the following methods for encoding `Bool` parameters:
+
+- `.numeric` - Encode `true` as `1` and `false` as `0`.
+- `.literal` - Encode `true` and `false` as string literals.
+
+By default, Alamofire uses the `.numeric` encoding.
+
+You can create your own `URLEncoding` and specify the desired `Bool` encoding in the initializer:
+
+```swift
+let encoding = URLEncoding(boolEncoding: .literal)
+```
+
+##### Configuring the Encoding of `Array` Parameters
+
+The `URLEncoding.ArrayEncoding` enumeration provides the following methods for encoding `Array` parameters:
+
+- `.brackets` - An empty set of square brackets is appended to the key for every value.
+- `.noBrackets` - No brackets are appended. The key is encoded as is.
+
+By default, Alamofire uses the `.brackets` encoding, where `foo=[1,2]` is encoded as `foo[]=1&foo[]=2`.
+
+Using the `.noBrackets` encoding will encode `foo=[1,2]` as `foo=1&foo=2`.
+
+You can create your own `URLEncoding` and specify the desired `Array` encoding in the initializer:
+
+```swift
+let encoding = URLEncoding(arrayEncoding: .noBrackets)
+```
+
 #### JSON Encoding
 
 The `JSONEncoding` type creates a JSON representation of the parameters object, which is set as the HTTP body of the request. The `Content-Type` HTTP header field of an encoded request is set to `application/json`.
@@ -310,7 +342,7 @@ In the event that the provided `ParameterEncoding` types do not meet your needs,
 
 ```swift
 struct JSONStringArrayEncoding: ParameterEncoding {
-	private let array: [String]
+    private let array: [String]
 
     init(array: [String]) {
         self.array = array
@@ -375,10 +407,10 @@ Authentication is handled on the system framework level by [`URLCredential`](htt
 
 **Supported Authentication Schemes**
 
-- [HTTP Basic](http://en.wikipedia.org/wiki/Basic_access_authentication)
-- [HTTP Digest](http://en.wikipedia.org/wiki/Digest_access_authentication)
-- [Kerberos](http://en.wikipedia.org/wiki/Kerberos_%28protocol%29)
-- [NTLM](http://en.wikipedia.org/wiki/NT_LAN_Manager)
+- [HTTP Basic](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [HTTP Digest](https://en.wikipedia.org/wiki/Digest_access_authentication)
+- [Kerberos](https://en.wikipedia.org/wiki/Kerberos_%28protocol%29)
+- [NTLM](https://en.wikipedia.org/wiki/NT_LAN_Manager)
 
 #### HTTP Basic Authentication
 
@@ -513,7 +545,7 @@ Alamofire.download("https://httpbin.org/image/png")
 
 If a `DownloadRequest` is cancelled or interrupted, the underlying URL session may generate resume data for the active `DownloadRequest`. If this happens, the resume data can be re-used to restart the `DownloadRequest` where it left off. The resume data can be accessed through the download response, then reused when trying to restart the request.
 
-> **IMPORTANT:** On the latest release of all the Apple platforms (iOS 10, macOS 10.12, tvOS 10, watchOS 3), `resumeData` is broken on background URL session configurations. There's an underlying bug in the `resumeData` generation logic where the data is written incorrectly and will always fail to resume the download. For more information about the bug and possible workarounds, please see this Stack Overflow [post](http://stackoverflow.com/a/39347461/1342462).
+> **IMPORTANT:** On some versions of all Apple platforms (iOS 10 - 10.2, macOS 10.12 - 10.12.2, tvOS 10 - 10.1, watchOS 3 - 3.1.1), `resumeData` is broken on background URL session configurations. There's an underlying bug in the `resumeData` generation logic where the data is written incorrectly and will always fail to resume the download. For more information about the bug and possible workarounds, please see this [Stack Overflow post](https://stackoverflow.com/a/39347461/1342462).
 
 ```swift
 class ImageRequestor {
