@@ -61,13 +61,18 @@ class GameScene: SKScene {
         run(SKAction.repeatForever(
             SKAction.sequence([SKAction.run() { [weak self] in
                 self?.spawnEnemy()
-                },SKAction.wait(forDuration: 2.0)])))
+                }, SKAction.wait(forDuration: 2.0)])))
+        run(SKAction.repeatForever(
+            SKAction.sequence([SKAction.run() { [weak self] in
+                self?.spawnCat()
+                }, SKAction.wait(forDuration: 1.0)])))
         
         debugDrawPlayableArea()
     }
     
     func spawnEnemy() {
         let enemy = SKSpriteNode(imageNamed: "enemy")
+        enemy.name = "enemy"
         enemy.position = CGPoint(x: size.width + enemy.size.width/2,
                                  y: CGFloat.random(
             min: playableRect.minY + enemy.size.height/2,
@@ -102,19 +107,53 @@ class GameScene: SKScene {
 //        enemy.run(repeatAction)
     }
     
+    func spawnCat() {
+        // 1
+        let cat = SKSpriteNode(imageNamed: "cat")
+        cat.name = "cat"
+        cat.position = CGPoint(
+            x: CGFloat.random(min: playableRect.minX,
+                              max: playableRect.maxX),
+            y: CGFloat.random(min: playableRect.minY,
+                              max: playableRect.maxY))
+        cat.setScale(0)
+        cat.setZPosition(.cat)
+        cat.zRotation = -π / 16.0
+        
+        let leftWiggle = SKAction.rotate(byAngle: π/8.0, duration: 0.5)
+        let rightWiggle = leftWiggle.reversed()
+        let fullWiggle = SKAction.sequence([leftWiggle, rightWiggle])
+
+        let scaleUp = SKAction.scale(by: 1.2, duration: 0.25)
+        let scaleDown = scaleUp.reversed()
+        let fullScale = SKAction.sequence(
+            [scaleUp, scaleDown, scaleUp, scaleDown])
+        let group = SKAction.group([fullScale, fullWiggle])
+        let groupWait = SKAction.repeat(group, count: 10)
+        
+        addChild(cat)
+        // 2
+        let appear = SKAction.scale(to: 1.0, duration: 0.5)
+        let disappear = SKAction.scale(to: 0, duration: 0.5)
+        let removeFromParent = SKAction.removeFromParent()
+        let actions = [appear, groupWait, disappear, removeFromParent]
+        cat.run(SKAction.sequence(actions))
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         dt = lastUpdateTime > 0 ? currentTime - lastUpdateTime : 0
         lastUpdateTime = currentTime
-        if let lastTouchLocation = lastTouchLocation,
-            (lastTouchLocation - zombie.position).length <= CGFloat(dt) * zombieMovePointsPerSec {
-            zombie.position = lastTouchLocation
-            velocity = .zero
-            stopZombieAnimation()
-        } else {
+//        if let lastTouchLocation = lastTouchLocation,
+//            (lastTouchLocation - zombie.position).length <= CGFloat(dt) * zombieMovePointsPerSec {
+//            zombie.position = lastTouchLocation
+//            velocity = .zero
+//            stopZombieAnimation()
+//        } else {
             move(sprite: zombie, velocity: velocity)
             boundsCheckZombie()
             rotate(zombie, direction: velocity)
-        }
+//        }
+        checkCollisions()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -169,6 +208,37 @@ class GameScene: SKScene {
 
     func stopZombieAnimation() {
         zombie.removeAction(forKey: "animation")
+    }
+    
+    func zombieHit(cat: SKSpriteNode) {
+        cat.removeFromParent()
+    }
+
+    func zombieHit(enemy: SKSpriteNode) {
+        enemy.removeFromParent()
+    }
+
+    func checkCollisions() {
+        var hitCats: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "cat") { node, _ in
+            let cat = node as! SKSpriteNode
+            if cat.frame.intersects(self.zombie.frame) {
+                hitCats.append(cat)
+            }
+        }
+
+        hitCats.forEach { zombieHit(cat: $0) }
+
+        var hitEnemies: [SKSpriteNode] = []
+        enumerateChildNodes(withName: "enemy") { node, _ in
+            let enemy = node as! SKSpriteNode
+            if node.frame.insetBy(dx: 20, dy: 20).intersects(
+                self.zombie.frame) {
+                hitEnemies.append(enemy)
+            }
+        }
+
+        hitEnemies.forEach { zombieHit(enemy: $0) }
     }
     
     func boundsCheckZombie() {
