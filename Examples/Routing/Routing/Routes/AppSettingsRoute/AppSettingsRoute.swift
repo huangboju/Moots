@@ -14,6 +14,6 @@ protocol AppSettingsRoute {
 
 extension AppSettingsRoute {
     func openAppSettings() {
-        UIApplication.shared.open(URL(string:UIApplicationOpenSettingsURLString)!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string:UIApplication.openSettingsURLString)!, options: [:], completionHandler: nil)
     }
 }
