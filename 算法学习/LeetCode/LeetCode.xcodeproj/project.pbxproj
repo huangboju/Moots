@@ -19,6 +19,9 @@
 		F7225265219E744E00C3CC96 /* BestSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7225264219E744E00C3CC96 /* BestSpace.swift */; };
 		F7289BCC218B180E00DD632C /* BackPack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7289BCB218B180E00DD632C /* BackPack.swift */; };
 		F72E52602192C71A002A9E62 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72E525F2192C71A002A9E62 /* CombinationSum.swift */; };
+		F7F0274222369125003E5B10 /* SingleNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F0273F22369125003E5B10 /* SingleNumber.swift */; };
+		F7F0274322369125003E5B10 /* MajorityElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F0274022369125003E5B10 /* MajorityElement.swift */; };
+		F7F0274422369125003E5B10 /* SearchMatrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F0274122369125003E5B10 /* SearchMatrix.swift */; };
 		F7F98E3421D3A38700E813B0 /* KResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F98E3321D3A38700E813B0 /* KResult.swift */; };
 		F7F98E3621D3AA1C00E813B0 /* MinSubArrayLen.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7F98E3521D3AA1C00E813B0 /* MinSubArrayLen.swift */; };
 /* End PBXBuildFile section */
@@ -49,6 +52,9 @@
 		F7225264219E744E00C3CC96 /* BestSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSpace.swift; sourceTree = "<group>"; };
 		F7289BCB218B180E00DD632C /* BackPack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackPack.swift; sourceTree = "<group>"; };
 		F72E525F2192C71A002A9E62 /* CombinationSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
+		F7F0273F22369125003E5B10 /* SingleNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleNumber.swift; sourceTree = "<group>"; };
+		F7F0274022369125003E5B10 /* MajorityElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorityElement.swift; sourceTree = "<group>"; };
+		F7F0274122369125003E5B10 /* SearchMatrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchMatrix.swift; sourceTree = "<group>"; };
 		F7F98E3321D3A38700E813B0 /* KResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KResult.swift; sourceTree = "<group>"; };
 		F7F98E3521D3AA1C00E813B0 /* MinSubArrayLen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinSubArrayLen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +89,9 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				F7F0274022369125003E5B10 /* MajorityElement.swift */,
+				F7F0274122369125003E5B10 /* SearchMatrix.swift */,
+				F7F0273F22369125003E5B10 /* SingleNumber.swift */,
 				F71CB3A8218ACA6D004A27F3 /* MoveZeroes.swift */,
 				F71CB3A7218ACA6D004A27F3 /* MinCount.swift */,
 				D81B3E7E1EA707A200214304 /* main.swift */,
@@ -165,13 +174,16 @@
 				F7F98E3421D3A38700E813B0 /* KResult.swift in Sources */,
 				D81B3E7F1EA707A200214304 /* main.swift in Sources */,
 				BE39884122339349002F314A /* MergeSort.swift in Sources */,
+				F7F0274422369125003E5B10 /* SearchMatrix.swift in Sources */,
 				F7F98E3621D3AA1C00E813B0 /* MinSubArrayLen.swift in Sources */,
 				F7225265219E744E00C3CC96 /* BestSpace.swift in Sources */,
 				D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
 				F71CB3AA218ACA6D004A27F3 /* MoveZeroes.swift in Sources */,
+				F7F0274322369125003E5B10 /* MajorityElement.swift in Sources */,
 				F72E52602192C71A002A9E62 /* CombinationSum.swift in Sources */,
 				F7289BCC218B180E00DD632C /* BackPack.swift in Sources */,
 				F71CB3A9218ACA6D004A27F3 /* MinCount.swift in Sources */,
+				F7F0274222369125003E5B10 /* SingleNumber.swift in Sources */,
 				D81B3ED61EA75F7500214304 /* findMedianSortedArrays.swift in Sources */,
 				BEA255AA21756598005FE07C /* InsertionSort.swift in Sources */,
 			);
