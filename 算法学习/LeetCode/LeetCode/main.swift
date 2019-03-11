@@ -86,11 +86,6 @@ print(minSubArrayLen(s: 7, nums: [2,3,1,2,4,3]))
 
 print("merge sort")
 
-var nums1 = [1,2,3,0,0,0]
-let nums2 = [2,5,6]
-merge(&nums1, 3, nums2, 3)
-print(nums1)
-
 
 
 print("singleNumber")
@@ -113,3 +108,9 @@ print(searchMatrix([
     [10, 13, 14, 17, 24],
     [18, 21, 23, 26, 30]
     ], 5))
+
+
+var nums1 = [1,2,3,0,0,0]
+let nums2 = [2,5,6]
+merge(&nums1, 3, nums2, 3)
+print(nums1)
