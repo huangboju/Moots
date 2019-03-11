@@ -84,3 +84,11 @@ print(combinationSum2([10, 2, 7, 6, 5], 11))
 
 
 print(minSubArrayLen(s: 7, nums: [2,3,1,2,4,3]))
+
+
+print("merge sort")
+
+var nums1 = [1,2,3,0,0,0]
+let nums2 = [2,5,6]
+merge(&nums1, 3, nums2, 3)
+print(nums1)

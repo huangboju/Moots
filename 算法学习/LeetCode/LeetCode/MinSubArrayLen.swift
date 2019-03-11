@@ -29,3 +29,5 @@ func minSubArrayLen(s: Int, nums: [Int]) -> Int {
     return r > nums.count ? 0 : r
 }
 
+
+
