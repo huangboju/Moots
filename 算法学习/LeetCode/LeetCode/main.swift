@@ -8,8 +8,6 @@
 
 import Foundation
 
-// https://github.com/diwu/LeetCode-Solutions-in-Swift
-
 print(twoSum([2, 7, 11, 15, 0, 9], 9))
 
 
@@ -83,4 +81,26 @@ print(combinationSum2([10, 2, 7, 6, 5], 11))
 
 
 
-print(minSubArrayLen(s: 7, nums: [2,3,1,2,4,3]))
+print(minSubArrayLen(s: 7, nums: [1,1,1,1,1,1,1]))
+
+
+print("singleNumber")
+
+print(singleNumber([4,1,2,1,2]))
+
+
+
+print("majorityElement")
+
+print(majorityElement([2,2,1,1,1,2,2]))
+
+
+print("searchMatrix")
+
+print(searchMatrix([
+    [1,   4,  7, 11, 15],
+    [2,   5,  8, 12, 19],
+    [3,   6,  9, 16, 22],
+    [10, 13, 14, 17, 24],
+    [18, 21, 23, 26, 30]
+    ], 5))
