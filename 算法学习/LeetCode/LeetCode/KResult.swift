@@ -10,7 +10,7 @@ import Foundation
 
 //func ksolve(_ arr: [Int]) -> [Int] {
 //    // 1 7 4 6 8 9 12
-//    
+//
 //    return result
 //}
 
