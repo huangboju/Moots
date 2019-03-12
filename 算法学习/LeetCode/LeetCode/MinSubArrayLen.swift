@@ -22,8 +22,8 @@ func minSubArrayLen(s: Int, nums: [Int]) -> Int {
             if i-j+1 < r {
                 r = i-j+1
             }
+            sum -= nums[j]
             j += 1
-            sum -= nums[j-1]
         }
     }
     return r > nums.count ? 0 : r
