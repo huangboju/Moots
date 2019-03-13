@@ -1,0 +1,6 @@
+platform :ios, "8.0"
+use_frameworks!
+workspace 'Examples.xcworkspace'
+xcodeproj 'Examples.xcodeproj'
+pod 'TLIndexPathTools', :head
+pod 'TLLayoutTransitioning', :path => '../'
