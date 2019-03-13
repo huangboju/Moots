@@ -145,6 +145,7 @@
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
 		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
+		F75C2E822238DD9500495104 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2E812238DD9500495104 /* GestureVC.swift */; };
 		F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */; };
 		F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF221845883008448E3 /* MaskViewVC.swift */; };
 		F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF5218458A6008448E3 /* MaskView.swift */; };
@@ -341,6 +342,7 @@
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
 		F72C3893221CEE3E00E081D3 /* WindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowVC.swift; sourceTree = "<group>"; };
 		F754780521DCC217004D3D32 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
+		F75C2E812238DD9500495104 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
 		F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskShapeLayerVC.swift; sourceTree = "<group>"; };
 		F79C0AF221845883008448E3 /* MaskViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
 		F79C0AF5218458A6008448E3 /* MaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
@@ -713,6 +715,7 @@
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 				F754780521DCC217004D3D32 /* BlurController.swift */,
 				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
+				F75C2E812238DD9500495104 /* GestureVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -958,6 +961,7 @@
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
 				F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
+				F75C2E822238DD9500495104 /* GestureVC.swift in Sources */,
 				BE95F4F61FC40BC30033D83B /* VerifyPhoneNumberController.swift in Sources */,
 				BEC5E7911FB41EE300A44CD7 /* CollectionListController.swift in Sources */,
 				D81A60BC1EF7759F00398173 /* DayPickerView.swift in Sources */,
