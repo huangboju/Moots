@@ -52,6 +52,9 @@ class ViewController: UIViewController {
         ],
         [
             WindowVC.self
+        ],
+        [
+            GestureVC.self
         ]
     ]
 
