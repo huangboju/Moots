@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE39884122339349002F314A /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39884022339349002F314A /* MergeSort.swift */; };
+		BE398844224465E4002F314A /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE398843224465E4002F314A /* IsPalindrome.swift */; };
 		BEA255AA21756598005FE07C /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA255A921756598005FE07C /* InsertionSort.swift */; };
 		D81B3E7F1EA707A200214304 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E7E1EA707A200214304 /* main.swift */; };
 		D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E871EA7081E00214304 /* TwoSum.swift */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		BE39884022339349002F314A /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
+		BE398843224465E4002F314A /* IsPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BEA255A921756598005FE07C /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		D81B3E7E1EA707A200214304 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F7F98E3321D3A38700E813B0 /* KResult.swift */,
 				F7F98E3521D3AA1C00E813B0 /* MinSubArrayLen.swift */,
 				BE39884022339349002F314A /* MergeSort.swift */,
+				BE398843224465E4002F314A /* IsPalindrome.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -181,6 +184,7 @@
 				F71CB3AA218ACA6D004A27F3 /* MoveZeroes.swift in Sources */,
 				F7F0274322369125003E5B10 /* MajorityElement.swift in Sources */,
 				F72E52602192C71A002A9E62 /* CombinationSum.swift in Sources */,
+				BE398844224465E4002F314A /* IsPalindrome.swift in Sources */,
 				F7289BCC218B180E00DD632C /* BackPack.swift in Sources */,
 				F71CB3A9218ACA6D004A27F3 /* MinCount.swift in Sources */,
 				F7F0274222369125003E5B10 /* SingleNumber.swift in Sources */,
