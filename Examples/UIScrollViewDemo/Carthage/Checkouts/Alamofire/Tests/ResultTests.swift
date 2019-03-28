@@ -1,7 +1,7 @@
 //
 //  ResultTests.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -400,7 +400,7 @@ class ResultTestCase: BaseTestCase {
         result.withError { string = "\(type(of: $0))" }
 
         // Then
-    #if swift(>=4.2)
+    #if swift(>=4.0)
         XCTAssertEqual(string, "ResultError")
     #elseif swift(>=3.2)
         XCTAssertEqual(string, "ResultError #1")
