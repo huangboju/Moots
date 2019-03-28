@@ -1,7 +1,7 @@
 //
 //  DownloadTests.swift
 //
-//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -126,7 +126,6 @@ class DownloadResponseTestCase: BaseTestCase {
         XCTAssertNotNil(response?.request)
         XCTAssertNil(response?.response)
         XCTAssertNil(response?.destinationURL)
-        XCTAssertNil(response?.resumeData)
         XCTAssertNotNil(response?.error)
     }
 
@@ -382,32 +381,6 @@ class DownloadResponseTestCase: BaseTestCase {
 
 class DownloadResumeDataTestCase: BaseTestCase {
     let urlString = "https://upload.wikimedia.org/wikipedia/commons/6/69/NASA-HS201427a-HubbleUltraDeepField2014-20140603.jpg"
-
-    func testThatImmediatelyCancelledDownloadDoesNotHaveResumeDataAvailable() {
-        // Given
-        let expectation = self.expectation(description: "Download should be cancelled")
-        var response: DefaultDownloadResponse?
-
-        // When
-        let download = Alamofire.download(urlString)
-            .response { resp in
-                response = resp
-                expectation.fulfill()
-            }
-
-        download.cancel()
-
-        waitForExpectations(timeout: timeout, handler: nil)
-
-        // Then
-        XCTAssertNotNil(response?.request)
-        XCTAssertNil(response?.response)
-        XCTAssertNil(response?.destinationURL)
-        XCTAssertNil(response?.resumeData)
-        XCTAssertNotNil(response?.error)
-
-        XCTAssertNil(download.resumeData)
-    }
 
     func testThatCancelledDownloadResponseDataMatchesResumeData() {
         // Given

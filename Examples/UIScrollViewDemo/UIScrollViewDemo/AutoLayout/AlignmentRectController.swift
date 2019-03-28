@@ -35,6 +35,7 @@ class AlignmentRectView: UILabel {
         print("🍀🍀\(#function)🍀🍀")
         print(inset)
         print("\n\n")
+        inset.bottom += 10
         return inset
     }
 }
@@ -46,8 +47,8 @@ class AlignmentRectController: UIViewController {
 
         view.backgroundColor = .white
         
-//        initTest1()
-        initStackView()
+        initTest1()
+//        initStackView()
     }
 
     let subview1 = AlignmentRectView()
