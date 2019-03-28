@@ -20,6 +20,7 @@ class NoGapController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.backgroundColor = .white
+        collectionView.contentInset.top = 100
         return collectionView
     }()
 
@@ -29,6 +30,16 @@ class NoGapController: UIViewController {
         
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         view.addSubview(collectionView)
+        
+        let testView = UIView()
+        testView.backgroundColor = .red
+        testView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.addSubview(testView)
+        
+        testView.bottomAnchor.constraint(equalTo: collectionView.topAnchor).isActive = true
+        testView.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor).isActive = true
+        testView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        testView.heightAnchor.constraint(equalToConstant: 100).isActive = true
     }
     
     override func didReceiveMemoryWarning() {
