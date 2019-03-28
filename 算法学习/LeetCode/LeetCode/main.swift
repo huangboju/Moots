@@ -114,3 +114,9 @@ var nums1 = [1,2,3,0,0,0]
 let nums2 = [2,5,6]
 merge(&nums1, 3, nums2, 3)
 print(nums1)
+
+
+print(isPalindrome("`l;`` 1o1 ??;l`"))
+
+
+print(superEggDrop(1, 2))
