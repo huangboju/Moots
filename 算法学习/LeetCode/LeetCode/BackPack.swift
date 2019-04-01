@@ -22,7 +22,6 @@ import Foundation
 public func backPack1(_ m: Int, a: [Int]) -> Int {
 
     var result: [Int] = Array(repeating: 0, count: m + 1)
-    var values: [Int] = []
     ///1 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     ///
     ///3 [0, 1, 1, 3, 4, 4, 4, 4, 4, 4, 4, 4]
