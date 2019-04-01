@@ -21,6 +21,9 @@
 		BE449E5022215DA8007FC371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE449E4F22215DA8007FC371 /* Assets.xcassets */; };
 		BE449E5322215DA8007FC371 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE449E5122215DA8007FC371 /* LaunchScreen.storyboard */; };
 		BE47C3322222C1FB00BF706E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47C3312222C1FB00BF706E /* Utilities.swift */; };
+		BE4EDB4E2250BE5B0037BD06 /* GLIMSTIC.TTF in Resources */ = {isa = PBXBuildFile; fileRef = BE4EDB4D2250BE5B0037BD06 /* GLIMSTIC.TTF */; };
+		BE4EDB502250C1040037BD06 /* GameOverScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EDB4F2250C1040037BD06 /* GameOverScene.swift */; };
+		BE4EDB522250C4710037BD06 /* BackgroundMusicPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4EDB512250C4710037BD06 /* BackgroundMusicPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		BE449E5222215DA8007FC371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE449E5422215DA8007FC371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE47C3312222C1FB00BF706E /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		BE4EDB4D2250BE5B0037BD06 /* GLIMSTIC.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = GLIMSTIC.TTF; sourceTree = "<group>"; };
+		BE4EDB4F2250C1040037BD06 /* GameOverScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverScene.swift; sourceTree = "<group>"; };
+		BE4EDB512250C4710037BD06 /* BackgroundMusicPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundMusicPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,7 @@
 		BE449E4122215DA6007FC371 /* ZombieConga */ = {
 			isa = PBXGroup;
 			children = (
+				BE4EDB4D2250BE5B0037BD06 /* GLIMSTIC.TTF */,
 				BE398835222BD5B8002F314A /* Sounds */,
 				BE449E4222215DA6007FC371 /* AppDelegate.swift */,
 				BE449E4622215DA6007FC371 /* Actions.sks */,
@@ -95,6 +102,8 @@
 				BE449E5422215DA8007FC371 /* Info.plist */,
 				BE47C3312222C1FB00BF706E /* Utilities.swift */,
 				BE1B8F9A22276285003A688A /* MyUtils.swift */,
+				BE4EDB4F2250C1040037BD06 /* GameOverScene.swift */,
+				BE4EDB512250C4710037BD06 /* BackgroundMusicPlayer.swift */,
 			);
 			path = ZombieConga;
 			sourceTree = "<group>";
@@ -131,6 +140,7 @@
 				TargetAttributes = {
 					BE449E3E22215DA6007FC371 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -159,6 +169,7 @@
 			files = (
 				BE39883D222BD5DB002F314A /* win.wav in Resources */,
 				BE449E4E22215DA6007FC371 /* Main.storyboard in Resources */,
+				BE4EDB4E2250BE5B0037BD06 /* GLIMSTIC.TTF in Resources */,
 				BE39883F222BD5DB002F314A /* backgroundMusic.mp3 in Resources */,
 				BE449E5022215DA8007FC371 /* Assets.xcassets in Resources */,
 				BE39883B222BD5DB002F314A /* hitCatLady.wav in Resources */,
@@ -180,6 +191,8 @@
 				BE1B8F9B22276285003A688A /* MyUtils.swift in Sources */,
 				BE449E4B22215DA6007FC371 /* GameViewController.swift in Sources */,
 				BE47C3322222C1FB00BF706E /* Utilities.swift in Sources */,
+				BE4EDB502250C1040037BD06 /* GameOverScene.swift in Sources */,
+				BE4EDB522250C4710037BD06 /* BackgroundMusicPlayer.swift in Sources */,
 				BE449E4322215DA6007FC371 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -337,7 +350,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.ZombieConga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "iOS wildcard dev";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -357,7 +370,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.ZombieConga;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
