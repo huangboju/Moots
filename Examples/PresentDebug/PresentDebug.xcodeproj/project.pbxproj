@@ -19,6 +19,7 @@
 		F74119752178674D002FDB76 /* PresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74119742178674D002FDB76 /* PresentationController.swift */; };
 		F74119772178681F002FDB76 /* PresentationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F74119762178681F002FDB76 /* PresentationManager.swift */; };
 		F7411979217868B3002FDB76 /* PresentationAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7411978217868B3002FDB76 /* PresentationAnimator.swift */; };
+		F782FD86225391C400F3A908 /* CustomNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = F782FD85225391C400F3A908 /* CustomNav.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		F74119742178674D002FDB76 /* PresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationController.swift; sourceTree = "<group>"; };
 		F74119762178681F002FDB76 /* PresentationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationManager.swift; sourceTree = "<group>"; };
 		F7411978217868B3002FDB76 /* PresentationAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAnimator.swift; sourceTree = "<group>"; };
+		F782FD85225391C400F3A908 /* CustomNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNav.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				F74119762178681F002FDB76 /* PresentationManager.swift */,
 				F7411978217868B3002FDB76 /* PresentationAnimator.swift */,
 				F7289BE82192BD4F00DD632C /* NavController.swift */,
+				F782FD85225391C400F3A908 /* CustomNav.swift */,
 			);
 			path = PresentDebug;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F782FD86225391C400F3A908 /* CustomNav.swift in Sources */,
 				F7411971217856F6002FDB76 /* NavVC.swift in Sources */,
 				F741195F2178547E002FDB76 /* ViewController.swift in Sources */,
 				F741197321785741002FDB76 /* DetailViewController.swift in Sources */,
