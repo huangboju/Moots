@@ -1,4 +1,4 @@
-github "Alamofire/Alamofire" "4.8.1"
+github "Alamofire/Alamofire" "4.8.2"
 github "SnapKit/SnapKit" "3.2.0"
 github "ViccAlexander/Chameleon" "2.2.0"
 github "onevcat/Kingfisher" "4.10.1"
