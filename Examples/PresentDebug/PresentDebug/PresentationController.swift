@@ -78,3 +78,17 @@ private extension PresentationController {
         presentingViewController.dismiss(animated: true)
     }
 }
+
+extension PresentationController: UIViewControllerTransitioningDelegate {
+    func presentationController(forPresented presented: UIViewController, presenting: UIViewController?, source: UIViewController) -> UIPresentationController? {
+        return self
+    }
+    
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentationAnimator(isPresentation: true)
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return PresentationAnimator(isPresentation: false)
+    }
+}
