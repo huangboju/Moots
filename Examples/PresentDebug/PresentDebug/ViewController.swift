@@ -34,19 +34,16 @@ class ViewController: UIViewController {
     lazy var data: [[Selector]] = [
         [
             #selector(overCurrentContext),
+            #selector(custom),
             #selector(navSub)
         ]
     ]
-
-    lazy var presentationManager = PresentationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(tableView)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "dismiss", style: .plain, target: self, action: #selector(dismissAction))
-        
-        definesPresentationContext = true
     }
     
     @objc
@@ -56,18 +53,38 @@ class ViewController: UIViewController {
     
     @objc
     func navSub() {
+        definesPresentationContext = true
         let presentingVC = CustomNav(rootViewController: PresentingViewController())
-        presentingVC.transitioningDelegate = presentationManager
         presentingVC.modalPresentationStyle = .overCurrentContext
         present(presentingVC, animated: true, completion: nil)
+    }
+    
+    @objc
+    func custom() {
+        definesPresentationContext = false
+
+        let secondViewController = PresentingViewController()
+        secondViewController.modalPresentationStyle = .custom
+        let presentationController = PresentationController(presentedViewController: secondViewController, presenting: self)
+        withExtendedLifetime(presentationController) {
+            secondViewController.transitioningDelegate = presentationController
+            
+            present(secondViewController, animated: true, completion: nil)
+        }
     }
 
     @objc
     func overCurrentContext() {
-        let presentingVC = PresentingViewController()
-        presentingVC.transitioningDelegate = presentationManager
-        presentingVC.modalPresentationStyle = .overCurrentContext
-        present(presentingVC, animated: true, completion: nil)
+        definesPresentationContext = true
+
+        let secondViewController = PresentingViewController()
+        secondViewController.modalPresentationStyle = .overCurrentContext
+        let presentationController = PresentationController(presentedViewController: secondViewController, presenting: self)
+        withExtendedLifetime(presentationController) {
+            secondViewController.transitioningDelegate = presentationController
+            
+            present(secondViewController, animated: true, completion: nil)
+        }
     }
 }
 

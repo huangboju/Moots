@@ -12,13 +12,15 @@ class CustomNav: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavigationBarHidden(true, animated: false)
     }
     
-
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        view.frame.origin.y = UIScreen.main.bounds.height - 400
-        view.frame.size.height = 400
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        view.backgroundColor = UIColor(white: 0.0, alpha: 0.5)
     }
-
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        dismiss(animated: true, completion: nil)
+    }
 }
