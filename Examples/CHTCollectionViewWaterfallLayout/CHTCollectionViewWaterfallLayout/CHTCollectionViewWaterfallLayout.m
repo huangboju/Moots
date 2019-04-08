@@ -486,7 +486,33 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
 }
 
 - (void)adjustFooterAttributesIfNeeded:(UICollectionViewLayoutAttributes *)attr {
+    attr.zIndex = 1024;
+    attr.hidden = NO;
+    NSInteger section = attr.indexPath.section;
+    NSIndexPath *firstCellIndexPath =  [NSIndexPath indexPathForItem:0 inSection:section];
+    UICollectionViewLayoutAttributes *firstCellAttributes = [self layoutAttributesForItemAtIndexPath:firstCellIndexPath];
+    // starting point of section
+    CGFloat sectionMinY = CGRectGetMinY(firstCellAttributes.frame);
     
+    // bottom of the view
+    CGFloat viewMaxY = CGRectGetMaxY(self.collectionView.bounds) - self.collectionView.contentInset.bottom - attr.frame.size.height;
+    
+    // smaller of sticky position or actual position
+    CGFloat smallerYPosition = MIN(viewMaxY, attr.frame.origin.y);
+    
+    // larger of calculated position or end of section
+    CGFloat finalPosition = MAX(smallerYPosition, sectionMinY);
+    
+    //    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMinY, viewMaxY, smallerYPosition, finalPosition);
+    
+    // update y position
+    CGPoint origin = attr.frame.origin;
+    origin.y = finalPosition;
+    
+    attr.frame = (CGRect){
+        origin,
+        attr.frame.size
+    };
 }
 
 - (UIEdgeInsets)sectionInsetForSectionAtIndex:(NSInteger)section {
