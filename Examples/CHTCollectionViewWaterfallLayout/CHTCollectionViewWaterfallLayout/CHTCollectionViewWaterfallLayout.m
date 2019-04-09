@@ -468,10 +468,47 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     return result;
 }
 
+- (UIEdgeInsets)sectionInsetForSectionAtIndex:(NSInteger)section {
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
+        return [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
+    } else {
+        return self.sectionInset;
+    }
+}
+
+- (CGFloat)heightForHeaderInSection:(NSInteger)section {
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
+        return [self.delegate collectionView:self.collectionView layout:self heightForHeaderInSection:section];
+    } else {
+        return self.headerHeight;
+    }
+}
+
+- (CGFloat)heightForFooterInSection:(NSInteger)section {
+    if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
+        return [self.delegate collectionView:self.collectionView layout:self heightForFooterInSection:section];
+    } else {
+        return self.footerHeight;
+    }
+}
+
+- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
+    if (self.sectionHeadersPinToVisibleBounds || self.sectionFootersPinToVisibleBounds) {
+        return YES;
+    }
+    CGRect oldBounds = self.collectionView.bounds;
+    if (CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds)) {
+        return YES;
+    }
+    return NO;
+}
+
+#pragma mark - Private Methods
+
 - (void)adjustHeaderAttributesIfNeeded:(UICollectionViewLayoutAttributes *)attr {
     attr.zIndex = 1024;
     attr.hidden = NO;
-
+    
     NSInteger section = attr.indexPath.section;
     NSInteger numberOfItemsInSection = [self.collectionView numberOfItemsInSection:section];
     NSIndexPath *lastCellIndexPath = [NSIndexPath indexPathForItem:MAX(0, numberOfItemsInSection - 1) inSection:section];
@@ -480,7 +517,7 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     // last point of section minus height of header
     // 这里有1pt的偏差，我也不知道为什么
     CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attr.frame.size.height + sectionInset.bottom + 1;
-
+    
     // top of the view
     CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.contentInset.top;
     
@@ -528,43 +565,6 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
         return self.collectionView.contentInset;
     }
 }
-
-- (UIEdgeInsets)sectionInsetForSectionAtIndex:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
-        return [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
-    } else {
-        return self.sectionInset;
-    }
-}
-
-- (CGFloat)heightForHeaderInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
-        return [self.delegate collectionView:self.collectionView layout:self heightForHeaderInSection:section];
-    } else {
-        return self.headerHeight;
-    }
-}
-
-- (CGFloat)heightForFooterInSection:(NSInteger)section {
-    if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
-        return [self.delegate collectionView:self.collectionView layout:self heightForFooterInSection:section];
-    } else {
-        return self.footerHeight;
-    }
-}
-
-- (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
-    if (self.sectionHeadersPinToVisibleBounds || self.sectionFootersPinToVisibleBounds) {
-        return YES;
-    }
-    CGRect oldBounds = self.collectionView.bounds;
-    if (CGRectGetWidth(newBounds) != CGRectGetWidth(oldBounds)) {
-        return YES;
-    }
-    return NO;
-}
-
-#pragma mark - Private Methods
 
 /**
  *  Find the shortest column.
