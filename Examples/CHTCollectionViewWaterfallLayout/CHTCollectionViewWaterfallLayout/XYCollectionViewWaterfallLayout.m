@@ -471,25 +471,22 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
 - (UIEdgeInsets)sectionInsetForSectionAtIndex:(NSInteger)section {
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:insetForSectionAtIndex:)]) {
         return [self.delegate collectionView:self.collectionView layout:self insetForSectionAtIndex:section];
-    } else {
-        return self.sectionInset;
     }
+    return self.sectionInset;
 }
 
 - (CGFloat)heightForHeaderInSection:(NSInteger)section {
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
         return [self.delegate collectionView:self.collectionView layout:self heightForHeaderInSection:section];
-    } else {
-        return self.headerHeight;
     }
+    return self.headerHeight;
 }
 
 - (CGFloat)heightForFooterInSection:(NSInteger)section {
     if ([self.delegate respondsToSelector:@selector(collectionView:layout:heightForHeaderInSection:)]) {
         return [self.delegate collectionView:self.collectionView layout:self heightForFooterInSection:section];
-    } else {
-        return self.footerHeight;
     }
+    return self.footerHeight;
 }
 
 - (BOOL)shouldInvalidateLayoutForBoundsChange:(CGRect)newBounds {
