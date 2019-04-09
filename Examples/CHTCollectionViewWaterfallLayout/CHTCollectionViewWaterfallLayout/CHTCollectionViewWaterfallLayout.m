@@ -478,7 +478,8 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     UICollectionViewLayoutAttributes *lastCellAttributes = [self layoutAttributesForItemAtIndexPath:lastCellIndexPath];
     UIEdgeInsets sectionInset = [self sectionInsetForSectionAtIndex:section];
     // last point of section minus height of header
-    CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attr.frame.size.height + sectionInset.bottom;
+    // 这里有1pt的偏差，我也不知道为什么
+    CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attr.frame.size.height + sectionInset.bottom + 1;
 
     // top of the view
     CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.contentInset.top;
@@ -490,13 +491,9 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
     
     // update y position
-    CGPoint origin = attr.frame.origin;
-    origin.y = finalPosition;
-    
-    attr.frame = (CGRect){
-        origin,
-        attr.frame.size
-    };
+    CGRect frame = attr.frame;
+    frame.origin.y = finalPosition;
+    attr.frame = frame;
 }
 
 - (void)adjustFooterAttributesIfNeeded:(UICollectionViewLayoutAttributes *)attr {
@@ -519,13 +516,9 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     CGFloat finalPosition = MAX(smallerYPosition, sectionMinY);
     
     // update y position
-    CGPoint origin = attr.frame.origin;
-    origin.y = finalPosition;
-    
-    attr.frame = (CGRect){
-        origin,
-        attr.frame.size
-    };
+    CGRect frame = attr.frame;
+    frame.origin.y = finalPosition;
+    attr.frame = frame;
 }
 
 - (UIEdgeInsets)contentInset {
