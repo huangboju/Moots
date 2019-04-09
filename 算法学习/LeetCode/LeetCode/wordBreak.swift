@@ -35,6 +35,7 @@ extension String {
     }
 }
 
+// s = "leetcode", wordDict = ["leet", "code"]
 func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
     let length = s.count
     //dp[i]表示
