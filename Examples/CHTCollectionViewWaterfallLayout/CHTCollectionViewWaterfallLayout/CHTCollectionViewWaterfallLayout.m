@@ -469,20 +469,45 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
 }
 
 - (void)adjustHeaderAttributesIfNeeded:(UICollectionViewLayoutAttributes *)attr {
+//    NSIndexPath *firstCellIndexPath =  [NSIndexPath indexPathForItem:0 inSection:section];
+//    UICollectionViewLayoutAttributes *firstCellAttributes = [self layoutAttributesForItemAtIndexPath:firstCellIndexPath];
+//    CGFloat headerHeight = [self heightForHeaderInSection:section];
+//    CGPoint origin = attr.frame.origin;
+//    UIEdgeInsets sectionInset = [self sectionInsetForSectionAtIndex:section];
+//    CGFloat y1 =  MAX(self.collectionView.contentOffset.y, (CGRectGetMinY(firstCellAttributes.frame) - headerHeight - sectionInset.top));
+//    CGFloat y2 = CGRectGetMaxY(lastCellAttributes.frame) - headerHeight + sectionInset.top + sectionInset.bottom - 9;
+//    origin.y = MIN(y1, y2);
+//    attr.zIndex = 1024;
+//    attr.frame = CGRectMake(origin.x, origin.y, CGRectGetWidth(attr.frame), CGRectGetHeight(attr.frame));
+    
+    
+    attr.zIndex = 1024;
+    attr.hidden = NO;
+    
     NSInteger section = attr.indexPath.section;
     NSInteger numberOfItemsInSection = [self.collectionView numberOfItemsInSection:section];
-    NSIndexPath *firstCellIndexPath =  [NSIndexPath indexPathForItem:0 inSection:section];
     NSIndexPath *lastCellIndexPath = [NSIndexPath indexPathForItem:MAX(0, numberOfItemsInSection - 1) inSection:section];
-    UICollectionViewLayoutAttributes *firstCellAttributes = [self layoutAttributesForItemAtIndexPath:firstCellIndexPath];
     UICollectionViewLayoutAttributes *lastCellAttributes = [self layoutAttributesForItemAtIndexPath:lastCellIndexPath];
-    CGFloat headerHeight = [self heightForHeaderInSection:section];
+    // last point of section minus height of header
+    CGFloat sectionMaxY = CGRectGetMaxY(lastCellAttributes.frame) - attr.frame.size.height;
+    
+    // top of the view
+    CGFloat viewMinY = CGRectGetMinY(self.collectionView.bounds) + self.collectionView.contentInset.top;
+    
+    // larger of sticky position or actual position
+    CGFloat largerYPosition = MAX(viewMinY, attr.frame.origin.y);
+    
+    // smaller of calculated position or end of section
+    CGFloat finalPosition = MIN(largerYPosition, sectionMaxY);
+    
+    // update y position
     CGPoint origin = attr.frame.origin;
-    UIEdgeInsets sectionInset = [self sectionInsetForSectionAtIndex:section];
-    CGFloat y1 =  MAX(self.collectionView.contentOffset.y, (CGRectGetMinY(firstCellAttributes.frame) - headerHeight - sectionInset.top));
-    CGFloat y2 = CGRectGetMaxY(lastCellAttributes.frame) - headerHeight + sectionInset.top + sectionInset.bottom - 9;
-    origin.y = MIN(y1, y2);
-    attr.zIndex = 1024;
-    attr.frame = CGRectMake(origin.x, origin.y, CGRectGetWidth(attr.frame), CGRectGetHeight(attr.frame));
+    origin.y = finalPosition;
+    
+    attr.frame = (CGRect){
+        origin,
+        attr.frame.size
+    };
 }
 
 - (void)adjustFooterAttributesIfNeeded:(UICollectionViewLayoutAttributes *)attr {
@@ -502,8 +527,6 @@ static CGFloat CHTFloorCGFloat(CGFloat value) {
     
     // larger of calculated position or end of section
     CGFloat finalPosition = MAX(smallerYPosition, sectionMinY);
-    
-    //    NSLog(@"%.2f, %.2f, %.2f, %.2f", sectionMinY, viewMaxY, smallerYPosition, finalPosition);
     
     // update y position
     CGPoint origin = attr.frame.origin;
