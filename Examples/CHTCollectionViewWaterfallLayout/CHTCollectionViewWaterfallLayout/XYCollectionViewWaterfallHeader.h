@@ -1,5 +1,5 @@
 //
-//  CHTCollectionViewWaterfallHeader.h
+//  XYCollectionViewWaterfallHeader.h
 //  Demo
 //
 //  Created by Neil Kimmett on 21/10/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHTCollectionViewWaterfallHeader : UICollectionReusableView
+@interface XYCollectionViewWaterfallHeader : UICollectionReusableView
 
 @end
