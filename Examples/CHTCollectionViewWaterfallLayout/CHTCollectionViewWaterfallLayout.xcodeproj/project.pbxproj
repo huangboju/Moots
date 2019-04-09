@@ -13,10 +13,10 @@
 		F719D1D0225B31C300275E4E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F719D1CF225B31C300275E4E /* Assets.xcassets */; };
 		F719D1D3225B31C300275E4E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F719D1D1225B31C300275E4E /* LaunchScreen.storyboard */; };
 		F719D1D6225B31C300275E4E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1D5225B31C300275E4E /* main.m */; };
-		F719D1E4225B320500275E4E /* CHTCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1DC225B320400275E4E /* CHTCollectionViewWaterfallCell.m */; };
-		F719D1E5225B320500275E4E /* CHTCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1DE225B320400275E4E /* CHTCollectionViewWaterfallHeader.m */; };
-		F719D1E6225B320500275E4E /* CHTCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1E0225B320400275E4E /* CHTCollectionViewWaterfallFooter.m */; };
-		F719D1E7225B320500275E4E /* CHTCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1E1225B320400275E4E /* CHTCollectionViewWaterfallLayout.m */; };
+		F719D1E4225B320500275E4E /* XYCollectionViewWaterfallCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1DC225B320400275E4E /* XYCollectionViewWaterfallCell.m */; };
+		F719D1E5225B320500275E4E /* XYCollectionViewWaterfallHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1DE225B320400275E4E /* XYCollectionViewWaterfallHeader.m */; };
+		F719D1E6225B320500275E4E /* XYCollectionViewWaterfallFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1E0225B320400275E4E /* XYCollectionViewWaterfallFooter.m */; };
+		F719D1E7225B320500275E4E /* XYCollectionViewWaterfallLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F719D1E1225B320400275E4E /* XYCollectionViewWaterfallLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,14 +30,14 @@
 		F719D1D2225B31C300275E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F719D1D4225B31C300275E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F719D1D5225B31C300275E4E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F719D1DC225B320400275E4E /* CHTCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
-		F719D1DD225B320400275E4E /* CHTCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
-		F719D1DE225B320400275E4E /* CHTCollectionViewWaterfallHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallHeader.m; sourceTree = "<group>"; };
-		F719D1DF225B320400275E4E /* CHTCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
-		F719D1E0225B320400275E4E /* CHTCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
-		F719D1E1225B320400275E4E /* CHTCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
-		F719D1E2225B320400275E4E /* CHTCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
-		F719D1E3225B320500275E4E /* CHTCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
+		F719D1DC225B320400275E4E /* XYCollectionViewWaterfallCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCollectionViewWaterfallCell.m; sourceTree = "<group>"; };
+		F719D1DD225B320400275E4E /* XYCollectionViewWaterfallCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYCollectionViewWaterfallCell.h; sourceTree = "<group>"; };
+		F719D1DE225B320400275E4E /* XYCollectionViewWaterfallHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCollectionViewWaterfallHeader.m; sourceTree = "<group>"; };
+		F719D1DF225B320400275E4E /* XYCollectionViewWaterfallFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYCollectionViewWaterfallFooter.h; sourceTree = "<group>"; };
+		F719D1E0225B320400275E4E /* XYCollectionViewWaterfallFooter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCollectionViewWaterfallFooter.m; sourceTree = "<group>"; };
+		F719D1E1225B320400275E4E /* XYCollectionViewWaterfallLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYCollectionViewWaterfallLayout.m; sourceTree = "<group>"; };
+		F719D1E2225B320400275E4E /* XYCollectionViewWaterfallLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYCollectionViewWaterfallLayout.h; sourceTree = "<group>"; };
+		F719D1E3225B320500275E4E /* XYCollectionViewWaterfallHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYCollectionViewWaterfallHeader.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,14 +70,14 @@
 		F719D1C5225B31C100275E4E /* CHTCollectionViewWaterfallLayout */ = {
 			isa = PBXGroup;
 			children = (
-				F719D1DD225B320400275E4E /* CHTCollectionViewWaterfallCell.h */,
-				F719D1DC225B320400275E4E /* CHTCollectionViewWaterfallCell.m */,
-				F719D1DF225B320400275E4E /* CHTCollectionViewWaterfallFooter.h */,
-				F719D1E0225B320400275E4E /* CHTCollectionViewWaterfallFooter.m */,
-				F719D1E3225B320500275E4E /* CHTCollectionViewWaterfallHeader.h */,
-				F719D1DE225B320400275E4E /* CHTCollectionViewWaterfallHeader.m */,
-				F719D1E2225B320400275E4E /* CHTCollectionViewWaterfallLayout.h */,
-				F719D1E1225B320400275E4E /* CHTCollectionViewWaterfallLayout.m */,
+				F719D1DD225B320400275E4E /* XYCollectionViewWaterfallCell.h */,
+				F719D1DC225B320400275E4E /* XYCollectionViewWaterfallCell.m */,
+				F719D1DF225B320400275E4E /* XYCollectionViewWaterfallFooter.h */,
+				F719D1E0225B320400275E4E /* XYCollectionViewWaterfallFooter.m */,
+				F719D1E3225B320500275E4E /* XYCollectionViewWaterfallHeader.h */,
+				F719D1DE225B320400275E4E /* XYCollectionViewWaterfallHeader.m */,
+				F719D1E2225B320400275E4E /* XYCollectionViewWaterfallLayout.h */,
+				F719D1E1225B320400275E4E /* XYCollectionViewWaterfallLayout.m */,
 				F719D1C6225B31C100275E4E /* AppDelegate.h */,
 				F719D1C7225B31C100275E4E /* AppDelegate.m */,
 				F719D1C9225B31C100275E4E /* ViewController.h */,
@@ -161,12 +161,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F719D1E5225B320500275E4E /* CHTCollectionViewWaterfallHeader.m in Sources */,
+				F719D1E5225B320500275E4E /* XYCollectionViewWaterfallHeader.m in Sources */,
 				F719D1CB225B31C200275E4E /* ViewController.m in Sources */,
-				F719D1E6225B320500275E4E /* CHTCollectionViewWaterfallFooter.m in Sources */,
-				F719D1E7225B320500275E4E /* CHTCollectionViewWaterfallLayout.m in Sources */,
+				F719D1E6225B320500275E4E /* XYCollectionViewWaterfallFooter.m in Sources */,
+				F719D1E7225B320500275E4E /* XYCollectionViewWaterfallLayout.m in Sources */,
 				F719D1D6225B31C300275E4E /* main.m in Sources */,
-				F719D1E4225B320500275E4E /* CHTCollectionViewWaterfallCell.m in Sources */,
+				F719D1E4225B320500275E4E /* XYCollectionViewWaterfallCell.m in Sources */,
 				F719D1C8225B31C100275E4E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,10 +10,10 @@
 /**
  *  Enumerated structure to define direction in which items can be rendered.
  */
-typedef NS_ENUM (NSUInteger, CHTCollectionViewWaterfallLayoutItemRenderDirection) {
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst,
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight,
-  CHTCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft
+typedef NS_ENUM (NSUInteger, XYCollectionViewWaterfallLayoutItemRenderDirection) {
+  XYCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst,
+  XYCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight,
+  XYCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft
 };
 
 /**
@@ -21,23 +21,23 @@ typedef NS_ENUM (NSUInteger, CHTCollectionViewWaterfallLayoutItemRenderDirection
  */
 
 /// A supplementary view that identifies the header for a given section.
-extern NSString *const CHTCollectionElementKindSectionHeader;
+extern NSString *const XYCollectionElementKindSectionHeader;
 /// A supplementary view that identifies the footer for a given section.
-extern NSString *const CHTCollectionElementKindSectionFooter;
+extern NSString *const XYCollectionElementKindSectionFooter;
 
-#pragma mark - CHTCollectionViewDelegateWaterfallLayout
+#pragma mark - XYCollectionViewDelegateWaterfallLayout
 
-@class CHTCollectionViewWaterfallLayout;
+@class XYCollectionViewWaterfallLayout;
 
 /**
- *  The CHTCollectionViewDelegateWaterfallLayout protocol defines methods that let you coordinate with a
- *  CHTCollectionViewWaterfallLayout object to implement a waterfall-based layout.
+ *  The XYCollectionViewDelegateWaterfallLayout protocol defines methods that let you coordinate with a
+ *  XYCollectionViewWaterfallLayout object to implement a waterfall-based layout.
  *  The methods of this protocol define the size of items.
  *
  *  The waterfall layout object expects the collection view’s delegate object to adopt this protocol.
  *  Therefore, implement this protocol on object assigned to your collection view’s delegate property.
  */
-@protocol CHTCollectionViewDelegateWaterfallLayout <UICollectionViewDelegate>
+@protocol XYCollectionViewDelegateWaterfallLayout <UICollectionViewDelegate>
 @required
 /**
  *  Asks the delegate for the size of the specified item’s cell.
@@ -207,23 +207,23 @@ extern NSString *const CHTCollectionElementKindSectionFooter;
 
 @end
 
-#pragma mark - CHTCollectionViewWaterfallLayout
+#pragma mark - XYCollectionViewWaterfallLayout
 
 /**
- *  The CHTCollectionViewWaterfallLayout class is a concrete layout object that organizes items into waterfall-based grids
+ *  The XYCollectionViewWaterfallLayout class is a concrete layout object that organizes items into waterfall-based grids
  *  with optional header and footer views for each section.
  *
  *  A waterfall layout works with the collection view’s delegate object to determine the size of items, headers, and footers
- *  in each section. That delegate object must conform to the `CHTCollectionViewDelegateWaterfallLayout` protocol.
+ *  in each section. That delegate object must conform to the `XYCollectionViewDelegateWaterfallLayout` protocol.
  *
  *  Each section in a waterfall layout can have its own custom header and footer. To configure the header or footer for a view,
  *  you must configure the height of the header or footer to be non zero. You can do this by implementing the appropriate delegate
  *  methods or by assigning appropriate values to the `headerHeight` and `footerHeight` properties.
  *  If the header or footer height is 0, the corresponding view is not added to the collection view.
  *
- *  @note CHTCollectionViewWaterfallLayout doesn't support decoration view, and it supports vertical scrolling direction only.
+ *  @note XYCollectionViewWaterfallLayout doesn't support decoration view, and it supports vertical scrolling direction only.
  */
-@interface CHTCollectionViewWaterfallLayout : UICollectionViewLayout
+@interface XYCollectionViewWaterfallLayout : UICollectionViewLayout
 
 /**
  *  @brief How many columns for this layout.
@@ -310,11 +310,11 @@ extern NSString *const CHTCollectionElementKindSectionFooter;
 /**
  *  @brief The direction in which items will be rendered in subsequent rows.
  *  @discussion
- *    The direction in which each item is rendered. This could be left to right (CHTCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight), right to left (CHTCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft), or shortest column fills first (CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst).
+ *    The direction in which each item is rendered. This could be left to right (XYCollectionViewWaterfallLayoutItemRenderDirectionLeftToRight), right to left (XYCollectionViewWaterfallLayoutItemRenderDirectionRightToLeft), or shortest column fills first (XYCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst).
  *
- *    Default: CHTCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst
+ *    Default: XYCollectionViewWaterfallLayoutItemRenderDirectionShortestFirst
  */
-@property (nonatomic, assign) CHTCollectionViewWaterfallLayoutItemRenderDirection itemRenderDirection;
+@property (nonatomic, assign) XYCollectionViewWaterfallLayoutItemRenderDirection itemRenderDirection;
 
 /**
  *  @brief The minimum height of the collection view's content.

@@ -1,5 +1,5 @@
 //
-//  CHTCollectionViewWaterfallFooter.h
+//  XYCollectionViewWaterfallFooter.h
 //  Demo
 //
 //  Created by Neil Kimmett on 28/10/2013.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHTCollectionViewWaterfallFooter : UICollectionReusableView
+@interface XYCollectionViewWaterfallFooter : UICollectionReusableView
 
 @end

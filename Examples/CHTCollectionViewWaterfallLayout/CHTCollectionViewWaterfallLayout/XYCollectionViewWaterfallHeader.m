@@ -1,14 +1,14 @@
 //
-//  CHTCollectionViewWaterfallHeader.m
+//  XYCollectionViewWaterfallHeader.m
 //  Demo
 //
 //  Created by Neil Kimmett on 21/10/2013.
 //  Copyright (c) 2013 Nelson. All rights reserved.
 //
 
-#import "CHTCollectionViewWaterfallHeader.h"
+#import "XYCollectionViewWaterfallHeader.h"
 
-@implementation CHTCollectionViewWaterfallHeader
+@implementation XYCollectionViewWaterfallHeader
 
 #pragma mark - Accessors
 - (id)initWithFrame:(CGRect)frame {

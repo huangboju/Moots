@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 Nelson. All rights reserved.
 //
 
-#import "CHTCollectionViewWaterfallCell.h"
+#import "XYCollectionViewWaterfallCell.h"
 
-@implementation CHTCollectionViewWaterfallCell
+@implementation XYCollectionViewWaterfallCell
 
 #pragma mark - Accessors
 - (UIImageView *)imageView {
