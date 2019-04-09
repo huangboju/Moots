@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CHTCollectionViewWaterfallCell : UICollectionViewCell
+@interface XYCollectionViewWaterfallCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
 @end
