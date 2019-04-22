@@ -120,3 +120,8 @@ print(isPalindrome("`l;`` 1o1 ??;l`"))
 
 
 print(superEggDrop(1, 2))
+
+compress("aaabbccc")
+
+
+print(fractionToDecimal(2, 1))
