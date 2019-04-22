@@ -5,31 +5,31 @@ extension String {
             return self[index(at: value.lowerBound)...index(at: value.upperBound)]
         }
     }
-    
+
     subscript(value: CountableRange<Int>) -> Substring {
         get {
             return self[index(at: value.lowerBound)..<index(at: value.upperBound)]
         }
     }
-    
+
     subscript(value: PartialRangeUpTo<Int>) -> Substring {
         get {
             return self[..<index(at: value.upperBound)]
         }
     }
-    
+
     subscript(value: PartialRangeThrough<Int>) -> Substring {
         get {
             return self[...index(at: value.upperBound)]
         }
     }
-    
+
     subscript(value: PartialRangeFrom<Int>) -> Substring {
         get {
             return self[index(at: value.lowerBound)...]
         }
     }
-    
+
     func index(at offset: Int) -> String.Index {
         return index(startIndex, offsetBy: offset)
     }
@@ -37,19 +37,16 @@ extension String {
 
 // s = "leetcode", wordDict = ["leet", "code"]
 func wordBreak(_ s: String, _ wordDict: [String]) -> Bool {
-    let length = s.count
-    //dp[i]表示
-    var dp = Array(repeating: false, count: length + 1)
-    dp[0] = true;
-    
-    for i in 0 ... length {
+    var result = Array(repeating: false, count: s.count + 1)
+    result[0] = true
+    let wordSet = Set(wordDict)
+    for i in 1 ... s.count {
         for j in 0 ..< i {
-            let sub = s[j..<i]
-            if (dp[j] && wordDict.contains(String(sub))) {
-                dp[i] = true
+            if result[j] && wordSet.contains(String(s[j..<i])) {
+                result[i] = true
                 break
             }
         }
     }
-    return dp[length]
+    return result[s.count]
 }
