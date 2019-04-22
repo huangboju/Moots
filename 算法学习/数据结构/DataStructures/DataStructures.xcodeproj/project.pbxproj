@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BEA255A82172D4FE005FE07C /* FixedSizeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA255A72172D4FE005FE07C /* FixedSizeArray.swift */; };
+		F70B68C1226D5C02003092B1 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BC226D5C02003092B1 /* Stack.swift */; };
+		F70B68C2226D5C02003092B1 /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BD226D5C02003092B1 /* LinkList.swift */; };
+		F70B68C3226D5C02003092B1 /* FixedSizeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BE226D5C02003092B1 /* FixedSizeArray.swift */; };
+		F70B68C4226D5C02003092B1 /* Array2d.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BF226D5C02003092B1 /* Array2d.swift */; };
+		F70B68C5226D5C02003092B1 /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68C0226D5C02003092B1 /* BitSet.swift */; };
+		F70B68C7226D5C35003092B1 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68C6226D5C35003092B1 /* Trie.swift */; };
 		F71AB9612170A0DF008309FC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9602170A0DF008309FC /* main.swift */; };
-		F71AB96A2170A11F008309FC /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9672170A11F008309FC /* BitSet.swift */; };
-		F71AB96B2170A11F008309FC /* Array2d.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9682170A11F008309FC /* Array2d.swift */; };
-		F71AB96C2170A11F008309FC /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9692170A11F008309FC /* Stack.swift */; };
-		F7411991217ACEBF002FDB76 /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7411990217ACEBF002FDB76 /* LinkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,13 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BEA255A72172D4FE005FE07C /* FixedSizeArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FixedSizeArray.swift; path = ../../FixedSizeArray.swift; sourceTree = "<group>"; };
+		F70B68BC226D5C02003092B1 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		F70B68BD226D5C02003092B1 /* LinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
+		F70B68BE226D5C02003092B1 /* FixedSizeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedSizeArray.swift; sourceTree = "<group>"; };
+		F70B68BF226D5C02003092B1 /* Array2d.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2d.swift; sourceTree = "<group>"; };
+		F70B68C0226D5C02003092B1 /* BitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BitSet.swift; sourceTree = "<group>"; };
+		F70B68C6226D5C35003092B1 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		F71AB95D2170A0DF008309FC /* DataStructures */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructures; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71AB9602170A0DF008309FC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		F71AB9672170A11F008309FC /* BitSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BitSet.swift; path = ../../BitSet.swift; sourceTree = "<group>"; };
-		F71AB9682170A11F008309FC /* Array2d.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array2d.swift; path = ../../Array2d.swift; sourceTree = "<group>"; };
-		F71AB9692170A11F008309FC /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = ../../Stack.swift; sourceTree = "<group>"; };
-		F7411990217ACEBF002FDB76 /* LinkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F70B68BB226D5C02003092B1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				F70B68BC226D5C02003092B1 /* Stack.swift */,
+				F70B68BD226D5C02003092B1 /* LinkList.swift */,
+				F70B68BE226D5C02003092B1 /* FixedSizeArray.swift */,
+				F70B68BF226D5C02003092B1 /* Array2d.swift */,
+				F70B68C0226D5C02003092B1 /* BitSet.swift */,
+				F70B68C6226D5C35003092B1 /* Trie.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		F71AB9542170A0DF008309FC = {
 			isa = PBXGroup;
 			children = (
@@ -67,12 +82,8 @@
 		F71AB95F2170A0DF008309FC /* DataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				F71AB9682170A11F008309FC /* Array2d.swift */,
-				F71AB9672170A11F008309FC /* BitSet.swift */,
-				F71AB9692170A11F008309FC /* Stack.swift */,
+				F70B68BB226D5C02003092B1 /* Classes */,
 				F71AB9602170A0DF008309FC /* main.swift */,
-				BEA255A72172D4FE005FE07C /* FixedSizeArray.swift */,
-				F7411990217ACEBF002FDB76 /* LinkList.swift */,
 			);
 			path = DataStructures;
 			sourceTree = "<group>";
@@ -118,6 +129,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = F71AB9542170A0DF008309FC;
 			productRefGroup = F71AB95E2170A0DF008309FC /* Products */;
@@ -134,12 +146,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F71AB96C2170A11F008309FC /* Stack.swift in Sources */,
-				F7411991217ACEBF002FDB76 /* LinkList.swift in Sources */,
-				F71AB96A2170A11F008309FC /* BitSet.swift in Sources */,
-				F71AB96B2170A11F008309FC /* Array2d.swift in Sources */,
+				F70B68C5226D5C02003092B1 /* BitSet.swift in Sources */,
+				F70B68C1226D5C02003092B1 /* Stack.swift in Sources */,
+				F70B68C3226D5C02003092B1 /* FixedSizeArray.swift in Sources */,
+				F70B68C7226D5C35003092B1 /* Trie.swift in Sources */,
+				F70B68C2226D5C02003092B1 /* LinkList.swift in Sources */,
 				F71AB9612170A0DF008309FC /* main.swift in Sources */,
-				BEA255A82172D4FE005FE07C /* FixedSizeArray.swift in Sources */,
+				F70B68C4226D5C02003092B1 /* Array2d.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +279,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -275,7 +288,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
