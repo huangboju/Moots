@@ -11,6 +11,8 @@
 		BE398844224465E4002F314A /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE398843224465E4002F314A /* IsPalindrome.swift */; };
 		BE3988462245B55C002F314A /* PalindromePartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3988452245B55C002F314A /* PalindromePartition.swift */; };
 		BE3988482246366B002F314A /* EggDrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3988472246366B002F314A /* EggDrop.swift */; };
+		BE4D1FEC226B4E4D00F83901 /* RunLengthEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D1FEB226B4E4D00F83901 /* RunLengthEncoding.swift */; };
+		BE4D1FEE226BF45300F83901 /* FractionToDecimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4D1FED226BF45300F83901 /* FractionToDecimal.swift */; };
 		BE56D9982249D7720048BF13 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE56D9972249D7720048BF13 /* wordBreak.swift */; };
 		BEA255AA21756598005FE07C /* InsertionSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEA255A921756598005FE07C /* InsertionSort.swift */; };
 		D81B3E7F1EA707A200214304 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D81B3E7E1EA707A200214304 /* main.swift */; };
@@ -48,6 +50,8 @@
 		BE398843224465E4002F314A /* IsPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BE3988452245B55C002F314A /* PalindromePartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromePartition.swift; sourceTree = "<group>"; };
 		BE3988472246366B002F314A /* EggDrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EggDrop.swift; sourceTree = "<group>"; };
+		BE4D1FEB226B4E4D00F83901 /* RunLengthEncoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunLengthEncoding.swift; sourceTree = "<group>"; };
+		BE4D1FED226BF45300F83901 /* FractionToDecimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FractionToDecimal.swift; sourceTree = "<group>"; };
 		BE56D9972249D7720048BF13 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
 		BEA255A921756598005FE07C /* InsertionSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsertionSort.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,8 @@
 				BE3988452245B55C002F314A /* PalindromePartition.swift */,
 				BE3988472246366B002F314A /* EggDrop.swift */,
 				F72979FF225D86C300DEEB7B /* ReverseString.swift */,
+				BE4D1FEB226B4E4D00F83901 /* RunLengthEncoding.swift */,
+				BE4D1FED226BF45300F83901 /* FractionToDecimal.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -186,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE3988482246366B002F314A /* EggDrop.swift in Sources */,
+				BE4D1FEC226B4E4D00F83901 /* RunLengthEncoding.swift in Sources */,
 				D81B3E8A1EA7083B00214304 /* AddTwoNumbers.swift in Sources */,
 				D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */,
 				F7F98E3421D3A38700E813B0 /* KResult.swift in Sources */,
@@ -202,6 +209,7 @@
 				F72E52602192C71A002A9E62 /* CombinationSum.swift in Sources */,
 				F7297A00225D86C300DEEB7B /* ReverseString.swift in Sources */,
 				BE398844224465E4002F314A /* IsPalindrome.swift in Sources */,
+				BE4D1FEE226BF45300F83901 /* FractionToDecimal.swift in Sources */,
 				F7289BCC218B180E00DD632C /* BackPack.swift in Sources */,
 				F71CB3A9218ACA6D004A27F3 /* MinCount.swift in Sources */,
 				F7F0274222369125003E5B10 /* SingleNumber.swift in Sources */,

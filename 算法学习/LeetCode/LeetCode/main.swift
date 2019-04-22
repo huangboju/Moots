@@ -38,9 +38,9 @@ makeChange(coinValue, money)
 
 /*
  let n = [1, 4, 7, 9, 2, 31, 21, 13, 12, 6, 8, 9]
- 
+
  target = 32
- 
+
  input:
  [
  [1, 4, 7, 9, 2, 8],
@@ -123,3 +123,7 @@ print(superEggDrop(1, 2))
 
 
 print(wordBreak("leetcode", ["leet", "code"]))
+compress("aaabbccc")
+
+
+print(fractionToDecimal(2, 1))
