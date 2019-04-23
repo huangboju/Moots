@@ -84,9 +84,9 @@ class BlendingController: UIViewController {
             return obj1.luminance < obj2.luminance
         }
 
-        picker.selectRow(colors.index(of: qbv.destinationColor) ?? 0, inComponent: 0, animated: false)
+        picker.selectRow(colors.firstIndex(of: qbv.destinationColor) ?? 0, inComponent: 0, animated: false)
         
-        picker.selectRow(colors.index(of: qbv.sourceColor) ?? 0, inComponent: 1, animated: false)
+        picker.selectRow(colors.firstIndex(of: qbv.sourceColor) ?? 0, inComponent: 1, animated: false)
         picker.selectRow(Int(qbv.blendMode.rawValue), inComponent: 2, animated: false)
     }
 
