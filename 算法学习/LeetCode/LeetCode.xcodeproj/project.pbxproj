@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2FB041226EB2480060A510 /* MaxProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB040226EB2480060A510 /* MaxProduct.swift */; };
 		BE39884122339349002F314A /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39884022339349002F314A /* MergeSort.swift */; };
 		BE398844224465E4002F314A /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE398843224465E4002F314A /* IsPalindrome.swift */; };
 		BE3988462245B55C002F314A /* PalindromePartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3988452245B55C002F314A /* PalindromePartition.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE2FB040226EB2480060A510 /* MaxProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxProduct.swift; sourceTree = "<group>"; };
 		BE39884022339349002F314A /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		BE398843224465E4002F314A /* IsPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BE3988452245B55C002F314A /* PalindromePartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromePartition.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 				BE4D1FED226BF45300F83901 /* FractionToDecimal.swift */,
 				F776E60D226EA76300F44227 /* Anagram.swift */,
 				F776E60F226EA86E00F44227 /* FirstUniqChar.swift */,
+				BE2FB040226EB2480060A510 /* MaxProduct.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				D81B3E8C1EA709CF00214304 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
 				BE56D9982249D7720048BF13 /* wordBreak.swift in Sources */,
 				F71CB3AA218ACA6D004A27F3 /* MoveZeroes.swift in Sources */,
+				BE2FB041226EB2480060A510 /* MaxProduct.swift in Sources */,
 				F7F0274322369125003E5B10 /* MajorityElement.swift in Sources */,
 				F72E52602192C71A002A9E62 /* CombinationSum.swift in Sources */,
 				F7297A00225D86C300DEEB7B /* ReverseString.swift in Sources */,
