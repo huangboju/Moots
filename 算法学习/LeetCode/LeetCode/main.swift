@@ -127,3 +127,5 @@ compress("aaabbccc")
 
 
 print(fractionToDecimal(2, 1))
+
+print(maxProduct([2,3,-2,4]))
