@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE2FB041226EB2480060A510 /* MaxProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB040226EB2480060A510 /* MaxProduct.swift */; };
+		BE2FB0432273F46D0060A510 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB0422273F46D0060A510 /* Rotate.swift */; };
+		BE2FB0452275E6610060A510 /* ContainsDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */; };
 		BE39884122339349002F314A /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39884022339349002F314A /* MergeSort.swift */; };
 		BE398844224465E4002F314A /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE398843224465E4002F314A /* IsPalindrome.swift */; };
 		BE3988462245B55C002F314A /* PalindromePartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3988452245B55C002F314A /* PalindromePartition.swift */; };
@@ -50,6 +52,8 @@
 
 /* Begin PBXFileReference section */
 		BE2FB040226EB2480060A510 /* MaxProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxProduct.swift; sourceTree = "<group>"; };
+		BE2FB0422273F46D0060A510 /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
+		BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsDuplicate.swift; sourceTree = "<group>"; };
 		BE39884022339349002F314A /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		BE398843224465E4002F314A /* IsPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BE3988452245B55C002F314A /* PalindromePartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromePartition.swift; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				F776E60D226EA76300F44227 /* Anagram.swift */,
 				F776E60F226EA86E00F44227 /* FirstUniqChar.swift */,
 				BE2FB040226EB2480060A510 /* MaxProduct.swift */,
+				BE2FB0422273F46D0060A510 /* Rotate.swift */,
+				BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -222,11 +228,13 @@
 				BE398844224465E4002F314A /* IsPalindrome.swift in Sources */,
 				BE4D1FEE226BF45300F83901 /* FractionToDecimal.swift in Sources */,
 				F7289BCC218B180E00DD632C /* BackPack.swift in Sources */,
+				BE2FB0432273F46D0060A510 /* Rotate.swift in Sources */,
 				F776E60E226EA76300F44227 /* Anagram.swift in Sources */,
 				F71CB3A9218ACA6D004A27F3 /* MinCount.swift in Sources */,
 				F7F0274222369125003E5B10 /* SingleNumber.swift in Sources */,
 				D81B3ED61EA75F7500214304 /* findMedianSortedArrays.swift in Sources */,
 				BEA255AA21756598005FE07C /* InsertionSort.swift in Sources */,
+				BE2FB0452275E6610060A510 /* ContainsDuplicate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
