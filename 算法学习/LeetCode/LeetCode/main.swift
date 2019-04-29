@@ -128,6 +128,9 @@ compress("aaabbccc")
 
 print(fractionToDecimal(2, 1))
 
+
 var arr = [1,2,3,4,5,6,7]
 rotate(&arr, 3)
 print(arr)
+
+print(maxProduct([2,3,-2,4]))
