@@ -138,7 +138,7 @@ class UIKitDynamicsViewController: AutoLayoutBaseController {
     
     private func generatDummyView() -> UIView {
         let dummyView = UIView()
-        dummyView.backgroundColor = UIColor.randomFlat()
+        dummyView.backgroundColor = UIColor.orange
         dummyView.translatesAutoresizingMaskIntoConstraints = false
         return dummyView
     }

@@ -1,5 +1,4 @@
 
-github "Alamofire/Alamofire" ~> 4.0
-github "SnapKit/SnapKit" ~> 3.0.2
-github "ViccAlexander/Chameleon"
-github "onevcat/Kingfisher" ~> 4.0
+github "Alamofire/Alamofire" "5.0.0-beta.5"
+github "SnapKit/SnapKit" ~> 5.0.0
+github "onevcat/Kingfisher" ~> 5.0
