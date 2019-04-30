@@ -31,7 +31,7 @@ class AlignmentRectView: UILabel {
     }
 
     override var alignmentRectInsets: UIEdgeInsets {
-        let inset = super.alignmentRectInsets
+        var inset = super.alignmentRectInsets
         print("🍀🍀\(#function)🍀🍀")
         print(inset)
         print("\n\n")
@@ -61,7 +61,7 @@ class AlignmentRectController: UIViewController {
         let subview = AlignmentRectView()
         subview.text = "这是一段测试代码"
         view.addSubview(subview)
-        subview.backgroundColor = UIColor.randomFlat()
+        subview.backgroundColor = UIColor.red
         subview.snp.makeConstraints { (make) in
             make.center.equalToSuperview()
         }
@@ -69,7 +69,7 @@ class AlignmentRectController: UIViewController {
         subview1.numberOfLines = 0
         subview1.text = "这是一段测试代码\n这是一段测试代码"
         view.addSubview(subview1)
-        subview1.backgroundColor = UIColor.randomFlat()
+        subview1.backgroundColor = UIColor.gray
         subview1.snp.makeConstraints { (make) in
             make.top.equalTo(subview.snp.bottom)
             make.centerX.equalToSuperview()
@@ -79,7 +79,7 @@ class AlignmentRectController: UIViewController {
         subview2.numberOfLines = 0
         subview2.text = "这是代码\n这是代码"
         view.addSubview(subview2)
-        subview2.backgroundColor = UIColor.randomFlat()
+        subview2.backgroundColor = UIColor.blue
         subview2.snp.makeConstraints { (make) in
             make.top.equalTo(subview1.snp.bottom)
             make.centerX.equalToSuperview()
@@ -111,7 +111,7 @@ class AlignmentRectController: UIViewController {
             }
             subview.text = text
             subview.numberOfLines = 0
-            subview.backgroundColor = UIColor.randomFlat()
+            subview.backgroundColor = UIColor.yellow
             if i == 1 {
                 temp = subview
             }

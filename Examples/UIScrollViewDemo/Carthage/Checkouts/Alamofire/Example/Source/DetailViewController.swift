@@ -1,7 +1,7 @@
 //
 //  DetailViewController.swift
 //
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -30,7 +30,7 @@ class DetailViewController: UITableViewController {
         case headers, body
     }
 
-    var request: Alamofire.Request? {
+    var request: Request? {
         didSet {
             oldValue?.cancel()
 
@@ -76,7 +76,7 @@ class DetailViewController: UITableViewController {
 
         let start = CACurrentMediaTime()
 
-        let requestComplete: (HTTPURLResponse?, Result<String>) -> Void = { response, result in
+        let requestComplete: (HTTPURLResponse?, AFResult<String>) -> Void = { response, result in
             let end = CACurrentMediaTime()
             self.elapsedTime = end - start
 
@@ -89,7 +89,7 @@ class DetailViewController: UITableViewController {
             if let segueIdentifier = self.segueIdentifier {
                 switch segueIdentifier {
                 case "GET", "POST", "PUT", "DELETE":
-                    self.body = result.value
+                    if case .success(let value) = result { self.body = value }
                 case "DOWNLOAD":
                     self.body = self.downloadedBodyString()
                 default:

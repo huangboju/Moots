@@ -18,10 +18,10 @@ class SimpleStackViewController: AutoLayoutBaseController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("🍑🍑🍑🍑")
-        resuest = Alamofire.request("https://httpbin.org/get").response { (response) in
-            print("🐏🐏🐏🐏")
-            self.label.text = ""
-        }
+//        resuest = Alamofire.request("https://httpbin.org/get").response { (response) in
+//            print("🐏🐏🐏🐏")
+//            self.label.text = ""
+//        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {

@@ -4,7 +4,6 @@
 
 
 import UIKit
-import Chameleon
 import SnapKit
 
 class PagingSecondController: UIViewController, UIScrollViewDelegate {
@@ -53,7 +52,7 @@ class PagingSecondController: UIViewController, UIScrollViewDelegate {
             let x = MARGIN / 2 + CGFloat(i) * (DIAMETER + MARGIN)
             let frame = CGRect(x: x, y: y, width: DIAMETER, height: DIAMETER * 4 / 3)
             let imageView = UIImageView(frame: frame)
-            imageView.backgroundColor = UIColor.flatBlue()
+            imageView.backgroundColor = UIColor.blue
             imageView.layer.masksToBounds = true
             imageView.autoresizingMask = [.flexibleTopMargin, .flexibleBottomMargin, .flexibleRightMargin]
             contentView.addSubview(imageView)

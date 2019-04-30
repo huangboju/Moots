@@ -72,7 +72,7 @@ class EqualWhiteSpace: AutoLayoutBaseController {
 
     private func generatDummyView() -> UIView {
         let dummyView = UIView()
-        dummyView.backgroundColor = UIColor.randomFlat()
+        dummyView.backgroundColor = UIColor.red
         dummyView.translatesAutoresizingMaskIntoConstraints = false
         return dummyView
     }

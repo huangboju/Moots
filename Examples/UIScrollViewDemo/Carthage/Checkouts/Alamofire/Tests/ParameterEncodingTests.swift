@@ -1,7 +1,7 @@
 //
 //  ParameterEncodingTests.swift
 //
-//  Copyright (c) 2014 Alamofire Software Foundation (http://alamofire.org/)
+//  Copyright (c) 2014-2018 Alamofire Software Foundation (http://alamofire.org/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -763,127 +763,6 @@ class JSONParameterEncodingTestCase: ParameterEncodingTestCase {
             // Then
             XCTAssertNil(urlRequest.url?.query)
             XCTAssertEqual(urlRequest.value(forHTTPHeaderField: "Content-Type"), "application/custom-json-type+json")
-        } catch {
-            XCTFail("Test encountered unexpected error: \(error)")
-        }
-    }
-}
-
-// MARK: -
-
-class PropertyListParameterEncodingTestCase: ParameterEncodingTestCase {
-
-    // MARK: Properties
-
-    let encoding = PropertyListEncoding.default
-
-    // MARK: Tests
-
-    func testPropertyListParameterEncodeNilParameters() {
-        do {
-            // Given, When
-            let urlRequest = try encoding.encode(self.urlRequest, with: nil)
-
-            // Then
-            XCTAssertNil(urlRequest.url?.query)
-            XCTAssertNil(urlRequest.value(forHTTPHeaderField: "Content-Type"))
-            XCTAssertNil(urlRequest.httpBody)
-        } catch {
-            XCTFail("Test encountered unexpected error: \(error)")
-        }
-    }
-
-    func testPropertyListParameterEncodeComplexParameters() {
-        do {
-            // Given
-            let parameters: [String: Any] = [
-                "foo": "bar",
-                "baz": ["a", 1, true],
-                "qux": [
-                    "a": 1,
-                    "b": [2, 2],
-                    "c": [3, 3, 3]
-                ]
-            ]
-
-            // When
-            let urlRequest = try encoding.encode(self.urlRequest, with: parameters)
-
-            // Then
-            XCTAssertNil(urlRequest.url?.query)
-            XCTAssertNotNil(urlRequest.value(forHTTPHeaderField: "Content-Type"))
-            XCTAssertEqual(urlRequest.value(forHTTPHeaderField: "Content-Type"), "application/x-plist")
-            XCTAssertNotNil(urlRequest.httpBody)
-
-            if let httpBody = urlRequest.httpBody {
-                do {
-                    let plist = try PropertyListSerialization.propertyList(from: httpBody, options: [], format: nil)
-
-                    if let plist = plist as? NSObject {
-                        XCTAssertEqual(plist, parameters as NSObject)
-                    } else {
-                        XCTFail("plist should be an NSObject")
-                    }
-                } catch {
-                    XCTFail("plist should not be nil")
-                }
-            }
-        } catch {
-            XCTFail("Test encountered unexpected error: \(error)")
-        }
-    }
-
-    func testPropertyListParameterEncodeDateAndDataParameters() {
-        do {
-            // Given
-            let date: Date = Date()
-            let data: Data = "data".data(using: .utf8, allowLossyConversion: false)!
-
-            let parameters: [String: Any] = [
-                "date": date,
-                "data": data
-            ]
-
-            // When
-            let urlRequest = try encoding.encode(self.urlRequest, with: parameters)
-
-            // Then
-            XCTAssertNil(urlRequest.url?.query)
-            XCTAssertNotNil(urlRequest.value(forHTTPHeaderField: "Content-Type"))
-            XCTAssertEqual(urlRequest.value(forHTTPHeaderField: "Content-Type"), "application/x-plist")
-            XCTAssertNotNil(urlRequest.httpBody)
-
-            if let httpBody = urlRequest.httpBody {
-                do {
-                    let plist = try PropertyListSerialization.propertyList(from: httpBody, options: [], format: nil) as AnyObject
-
-                    XCTAssertTrue(plist.value(forKey: "date") is Date)
-                    XCTAssertTrue(plist.value(forKey: "data") is Data)
-                } catch {
-                    XCTFail("plist should not be nil")
-                }
-            } else {
-                XCTFail("HTTPBody should not be nil")
-            }
-        } catch {
-            XCTFail("Test encountered unexpected error: \(error)")
-        }
-    }
-
-    func testPropertyListParameterEncodeParametersRetainsCustomContentType() {
-        do {
-            // Given
-            var mutableURLRequest = URLRequest(url: URL(string: "https://example.com/")!)
-            mutableURLRequest.setValue("application/custom-plist-type+plist", forHTTPHeaderField: "Content-Type")
-
-            let parameters = ["foo": "bar"]
-
-            // When
-            let urlRequest = try encoding.encode(mutableURLRequest, with: parameters)
-
-            // Then
-            XCTAssertNil(urlRequest.url?.query)
-            XCTAssertEqual(urlRequest.value(forHTTPHeaderField: "Content-Type"), "application/custom-plist-type+plist")
         } catch {
             XCTFail("Test encountered unexpected error: \(error)")
         }
