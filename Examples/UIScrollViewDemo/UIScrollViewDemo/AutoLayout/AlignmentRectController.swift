@@ -35,7 +35,7 @@ class AlignmentRectView: UILabel {
         print("🍀🍀\(#function)🍀🍀")
         print(inset)
         print("\n\n")
-        inset.bottom += 10
+        inset.bottom -= 10
         return inset
     }
 }
