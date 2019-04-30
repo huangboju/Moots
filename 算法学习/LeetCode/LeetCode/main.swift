@@ -134,3 +134,5 @@ rotate(&arr, 3)
 print(arr)
 
 print(maxProduct([2,3,-2,4]))
+
+print(productExceptSelf([1,2,3,4]))
