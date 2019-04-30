@@ -23,8 +23,6 @@
 		BE1B15561FB2A41A00862271 /* Reusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15531FB2A41A00862271 /* Reusable.swift */; };
 		BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15571FB2A45500862271 /* NibOwnerLoadable.swift */; };
 		BE1B155A1FB2A45500862271 /* NibLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15581FB2A45500862271 /* NibLoadable.swift */; };
-		BE1B155C1FB2A4BB00862271 /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; };
-		BE1B155E1FB2A4BF00862271 /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BE1B15601FB2A59400862271 /* IconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B155F1FB2A59400862271 /* IconTextView.swift */; };
 		BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B15611FB2A5D200862271 /* VerifyCoInfoController.swift */; };
 		BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD311F1FAC8B007D36BF /* CollectionViewSelfSizing.swift */; };
@@ -137,13 +135,13 @@
 		D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */; };
 		D8A732231DED7124005DF7C8 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732201DED7124005DF7C8 /* Alamofire.framework */; };
 		D8A732241DED7124005DF7C8 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732201DED7124005DF7C8 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8A732251DED7124005DF7C8 /* Chameleon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732211DED7124005DF7C8 /* Chameleon.framework */; };
-		D8A732261DED7124005DF7C8 /* Chameleon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732211DED7124005DF7C8 /* Chameleon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8A732271DED7124005DF7C8 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; };
-		D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
 		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
+		F733444F2278205400B523AB /* Kingfisher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; };
+		F73344502278205400B523AB /* Kingfisher.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BE1B155B1FB2A4BA00862271 /* Kingfisher.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F73344512278205400B523AB /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; };
+		F73344522278205400B523AB /* SnapKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D8A732221DED7124005DF7C8 /* SnapKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
 		F75C2E822238DD9500495104 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2E812238DD9500495104 /* GestureVC.swift */; };
 		F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */; };
@@ -192,10 +190,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D8A732281DED7124005DF7C8 /* SnapKit.framework in Embed Frameworks */,
+				F73344522278205400B523AB /* SnapKit.framework in Embed Frameworks */,
+				F73344502278205400B523AB /* Kingfisher.framework in Embed Frameworks */,
 				D8A732241DED7124005DF7C8 /* Alamofire.framework in Embed Frameworks */,
-				BE1B155E1FB2A4BF00862271 /* Kingfisher.framework in Embed Frameworks */,
-				D8A732261DED7124005DF7C8 /* Chameleon.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,10 +374,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE1B155C1FB2A4BB00862271 /* Kingfisher.framework in Frameworks */,
-				D8A732271DED7124005DF7C8 /* SnapKit.framework in Frameworks */,
+				F73344512278205400B523AB /* SnapKit.framework in Frameworks */,
+				F733444F2278205400B523AB /* Kingfisher.framework in Frameworks */,
 				D8A732231DED7124005DF7C8 /* Alamofire.framework in Frameworks */,
-				D8A732251DED7124005DF7C8 /* Chameleon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1225,7 +1221,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollVie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1246,7 +1242,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.UIScrollVie;
 				PRODUCT_NAME = "$(TARGET_NAME)";

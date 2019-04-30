@@ -4,7 +4,6 @@
 
 
 import UIKit
-import Chameleon
 import SnapKit
 
 class RulerControllerWithScrollView: UIViewController, UIScrollViewDelegate {
