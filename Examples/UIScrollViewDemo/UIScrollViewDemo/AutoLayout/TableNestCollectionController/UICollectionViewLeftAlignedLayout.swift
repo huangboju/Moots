@@ -27,7 +27,7 @@ class UICollectionViewLeftAlignedLayout: UICollectionViewFlowLayout {
             guard attributes.representedElementKind == nil else {
                 continue
             }
-            guard let index = updatedAttributes.index(of: attributes) else {
+            guard let index = updatedAttributes.firstIndex(of: attributes) else {
                 continue
             }
             if let attr = layoutAttributesForItem(at: attributes.indexPath) {
