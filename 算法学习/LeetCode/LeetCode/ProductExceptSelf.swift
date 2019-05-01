@@ -31,7 +31,6 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
         right *= nums[nums.count - i]
         res[i] *= left
         res[nums.count - i - 1] *= right
-        print(res)
     }
     return res
 }
