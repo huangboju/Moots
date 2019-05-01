@@ -19,20 +19,7 @@ import Foundation
 //说明: 请不要使用除法，且在 O(n) 时间复杂度内完成此题。
 
 func productExceptSelf(_ nums: [Int]) -> [Int] {
-//    var result: [Int] = []
-//    var mutipier = 1
-//    for n in nums {
-//        result.append(mutipier)
-//        mutipier *= n
-//    }
-//
-//    mutipier = 1
-//    for index in (0 ..< nums.count).reversed() {
-//        result[index] *= mutipier
-//        mutipier *= nums[index]
-//    }
-//    return result
-    
+    // [1,2,3,4]
     
     if nums.count <= 1 {
         return []
@@ -44,6 +31,7 @@ func productExceptSelf(_ nums: [Int]) -> [Int] {
         right *= nums[nums.count - i]
         res[i] *= left
         res[nums.count - i - 1] *= right
+        print(res)
     }
     return res
 }
