@@ -136,3 +136,5 @@ print(arr)
 print(maxProduct([2,3,-2,4]))
 
 print(productExceptSelf([1,2,3,4]))
+
+print(findKthLargest([3,2,1,5,6,4], 2))
