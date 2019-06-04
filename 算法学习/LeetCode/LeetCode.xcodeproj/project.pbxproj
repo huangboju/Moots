@@ -11,6 +11,7 @@
 		BE2FB0432273F46D0060A510 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB0422273F46D0060A510 /* Rotate.swift */; };
 		BE2FB0452275E6610060A510 /* ContainsDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */; };
 		BE2FB047227730E90060A510 /* ProductExceptSelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB046227730E90060A510 /* ProductExceptSelf.swift */; };
+		BE2FB0492279E0900060A510 /* IncreasingTriplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */; };
 		BE39884122339349002F314A /* MergeSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE39884022339349002F314A /* MergeSort.swift */; };
 		BE398844224465E4002F314A /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE398843224465E4002F314A /* IsPalindrome.swift */; };
 		BE3988462245B55C002F314A /* PalindromePartition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3988452245B55C002F314A /* PalindromePartition.swift */; };
@@ -56,6 +57,7 @@
 		BE2FB0422273F46D0060A510 /* Rotate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsDuplicate.swift; sourceTree = "<group>"; };
 		BE2FB046227730E90060A510 /* ProductExceptSelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductExceptSelf.swift; sourceTree = "<group>"; };
+		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE39884022339349002F314A /* MergeSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeSort.swift; sourceTree = "<group>"; };
 		BE398843224465E4002F314A /* IsPalindrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BE3988452245B55C002F314A /* PalindromePartition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalindromePartition.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				BE2FB0422273F46D0060A510 /* Rotate.swift */,
 				BE2FB0442275E6610060A510 /* ContainsDuplicate.swift */,
 				BE2FB046227730E90060A510 /* ProductExceptSelf.swift */,
+				BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -212,6 +215,7 @@
 				BE3988482246366B002F314A /* EggDrop.swift in Sources */,
 				BE4D1FEC226B4E4D00F83901 /* RunLengthEncoding.swift in Sources */,
 				D81B3E8A1EA7083B00214304 /* AddTwoNumbers.swift in Sources */,
+				BE2FB0492279E0900060A510 /* IncreasingTriplet.swift in Sources */,
 				D81B3E881EA7081E00214304 /* TwoSum.swift in Sources */,
 				F7F98E3421D3A38700E813B0 /* KResult.swift in Sources */,
 				D81B3E7F1EA707A200214304 /* main.swift in Sources */,

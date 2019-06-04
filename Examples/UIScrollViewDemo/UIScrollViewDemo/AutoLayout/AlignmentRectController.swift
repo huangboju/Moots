@@ -47,8 +47,20 @@ class AlignmentRectController: UIViewController {
 
         view.backgroundColor = .white
         
-        initTest1()
+//        initTest1()
 //        initStackView()
+        let field = UITextField()
+        field.backgroundColor = .red
+        let stackView = UIStackView(arrangedSubviews: [field])
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        view.addSubview(stackView)
+        stackView.snp.makeConstraints { (make) in
+            make.leading.equalTo(15)
+            make.center.equalToSuperview()
+            make.height.equalTo(30)
+        }
     }
 
     let subview1 = AlignmentRectView()

@@ -88,12 +88,12 @@ class NestedStackViewController: AutoLayoutBaseController {
         for item in items {
 
             let titleLabel = UILabel()
-            
+            titleLabel.backgroundColor = UIColor.red
             titleLabel.font = UIFont.preferredFont(forTextStyle: .body)
             titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .horizontal)
-            titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .vertical)
-            titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .horizontal)
-            titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
+//            titleLabel.setContentHuggingPriority(UILayoutPriority(rawValue: 251), for: .vertical)
+//            titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .horizontal)
+//            titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
             titleLabel.text = item.0
 
             let superStackView = UIStackView(arrangedSubviews: [titleLabel])
