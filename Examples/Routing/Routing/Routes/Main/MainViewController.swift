@@ -48,9 +48,9 @@ final class MainViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        segmentedControl.frame = CGRect(x: 0, y: 60, width: 320, height: 50)
+        segmentedControl.frame = CGRect(x: 0, y: 100, width: 320, height: 50)
         
-        settingsButton.frame.size = CGSize(width: 100, height: 50)
+        settingsButton.frame.size = CGSize(width: 200, height: 50)
         settingsButton.center = view.center
     }
     
