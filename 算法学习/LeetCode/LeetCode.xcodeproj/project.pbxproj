@@ -40,6 +40,7 @@
 		BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA569C22A60B550082E025 /* IsPalindrome.swift */; };
 		BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA569D22A60B550082E025 /* Intersect.swift */; };
 		BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */; };
+		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -89,6 +90,7 @@
 		BEDA569C22A60B550082E025 /* IsPalindrome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IsPalindrome.swift; sourceTree = "<group>"; };
 		BEDA569D22A60B550082E025 /* Intersect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Intersect.swift; sourceTree = "<group>"; };
 		BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
+		BEDA56C122A60C4D0082E025 /* kthSmallest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kthSmallest.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +166,7 @@
 				BEDA569B22A60B550082E025 /* SingleNumber.swift */,
 				BEDA568122A60B540082E025 /* TwoSum.swift */,
 				BEDA567F22A60B540082E025 /* wordBreak.swift */,
+				BEDA56C122A60C4D0082E025 /* kthSmallest.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
 				BEDA56AD22A60B550082E025 /* KResult.swift in Sources */,
+				BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */,
 				BEDA56AF22A60B550082E025 /* FindKthLargest.swift in Sources */,
 				BEDA56B222A60B550082E025 /* BackPack.swift in Sources */,
 				BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */,
