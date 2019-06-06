@@ -138,3 +138,12 @@ print(maxProduct([2,3,-2,4]))
 print(productExceptSelf([1,2,3,4]))
 
 print(findKthLargest([3,2,1,5,6,4], 2))
+
+
+print(kthSmallest([
+    [ 1,  5,  9],
+    [10, 11, 13],
+    [12, 13, 15]
+    ], 8))
+
+//print(kthSmallest([[1,2],[1,3]], 2))
