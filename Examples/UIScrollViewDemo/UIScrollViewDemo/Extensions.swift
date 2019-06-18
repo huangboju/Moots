@@ -208,3 +208,12 @@ extension UIImage {
         return UIImage(cgImage: cgImage2)
     }
 }
+
+extension UIResponder {
+    var responderChain: String {
+        guard let next = next else {
+            return String(describing: self)
+        }
+        return String(describing: self) + " -> " + next.responderChain
+    }
+}
