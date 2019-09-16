@@ -147,3 +147,7 @@ print(kthSmallest([
     ], 8))
 
 //print(kthSmallest([[1,2],[1,3]], 2))
+
+
+
+print(topKFrequent([-1, -1], 1))
