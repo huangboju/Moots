@@ -41,6 +41,7 @@
 		BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA569D22A60B550082E025 /* Intersect.swift */; };
 		BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */; };
 		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
+		F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */; };
 		F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D27642232F244C006217BD /* TopKFrequent.swift */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +94,7 @@
 		BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BEDA56C122A60C4D0082E025 /* kthSmallest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kthSmallest.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
+		F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSlidingWindow.swift; sourceTree = "<group>"; };
 		F7D27642232F244C006217BD /* TopKFrequent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKFrequent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				BEDA567F22A60B540082E025 /* wordBreak.swift */,
 				BEDA56C122A60C4D0082E025 /* kthSmallest.swift */,
 				F7D27642232F244C006217BD /* TopKFrequent.swift */,
+				F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEDA56A122A60B550082E025 /* Anagram.swift in Sources */,
+				F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */,
 				BEDA56A522A60B550082E025 /* EggDrop.swift in Sources */,
 				F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */,
 				BEDA56A622A60B550082E025 /* MoveZeroes.swift in Sources */,
