@@ -154,3 +154,5 @@ print(topKFrequent([-1, -1], 1))
 
 print("\n🍀🍀🍀 maxSlidingWindow 🍀🍀🍀")
 print(maxSlidingWindow([1, -1], 1))
+
+print(calculate())

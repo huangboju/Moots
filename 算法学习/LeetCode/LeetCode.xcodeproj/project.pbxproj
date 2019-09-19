@@ -43,6 +43,7 @@
 		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
 		F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */; };
 		F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D27642232F244C006217BD /* TopKFrequent.swift */; };
+		F7E910D323331E6300DA76D7 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E910D223331E6200DA76D7 /* Calculate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -96,6 +97,7 @@
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSlidingWindow.swift; sourceTree = "<group>"; };
 		F7D27642232F244C006217BD /* TopKFrequent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKFrequent.swift; sourceTree = "<group>"; };
+		F7E910D223331E6200DA76D7 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				BEDA56C122A60C4D0082E025 /* kthSmallest.swift */,
 				F7D27642232F244C006217BD /* TopKFrequent.swift */,
 				F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */,
+				F7E910D223331E6200DA76D7 /* Calculate.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 				BEDA56A522A60B550082E025 /* EggDrop.swift in Sources */,
 				F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */,
 				BEDA56A622A60B550082E025 /* MoveZeroes.swift in Sources */,
+				F7E910D323331E6300DA76D7 /* Calculate.swift in Sources */,
 				BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */,
 				BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */,
 				BEDA56AA22A60B550082E025 /* MergeSort.swift in Sources */,
