@@ -153,4 +153,4 @@ print(kthSmallest([
 print(topKFrequent([-1, -1], 1))
 
 print("\n🍀🍀🍀 maxSlidingWindow 🍀🍀🍀")
-print(maxSlidingWindow([1,3,-1,-3,5,3,6,7], 3))
+print(maxSlidingWindow([1, -1], 1))
