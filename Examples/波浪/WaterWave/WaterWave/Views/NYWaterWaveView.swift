@@ -55,14 +55,14 @@ class NYWaterWaveView: UIView {
         layer.addSublayer(secondeWaveLayer)
         layer.addSublayer(thirdWaveLayer)
 
-        displayLink.add(to: RunLoop.main, forMode: .commonModes)
+        displayLink.add(to: RunLoop.main, forMode: .common)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func getCurrentWave() {
+    @objc func getCurrentWave() {
         waveOffsetX += waveSpeed
         
         setFirstWaveLayerPath()
