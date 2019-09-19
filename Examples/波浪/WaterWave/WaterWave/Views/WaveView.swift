@@ -63,7 +63,7 @@ class WaveView: UIView {
     
     func startWave() {
         displayLink = CADisplayLink(target: self, selector: #selector(wave))
-        displayLink!.add(to: RunLoop.current, forMode: RunLoopMode.commonModes)
+        displayLink!.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
     }
     
     func endWave() {
@@ -71,7 +71,7 @@ class WaveView: UIView {
         displayLink = nil
     }
     
-    func wave() {
+    @objc func wave() {
         // 波浪移动的关键：按照指定的速度偏移
         offset += waveSpeed
         

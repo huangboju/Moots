@@ -38,7 +38,7 @@ class SCViewController: UIViewController {
             recorder?.record()
             
             let displaylink = CADisplayLink(target: self, selector: #selector(updateMeters))
-            displaylink.add(to: RunLoop.current, forMode: .commonModes)
+            displaylink.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
             
             waveformView.waveColor = UIColor.white
             waveformView.primaryWaveLineWidth = 3
@@ -50,7 +50,7 @@ class SCViewController: UIViewController {
         }
     }
     
-    func updateMeters() {
+    @objc func updateMeters() {
         recorder?.updateMeters()
         // pow()用来计算以x 为底的 y 次方值，然后将结果返回。设返回值为 ret，则 ret = xy。
         let normalizedValue = pow(10, CGFloat(recorder?.averagePower(forChannel: 0) ?? 0) / 20)
