@@ -71,7 +71,7 @@ class PullToRefreshWaveView: UIView {
         super.init(frame: frame)
         displaylink = CADisplayLink(target: self, selector: #selector(displayLinkTric))
         displaylink?.frameInterval = 2
-        displaylink?.add(to: RunLoop.main, forMode: RunLoopMode.commonModes)
+        displaylink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         displaylink?.isPaused = true
 
         topWaveColor = UIColor.lightGray
@@ -172,7 +172,7 @@ class PullToRefreshWaveView: UIView {
         scrollView.removeObserver(self, forKeyPath: KeyPathsPanGestureRecognizerState)
     }
 
-    func displayLinkTric(displayLink: CADisplayLink) {
+    @objc func displayLinkTric(displayLink: CADisplayLink) {
         configWaveAmplitude()
         configWaveOffset()
         

@@ -17,10 +17,10 @@ class WaterWaveView: UIView {
         super.init(frame: frame)
         backgroundColor = UIColor.gray
         waveDisplayLink = CADisplayLink(target: self, selector: #selector(runWave))
-        waveDisplayLink?.add(to: .main, forMode: .commonModes)
+        waveDisplayLink?.add(to: .main, forMode: .common)
     }
     
-    func runWave() {
+    @objc func runWave() {
         increase ? (waveAmplitude += 0.02) : (waveAmplitude -= 0.02)
         increase = waveAmplitude <= 1
         increase = waveAmplitude < 1.5
@@ -37,21 +37,21 @@ class WaterWaveView: UIView {
         let capacityNumberFont = UIFont(name: "HelveticaNeue-Thin", size: 80)!
         let capacityPercentFont = UIFont(name: "HelveticaNeue-Thin", size: 40)!
         if percent < 10 {
-            attrText.addAttribute(NSFontAttributeName, value: capacityNumberFont, range: NSRange(location: 0, length: 1))
-            attrText.addAttribute(NSFontAttributeName, value: capacityPercentFont, range: NSRange(location: 1, length: 1))
-            attrText.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSRange(location: 0, length: 2))
-            attrText.addAttribute(NSParagraphStyleAttributeName, value: paragrahStyle, range: NSRange(location: 0, length: 2))
+            attrText.addAttribute(.font, value: capacityNumberFont, range: NSRange(location: 0, length: 1))
+            attrText.addAttribute(.font, value: capacityPercentFont, range: NSRange(location: 1, length: 1))
+            attrText.addAttribute(.foregroundColor, value: textColor, range: NSRange(location: 0, length: 2))
+            attrText.addAttribute(.paragraphStyle, value: paragrahStyle, range: NSRange(location: 0, length: 2))
         } else {
             if percent >= 100 {
-                attrText.addAttribute(NSFontAttributeName, value: capacityNumberFont, range: NSRange(location: 0, length: 3))
-                attrText.addAttribute(NSFontAttributeName, value: capacityPercentFont, range: NSRange(location: 3, length: 1))
-                attrText.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSRange(location: 0, length: 4))
-                attrText.addAttribute(NSParagraphStyleAttributeName, value: paragrahStyle, range: NSRange(location: 0, length: 4))
+                attrText.addAttribute(.font, value: capacityNumberFont, range: NSRange(location: 0, length: 3))
+                attrText.addAttribute(.font, value: capacityPercentFont, range: NSRange(location: 3, length: 1))
+                attrText.addAttribute(.foregroundColor, value: textColor, range: NSRange(location: 0, length: 4))
+                attrText.addAttribute(.paragraphStyle, value: paragrahStyle, range: NSRange(location: 0, length: 4))
             } else {
-                attrText.addAttribute(NSFontAttributeName, value: capacityNumberFont, range: NSRange(location: 0, length: 2))
-                attrText.addAttribute(NSFontAttributeName, value: capacityPercentFont, range: NSRange(location: 2, length: 1))
-                attrText.addAttribute(NSForegroundColorAttributeName, value: textColor, range: NSRange(location: 0, length: 3))
-                attrText.addAttribute(NSParagraphStyleAttributeName, value: paragrahStyle, range: NSRange(location: 0, length: 3))
+                attrText.addAttribute(.font, value: capacityNumberFont, range: NSRange(location: 0, length: 2))
+                attrText.addAttribute(.font, value: capacityPercentFont, range: NSRange(location: 2, length: 1))
+                attrText.addAttribute(.foregroundColor, value: textColor, range: NSRange(location: 0, length: 3))
+                attrText.addAttribute(.paragraphStyle, value: paragrahStyle, range: NSRange(location: 0, length: 3))
             }
         }
         return attrText
@@ -137,7 +137,7 @@ class WaterWaveView: UIView {
             backReversePath.addLine(to: CGPoint(x: 100, y: waterLineY))
             context.addPath(backReversePath)
             context.clip()
-            attriButedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: attriButedText.length))
+            attriButedText.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attriButedText.length))
             attriButedText.draw(at: textPoint)
             //弹出
             context.restoreGState()
@@ -161,7 +161,7 @@ class WaterWaveView: UIView {
             context.addPath(frontReversePath)
             context.clip()
             
-            attriButedText.addAttribute(NSForegroundColorAttributeName, value: UIColor.white, range: NSRange(location: 0, length: attriButedText.length))
+            attriButedText.addAttribute(.foregroundColor, value: UIColor.white, range: NSRange(location: 0, length: attriButedText.length))
             
             attriButedText.draw(at: textPoint)
             
