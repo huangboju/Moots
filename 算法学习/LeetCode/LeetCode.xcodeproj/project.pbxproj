@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
+		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
 		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
@@ -60,6 +62,8 @@
 
 /* Begin PBXFileReference section */
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
+		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
+		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
@@ -176,6 +180,8 @@
 				F7D27642232F244C006217BD /* TopKFrequent.swift */,
 				F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */,
 				F7E910D223331E6200DA76D7 /* Calculate.swift */,
+				BE661AE923361221005BE4F9 /* EvalRPN.swift */,
+				BE48B5002337059600E379BF /* MinStack.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				BEDA56AA22A60B550082E025 /* MergeSort.swift in Sources */,
 				BEDA56B722A60B550082E025 /* SearchMatrix.swift in Sources */,
 				BEDA56A922A60B550082E025 /* PalindromePartition.swift in Sources */,
+				BE48B5012337059600E379BF /* MinStack.swift in Sources */,
 				BEDA56AC22A60B550082E025 /* MinCount.swift in Sources */,
 				BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */,
 				BEDA56A422A60B550082E025 /* MinSubArrayLen.swift in Sources */,
@@ -268,6 +275,7 @@
 				BEDA56B522A60B550082E025 /* FirstUniqChar.swift in Sources */,
 				BEDA56B622A60B550082E025 /* ProductExceptSelf.swift in Sources */,
 				BEDA56BC22A60B550082E025 /* SingleNumber.swift in Sources */,
+				BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */,
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
 				BEDA56AD22A60B550082E025 /* KResult.swift in Sources */,
