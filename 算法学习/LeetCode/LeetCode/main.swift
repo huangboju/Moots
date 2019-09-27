@@ -155,4 +155,4 @@ print(topKFrequent([-1, -1], 1))
 print("\n🍀🍀🍀 maxSlidingWindow 🍀🍀🍀")
 print(maxSlidingWindow([1, -1], 1))
 
-print(calculate())
+print(Solution.calculate("3+2*2"))
