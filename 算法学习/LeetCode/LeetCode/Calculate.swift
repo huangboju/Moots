@@ -8,36 +8,44 @@
 
 import Foundation
 
-// 逆波兰表达式
-// https://zh.wikipedia.org/wiki/%E9%80%86%E6%B3%A2%E5%85%B0%E8%A1%A8%E7%A4%BA%E6%B3%95
-// https://www.jianshu.com/p/f2c88d983ff5
+class Solution {
+    class func calculate(_ s: String) -> Int {
 
-func calculate(_ s: String = "512+4*+3-") -> Int {
-    var stack: [Int] = []
-    for c in s {
-        if let n = Int("\(c)") {
-            stack.append(n)
+        var result = 0
+        var stack: [Int] = []
+        var num = 0
+        var sign = "+"
+        
+        for (i, char) in s.enumerated() {
+            let isNum = char >= "0" && char <= "9"
+            
+            if isNum {
+                num = num * 10 + Int(String(char))!
+            }
+            
+            if !isNum && char != " " || i == s.count - 1 {
+                switch sign {
+                case "+":
+                    stack.append(num)
+                case "-":
+                    stack.append(-num)
+                case "*":
+                    stack.append(stack.removeLast() * num)
+                case "/":
+                    stack.append(stack.removeLast() / num)
+                default:
+                    break
+                }
+                
+                num = 0
+                sign = String(char)
+            }
         }
-        switch "\(c)" {
-        case "+":
-            let n1 = stack.popLast()!
-            let n2 = stack.popLast()!
-            stack.append(n2 + n1)
-        case "-":
-            let n1 = stack.popLast()!
-            let n2 = stack.popLast()!
-            stack.append(n2 - n1)
-        case "*":
-            let n1 = stack.popLast()!
-            let n2 = stack.popLast()!
-            stack.append(n2 * n1)
-        case "/":
-            let n1 = stack.popLast()!
-            let n2 = stack.popLast()!
-            stack.append(n2 / n1)
-        default:
-            continue
+        
+        for n in stack {
+            result += n
         }
+
+        return result
     }
-    return stack[0]
 }
