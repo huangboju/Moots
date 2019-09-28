@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
 		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
+		BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CF59D233F531600585DBC /* TitleToNumber.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
 		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
@@ -65,6 +66,7 @@
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
+		BE7CF59D233F531600585DBC /* TitleToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToNumber.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				BE7CF59D233F531600585DBC /* TitleToNumber.swift */,
 				F78C178023386FE400ECED68 /* MedianFinder.swift */,
 				BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */,
 				BEDA568722A60B540082E025 /* AddTwoNumbers.swift */,
@@ -249,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */,
 				BEDA56A122A60B550082E025 /* Anagram.swift in Sources */,
 				F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */,
 				BEDA56A522A60B550082E025 /* EggDrop.swift in Sources */,
