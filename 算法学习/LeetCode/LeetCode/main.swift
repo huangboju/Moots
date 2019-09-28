@@ -156,3 +156,6 @@ print("\n🍀🍀🍀 maxSlidingWindow 🍀🍀🍀")
 print(maxSlidingWindow([1, -1], 1))
 
 print(Solution.calculate("3+2*2"))
+
+print(titleToNumber("A"))
+
