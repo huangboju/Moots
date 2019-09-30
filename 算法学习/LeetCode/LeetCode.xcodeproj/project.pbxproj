@@ -46,6 +46,7 @@
 		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
 		F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */; };
 		F78C178123386FE400ECED68 /* MedianFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C178023386FE400ECED68 /* MedianFinder.swift */; };
+		F7AC932F2341A49300782FA8 /* RandomizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC932E2341A49300782FA8 /* RandomizedSet.swift */; };
 		F7BFAEF023408ECD00FB2993 /* FourSumCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BFAEEF23408ECD00FB2993 /* FourSumCount.swift */; };
 		F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D27642232F244C006217BD /* TopKFrequent.swift */; };
 		F7E910D323331E6300DA76D7 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E910D223331E6200DA76D7 /* Calculate.swift */; };
@@ -105,6 +106,7 @@
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSlidingWindow.swift; sourceTree = "<group>"; };
 		F78C178023386FE400ECED68 /* MedianFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedianFinder.swift; sourceTree = "<group>"; };
+		F7AC932E2341A49300782FA8 /* RandomizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizedSet.swift; sourceTree = "<group>"; };
 		F7BFAEEF23408ECD00FB2993 /* FourSumCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSumCount.swift; sourceTree = "<group>"; };
 		F7D27642232F244C006217BD /* TopKFrequent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopKFrequent.swift; sourceTree = "<group>"; };
 		F7E910D223331E6200DA76D7 /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 				BE661AE923361221005BE4F9 /* EvalRPN.swift */,
 				BE48B5002337059600E379BF /* MinStack.swift */,
 				F7BFAEEF23408ECD00FB2993 /* FourSumCount.swift */,
+				F7AC932E2341A49300782FA8 /* RandomizedSet.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "伯驹 黄";
 				TargetAttributes = {
 					D81B3E7A1EA707A200214304 = {
@@ -286,6 +289,7 @@
 				BEDA56B622A60B550082E025 /* ProductExceptSelf.swift in Sources */,
 				BEDA56BC22A60B550082E025 /* SingleNumber.swift in Sources */,
 				BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */,
+				F7AC932F2341A49300782FA8 /* RandomizedSet.swift in Sources */,
 				F7BFAEF023408ECD00FB2993 /* FourSumCount.swift in Sources */,
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
@@ -418,6 +422,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -428,6 +433,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
