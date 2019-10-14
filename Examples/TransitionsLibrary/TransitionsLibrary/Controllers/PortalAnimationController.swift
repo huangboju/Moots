@@ -15,12 +15,12 @@ class PortalAnimationController: UIViewController {
         let button = UIButton(frame: view.frame.insetBy(dx: 50, dy: 100))
         button.backgroundColor = UIColor.red
         button.titleLabel?.font = UIFont.systemFont(ofSize: 500)
-        button.setTitle("1", for: UIControlState())
+        button.setTitle("1", for: UIControl.State())
         button.addTarget(self, action: #selector(action), for: .touchUpInside)
         view.addSubview(button)
     }
 
-    func action() {
+    @objc func action() {
         navigationController?.delegate = self
         navigationController?.pushViewController(TestController(), animated: true)
     }
@@ -42,7 +42,7 @@ extension PortalAnimationController: UINavigationControllerDelegate {
         return nil
     }
     
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         return PortalAnimationTransitioning()
     }
 }

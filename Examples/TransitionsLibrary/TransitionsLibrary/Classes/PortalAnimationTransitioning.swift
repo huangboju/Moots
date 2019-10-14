@@ -19,7 +19,7 @@ class PortalAnimationTransitioning: ReversibleAnimationTransitioning {
         let scale = CATransform3DIdentity
         toViewSnapshot!.layer.transform = CATransform3DScale(scale, ZOOM_SCALE, ZOOM_SCALE, 1)
         containerView.addSubview(toViewSnapshot!)
-        containerView.sendSubview(toBack: toViewSnapshot!)
+        containerView.sendSubviewToBack(toViewSnapshot!)
         
         let leftSnapshotRegion = CGRect(x: 0, y: 0, width: fromView.frame.width / 2, height: fromView.frame.height)
         let leftHandView = fromView.resizableSnapshotView(from: leftSnapshotRegion, afterScreenUpdates: false, withCapInsets: UIEdgeInsets.zero)
