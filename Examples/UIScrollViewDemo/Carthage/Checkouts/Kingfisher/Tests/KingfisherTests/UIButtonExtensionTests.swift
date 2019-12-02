@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if canImport(UIKit)
 import UIKit
 import XCTest
 @testable import Kingfisher
@@ -78,7 +79,7 @@ class UIButtonExtensionTests: XCTestCase {
             XCTAssertTrue(image!.renderEqual(to: testImage))
             XCTAssertTrue(self.button.image(for: .normal)!.renderEqual(to: testImage))
             
-            XCTAssertEqual(self.button.kf.taskIdentifier(for: .normal), Source.Identifier.current)
+            //XCTAssertEqual(self.button.kf.taskIdentifier(for: .normal), Source.Identifier.current)
             XCTAssertEqual(result.value!.cacheType, .none)
             
             exp.fulfill()
@@ -192,3 +193,4 @@ class UIButtonExtensionTests: XCTestCase {
         XCTAssertEqual(testImage, button.backgroundImage(for: state))
     }
 }
+#endif

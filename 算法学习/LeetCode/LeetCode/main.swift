@@ -163,3 +163,5 @@ print(fourSumCount([1, 2], [-2,-1], [-1, 2], [0, 2]))
 
 
 print(largestNumber([10, 2]))
+
+print(maxPoints([[1,1],[3,2],[5,3],[4,1],[2,3],[1,4]]))
