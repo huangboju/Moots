@@ -16,7 +16,7 @@ class TwoViewsWithComplexWidths: AutoLayoutBaseController {
         view.addSubview(blueView)
 
         blueView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
-        blueView.widthAnchor.constraint(greaterThanOrEqualToConstant: 150)
+        blueView.widthAnchor.constraint(greaterThanOrEqualToConstant: 150).isActive = true
         blueView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         blueView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
 

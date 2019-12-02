@@ -24,6 +24,7 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 
+#if !os(watchOS)
 
 #if os(macOS)
 import AppKit
@@ -31,7 +32,7 @@ import AppKit
 import UIKit
 #endif
 
-extension KingfisherWrapper where Base: ImageView {
+extension KingfisherWrapper where Base: KFCrossPlatformImageView {
 
     // MARK: Setting Image
 
@@ -105,15 +106,24 @@ extension KingfisherWrapper where Base: ImageView {
             options.preloadAllAnimationData = true
         }
 
+        if let block = progressBlock {
+            options.onDataReceived = (options.onDataReceived ?? []) + [ImageLoadingProgressSideEffect(block)]
+        }
+
+        if let provider = ImageProgressiveProvider(options, refresh: { image in
+            self.base.image = image
+        }) {
+            options.onDataReceived = (options.onDataReceived ?? []) + [provider]
+        }
+        
+        options.onDataReceived?.forEach {
+            $0.onShouldApply = { issuedIdentifier == self.taskIdentifier }
+        }
+
         let task = KingfisherManager.shared.retrieveImage(
             with: source,
             options: options,
-            progressBlock: { receivedSize, totalSize in
-                guard issuedIdentifier == self.taskIdentifier else { return }
-                if let progressBlock = progressBlock {
-                    progressBlock(receivedSize, totalSize)
-                }
-            },
+            downloadTaskUpdated: { mutatingSelf.imageTask = $0 },
             completionHandler: { result in
                 CallbackQueue.mainCurrentOrAsync.execute {
                     maybeIndicator?.stopAnimatingView()
@@ -129,9 +139,10 @@ extension KingfisherWrapper where Base: ImageView {
                         completionHandler?(.failure(error))
                         return
                     }
-
+                    
                     mutatingSelf.imageTask = nil
-
+                    mutatingSelf.taskIdentifier = nil
+                    
                     switch result {
                     case .success(let value):
                         guard self.needsTransition(options: options, cacheType: value.cacheType) else {
@@ -140,10 +151,11 @@ extension KingfisherWrapper where Base: ImageView {
                             completionHandler?(result)
                             return
                         }
-
+                        
                         self.makeTransition(image: value.image, transition: options.transition) {
                             completionHandler?(result)
                         }
+                        
                     case .failure:
                         if let image = options.onFailureImage {
                             self.base.image = image
@@ -151,8 +163,8 @@ extension KingfisherWrapper where Base: ImageView {
                         completionHandler?(result)
                     }
                 }
-        })
-
+            }
+        )
         mutatingSelf.imageTask = task
         return task
     }
@@ -249,7 +261,7 @@ extension KingfisherWrapper where Base: ImageView {
         }
     }
 
-    private func makeTransition(image: Image, transition: ImageTransition, done: @escaping () -> Void) {
+    private func makeTransition(image: KFCrossPlatformImage, transition: ImageTransition, done: @escaping () -> Void) {
         #if !os(macOS)
         // Force hiding the indicator without transition first.
         UIView.transition(
@@ -285,7 +297,7 @@ private var indicatorTypeKey: Void?
 private var placeholderKey: Void?
 private var imageTaskKey: Void?
 
-extension KingfisherWrapper where Base: ImageView {
+extension KingfisherWrapper where Base: KFCrossPlatformImageView {
 
     // MARK: Properties
     public private(set) var taskIdentifier: Source.Identifier.Value? {
@@ -344,6 +356,17 @@ extension KingfisherWrapper where Base: ImageView {
                     equalTo: base.centerXAnchor, constant: newIndicator.centerOffset.x).isActive = true
                 view.centerYAnchor.constraint(
                     equalTo: base.centerYAnchor, constant: newIndicator.centerOffset.y).isActive = true
+
+                switch newIndicator.sizeStrategy(in: base) {
+                case .intrinsicSize:
+                    break
+                case .full:
+                    view.heightAnchor.constraint(equalTo: base.heightAnchor, constant: 0).isActive = true
+                    view.widthAnchor.constraint(equalTo: base.widthAnchor, constant: 0).isActive = true
+                case .size(let size):
+                    view.heightAnchor.constraint(equalToConstant: size.height).isActive = true
+                    view.widthAnchor.constraint(equalToConstant: size.width).isActive = true
+                }
                 
                 newIndicator.view.isHidden = true
             }
@@ -380,11 +403,11 @@ extension KingfisherWrapper where Base: ImageView {
 }
 
 
-@objc extension ImageView {
+@objc extension KFCrossPlatformImageView {
     func shouldPreloadAllAnimation() -> Bool { return true }
 }
 
-extension KingfisherWrapper where Base: ImageView {
+extension KingfisherWrapper where Base: KFCrossPlatformImageView {
     /// Gets the image URL bound to this image view.
     @available(*, deprecated, message: "Use `taskIdentifier` instead to identify a setting task.")
     public private(set) var webURL: URL? {
@@ -392,3 +415,5 @@ extension KingfisherWrapper where Base: ImageView {
         set { }
     }
 }
+
+#endif

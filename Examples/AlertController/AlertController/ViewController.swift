@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         super.decodeRestorableState(with: coder)
     }
 
-    func action() {
+    @objc func action() {
         let alertController = UIAlertController(title: "", message: "", preferredStyle: .alert)
         let ok = UIAlertAction(title: "确定", style: .default) { _ in
         }
@@ -40,13 +40,13 @@ class ViewController: UIViewController {
         
         alertControllerTitleStr.append(NSAttributedString(attachment: attachment))
         
-        alertControllerTitleStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.green, range: NSRange(location: 0, length: 2))
+        alertControllerTitleStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.green, range: NSRange(location: 0, length: 2))
         
         
         
         let alertControllerMessageStr = NSMutableAttributedString(string: "今天天气好晴朗")
 
-        alertControllerMessageStr.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange(location: 0, length: 4))
+        alertControllerMessageStr.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.red, range: NSRange(location: 0, length: 4))
         
         alertController.setValue(alertControllerMessageStr, forKey: "attributedMessage")
 
