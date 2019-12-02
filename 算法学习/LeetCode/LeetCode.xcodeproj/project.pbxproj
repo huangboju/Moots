@@ -45,6 +45,7 @@
 		BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */; };
 		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
 		F73629A0234D894300DFB34E /* LargestNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F736299F234D894300DFB34E /* LargestNumber.swift */; };
+		F76403002383DBBD00017DB4 /* MaxPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76402FF2383DBBD00017DB4 /* MaxPoints.swift */; };
 		F772DF00233071B1009970A4 /* MaxSlidingWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */; };
 		F78C178123386FE400ECED68 /* MedianFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F78C178023386FE400ECED68 /* MedianFinder.swift */; };
 		F7AC932F2341A49300782FA8 /* RandomizedSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC932E2341A49300782FA8 /* RandomizedSet.swift */; };
@@ -106,6 +107,7 @@
 		BEDA56C122A60C4D0082E025 /* kthSmallest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kthSmallest.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
 		F736299F234D894300DFB34E /* LargestNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargestNumber.swift; sourceTree = "<group>"; };
+		F76402FF2383DBBD00017DB4 /* MaxPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxPoints.swift; sourceTree = "<group>"; };
 		F772DEFF233071B1009970A4 /* MaxSlidingWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxSlidingWindow.swift; sourceTree = "<group>"; };
 		F78C178023386FE400ECED68 /* MedianFinder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedianFinder.swift; sourceTree = "<group>"; };
 		F7AC932E2341A49300782FA8 /* RandomizedSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizedSet.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				F7BFAEEF23408ECD00FB2993 /* FourSumCount.swift */,
 				F7AC932E2341A49300782FA8 /* RandomizedSet.swift */,
 				F736299F234D894300DFB34E /* LargestNumber.swift */,
+				F76402FF2383DBBD00017DB4 /* MaxPoints.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 				BEDA56BB22A60B550082E025 /* RunLengthEncoding.swift in Sources */,
 				BEDA56B022A60B550082E025 /* findMedianSortedArrays.swift in Sources */,
 				BEDA56A322A60B550082E025 /* MajorityElement.swift in Sources */,
+				F76403002383DBBD00017DB4 /* MaxPoints.swift in Sources */,
 				BEDA56AE22A60B550082E025 /* BestSpace.swift in Sources */,
 				BEDA569E22A60B550082E025 /* Rotate.swift in Sources */,
 				BEDA56A722A60B550082E025 /* ContainsDuplicate.swift in Sources */,
