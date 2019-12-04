@@ -34,6 +34,7 @@ def picking(method = 1):
 def buy(times):
     while True:
         now = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.%f')
+        print(now)
         # 对比时间，时间到的话就点击结算
         if now > times:
             # 点击结算按钮
@@ -60,7 +61,7 @@ if __name__ == "__main__":
 
     # 请指定抢购时间，时间格式："2019-06-01 10:08:00.000"
     # times = "2019-12-12 00:00:00.000"
-    times = "2019-12-04 16:25:00.000"
+    times = "2019-12-04 16:35:00.000"
 
     # 自动打开Chrome浏览器
     browser = webdriver.Chrome("./chromedriver")
