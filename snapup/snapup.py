@@ -12,7 +12,7 @@ def login():
         time.sleep(10)
 
 
-def picking(method):
+def picking(method = 1):
     # 打开购物车列表页面
     browser.get("https://cart.taobao.com/cart.htm")
     time.sleep(3)
@@ -58,14 +58,9 @@ def buy(times):
 
 if __name__ == "__main__":
 
-    # 请指定勾选购物车商品的方式
-    # 0代表，自动勾选购物车内的全部商品。注意：若购物车中存在失效商品时无法进行全选，请勿使用此项
-    # 1代表，手动勾选购物车内的商品
-    method = 1
-
     # 请指定抢购时间，时间格式："2019-06-01 10:08:00.000"
-    times = "2019-12-04 16:00:00.000"
     # times = "2019-12-12 00:00:00.000"
+    times = "2019-12-04 16:25:00.000"
 
     # 自动打开Chrome浏览器
     browser = webdriver.Chrome("./chromedriver")
@@ -75,6 +70,10 @@ if __name__ == "__main__":
     # 扫码登录淘宝
     login()
     # 勾选准备结算的商品
-    picking(method)
+    # 请指定勾选购物车商品的方式
+    # 0代表，自动勾选购物车内的全部商品。注意：若购物车中存在失效商品时无法进行全选，请勿使用此项
+    # 1代表，手动勾选购物车内的商品
+    # 默认1
+    picking()
     # 等待抢购时间，定时秒杀
     buy(times)
