@@ -8,7 +8,96 @@
 
 import UIKit
 
+/// 一个排序断言，当第一个值应当排在第二个值之前时，返回 `true`
+typealias SortDescriptor<Root> = (Root, Root) -> Bool
+
+@objcMembers
+final class Person: NSObject {
+    let first: String
+    let last: String
+    let yearOfBirth: Int
+    init(first: String, last: String, yearOfBirth: Int) {
+        self.first = first
+        self.last = last
+        self.yearOfBirth = yearOfBirth
+        // super.init() 在这里被隐式调用
+    }
+}
+
 class ViewController: UIViewController {
+    
+    func sort() {
+        let people = [
+        Person(first: "Emily", last: "Young", yearOfBirth: 2002),
+        Person(first: "David", last: "Gray", yearOfBirth: 1991),
+        Person(first: "Robert", last: "Barnes", yearOfBirth: 1985),
+        Person(first: "Ava", last: "Barnes", yearOfBirth: 2000),
+        Person(first: "Joanne", last: "Miller", yearOfBirth: 1994),
+        Person(first: "Ava", last: "Barnes", yearOfBirth: 1998),
+        ]
+        
+        let sortByYear: SortDescriptor<Person> = { $0.yearOfBirth < $1.yearOfBirth }
+        print(people.sorted(by: sortByYear))
+        let sortByLastName: SortDescriptor<Person> = { $0.last.localizedStandardCompare($1.last) == .orderedAscending }
+        print(people.sorted(by: sortByLastName))
+        
+        let sortByYearAlt: SortDescriptor<Person> = sortDescriptor(key: { $0.yearOfBirth }, by: <)
+        print(people.sorted(by: sortByYearAlt))
+        
+        let sortByYearAlt2: SortDescriptor<Person> = sortDescriptor(key: { $0.yearOfBirth })
+        print(people.sorted(by: sortByYearAlt2))
+        
+        
+        let sortByFirstName: SortDescriptor<Person> = sortDescriptor(key: { $0.first }, by: String.localizedStandardCompare)
+        print(people.sorted(by: sortByFirstName))
+        
+        let combined: SortDescriptor<Person> = combine(sortDescriptors: [sortByLastName, sortByFirstName, sortByYear])
+        print(people.sorted(by: combined))
+        
+//        let compare = lift(String.localizedStandardCompare)
+//        let result = files.sorted(by: sortDescriptor(key: { $0.fileExtension }, by: compare))
+    }
+
+    /// `by` 进行比较的断言
+    /// 通过用 `by` 比较 `key` 返回值的方式构建 `SortDescriptor` 函数
+    func sortDescriptor<Root, Value>(key: @escaping (Root) -> Value, by areInIncreasingOrder: @escaping (Value, Value) -> Bool) -> SortDescriptor<Root> {
+        return { areInIncreasingOrder(key($0), key($1)) }
+    }
+    
+    func sortDescriptor<Root, Value>(key: @escaping (Root) -> Value) -> SortDescriptor<Root> where Value: Comparable {
+        return { key($0) < key($1) }
+    }
+    
+    func sortDescriptor<Root, Value>(key: @escaping (Root) -> Value, ascending: Bool = true, by comparator: @escaping (Value) -> (Value) -> ComparisonResult) -> SortDescriptor<Root> {
+    return { lhs, rhs in
+        let order: ComparisonResult = ascending
+            ? .orderedAscending
+            : .orderedDescending
+        return comparator(key(lhs))(key(rhs)) == order
+        }
+    }
+    
+    func combine<Root>(sortDescriptors: [SortDescriptor<Root>]) -> SortDescriptor<Root> {
+        return { lhs, rhs in
+            for areInIncreasingOrder in sortDescriptors {
+                if areInIncreasingOrder(lhs, rhs) { return true }
+                if areInIncreasingOrder(rhs, lhs) { return false }
+            }
+            return false
+        }
+    }
+    
+    func lift<A>(_ compare: @escaping (A) -> (A) -> ComparisonResult) -> (A?) -> (A?) -> ComparisonResult {
+        return { lhs in { rhs in
+                switch (lhs, rhs) {
+                case (nil, nil): return .orderedSame
+                case (nil, _): return .orderedAscending
+                case (_, nil): return .orderedDescending
+                case let (l?, r?): return compare(l)(r)
+                }
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,8 +108,9 @@ class ViewController: UIViewController {
         button.backgroundColor = .green
         view.addSubview(button)
         
+        sort()
     }
-    
+
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
     }
@@ -58,3 +148,4 @@ class ViewController: UIViewController {
         alertController.setValue(alertControllerTitleStr, forKey: "attributedTitle")
     }
 }
+
