@@ -15,7 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let fibs = [0, 1, 1, 2, 3, 5]
+        
+        let slice = fibs[1...]
+        print(slice)
+//        print(slice[0])
+        
         return true
     }
 
