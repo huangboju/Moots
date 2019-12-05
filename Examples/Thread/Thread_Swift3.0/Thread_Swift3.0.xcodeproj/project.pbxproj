@@ -204,7 +204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = xiAo_Ju;
 				TargetAttributes = {
 					D817126D1D93B9F10034B351 = {
@@ -215,13 +215,13 @@
 					};
 					D81712811D93B9F10034B351 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D817126D1D93B9F10034B351;
 					};
 					D817128C1D93B9F10034B351 = {
 						CreatedOnToolsVersion = 8.0;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D817126D1D93B9F10034B351;
 					};
@@ -229,7 +229,7 @@
 			};
 			buildConfigurationList = D81712691D93B9F10034B351 /* Build configuration list for PBXProject "Thread_Swift3.0" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -341,6 +341,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -400,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -460,7 +462,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -476,7 +478,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -490,7 +492,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thread_Swift3.0.app/Thread_Swift3.0";
 			};
 			name = Debug;
@@ -505,7 +507,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Thread_Swift3.0.app/Thread_Swift3.0";
 			};
 			name = Release;
@@ -519,7 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Thread_Swift3.0;
 			};
 			name = Debug;
@@ -533,7 +535,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Thread-Swift3.0.Thread-Swift3-0UITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Thread_Swift3.0;
 			};
 			name = Release;
