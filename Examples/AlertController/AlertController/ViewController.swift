@@ -24,6 +24,17 @@ final class Person: NSObject {
     }
 }
 
+struct Address {
+    var street: String
+    var city: String
+    var zipCode: Int
+}
+
+struct House {
+    let name: String
+    var address: Address
+}
+
 class ViewController: UIViewController {
     
     func sort() {
@@ -98,6 +109,29 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    func keyPaths() {
+        let streetKeyPath = \House.address.street
+        // Swift.WritableKeyPath<Person, Swift.String>
+        let nameKeyPath = \House.name // Swift.KeyPath<Person, Swift.String>”
+        
+        let simpsonResidence = Address(street: "1094 Evergreen Terrace",
+        city: "Springfield", zipCode: 97475)
+        var lisa = House(name: "Lisa Simpson", address: simpsonResidence)
+        print(lisa[keyPath: nameKeyPath])
+        lisa[keyPath: streetKeyPath] = "742 Evergreen Terrace"
+        print(lisa[keyPath: streetKeyPath])
+    }
+    
+    func bind() {
+        let animal = Animal()
+        let textField = TextField()
+        let observation = animal.bind(\.name, to: textField, \.text)
+        animal.name = "John"
+        print(textField.text)
+        textField.text = "Sarah"
+        print(animal.name)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -108,7 +142,10 @@ class ViewController: UIViewController {
         button.backgroundColor = .green
         view.addSubview(button)
         
-        sort()
+//        sort()
+//        bind()
+        
+        keyPaths()
     }
 
     override func decodeRestorableState(with coder: NSCoder) {
@@ -146,6 +183,37 @@ class ViewController: UIViewController {
         }
 
         alertController.setValue(alertControllerTitleStr, forKey: "attributedTitle")
+    }
+}
+
+final class Animal: NSObject {
+    @objc dynamic var name: String = ""
+}
+
+class TextField: NSObject {
+    @objc dynamic var text: String = ""
+}
+
+extension NSObjectProtocol where Self: NSObject {
+    func observe<A, Other>(_ keyPath: KeyPath<Self, A>, writeTo other: Other, _ otherKeyPath: ReferenceWritableKeyPath<Other, A>) -> NSKeyValueObservation where A: Equatable, Other: NSObjectProtocol {
+        return observe(keyPath, options: .new) { _, change in
+            guard let newValue = change.newValue,
+                other[keyPath: otherKeyPath] != newValue else {
+                    return // prevent endless feedback loop
+            }
+            other[keyPath: otherKeyPath] = newValue
+        }
+    }
+}
+
+extension NSObjectProtocol where Self: NSObject {
+    func bind<A, Other>(_ keyPath: ReferenceWritableKeyPath<Self,A>,
+                        to other: Other,
+                        _ otherKeyPath: ReferenceWritableKeyPath<Other,A>)
+        -> (NSKeyValueObservation, NSKeyValueObservation) where A: Equatable, Other: NSObject {
+            let one = observe(keyPath, writeTo: other, otherKeyPath)
+            let two = other.observe(otherKeyPath, writeTo: self, keyPath)
+            return (one,two)
     }
 }
 
