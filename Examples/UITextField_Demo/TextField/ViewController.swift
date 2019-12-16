@@ -53,24 +53,24 @@ class ViewController: UIViewController, UITextFieldDelegate {
         animation.duration = 0.8
         animation.repeatCount = MAXFLOAT
         animation.isRemovedOnCompletion = false
-        animation.fillMode = kCAFillModeRemoved
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)///没有的话是均匀的动画。
+        animation.fillMode = CAMediaTimingFillMode.removed
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)///没有的话是均匀的动画。
         return animation
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(calueChange), name: NSNotification.Name.UITextFieldTextDidBeginEditing, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(calueChange), name: UITextField.textDidBeginEditingNotification, object: nil)
         view.addSubview(tableView)
     }
     
-    func buttonAction() {
+    @objc func buttonAction() {
         textField.inputView = nil
         textField.reloadInputViews() // 重载输入视图
     }
     
-    func calueChange() {
+    @objc func calueChange() {
         tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
     }
 }
