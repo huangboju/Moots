@@ -52,7 +52,8 @@ class BlendingController: UIViewController {
     var colors: [UIColor] = []
     
     fileprivate lazy var qbv: QuartzBlendingView = {
-        let quartzBlendingView = QuartzBlendingView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 200))
+        let quartzBlendingView = QuartzBlendingView()
+        quartzBlendingView.translatesAutoresizingMaskIntoConstraints = false
         return quartzBlendingView
     }()
 
@@ -60,6 +61,10 @@ class BlendingController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(qbv)
+        qbv.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        qbv.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        qbv.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        qbv.bottomAnchor.constraint(equalTo: picker.topAnchor).isActive = true
         
         picker.delegate = self
         picker.dataSource = self
