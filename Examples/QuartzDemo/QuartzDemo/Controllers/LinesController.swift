@@ -6,14 +6,29 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
+extension UIView {
+    var safaBottomAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.bottomAnchor
+        }
+        return bottomAnchor
+    }
+}
+
+
 class LinesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzLineView = QuartzLineView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzLineView = QuartzLineView()
         view.addSubview(quartzLineView)
-        
+        quartzLineView.translatesAutoresizingMaskIntoConstraints = false
+        quartzLineView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzLineView.bottomAnchor.constraint(equalTo: view.safaBottomAnchor).isActive = true
+        quartzLineView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+
         let image = UIImage(named: "Demo")
 
         let imageView = UIImageView(image: image!.kt_drawRectWithRoundedCorner(image!.size.width / 2))
