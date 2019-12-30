@@ -1,0 +1,7 @@
+labels:
+  - name: wip
+    color: fbca04
+  - name: ready
+    color: 128A0C
+  - name: enhancement
+    color: 84b6eb
