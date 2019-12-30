@@ -359,7 +359,7 @@
                                         <rect key="frame" x="0.0" y="739.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fLh-wl-LM6" id="pCd-rd-LX3">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Gradients" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="g2W-Pa-55E">
@@ -391,7 +391,7 @@
                                         <rect key="frame" x="0.0" y="826.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="S5B-0s-cJZ" id="0b8-HX-p2d">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Blending Modes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SU0-Lu-Ozv">
@@ -423,7 +423,7 @@
                                         <rect key="frame" x="0.0" y="913.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Za1-z8-dyX" id="veM-bB-tNV">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Clipping" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Sjq-74-gxD">
@@ -451,7 +451,7 @@
                                         <rect key="frame" x="0.0" y="961.5" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="95E-72-1Ft" id="nLX-JM-8C9">
-                                            <rect key="frame" x="0.0" y="0.0" width="356" height="48"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="395" height="48"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Masking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Qpl-ya-FIZ">
@@ -598,7 +598,7 @@
                                 </connections>
                             </switch>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Type:" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4oo-rl-aAh">
-                                <rect key="frame" x="189.5" y="543.5" width="42.5" height="20.5"/>
+                                <rect key="frame" x="189.5" y="543.5" width="42.5" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
