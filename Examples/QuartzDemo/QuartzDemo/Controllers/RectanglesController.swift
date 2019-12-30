@@ -13,8 +13,13 @@ class RectanglesController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzRectView = QuartzRectView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
-        view.addSubview(quartzRectView)
+        let quartzLineView = QuartzRectView()
+        view.addSubview(quartzLineView)
+        quartzLineView.translatesAutoresizingMaskIntoConstraints = false
+        quartzLineView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzLineView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzLineView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

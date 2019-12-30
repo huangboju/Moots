@@ -27,7 +27,8 @@ class DashViewController: UIViewController {
     @IBOutlet weak var picker: UIPickerView!
 
     fileprivate lazy var quartzDashView: QuartzDashView = {
-        let quartzDashView = QuartzDashView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 64))
+        let quartzDashView = QuartzDashView()
+        quartzDashView.translatesAutoresizingMaskIntoConstraints = false
         return quartzDashView
     }()
 
@@ -38,6 +39,10 @@ class DashViewController: UIViewController {
         picker.dataSource = self
         
         view.insertSubview(quartzDashView, at: 0)
+        quartzDashView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzDashView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzDashView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzDashView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
