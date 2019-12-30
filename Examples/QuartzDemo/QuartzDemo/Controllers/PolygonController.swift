@@ -13,7 +13,8 @@ class PolygonController: UIViewController {
     @IBOutlet weak var pickerView: UIPickerView!
 
     fileprivate lazy var quartzPolygonView: QuartzPolygonView = {
-        let quartzPolygonView = QuartzPolygonView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 264))
+        let quartzPolygonView = QuartzPolygonView()
+        quartzPolygonView.translatesAutoresizingMaskIntoConstraints = false
         return quartzPolygonView
     }()
     
@@ -35,6 +36,10 @@ class PolygonController: UIViewController {
 
         
         view.insertSubview(quartzPolygonView, at: 0)
+        quartzPolygonView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzPolygonView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzPolygonView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzPolygonView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor, constant: -264).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
