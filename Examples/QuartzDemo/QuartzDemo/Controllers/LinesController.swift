@@ -34,12 +34,12 @@ class LinesController: UIViewController {
         quartzLineView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         quartzLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         quartzLineView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
-        quartzLineView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
+        quartzLineView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 
         let image = UIImage(named: "Demo")
 
         let imageView = UIImageView(image: image!.kt_drawRectWithRoundedCorner(image!.size.width / 2))
-        imageView.frame.origin.y = 100
+        imageView.frame.origin.y = 300
         view.addSubview(imageView)
     }
 
