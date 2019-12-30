@@ -13,8 +13,13 @@ class ClippingController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzClippingView = QuartzClippingView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzClippingView = QuartzClippingView()
         view.addSubview(quartzClippingView)
+        quartzClippingView.translatesAutoresizingMaskIntoConstraints = false
+        quartzClippingView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzClippingView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzClippingView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzClippingView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

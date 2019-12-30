@@ -13,8 +13,13 @@ class ImageController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzImageView = QuartzImageView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzImageView = QuartzImageView()
         view.addSubview(quartzImageView)
+        quartzImageView.translatesAutoresizingMaskIntoConstraints = false
+        quartzImageView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzImageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzImageView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzImageView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

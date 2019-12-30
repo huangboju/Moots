@@ -13,8 +13,13 @@ class PDFController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzPDFView = QuartzPDFView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzPDFView = QuartzPDFView()
         view.addSubview(quartzPDFView)
+        quartzPDFView.translatesAutoresizingMaskIntoConstraints = false
+        quartzPDFView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzPDFView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzPDFView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzPDFView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

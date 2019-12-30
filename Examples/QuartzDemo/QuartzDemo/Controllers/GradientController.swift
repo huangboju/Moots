@@ -11,7 +11,8 @@ import UIKit
 class GradientController: UIViewController {
     
     private lazy var quartzGradientView: QuartzGradientView = {
-        let quartzGradientView = QuartzGradientView(frame: CGRect(x: 0, y: 64, width: self.view.frame.width, height: self.view.frame.height - 200))
+        let quartzGradientView = QuartzGradientView()
+        quartzGradientView.translatesAutoresizingMaskIntoConstraints = false
         return quartzGradientView
     }()
 
@@ -19,6 +20,10 @@ class GradientController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(quartzGradientView)
+        quartzGradientView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzGradientView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzGradientView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzGradientView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -200).isActive = true
     }
 
     @IBAction func takeGradientType(from sender: UISegmentedControl) {
