@@ -7,11 +7,18 @@
 //
 
 extension UIView {
-    var safaBottomAnchor: NSLayoutYAxisAnchor {
+    var safeBottomAnchor: NSLayoutYAxisAnchor {
         if #available(iOS 11.0, *) {
             return safeAreaLayoutGuide.bottomAnchor
         }
         return bottomAnchor
+    }
+    
+    var safeTopAnchor: NSLayoutYAxisAnchor {
+        if #available(iOS 11.0, *) {
+            return safeAreaLayoutGuide.topAnchor
+        }
+        return topAnchor
     }
 }
 
@@ -26,8 +33,8 @@ class LinesController: UIViewController {
         quartzLineView.translatesAutoresizingMaskIntoConstraints = false
         quartzLineView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         quartzLineView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
-        quartzLineView.bottomAnchor.constraint(equalTo: view.safaBottomAnchor).isActive = true
-        quartzLineView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        quartzLineView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzLineView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
 
         let image = UIImage(named: "Demo")
 
