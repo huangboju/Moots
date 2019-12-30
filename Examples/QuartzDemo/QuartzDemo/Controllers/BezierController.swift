@@ -13,8 +13,13 @@ class BezierController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzBezierView = QuartzBezierView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzBezierView = QuartzBezierView()
         view.addSubview(quartzBezierView)
+        quartzBezierView.translatesAutoresizingMaskIntoConstraints = false
+        quartzBezierView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzBezierView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzBezierView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzBezierView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

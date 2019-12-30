@@ -13,8 +13,13 @@ class EllipseArcController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzEllipseArcView = QuartzEllipseArcView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzEllipseArcView = QuartzEllipseArcView()
         view.addSubview(quartzEllipseArcView)
+        quartzEllipseArcView.translatesAutoresizingMaskIntoConstraints = false
+        quartzEllipseArcView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzEllipseArcView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzEllipseArcView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzEllipseArcView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {

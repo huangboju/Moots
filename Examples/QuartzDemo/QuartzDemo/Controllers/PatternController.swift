@@ -13,8 +13,13 @@ class PatternController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let quartzPatternView = QuartzPatternView(frame: CGRect(x: 0, y: 64, width: view.frame.width, height: view.frame.height - 64))
+        let quartzPatternView = QuartzPatternView()
         view.addSubview(quartzPatternView)
+        quartzPatternView.translatesAutoresizingMaskIntoConstraints = false
+        quartzPatternView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        quartzPatternView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        quartzPatternView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
+        quartzPatternView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
     }
 
     override func didReceiveMemoryWarning() {
