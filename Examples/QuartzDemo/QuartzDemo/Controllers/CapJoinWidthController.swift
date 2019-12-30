@@ -27,7 +27,7 @@ class CapJoinWidthController: UIViewController {
         quartzCapJoinWidthView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         quartzCapJoinWidthView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         quartzCapJoinWidthView.bottomAnchor.constraint(equalTo: view.safeBottomAnchor).isActive = true
-        quartzCapJoinWidthView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        quartzCapJoinWidthView.topAnchor.constraint(equalTo: view.safeTopAnchor).isActive = true
         
         quartzCapJoinWidthView.cap = CGLineCap(rawValue: Int32(capSegmentedControl.selectedSegmentIndex))!
         quartzCapJoinWidthView.join = CGLineJoin(rawValue: Int32(joinSegmentedControl.selectedSegmentIndex))!

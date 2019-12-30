@@ -8,6 +8,17 @@
 
 class QuartzView: UIView {
     
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        backgroundColor = UIColor.black
+        isOpaque = true
+        clearsContextBeforeDrawing = true
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     /*
      Common view properties are set in the storyboard.
      backgroundColor = [UIColor blackColor];
