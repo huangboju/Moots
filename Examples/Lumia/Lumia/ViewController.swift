@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var rows: [RowType] = [
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画", segue: .segue(FluidInterfacesVC.self))),
+        Row<TitleCell>(viewData: TitleCellItem(title: "动画", segue: .segue(AnimationListVC.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "隐藏属性查看", segue: .segue(ClassCopyIvarListVC.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "StateMachine", segue: .segue(StateMachineVC.self)))
     ]

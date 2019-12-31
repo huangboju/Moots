@@ -32,6 +32,7 @@
 		F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64423BB4B5500E59051 /* ListVC.swift */; };
 		F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64723BB4CE500E59051 /* StateMachine.swift */; };
 		F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */; };
+		F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		F7A3F64423BB4B5500E59051 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		F7A3F64723BB4CE500E59051 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineVC.swift; sourceTree = "<group>"; };
+		F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,9 +135,9 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F64B23BB4DCB00E59051 /* Animation */,
 				F7A3F64623BB4CC000E59051 /* StateMachine */,
 				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
-				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3DF5523BB2C8300E59051 /* Row.swift */,
 				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
 				F7A3DF2923BB2AAC00E59051 /* ViewController.swift */,
@@ -209,6 +211,15 @@
 				F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */,
 			);
 			path = StateMachine;
+			sourceTree = "<group>";
+		};
+		F7A3F64B23BB4DCB00E59051 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F62723BB347800E59051 /* FluidInterfaces */,
+				F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */,
+			);
+			path = Animation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +356,7 @@
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
+				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
 				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
 				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,

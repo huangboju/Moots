@@ -28,9 +28,7 @@ class ListVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        title = "Fluid Interfaces"
-        
+
         view.backgroundColor = UIColor(white: 0.05, alpha: 1)
 
         view.addSubview(collectionView)
