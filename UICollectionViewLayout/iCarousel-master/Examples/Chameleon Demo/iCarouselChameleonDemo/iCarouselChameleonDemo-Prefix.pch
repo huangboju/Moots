@@ -1,9 +1,0 @@
-//
-// Prefix header for all source files of the 'iCarouselChameleonDemo' target in the 'iCarouselChameleonDemo' project
-//
-
-#ifdef __OBJC__
-    #import <Cocoa/Cocoa.h>
-#endif
-
-#import <UIKit/UIKit.h>
