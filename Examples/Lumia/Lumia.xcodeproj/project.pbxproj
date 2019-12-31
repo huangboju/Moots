@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
+		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
+		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
+		F7A3DF2F23BB2AAE00E59051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */; };
+		F7A3DF3223BB2AAE00E59051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */; };
+		F7A3DF3D23BB2AAF00E59051 /* LumiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */; };
+		F7A3DF4823BB2AAF00E59051 /* LumiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */; };
+		F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF5523BB2C8300E59051 /* Row.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7A3DF3923BB2AAF00E59051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A3DF2123BB2AAC00E59051;
+			remoteInfo = Lumia;
+		};
+		F7A3DF4423BB2AAF00E59051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A3DF2123BB2AAC00E59051;
+			remoteInfo = Lumia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7A3DF2C23BB2AAC00E59051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A3DF3123BB2AAE00E59051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7A3DF3323BB2AAE00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiaTests.swift; sourceTree = "<group>"; };
+		F7A3DF3E23BB2AAF00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiaUITests.swift; sourceTree = "<group>"; };
+		F7A3DF4923BB2AAF00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF5523BB2C8300E59051 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7A3DF1F23BB2AAC00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3523BB2AAF00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF4023BB2AAF00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7A3DF1923BB2AAC00E59051 = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF2423BB2AAC00E59051 /* Lumia */,
+				F7A3DF3B23BB2AAF00E59051 /* LumiaTests */,
+				F7A3DF4623BB2AAF00E59051 /* LumiaUITests */,
+				F7A3DF2323BB2AAC00E59051 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7A3DF2323BB2AAC00E59051 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF2223BB2AAC00E59051 /* Lumia.app */,
+				F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */,
+				F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF5523BB2C8300E59051 /* Row.swift */,
+				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
+				F7A3DF2923BB2AAC00E59051 /* ViewController.swift */,
+				F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */,
+				F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */,
+				F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */,
+				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
+			);
+			path = Lumia;
+			sourceTree = "<group>";
+		};
+		F7A3DF3B23BB2AAF00E59051 /* LumiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */,
+				F7A3DF3E23BB2AAF00E59051 /* Info.plist */,
+			);
+			path = LumiaTests;
+			sourceTree = "<group>";
+		};
+		F7A3DF4623BB2AAF00E59051 /* LumiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */,
+				F7A3DF4923BB2AAF00E59051 /* Info.plist */,
+			);
+			path = LumiaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7A3DF2123BB2AAC00E59051 /* Lumia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF4C23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "Lumia" */;
+			buildPhases = (
+				F7A3DF1E23BB2AAC00E59051 /* Sources */,
+				F7A3DF1F23BB2AAC00E59051 /* Frameworks */,
+				F7A3DF2023BB2AAC00E59051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lumia;
+			productName = Lumia;
+			productReference = F7A3DF2223BB2AAC00E59051 /* Lumia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7A3DF3723BB2AAF00E59051 /* LumiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF4F23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaTests" */;
+			buildPhases = (
+				F7A3DF3423BB2AAF00E59051 /* Sources */,
+				F7A3DF3523BB2AAF00E59051 /* Frameworks */,
+				F7A3DF3623BB2AAF00E59051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A3DF3A23BB2AAF00E59051 /* PBXTargetDependency */,
+			);
+			name = LumiaTests;
+			productName = LumiaTests;
+			productReference = F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7A3DF4223BB2AAF00E59051 /* LumiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF5223BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaUITests" */;
+			buildPhases = (
+				F7A3DF3F23BB2AAF00E59051 /* Sources */,
+				F7A3DF4023BB2AAF00E59051 /* Frameworks */,
+				F7A3DF4123BB2AAF00E59051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A3DF4523BB2AAF00E59051 /* PBXTargetDependency */,
+			);
+			name = LumiaUITests;
+			productName = LumiaUITests;
+			productReference = F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7A3DF1A23BB2AAC00E59051 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "黄伯驹";
+				TargetAttributes = {
+					F7A3DF2123BB2AAC00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					F7A3DF3723BB2AAF00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F7A3DF2123BB2AAC00E59051;
+					};
+					F7A3DF4223BB2AAF00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F7A3DF2123BB2AAC00E59051;
+					};
+				};
+			};
+			buildConfigurationList = F7A3DF1D23BB2AAC00E59051 /* Build configuration list for PBXProject "Lumia" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7A3DF1923BB2AAC00E59051;
+			productRefGroup = F7A3DF2323BB2AAC00E59051 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7A3DF2123BB2AAC00E59051 /* Lumia */,
+				F7A3DF3723BB2AAF00E59051 /* LumiaTests */,
+				F7A3DF4223BB2AAF00E59051 /* LumiaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7A3DF2023BB2AAC00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF3223BB2AAE00E59051 /* LaunchScreen.storyboard in Resources */,
+				F7A3DF2F23BB2AAE00E59051 /* Assets.xcassets in Resources */,
+				F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3623BB2AAF00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF4123BB2AAF00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7A3DF1E23BB2AAC00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
+				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3423BB2AAF00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF3D23BB2AAF00E59051 /* LumiaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3F23BB2AAF00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF4823BB2AAF00E59051 /* LumiaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7A3DF3A23BB2AAF00E59051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A3DF2123BB2AAC00E59051 /* Lumia */;
+			targetProxy = F7A3DF3923BB2AAF00E59051 /* PBXContainerItemProxy */;
+		};
+		F7A3DF4523BB2AAF00E59051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A3DF2123BB2AAC00E59051 /* Lumia */;
+			targetProxy = F7A3DF4423BB2AAF00E59051 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A3DF2C23BB2AAC00E59051 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A3DF3123BB2AAE00E59051 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7A3DF4A23BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7A3DF4B23BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7A3DF4D23BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lumia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7A3DF4E23BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lumia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F7A3DF5023BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumia.app/Lumia";
+			};
+			name = Debug;
+		};
+		F7A3DF5123BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumia.app/Lumia";
+			};
+			name = Release;
+		};
+		F7A3DF5323BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lumia;
+			};
+			name = Debug;
+		};
+		F7A3DF5423BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lumia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7A3DF1D23BB2AAC00E59051 /* Build configuration list for PBXProject "Lumia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF4A23BB2AAF00E59051 /* Debug */,
+				F7A3DF4B23BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF4C23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "Lumia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF4D23BB2AAF00E59051 /* Debug */,
+				F7A3DF4E23BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF4F23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF5023BB2AAF00E59051 /* Debug */,
+				F7A3DF5123BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF5223BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF5323BB2AAF00E59051 /* Debug */,
+				F7A3DF5423BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+}
