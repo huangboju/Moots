@@ -17,30 +17,7 @@ class AutolayoutMenuController: UIViewController {
     }()
     
     lazy var data: [[UIViewController.Type]] = [
-        [
-            SimpleStackViewController.self,
-            NestedStackViewController.self,
-            DynamicStackViewController.self,
-            TwoEqualWidthViewsController.self,
-            TwoDifferentWidthViews.self,
-            TwoViewsWithComplexWidths.self,
-            SimpleLabelAndTextField.self,
-            DynamicHeightLabelAndTextField.self,
-            FixedHeightColumns.self,
-            DynamicHeightColumns.self,
-            TwoEqualWidthButtons.self,
-            ThreeEqualWidthButtons.self,
-            EqualWhiteSpace.self,
-            ButtonsSizeClass.self,
-            GroupingViews.self,
-            ImageViewsAndAspectFitMode.self,
-            AspectRatioImageView.self,
-            DynamicTextAndReadability.self,
-            WorkingWithScrollViews.self,
-            SizeClassSpecificLayouts.self,
-            AnimatingChangesViewController.self,
-            UIKitDynamicsViewController.self
-        ]
+       
     ]
     
     override func viewDidLoad() {
