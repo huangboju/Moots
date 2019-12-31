@@ -19,6 +19,15 @@
 		F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */; };
 		F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62A23BB383100E59051 /* Extensions.swift */; };
 		F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */; };
+		F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62F23BB3D7200E59051 /* Rotation.swift */; };
+		F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */; };
+		F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63123BB3D7200E59051 /* Spring.swift */; };
+		F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63223BB3D7200E59051 /* Acceleration.swift */; };
+		F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63323BB3D7200E59051 /* Momentum.swift */; };
+		F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */; };
+		F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63523BB3D7200E59051 /* Pip.swift */; };
+		F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63623BB3D7200E59051 /* GradientView.swift */; };
+		F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +66,15 @@
 		F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidInterfacesVC.swift; sourceTree = "<group>"; };
 		F7A3F62A23BB383100E59051 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewController.swift; sourceTree = "<group>"; };
+		F7A3F62F23BB3D7200E59051 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		F7A3F63123BB3D7200E59051 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		F7A3F63223BB3D7200E59051 /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
+		F7A3F63323BB3D7200E59051 /* Momentum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Momentum.swift; sourceTree = "<group>"; };
+		F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
+		F7A3F63523BB3D7200E59051 /* Pip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pip.swift; sourceTree = "<group>"; };
+		F7A3F63623BB3D7200E59051 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubberbanding.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +160,27 @@
 		F7A3F62723BB347800E59051 /* FluidInterfaces */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F62E23BB3D5F00E59051 /* View */,
 				F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */,
 				F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */,
 			);
 			path = FluidInterfaces;
+			sourceTree = "<group>";
+		};
+		F7A3F62E23BB3D5F00E59051 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F63223BB3D7200E59051 /* Acceleration.swift */,
+				F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */,
+				F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */,
+				F7A3F63623BB3D7200E59051 /* GradientView.swift */,
+				F7A3F63323BB3D7200E59051 /* Momentum.swift */,
+				F7A3F63523BB3D7200E59051 /* Pip.swift */,
+				F7A3F62F23BB3D7200E59051 /* Rotation.swift */,
+				F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */,
+				F7A3F63123BB3D7200E59051 /* Spring.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,13 +314,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
+				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
+				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
+				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
+				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
+				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
+				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
+				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
