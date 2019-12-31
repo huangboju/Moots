@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
-//  StateMachine
+//  StateMachineVC.swift
+//  Lumia
 //
-//  Created by 黄伯驹 on 2017/8/31.
-//  Copyright © 2017年 黄伯驹. All rights reserved.
+//  Created by xiAo_Ju on 2019/12/31.
+//  Copyright © 2019 黄伯驹. All rights reserved.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class StateMachineVC: UIViewController {
 
     var statusBarStyle: UIStatusBarStyle = .default {
         didSet {
@@ -93,4 +93,3 @@ class ViewController: UIViewController {
         stateMachine.fire(transition: .cut)
     }
 }
-
