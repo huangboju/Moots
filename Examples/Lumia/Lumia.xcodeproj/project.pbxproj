@@ -28,6 +28,7 @@
 		F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63523BB3D7200E59051 /* Pip.swift */; };
 		F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63623BB3D7200E59051 /* GradientView.swift */; };
 		F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */; };
+		F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		F7A3F63523BB3D7200E59051 /* Pip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pip.swift; sourceTree = "<group>"; };
 		F7A3F63623BB3D7200E59051 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubberbanding.swift; sourceTree = "<group>"; };
+		F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCopyIvarListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
 				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3DF5523BB2C8300E59051 /* Row.swift */,
 				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
@@ -181,6 +184,14 @@
 				F7A3F63123BB3D7200E59051 /* Spring.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */,
+			);
+			path = ClassCopyIvarList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -329,6 +340,7 @@
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
+				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
