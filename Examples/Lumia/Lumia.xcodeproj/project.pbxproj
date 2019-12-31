@@ -29,6 +29,7 @@
 		F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63623BB3D7200E59051 /* GradientView.swift */; };
 		F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */; };
 		F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */; };
+		F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64423BB4B5500E59051 /* ListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F7A3F63623BB3D7200E59051 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubberbanding.swift; sourceTree = "<group>"; };
 		F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCopyIvarListVC.swift; sourceTree = "<group>"; };
+		F7A3F64423BB4B5500E59051 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
 				F7A3EABE23BB32C600E59051 /* Segue.swift */,
 				F7A3F62A23BB383100E59051 /* Extensions.swift */,
+				F7A3F64423BB4B5500E59051 /* ListVC.swift */,
 			);
 			path = Lumia;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
+				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
