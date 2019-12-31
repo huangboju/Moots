@@ -159,6 +159,38 @@ class DecorationView: UIView {
         CATransaction.commit()
     }
     
+    //| ----------------------------------------------------------------------------
+    //! Draws an arrow with a given @a length anchored at the center of the receiver,
+    //! that points in the direction given by @a angle.
+    //
+    func drawMagnitudeVector(with length: CGFloat, angle: CGFloat, color: UIColor, forLimitedTime: Bool) {
+        if (arrowView == nil) {
+            let arrowImage = UIImage(named: "Arrow")?.withRenderingMode(.alwaysTemplate)
+            
+            let arrowImageView = UIImageView(image: arrowImage)
+            arrowImageView.bounds = CGRect(origin: .zero, size: arrowImage?.size ?? .zero)
+            arrowImageView.contentMode = .right
+            arrowImageView.clipsToBounds = true
+            arrowImageView.layer.anchorPoint = CGPoint(x: 0.0, y: 0.5)
+            
+            addSubview(arrowImageView)
+            sendSubviewToBack(arrowImageView)
+            self.arrowView = arrowImageView
+        }
+
+        self.arrowView?.bounds = CGRect(x: 0, y: 0, width:  length, height:  arrowView?.bounds.height ?? 0)
+        self.arrowView?.transform = CGAffineTransform(rotationAngle: angle)
+        self.arrowView?.tintColor = color
+        self.arrowView?.alpha = 1
+        
+        if (forLimitedTime) {
+            UIView.animate(withDuration: 1) {
+                self.arrowView?.alpha = 0
+            }
+        }
+    }
+
+    
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if (object as? UIView) == attachmentPointView || (object as? UIView) == attachedView {
             setNeedsLayout()
