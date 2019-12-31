@@ -30,6 +30,8 @@
 		F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */; };
 		F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */; };
 		F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64423BB4B5500E59051 /* ListVC.swift */; };
+		F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64723BB4CE500E59051 /* StateMachine.swift */; };
+		F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubberbanding.swift; sourceTree = "<group>"; };
 		F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCopyIvarListVC.swift; sourceTree = "<group>"; };
 		F7A3F64423BB4B5500E59051 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		F7A3F64723BB4CE500E59051 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F64623BB4CC000E59051 /* StateMachine */,
 				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
 				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3DF5523BB2C8300E59051 /* Row.swift */,
@@ -195,6 +200,15 @@
 				F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */,
 			);
 			path = ClassCopyIvarList;
+			sourceTree = "<group>";
+		};
+		F7A3F64623BB4CC000E59051 /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64723BB4CE500E59051 /* StateMachine.swift */,
+				F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */,
+			);
+			path = StateMachine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,10 +351,12 @@
 				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
+				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
