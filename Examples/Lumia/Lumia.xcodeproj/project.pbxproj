@@ -33,6 +33,9 @@
 		F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64723BB4CE500E59051 /* StateMachine.swift */; };
 		F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */; };
 		F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */; };
+		F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */; };
+		F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */; };
+		F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +88,9 @@
 		F7A3F64723BB4CE500E59051 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineVC.swift; sourceTree = "<group>"; };
 		F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationListVC.swift; sourceTree = "<group>"; };
+		F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveViewVC.swift; sourceTree = "<group>"; };
+		F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveView.swift; sourceTree = "<group>"; };
+		F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,10 +222,21 @@
 		F7A3F64B23BB4DCB00E59051 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F64E23BB4ED900E59051 /* AnimatedWaveView */,
 				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */,
 			);
 			path = Animation;
+			sourceTree = "<group>";
+		};
+		F7A3F64E23BB4ED900E59051 /* AnimatedWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */,
+				F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */,
+				F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */,
+			);
+			path = AnimatedWaveView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -357,10 +374,12 @@
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
+				F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */,
 				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
 				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
 				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
 				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
+				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
@@ -368,6 +387,7 @@
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,
 				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
