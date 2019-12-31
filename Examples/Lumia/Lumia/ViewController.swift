@@ -11,13 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     var rows: [RowType] = [
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画")),
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画"))
+        Row<TitleCell>(viewData: TitleCellItem(title: "动画", segue: .segue(FluidInterfacesVC.self)))
     ]
 
     private lazy var collectionView: UICollectionView = {
@@ -30,6 +24,7 @@ class ViewController: UIViewController {
         let collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.backgroundColor = UIColor(white: 0.05, alpha: 1)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(TitleCell.self, forCellWithReuseIdentifier: "cellId")
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         return collectionView
@@ -59,6 +54,14 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item: TitleCellItem = rows[indexPath.row].cellItem()
+        show(item.segue)
+    }
+}
+
+
 extension ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -74,6 +77,7 @@ extension ViewController: UICollectionViewDataSource {
 
 struct TitleCellItem {
     let title: String
+    let segue: Segue
 }
 
 class TitleCell: UICollectionViewCell {
