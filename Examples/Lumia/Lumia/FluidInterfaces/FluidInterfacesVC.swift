@@ -163,5 +163,6 @@ extension FluidInterfacesCell: Updatable {
     func update(viewData: Interface) {
         iconView.image = viewData.icon
         textLabel.text = viewData.name
+        arrowView.isHidden = viewData.segue == nil
     }
 }

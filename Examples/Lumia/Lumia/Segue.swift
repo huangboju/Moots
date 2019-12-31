@@ -11,9 +11,9 @@ import SafariServices
 
 extension UIViewController {
     
-    public func show<C: UIViewController>(_ dest: Segue, animated: Bool = true, handle: ((C) -> Void)? = nil) {
+    public func show<C: UIViewController>(_ segue: Segue, animated: Bool = true, handle: ((C) -> Void)? = nil) {
         let vc: UIViewController
-        switch dest {
+        switch segue {
         case let .controller(c):
             vc = c
         case let .segue(c):
