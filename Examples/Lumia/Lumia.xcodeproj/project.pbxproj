@@ -15,6 +15,10 @@
 		F7A3DF3D23BB2AAF00E59051 /* LumiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */; };
 		F7A3DF4823BB2AAF00E59051 /* LumiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */; };
 		F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF5523BB2C8300E59051 /* Row.swift */; };
+		F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3EABE23BB32C600E59051 /* Segue.swift */; };
+		F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */; };
+		F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62A23BB383100E59051 /* Extensions.swift */; };
+		F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiaUITests.swift; sourceTree = "<group>"; };
 		F7A3DF4923BB2AAF00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7A3DF5523BB2C8300E59051 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		F7A3EABE23BB32C600E59051 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidInterfacesVC.swift; sourceTree = "<group>"; };
+		F7A3F62A23BB383100E59051 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +107,7 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3DF5523BB2C8300E59051 /* Row.swift */,
 				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
 				F7A3DF2923BB2AAC00E59051 /* ViewController.swift */,
@@ -106,6 +115,8 @@
 				F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */,
 				F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */,
 				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
+				F7A3EABE23BB32C600E59051 /* Segue.swift */,
+				F7A3F62A23BB383100E59051 /* Extensions.swift */,
 			);
 			path = Lumia;
 			sourceTree = "<group>";
@@ -126,6 +137,15 @@
 				F7A3DF4923BB2AAF00E59051 /* Info.plist */,
 			);
 			path = LumiaUITests;
+			sourceTree = "<group>";
+		};
+		F7A3F62723BB347800E59051 /* FluidInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */,
+				F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */,
+			);
+			path = FluidInterfaces;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,8 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
+				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
+				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
+				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
