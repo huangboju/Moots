@@ -15,7 +15,8 @@ class AnimationListVC: ListVC {
 
         rows = [
             Row<FluidInterfacesCell>(viewData: Interface(name: "Fluid Interfaces", segue: .segue(FluidInterfacesVC.self))),
-            Row<FluidInterfacesCell>(viewData: Interface(name: "AnimatedWaveView", segue: .segue(AnimatedWaveViewVC.self)))
+            Row<FluidInterfacesCell>(viewData: Interface(name: "AnimatedWaveView", segue: .segue(AnimatedWaveViewVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "重力动画", segue: .segue(DynamicsCatalogMenuVC.self)))
         ]
     }
 }
