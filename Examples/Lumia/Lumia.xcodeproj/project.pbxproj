@@ -36,6 +36,7 @@
 		F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */; };
 		F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */; };
 		F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */; };
+		F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveViewVC.swift; sourceTree = "<group>"; };
 		F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveView.swift; sourceTree = "<group>"; };
 		F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+		F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartzDemoVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F7A3F65523BB512E00E59051 /* QuartzDemo */,
 				F7A3F64B23BB4DCB00E59051 /* Animation */,
 				F7A3F64623BB4CC000E59051 /* StateMachine */,
 				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
@@ -237,6 +240,14 @@
 				F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */,
 			);
 			path = AnimatedWaveView;
+			sourceTree = "<group>";
+		};
+		F7A3F65523BB512E00E59051 /* QuartzDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */,
+			);
+			path = QuartzDemo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -391,6 +402,7 @@
 				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
+				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
