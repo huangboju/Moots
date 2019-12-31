@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */; };
+		BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */; };
+		BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */; };
+		BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94223BB6D2B00589848 /* GravityVC.swift */; };
+		BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94623BB6DA500589848 /* DecorationView.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -57,6 +62,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsCatalogMenuVC.swift; sourceTree = "<group>"; };
+		BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
+		BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionGravityVC.swift; sourceTree = "<group>"; };
+		BE7BC94223BB6D2B00589848 /* GravityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityVC.swift; sourceTree = "<group>"; };
+		BE7BC94623BB6DA500589848 /* DecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecorationView.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +130,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE7BC93C23BB6C9B00589848 /* DynamicsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				BE7BC94623BB6DA500589848 /* DecorationView.swift */,
+				BE7BC93F23BB6CF300589848 /* Controllers */,
+				BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */,
+			);
+			path = DynamicsCatalog;
+			sourceTree = "<group>";
+		};
+		BE7BC93F23BB6CF300589848 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */,
+				BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */,
+				BE7BC94223BB6D2B00589848 /* GravityVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F7A3DF1923BB2AAC00E59051 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +173,7 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				BE7BC93C23BB6C9B00589848 /* DynamicsCatalog */,
 				F7A3F65523BB512E00E59051 /* QuartzDemo */,
 				F7A3F64B23BB4DCB00E59051 /* Animation */,
 				F7A3F64623BB4CC000E59051 /* StateMachine */,
@@ -385,13 +416,17 @@
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
+				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
 				F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */,
+				BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */,
 				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
 				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
 				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
 				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
+				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
 				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
+				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
@@ -405,6 +440,7 @@
 				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
+				BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */,
 				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
