@@ -64,7 +64,8 @@ class FluidInterfacesVC: UIViewController {
 extension FluidInterfacesVC: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item: Interface = rows[indexPath.row].cellItem()
-        show(item.segue) { vc in
+        guard let segue = item.segue else { return }
+        show(segue) { vc in
             vc.title = item.name
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 vc.navigationController?.navigationBar.tintColor = item.color
@@ -89,9 +90,16 @@ extension FluidInterfacesVC: UICollectionViewDataSource {
 
 struct Interface {
     let name: String
-    let icon: UIImage
-    let color: UIColor
-    let segue: Segue
+    let icon: UIImage?
+    let color: UIColor?
+    let segue: Segue?
+    
+    init(name: String, icon: UIImage? = nil, color: UIColor? = nil, segue: Segue? = nil) {
+        self.name = name
+        self.icon = icon
+        self.color = color
+        self.segue = segue
+    }
 }
 
 class FluidInterfacesCell: UICollectionViewCell {

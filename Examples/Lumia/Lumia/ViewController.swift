@@ -11,7 +11,8 @@ import UIKit
 class ViewController: UIViewController {
 
     var rows: [RowType] = [
-        Row<TitleCell>(viewData: TitleCellItem(title: "动画", segue: .segue(FluidInterfacesVC.self)))
+        Row<TitleCell>(viewData: TitleCellItem(title: "动画", segue: .segue(FluidInterfacesVC.self))),
+        Row<TitleCell>(viewData: TitleCellItem(title: "隐藏属性查看", segue: .segue(ClassCopyIvarListVC.self)))
     ]
 
     private lazy var collectionView: UICollectionView = {
@@ -57,7 +58,9 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let item: TitleCellItem = rows[indexPath.row].cellItem()
-        show(item.segue)
+        show(item.segue) { vc in
+            vc.title = item.title
+        }
     }
 }
 
