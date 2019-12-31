@@ -17,7 +17,9 @@ class DynamicsCatalogMenuVC: ListVC {
             Row<FluidInterfacesCell>(viewData: Interface(name: "Gravity", segue: .segue(GravityVC.self))),
             Row<FluidInterfacesCell>(viewData: Interface(name: "Collision + Gravity", segue: .segue(CollisionGravityVC.self))),
             Row<FluidInterfacesCell>(viewData: Interface(name: "Attachments + Gravity", segue: .segue(AttachmentsVC.self))),
-            Row<FluidInterfacesCell>(viewData: Interface(name: "Collision + Gravity + Spring", segue: .segue(CollisionsGravitySpringVC.self)))
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Collision + Gravity + Spring", segue: .segue(CollisionsGravitySpringVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Snap", segue: .segue(SnapVC.self)))
+            
         ]
     }
 }
