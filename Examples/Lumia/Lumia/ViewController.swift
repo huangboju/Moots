@@ -45,19 +45,11 @@ class ViewController: UIViewController {
         collectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        collectionView.visibleCells.forEach {
-            $0.isHighlighted = false
-        }
-        
-    }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
         let item: TitleCellItem = rows[indexPath.row].cellItem()
         show(item.segue) { vc in
             vc.title = item.title
@@ -98,7 +90,12 @@ class TitleCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        sharedInit()
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+        selectedBackgroundView?.layer.cornerRadius = 8
+        selectedBackgroundView?.clipsToBounds = true
+
+        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
         
         contentView.layer.cornerRadius = 8
         contentView.clipsToBounds = true
@@ -112,16 +109,6 @@ class TitleCell: UICollectionViewCell {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func sharedInit() {
-        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-    }
-    
-    override var isHighlighted: Bool {
-        didSet {
-            contentView.backgroundColor = UIColor.white.withAlphaComponent(isHighlighted ? 0.2 : 0.1)
-        }
     }
 }
 
