@@ -74,7 +74,7 @@ class AttachmentsVC: UIViewController {
         square1AttachmentView.center = CGPoint(x: 25.0, y: 25.0)
         
         // Visually show the connection between the attachment points.
-        (view as? DecorationView)?.trackAndDrawAttachmentFromView(attachmentView, toView: square, withAttachmentOffset: CGPoint(x: -25.0, y: -25.0))
+        (view as? DecorationView)?.trackAndDrawAttachment(from: attachmentView, toView: square, withAttachmentOffset: CGPoint(x: -25.0, y: -25.0))
     }
     
     @objc func handleAttachmentGesture(_ sender: UIPanGestureRecognizer) {
