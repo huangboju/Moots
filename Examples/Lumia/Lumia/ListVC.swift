@@ -41,10 +41,9 @@ class ListVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        collectionView.visibleCells.forEach {
-            $0.isHighlighted = false
+        collectionView.indexPathsForSelectedItems?.forEach {
+            collectionView.deselectItem(at: $0, animated: true)
         }
-        
     }
 }
 
@@ -112,7 +111,10 @@ class FluidInterfacesCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        sharedInit()
+        selectedBackgroundView = UIView()
+        selectedBackgroundView?.backgroundColor = UIColor.white.withAlphaComponent(0.2)
+
+        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
 
         contentView.addSubview(iconView)
         iconView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 18).isActive = true
@@ -129,16 +131,6 @@ class FluidInterfacesCell: UICollectionViewCell {
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func sharedInit() {
-        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.1)
-    }
-    
-    override var isHighlighted: Bool {
-        didSet {
-            contentView.backgroundColor = UIColor.white.withAlphaComponent(isHighlighted ? 0.2 : 0.1)
-        }
     }
 }
 
