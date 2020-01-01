@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */; };
+		BE5C123623BCC7D40045BDFD /* CustomDynamicItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */; };
+		BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */; };
 		BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */; };
 		BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */; };
 		BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */; };
@@ -16,6 +19,8 @@
 		BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94A23BB7D0200589848 /* SnapVC.swift */; };
 		BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */; };
 		BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */; };
+		BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95023BC524A00589848 /* PendulumBehavior.swift */; };
+		BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -66,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPropertiesVC.swift; sourceTree = "<group>"; };
+		BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDynamicItemVC.swift; sourceTree = "<group>"; };
+		BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionToBoundsMapping.swift; sourceTree = "<group>"; };
 		BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsCatalogMenuVC.swift; sourceTree = "<group>"; };
 		BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
 		BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionGravityVC.swift; sourceTree = "<group>"; };
@@ -75,6 +83,8 @@
 		BE7BC94A23BB7D0200589848 /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 		BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantaneousPushVC.swift; sourceTree = "<group>"; };
 		BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousPushVC.swift; sourceTree = "<group>"; };
+		BE7BC95023BC524A00589848 /* PendulumBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumBehavior.swift; sourceTree = "<group>"; };
+		BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeBehaviorVC.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +168,11 @@
 				BE7BC94A23BB7D0200589848 /* SnapVC.swift */,
 				BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */,
 				BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */,
+				BE7BC95023BC524A00589848 /* PendulumBehavior.swift */,
+				BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */,
+				BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */,
+				BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */,
+				BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -426,6 +441,7 @@
 			files = (
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
@@ -439,6 +455,7 @@
 				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
 				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
+				BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */,
 				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
@@ -447,12 +464,15 @@
 				BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */,
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
+				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
 				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,
 				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
+				BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
+				BE5C123623BCC7D40045BDFD /* CustomDynamicItemVC.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */,

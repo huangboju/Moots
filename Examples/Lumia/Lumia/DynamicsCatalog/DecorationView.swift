@@ -38,7 +38,7 @@ class DecorationView: UIView {
     //! Draws a dashed line between @a attachmentPointView and @a attachedView
     //! that is updated as either view moves.
     //
-    func trackAndDrawAttachmentFromView(_ attachmentPointView: UIView,
+    func trackAndDrawAttachment(from attachmentPointView: UIView,
                                         toView attachedView: UIView,
                                         withAttachmentOffset attachmentOffset: CGPoint) {
         if attachmentDecorationLayers == nil {
