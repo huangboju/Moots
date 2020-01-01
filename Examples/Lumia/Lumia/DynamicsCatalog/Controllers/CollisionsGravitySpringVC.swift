@@ -76,7 +76,7 @@ class CollisionsGravitySpringVC: UIViewController {
         attachmentView.center = attachmentBehavior.anchorPoint
 
         // Visually show the connection between the attachment points.
-        (view as? DecorationView)?.trackAndDrawAttachmentFromView(attachmentView, toView: square1, withAttachmentOffset: .zero)
+        (view as? DecorationView)?.trackAndDrawAttachment(from: attachmentView, toView: square1, withAttachmentOffset: .zero)
 
         animator.addBehavior(attachmentBehavior)
         animator.addBehavior(collisionBehavior)

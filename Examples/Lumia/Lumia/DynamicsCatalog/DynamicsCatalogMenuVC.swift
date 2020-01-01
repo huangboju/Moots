@@ -20,7 +20,10 @@ class DynamicsCatalogMenuVC: ListVC {
             Row<FluidInterfacesCell>(viewData: Interface(name: "Collision + Gravity + Spring", segue: .segue(CollisionsGravitySpringVC.self))),
             Row<FluidInterfacesCell>(viewData: Interface(name: "Snap", segue: .segue(SnapVC.self))),
             Row<FluidInterfacesCell>(viewData: Interface(name: "Instantaneous Push + Collision", segue: .segue(InstantaneousPushVC.self))),
-            Row<FluidInterfacesCell>(viewData: Interface(name: "Continuous Push + Collision", segue: .segue(ContinuousPushVC.self)))
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Continuous Push + Collision", segue: .segue(ContinuousPushVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Pendulum (Composite Behavior)", segue: .segue(CompositeBehaviorVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Item Properties", segue: .segue(ItemPropertiesVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "Custom Dynamic Item", segue: .segue(CustomDynamicItemVC.self)))
         ]
     }
 }
