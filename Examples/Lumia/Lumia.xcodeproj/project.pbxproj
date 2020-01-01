@@ -15,6 +15,7 @@
 		BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */; };
 		BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94A23BB7D0200589848 /* SnapVC.swift */; };
 		BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */; };
+		BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionsGravitySpringVC.swift; sourceTree = "<group>"; };
 		BE7BC94A23BB7D0200589848 /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
 		BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantaneousPushVC.swift; sourceTree = "<group>"; };
+		BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousPushVC.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */,
 				BE7BC94A23BB7D0200589848 /* SnapVC.swift */,
 				BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */,
+				BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
+				BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */,
 				BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */,
 				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
 			);
