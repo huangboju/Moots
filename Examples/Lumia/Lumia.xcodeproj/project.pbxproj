@@ -51,6 +51,13 @@
 		F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */; };
 		F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */; };
 		F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */; };
+		F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA505A23D439B300A45551 /* FluidCardVC.swift */; };
+		F7CA505E23D439FA00A45551 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CA505C23D439FA00A45551 /* TopView.xib */; };
+		F7CA505F23D439FA00A45551 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CA505D23D439FA00A45551 /* BottomView.xib */; };
+		F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA506023D43A1A00A45551 /* ExpandButton.swift */; };
+		F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA506123D43A1A00A45551 /* FluidCardView.swift */; };
+		F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */; };
+		F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA6E3023D448BF00A45551 /* TimingFunction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +128,13 @@
 		F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveView.swift; sourceTree = "<group>"; };
 		F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
 		F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartzDemoVC.swift; sourceTree = "<group>"; };
+		F7CA505A23D439B300A45551 /* FluidCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardVC.swift; sourceTree = "<group>"; };
+		F7CA505C23D439FA00A45551 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		F7CA505D23D439FA00A45551 /* BottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
+		F7CA506023D43A1A00A45551 /* ExpandButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
+		F7CA506123D43A1A00A45551 /* FluidCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
+		F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		F7CA6E3023D448BF00A45551 /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +297,7 @@
 		F7A3F64B23BB4DCB00E59051 /* Animation */ = {
 			isa = PBXGroup;
 			children = (
+				F7CA505923D4398300A45551 /* FluidCard */,
 				F7A3F64E23BB4ED900E59051 /* AnimatedWaveView */,
 				F7A3F62723BB347800E59051 /* FluidInterfaces */,
 				F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */,
@@ -306,6 +321,20 @@
 				F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */,
 			);
 			path = QuartzDemo;
+			sourceTree = "<group>";
+		};
+		F7CA505923D4398300A45551 /* FluidCard */ = {
+			isa = PBXGroup;
+			children = (
+				F7CA6E3023D448BF00A45551 /* TimingFunction.swift */,
+				F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */,
+				F7CA506023D43A1A00A45551 /* ExpandButton.swift */,
+				F7CA506123D43A1A00A45551 /* FluidCardView.swift */,
+				F7CA505D23D439FA00A45551 /* BottomView.xib */,
+				F7CA505C23D439FA00A45551 /* TopView.xib */,
+				F7CA505A23D439B300A45551 /* FluidCardVC.swift */,
+			);
+			path = FluidCard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -414,6 +443,8 @@
 			files = (
 				F7A3DF3223BB2AAE00E59051 /* LaunchScreen.storyboard in Resources */,
 				F7A3DF2F23BB2AAE00E59051 /* Assets.xcassets in Resources */,
+				F7CA505F23D439FA00A45551 /* BottomView.xib in Resources */,
+				F7CA505E23D439FA00A45551 /* TopView.xib in Resources */,
 				F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +473,8 @@
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
 				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
+				F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */,
+				F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
@@ -457,6 +490,7 @@
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
 				BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */,
 				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
+				F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
@@ -465,7 +499,9 @@
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
+				F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */,
 				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,
 				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
