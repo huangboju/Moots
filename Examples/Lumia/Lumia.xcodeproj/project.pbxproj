@@ -21,6 +21,9 @@
 		BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */; };
 		BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95023BC524A00589848 /* PendulumBehavior.swift */; };
 		BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */; };
+		F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */; };
+		F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */; };
+		F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7D023D5803400B7D147 /* CBCRuntime.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -92,6 +95,9 @@
 		BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousPushVC.swift; sourceTree = "<group>"; };
 		BE7BC95023BC524A00589848 /* PendulumBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumBehavior.swift; sourceTree = "<group>"; };
 		BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeBehaviorVC.swift; sourceTree = "<group>"; };
+		F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCCatalogExample.swift; sourceTree = "<group>"; };
+		F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCNodeListViewController.swift; sourceTree = "<group>"; };
+		F75CB7D023D5803400B7D147 /* CBCRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCRuntime.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -191,6 +197,26 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F75CB7CA23D57CE500B7D147 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				F75CB7CB23D57D1800B7D147 /* CatalogByConvention */,
+				F7A3DF5523BB2C8300E59051 /* Row.swift */,
+				F7A3EABE23BB32C600E59051 /* Segue.swift */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		F75CB7CB23D57D1800B7D147 /* CatalogByConvention */ = {
+			isa = PBXGroup;
+			children = (
+				F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */,
+				F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */,
+				F75CB7D023D5803400B7D147 /* CBCRuntime.swift */,
+			);
+			path = CatalogByConvention;
+			sourceTree = "<group>";
+		};
 		F7A3DF1923BB2AAC00E59051 = {
 			isa = PBXGroup;
 			children = (
@@ -214,19 +240,18 @@
 		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
 			isa = PBXGroup;
 			children = (
+				F75CB7CA23D57CE500B7D147 /* Frame */,
 				BE7BC93C23BB6C9B00589848 /* DynamicsCatalog */,
 				F7A3F65523BB512E00E59051 /* QuartzDemo */,
 				F7A3F64B23BB4DCB00E59051 /* Animation */,
 				F7A3F64623BB4CC000E59051 /* StateMachine */,
 				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
-				F7A3DF5523BB2C8300E59051 /* Row.swift */,
 				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
 				F7A3DF2923BB2AAC00E59051 /* ViewController.swift */,
 				F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */,
 				F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */,
 				F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */,
 				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
-				F7A3EABE23BB32C600E59051 /* Segue.swift */,
 				F7A3F62A23BB383100E59051 /* Extensions.swift */,
 				F7A3F64423BB4B5500E59051 /* ListVC.swift */,
 			);
@@ -471,6 +496,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
+				F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
 				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
 				F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */,
@@ -488,6 +514,7 @@
 				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
 				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
+				F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */,
 				BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */,
 				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
 				F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */,
@@ -500,6 +527,7 @@
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
 				F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */,
+				F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
 				F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */,
 				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,

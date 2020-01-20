@@ -130,3 +130,7 @@ extension TitleCell: Updatable {
         textLabel.text = viewData.title
     }
 }
+
+extension ViewController: CBCCatalogExample {
+    @objc class var catalogBreadcrumbs: [String] { return ["Case studies", "Carousel"] }
+}
