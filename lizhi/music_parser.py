@@ -25,7 +25,7 @@ def parser_html():
                 filedata = urllib.request.urlopen(music_link)
                 datatowrite = filedata.read()
 
-                with open('/Users/huangboju/Desktop/lizhi/lizhi' + music_name + '.mp3', 'wb') as music:
+                with open('./lizhi' + music_name + '.mp3', 'wb') as music:
                     music.write(datatowrite)
                 break
             else:
