@@ -45,11 +45,24 @@ class ViewController: UIViewController {
         collectionView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let selectedItems = collectionView.indexPathsForSelectedItems else { return }
+        for selectedRow in selectedItems {
+            transitionCoordinator?.animate(alongsideTransition: { context in
+                self.collectionView.deselectItem(at: selectedRow, animated: true)
+            }, completion: { context in
+                if context.isCancelled {
+                    self.collectionView.selectItem(at: selectedRow, animated: false, scrollPosition: [])
+                }
+            })
+        }
+    }
 }
 
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
         let item: TitleCellItem = rows[indexPath.row].cellItem()
         show(item.segue) { vc in
             vc.title = item.title
