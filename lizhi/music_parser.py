@@ -23,12 +23,12 @@ def parser_html():
             if albumname == None:
                 music_name = link.string
                 music_link = link.get('hrefsrc')
-                filedata = requests.get(music_link, stream=True)
+                response = requests.get(music_link, stream=True)
 
                 print(music_link)
 
                 with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
-                    for chunk in filedata.iter_content():
+                    for chunk in response.iter_content():
                         music.write(chunk)
                 break
             else:
