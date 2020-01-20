@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import os
-import urllib.request
+import requests
 
 def create_dict(dict_name):
     try:
@@ -16,19 +16,23 @@ def parser_html():
     with open('lizhi.html', 'rt') as f:
         soup = BeautifulSoup(f, "html.parser")
 
+        tmp_albumname = ""
+
         for link in soup.find_all('a'):
             albumname = link.get('albumname')
             if albumname == None:
                 music_name = link.string
                 music_link = link.get('hrefsrc')
-                print(music_link)
-                filedata = urllib.request.urlopen(music_link)
-                datatowrite = filedata.read()
+                filedata = requests.get(music_link, stream=True)
 
-                with open('./lizhi' + music_name + '.mp3', 'wb') as music:
-                    music.write(datatowrite)
+                print(music_link)
+
+                with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
+                    for chunk in filedata.iter_content():
+                        music.write(chunk)
                 break
             else:
+                tmp_albumname = albumname
                 create_dict('lizhi/' + albumname)
 
 parser_html()
