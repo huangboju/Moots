@@ -231,7 +231,7 @@ func CBCCreateTreeWithOnlyPresentable(_ onlyPresentable: Bool) -> CBCNode {
         let breadcrumbs = metadata[CBCBreadcrumbs]
         var validObject =  breadcrumbs != nil && (breadcrumbs as? [Any] != nil)
         if onlyPresentable {
-            validObject = validObject && ((metadata[CBCIsPresentable] as? Bool ?? false) == true)
+            validObject = validObject && (metadata[CBCIsPresentable] as? Bool ?? false)
         }
         return validObject
     }
