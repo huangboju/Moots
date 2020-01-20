@@ -40,9 +40,16 @@ class ListVC: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        collectionView.indexPathsForSelectedItems?.forEach {
-            collectionView.deselectItem(at: $0, animated: true)
+
+        guard let selectedItems = collectionView.indexPathsForSelectedItems else { return }
+        for selectedRow in selectedItems {
+            transitionCoordinator?.animate(alongsideTransition: { context in
+                self.collectionView.deselectItem(at: selectedRow, animated: true)
+            }, completion: { context in
+                if context.isCancelled {
+                    self.collectionView.selectItem(at: selectedRow, animated: false, scrollPosition: [])
+                }
+            })
         }
     }
 }
