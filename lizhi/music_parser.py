@@ -25,12 +25,12 @@ def parser_html():
                 music_link = link.get('hrefsrc')
                 response = requests.get(music_link, stream=True)
 
-                print(music_link)
-
-                with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
-                    for chunk in response.iter_content():
-                        music.write(chunk)
-                break
+                if r.status_code == requests.codes.ok:
+                    print(music_link)
+                    with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
+                        for chunk in response.iter_content():
+                            music.write(chunk)
+                    break
             else:
                 tmp_albumname = albumname
                 create_dict('lizhi/' + albumname)
