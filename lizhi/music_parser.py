@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
 import os
 import requests
-from multiprocessing.pool import ThreadPool
 
 def create_dict(dict_name):
     try:
@@ -9,23 +8,6 @@ def create_dict(dict_name):
     except FileExistsError:
         # directory already exists
         pass
-
-def download(link, file_path):
-    albumname = link.get('albumname')
-    if albumname == None:
-        music_name = link.string
-        music_link = link.get('hrefsrc')
-
-        print("downloading: ", music_link)
-        response = requests.get(music_link, stream=True)
-        if r.status_code == requests.codes.ok:
-            with open(fil'./lizhi/' + tmp_albumname + '/' + music_name + '.mp3'e_path, 'wb') as music:
-                for chunk in response.iter_content():
-                    music.write(chunk)
-        else:
-            tmp_albumname = albumname
-            create_dict('lizhi/' + albumname)
-
 
 def parser_html():
 
@@ -36,11 +18,21 @@ def parser_html():
 
         tmp_albumname = ""
 
-        links = soup.find_all('a')
+        for link in soup.find_all('a'):
+            albumname = link.get('albumname')
+            if albumname == None:
+                music_name = link.string
+                music_link = link.get('hrefsrc')
+                response = requests.get(music_link, stream=True)
 
-        results = ThreadPool(5).imap_unordered(download, links)
+                print(music_link)
 
-        for link in results:
-
+                with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
+                    for chunk in response.iter_content():
+                        music.write(chunk)
+                break
+            else:
+                tmp_albumname = albumname
+                create_dict('lizhi/' + albumname)
 
 parser_html()
