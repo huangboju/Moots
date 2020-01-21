@@ -25,7 +25,7 @@ def parser_html():
                 music_link = link.get('hrefsrc')
                 response = requests.get(music_link, stream=True)
 
-                if r.status_code == requests.codes.ok:
+                if response.status_code == requests.codes.ok:
                     print(music_link)
                     with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
                         for chunk in response.iter_content():
