@@ -20,10 +20,7 @@ def download(link):
         print("downloading: ", music_link)
         response = requests.get(music_link, stream=True)
         if response.status_code == requests.codes.ok:
-            print(tmp_albumname)
-            path = './lizhi/' + tmp_albumname + '/' + music_name + '.mp3'
-            print(path)
-            with open(path, 'wb') as music:
+            with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
                 for chunk in response.iter_content():
                     music.write(chunk)
     else:
