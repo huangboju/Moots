@@ -13,7 +13,7 @@ def parser_html():
 
     create_dict('lizhi')
 
-    with open('lizhi.html', 'rt') as f:
+    with open('李志云音乐.htm', 'rt') as f:
         soup = BeautifulSoup(f, "html.parser")
 
         tmp_albumname = ""
