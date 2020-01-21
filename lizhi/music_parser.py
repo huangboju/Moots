@@ -26,11 +26,12 @@ def parser_html():
                 response = requests.get(music_link, stream=True)
 
                 if response.status_code == requests.codes.ok:
-                    print(music_link)
+                    print("🎵：", tmp_albumname, music_link)
                     with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
                         for chunk in response.iter_content():
                             music.write(chunk)
-                    break
+                else:
+                    continue
             else:
                 tmp_albumname = albumname
                 create_dict('lizhi/' + albumname)
