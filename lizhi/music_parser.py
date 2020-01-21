@@ -23,17 +23,20 @@ def parser_html():
             if albumname == None:
                 music_name = link.string
                 music_link = link.get('hrefsrc')
-                response = requests.get(music_link, stream=True)
+                print("🍀", music_name)
+                print("🔗", music_link)
+                # response = requests.get(music_link, stream=True)
 
-                if response.status_code == requests.codes.ok:
-                    print("🍀：", tmp_albumname)
-                    print(music_name, music_link)
-                    with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
-                        for chunk in response.iter_content():
-                            music.write(chunk)
-                else:
-                    continue
+                # if response.status_code == requests.codes.ok:
+                #     print("🍀：", tmp_albumname)
+                #     print(music_name, music_link)
+                #     with open('./lizhi/' + tmp_albumname + '/' + music_name + '.mp3', 'wb') as music:
+                #         for chunk in response.iter_content():
+                #             music.write(chunk)
+                # else:
+                #     continue
             else:
+                print("\n", albumname, ":")
                 tmp_albumname = albumname
                 create_dict('lizhi/' + albumname)
 
