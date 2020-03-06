@@ -106,21 +106,25 @@ class Solution {
         let temp = last
         print("tmp", temp)
         while last != nil && last?.next != nil {
-            print("\n")
             print("pre", pre)
             print("last", last)
+            print("\n")
             pre?.next = last?.next
             print("pre", pre)
             print("last", last)
+            print("\n")
             pre = pre?.next
             print("pre", pre)
             print("last", last)
+            print("\n")
             last?.next = pre?.next
             print("pre", pre)
             print("last", last)
+            print("\n")
             last = last?.next
             print("pre", pre)
             print("last", last)
+            print("\n")
         }
         print("🍀🍀🍀🍀🍀")
         print("pre", pre)
