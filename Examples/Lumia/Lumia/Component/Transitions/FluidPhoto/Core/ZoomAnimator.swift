@@ -87,10 +87,10 @@ class ZoomAnimator: NSObject {
         
         guard let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
             let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
-            let fromReferenceImageView = self.fromDelegate?.referenceImageView(for: self),
-            let toReferenceImageView = self.toDelegate?.referenceImageView(for: self),
-            let fromReferenceImageViewFrame = self.fromDelegate?.targetFrame(for: self),
-            let toReferenceImageViewFrame = self.toDelegate?.targetFrame(for: self)
+            let fromReferenceImageView = fromDelegate?.referenceImageView(for: self),
+            let toReferenceImageView = toDelegate?.referenceImageView(for: self),
+            let fromReferenceImageViewFrame = fromDelegate?.targetFrame(for: self),
+            let toReferenceImageViewFrame = toDelegate?.targetFrame(for: self)
             else {
                 return
         }
