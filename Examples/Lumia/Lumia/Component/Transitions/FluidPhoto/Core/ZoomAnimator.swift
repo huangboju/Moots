@@ -48,7 +48,6 @@ class ZoomAnimator: NSObject {
         if self.transitionImageView == nil {
             let transitionImageView = UIImageView(image: referenceImage)
             transitionImageView.contentMode = .scaleAspectFill
-            transitionImageView.clipsToBounds = true
             transitionImageView.frame = fromReferenceImageViewFrame
             self.transitionImageView = transitionImageView
             containerView.addSubview(transitionImageView)
@@ -85,8 +84,8 @@ class ZoomAnimator: NSObject {
     fileprivate func animateZoomOutTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let containerView = transitionContext.containerView
         
-        guard let toVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
-            let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
+        guard let toVC = transitionContext.viewController(forKey: .to),
+            let fromVC = transitionContext.viewController(forKey: .from),
             let fromReferenceImageView = fromDelegate?.referenceImageView(for: self),
             let toReferenceImageView = toDelegate?.referenceImageView(for: self),
             let fromReferenceImageViewFrame = fromDelegate?.targetFrame(for: self),
