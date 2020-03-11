@@ -41,11 +41,11 @@ class FluidPhotoVC: UIViewController {
 
 extension FluidPhotoVC: ZoomAnimatorDelegate {
     
-    func transitionWillStartWith(zoomAnimator: ZoomAnimator) {
+    func transitionWillStart(with zoomAnimator: ZoomAnimator) {
         
     }
     
-    func transitionDidEndWith(zoomAnimator: ZoomAnimator) {
+    func transitionDidEnd(with zoomAnimator: ZoomAnimator) {
         
     }
 
@@ -53,7 +53,7 @@ extension FluidPhotoVC: ZoomAnimatorDelegate {
         return imageView
     }
     
-    func referenceImageViewFrameInTransitioningView(for zoomAnimator: ZoomAnimator) -> CGRect? {
+    func targetFrame(for zoomAnimator: ZoomAnimator) -> CGRect? {
         return imageView.frame
     }
 }
@@ -106,11 +106,11 @@ class FluidPhotoDetailVC: UIViewController {
 
 extension FluidPhotoDetailVC: ZoomAnimatorDelegate {
     
-    func transitionWillStartWith(zoomAnimator: ZoomAnimator) {
+    func transitionWillStart(with zoomAnimator: ZoomAnimator) {
         
     }
     
-    func transitionDidEndWith(zoomAnimator: ZoomAnimator) {
+    func transitionDidEnd(with zoomAnimator: ZoomAnimator) {
         
     }
     
@@ -119,7 +119,7 @@ extension FluidPhotoDetailVC: ZoomAnimatorDelegate {
         return imageView
     }
     
-    func referenceImageViewFrameInTransitioningView(for zoomAnimator: ZoomAnimator) -> CGRect? {
+    func targetFrame(for zoomAnimator: ZoomAnimator) -> CGRect? {
 
         return imageView.frame
     }
