@@ -12,7 +12,7 @@ class ZoomTransitionController: NSObject {
     
     let animator: ZoomAnimator
     let interactionController: ZoomDismissalInteractionController
-    var isInteractive: Bool = false
+    var isInteractive = false
 
     weak var fromDelegate: ZoomAnimatorDelegate?
     weak var toDelegate: ZoomAnimatorDelegate?
@@ -30,27 +30,27 @@ class ZoomTransitionController: NSObject {
 
 extension ZoomTransitionController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.animator.isPresenting = true
-        self.animator.fromDelegate = fromDelegate
-        self.animator.toDelegate = toDelegate
-        return self.animator
+        animator.isPresenting = true
+        animator.fromDelegate = fromDelegate
+        animator.toDelegate = toDelegate
+        return animator
     }
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        self.animator.isPresenting = false
-        let tmp = self.fromDelegate
-        self.animator.fromDelegate = self.toDelegate
-        self.animator.toDelegate = tmp
-        return self.animator
+        animator.isPresenting = false
+        let tmp = fromDelegate
+        animator.fromDelegate = toDelegate
+        animator.toDelegate = tmp
+        return animator
     }
 
     func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
-        if !self.isInteractive {
+        if !isInteractive {
             return nil
         }
         
-        self.interactionController.animator = animator
-        return self.interactionController
+        interactionController.animator = animator
+        return interactionController
     }
 
 }
@@ -59,27 +59,27 @@ extension ZoomTransitionController: UINavigationControllerDelegate {
     func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         if operation == .push {
-            self.animator.isPresenting = true
-            self.animator.fromDelegate = fromDelegate
-            self.animator.toDelegate = toDelegate
+            animator.isPresenting = true
+            animator.fromDelegate = fromDelegate
+            animator.toDelegate = toDelegate
         } else {
-            self.animator.isPresenting = false
+            animator.isPresenting = false
             let tmp = self.fromDelegate
-            self.animator.fromDelegate = self.toDelegate
-            self.animator.toDelegate = tmp
+            animator.fromDelegate = toDelegate
+            animator.toDelegate = tmp
         }
         
-        return self.animator
+        return animator
     }
     
     func navigationController(_ navigationController: UINavigationController, interactionControllerFor animationController: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
         
-        if !self.isInteractive {
+        if !isInteractive {
             return nil
         }
         
-        self.interactionController.animator = animator
-        return self.interactionController
+        interactionController.animator = animator
+        return interactionController
     }
 
 }
