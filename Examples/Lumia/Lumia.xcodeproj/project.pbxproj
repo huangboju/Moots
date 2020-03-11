@@ -32,6 +32,10 @@
 		F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */; };
 		F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */; };
 		F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7D023D5803400B7D147 /* CBCRuntime.swift */; };
+		F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */; };
+		F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */; };
+		F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */; };
+		F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -114,6 +118,10 @@
 		F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCCatalogExample.swift; sourceTree = "<group>"; };
 		F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCNodeListViewController.swift; sourceTree = "<group>"; };
 		F75CB7D023D5803400B7D147 /* CBCRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCRuntime.swift; sourceTree = "<group>"; };
+		F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
+		F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
+		F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
+		F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidPhotoVC.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -187,6 +195,7 @@
 		BE29C4002411E89600567E01 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F75D20D82418C5F800D0F699 /* FluidPhoto */,
 				BE29C4022411E92B00567E01 /* PhotoTransitioning */,
 				BE29C4112411E9F800567E01 /* TransitionListVC.swift */,
 			);
@@ -267,6 +276,25 @@
 				F75CB7D023D5803400B7D147 /* CBCRuntime.swift */,
 			);
 			path = CatalogByConvention;
+			sourceTree = "<group>";
+		};
+		F75D20D82418C5F800D0F699 /* FluidPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20D92418C60900D0F699 /* Core */,
+				F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */,
+			);
+			path = FluidPhoto;
+			sourceTree = "<group>";
+		};
+		F75D20D92418C60900D0F699 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */,
+				F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */,
+				F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		F7A3DF1923BB2AAC00E59051 = {
@@ -550,6 +578,7 @@
 				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
 				F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */,
 				F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */,
+				F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
@@ -582,12 +611,14 @@
 				F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */,
 				BE29C40C2411E95900567E01 /* AssetTransitioning.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */,
 				F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */,
 				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,
 				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
 				BE29C40E2411E95900567E01 /* AssetTransitionController.swift in Sources */,
 				BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */,
+				F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
 				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
 				BE29C40B2411E95900567E01 /* AssetCell.swift in Sources */,
@@ -595,6 +626,7 @@
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */,
+				F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */,
 				BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */,
 				BE29C4102411E95900567E01 /* AssetViewController+AssetTransitioning.swift in Sources */,
 				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
