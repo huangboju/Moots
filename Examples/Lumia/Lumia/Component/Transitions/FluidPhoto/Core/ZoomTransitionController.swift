@@ -57,9 +57,8 @@ extension ZoomTransitionController: UIViewControllerTransitioningDelegate {
     
     func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.isPresenting = false
-        let tmp = fromDelegate
         animator.fromDelegate = toDelegate
-        animator.toDelegate = tmp
+        animator.toDelegate = fromDelegate
         return animator
     }
 
@@ -83,9 +82,8 @@ extension ZoomTransitionController: UINavigationControllerDelegate {
             animator.toDelegate = toDelegate
         } else {
             animator.isPresenting = false
-            let tmp = self.fromDelegate
             animator.fromDelegate = toDelegate
-            animator.toDelegate = tmp
+            animator.toDelegate = fromDelegate
         }
         
         return animator
