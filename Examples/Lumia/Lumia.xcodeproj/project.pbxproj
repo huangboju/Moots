@@ -36,6 +36,16 @@
 		F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */; };
 		F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */; };
 		F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */; };
+		F75D20EE2418E0FA00D0F699 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E72418E0FA00D0F699 /* Utilities.swift */; };
+		F75D20EF2418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */; };
+		F75D20F02418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */; };
+		F75D20F12418E0FA00D0F699 /* ImageViewerPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */; };
+		F75D20F22418E0FA00D0F699 /* ImageViewerDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */; };
+		F75D20F32418E0FA00D0F699 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */; };
+		F75D20F72418E13A00D0F699 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20F42418E13A00D0F699 /* ImageViewerController.swift */; };
+		F75D20F82418E13A00D0F699 /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */; };
+		F75D20F92418E13A00D0F699 /* ImageViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D20F62418E13A00D0F699 /* ImageViewerController.xib */; };
+		F75D20FC2418E1A600D0F699 /* SimpleImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */; };
 		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
 		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
 		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
@@ -122,6 +132,16 @@
 		F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
 		F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
 		F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidPhotoVC.swift; sourceTree = "<group>"; };
+		F75D20E72418E0FA00D0F699 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../Utilities.swift; sourceTree = "<group>"; };
+		F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerTransitioningHandler.swift; sourceTree = "<group>"; };
+		F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalInteractor.swift; sourceTree = "<group>"; };
+		F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerPresentationTransition.swift; sourceTree = "<group>"; };
+		F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalTransition.swift; sourceTree = "<group>"; };
+		F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = ../AnimatableImageView.swift; sourceTree = "<group>"; };
+		F75D20F42418E13A00D0F699 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewerController.swift; path = ../ImageViewerController.swift; sourceTree = "<group>"; };
+		F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewerConfiguration.swift; path = ../ImageViewerConfiguration.swift; sourceTree = "<group>"; };
+		F75D20F62418E13A00D0F699 /* ImageViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewerController.xib; path = ../ImageViewerController.xib; sourceTree = "<group>"; };
+		F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageViewerVC.swift; sourceTree = "<group>"; };
 		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -195,6 +215,7 @@
 		BE29C4002411E89600567E01 /* Transitions */ = {
 			isa = PBXGroup;
 			children = (
+				F75D20E62418E0CF00D0F699 /* SimpleImageViewer */,
 				F75D20D82418C5F800D0F699 /* FluidPhoto */,
 				BE29C4022411E92B00567E01 /* PhotoTransitioning */,
 				BE29C4112411E9F800567E01 /* TransitionListVC.swift */,
@@ -293,6 +314,39 @@
 				F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */,
 				F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */,
 				F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F75D20E62418E0CF00D0F699 /* SimpleImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20FA2418E19300D0F699 /* Core */,
+				F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */,
+			);
+			path = SimpleImageViewer;
+			sourceTree = "<group>";
+		};
+		F75D20E82418E0FA00D0F699 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */,
+				F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */,
+				F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */,
+				F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		F75D20FA2418E19300D0F699 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */,
+				F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */,
+				F75D20F42418E13A00D0F699 /* ImageViewerController.swift */,
+				F75D20F62418E13A00D0F699 /* ImageViewerController.xib */,
+				F75D20E82418E0FA00D0F699 /* Transitions */,
+				F75D20E72418E0FA00D0F699 /* Utilities.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -547,6 +601,7 @@
 				F7CA505F23D439FA00A45551 /* BottomView.xib in Resources */,
 				F7CA505E23D439FA00A45551 /* TopView.xib in Resources */,
 				F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */,
+				F75D20F92418E13A00D0F699 /* ImageViewerController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +630,7 @@
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */,
 				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				F75D20F02418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift in Sources */,
 				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
 				F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */,
 				F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */,
@@ -583,12 +639,16 @@
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
 				F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */,
+				F75D20F82418E13A00D0F699 /* ImageViewerConfiguration.swift in Sources */,
 				BE29C40A2411E95900567E01 /* AssetTransitioningMath.swift in Sources */,
 				BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */,
 				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
 				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
+				F75D20EF2418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift in Sources */,
 				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
 				BE29C40F2411E95900567E01 /* AssetViewController.swift in Sources */,
+				F75D20EE2418E0FA00D0F699 /* Utilities.swift in Sources */,
+				F75D20F32418E0FA00D0F699 /* AnimatableImageView.swift in Sources */,
 				BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */,
 				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
 				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
@@ -602,12 +662,14 @@
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
+				F75D20F72418E13A00D0F699 /* ImageViewerController.swift in Sources */,
 				BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */,
 				BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */,
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
 				F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */,
+				F75D20F22418E0FA00D0F699 /* ImageViewerDismissalTransition.swift in Sources */,
 				F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */,
 				BE29C40C2411E95900567E01 /* AssetTransitioning.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
@@ -620,10 +682,12 @@
 				BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */,
 				F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
+				F75D20FC2418E1A600D0F699 /* SimpleImageViewerVC.swift in Sources */,
 				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
 				BE29C40B2411E95900567E01 /* AssetCell.swift in Sources */,
 				BE5C123623BCC7D40045BDFD /* CustomDynamicItemVC.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
+				F75D20F12418E0FA00D0F699 /* ImageViewerPresentationTransition.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */,
 				F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */,

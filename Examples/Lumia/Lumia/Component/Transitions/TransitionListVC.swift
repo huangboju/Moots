@@ -18,6 +18,7 @@ class TransitionListVC: ListVC {
         rows = [
             Row<FluidInterfacesCell>(viewData: Interface(name: "iPhone 相册 转场", segue: .controller(AssetViewController(layoutStyle: .grid)))),
             Row<FluidInterfacesCell>(viewData: Interface(name: "FluidPhoto", segue: .segue(FluidPhotoVC.self))),
+            Row<FluidInterfacesCell>(viewData: Interface(name: "SimpleImageViewer", segue: .segue(SimpleImageViewerVC.self))),
         ]
     }
     
