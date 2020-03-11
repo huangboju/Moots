@@ -28,6 +28,25 @@ class ZoomTransitionController: NSObject {
     }
 }
 
+extension ZoomTransitionController: UIGestureRecognizerDelegate {
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        guard let gestureRecognizer = gestureRecognizer as? UIPanGestureRecognizer else {
+            return true
+        }
+        
+        let velocity = gestureRecognizer.velocity(in: gestureRecognizer.view)
+        
+        let velocityCheck = UIDevice.current.orientation.isLandscape ? velocity.x < 0 : velocity.y < 0
+
+        if velocityCheck {
+            return false
+        }
+
+        return true
+    }
+}
+
 extension ZoomTransitionController: UIViewControllerTransitioningDelegate {
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         animator.isPresenting = true
