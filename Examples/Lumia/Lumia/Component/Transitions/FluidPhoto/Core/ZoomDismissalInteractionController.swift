@@ -77,8 +77,8 @@ class ZoomDismissalInteractionController: NSObject {
                         animator.transitionImageView = nil
                         transitionContext.cancelInteractiveTransition()
                         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                        animator.toDelegate?.transitionDidEndWith(zoomAnimator: animator)
-                        animator.fromDelegate?.transitionDidEndWith(zoomAnimator: animator)
+                        animator.toDelegate?.transitionDidEnd(with: animator)
+                        animator.fromDelegate?.transitionDidEnd(with: animator)
                         self.transitionContext = nil
                 })
                 return
@@ -103,8 +103,8 @@ class ZoomDismissalInteractionController: NSObject {
                 
                 self.transitionContext?.finishInteractiveTransition()
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                animator.toDelegate?.transitionDidEndWith(zoomAnimator: animator)
-                animator.fromDelegate?.transitionDidEndWith(zoomAnimator: animator)
+                animator.toDelegate?.transitionDidEnd(with: animator)
+                animator.fromDelegate?.transitionDidEnd(with: animator)
                 self.transitionContext = nil
             })
         }
@@ -142,15 +142,15 @@ extension ZoomDismissalInteractionController: UIViewControllerInteractiveTransit
         guard let animator = self.animator as? ZoomAnimator,
             let fromVC = transitionContext.viewController(forKey: .from),
             let toVC = transitionContext.viewController(forKey: .to),
-            let fromReferenceImageViewFrame = animator.fromDelegate?.referenceImageViewFrameInTransitioningView(for: animator),
-            let toReferenceImageViewFrame = animator.toDelegate?.referenceImageViewFrameInTransitioningView(for: animator),
+            let fromReferenceImageViewFrame = animator.fromDelegate?.targetFrame(for: animator),
+            let toReferenceImageViewFrame = animator.toDelegate?.targetFrame(for: animator),
             let fromReferenceImageView = animator.fromDelegate?.referenceImageView(for: animator)
             else {
                 return
         }
         
-        animator.fromDelegate?.transitionWillStartWith(zoomAnimator: animator)
-        animator.toDelegate?.transitionWillStartWith(zoomAnimator: animator)
+        animator.fromDelegate?.transitionWillStart(with: animator)
+        animator.toDelegate?.transitionWillStart(with: animator)
         
         self.fromReferenceImageViewFrame = fromReferenceImageViewFrame
         self.toReferenceImageViewFrame = toReferenceImageViewFrame

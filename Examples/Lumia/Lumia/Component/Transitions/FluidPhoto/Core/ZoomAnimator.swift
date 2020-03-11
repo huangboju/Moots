@@ -9,10 +9,10 @@
 import UIKit
 
 protocol ZoomAnimatorDelegate: class {
-    func transitionWillStartWith(zoomAnimator: ZoomAnimator)
-    func transitionDidEndWith(zoomAnimator: ZoomAnimator)
+    func transitionWillStart(with zoomAnimator: ZoomAnimator)
+    func transitionDidEnd(with zoomAnimator: ZoomAnimator)
     func referenceImageView(for zoomAnimator: ZoomAnimator) -> UIImageView?
-    func referenceImageViewFrameInTransitioningView(for zoomAnimator: ZoomAnimator) -> CGRect?
+    func targetFrame(for zoomAnimator: ZoomAnimator) -> CGRect?
 }
 
 class ZoomAnimator: NSObject {
@@ -31,13 +31,13 @@ class ZoomAnimator: NSObject {
             let fromVC = transitionContext.viewController(forKey: .from),
             let fromReferenceImageView = fromDelegate?.referenceImageView(for: self),
             let toReferenceImageView = toDelegate?.referenceImageView(for: self),
-            let fromReferenceImageViewFrame = fromDelegate?.referenceImageViewFrameInTransitioningView(for: self)
+            let fromReferenceImageViewFrame = fromDelegate?.targetFrame(for: self)
             else {
                 return
         }
         
-        fromDelegate?.transitionWillStartWith(zoomAnimator: self)
-        toDelegate?.transitionWillStartWith(zoomAnimator: self)
+        fromDelegate?.transitionWillStart(with: self)
+        toDelegate?.transitionWillStart(with: self)
         
         toVC.view.alpha = 0
         toReferenceImageView.isHidden = true
@@ -77,8 +77,8 @@ class ZoomAnimator: NSObject {
                         self.transitionImageView = nil
                         
                         transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-                        self.toDelegate?.transitionDidEndWith(zoomAnimator: self)
-                        self.fromDelegate?.transitionDidEndWith(zoomAnimator: self)
+                        self.toDelegate?.transitionDidEnd(with: self)
+                        self.fromDelegate?.transitionDidEnd(with: self)
         })
     }
     
@@ -89,14 +89,14 @@ class ZoomAnimator: NSObject {
             let fromVC = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
             let fromReferenceImageView = self.fromDelegate?.referenceImageView(for: self),
             let toReferenceImageView = self.toDelegate?.referenceImageView(for: self),
-            let fromReferenceImageViewFrame = self.fromDelegate?.referenceImageViewFrameInTransitioningView(for: self),
-            let toReferenceImageViewFrame = self.toDelegate?.referenceImageViewFrameInTransitioningView(for: self)
+            let fromReferenceImageViewFrame = self.fromDelegate?.targetFrame(for: self),
+            let toReferenceImageViewFrame = self.toDelegate?.targetFrame(for: self)
             else {
                 return
         }
         
-        self.fromDelegate?.transitionWillStartWith(zoomAnimator: self)
-        self.toDelegate?.transitionWillStartWith(zoomAnimator: self)
+        fromDelegate?.transitionWillStart(with: self)
+        toDelegate?.transitionWillStart(with: self)
         
         toReferenceImageView.isHidden = true
         
@@ -130,8 +130,8 @@ class ZoomAnimator: NSObject {
             fromReferenceImageView.isHidden = false
             
             transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
-            self.toDelegate?.transitionDidEndWith(zoomAnimator: self)
-            self.fromDelegate?.transitionDidEndWith(zoomAnimator: self)
+            self.toDelegate?.transitionDidEnd(with: self)
+            self.fromDelegate?.transitionDidEnd(with: self)
 
         })
     }
