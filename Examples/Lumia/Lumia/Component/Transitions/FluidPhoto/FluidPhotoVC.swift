@@ -82,6 +82,7 @@ class FluidPhotoDetailVC: UIViewController {
         imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(initiateTransitionInteractively))
+        pan.delegate = transitionController
         view.addGestureRecognizer(pan)
     }
     
