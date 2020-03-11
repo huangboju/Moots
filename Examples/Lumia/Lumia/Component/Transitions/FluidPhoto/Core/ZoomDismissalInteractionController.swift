@@ -122,7 +122,7 @@ class ZoomDismissalInteractionController: NSObject {
     }
     
     func scale(for view: UIView, withPanningVerticalDelta verticalDelta: CGFloat) -> CGFloat {
-        let startingScale:CGFloat = 1.0
+        let startingScale: CGFloat = 1.0
         let finalScale: CGFloat = 0.5
         let totalAvailableScale = startingScale - finalScale
         
@@ -161,7 +161,6 @@ extension ZoomDismissalInteractionController: UIViewControllerInteractiveTransit
         if animator.transitionImageView == nil {
             let transitionImageView = UIImageView(image: referenceImage)
             transitionImageView.contentMode = .scaleAspectFill
-            transitionImageView.clipsToBounds = true
             transitionImageView.frame = fromReferenceImageViewFrame
             animator.transitionImageView = transitionImageView
             containerView.addSubview(transitionImageView)
