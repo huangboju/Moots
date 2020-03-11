@@ -99,7 +99,7 @@ class FluidPhotoDetailVC: UIViewController {
             }
         default:
             if transitionController.isInteractive {
-                self.transitionController.didPan(with: panGesture)
+                transitionController.didPan(with: panGesture)
             }
         }
     }

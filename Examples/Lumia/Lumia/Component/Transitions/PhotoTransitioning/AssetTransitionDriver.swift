@@ -43,7 +43,7 @@ class AssetTransitionDriver: NSObject {
         let containerView = context.containerView
         
         // Add ourselves as a target of the pan gesture
-        self.panGestureRecognizer.addTarget(self, action: #selector(updateInteraction(_:)))
+        self.panGestureRecognizer.addTarget(self, action: #selector(updateInteraction))
         
         // Ensure the toView has the correct size and position
         toView.frame = context.finalFrame(for: toViewController)
@@ -202,7 +202,7 @@ class AssetTransitionDriver: NSObject {
                 let scaledOffset = item.touchOffset.apply(transform: scaleTransform)
                 
                 imageView.center = (imageView.center + (translation + (item.touchOffset - scaledOffset))).point
-                imageView.bounds = CGRect(origin: CGPoint.zero, size: CGSize(width: itemWidth, height: itemHeight))
+                imageView.bounds = CGRect(origin: .zero, size: CGSize(width: itemWidth, height: itemHeight))
                 item.touchOffset = scaledOffset
             }
         }
