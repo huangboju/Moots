@@ -39,6 +39,16 @@ extension ListNode : CustomStringConvertible {
     }
 }
 
+extension Array where Element == Int {
+    var linkedList: ListNode {
+        return reversed().reduce(ListNode(0)) { (r, v) -> ListNode in
+            let new = ListNode(v)
+            new.next = r.val == 0 ? nil : r
+            return new
+        }
+    }
+}
+
 let strings = ["a", "b", "c"]
 
 //["a": ["b": ["c":[:]]]]
@@ -82,11 +92,11 @@ class Solution {
         return head
     }
     
-    func reverseList(_ head: ListNode?) -> ListNode? {
+    class func reverseList(_ head: ListNode?) -> ListNode? {
         if head == nil || head?.next == nil {
             return head
         }
-        var result: ListNode? = ListNode(0).next
+        var result: ListNode?
         var node = head
         while node != nil {
             let tmp = node?.next
@@ -136,6 +146,37 @@ class Solution {
         print("last", last)
         return head
     }
+    
+    class func isPalindrome(_ head: ListNode?) -> Bool {
+        var fast = head, slow = head, head = head
+        while fast != nil && fast!.next != nil {
+            fast = fast?.next?.next
+            slow = slow?.next
+        }
+        var rev = reverse(slow)
+        while rev != nil && head != nil {
+            if rev?.val != head?.val {
+                return false
+            }
+            head = head?.next
+            rev = rev?.next
+        }
+        return true
+    }
+    
+    class func reverse(_ head: ListNode?) -> ListNode? {
+        var pre: ListNode?
+        var cur = head
+        while cur != nil {
+            let next = cur?.next
+            cur?.next = pre
+            pre = cur
+            cur = next
+        }
+        return pre
+    }
 }
 
 print(Solution.oddEvenList(head))
+
+print(Solution.isPalindrome([1,1,2,1].linkedList))
