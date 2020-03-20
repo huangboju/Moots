@@ -14,6 +14,8 @@
 		F70B68C5226D5C02003092B1 /* BitSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68C0226D5C02003092B1 /* BitSet.swift */; };
 		F70B68C7226D5C35003092B1 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68C6226D5C35003092B1 /* Trie.swift */; };
 		F71AB9612170A0DF008309FC /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71AB9602170A0DF008309FC /* main.swift */; };
+		F7AC88792424A57800724D61 /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC88782424A57800724D61 /* MinStack.swift */; };
+		F7AC887B2424AA6200724D61 /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7AC887A2424AA6200724D61 /* LRUCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -37,6 +39,8 @@
 		F70B68C6226D5C35003092B1 /* Trie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		F71AB95D2170A0DF008309FC /* DataStructures */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DataStructures; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71AB9602170A0DF008309FC /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F7AC88782424A57800724D61 /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
+		F7AC887A2424AA6200724D61 /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				F70B68BF226D5C02003092B1 /* Array2d.swift */,
 				F70B68C0226D5C02003092B1 /* BitSet.swift */,
 				F70B68C6226D5C35003092B1 /* Trie.swift */,
+				F7AC88782424A57800724D61 /* MinStack.swift */,
+				F7AC887A2424AA6200724D61 /* LRUCache.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 				F70B68C5226D5C02003092B1 /* BitSet.swift in Sources */,
 				F70B68C1226D5C02003092B1 /* Stack.swift in Sources */,
 				F70B68C3226D5C02003092B1 /* FixedSizeArray.swift in Sources */,
+				F7AC887B2424AA6200724D61 /* LRUCache.swift in Sources */,
+				F7AC88792424A57800724D61 /* MinStack.swift in Sources */,
 				F70B68C7226D5C35003092B1 /* Trie.swift in Sources */,
 				F70B68C2226D5C02003092B1 /* LinkList.swift in Sources */,
 				F71AB9612170A0DF008309FC /* main.swift in Sources */,
