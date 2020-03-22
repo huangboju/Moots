@@ -8,8 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
+		BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */; };
 		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
 		BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CF59D233F531600585DBC /* TitleToNumber.swift */; };
+		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
 		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
@@ -44,7 +46,6 @@
 		BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA569D22A60B550082E025 /* Intersect.swift */; };
 		BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */; };
 		BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA56C122A60C4D0082E025 /* kthSmallest.swift */; };
-		F71C5EFB24239D89000FC0EC /* LRUCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C5EFA24239D89000FC0EC /* LRUCache.swift */; };
 		F71C5EFD24239DD0000FC0EC /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71C5EFC24239DD0000FC0EC /* LinkedList.swift */; };
 		F73629A0234D894300DFB34E /* LargestNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = F736299F234D894300DFB34E /* LargestNumber.swift */; };
 		F76403002383DBBD00017DB4 /* MaxPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F76402FF2383DBBD00017DB4 /* MaxPoints.swift */; };
@@ -71,8 +72,10 @@
 /* Begin PBXFileReference section */
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
+		BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAreaOfIsland.swift; sourceTree = "<group>"; };
 		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
 		BE7CF59D233F531600585DBC /* TitleToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToNumber.swift; sourceTree = "<group>"; };
+		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
@@ -108,7 +111,6 @@
 		BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BEDA56C122A60C4D0082E025 /* kthSmallest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kthSmallest.swift; sourceTree = "<group>"; };
 		D81B3E7B1EA707A200214304 /* LeetCode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = LeetCode; sourceTree = BUILT_PRODUCTS_DIR; };
-		F71C5EFA24239D89000FC0EC /* LRUCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LRUCache.swift; sourceTree = "<group>"; };
 		F71C5EFC24239DD0000FC0EC /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		F736299F234D894300DFB34E /* LargestNumber.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargestNumber.swift; sourceTree = "<group>"; };
 		F76402FF2383DBBD00017DB4 /* MaxPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxPoints.swift; sourceTree = "<group>"; };
@@ -204,8 +206,9 @@
 				F7AC932E2341A49300782FA8 /* RandomizedSet.swift */,
 				F736299F234D894300DFB34E /* LargestNumber.swift */,
 				F76402FF2383DBBD00017DB4 /* MaxPoints.swift */,
-				F71C5EFA24239D89000FC0EC /* LRUCache.swift */,
 				F71C5EFC24239DD0000FC0EC /* LinkedList.swift */,
+				BED52F482426495100600908 /* ThreeSum.swift */,
+				BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */,
 				BEDA56BA22A60B550082E025 /* MaxProduct.swift in Sources */,
 				BEDA56BB22A60B550082E025 /* RunLengthEncoding.swift in Sources */,
+				BED52F492426495100600908 /* ThreeSum.swift in Sources */,
 				BEDA56B022A60B550082E025 /* findMedianSortedArrays.swift in Sources */,
 				BEDA56A322A60B550082E025 /* MajorityElement.swift in Sources */,
 				F76403002383DBBD00017DB4 /* MaxPoints.swift in Sources */,
@@ -313,10 +317,10 @@
 				BEDA56AF22A60B550082E025 /* FindKthLargest.swift in Sources */,
 				F78C178123386FE400ECED68 /* MedianFinder.swift in Sources */,
 				BEDA56B222A60B550082E025 /* BackPack.swift in Sources */,
-				F71C5EFB24239D89000FC0EC /* LRUCache.swift in Sources */,
 				BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */,
 				BEDA56B922A60B550082E025 /* InsertionSort.swift in Sources */,
 				BEDA56B122A60B550082E025 /* ReverseString.swift in Sources */,
+				BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
