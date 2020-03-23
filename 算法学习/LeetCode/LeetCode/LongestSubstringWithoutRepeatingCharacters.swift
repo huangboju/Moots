@@ -8,22 +8,12 @@
 
 import Foundation
 
-private extension String {
-    /*
-     Ref: http://oleb.net/blog/2014/07/swift-strings/
-     "Because of the way Swift strings are stored, the String type does not support random access to its Characters via an integer index — there is no direct equivalent to NSStringʼs characterAtIndex: method. Conceptually, a String can be seen as a doubly linked list of characters rather than an array."
-     
-     By creating and storing a seperate array of the same sequence of characters,
-     we could hopefully achieve amortized O(1) time for random access.
-     */
-    func randomAccessCharactersArray() -> [Character] {
-        return Array(self)
-    }
-}
 // "ppwwpwkew"
+// "abcabcbb"
 
 func lengthOfLongestSubstring(_ s: String) -> Int {
-    let charArr = s.randomAccessCharactersArray()
+    
+    let charArr: [Character] = Array(s)
     let len = charArr.count
     guard len > 1 else { return len }
     
