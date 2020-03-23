@@ -11,7 +11,7 @@ import Foundation
 print(twoSum([2, 7, 11, 15, 0, 9], 9))
 
 
-print(lengthOfLongestSubstring("abcabcbb"))
+print(lengthOfLongestSubstring("ppwwpwkew"))
 
 print("\n\n")
 
