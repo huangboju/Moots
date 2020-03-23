@@ -12,17 +12,16 @@ import Foundation
 // "abcabcbb"
 
 func lengthOfLongestSubstring(_ s: String) -> Int {
-    
+
+    guard s.count > 1 else { return s.count }
     let charArr: [Character] = Array(s)
-    let len = charArr.count
-    guard len > 1 else { return len }
     
     var maxLen = 1
     var tempLen = 1
     var hashMap = [charArr[0]: 0]
-    
-    for i in 1 ..< len {
-        if let lastPosion = hashMap[charArr[i]] {
+
+    for (i, char) in charArr.enumerated() {
+        if let lastPosion = hashMap[char] {
             if tempLen < i - lastPosion { // 这种情况 "ppwwpwkew"
                 tempLen += 1
             } else {
@@ -32,11 +31,9 @@ func lengthOfLongestSubstring(_ s: String) -> Int {
             tempLen += 1
         }
 
-        hashMap[charArr[i]] = i
+        hashMap[char] = i
 
-        if tempLen > maxLen {
-            maxLen = tempLen
-        }
+        maxLen = max(tempLen, maxLen)
     }
 
     return maxLen
