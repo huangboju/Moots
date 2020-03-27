@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42F235242E2E46002CD6C1 /* MergeKLists.swift */; };
 		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
 		BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */; };
 		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
@@ -75,6 +76,7 @@
 
 /* Begin PBXFileReference section */
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
+		BE42F235242E2E46002CD6C1 /* MergeKLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeKLists.swift; sourceTree = "<group>"; };
 		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
 		BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAreaOfIsland.swift; sourceTree = "<group>"; };
 		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				F7C868472428DBF1004D430F /* RestoreIpAddresses.swift */,
 				F7C868492428E19C004D430F /* MaxProfit.swift */,
 				F7C8684B2428E75D004D430F /* MaxSubArray.swift */,
+				BE42F235242E2E46002CD6C1 /* MergeKLists.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 				F7AC932F2341A49300782FA8 /* RandomizedSet.swift in Sources */,
 				F7BFAEF023408ECD00FB2993 /* FourSumCount.swift in Sources */,
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
+				BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
 				BEDA56AD22A60B550082E025 /* KResult.swift in Sources */,
 				BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */,

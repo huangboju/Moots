@@ -78,8 +78,8 @@ class LRUCache {
     func put(_ key: Int, _ value: Int) {
         // is existed
         if let nodeExisted = dict[key] {
-            moveToTail(nodeExisted)
             nodeExisted.value = value
+            moveToTail(nodeExisted)
         } else {
             if capacity == 0 {
                 removeFirstNode()
