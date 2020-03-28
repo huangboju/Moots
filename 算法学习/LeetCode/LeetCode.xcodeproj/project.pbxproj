@@ -13,6 +13,8 @@
 		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
 		BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CF59D233F531600585DBC /* TitleToNumber.swift */; };
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
+		BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */; };
+		BED61CA5242F83ED004D5A53 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA4242F83ED004D5A53 /* Search.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
 		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
@@ -82,6 +84,8 @@
 		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
 		BE7CF59D233F531600585DBC /* TitleToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToNumber.swift; sourceTree = "<group>"; };
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
+		BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findCircleNum.swift; sourceTree = "<group>"; };
+		BED61CA4242F83ED004D5A53 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
@@ -190,6 +194,7 @@
 				BEDA569C22A60B550082E025 /* IsPalindrome.swift */,
 				BEDA568C22A60B540082E025 /* KResult.swift */,
 				BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */,
+				BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */,
 				BEDA569722A60B550082E025 /* main.swift */,
 				BEDA568222A60B540082E025 /* MajorityElement.swift */,
 				BEDA569922A60B550082E025 /* MaxProduct.swift */,
@@ -224,6 +229,7 @@
 				F7C868492428E19C004D430F /* MaxProfit.swift */,
 				F7C8684B2428E75D004D430F /* MaxSubArray.swift */,
 				BE42F235242E2E46002CD6C1 /* MergeKLists.swift */,
+				BED61CA4242F83ED004D5A53 /* Search.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -310,6 +316,7 @@
 				BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */,
 				BEDA56A422A60B550082E025 /* MinSubArrayLen.swift in Sources */,
 				BEDA56B322A60B550082E025 /* FractionToDecimal.swift in Sources */,
+				BED61CA5242F83ED004D5A53 /* Search.swift in Sources */,
 				BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */,
 				BEDA56BA22A60B550082E025 /* MaxProduct.swift in Sources */,
 				BEDA56BB22A60B550082E025 /* RunLengthEncoding.swift in Sources */,
@@ -333,6 +340,7 @@
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
 				BEDA56AD22A60B550082E025 /* KResult.swift in Sources */,
 				BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */,
+				BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */,
 				BEDA56AF22A60B550082E025 /* FindKthLargest.swift in Sources */,
 				F78C178123386FE400ECED68 /* MedianFinder.swift in Sources */,
 				BEDA56B222A60B550082E025 /* BackPack.swift in Sources */,
