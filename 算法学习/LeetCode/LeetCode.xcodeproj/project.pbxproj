@@ -15,6 +15,7 @@
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
 		BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */; };
 		BED61CA5242F83ED004D5A53 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA4242F83ED004D5A53 /* Search.swift */; };
+		BED61CA724304630004D5A53 /* findLengthOfLCIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA624304630004D5A53 /* findLengthOfLCIS.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
 		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
@@ -86,6 +87,7 @@
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
 		BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findCircleNum.swift; sourceTree = "<group>"; };
 		BED61CA4242F83ED004D5A53 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
+		BED61CA624304630004D5A53 /* findLengthOfLCIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findLengthOfLCIS.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
 		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				F7C8684B2428E75D004D430F /* MaxSubArray.swift */,
 				BE42F235242E2E46002CD6C1 /* MergeKLists.swift */,
 				BED61CA4242F83ED004D5A53 /* Search.swift */,
+				BED61CA624304630004D5A53 /* findLengthOfLCIS.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
 				BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
+				BED61CA724304630004D5A53 /* findLengthOfLCIS.swift in Sources */,
 				BEDA56AD22A60B550082E025 /* KResult.swift in Sources */,
 				BEDA56C222A60C4D0082E025 /* kthSmallest.swift in Sources */,
 				BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */,
