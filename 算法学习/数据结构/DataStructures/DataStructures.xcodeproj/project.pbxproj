@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE42F238242E3487002CD6C1 /* LinklistSolution.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42F237242E3487002CD6C1 /* LinklistSolution.swift */; };
+		BED61CA92430B6DB004D5A53 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA82430B6DB004D5A53 /* BinaryTree.swift */; };
 		F70B68C1226D5C02003092B1 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BC226D5C02003092B1 /* Stack.swift */; };
 		F70B68C2226D5C02003092B1 /* LinkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BD226D5C02003092B1 /* LinkList.swift */; };
 		F70B68C3226D5C02003092B1 /* FixedSizeArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = F70B68BE226D5C02003092B1 /* FixedSizeArray.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE42F237242E3487002CD6C1 /* LinklistSolution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinklistSolution.swift; sourceTree = "<group>"; };
+		BED61CA82430B6DB004D5A53 /* BinaryTree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
 		F70B68BC226D5C02003092B1 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		F70B68BD226D5C02003092B1 /* LinkList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkList.swift; sourceTree = "<group>"; };
 		F70B68BE226D5C02003092B1 /* FixedSizeArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixedSizeArray.swift; sourceTree = "<group>"; };
@@ -65,6 +69,8 @@
 				F70B68C6226D5C35003092B1 /* Trie.swift */,
 				F7AC88782424A57800724D61 /* MinStack.swift */,
 				F7AC887A2424AA6200724D61 /* LRUCache.swift */,
+				BE42F237242E3487002CD6C1 /* LinklistSolution.swift */,
+				BED61CA82430B6DB004D5A53 /* BinaryTree.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -152,11 +158,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE42F238242E3487002CD6C1 /* LinklistSolution.swift in Sources */,
 				F70B68C5226D5C02003092B1 /* BitSet.swift in Sources */,
 				F70B68C1226D5C02003092B1 /* Stack.swift in Sources */,
 				F70B68C3226D5C02003092B1 /* FixedSizeArray.swift in Sources */,
 				F7AC887B2424AA6200724D61 /* LRUCache.swift in Sources */,
 				F7AC88792424A57800724D61 /* MinStack.swift in Sources */,
+				BED61CA92430B6DB004D5A53 /* BinaryTree.swift in Sources */,
 				F70B68C7226D5C35003092B1 /* Trie.swift in Sources */,
 				F70B68C2226D5C02003092B1 /* LinkList.swift in Sources */,
 				F71AB9612170A0DF008309FC /* main.swift in Sources */,
