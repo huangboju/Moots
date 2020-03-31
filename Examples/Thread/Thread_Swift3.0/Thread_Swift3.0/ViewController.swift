@@ -28,8 +28,8 @@ class ViewController: UIViewController {
 //            DispatchData(bytes: $0)
 //        }
         
-//        serialQueue()
-        setTargetQueue()
+        serialQueue()
+//        setTargetQueue()
     }
     
     func setTargetQueue() {
@@ -73,15 +73,32 @@ class ViewController: UIViewController {
     }
 
     func serialQueue() {
-        let serialQueue = DispatchQueue(label: "", qos: .default)
+        let serialQueue = DispatchQueue(label: "swiftlee.serial.queue")
+        let serialQueue2 = DispatchQueue(label: "swiftlee.serial.queue2")
         serialQueue.async {
-            print(1)
+            print("Task 1 started")
+            // Do some work..
+            serialQueue2.sync {
+                print("111")
+            }
+            print("Task 1 finished")
         }
-        print(2)
-        serialQueue.async {
-            print(3)
-        }
-        print(4)
+//        serialQueue.async {
+//            print("Task 2 started")
+//            // Do some work..
+//            print("Task 2 finished")
+//        }
+//        serialQueue.sync {
+//            print(1)
+//        }
+//        serialQueue.async {
+//            print(2)
+//        }
+//        print(2)
+//        serialQueue.async {
+//            print(3)
+//        }
+//        print(4)
     }
 
     func listenFile() {
