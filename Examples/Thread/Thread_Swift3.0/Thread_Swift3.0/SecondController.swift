@@ -103,8 +103,8 @@ class SecondController: UIViewController {
         let queue = DispatchQueue(label: "asyn.serial.queue")
 
         let group = DispatchGroup()
-        
-        let q = serialQueue("serialQueue")
+
+        let q = DispatchQueue(label: "serialQueue")
 
         for i in 0..<3 {
             group.enter()
@@ -133,7 +133,7 @@ class SecondController: UIViewController {
         let queue = DispatchQueue(label: "asyn.concurrent.queue", attributes: .concurrent)
         let group = DispatchGroup()
         
-        let q = serialQueue("serialQueue")
+        let q = DispatchQueue(label: "serialQueue")
         for i in 0..<3 {
             group.enter()
             queue.async(group: group) {
@@ -180,13 +180,7 @@ class SecondController: UIViewController {
         Thread.sleep(forTimeInterval: timer)
     }
     
-    
-    /// 创建串行队列
-    func serialQueue(_ label: String) -> DispatchQueue {
-        return DispatchQueue(label: label)
-    }
-    
-    
+
     /// 创建并行队列
     func getConcurrentQueue(_ label: String) -> DispatchQueue {
         return DispatchQueue(label: label, attributes: .concurrent)
@@ -219,28 +213,7 @@ class SecondController: UIViewController {
         
         ended()
     }
-    
-    func ended() { print("**************************结束**************************\n") }
-    
-    
-    // http://www.jianshu.com/p/7efbecee6af8
-    /*
-     * DISPATCH_QUEUE_PRIORITY_HIGH:         .userInitiated
-     * DISPATCH_QUEUE_PRIORITY_DEFAULT:      .default
-     * DISPATCH_QUEUE_PRIORITY_LOW:          .utility
-     * DISPATCH_QUEUE_PRIORITY_BACKGROUND:   .background
-     */
-    
-//    * QOS_CLASS_USER_INTERACTIVE：User Interactive（用户交互）类的任务关乎用户体验，这类任务是需要立刻被执行的。这类任务应该用在更新 UI，处理事件，执行一些需要低延迟的轻量的任务。这种类型的任务应该要压缩到尽可能少。
-//    * QOS_CLASS_USER_INITIATED: User Initiated（用户发起）类是指由 UI 发起的可以异步执行的任务。当用户在等待任务返回的结果，然后才能执行下一步动作的时候可以使用这种类型。
-//    * QOS_CLASS_UTILITY：Utility（工具）类是指耗时较长的任务，通常会展示给用户一个进度条。这种类型应该用在大量计算，I/O 操作，网络请求，实时数据推送之类的任务。这个类是带有节能设计的。
-//    * QOS_CLASS_BACKGROUND：background（后台）类是指用户并不会直接感受到的任务。这个类应该用在数据预拉取，维护以及其他不需要用户交互，对时间不敏感的任务。
-    
-    func globalQueue(qos: DispatchQoS.QoSClass = .default) -> DispatchQueue {
-        return DispatchQueue.global(qos: qos)
-    }
-    
-    
+
     /// 全局队列的优先级关系
     @objc func globalQueuePriority() {
         //高 > 默认 > 低 > 后台
@@ -280,10 +253,10 @@ class SecondController: UIViewController {
         //优先级的执行顺序也不是绝对的
         
         //给serialQueueHigh设定DISPATCH_QUEUE_PRIORITY_HIGH优先级
-        let serialQueueHigh = serialQueue("cn.zeluli.serial1")
+        let serialQueueHigh = DispatchQueue(label: "cn.zeluli.serial1")
         globalQueue(qos: .userInitiated).setTarget(queue: serialQueueHigh)
         
-        let serialQueueLow = serialQueue("cn.zeluli.serial1")
+        let serialQueueLow = DispatchQueue(label: "cn.zeluli.serial1")
         globalQueue(qos: .utility).setTarget(queue: serialQueueLow)
         
         
@@ -532,9 +505,25 @@ class SecondController: UIViewController {
         source.resume()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+    func ended() { print("**************************结束**************************\n") }
+        
+        
+        // http://www.jianshu.com/p/7efbecee6af8
+        /*
+         * DISPATCH_QUEUE_PRIORITY_HIGH:         .userInitiated
+         * DISPATCH_QUEUE_PRIORITY_DEFAULT:      .default
+         * DISPATCH_QUEUE_PRIORITY_LOW:          .utility
+         * DISPATCH_QUEUE_PRIORITY_BACKGROUND:   .background
+         */
+        
+    //    * QOS_CLASS_USER_INTERACTIVE：User Interactive（用户交互）类的任务关乎用户体验，这类任务是需要立刻被执行的。这类任务应该用在更新 UI，处理事件，执行一些需要低延迟的轻量的任务。这种类型的任务应该要压缩到尽可能少。
+    //    * QOS_CLASS_USER_INITIATED: User Initiated（用户发起）类是指由 UI 发起的可以异步执行的任务。当用户在等待任务返回的结果，然后才能执行下一步动作的时候可以使用这种类型。
+    //    * QOS_CLASS_UTILITY：Utility（工具）类是指耗时较长的任务，通常会展示给用户一个进度条。这种类型应该用在大量计算，I/O 操作，网络请求，实时数据推送之类的任务。这个类是带有节能设计的。
+    //    * QOS_CLASS_BACKGROUND：background（后台）类是指用户并不会直接感受到的任务。这个类应该用在数据预拉取，维护以及其他不需要用户交互，对时间不敏感的任务。
+        
+        func globalQueue(qos: DispatchQoS.QoSClass = .default) -> DispatchQueue {
+            return DispatchQueue.global(qos: qos)
+        }
 }
 
 
