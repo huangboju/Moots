@@ -399,7 +399,11 @@ class SecondController: UIViewController {
     }
     
     func useBarrierAsync() {
-        
+//        那你啥时候改用 barrier 方法，啥时候不该用呢？
+//
+//        * 自定义串行队列 Custom Serial Queue: 没有必要在串行队列中使用，barrier 对于串行队列来说毫无用处，因为本来串行队列就是一次只会执行一个任务的。
+//        * 全局并发队列 Global Concurrent Queue: 要小心使用。在全局队列中使用 barrier 可能不是太好，因为系统也会使用这个队列，一般你不会希望自己的操作垄断了这个队列从而导致系统调用的延迟。
+//        * 自定义并发队列 Custom Concurrent Queue: 对于需要原子操作和访问临界区的代码，barrier 方法是最佳使用场景。任何你需要线程安全的实例，barrier 都是一个不错的选择。
         
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         for i in 0...3 {
