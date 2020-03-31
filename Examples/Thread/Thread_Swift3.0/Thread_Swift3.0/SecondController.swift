@@ -14,37 +14,6 @@ import UIKit
 // https://bestswifter.com/deep-gcd/
 // http://www.cocoachina.com/ios/20170829/20404.html
 
-extension SecondController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return tags.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tags[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    }
-}
-
-extension SecondController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.tintColor = UIColor.red
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = tags[indexPath.section][indexPath.row].0
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let tag = tags[indexPath.section][indexPath.row]
-        print("🍀🍀🍀\(tag.0)🍀🍀🍀")
-        print("**************************开始**************************")
-        perform(tag.1)
-    }
-}
-
 class SecondController: UIViewController {
     
     fileprivate lazy var tableView: UITableView = {
@@ -251,9 +220,7 @@ class SecondController: UIViewController {
         ended()
     }
     
-    func ended() {
-        print("**************************结束**************************\n")
-    }
+    func ended() { print("**************************结束**************************\n") }
     
     
     // http://www.jianshu.com/p/7efbecee6af8
@@ -609,5 +576,36 @@ extension Int {
             9: "9️⃣",
         ]
         return dict[self] ?? self.description
+    }
+}
+
+extension SecondController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return tags.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return tags[section].count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+    }
+}
+
+extension SecondController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.tintColor = UIColor.red
+        cell.accessoryType = .disclosureIndicator
+        cell.textLabel?.text = tags[indexPath.section][indexPath.row].0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+        let tag = tags[indexPath.section][indexPath.row]
+        print("🍀🍀🍀\(tag.0)🍀🍀🍀")
+        print("**************************开始**************************")
+        perform(tag.1)
     }
 }
