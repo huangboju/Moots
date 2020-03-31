@@ -57,7 +57,7 @@ class SecondController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Swift3.0 GCD"
+        title = "Swift5.0 GCD"
         
         view.addSubview(tableView)
         
