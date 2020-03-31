@@ -181,7 +181,7 @@ class SecondController: UIViewController {
     
     
     /// 使用dispatch_async在当前线程中执行队列
-    func performQueuesUseAsynchronization(_ queue: DispatchQueue) -> Void {
+    func performQueuesUseAsynchronization(_ queue: DispatchQueue) {
         
         //一个串行队列，用于同步执行
         
@@ -549,7 +549,7 @@ class SecondController: UIViewController {
         
         source.setEventHandler {
             print(Thread.current)
-            if(timeout <= 0) {
+            if timeout <= 0 {
                 source.cancel()
             } else {
                 print("\(timeout)s", Date())
