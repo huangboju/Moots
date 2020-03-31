@@ -105,11 +105,11 @@ class SecondController: UIViewController {
         print("**************************开始**************************")
         switch tag {
         case "同步执行串行队列":
-            performQueuesUseSynchronization(getSerialQueue("syn.serial.queue"))
+            performQueuesUseSynchronization(serialQueue("syn.serial.queue"))
         case "同步执行并行队列":
             performQueuesUseSynchronization(getConcurrentQueue("syn.concurrent.queue"))
         case "异步执行串行队列":
-            performQueuesUseAsynchronization(getSerialQueue("asyn.serial.queue"))
+            performQueuesUseAsynchronization(serialQueue("asyn.serial.queue"))
         case "异步执行并行队列":
             performQueuesUseAsynchronization(getConcurrentQueue("asyn.concurrent.queue"))
         case "延迟执行":
@@ -119,7 +119,7 @@ class SecondController: UIViewController {
         case "设置自建队列优先级":
             setCustomeQueuePriority()
         case "自动执行任务组":
-            getGlobalQueue().async {
+            globalQueue().async {
                 self.performGroupQueue()
             }
         case "手动执行任务组":
@@ -187,13 +187,13 @@ class SecondController: UIViewController {
         
         let group = DispatchGroup()
         
-        let serialQueue = getSerialQueue("serialQueue")
+        let q = serialQueue("serialQueue")
         for i in 0..<3 {
             group.enter()
             queue.async(group: group) {
                 self.currentThreadSleep(Double(arc4random()%3))
                 let currentThread = Thread.current
-                serialQueue.sync {              //同步锁
+                q.sync {              //同步锁
                     group.leave()
                     print("①Sleep的线程\(currentThread)")
                     print("②当前输出内容的线程\(Thread.current)")
@@ -216,7 +216,7 @@ class SecondController: UIViewController {
     
     
     /// 创建串行队列
-    func getSerialQueue(_ label: String) -> DispatchQueue {
+    func serialQueue(_ label: String) -> DispatchQueue {
         return DispatchQueue(label: label)
     }
     
@@ -231,7 +231,7 @@ class SecondController: UIViewController {
     func deferPerform(_ time: Int) {
         
         let semaphore = DispatchSemaphore(value: 0)
-        let queue = getGlobalQueue()
+        let queue = globalQueue()
         let delaySecond = DispatchTimeInterval.seconds(time)
         
         print(Date())
@@ -267,7 +267,12 @@ class SecondController: UIViewController {
      * DISPATCH_QUEUE_PRIORITY_BACKGROUND:   .background
      */
     
-    func getGlobalQueue(qos: DispatchQoS.QoSClass = .default) -> DispatchQueue {
+//    * QOS_CLASS_USER_INTERACTIVE：User Interactive（用户交互）类的任务关乎用户体验，这类任务是需要立刻被执行的。这类任务应该用在更新 UI，处理事件，执行一些需要低延迟的轻量的任务。这种类型的任务应该要压缩到尽可能少。
+//    * QOS_CLASS_USER_INITIATED: User Initiated（用户发起）类是指由 UI 发起的可以异步执行的任务。当用户在等待任务返回的结果，然后才能执行下一步动作的时候可以使用这种类型。
+//    * QOS_CLASS_UTILITY：Utility（工具）类是指耗时较长的任务，通常会展示给用户一个进度条。这种类型应该用在大量计算，I/O 操作，网络请求，实时数据推送之类的任务。这个类是带有节能设计的。
+//    * QOS_CLASS_BACKGROUND：background（后台）类是指用户并不会直接感受到的任务。这个类应该用在数据预拉取，维护以及其他不需要用户交互，对时间不敏感的任务。
+    
+    func globalQueue(qos: DispatchQoS.QoSClass = .default) -> DispatchQueue {
         return DispatchQueue.global(qos: qos)
     }
     
@@ -276,10 +281,10 @@ class SecondController: UIViewController {
     func globalQueuePriority() {
         //高 > 默认 > 低 > 后台
         
-        let queueHeight = getGlobalQueue(qos: .userInitiated)
-        let queueDefault = getGlobalQueue()
-        let queueLow = getGlobalQueue(qos: .utility)
-        let queueBackground = getGlobalQueue(qos: .background)
+        let queueHeight = globalQueue(qos: .userInitiated)
+        let queueDefault = globalQueue()
+        let queueLow = globalQueue(qos: .utility)
+        let queueBackground = globalQueue(qos: .background)
         
         let group = DispatchGroup()
         //优先级不是绝对的，大体上会按这个优先级来执行。 一般都是使用默认（default）优先级
@@ -311,11 +316,11 @@ class SecondController: UIViewController {
         //优先级的执行顺序也不是绝对的
         
         //给serialQueueHigh设定DISPATCH_QUEUE_PRIORITY_HIGH优先级
-        let serialQueueHigh = getSerialQueue("cn.zeluli.serial1")
-        getGlobalQueue(qos: .userInitiated).setTarget(queue: serialQueueHigh)
+        let serialQueueHigh = serialQueue("cn.zeluli.serial1")
+        globalQueue(qos: .userInitiated).setTarget(queue: serialQueueHigh)
         
-        let serialQueueLow = getSerialQueue("cn.zeluli.serial1")
-        getGlobalQueue(qos: .utility).setTarget(queue: serialQueueLow)
+        let serialQueueLow = serialQueue("cn.zeluli.serial1")
+        globalQueue(qos: .utility).setTarget(queue: serialQueueLow)
         
         
         
@@ -472,7 +477,7 @@ class SecondController: UIViewController {
     func useDispatchSourceAdd() {
         var sum = 0     //手动计数的sum, 来模拟记录merge的数据
         
-        let queue = getGlobalQueue()
+        let queue = globalQueue()
         //创建source
         let dispatchSource = DispatchSource.makeUserDataAddSource(queue: queue)
         
@@ -501,7 +506,7 @@ class SecondController: UIViewController {
         
         var or = 0     //手动计数的sum, 来记录merge的数据
         
-        let queue = getGlobalQueue()
+        let queue = globalQueue()
         
         //创建source
         let dispatchSource = DispatchSource.makeUserDataOrSource(queue: queue)
@@ -528,7 +533,7 @@ class SecondController: UIViewController {
     
     /// 使用DispatchSource创建定时器
     func useDispatchSourceTimer() {
-        let queue = getGlobalQueue()
+        let queue = globalQueue()
         
         let source = DispatchSource.makeTimerSource(queue: queue)
         
