@@ -139,6 +139,7 @@ class SecondController: UIViewController {
             queue.async(group: group) {
                 self.currentThreadSleep(Double(arc4random()%3))
                 let currentThread = Thread.current
+                print("asyn.concurrent.queue", currentThread)
                 q.sync {              //同步锁
                     group.leave()
                     print("①Sleep的线程\(currentThread)")
