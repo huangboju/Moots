@@ -33,13 +33,15 @@ extension SecondController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.tintColor = UIColor.red
         cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = tags[indexPath.section][indexPath.row]
+        cell.textLabel?.text = tags[indexPath.section][indexPath.row].0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let tag = tags[indexPath.section][indexPath.row]
-        action(tag: tag)
+        print("🍀🍀🍀\(tag.0)🍀🍀🍀")
+        print("**************************开始**************************")
+        perform(tag.1)
     }
 }
 
@@ -52,121 +54,54 @@ class SecondController: UIViewController {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
-    
-    var tags: [[String]] = []
+
+    let tags: [[(String, Selector)]] = [
+        [
+            ("同步执行串行队列", #selector(performSerialQueuesUseSynchronization)),
+            ("同步执行并行队列", #selector(performConcurrentQueuesUseSynchronization))
+        ],
+        [
+            ("异步执行串行队列", #selector(performSerialQueuesUseAsynchronization)),
+            ("异步执行并行队列", #selector(performConcurrentQueuesUseAsynchronization))
+        ],
+        [
+            ("延迟执行", #selector(deferPerform))
+        ],
+        [
+            ("设置全局队列的优先级", #selector(globalQueuePriority)),
+            ("设置自建队列优先级", #selector(setCustomeQueuePriority))
+        ],
+        [
+            ("自动执行任务组", #selector(autoGlobalQueue)),
+            ("手动执行任务组", #selector(performGroupUseEnterAndleave))
+        ],
+        [
+            ("使用信号量添加同步锁", #selector(useSemaphoreLock))
+        ],
+        [
+            ("使用Apply循环执行", #selector(useDispatchApply)),
+            ("暂停和重启队列", #selector(queueSuspendAndResume)),
+            ("使用任务隔离栅栏", #selector(useBarrierAsync))
+        ],
+        [
+            ("dispatch源,ADD", #selector(useDispatchSourceAdd)),
+            ("dispatch源,OR", #selector(useDispatchSourceOR)),
+            ("dispatch源,定时器", #selector(useDispatchSourceTimer))
+        ],
+        [
+            ("不同queue opration 依赖", #selector(diffQueue))
+        ]
+    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Swift5.0 GCD"
         
         view.addSubview(tableView)
-        
-        tags = [
-            [
-                "同步执行串行队列",
-                "同步执行并行队列"
-            ],
-            [
-                "异步执行串行队列",
-                "异步执行并行队列"
-            ],
-            [
-                "延迟执行"
-            ],
-            [
-                "设置全局队列的优先级",
-                "设置自建队列优先级"
-            ],
-            [
-                "自动执行任务组",
-                "手动执行任务组"
-            ],
-            [
-                "使用信号量添加同步锁"
-            ],
-            [
-                "使用Apply循环执行",
-                "暂停和重启队列",
-                "使用任务隔离栅栏"
-            ],
-            [
-                "dispatch源,ADD",
-                "dispatch源,OR",
-                "dispatch源,定时器"
-            ],
-            [
-                "不同queue opration 依赖"
-            ]
-        ]
     }
     
-    func action(tag: String) {
-        print("🍀🍀🍀\(tag)🍀🍀🍀")
-        print("**************************开始**************************")
-        switch tag {
-        case "同步执行串行队列":
-            performQueuesUseSynchronization(serialQueue("syn.serial.queue"))
-        case "同步执行并行队列":
-            performQueuesUseSynchronization(getConcurrentQueue("syn.concurrent.queue"))
-        case "异步执行串行队列":
-            performQueuesUseAsynchronization(serialQueue("asyn.serial.queue"))
-        case "异步执行并行队列":
-            performQueuesUseAsynchronization(getConcurrentQueue("asyn.concurrent.queue"))
-        case "延迟执行":
-            deferPerform(1)
-        case "设置全局队列的优先级":
-            globalQueuePriority()
-        case "设置自建队列优先级":
-            setCustomeQueuePriority()
-        case "自动执行任务组":
-            globalQueue().async {
-                self.performGroupQueue()
-            }
-        case "手动执行任务组":
-            performGroupUseEnterAndleave()
-        case "使用信号量添加同步锁":
-            useSemaphoreLock()
-        case "使用Apply循环执行":
-            useDispatchApply()
-        case "暂停和重启队列":
-            queueSuspendAndResume()
-        case "使用任务隔离栅栏":
-            useBarrierAsync()
-        case "dispatch源,ADD":
-            useDispatchSourceAdd()
-        case "dispatch源,OR":
-            useDispatchSourceOr()
-        case "dispatch源,定时器":
-            useDispatchSourceTimer()
-        case "不同queue opration 依赖":
-            diffQueue()
-        default:
-            break
-        }
-    }
-    
-    func diffQueue() {
-        let queue1 = OperationQueue()
-        queue1.name = "queue1"
-        
-        let queue2 = OperationQueue()
-        queue2.name = "queue2"
-        
-        let opration1 = BlockOperation {
-            sleep(2)
-            print("我是1")
-        }
-        queue1.addOperation(opration1)
-        
-        let opration2 = BlockOperation {
-            print("我是2")
-        }
-        opration2.addDependency(opration1)
-        queue2.addOperation(opration2)
-        
-    }
-    
-    func performQueuesUseSynchronization(_ queue: DispatchQueue) {
+    @objc func performSerialQueuesUseSynchronization() {
+        let queue = DispatchQueue(label: "syn.serial.queue")
         for i in 0..<3 {
             queue.sync() {
                 currentThreadSleep(1)
@@ -179,12 +114,54 @@ class SecondController: UIViewController {
         ended()
     }
     
+    @objc func performConcurrentQueuesUseSynchronization() {
+        let queue = DispatchQueue(label: "syn.concurrent.queue", attributes: .concurrent)
+        for i in 0..<3 {
+            queue.sync() {
+                currentThreadSleep(1)
+                print("当前执行线程：\(Thread.current)")
+                print("执行\(i.toEmoji)")
+            }
+            print("\(i.toEmoji)执行完毕")
+        }
+        print("所有队列使用同步方式执行完毕")
+        ended()
+    }
     
-    /// 使用dispatch_async在当前线程中执行队列
-    func performQueuesUseAsynchronization(_ queue: DispatchQueue) {
-        
+    @objc func performSerialQueuesUseAsynchronization() {
         //一个串行队列，用于同步执行
         
+        let queue = DispatchQueue(label: "asyn.serial.queue")
+
+        let group = DispatchGroup()
+        
+        let q = serialQueue("serialQueue")
+
+        for i in 0..<3 {
+            group.enter()
+            queue.async(group: group) {
+                self.currentThreadSleep(Double(arc4random()%3))
+                let currentThread = Thread.current
+                q.sync {              //同步锁
+                    group.leave()
+                    print("①Sleep的线程\(currentThread)")
+                    print("②当前输出内容的线程\(Thread.current)")
+                    print("③执行\(i.toEmoji):\(queue)\n")
+                }
+            }
+            print("\(i.toEmoji)添加完毕\n")
+        }
+        print("使用异步方式添加队列")
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.ended()
+        }
+    }
+    
+    @objc func performConcurrentQueuesUseAsynchronization() {
+        
+        //一个串行队列，用于同步执行
+        let queue = DispatchQueue(label: "asyn.concurrent.queue", attributes: .concurrent)
         let group = DispatchGroup()
         
         let q = serialQueue("serialQueue")
@@ -208,7 +185,27 @@ class SecondController: UIViewController {
             self.ended()
         }
     }
-    
+
+    @objc func diffQueue() {
+        let queue1 = OperationQueue()
+        queue1.name = "queue1"
+        
+        let queue2 = OperationQueue()
+        queue2.name = "queue2"
+        
+        let opration1 = BlockOperation {
+            sleep(2)
+            print("我是1")
+        }
+        queue1.addOperation(opration1)
+        
+        let opration2 = BlockOperation {
+            print("我是2")
+        }
+        opration2.addDependency(opration1)
+        queue2.addOperation(opration2)
+    }
+
     func currentThreadSleep(_ timer: TimeInterval) {
         print("😪😪😪延时😪😪😪")
         Thread.sleep(forTimeInterval: timer)
@@ -228,7 +225,7 @@ class SecondController: UIViewController {
     
     
     /// 延迟执行
-    func deferPerform(_ time: Int) {
+    @objc func deferPerform(_ time: Int = 1) {
         
         let semaphore = DispatchSemaphore(value: 0)
         let queue = globalQueue()
@@ -278,7 +275,7 @@ class SecondController: UIViewController {
     
     
     /// 全局队列的优先级关系
-    func globalQueuePriority() {
+    @objc func globalQueuePriority() {
         //高 > 默认 > 低 > 后台
         
         let queueHeight = globalQueue(qos: .userInitiated)
@@ -312,7 +309,7 @@ class SecondController: UIViewController {
     
     
     /// 给串行队列或者并行队列设置优先级
-    func setCustomeQueuePriority() {
+    @objc func setCustomeQueuePriority() {
         //优先级的执行顺序也不是绝对的
         
         //给serialQueueHigh设定DISPATCH_QUEUE_PRIORITY_HIGH优先级
@@ -354,9 +351,14 @@ class SecondController: UIViewController {
         print("异步执行测试，不会阻塞当前线程")
     }
     
+    @objc func autoGlobalQueue() {
+        globalQueue().async {
+            self.performGroupQueue()
+        }
+    }
     
     /// 使用enter与leave手动管理group与queue
-    func performGroupUseEnterAndleave() {
+    @objc func performGroupUseEnterAndleave() {
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         let group = DispatchGroup()
         
@@ -379,7 +381,7 @@ class SecondController: UIViewController {
     }
     
     //信号量同步锁
-    func useSemaphoreLock() {
+    @objc func useSemaphoreLock() {
         
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         
@@ -403,7 +405,7 @@ class SecondController: UIViewController {
         }
     }
     
-    func useBarrierAsync() {
+    @objc func useBarrierAsync() {
 //        那你啥时候改用 barrier 方法，啥时候不该用呢？
 //
 //        * 自定义串行队列 Custom Serial Queue: 没有必要在串行队列中使用，barrier 对于串行队列来说毫无用处，因为本来串行队列就是一次只会执行一个任务的。
@@ -443,7 +445,7 @@ class SecondController: UIViewController {
     
     
     /// 循环执行
-    func useDispatchApply() {
+    @objc func useDispatchApply() {
         
         print("循环多次执行并行队列")
         
@@ -459,7 +461,7 @@ class SecondController: UIViewController {
     }
     
     //暂停和重启队列
-    func queueSuspendAndResume() {
+    @objc func queueSuspendAndResume() {
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
         concurrentQueue.suspend()   //将队列进行挂起
         concurrentQueue.async {
@@ -474,7 +476,7 @@ class SecondController: UIViewController {
     
     /// 以加法运算的方式合并数据
     // http://www.tanhao.me/pieces/360.html/
-    func useDispatchSourceAdd() {
+    @objc func useDispatchSourceAdd() {
         var sum = 0     //手动计数的sum, 来模拟记录merge的数据
         
         let queue = globalQueue()
@@ -502,7 +504,7 @@ class SecondController: UIViewController {
     
     
     /// 以或运算的方式合并数据
-    func useDispatchSourceOr() {
+    @objc func useDispatchSourceOR() {
         
         var or = 0     //手动计数的sum, 来记录merge的数据
         
@@ -532,7 +534,7 @@ class SecondController: UIViewController {
     
     
     /// 使用DispatchSource创建定时器
-    func useDispatchSourceTimer() {
+    @objc func useDispatchSourceTimer() {
         let queue = globalQueue()
         
         let source = DispatchSource.makeTimerSource(queue: queue)
