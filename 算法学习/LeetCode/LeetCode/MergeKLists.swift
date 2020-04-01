@@ -19,14 +19,14 @@ public class ListNode {
 
 extension ListNode: CustomStringConvertible {
     public var description: String {
-        var s = "["
+        var s = ""
         var node: ListNode? = self
         while node != nil {
             s += "\(node!.val)"
             node = node!.next
-            if node != nil { s += ", " }
+            s += " -> "
         }
-        return s + "]"
+        return s + "nil"
     }
 }
 

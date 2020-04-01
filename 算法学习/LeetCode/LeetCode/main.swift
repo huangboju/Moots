@@ -170,3 +170,11 @@ print(simplifyPath("/a/./b/../../c/"))
 
 
 print(restoreIpAddresses("25525511135"))
+
+let head = (0..<10).reversed().reduce(ListNode(0)) { (r, v) -> ListNode in
+    let new = ListNode(v)
+    new.next = r.val == 0 ? nil : r
+    return new
+}
+
+print(removeNthFromEnd(head, 2))
