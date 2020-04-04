@@ -8,21 +8,24 @@
 
 import Foundation
 
+//1->2->4, 1->3->4
+//1->1->2->3->4->4
+
 func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-    var l1 = l1
-    var l2 = l2
+    var node1 = l1
+    var node2 = l2
     let phead = ListNode(-1)
     var preN = phead
-    while l1 != nil && l2 != nil {
-        if l1!.val <= l2!.val {
-            preN.next = l1
-            l1 = l1?.next
+    while let n1 = node1, let n2 = node2 {
+        if n1.val <= n2.val {
+            preN.next = node1
+            node1 = node1?.next
         } else {
-            preN.next = l2
-            l2 = l2?.next
+            preN.next = node2
+            node2 = node2?.next
         }
         preN = preN.next!
     }
-    preN.next = l1 == nil ? l2: l1
+    preN.next = node1 == nil ? node2 : node1
     return phead.next
 }
