@@ -177,4 +177,4 @@ let head = (0..<10).reversed().reduce(ListNode(0)) { (r, v) -> ListNode in
     return new
 }
 
-print(removeNthFromEnd(head, 2))
+print(removeNthFromEnd(head, 3))
