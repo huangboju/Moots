@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE189E4B243A10F100C3B525 /* ReverseWords.swift */; };
 		BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42F235242E2E46002CD6C1 /* MergeKLists.swift */; };
 		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
 		BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE189E4B243A10F100C3B525 /* ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWords.swift; sourceTree = "<group>"; };
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE42F235242E2E46002CD6C1 /* MergeKLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeKLists.swift; sourceTree = "<group>"; };
 		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				BED61CB2243829D3004D5A53 /* DetectCycle.swift */,
 				BED61CB424382B83004D5A53 /* DeleteNode.swift */,
 				BED61CB624382DF5004D5A53 /* LongestCommonPrefix.swift */,
+				BE189E4B243A10F100C3B525 /* ReverseWords.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */,
 				BEDA56A422A60B550082E025 /* MinSubArrayLen.swift in Sources */,
 				BEDA56B322A60B550082E025 /* FractionToDecimal.swift in Sources */,
+				BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */,
 				BED61CA5242F83ED004D5A53 /* Search.swift in Sources */,
 				BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */,
 				BEDA56BA22A60B550082E025 /* MaxProduct.swift in Sources */,
