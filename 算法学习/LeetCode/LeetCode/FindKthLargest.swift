@@ -29,6 +29,6 @@ func findKthLargest(_ nums: [Int], _ k: Int) -> Int {
     if nums.count == 1 {
         return nums[0]
     }
-    var result = nums.sorted(by: >)
+    let result = nums.sorted(by: >)
     return result[k - 1]
 }

@@ -10,19 +10,6 @@
 
 import Foundation
 
-//func titleToNumber(_ s: String) -> Int {
-//    var dict: [String: Int] = [:]
-//    for (i, n) in (65 ... 90).enumerated() {
-//        dict["\(UnicodeScalar(n)!)"] = i
-//    }
-//    var result = 0
-//    for (i, char) in s.reversed().enumerated() {
-//        guard let value = dict["\(char)"] else { continue }
-//        result += (Int(pow(Double(26), Double(i))) * value)
-//    }
-//    return result
-//}
-
 func titleToNumber(_ s: String) -> Int {
   var result = 1/26
   for char in s {
