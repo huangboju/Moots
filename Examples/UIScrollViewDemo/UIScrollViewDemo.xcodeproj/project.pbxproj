@@ -65,6 +65,7 @@
 		BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE55D95D20941CC3004C748E /* AlignmentRectController.swift */; };
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */; };
+		BE79ECA8250C931D003B2B21 /* GestureButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */; };
 		BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */; };
 		BE894E821FBD3BC900585DF6 /* HiddenLayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */; };
 		BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */; };
@@ -260,6 +261,7 @@
 		BE55D95D20941CC3004C748E /* AlignmentRectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlignmentRectController.swift; sourceTree = "<group>"; };
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
+		BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureButtonViewController.swift; sourceTree = "<group>"; };
 		BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewController.swift; sourceTree = "<group>"; };
 		BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLayoutTestController.swift; sourceTree = "<group>"; };
 		BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
@@ -712,6 +714,7 @@
 				F754780521DCC217004D3D32 /* BlurController.swift */,
 				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
 				F75C2E812238DD9500495104 /* GestureVC.swift */,
+				BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
 				BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */,
 				BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */,
+				BE79ECA8250C931D003B2B21 /* GestureButtonViewController.swift in Sources */,
 				BEBE4A171FAC1B9A00A9CA9A /* CodeTimerPresenter.swift in Sources */,
 				BEBE4A2C1FAC68B400A9CA9A /* Extensions.swift in Sources */,
 				BE1B154D1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift in Sources */,
