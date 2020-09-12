@@ -147,17 +147,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1170;
 				ORGANIZATIONNAME = "伯驹 黄";
 				TargetAttributes = {
 					D8ED29451DF7AFE500AA03E9 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1170;
 						ProvisioningStyle = Automatic;
 					};
 					D8ED29591DF7AFE500AA03E9 = {
 						CreatedOnToolsVersion = 8.1;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1170;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D8ED29451DF7AFE500AA03E9;
 					};
@@ -165,7 +165,7 @@
 			};
 			buildConfigurationList = D8ED29411DF7AFE500AA03E9 /* Build configuration list for PBXProject "Router" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -256,6 +256,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -314,6 +315,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -370,7 +372,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.Router;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -383,7 +385,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.Router;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -396,7 +398,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.RouterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Router;
 			};
 			name = Debug;
@@ -410,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.huangboju.Surge.RouterUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = Router;
 			};
 			name = Release;
