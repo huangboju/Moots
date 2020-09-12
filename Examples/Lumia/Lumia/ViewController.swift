@@ -134,5 +134,7 @@ extension TitleCell: Updatable {
 }
 
 extension ViewController: CBCCatalogExample {
-    @objc class var catalogBreadcrumbs: [String] { return ["Case studies", "Carousel"] }
+    @objc class var catalogMetadata: [String : Any]? {
+        return [CBCBreadcrumbs: ["Case studies", "Carousel"]]
+    }
 }
