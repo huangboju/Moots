@@ -8,6 +8,8 @@
 
 import UIKit
 
+// https://github.com/material-foundation/cocoapods-catalog-by-convention
+
 /**
 A node describes a single navigable page in the Catalog by Convention.
 

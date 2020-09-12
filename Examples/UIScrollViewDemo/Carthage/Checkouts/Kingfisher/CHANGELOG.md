@@ -2,6 +2,106 @@
 
 -----
 
+## [5.15.0 - Video and Text Attachment](https://github.com/onevcat/Kingfisher/releases/tag/5.15.0) (2020-08-17)
+
+#### Add
+* An `AVAssetImageDataProvider` to generate an image from a remote video asset at a specified time. All the processing gets benefits from current existing Kingfisher technologies, such as cache and image processors. [#1500](https://github.com/onevcat/Kingfisher/pull/1500)
+* New extension methods on `NSTextAttachment` to load an image from network for an attachment. [#1495](https://github.com/onevcat/Kingfisher/pull/1495)
+* A general clear cache method which combines clearing for memory cache and disk cache. [#1494](https://github.com/onevcat/Kingfisher/pull/1494)
+
+#### Fix
+* Now the sample app has a new look and supports dark mode, finally. [#1496](https://github.com/onevcat/Kingfisher/pull/1496)
+
+---
+
+## [5.14.1 - Summer Fix](https://github.com/onevcat/Kingfisher/releases/tag/5.14.1) (2020-07-06)
+
+#### Fix
+* Early return if no valid animator in an `AnimatedImageView`. This prevents a CGImage rendering issue displaying a static image. [#1428](https://github.com/onevcat/Kingfisher/issues/1428)
+* Enable Define Module setting to generate module map. So Kingfisher could be used in libraries imported to Objective-C projects. [#1451](https://github.com/onevcat/Kingfisher/pull/1451)
+* A fix to workaround on implicitly initializer of queue that might cause a crash. [#1449](https://github.com/onevcat/Kingfisher/issues/1449)
+* Improve the disk cache performance by avoiding unnecessary disk operations. [#1480](https://github.com/onevcat/Kingfisher/pull/1480)
+
+---
+
+## [5.14.0 - Retry Strategy](https://github.com/onevcat/Kingfisher/releases/tag/5.14.0) (2020-05-13)
+
+#### Add
+* A `.retryStrategy` option and associated `RetryStrategy` to define a highly customizable retry mechanism in Kingfisher. [#1424]
+* Built-in `DelayRetryStrategy` to provide a most common used retry strategy implementation. It simplifies the normal retry requirement when downloading an image from network. [#1447](https://github.com/onevcat/Kingfisher/pull/1447)
+* Now you can set the round corner radius for a `RoundCornerImageProcessor` in a fraction way. This is useful when you do not know the desire image view size, but still want to clip any received image to a certain round corner ratio (such as a circle for any image). [#1443](https://github.com/onevcat/Kingfisher/pull/1443)
+* Add an `isLoaded` binding to `KFImage` to follow SwiftUI pattern better. [#1429](https://github.com/onevcat/Kingfisher/pull/1429)
+
+#### Fix
+* An issue that `.imageModifier` option not working on an `ImageProvider` provided image. [#1435](https://github.com/onevcat/Kingfisher/pull/1435)
+* A workaround for making xcframework continue to work when exported with Swift 5.2 compiler and Xcode 11.4. [#1444](https://github.com/onevcat/Kingfisher/pull/1444)
+
+---
+
+## [5.13.4 - Build Configurations](https://github.com/onevcat/Kingfisher/releases/tag/5.13.4) (2020-04-11)
+
+#### Fix
+* Expose all build configurations in Package.swift file for Swift Package Manager. Now you can choose the linking style by yourself. [#1426](https://github.com/onevcat/Kingfisher/pull/1426)
+
+---
+
+## [5.13.3 - Dynamic SPM](https://github.com/onevcat/Kingfisher/releases/tag/5.13.3) (2020-04-01)
+
+#### Fix
+* Allows Carthage to build this library for macOS. [#1413](https://github.com/onevcat/Kingfisher/pull/1413)
+* Explicitly specify to build as a dynamic framework for Swift Package Manager. [#1420](https://github.com/onevcat/Kingfisher/pull/1420)
+
+---
+
+## [5.13.2 - KFImage Orientation](https://github.com/onevcat/Kingfisher/releases/tag/5.13.2) (2020-02-28)
+
+#### Fix
+* An issue for `KFImage` when resizing images with different EXIF orientation other than top. [#1396](https://github.com/onevcat/Kingfisher/pull/1396)
+* A race condition when setting `CacheCallbackCoordinator` state. [#1394](https://github.com/onevcat/Kingfisher/pull/1394)
+* Move an `@objc` attribute to prevent warnings in Xcode 11.4.
+
+---
+
+## [5.13.1 - Internal Warning](https://github.com/onevcat/Kingfisher/releases/tag/5.13.1) (2020-02-17)
+
+#### Fix
+* Fix an unused variable warning which is on by default in Xcode 11.4 and Swift 5.2, which makes CocoaPods angry when compiling. [#1393](https://github.com/onevcat/Kingfisher/pull/1393)
+
+---
+
+## [5.13.0 - New Year 2020](https://github.com/onevcat/Kingfisher/releases/tag/5.13.0) (2020-01-17)
+
+#### Add
+* Mark `DefaultCacheSerializer` as `public` and enables the ability of original data caching. [#1373](https://github.com/onevcat/Kingfisher/pull/1373/)
+* Add image compression quality parameter to `DefaultCacheSerializer`. [#1372](https://github.com/onevcat/Kingfisher/pull/1372/)
+* A new `contentURL` property in `ImageDataProvider` to provide a URL when it makes sense. [#1386](https://github.com/onevcat/Kingfisher/pull/1386/)
+
+#### Fix
+* Now, local file URLs can be loaded as `Resource`s without converted to `LocalFileImageDataProvider` explicitly. [#1386](https://github.com/onevcat/Kingfisher/pull/1386/)
+
+---
+
+## [5.12.0 - White Overflow](https://github.com/onevcat/Kingfisher/releases/tag/5.12.0) (2019-12-13)
+
+#### Add
+* Two error cases under `KingfisherError.CacheErrorReason` to give out the detail error information and reason when a failure happens when caching the file on disk. Check `.cannotCreateCacheFile` and `.cannotSetCacheFileAttribute` if you need to handle these errors. [#1365](https://github.com/onevcat/Kingfisher/pull/1365)
+
+#### Fix
+* A 32-bit `Int` overflow when calculating expiration duration when a large `days` value is set for `StorageExpiration`. [#1371](https://github.com/onevcat/Kingfisher/pull/1371)
+* The build config for SwiftUI sub-pod now only applies to the KingfisherSwiftUI scheme. [#1368](https://github.com/onevcat/Kingfisher/pull/1368)
+
+---
+
+## [5.11.0 - macCatalyst](https://github.com/onevcat/Kingfisher/releases/tag/5.11.0) (2019-11-30)
+
+#### Add
+* Support macCatalyst platform when building with Carthage. [#1356](https://github.com/onevcat/Kingfisher/pull/1356)
+
+#### Fix
+* Fix an issue that image orientation not correctly applied when an image processor used. [#1358](https://github.com/onevcat/Kingfisher/pull/1358)
+
+---
+
 ## [5.10.1 - Repeat Count](https://github.com/onevcat/Kingfisher/releases/tag/5.10.1) (2019-11-20)
 
 #### Fix

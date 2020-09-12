@@ -36,7 +36,6 @@
 		C959EEE622874DC600467A10 /* ProgressiveJPEGViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C959EEE522874DC600467A10 /* ProgressiveJPEGViewController.swift */; };
 		D10AC99821A300C9005F057C /* ProcessorCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10AC99721A300C9005F057C /* ProcessorCollectionViewController.swift */; };
 		D12E0C951C47F91800AC98AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E0C8C1C47F91800AC98AD /* AppDelegate.swift */; };
-		D12E0C961C47F91800AC98AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D12E0C8D1C47F91800AC98AD /* LaunchScreen.xib */; };
 		D12E0C971C47F91800AC98AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12E0C8F1C47F91800AC98AD /* Main.storyboard */; };
 		D12E0C981C47F91800AC98AD /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E0C911C47F91800AC98AD /* ImageCollectionViewCell.swift */; };
 		D12E0C991C47F91800AC98AD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D12E0C921C47F91800AC98AD /* Images.xcassets */; };
@@ -45,7 +44,10 @@
 		D12E0CA31C47F92200AC98AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D12E0C9E1C47F92200AC98AD /* Assets.xcassets */; };
 		D12E0CA41C47F92200AC98AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12E0C9F1C47F92200AC98AD /* Main.storyboard */; };
 		D12E0CB61C47F9C100AC98AD /* NormalLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12E0C941C47F91800AC98AD /* NormalLoadingViewController.swift */; };
+		D12EB83E24DD902300329EE1 /* TextAttachmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D12EB83D24DD902300329EE1 /* TextAttachmentViewController.swift */; };
+		D12EB84024DDB9E100329EE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D12EB83F24DDB9E000329EE1 /* LaunchScreen.storyboard */; };
 		D1679A461C4E78B20020FD12 /* Kingfisher-watchOS-Demo Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D1679A451C4E78B20020FD12 /* Kingfisher-watchOS-Demo Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		D16CC3D824E03FEA00F1A515 /* AVAssetImageGeneratorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16CC3D724E03FEA00F1A515 /* AVAssetImageGeneratorViewController.swift */; };
 		D1A1CCA321A1879600263AD8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1CCA221A1879600263AD8 /* MainViewController.swift */; };
 		D1A1CCA721A18A3200263AD8 /* UIViewController+KingfisherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1CCA621A18A3200263AD8 /* UIViewController+KingfisherOperation.swift */; };
 		D1A1CCA821A18A3200263AD8 /* UIViewController+KingfisherOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1CCA621A18A3200263AD8 /* UIViewController+KingfisherOperation.swift */; };
@@ -184,7 +186,6 @@
 		C959EEE522874DC600467A10 /* ProgressiveJPEGViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveJPEGViewController.swift; sourceTree = "<group>"; };
 		D10AC99721A300C9005F057C /* ProcessorCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessorCollectionViewController.swift; sourceTree = "<group>"; };
 		D12E0C8C1C47F91800AC98AD /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D12E0C8E1C47F91800AC98AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D12E0C901C47F91800AC98AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D12E0C911C47F91800AC98AD /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		D12E0C921C47F91800AC98AD /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -194,9 +195,13 @@
 		D12E0C9E1C47F92200AC98AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D12E0CA01C47F92200AC98AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D12E0CA11C47F92200AC98AD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D12EB83D24DD902300329EE1 /* TextAttachmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachmentViewController.swift; sourceTree = "<group>"; };
+		D12EB83F24DDB9E000329EE1 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D13F49C21BEDA53F00CE335D /* Kingfisher-tvOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kingfisher-tvOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16218A4238EAA67004A1C6C /* Kingfisher-Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Kingfisher-Demo.entitlements"; sourceTree = "<group>"; };
 		D1679A391C4E78B20020FD12 /* Kingfisher-watchOS-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kingfisher-watchOS-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1679A451C4E78B20020FD12 /* Kingfisher-watchOS-Demo Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Kingfisher-watchOS-Demo Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D16CC3D724E03FEA00F1A515 /* AVAssetImageGeneratorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAssetImageGeneratorViewController.swift; sourceTree = "<group>"; };
 		D1A1CCA221A1879600263AD8 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D1A1CCA621A18A3200263AD8 /* UIViewController+KingfisherOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+KingfisherOperation.swift"; sourceTree = "<group>"; };
 		D1CE1BCF21A1AFA300419000 /* TransitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionViewController.swift; sourceTree = "<group>"; };
@@ -339,7 +344,7 @@
 			children = (
 				D12E0C931C47F91800AC98AD /* Info.plist */,
 				D12E0C8C1C47F91800AC98AD /* AppDelegate.swift */,
-				D12E0C8D1C47F91800AC98AD /* LaunchScreen.xib */,
+				D12EB83F24DDB9E000329EE1 /* LaunchScreen.storyboard */,
 				D12E0C8F1C47F91800AC98AD /* Main.storyboard */,
 				D1A1CCA921A1936300263AD8 /* ViewControllers */,
 				D1A1CCA521A1895000263AD8 /* Extensions */,
@@ -385,6 +390,8 @@
 				D1F06F3821AAF1EE000B1C38 /* IndicatorCollectionViewController.swift */,
 				D1E4CF5321BACBA6004D029D /* ImageDataProviderCollectionViewController.swift */,
 				C959EEE522874DC600467A10 /* ProgressiveJPEGViewController.swift */,
+				D12EB83D24DD902300329EE1 /* TextAttachmentViewController.swift */,
+				D16CC3D724E03FEA00F1A515 /* AVAssetImageGeneratorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -401,6 +408,7 @@
 		D1ED2D021AD2CFA600CFC3EB = {
 			isa = PBXGroup;
 			children = (
+				D16218A4238EAA67004A1C6C /* Kingfisher-Demo.entitlements */,
 				D10EC22B1C3D62DE00A4211C /* Demo */,
 				D1ED2D0C1AD2CFA600CFC3EB /* Products */,
 				277EAE762045ADE700547CD3 /* Frameworks */,
@@ -577,6 +585,7 @@
 				TargetAttributes = {
 					4B2944541C3D03880088C3E7 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = A4YJ9MRZ66;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -596,7 +605,8 @@
 					};
 					D1ED2D0A1AD2CFA600CFC3EB = {
 						CreatedOnToolsVersion = 6.2;
-						LastSwiftMigration = 0900;
+						DevelopmentTeam = A4YJ9MRZ66;
+						LastSwiftMigration = 1200;
 					};
 					D1F7609423098F62000C5269 = {
 						CreatedOnToolsVersion = 11.0;
@@ -673,7 +683,7 @@
 			files = (
 				D12E0C991C47F91800AC98AD /* Images.xcassets in Resources */,
 				4B7742471D87E42E0077024E /* loader.gif in Resources */,
-				D12E0C961C47F91800AC98AD /* LaunchScreen.xib in Resources */,
+				D12EB84024DDB9E100329EE1 /* LaunchScreen.storyboard in Resources */,
 				D12E0C971C47F91800AC98AD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -725,8 +735,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D16CC3D824E03FEA00F1A515 /* AVAssetImageGeneratorViewController.swift in Sources */,
 				C959EEE622874DC600467A10 /* ProgressiveJPEGViewController.swift in Sources */,
 				D1CE1BD321A1B45A00419000 /* ImageLoader.swift in Sources */,
+				D12EB83E24DD902300329EE1 /* TextAttachmentViewController.swift in Sources */,
 				D12E0C9B1C47F91800AC98AD /* NormalLoadingViewController.swift in Sources */,
 				D1CE1BD021A1AFA300419000 /* TransitionViewController.swift in Sources */,
 				D10AC99821A300C9005F057C /* ProcessorCollectionViewController.swift in Sources */,
@@ -782,14 +794,6 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		D12E0C8D1C47F91800AC98AD /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D12E0C8E1C47F91800AC98AD /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
 		D12E0C8F1C47F91800AC98AD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -825,7 +829,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A4YJ9MRZ66;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Demo/Kingfisher-macOS-Demo/Info.plist";
@@ -845,7 +849,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = A4YJ9MRZ66;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
 				INFOPLIST_FILE = "Demo/Kingfisher-macOS-Demo/Info.plist";
@@ -1034,7 +1038,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				WATCHOS_DEPLOYMENT_TARGET = 3.0;
@@ -1086,7 +1090,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 				VALIDATE_PRODUCT = YES;
@@ -1098,12 +1102,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Kingfisher-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = A4YJ9MRZ66;
 				INFOPLIST_FILE = "Demo/Kingfisher-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 			};
 			name = Debug;
 		};
@@ -1111,12 +1118,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Kingfisher-Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
+				DEVELOPMENT_TEAM = A4YJ9MRZ66;
 				INFOPLIST_FILE = "Demo/Kingfisher-Demo/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 			};
 			name = Release;
@@ -1145,7 +1155,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.Kingfisher-SwiftUI-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1172,7 +1181,6 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.onevcat.Kingfisher-SwiftUI-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
