@@ -15,6 +15,7 @@ class ViewController: UIViewController {
         Row<TitleCell>(viewData: TitleCellItem(title: "隐藏属性查看", segue: .segue(ClassCopyIvarListVC.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "StateMachine", segue: .segue(StateMachineVC.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "转场", segue: .segue(TransitionListVC.self))),
+        Row<TitleCell>(viewData: TitleCellItem(title: "SafeArea", segue: .segue(MainViewController.self))),
     ]
 
     private lazy var collectionView: UICollectionView = {

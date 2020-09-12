@@ -90,8 +90,9 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         }
 
         var options = KingfisherParsedOptionsInfo(KingfisherManager.shared.defaultOptions + (options ?? .empty))
-        let noImageOrPlaceholderSet = base.image == nil && self.placeholder == nil
-        if !options.keepCurrentImageWhileLoading || noImageOrPlaceholderSet {
+
+        let isEmptyImage = base.image == nil && self.placeholder == nil
+        if !options.keepCurrentImageWhileLoading || isEmptyImage {
             // Always set placeholder while there is no image/placeholder yet.
             mutatingSelf.placeholder = placeholder
         }
@@ -202,7 +203,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
         completionHandler: ((Result<RetrieveImageResult, KingfisherError>) -> Void)? = nil) -> DownloadTask?
     {
         return setImage(
-            with: resource.map { .network($0) },
+            with: resource?.convertToSource(),
             placeholder: placeholder,
             options: options,
             progressBlock: progressBlock,
@@ -403,8 +404,8 @@ extension KingfisherWrapper where Base: KFCrossPlatformImageView {
 }
 
 
-@objc extension KFCrossPlatformImageView {
-    func shouldPreloadAllAnimation() -> Bool { return true }
+extension KFCrossPlatformImageView {
+    @objc func shouldPreloadAllAnimation() -> Bool { return true }
 }
 
 extension KingfisherWrapper where Base: KFCrossPlatformImageView {

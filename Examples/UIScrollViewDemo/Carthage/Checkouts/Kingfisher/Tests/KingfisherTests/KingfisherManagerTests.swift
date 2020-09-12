@@ -422,7 +422,7 @@ class KingfisherManagerTests: XCTestCase {
                 exp.fulfill()
             }
         }
-        waitForExpectations(timeout: 3, handler: nil)
+        waitForExpectations(timeout: 5, handler: nil)
     }
     
     func testCouldProcessOnOriginalImageWithOriginalCache() {
@@ -496,12 +496,10 @@ class KingfisherManagerTests: XCTestCase {
             // We are not waiting for cache finishing here. So only sync memory cache is done.
             XCTAssertEqual(self.manager.cache.imageCachedType(forKey: url.cacheKey), .memory)
             
-            // Once we clear the memory cache, it will be .none (Disk caching operation is not started yet.)
+            // Clear the memory cache.
             self.manager.cache.clearMemoryCache()
-            XCTAssertEqual(self.manager.cache.imageCachedType(forKey: url.cacheKey), .none)
-            
             // After some time, the disk cache should be done.
-            delay(0.1) {
+            delay(0.2) {
                 XCTAssertEqual(self.manager.cache.imageCachedType(forKey: url.cacheKey), .disk)
                 exp.fulfill()
             }
@@ -699,7 +697,7 @@ class KingfisherManagerTests: XCTestCase {
             .network(URL(string: "2")!)
         ]
         let info = KingfisherParsedOptionsInfo([.alternativeSources(allSources)])
-        var context = RetrievingContext(
+        let context = RetrievingContext(
             options: info, originalSource: .network(URL(string: "0")!))
 
         let source1 = context.popAlternativeSource()
@@ -916,6 +914,57 @@ class KingfisherManagerTests: XCTestCase {
         XCTAssertEqual(coordinator.state, .imageCached)
         coordinator.apply(.cachingOriginalImage) { called = true }
         XCTAssertEqual(coordinator.state, .done)
+    }
+
+    func testCanUseCustomizeDefaultCacheSerializer() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+
+        var cacheSerializer = DefaultCacheSerializer()
+        cacheSerializer.preferCacheOriginalData = true
+
+        manager.cache.store(
+            testImage,
+            original: testImageData,
+            forKey: url.cacheKey,
+            processorIdentifier: DefaultImageProcessor.default.identifier,
+            cacheSerializer: cacheSerializer, toDisk: true) {
+                result in
+
+                let computedKey = url.cacheKey.computedKey(with: DefaultImageProcessor.default.identifier)
+                let fileURL = self.manager.cache.diskStorage.cacheFileURL(forKey: computedKey)
+                let data = try! Data(contentsOf: fileURL)
+                XCTAssertEqual(data, testImageData)
+
+                exp.fulfill()
+            }
+        waitForExpectations(timeout: 1.0)
+    }
+
+    func testCanUseCustomizeDefaultCacheSerializerStoreEncoded() {
+        let exp = expectation(description: #function)
+        let url = testURLs[0]
+
+        var cacheSerializer = DefaultCacheSerializer()
+        cacheSerializer.compressionQuality = 0.8
+
+        manager.cache.store(
+            testImage,
+            original: testImageJEPGData,
+            forKey: url.cacheKey,
+            processorIdentifier: DefaultImageProcessor.default.identifier,
+            cacheSerializer: cacheSerializer, toDisk: true) {
+                result in
+
+                let computedKey = url.cacheKey.computedKey(with: DefaultImageProcessor.default.identifier)
+                let fileURL = self.manager.cache.diskStorage.cacheFileURL(forKey: computedKey)
+                let data = try! Data(contentsOf: fileURL)
+                XCTAssertNotEqual(data, testImageJEPGData)
+                XCTAssertEqual(data, testImage.kf.jpegRepresentation(compressionQuality: 0.8))
+
+                exp.fulfill()
+            }
+        waitForExpectations(timeout: 1.0)
     }
 }
 

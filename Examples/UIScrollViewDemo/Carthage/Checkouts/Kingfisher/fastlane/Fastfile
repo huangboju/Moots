@@ -7,23 +7,31 @@ platform :ios do
   desc "Runs all the tests"
   lane :tests do
     test(destination: "platform=macOS", swift_version: "5.0")
-    test(destination: "platform=iOS Simulator,name=iPhone 8", swift_version: "5.0")
-    test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "5.0")
-    
     test(destination: "platform=macOS", swift_version: "4.2")
-    test(destination: "platform=iOS Simulator,name=iPhone 8", swift_version: "4.2")
-    test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "4.2")
-    
     test(destination: "platform=macOS", swift_version: "4.0")
+
+    test(destination: "platform=iOS Simulator,name=iPhone 8", swift_version: "5.0")
+    test(destination: "platform=iOS Simulator,name=iPhone 8", swift_version: "4.2")
     test(destination: "platform=iOS Simulator,name=iPhone 8", swift_version: "4.0")
+    
+    test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "5.0")
+    test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "4.2")
     test(destination: "platform=tvOS Simulator,name=Apple TV", swift_version: "4.0")
+    
+    build(destination: "platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm", swift_version: "4.0")
+    build(destination: "platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm", swift_version: "4.2")
+    build(destination: "platform=watchOS Simulator,name=Apple Watch Series 5 - 40mm", swift_version: "5.0")
   end
-  
+    
+  lane :test_ci do
+    if ENV["DESTINATION"].include? "watchOS" then
+        build(destination: ENV["DESTINATION"], swift_version: ENV["SWIFT_VERSION"])
+    else
+        test(destination: ENV["DESTINATION"], swift_version: ENV["SWIFT_VERSION"])
+    end
+  end
+
   lane :test do |options|
-    _test(options)
-  end
-  
-  private_lane :_test do |options|
     scan(
       scheme: "Kingfisher", 
       clean: true, 
@@ -31,14 +39,20 @@ platform :ios do
       destination: options[:destination]
     )
   end
-  
-  lane :test_ci do
-    test(destination: ENV["DESTINATION"], swift_version: ENV["SWIFT_VERSION"])
+
+  lane :build do |options|
+    gym(
+      workspace: "Kingfisher.xcworkspace",
+      configuration: "Debug",
+      scheme: "Kingfisher",
+      xcargs: "SWIFT_VERSION=#{options[:swift_version]}",
+      destination: options[:destination]
+    )
   end
-  
+
   desc "Lint"
   lane :lint do
-    carthage(command: "build", no_skip_current: true)
+    carthage(command: "build", no_skip_current: true, platform: "iOS")
     pod_lib_lint
   end
   
@@ -106,7 +120,10 @@ platform :ios do
   lane :xcframework do |options|
     target_version = "Kingfisher-#{options[:version]}"
     supporting_root = "../build/#{target_version}/Supporting Files"
-    xcversion(version: "~> 11.0")
+    
+    # Xcode 11.4 causes a crash in the final xcframework
+    # https://github.com/onevcat/Kingfisher/issues/1436
+    xcversion(version: "~> 11.4")
     FileUtils.rm_rf '../build'
     
     frameworks = []
