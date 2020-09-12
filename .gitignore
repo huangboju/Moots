@@ -40,7 +40,7 @@ Pods/
 
 # Carthage
 Carthage/Checkouts
-Carthage/Build
+Examples/UIScrollViewDemo/Carthage
 
 # fastlane
 fastlane/report.xml
