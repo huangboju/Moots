@@ -333,20 +333,59 @@ public struct CompositingImageProcessor: ImageProcessor {
 /// Processor for making round corner images. Only CG-based images are supported in macOS, 
 /// if a non-CG image passed in, the processor will do nothing.
 ///
-/// Note: The input image will be rendered with round corner pixels removed. If the image itself does not contain
+/// - Note: The input image will be rendered with round corner pixels removed. If the image itself does not contain
 /// alpha channel (for example, a JPEG image), the processed image will contain an alpha channel in memory in order
-/// to show correctly. However, when cached into disk, the image format will be respected and the alpha channel will
-/// be removed. That means when you load the processed image from cache again, you will lose transparent corner.
+/// to show correctly. However, when cached to disk, Kingfisher respects the original image format by default. That
+/// means the alpha channel will be removed for these images. When you load the processed image from cache again, you
+/// will lose transparent corner.
+///
 /// You could use `FormatIndicatedCacheSerializer.png` to force Kingfisher to serialize the image to PNG format in this
 /// case.
+///
 public struct RoundCornerImageProcessor: ImageProcessor {
-    
+
+    /// Represents a radius specified in a `RoundCornerImageProcessor`.
+    public enum Radius {
+        /// The radius should be calculated as a fraction of the image width. Typically the associated value should be
+        /// between 0 and 0.5, where 0 represents no radius and 0.5 represents using half of the image width.
+        case widthFraction(CGFloat)
+        /// The radius should be calculated as a fraction of the image height. Typically the associated value should be
+        /// between 0 and 0.5, where 0 represents no radius and 0.5 represents using half of the image height.
+        case heightFraction(CGFloat)
+        /// Use a fixed point value as the round corner radius.
+        case point(CGFloat)
+
+        var radiusIdentifier: String {
+            switch self {
+            case .widthFraction(let f):
+                return "w_frac_\(f)"
+            case .heightFraction(let f):
+                return "h_frac_\(f)"
+            case .point(let p):
+                return p.description
+            }
+        }
+    }
+
     /// Identifier of the processor.
     /// - Note: See documentation of `ImageProcessor` protocol for more.
     public let identifier: String
 
-    /// Corner radius will be applied in processing.
-    public let cornerRadius: CGFloat
+    /// Corner radius will be applied in processing. To provide backward compatibility, this property returns `0` unless
+    /// `Radius.point` is specified.
+    @available(*, deprecated, message: "Use `radius` property instead.")
+    public var cornerRadius: CGFloat {
+        switch radius {
+        case .widthFraction, .heightFraction:
+            return 0.0
+        case .point(let value):
+            return value
+        }
+    }
+
+    /// The radius will be applied in processing. Specify a certain point value with `.point`, or a fraction of the
+    /// target image with `.fraction`. `.fraction(0.5)` means use half of the
+    public let radius: Radius
     
     /// The target corners which will be applied rounding.
     public let roundingCorners: RectCorner
@@ -360,19 +399,47 @@ public struct RoundCornerImageProcessor: ImageProcessor {
     /// Creates a `RoundCornerImageProcessor`.
     ///
     /// - Parameters:
-    ///   - cornerRadius: Corner radius will be applied in processing.
+    ///   - cornerRadius: Corner radius in point will be applied in processing.
+    ///   - targetSize: Target size of output image should be. If `nil`,
+    ///                 the image will keep its original size after processing.
+    ///                 Default is `nil`.
+    ///   - corners: The target corners which will be applied rounding. Default is `.all`.
+    ///   - backgroundColor: Background color to apply for the output image. Default is `nil`.
+    ///
+    /// - Note:
+    ///
+    /// This initializer accepts a concrete point value for `cornerRadius`. If you do not know the image size, but still
+    /// want to apply a full round-corner (making the final image a round one), or specify the corner radius as a
+    /// fraction of one dimension of the target image, use the `Radius` version instead.
+    ///
+    public init(
+        cornerRadius: CGFloat,
+        targetSize: CGSize? = nil,
+        roundingCorners corners: RectCorner = .all,
+        backgroundColor: KFCrossPlatformColor? = nil
+    )
+    {
+        let radius = Radius.point(cornerRadius)
+        self.init(radius: radius, targetSize: targetSize, roundingCorners: corners, backgroundColor: backgroundColor)
+    }
+
+    /// Creates a `RoundCornerImageProcessor`.
+    ///
+    /// - Parameters:
+    ///   - radius: The radius will be applied in processing.
     ///   - targetSize: Target size of output image should be. If `nil`,
     ///                 the image will keep its original size after processing.
     ///                 Default is `nil`.
     ///   - corners: The target corners which will be applied rounding. Default is `.all`.
     ///   - backgroundColor: Background color to apply for the output image. Default is `nil`.
     public init(
-        cornerRadius: CGFloat,
+        radius: Radius,
         targetSize: CGSize? = nil,
         roundingCorners corners: RectCorner = .all,
-        backgroundColor: KFCrossPlatformColor? = nil)
+        backgroundColor: KFCrossPlatformColor? = nil
+    )
     {
-        self.cornerRadius = cornerRadius
+        self.radius = radius
         self.targetSize = targetSize
         self.roundingCorners = corners
         self.backgroundColor = backgroundColor
@@ -382,10 +449,10 @@ public struct RoundCornerImageProcessor: ImageProcessor {
 
             if let size = targetSize {
                 identifier = "com.onevcat.Kingfisher.RoundCornerImageProcessor" +
-                             "(\(cornerRadius)_\(size)\(corners.cornerIdentifier))"
+                             "(\(radius.radiusIdentifier)_\(size)\(corners.cornerIdentifier))"
             } else {
                 identifier = "com.onevcat.Kingfisher.RoundCornerImageProcessor" +
-                             "(\(cornerRadius)\(corners.cornerIdentifier))"
+                             "(\(radius.radiusIdentifier)\(corners.cornerIdentifier))"
             }
             if let backgroundColor = backgroundColor {
                 identifier += "_\(backgroundColor)"
@@ -407,6 +474,17 @@ public struct RoundCornerImageProcessor: ImageProcessor {
         switch item {
         case .image(let image):
             let size = targetSize ?? image.kf.size
+
+            let cornerRadius: CGFloat
+            switch radius {
+            case .point(let point):
+                cornerRadius = point
+            case .widthFraction(let widthFraction):
+                cornerRadius = size.width * widthFraction
+            case .heightFraction(let heightFraction):
+                cornerRadius = size.height * heightFraction
+            }
+
             return image.kf.scaled(to: options.scaleFactor)
                         .kf.image(
                             withRoundRadius: cornerRadius,

@@ -63,6 +63,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             }
             
             base.draw(in: rect, blendMode: blendMode, alpha: alpha)
+            return false
         }
     }
     #endif
@@ -94,6 +95,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
                 rect.fill()
             }
             base.draw(in: rect, from: .zero, operation: compositingOperation, fraction: alpha)
+            return false
         }
     }
     #endif
@@ -140,7 +142,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             #else
             guard let context = UIGraphicsGetCurrentContext() else {
                 assertionFailure("[Kingfisher] Failed to create CG context for image.")
-                return
+                return false
             }
             
             if let backgroundColor = backgroundColor {
@@ -158,6 +160,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             context.clip()
             base.draw(in: rect)
             #endif
+            return false
         }
     }
     
@@ -194,6 +197,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
             #else
             base.draw(in: rect)
             #endif
+            return false
         }
     }
     
@@ -277,7 +281,6 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         
         let w = Int(size.width)
         let h = Int(size.height)
-        let rowBytes = Int(CGFloat(cgImage.bytesPerRow))
         
         func createEffectBuffer(_ context: CGContext) -> vImage_Buffer {
             let data = context.data
@@ -364,6 +367,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
                 base.draw(in: rect, blendMode: .sourceAtop, alpha: fraction)
             }
             #endif
+            return false
         }
     }
     
@@ -450,6 +454,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         let size = CGSize(width: CGFloat(imageRef.width) / scale, height: CGFloat(imageRef.height) / scale)
         return draw(to: size, inverting: true, scale: scale) { context in
             context.draw(imageRef, in: CGRect(origin: .zero, size: size))
+            return true
         }
     }
 }
@@ -501,18 +506,26 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         #endif
     }
     
-    func draw(to size: CGSize, inverting: Bool = false, scale: CGFloat? = nil, refImage: KFCrossPlatformImage? = nil, draw: (CGContext) -> Void) -> KFCrossPlatformImage {
+    func draw(
+        to size: CGSize,
+        inverting: Bool = false,
+        scale: CGFloat? = nil,
+        refImage: KFCrossPlatformImage? = nil,
+        draw: (CGContext) -> Bool // Whether use the refImage (`true`) or ignore image orientation (`false`)
+    ) -> KFCrossPlatformImage
+    {
         let targetScale = scale ?? self.scale
         guard let context = beginContext(size: size, scale: targetScale, inverting: inverting) else {
             assertionFailure("[Kingfisher] Failed to create CG context for blurring image.")
             return base
         }
         defer { endContext() }
-        draw(context)
+        let useRefImage = draw(context)
         guard let cgImage = context.makeImage() else {
             return base
         }
-        return KingfisherWrapper.image(cgImage: cgImage, scale: targetScale, refImage: refImage ?? base)
+        let ref = useRefImage ? (refImage ?? base) : nil
+        return KingfisherWrapper.image(cgImage: cgImage, scale: targetScale, refImage: ref)
     }
     
     #if os(macOS)
@@ -523,6 +536,7 @@ extension KingfisherWrapper where Base: KFCrossPlatformImage {
         
         return draw(to: self.size) { context in
             image.draw(in: rect, from: .zero, operation: .copy, fraction: 1.0)
+            return false
         }
     }
     #endif
