@@ -17,31 +17,31 @@ let CBCRelatedInfo    = "relatedInfo"
 let CBCStoryboardName = "storyboardName"
 
 func CBCCatalogBreadcrumbsFromClass(_ aClass: CBCCatalogExample.Type) -> [String] {
-    return aClass.catalogBreadcrumbs
+    return aClass.catalogMetadata?[CBCBreadcrumbs] as? [String] ?? []
 }
 
 func CBCCatalogIsPrimaryDemoFromClass(_ aClass: CBCCatalogExample.Type) -> Bool {
-    return aClass.catalogIsPrimaryDemo
+    return aClass.catalogMetadata?[CBCIsPrimaryDemo] as? Bool ?? false
 }
 
 func CBCCatalogIsPresentableFromClass(_ aClass: CBCCatalogExample.Type) -> Bool {
-    return aClass.catalogIsPresentable
+    return aClass.catalogMetadata?[CBCIsPresentable] as? Bool ?? false
 }
 
 func CBCCatalogIsDebugLeaf(_ aClass: CBCCatalogExample.Type) -> Bool {
-    return aClass.catalogIsDebug
+    return aClass.catalogMetadata?[CBCIsDebug] as? Bool ?? false
 }
 
 func CBCRelatedInfoFromClass(_ aClass: CBCCatalogExample.Type) -> URL? {
-    return aClass.catalogRelatedInfo
+    return aClass.catalogMetadata?[CBCRelatedInfo] as? URL
 }
 
 func CBCDescriptionFromClass(_ aClass: CBCCatalogExample.Type) -> String? {
-    return aClass.catalogDescription
+    return aClass.catalogMetadata?[CBCDescription] as? String
 }
 
 func CBCStoryboardNameFromClass(_ aClass: CBCCatalogExample.Type) -> String? {
-    return aClass.catalogStoryboardName
+    return aClass.catalogMetadata?[CBCStoryboardName] as? String
 }
 
 func CBCFixViewDebuggingIfNeeded() {
