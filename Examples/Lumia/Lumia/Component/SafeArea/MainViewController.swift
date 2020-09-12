@@ -7,6 +7,8 @@
 //
 
 // https://medium.com/rosberryapps/ios-safe-area-ca10e919526f
+// https://medium.com/@wailord/the-automaticallyadjustsscrollviewinsets-rabbit-hole-b9153a769ce9
+// https://medium.com/@wailord/extended-layout-in-ios-pre-ios-11-5eff2debf28
 
 import UIKit
 
