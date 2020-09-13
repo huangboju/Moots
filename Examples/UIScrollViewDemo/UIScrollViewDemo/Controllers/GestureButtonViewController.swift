@@ -16,14 +16,6 @@ class HitTestView: UIView {
     }
 }
 
-class HitTestControl: UIControl {
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, with: event)
-        print(view, event?.allTouches?.first)
-        return view
-    }
-}
-
 class HitTestButton: UIButton {
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
@@ -58,7 +50,7 @@ class GestureButtonViewController: UIViewController {
             make.leading.top.equalToSuperview()
         }
 
-        let button = UIButton()
+        let button = HitTestButton()
         button.backgroundColor = .red
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         pannelView.addSubview(button)
@@ -67,10 +59,19 @@ class GestureButtonViewController: UIViewController {
             make.width.height.equalTo(44)
         }
         
-        let control = UIButton()
+        let bottomView = UIView()
+        bottomView.backgroundColor = .gray
+        pannelView.addSubview(bottomView)
+        bottomView.snp.makeConstraints { (make) in
+            make.top.equalTo(imageView.snp.bottom)
+            make.height.equalTo(44)
+            make.width.leading.equalTo(imageView)
+        }
+        
+        let control = UIControl()
         control.backgroundColor = .yellow
         control.addTarget(self, action: #selector(controlClicked), for: .touchUpInside)
-        imageView.addSubview(control)
+        bottomView.addSubview(control)
         control.snp.makeConstraints { (make) in
             make.bottom.trailing.equalToSuperview()
             make.width.height.equalTo(44)
