@@ -24,6 +24,14 @@ class HitTestButton: UIButton {
     }
 }
 
+class HitTestControl: UIControl {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
+        print(view, event?.allTouches?.first)
+        return view
+    }
+}
+
 
 class GestureButtonViewController: UIViewController {
     
@@ -88,7 +96,7 @@ class GestureButtonViewController: UIViewController {
             make.bottom.equalTo(-40)
         }
         
-        let control = UIControl()
+        let control = HitTestControl()
         control.backgroundColor = .white
         control.addTarget(self, action: #selector(controlClicked), for: .touchUpInside)
         bottomView.addSubview(control)
