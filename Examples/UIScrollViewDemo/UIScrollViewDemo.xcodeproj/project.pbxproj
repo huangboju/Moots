@@ -66,6 +66,9 @@
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */; };
 		BE79ECA8250C931D003B2B21 /* GestureButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */; };
+		BE79ED3E250E5F23003B2B21 /* UIControl断点 in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED3B250E5F23003B2B21 /* UIControl断点 */; };
+		BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED3C250E5F23003B2B21 /* UIButton断点 */; };
+		BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED3D250E5F23003B2B21 /* UIGestureRecognizer */; };
 		BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */; };
 		BE894E821FBD3BC900585DF6 /* HiddenLayoutTestController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */; };
 		BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */; };
@@ -262,6 +265,9 @@
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
 		BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureButtonViewController.swift; sourceTree = "<group>"; };
+		BE79ED3B250E5F23003B2B21 /* UIControl断点 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UIControl断点"; sourceTree = "<group>"; };
+		BE79ED3C250E5F23003B2B21 /* UIButton断点 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UIButton断点"; sourceTree = "<group>"; };
+		BE79ED3D250E5F23003B2B21 /* UIGestureRecognizer */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = UIGestureRecognizer; sourceTree = "<group>"; };
 		BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewController.swift; sourceTree = "<group>"; };
 		BE894E811FBD3BC900585DF6 /* HiddenLayoutTestController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenLayoutTestController.swift; sourceTree = "<group>"; };
 		BE95F4EF1FC3FF0F0033D83B /* ResetPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordController.swift; sourceTree = "<group>"; };
@@ -560,6 +566,17 @@
 			path = TableNestCollectionController;
 			sourceTree = "<group>";
 		};
+		BE79ED3A250E5EFB003B2B21 /* GestureButtonViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BE79ED3C250E5F23003B2B21 /* UIButton断点 */,
+				BE79ED3B250E5F23003B2B21 /* UIControl断点 */,
+				BE79ED3D250E5F23003B2B21 /* UIGestureRecognizer */,
+				BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */,
+			);
+			path = GestureButtonViewController;
+			sourceTree = "<group>";
+		};
 		BEBE4A001FAC07F900A9CA9A /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -695,6 +712,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BE79ED3A250E5EFB003B2B21 /* GestureButtonViewController */,
 				F79C0AF421845895008448E3 /* MaskView */,
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
 				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
@@ -714,7 +732,6 @@
 				F754780521DCC217004D3D32 /* BlurController.swift */,
 				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
 				F75C2E812238DD9500495104 /* GestureVC.swift */,
-				BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -885,8 +902,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE79ED3E250E5F23003B2B21 /* UIControl断点 in Resources */,
 				D8A731FC1DED6E28005DF7C8 /* LaunchScreen.storyboard in Resources */,
+				BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */,
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
+				BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */,
 				D8A731F71DED6E28005DF7C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
