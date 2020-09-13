@@ -26,55 +26,82 @@ class HitTestButton: UIButton {
 
 
 class GestureButtonViewController: UIViewController {
+    
+    private lazy var pannelView: HitTestView = {
+        let pannelView = HitTestView()
+        pannelView.backgroundColor = UIColor(hex: 0x3498DB)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
+        pannelView.addGestureRecognizer(tap)
+
+        let titleLabel = UILabel()
+        titleLabel.textColor = .white
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        titleLabel.text = "UITapGestureRecognizer"
+        pannelView.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.top.centerX.equalToSuperview()
+        }
+        return pannelView
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
-        
-        let pannelView = HitTestView()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(didTap))
-        pannelView.addGestureRecognizer(tap)
+        view.backgroundColor = UIColor(hex: 0xB3B6B7)
+
         view.addSubview(pannelView)
         pannelView.snp.makeConstraints { (make) in
-            make.top.equalTo(100)
-            make.bottom.equalTo(-38)
-            make.leading.trailing.equalToSuperview()
+            make.centerY.leading.trailing.equalToSuperview()
         }
-        
-        let imageView = UIImageView(image: UIImage(named: "square_flowers"))
+
+        initCardView()
+    }
+    
+    func initCardView() {
+        let imageView = UIImageView(image: UIImage(named: "UIControl"))
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         pannelView.addSubview(imageView)
         imageView.snp.makeConstraints { (make) in
-            make.leading.top.equalToSuperview()
+            make.top.equalTo(40)
+            make.centerX.equalToSuperview()
         }
 
         let button = HitTestButton()
-        button.backgroundColor = .red
+        button.setTitle(" UIButton ", for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .white
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
         pannelView.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.top.trailing.equalTo(imageView)
-            make.width.height.equalTo(44)
+            make.height.equalTo(44)
         }
         
         let bottomView = UIView()
-        bottomView.backgroundColor = .gray
+        bottomView.backgroundColor = UIColor(hex: 0xF1C40F)
         pannelView.addSubview(bottomView)
         bottomView.snp.makeConstraints { (make) in
             make.top.equalTo(imageView.snp.bottom)
             make.height.equalTo(44)
             make.width.leading.equalTo(imageView)
+            make.bottom.equalTo(-40)
         }
         
         let control = UIControl()
-        control.backgroundColor = .yellow
+        control.backgroundColor = .white
         control.addTarget(self, action: #selector(controlClicked), for: .touchUpInside)
         bottomView.addSubview(control)
         control.snp.makeConstraints { (make) in
             make.bottom.trailing.equalToSuperview()
-            make.width.height.equalTo(44)
+            make.height.equalTo(44)
+        }
+        
+        let titleLabel = UILabel()
+        titleLabel.text = " UIControl "
+        control.addSubview(titleLabel)
+        titleLabel.snp.makeConstraints { (make) in
+            make.leading.trailing.centerY.equalToSuperview()
         }
     }
     
