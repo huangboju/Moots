@@ -111,6 +111,10 @@
 		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
 		BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BD1FD14C420099151E /* TableNestCollectionController.swift */; };
 		BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */; };
+		BEF29C83251112B80094EBD5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF29C7F251112B80094EBD5 /* data.json */; };
+		BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C81251112B80094EBD5 /* GLImageCell.swift */; };
+		BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */; };
+		BEF29C88251112DF0094EBD5 /* LazyLoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C87251112DF0094EBD5 /* LazyLoadModel.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -310,6 +314,10 @@
 		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
 		BED604BD1FD14C420099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSelfsizingController.swift; sourceTree = "<group>"; };
+		BEF29C7F251112B80094EBD5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		BEF29C81251112B80094EBD5 /* GLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLImageCell.swift; sourceTree = "<group>"; };
+		BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadVC.swift; sourceTree = "<group>"; };
+		BEF29C87251112DF0094EBD5 /* LazyLoadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadModel.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -618,6 +626,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BEF29C7E251112430094EBD5 /* LazyLoadVC */ = {
+			isa = PBXGroup;
+			children = (
+				BEF29C87251112DF0094EBD5 /* LazyLoadModel.swift */,
+				BEF29C7F251112B80094EBD5 /* data.json */,
+				BEF29C81251112B80094EBD5 /* GLImageCell.swift */,
+				BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */,
+			);
+			path = LazyLoadVC;
+			sourceTree = "<group>";
+		};
 		D8076CBC1DF272C6008ACB34 /* BannerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,6 +731,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEF29C7E251112430094EBD5 /* LazyLoadVC */,
 				BE79ED3A250E5EFB003B2B21 /* GestureButtonViewController */,
 				F79C0AF421845895008448E3 /* MaskView */,
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
@@ -903,6 +923,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE79ED3E250E5F23003B2B21 /* UIControl断点 in Resources */,
+				BEF29C83251112B80094EBD5 /* data.json in Resources */,
 				D8A731FC1DED6E28005DF7C8 /* LaunchScreen.storyboard in Resources */,
 				BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */,
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
@@ -980,6 +1001,7 @@
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
 				F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */,
+				BEF29C88251112DF0094EBD5 /* LazyLoadModel.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
 				F75C2E822238DD9500495104 /* GestureVC.swift in Sources */,
 				BE95F4F61FC40BC30033D83B /* VerifyPhoneNumberController.swift in Sources */,
@@ -1040,10 +1062,12 @@
 				F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
+				BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
 				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
 				BE4FCA7E1FB9430D00E1C3F0 /* MemberComponentFrameCell.swift in Sources */,
 				BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */,
+				BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */,
 				BE1B15551FB2A41A00862271 /* UITableView+Reusable.swift in Sources */,
 				BE4FCA801FB9433500E1C3F0 /* MemberAlertTitleCell.swift in Sources */,
 				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
