@@ -53,7 +53,7 @@ class LazyScrollView: UIScrollView {
 
         let newVisibleViews = visiableViewModels
         
-        let newVisiblelazyIDs = newVisibleViews.flatMap { $0.lazyID }
+        let newVisiblelazyIDs = newVisibleViews.compactMap { $0.lazyID }
         var removeViews: [UIView] = []
         for view in visibleViews {
             if !newVisiblelazyIDs.contains(view.lazyID ?? "") {
@@ -66,7 +66,7 @@ class LazyScrollView: UIScrollView {
             view.removeFromSuperview()
         }
 
-        let alreadyVisibles = visibleViews.flatMap { $0.lazyID }
+        let alreadyVisibles = visibleViews.compactMap { $0.lazyID }
 
         for model in newVisibleViews {
             if alreadyVisibles.contains(model.lazyID) {
@@ -127,7 +127,8 @@ class LazyScrollView: UIScrollView {
     }
     
     func findSet(with minEdge: CGFloat) -> Set<RectModel> {
-        let ascendingEdgeArray = allModels.sorted {  $0.0.absRect.maxY > $0.1.absRect.maxY }
+        
+        let ascendingEdgeArray = allModels.sorted {  $0.absRect.maxY > $1.absRect.maxY }
         
         var minIndex = 0
         var maxIndex = ascendingEdgeArray.count - 1
@@ -149,7 +150,7 @@ class LazyScrollView: UIScrollView {
     }
 
     func findSet(withMaxEdge maxEdge: CGFloat) -> Set<RectModel> {
-        let descendingEdgeArray = allModels.sorted {  $0.0.absRect.maxY < $0.1.absRect.maxY }
+        let descendingEdgeArray = allModels.sorted {  $0.absRect.maxY < $1.absRect.maxY }
         
         var minIndex = 0
         var maxIndex = descendingEdgeArray.count - 1
@@ -210,7 +211,7 @@ class LazyScrollView: UIScrollView {
         }
     }
     
-    func tapItem(sender: UITapGestureRecognizer) {
+    @objc func tapItem(sender: UITapGestureRecognizer) {
         if let view = sender.view {
             lazyDelegate?.scrollView(self, didSelectItemAt: view.lazyID!)
         }
@@ -221,7 +222,7 @@ extension Array where Element: Equatable {
     
     // Remove first collection element that is equal to the given `object`:
     mutating func remove(_ object: Element) {
-        if let index = index(of: object) {
+        if let index = firstIndex(of: object) {
             remove(at: index)
         }
     }
