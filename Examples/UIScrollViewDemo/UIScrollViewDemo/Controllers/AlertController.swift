@@ -35,7 +35,7 @@ struct House {
     var address: Address
 }
 
-class ViewController: UIViewController {
+class AlertController: UIViewController {
     
     func sort() {
         let people = [
