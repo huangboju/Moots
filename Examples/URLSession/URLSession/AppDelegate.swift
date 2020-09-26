@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
 //        getData()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: UIPasteboard.changedNotification, object: nil)
+//        NotificationCenter.default.addObserver(self, selector: #selector(pastechanged), name: UIPasteboard.changedNotification, object: nil)
         
         return true
     }

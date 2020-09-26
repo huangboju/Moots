@@ -56,6 +56,9 @@ class ViewController: UIViewController {
         [
             GestureVC.self,
             GestureButtonViewController.self
+        ],
+        [
+            AlertController.self
         ]
     ]
 
