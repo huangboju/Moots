@@ -1018,171 +1018,267 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 </details>
 
 <details>
-<summary>
-  **[Argo](https://github.com/thoughtbot/Argo)(Swift)**
-</summary>
-Swift的JSON转换
+    <summary>
+        <a href="https://github.com/thoughtbot/Argo">
+        Argo
+        </a>(Swift)
+    </summary>
+            Swift的JSON转换
+
 </details>
 
-<details>
-<summary>
-  **[Async](https://github.com/duemunk/Async)(Swift)**
-</summary>
-对GCD的封装
-</details>
 
 <details>
-<summary>
-  **[BluetoothKit](https://github.com/rhummelmose/BluetoothKit)(Swift)**
-</summary>
-使用BLE在iOS / OSX设备之间轻松通信
+    <summary>
+        <a href="https://github.com/duemunk/Async">
+        Async
+        </a>(Swift)
+    </summary>
+            对GCD的封装
+
 </details>
 
-<details>
-<summary>
-  **[BeeHive](https://github.com/alibaba/BeeHive)(OC)**
-</summary>
-阿里开源的解耦库
-</details>
 
 <details>
-<summary>
-  **[DeepLinkKit](https://github.com/button/DeepLinkKit)(OC)**
-</summary>
-精湛的路由匹配，基于块的方式来处理你的深层链接。
+    <summary>
+        <a href="https://github.com/rhummelmose/BluetoothKit">
+        BluetoothKit
+        </a>(Swift)
+    </summary>
+            使用BLE在iOS / OSX设备之间轻松通信
+
 </details>
 
-<details>
-<summary>
-  **[Design-Patterns-In-Swift](https://github.com/ochococo/Design-Patterns-In-Swift)(Swift)**
-</summary>
-设计模式
-</details>
 
 <details>
-<summary>
-  **[FBMemoryProfiler](https://github.com/facebook/FBMemoryProfiler)(OC)**
-</summary>
-facebook开源的内存分析器
+    <summary>
+        <a href="https://github.com/alibaba/BeeHive">
+        BeeHive
+        </a>(OC)
+    </summary>
+            阿里开源的解耦库
+
 </details>
 
-<details>
-<summary>
-  **[FileBrowser](https://github.com/marmelroy/FileBrowser)(Swift)**
-</summary>
-文件浏览器
-</details>
 
 <details>
-<summary>
-  **[Google VR](https://github.com/googlevr/gvr-ios-sdk)**
-</summary>
-谷歌VR
+    <summary>
+        <a href="https://github.com/button/DeepLinkKit">
+        DeepLinkKit
+        </a>(OC)
+    </summary>
+            精湛的路由匹配，基于块的方式来处理你的深层链接。
+
 </details>
 
-<details>
-<summary>
-  **[Kakapo](https://github.com/devlucky/Kakapo)(Swift)**
-</summary>
-在Swift中动态模拟服务器行为和响应
-</details>
 
 <details>
-<summary>
-  **[LayerPlayer](https://github.com/singro/v2ex)**
-</summary>
-探索Apple的Core Animation API的功能
+    <summary>
+        <a href="https://github.com/ochococo/Design-Patterns-In-Swift">
+        Design-Patterns-In-Swift
+        </a>(Swift)
+    </summary>
+            设计模式
+
 </details>
 
-<details>
-<summary>
-  **[Live](https://github.com/ltebean/Live)(Swift)**
-</summary>
-直播
-</details>
 
 <details>
-<summary>
-  **[MLeaksFinder](https://github.com/Zepo/MLeaksFinder)(Swift)**
-</summary>
-在开发时查找iOS应用中的内存泄漏。
+    <summary>
+        <a href="https://github.com/facebook/FBMemoryProfiler">
+        FBMemoryProfiler
+        </a>(OC)
+    </summary>
+            facebook开源的内存分析器
+
 </details>
 
-<details>
-<summary>
-  **[NetworkEye](https://github.com/coderyi/NetworkEye)(OC)**
-</summary>
-一个iOS网络调试库，它可以监控应用程序中的HTTP请求，并显示与请求相关的信息
-</details>
 
 <details>
-<summary>
-  **[Nuke](https://github.com/kean/Nuke)(Swift)**
-</summary>
-强大的图像加载和缓存框架
+    <summary>
+        <a href="https://github.com/marmelroy/FileBrowser">
+        FileBrowser
+        </a>(Swift)
+    </summary>
+            文件浏览器
+
 </details>
 
-<details>
-<summary>
-  **[Password-keyboard](https://github.com/liuchunlao/Password-keyboard)(OC)**
-</summary>
-动态密码键盘
-</details>
 
 <details>
-<summary>
-  **[Peek](https://github.com/shaps80/Peek)(Swift)**
-</summary>
-Peek是一个开源库，允许您根据用户界面的规范指南轻松检查您的应用程序。 Peek可以被工程师，设计师和测试人员使用，允许开发人员花更多的时间在代码和更少的时间检查字体，颜色和布局是像素完美。
+    <summary>
+        <a href="https://github.com/googlevr/gvr-ios-sdk">
+        Google VR
+        </a>
+    </summary>
+            谷歌VR
+
 </details>
 
-<details>
-<summary>
-  **[PNChart-Swift](https://github.com/kevinzhow/PNChart-Swift)**
-</summary>
-一个简单而美丽的图表库用
-</details>
 
 <details>
-<summary>
-  **[SQLite.swift](https://github.com/stars)(Swift)**
-</summary>
-数据库
+    <summary>
+        <a href="https://github.com/devlucky/Kakapo">
+        Kakapo
+        </a>(Swift)
+    </summary>
+            在Swift中动态模拟服务器行为和响应
+
 </details>
 
-<details>
-<summary>
-  **[socket.io-client-swift](https://github.com/socketio/socket.io-client-swift)(Swift)**
-</summary>
-socket连接
-</details>
 
 <details>
-<summary>
-  **[SwiftyAttributes](https://github.com/eddiekaiger/SwiftyAttributes)(Swift)**
-</summary>
-富文本字符串处理
+    <summary>
+        <a href="https://github.com/singro/v2ex">
+        LayerPlayer
+        </a>
+)
+    </summary>
+            探索Apple的Core Animation API的功能
+
 </details>
 
-<details>
-<summary>
-  **[SwiftPlate](https://github.com/mergesort/TableFlip)(Swift)**
-</summary>
-用命令行轻松生成跨平台Swift框架项目
-</details>
 
 <details>
-<summary>
-  **[XLPagerTabStrip](https://github.com/xmartlabs/XLPagerTabStrip)**
-</summary>
-网易那种侧滑页面
+    <summary>
+        <a href="https://github.com/ltebean/Live">
+        Live
+        </a>(Swift)
+    </summary>
+            直播
+
 </details>
 
+
 <details>
-<summary>
-  **[ZLSwipeableViewSwift](https://github.com/zhxnlai/ZLSwipeableViewSwift)(Swift)**
-</summary>
-一个简单的视图构建卡像界面灵感来自Tinder和Potluck。
+    <summary>
+        <a href="https://github.com/Zepo/MLeaksFinder">
+        MLeaksFinder
+        </a>(Swift)
+    </summary>
+            在开发时查找iOS应用中的内存泄漏。
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/coderyi/NetworkEye">
+        NetworkEye
+        </a>(OC)
+    </summary>
+            一个iOS网络调试库，它可以监控应用程序中的HTTP请求，并显示与请求相关的信息
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/kean/Nuke">
+        Nuke
+        </a>(Swift)
+    </summary>
+            强大的图像加载和缓存框架
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/liuchunlao/Password-keyboard">
+        Password-keyboard
+        </a>(OC)
+    </summary>
+            动态密码键盘
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/shaps80/Peek">
+        Peek
+        </a>(Swift)
+    </summary>
+            Peek是一个开源库，允许您根据用户界面的规范指南轻松检查您的应用程序。 Peek可以被工程师，设计师和测试人员使用，允许开发人员花更多的时间在代码和更少的时间检查字体，颜色和布局是像素完美。
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/kevinzhow/PNChart-Swift">
+        PNChart-Swift
+        </a>
+    </summary>
+            一个简单而美丽的图表库用
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/stars">
+        SQLite.swift
+        </a>(Swift)
+    </summary>
+            数据库
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/socketio/socket.io-client-swift">
+        socket.io-client-swift
+        </a>(Swift)
+    </summary>
+            socket连接
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/eddiekaiger/SwiftyAttributes">
+        SwiftyAttributes
+        </a>(Swift)
+    </summary>
+            富文本字符串处理
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/mergesort/TableFlip">
+        SwiftPlate
+        </a>(Swift)
+    </summary>
+            用命令行轻松生成跨平台Swift框架项目
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/xmartlabs/XLPagerTabStrip">
+        XLPagerTabStrip
+        </a>
+    </summary>
+            网易那种侧滑页面
+
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/zhxnlai/ZLSwipeableViewSwift">
+        ZLSwipeableViewSwift
+        </a>(Swift)
+    </summary>
+            一个简单的视图构建卡像界面灵感来自Tinder和Potluck。
+
 </details>
 
 ---
