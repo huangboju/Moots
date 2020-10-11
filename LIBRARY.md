@@ -1286,35 +1286,30 @@ Swift中的iOS的动画gif＆apng引擎。 针对多图像情况进行了优化�
 ### 框架
 
 <details>
-<summary>
-  **[AsyncDisplayKit](https://github.com/facebook/AsyncDisplayKit)**
-</summary>
-facebook开源的界面优化框架
+    <summary>
+        <a href="https://github.com/facebook/AsyncDisplayKit">
+        AsyncDisplayKit
+        </a>
+    </summary>
+            facebook开源的界面优化框架
 </details>
 
 <details>
   <summary>**及时通讯框架**</summary>
     <ul>
-    <li>[Atlas-iOS](https://github.com/layerhq/Atlas-iOS)(OC)</li>
-    <li>[NMessenger](https://github.com/eBay/NMessenger)(Swift)</li>
+      <li>[Atlas-iOS](https://github.com/layerhq/Atlas-iOS)(OC)</li>
+      <li>[NMessenger](https://github.com/eBay/NMessenger)(Swift)</li>
     </ul>
 </details>
 
 <details>
   <summary>**测试框架**</summary>
     <ul>
-    <li>[Quick](https://github.com/Quick/Quick)(Swift)</li>
+      <li>[Quick](https://github.com/Quick/Quick)(Swift)</li>
       <li>[SwiftCheck](https://github.com/typelift/SwiftCheck)(Swift)</li>
     </ul>
 </details>
 
-<details>
-  <summary>**跨平台框架**</summary>
-    <ul>
-      <li>[weex](https://github.com/alibaba/weex)</li>
-      <li>[react-native](https://github.com/facebook/react-native)(Swift)</li>
-    </ul>
-</details>
 
 <details>
     <summary>
