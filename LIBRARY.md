@@ -1317,31 +1317,42 @@ facebook开源的界面优化框架
 </details>
 
 <details>
-<summary>
-  **[katana-swift](https://github.com/BendingSpoons/katana-swift)(Swift)**
-</summary>
-跟ReSwift类似
+    <summary>
+        <a href="https://github.com/BendingSpoons/katana-swift">
+        katana-swift
+        </a>(Swift)
+    </summary>
+            跟ReSwift类似
 </details>
 
-<details>
-<summary>
-  **[ReSwift](https://github.com/ReSwift/ReSwift)**
-</summary>
-似乎有点牛B，待仔细研究
-</details>
 
 <details>
-<summary>
-  **[RxSwift](https://github.com/ReactiveX/RxSwift)(Swift)**
-</summary>
-响应式编程
+    <summary>
+        <a href="https://github.com/ReSwift/ReSwift">
+        ReSwift
+        </a>
+    </summary>
+            似乎有点牛B，待仔细研究
 </details>
 
+
 <details>
-<summary>
-  **[StyleKit](https://github.com/146BC/StyleKit)(Swift)**
-</summary>
-一个用Swift编写的强大的，易于使用的样式框架
+    <summary>
+        <a href="https://github.com/ReactiveX/RxSwift">
+        RxSwift
+        </a>(Swift)
+    </summary>
+            响应式编程
+</details>
+
+
+<details>
+    <summary>
+        <a href="https://github.com/146BC/StyleKit">
+        StyleKit
+        </a>(Swift)
+    </summary>
+            一个用Swift编写的强大的，易于使用的样式框架
 </details>
 
 ---
