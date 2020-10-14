@@ -80,7 +80,7 @@ class GestureButtonViewController: UIViewController {
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .white
         button.addTarget(self, action: #selector(buttonClicked), for: .touchUpInside)
-        pannelView.addSubview(button)
+        imageView.addSubview(button)
         button.snp.makeConstraints { (make) in
             make.top.trailing.equalTo(imageView)
             make.height.equalTo(44)
