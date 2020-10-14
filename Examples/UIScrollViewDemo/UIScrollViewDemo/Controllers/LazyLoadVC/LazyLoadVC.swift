@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-import WebImage
+import SDWebImage
 
 
 class LazyLoadVC: UIViewController {
@@ -35,7 +35,7 @@ class LazyLoadVC: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(refresh))
     }
 
-    func refresh() {
+    @objc func refresh() {
         tableView.reloadSections(IndexSet(integer: 0), with: .none)
     }
 
@@ -46,7 +46,7 @@ class LazyLoadVC: UIViewController {
             guard let dataFilePath = Bundle.main.path(forResource: "data", ofType: "json") else { return }
             do {
                 let item = try Data(contentsOf: URL(fileURLWithPath: dataFilePath))
-                let rootDict = DATA(data: item).dictionaryValue
+                let rootDict = try DATA(data: item).dictionaryValue
                 guard let datas = rootDict["data"]?.arrayValue else { return }
                 self.data = datas.map { LazyLoadModel($0.dictionaryValue) }
             } catch let error {
@@ -67,30 +67,30 @@ class LazyLoadVC: UIViewController {
     }
 
     func setup(cell: GLImageCell, with indexPath: IndexPath) {
-        let item = data[indexPath.row].hoverURL
-        guard let targetURL = URL(string: item) else { return }
-        let cellFrame = tableView.rectForRow(at: indexPath)
-        if cell.photoView.sd_imageURL() != targetURL {
-            cell.photoView.alpha = 0
-            let manager = SDWebImageManager.shared()
-            manager?.imageDownloader.setValue("http://image.baidu.com/i?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=cat&oq=cat&rsp=-1", forHTTPHeaderField: "Referer")
-            var shouldLoadImage = true
-            if let targetRect = targetRect, !targetRect.intersects(cellFrame) {
-                let cache = manager?.imageCache
-                let key = manager?.cacheKey(for: targetURL)
-                if cache?.imageFromMemoryCache(forKey: key) != nil {
-                    print(targetRect)
-                    shouldLoadImage = false
-                }
-            }
-            guard shouldLoadImage else { return }
-            cell.photoView.frame = CGRect(origin: .zero, size: cellFrame.size)
-            cell.photoView.sd_setImage(with: targetURL, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
-                UIView.animate(withDuration: 0.25, animations: {
-                    cell.photoView.alpha = 1
-                })
-            })
-        }
+//        let item = data[indexPath.row].hoverURL
+//        guard let targetURL = URL(string: item) else { return }
+//        let cellFrame = tableView.rectForRow(at: indexPath)
+//        if cell.photoView.sd_imageURL != targetURL {
+//            cell.photoView.alpha = 0
+//            let manager = SDWebImageManager.shared
+//            manager.imageDownloader.setValue("http://image.baidu.com/i?tn=baiduimage&ipn=r&ct=201326592&cl=2&lm=-1&st=-1&fm=index&fr=&sf=1&fmq=&pv=&ic=0&nc=1&z=&se=1&showtab=0&fb=0&width=&height=&face=0&istype=2&ie=utf-8&word=cat&oq=cat&rsp=-1", forHTTPHeaderField: "Referer")
+//            var shouldLoadImage = true
+//            if let targetRect = targetRect, !targetRect.intersects(cellFrame) {
+//                let cache = manager.imageCache
+//                let key = manager.cacheKey(for: targetURL)
+//                if cache?.imageFromMemoryCache(forKey: key) != nil {
+//                    print(targetRect)
+//                    shouldLoadImage = false
+//                }
+//            }
+//            guard shouldLoadImage else { return }
+//            cell.photoView.frame = CGRect(origin: .zero, size: cellFrame.size)
+//            cell.photoView.sd_setImage(with: targetURL, placeholderImage: nil, options: .handleCookies, completed: { (image, error, type, url) in
+//                UIView.animate(withDuration: 0.25, animations: {
+//                    cell.photoView.alpha = 1
+//                })
+//            })
+//        }
     }
 
     override func didReceiveMemoryWarning() {
