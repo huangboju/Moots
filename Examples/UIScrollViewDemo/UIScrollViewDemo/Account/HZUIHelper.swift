@@ -59,7 +59,11 @@ class HZUIHelper {
     }
 
     static func renderTranslucentNav(in vc: UIViewController) {
-        vc.automaticallyAdjustsScrollViewInsets = false
+        if #available(iOS 11, *) {
+            
+        } else {
+            vc.automaticallyAdjustsScrollViewInsets = false
+        }
         vc.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         vc.navigationController?.navigationBar.shadowImage = UIImage()
         vc.edgesForExtendedLayout = .all

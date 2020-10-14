@@ -40,8 +40,13 @@ class NestedStackViewController: AutoLayoutBaseController {
 
         mainStackView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         mainStackView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        mainStackView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 100).isActive = true
-        mainStackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor, constant: -60).isActive = true
+        if #available(iOS 11, *) {
+            mainStackView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100).isActive = true
+            mainStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -60).isActive = true
+        } else {
+            mainStackView.topAnchor.constraint(equalTo: topLayoutGuide.topAnchor, constant: 100).isActive = true
+            mainStackView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor, constant: -60).isActive = true
+        }
     }
 
     private var normalStackView: UIStackView {

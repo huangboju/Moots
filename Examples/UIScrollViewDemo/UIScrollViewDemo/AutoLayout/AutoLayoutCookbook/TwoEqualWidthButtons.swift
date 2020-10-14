@@ -13,7 +13,11 @@ class TwoEqualWidthButtons: AutoLayoutBaseController {
         let leftButton = generatButton(with: "Short")
         view.addSubview(leftButton)
         leftButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        leftButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        if #available(iOS 11, *) {
+            leftButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        } else {
+            leftButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        }
 
         let rightButton = generatButton(with: "Much Longer Button Title")
         view.addSubview(rightButton)

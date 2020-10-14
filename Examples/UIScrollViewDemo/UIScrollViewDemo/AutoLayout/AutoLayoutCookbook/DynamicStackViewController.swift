@@ -22,7 +22,11 @@ class DynamicStackViewController: AutoLayoutBaseController {
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
-        scrollView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        if #available(iOS 11, *) {
+            scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        } else {
+            scrollView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        }
 
         let editButton = UIButton(type: .system)
         editButton.setTitle("Edit", for: .normal)

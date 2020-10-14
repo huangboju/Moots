@@ -15,9 +15,15 @@ class TwoDifferentWidthViews: AutoLayoutBaseController {
         purpleView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(purpleView)
         
-        purpleView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        if #available(iOS 11, *) {
+            purpleView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+            purpleView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        } else {
+            purpleView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            purpleView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        }
+        
         purpleView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        purpleView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
 
         let orangeView = UIView()
         orangeView.translatesAutoresizingMaskIntoConstraints = false
