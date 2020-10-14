@@ -14,7 +14,11 @@ class ThreeEqualWidthButtons: AutoLayoutBaseController {
         let firstButton = generatButton(with: "Short")
         view.addSubview(firstButton)
         firstButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        firstButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        if #available(iOS 11, *) {
+            firstButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        } else {
+            firstButton.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        }
         
         let middleButton = generatButton(with: "Medium")
         view.addSubview(middleButton)

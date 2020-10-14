@@ -33,10 +33,15 @@ class ButtonsSizeClass: AutoLayoutBaseController {
         }
 
         do {
-            bottomLayoutGuide.topAnchor.constraint(equalTo: bottomButton.bottomAnchor, constant: 20).isActive = true
+            if #available(iOS 11, *) {
+                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: bottomButton.bottomAnchor, constant: 20).isActive = true
+                bottomButtonLandscapeBottom = view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: topButton.bottomAnchor, constant: 20)
+            } else {
+                bottomLayoutGuide.topAnchor.constraint(equalTo: bottomButton.bottomAnchor, constant: 20).isActive = true
+                bottomButtonLandscapeBottom = bottomLayoutGuide.topAnchor.constraint(equalTo: topButton.bottomAnchor, constant: 20)
+            }
             bottomButton.widthAnchor.constraint(equalTo: topButton.widthAnchor).isActive = true
             bottomButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-            bottomButtonLandscapeBottom = bottomLayoutGuide.topAnchor.constraint(equalTo: topButton.bottomAnchor, constant: 20)
             bottomButtonPortraitLeading = bottomButton.leadingAnchor.constraint(equalTo: topButton.trailingAnchor, constant: 8)
             topButtonLandscapeBottom = bottomButton.topAnchor.constraint(equalTo: topButton.bottomAnchor, constant: 8)
             bottomButtonLandscapeLeading = bottomButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)

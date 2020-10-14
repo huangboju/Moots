@@ -27,7 +27,11 @@ class DynamicTextAndReadability: AutoLayoutBaseController {
         view.addSubview(titleLabel)
         
         do {
-            titleLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            if #available(iOS 11, *) {
+                titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            } else {
+                titleLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            }
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         }
@@ -36,7 +40,11 @@ class DynamicTextAndReadability: AutoLayoutBaseController {
             bodyTextView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 10).isActive = true
             bodyTextView.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
             bodyTextView.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-            bodyTextView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+            if #available(iOS 11, *) {
+                bodyTextView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+            } else {
+                bodyTextView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+            }
         }
     }
 }

@@ -15,9 +15,14 @@ class TwoEqualWidthViewsController: AutoLayoutBaseController {
         yellowView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(yellowView)
 
-        yellowView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+        if #available(iOS 11, *) {
+            yellowView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+            yellowView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        } else {
+            yellowView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            yellowView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+        }
         yellowView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
-        yellowView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
 
         let greenView = UIView()
         greenView.translatesAutoresizingMaskIntoConstraints = false
