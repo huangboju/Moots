@@ -55,7 +55,11 @@ class SizeClassSpecificLayouts: AutoLayoutBaseController {
             greenView.widthAnchor.constraint(equalTo: redView.widthAnchor).isActive = true
             greenViewLeadingConstraint = greenView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16)
             greenViewLeadingConstraint.isActive = true
-            greenView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+            if #available(iOS 11, *) {
+                greenView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+            } else {
+                greenView.bottomAnchor.constraint(equalTo: bottomLayoutGuide.topAnchor, constant: -20).isActive = true
+            }
         }
 
         let greenLabel = generatLabel(with: "Green")

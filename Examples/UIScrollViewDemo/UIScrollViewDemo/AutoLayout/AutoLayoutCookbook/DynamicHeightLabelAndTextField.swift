@@ -61,8 +61,14 @@ class DynamicHeightLabelAndTextField: AutoLayoutBaseController {
         textField.leadingAnchor.constraint(equalTo: titleLabel.trailingAnchor, constant: 8).isActive = true
         textField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
         textField.lastBaselineAnchor.constraint(equalTo: titleLabel.lastBaselineAnchor).isActive = true
-        textField.topAnchor.constraint(greaterThanOrEqualTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
-        let constraint1 = textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20)
+        let constraint1: NSLayoutConstraint
+        if #available(iOS 11, *) {
+            textField.topAnchor.constraint(greaterThanOrEqualTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+            constraint1 = textField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20)
+        } else {
+            textField.topAnchor.constraint(greaterThanOrEqualTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            constraint1 = textField.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20)
+        }
         constraint1.priority = UILayoutPriority(rawValue: UILayoutPriority.defaultLow.rawValue - 1)
         constraint1.isActive = true
     }

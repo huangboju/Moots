@@ -30,8 +30,12 @@ class AspectRatioImageView: AutoLayoutBaseController {
         view.addSubview(trailingContentView)
         
         do {
+            if #available(iOS 11, *) {
+                topContentView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            } else {
+                topContentView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
+            }
             topContentView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-            topContentView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
             topContentView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
             topContentView.heightAnchor.constraint(equalTo: bottomContentView.heightAnchor).isActive = true
         }
@@ -60,7 +64,11 @@ class AspectRatioImageView: AutoLayoutBaseController {
             bottomContentView.trailingAnchor.constraint(equalTo: topContentView.trailingAnchor).isActive = true
             bottomContentView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor).isActive = true
             bottomContentView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
-            bottomLayoutGuide.topAnchor.constraint(equalTo: bottomContentView.bottomAnchor, constant: 20).isActive = true
+            if #available(iOS 11, *) {
+                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: bottomContentView.bottomAnchor, constant: 20).isActive = true
+            } else {
+                bottomLayoutGuide.topAnchor.constraint(equalTo: bottomContentView.bottomAnchor, constant: 20).isActive = true
+            }
         }
     }
     
