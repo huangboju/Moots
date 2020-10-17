@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<playground version='6.0' target-platform='ios' display-mode='raw'>
+    <pages>
+        <page name='What is Combine'/>
+        <page name='Publishers &amp; Subscribers'/>
+        <page name='Subjects'/>
+        <page name='Subscriptions'/>
+        <page name='Cancellation &amp; Memory Management'/>
+        <page name='Simple Operators'/>
+        <page name='Combining Operators'/>
+        <page name='Scheduling'/>
+        <page name='Foundation and Combine'/>
+        <page name='Flatmap and error types'/>
+        <page name='@Published properties'/>
+        <page name='Future and Promises'/>
+        <page name='Debugging'/>
+        <page name='Custom UIKit Publishers'/>
+    </pages>
+</playground>
