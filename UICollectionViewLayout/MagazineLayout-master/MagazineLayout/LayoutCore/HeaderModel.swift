@@ -21,18 +21,17 @@ struct HeaderModel {
 
   // MARK: Lifecycle
 
-  init(heightMode: MagazineLayoutHeaderHeightMode, height: CGFloat) {
-    id = NSUUID().uuidString
+  init(heightMode: MagazineLayoutHeaderHeightMode, height: CGFloat, pinToVisibleBounds: Bool) {
     self.heightMode = heightMode
+    self.pinToVisibleBounds = pinToVisibleBounds
     originInSection = .zero
     size = CGSize(width: 0, height: height)
   }
 
   // MARK: Internal
 
-  let id: String
-
   var heightMode: MagazineLayoutHeaderHeightMode
+  var pinToVisibleBounds: Bool
   var originInSection: CGPoint
   var size: CGSize
   var preferredHeight: CGFloat?

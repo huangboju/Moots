@@ -16,13 +16,16 @@ A collection view layout capable of laying out views in vertically scrolling gri
 	- Half-width, third-width, etc. for a grid layout
 - Self-sizing in just the vertical dimension
 - Per-item self-sizing preferences (self-size and statically-size items anywhere in your collection view)
-- Self-sizing headers
-- Hiding or showing headers on a per-section basis
+- Self-sizing headers and footers
+- Hiding or showing headers and footers on a per-section basis
+- Pinned (sticky) headers and footers
 - Section backgrounds that can be hidden / visible on a per-section basis
+- Customizable insert and delete animations for items and supplementary views
 
 Other features:
 - Specifying horizontal item spacing on a per-section basis
 - Specifying vertical row spacing on a per-section basis
+- Specifying section insets on a per-section basis
 - Specifying item insets on a per-section basis
 
 These capabilities have allowed us to build a wide variety of screens in the Airbnb app, many of which are among our highest-traffic screens. Here are just a few examples of screens laid out using `MagazineLayout`:
@@ -101,7 +104,7 @@ To delete an item, simple tap on the item in the collection view. The item will 
 ## Getting Started
 
 ### Requirements
-- Deployment target iOS 10.0+
+- Deployment target iOS 10.0+, tvOS 10.0+
 - Swift 4+
 - Xcode 10+
 
@@ -165,11 +168,14 @@ collectionView.register(MyCustomCell.self, forCellWithReuseIdentifier: "MyCustom
 // Only necessary if you want section headers
 collectionView.register(MyCustomHeader.self, forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionHeader, withReuseIdentifier: "MyCustomHeaderReuseIdentifier")
 
+// Only necessary if you want section footers
+collectionView.register(MyCustomFooter.self, forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionFooter, withReuseIdentifier: "MyCustomFooterReuseIdentifier")
+
 // Only necessary if you want section backgrounds
 collectionView.register(MyCustomBackground.self, forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionBackground, withReuseIdentifier: "MyCustomBackgroundReuseIdentifier")
 ```
 
-Because cells and headers can self-size (backgrounds do not self-size), in this example, `MyCustomCell` and `MyCustomHeader` **must** have the correct implementation of `preferredLayoutAttributesFitting(_:)`. See [Setting up cells and headers](#setting-up-cells-and-headers).
+Because cells, headers, and footers can self-size (backgrounds do not self-size), in this example, `MyCustomCell`, `MyCustomHeader`, and `MyCustomFooter` **must** have the correct implementation of `preferredLayoutAttributesFitting(_:)`. See [Setting up cells and headers](#setting-up-cells-and-headers).
 
 #### Setting the data source
 Now that you've registered your view types with your collection view, it's time to wire up the data source. Like with any collection view integration, your data source needs to conform to `UICollectionViewDataSource`. If the same object that owns your collection view is also your data source, you can simply do this:
@@ -188,7 +194,7 @@ collectionView.delegate = self
 Here's an example delegate implementation:
 
 ```swift
-extension  ViewController: UICollectionViewDelegateMagazineLayout {
+extension ViewController: UICollectionViewDelegateMagazineLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeModeForItemAt indexPath: IndexPath) -> MagazineLayoutItemSizeMode {
     let widthMode = MagazineLayoutItemWidthMode.halfWidth
@@ -196,8 +202,12 @@ extension  ViewController: UICollectionViewDelegateMagazineLayout {
     return MagazineLayoutItemSizeMode(widthMode: widthMode, heightMode: heightMode)
   }
 
-  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, visibilityModeForHeaderInSectionAtIndex index: Int) -> MagazineLayoutHeaderVisibilityMode {
-    return .visible(heightMode: .dynamic)
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, visibilityModeForHeaderInSectionAtIndex index: Int) -> MagazineLayoutSupplementaryViewVisibilityMode {
+    return .visible(heightMode: .dynamic, pinToVisibleBounds: true)
+  }
+
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, visibilityModeForFooterInSectionAtIndex index: Int) -> MagazineLayoutSupplementaryViewVisibilityMode {
+    return .visible(heightMode: .dynamic, pinToVisibleBounds: false)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, visibilityModeForBackgroundInSectionAtIndex index: Int) -> MagazineLayoutBackgroundVisibilityMode {
@@ -210,6 +220,10 @@ extension  ViewController: UICollectionViewDelegateMagazineLayout {
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, verticalSpacingForElementsInSectionAtIndex index: Int) -> CGFloat {
     return  12
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForSectionAtIndex index: Int) -> UIEdgeInsets {
+    return UIEdgeInsets(top: 0, left: 8, bottom: 24, right: 8)
   }
 
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetsForItemsInSectionAtIndex index: Int) -> UIEdgeInsets {
@@ -231,12 +245,10 @@ As a rule of thumb, if you're proposing an API breaking change or a change to ex
 Bryan Keller
 - https://github.com/bryankeller
 - https://twitter.com/BKyourway19
-- [Email](kellerbryan19@gmail.com)
 
 Bryn Bodayle
 - https://github.com/brynbodayle
 - https://twitter.com/brynbodayle
-- [Email](mailto:bryn.bodayle@gmail.com)
 
 If you or your company has found `MagazineLayout` to be useful, let us know!
 

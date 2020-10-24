@@ -37,6 +37,7 @@ final class ModelHelpers {
       let sectionModel = SectionModel(
         itemModels: itemModels,
         headerModel: nil,
+        footerModel: nil,
         backgroundModel: nil,
         metrics: MagazineLayoutSectionMetrics.defaultSectionMetrics(forCollectionViewWidth: 320))
       sectionModels.append(sectionModel)
@@ -64,10 +65,11 @@ final class FrameHelpers {
     match elementLocationFramePairs: ElementLocationFramePairs)
     -> Bool
   {
+    let expectedFrames = Set(expectedFrames)
     var checkedFramesCount = 0
 
-    for (i, elementLocationFramePair) in elementLocationFramePairs.enumerated() {
-      if i < expectedFrames.count && expectedFrames[i] != elementLocationFramePair.frame {
+    for elementLocationFramePair in elementLocationFramePairs {
+      if !expectedFrames.contains(elementLocationFramePair.frame) {
         return false
       }
 
@@ -83,24 +85,23 @@ final class FrameHelpers {
     modelState: ModelState)
     -> Bool
   {
-    var expectedFrameIndex = 0
+    let expectedFrames = Set(expectedFrames)
+    var checkedFramesCount = 0
+
     for sectionIndex in sectionIndexRange {
       for itemIndex in 0..<modelState.numberOfItems(inSectionAtIndex: sectionIndex, .afterUpdates) {
         let itemFrame = modelState.frameForItem(
           at: ElementLocation(elementIndex: itemIndex, sectionIndex: sectionIndex),
           .afterUpdates)
-        if
-          expectedFrameIndex < expectedFrames.count &&
-          expectedFrames[expectedFrameIndex] != itemFrame
-        {
+        if !expectedFrames.contains(itemFrame) {
           return false
         }
 
-        expectedFrameIndex += 1
+        checkedFramesCount += 1
       }
     }
 
-    return true
+    return checkedFramesCount == expectedFrames.count
   }
 
   static func expectedFrames(
@@ -118,6 +119,31 @@ final class FrameHelpers {
       if
         expectedFrameIndex < expectedFrames.count &&
         expectedFrames[expectedFrameIndex] != headerFrame
+      {
+        return false
+      }
+
+      expectedFrameIndex += 1
+    }
+
+    return true
+  }
+
+  static func expectedFrames(
+    _ expectedFrames: [CGRect?],
+    matchFooterFramesInSectionIndexRange sectionIndexRange: Range<Int>,
+    modelState: ModelState)
+    -> Bool
+  {
+    var expectedFrameIndex = 0
+    for sectionIndex in sectionIndexRange {
+      let footerFrame = modelState.frameForFooter(inSectionAtIndex: sectionIndex, .afterUpdates)
+
+      guard footerFrame != nil else { continue }
+
+      if
+        expectedFrameIndex < expectedFrames.count &&
+        expectedFrames[expectedFrameIndex] != footerFrame
       {
         return false
       }
@@ -181,8 +207,27 @@ extension Array where Element == CGRect {
 
 extension CGRect: Hashable {
 
-  public var hashValue: Int {
-    return NSCoder.string(for: self).hashValue
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(size)
+    hasher.combine(origin)
+  }
+
+}
+
+extension CGSize: Hashable {
+
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(height)
+    hasher.combine(width)
+  }
+
+}
+
+extension CGPoint: Hashable {
+
+  public func hash(into hasher: inout Hasher) {
+    hasher.combine(x)
+    hasher.combine(y)
   }
 
 }
@@ -198,38 +243,50 @@ final class DebugHelpers {
     visibleRect1: CGRect)
   {
     print("let expectedItemFrames0: [CGRect] = [")
-    for foo in modelState.itemFrameInfo(forItemsIn: visibleRect0) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.itemLocationFramePairs(forItemsIn: visibleRect0) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
 
     print("let expectedItemFrames1: [CGRect] = [")
-    for foo in modelState.itemFrameInfo(forItemsIn: visibleRect1) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.itemLocationFramePairs(forItemsIn: visibleRect1) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
 
     print("let expectedHeaderFrames0: [CGRect] = [")
-    for foo in modelState.headerFrameInfo(forHeadersIn: visibleRect0) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.headerLocationFramePairs(forHeadersIn: visibleRect0) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
 
     print("let expectedHeaderFrames1: [CGRect] = [")
-    for foo in modelState.headerFrameInfo(forHeadersIn: visibleRect1) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.headerLocationFramePairs(forHeadersIn: visibleRect1) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
+    }
+    print("]")
+
+    print("let expectedFooterFrames0: [CGRect] = [")
+    for pair in modelState.footerLocationFramePairs(forFootersIn: visibleRect0) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
+    }
+    print("]")
+
+    print("let expectedFooterFrames1: [CGRect] = [")
+    for pair in modelState.footerLocationFramePairs(forFootersIn: visibleRect1) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
 
     print("let expectedBackgroundFrames0: [CGRect] = [")
-    for foo in modelState.backgroundFrameInfo(forBackgroundsIn: visibleRect0) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.backgroundLocationFramePairs(forBackgroundsIn: visibleRect0) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
 
     print("let expectedBackgroundFrames1: [CGRect] = [")
-    for foo in modelState.backgroundFrameInfo(forBackgroundsIn: visibleRect1) {
-      print("\tCGRect(x: \(foo.frame.minX), y: \(foo.frame.minY), width: \(foo.frame.width), height: \(foo.frame.height)),")
+    for pair in modelState.backgroundLocationFramePairs(forBackgroundsIn: visibleRect1) {
+      print("\tCGRect(x: \(pair.frame.minX), y: \(pair.frame.minY), width: \(pair.frame.width), height: \(pair.frame.height)),")
     }
     print("]")
   }
