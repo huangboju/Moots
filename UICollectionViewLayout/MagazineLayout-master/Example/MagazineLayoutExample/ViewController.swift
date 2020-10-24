@@ -60,25 +60,35 @@ final class ViewController: UIViewController {
       Header.self,
       forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionHeader,
       withReuseIdentifier: Header.description())
+    collectionView.register(
+      Footer.self,
+      forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionFooter,
+      withReuseIdentifier: Footer.description())
+    collectionView.register(
+      Background.self,
+      forSupplementaryViewOfKind: MagazineLayout.SupplementaryViewKind.sectionBackground,
+      withReuseIdentifier: Background.description())
     collectionView.isPrefetchingEnabled = false
     collectionView.dataSource = dataSource
     collectionView.delegate = self
     collectionView.backgroundColor = .white
     collectionView.contentInsetAdjustmentBehavior = .always
-    collectionView.contentInset = UIEdgeInsets(top: 24, left: 1, bottom: 24, right: 1)
     return collectionView
   }()
 
   private lazy var dataSource = DataSource()
 
+  #if os(iOS)
   private var lastItemCreationPanelViewState: ItemCreationPanelViewState?
+  #endif
 
   private func removeAllData() {
-    for sectionIndex in (0..<dataSource.numberOfSections).reversed() {
-      dataSource.removeSection(atSectionIndex: sectionIndex)
-    }
-
-    collectionView.reloadData()
+    collectionView.performBatchUpdates({
+      for sectionIndex in (0..<dataSource.numberOfSections).reversed() {
+        dataSource.removeSection(atSectionIndex: sectionIndex)
+        collectionView.deleteSections(IndexSet(arrayLiteral: sectionIndex))
+      }
+    }, completion: nil)
   }
 
   private func loadDefaultData() {
@@ -86,7 +96,7 @@ final class ViewController: UIViewController {
 
     let section0 = SectionInfo(
       headerInfo: HeaderInfo(
-        visibilityMode: .visible(heightMode: .dynamic),
+        visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: true),
         title: "Welcome!"),
       itemInfos: [
         ItemInfo(
@@ -203,12 +213,17 @@ final class ViewController: UIViewController {
             heightMode: .dynamic),
           text: ":)",
           color: Colors.blue),
-      ])
+      ],
+      footerInfo: FooterInfo(
+        visibilityMode: .hidden,
+        title: ""),
+      backgroundInfo: BackgroundInfo(visibilityMode: .hidden)
+    )
 
     let section1 = SectionInfo(
       headerInfo: HeaderInfo(
-        visibilityMode: .visible(heightMode: .dynamic),
-        title: "Self-sizing headers work too!"),
+        visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: false),
+        title: "Self-sizing supplementary views (headers and footers) are also supported."),
       itemInfos: [
         ItemInfo(
           sizeMode: MagazineLayoutItemSizeMode(
@@ -238,13 +253,18 @@ final class ViewController: UIViewController {
           sizeMode: MagazineLayoutItemSizeMode(
             widthMode: .halfWidth,
             heightMode: .dynamicAndStretchToTallestItemInRow),
-          text: "and I'll match your height!",
+          text: "and I'll stretch to match your height.",
           color: Colors.orange),
-      ])
+      ],
+      footerInfo: FooterInfo(
+        visibilityMode: .hidden,
+        title: ""),
+      backgroundInfo: BackgroundInfo(visibilityMode: .visible)
+    )
 
     let section2 = SectionInfo(
       headerInfo: HeaderInfo(
-        visibilityMode: .visible(heightMode: .dynamic),
+        visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: false),
         title: "Using this app:"),
       itemInfos: [
         ItemInfo(
@@ -263,7 +283,7 @@ final class ViewController: UIViewController {
           sizeMode: MagazineLayoutItemSizeMode(
             widthMode: .fullWidth(respectsHorizontalInsets: true),
             heightMode: .dynamic),
-          text: "Tap tap the reload icon in the top left to...",
+          text: "Tap the reload icon in the top left to...",
           color: Colors.green),
         ItemInfo(
           sizeMode: MagazineLayoutItemSizeMode(
@@ -283,19 +303,20 @@ final class ViewController: UIViewController {
             heightMode: .dynamicAndStretchToTallestItemInRow),
           text: "or invoke reloadData().",
           color: Colors.green),
-        ItemInfo(
-          sizeMode: MagazineLayoutItemSizeMode(
-            widthMode: .fullWidth(respectsHorizontalInsets: true),
-            heightMode: .dynamic),
-          text: "Enjoy using MagazineLayout!",
-          color: Colors.blue),
-      ])
+      ],
+      footerInfo: FooterInfo(
+        visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: true),
+        title: "Enjoy using MagazineLayout!"),
+      backgroundInfo: BackgroundInfo(visibilityMode: .hidden)
+    )
 
-    dataSource.insert(section0, atSectionIndex: 0)
-    dataSource.insert(section1, atSectionIndex: 1)
-    dataSource.insert(section2, atSectionIndex: 2)
+    collectionView.performBatchUpdates({
+      dataSource.insert(section0, atSectionIndex: 0)
+      dataSource.insert(section1, atSectionIndex: 1)
+      dataSource.insert(section2, atSectionIndex: 2)
 
-    collectionView.reloadData()
+      collectionView.insertSections(IndexSet(arrayLiteral: 0, 1, 2))
+    }, completion: nil)
   }
 
   @objc
@@ -336,6 +357,7 @@ final class ViewController: UIViewController {
 
   @objc
   private func addButtonTapped() {
+    #if os(iOS)
     let creationPanelViewController = CreationPanelViewController(
       dataSourceCountsProvider: dataSource,
       initialState: lastItemCreationPanelViewState)
@@ -359,9 +381,14 @@ final class ViewController: UIViewController {
           } else {
             let sectionInfo = SectionInfo(
               headerInfo: HeaderInfo(
-                visibilityMode: .visible(heightMode: .dynamic),
+                visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: true),
                 title: "Header"),
-              itemInfos: [itemInfo])
+              itemInfos: [itemInfo],
+              footerInfo: FooterInfo(
+                visibilityMode: .visible(heightMode: .dynamic, pinToVisibleBounds: true),
+                title: "Footer"),
+              backgroundInfo: BackgroundInfo(visibilityMode: .hidden)
+            )
             self?.dataSource.insert(sectionInfo, atSectionIndex: state.sectionIndex)
             self?.collectionView.insertSections(IndexSet(integer: state.sectionIndex))
           }
@@ -372,6 +399,19 @@ final class ViewController: UIViewController {
     let navigationController = UINavigationController(
       rootViewController: creationPanelViewController)
     present(navigationController, animated: true, completion: nil)
+    #else
+    let alertController = UIAlertController(
+      title: "Error",
+      message: "Not implemented for tvOS",
+      preferredStyle: .alert)
+    alertController.addAction(
+      UIAlertAction(
+        title: "OK",
+        style: .default,
+        handler: nil))
+
+    present(alertController, animated: true, completion: nil)
+    #endif
   }
 
 }
@@ -419,10 +459,19 @@ extension ViewController: UICollectionViewDelegateMagazineLayout {
   func collectionView(
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
+    visibilityModeForFooterInSectionAtIndex index: Int)
+    -> MagazineLayoutFooterVisibilityMode
+  {
+    return dataSource.sectionInfos[index].footerInfo.visibilityMode
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
     visibilityModeForBackgroundInSectionAtIndex index: Int)
     -> MagazineLayoutBackgroundVisibilityMode
   {
-    return .hidden
+    return dataSource.sectionInfos[index].backgroundInfo.visibilityMode
   }
 
   func collectionView(
@@ -446,10 +495,30 @@ extension ViewController: UICollectionViewDelegateMagazineLayout {
   func collectionView(
     _ collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
+    insetsForSectionAtIndex index: Int)
+    -> UIEdgeInsets
+  {
+    return UIEdgeInsets(top: 24, left: 4, bottom: 24, right: 4)
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
     insetsForItemsInSectionAtIndex index: Int)
     -> UIEdgeInsets
   {
-    return UIEdgeInsets(top: 24, left: 0, bottom: 24, right: 0)
+    return UIEdgeInsets(top: 24, left: 4, bottom: 24, right: 4)
+  }
+
+  func collectionView(
+    _ collectionView: UICollectionView,
+    layout collectionViewLayout: UICollectionViewLayout,
+    finalLayoutAttributesForRemovedItemAt indexPath: IndexPath,
+    byModifying finalLayoutAttributes: UICollectionViewLayoutAttributes)
+  {
+    // Fade and drop out
+    finalLayoutAttributes.alpha = 0
+    finalLayoutAttributes.transform = .init(scaleX: 0.2, y: 0.2)
   }
 
 }
