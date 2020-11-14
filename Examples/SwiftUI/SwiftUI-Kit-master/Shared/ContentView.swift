@@ -29,6 +29,7 @@ struct ContentView: View {
             #if !os(watchOS)
             Grouping(title: "Map", icon: "map", content: { MapGroup() })
             #endif
+            Grouping(title: "Fabulo", icon: "map", content: { FabuloGroup() })
         }
     }
     

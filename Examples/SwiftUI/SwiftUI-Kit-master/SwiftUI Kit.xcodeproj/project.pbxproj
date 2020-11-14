@@ -60,6 +60,10 @@
 		97E5A1DC24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1DD24E1A71300246EAD /* SwiftUI_Kit_Widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */; };
 		97E5A1E024E1A71300246EAD /* SwiftUI Kit WidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 97E5A1CF24E1A71200246EAD /* SwiftUI Kit WidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		BE90B3AA255FD768005944F1 /* FabuloGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90B3A9255FD768005944F1 /* FabuloGroup.swift */; };
+		BE90B3B1255FD771005944F1 /* FabuloGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90B3A9255FD768005944F1 /* FabuloGroup.swift */; };
+		BE90B3B8255FD77A005944F1 /* FabuloGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90B3A9255FD768005944F1 /* FabuloGroup.swift */; };
+		BE90B3BF255FD77C005944F1 /* FabuloGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90B3A9255FD768005944F1 /* FabuloGroup.swift */; };
 		F95A4E1F24B9936000697538 /* SwiftUI_KitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64524B90DD9005C2F44 /* SwiftUI_KitApp.swift */; };
 		F95A4E2024B9937800697538 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC64724B90DD9005C2F44 /* ContentView.swift */; };
 		F95A4E2124B9938100697538 /* ShapesGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861EC66024B912C9005C2F44 /* ShapesGroup.swift */; };
@@ -171,6 +175,7 @@
 		97E5A1D824E1A71200246EAD /* SwiftUI_Kit_Widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = SwiftUI_Kit_Widget.intentdefinition; sourceTree = "<group>"; };
 		97E5A1D924E1A71300246EAD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97E5A1DB24E1A71300246EAD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE90B3A9255FD768005944F1 /* FabuloGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabuloGroup.swift; sourceTree = "<group>"; };
 		F95A4E0F24B9932000697538 /* SwiftUI Kit Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Kit Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F95A4E1A24B9932200697538 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F95A4E1B24B9932200697538 /* SwiftUI_Kit_Mac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUI_Kit_Mac.entitlements; sourceTree = "<group>"; };
@@ -308,6 +313,7 @@
 				861EC66024B912C9005C2F44 /* ShapesGroup.swift */,
 				861EC65A24B91065005C2F44 /* TextGroup.swift */,
 				F9E8C6F824C7E46C000A2F66 /* MapGroup.swift */,
+				BE90B3A9255FD768005944F1 /* FabuloGroup.swift */,
 			);
 			path = Groupings;
 			sourceTree = "<group>";
@@ -465,7 +471,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1200;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					2D8F82F224BA011700E90F0B = {
 						CreatedOnToolsVersion = 12.0;
@@ -576,6 +582,7 @@
 				97DF0A5424DA6DE300F829B9 /* ButtonsGroup.swift in Sources */,
 				2D8F832024BA013E00E90F0B /* ControlsGroup.swift in Sources */,
 				2DC7DE5724BA0D9A00A84252 /* ContentView.swift in Sources */,
+				BE90B3B8255FD77A005944F1 /* FabuloGroup.swift in Sources */,
 				2D8F831D24BA013E00E90F0B /* TextGroup.swift in Sources */,
 				2D8F830624BA011800E90F0B /* ComplicationController.swift in Sources */,
 				2D8F831924BA013E00E90F0B /* ShapesGroup.swift in Sources */,
@@ -596,6 +603,7 @@
 				97DF0A5524DA6DE300F829B9 /* ButtonsGroup.swift in Sources */,
 				2DF330B524BAA8C60034C8D0 /* ContentView.swift in Sources */,
 				2DF330B924BAA8C60034C8D0 /* SectionView.swift in Sources */,
+				BE90B3BF255FD77C005944F1 /* FabuloGroup.swift in Sources */,
 				2DF330B324BAA8C60034C8D0 /* FontsGroup.swift in Sources */,
 				2DF330B724BAA8C60034C8D0 /* GroupView.swift in Sources */,
 				2DF330B424BAA8C60034C8D0 /* ImagesGroup.swift in Sources */,
@@ -608,6 +616,7 @@
 			files = (
 				F9E8C6F924C7E46C000A2F66 /* MapGroup.swift in Sources */,
 				861EC65F24B91075005C2F44 /* FontsGroup.swift in Sources */,
+				BE90B3AA255FD768005944F1 /* FabuloGroup.swift in Sources */,
 				861EC65B24B91065005C2F44 /* TextGroup.swift in Sources */,
 				5BE8E05524CE87CB005E833D /* GesturesGroup.swift in Sources */,
 				861EC66524B914FB005C2F44 /* SectionView.swift in Sources */,
@@ -649,6 +658,7 @@
 				97DF0A5324DA6DE300F829B9 /* ButtonsGroup.swift in Sources */,
 				F95A4E2124B9938100697538 /* ShapesGroup.swift in Sources */,
 				F95A4E2A24B9938100697538 /* SectionView.swift in Sources */,
+				BE90B3B1255FD771005944F1 /* FabuloGroup.swift in Sources */,
 				F95A4E2624B9938100697538 /* ControlsGroup.swift in Sources */,
 				F95A4E2724B9938100697538 /* TextGroup.swift in Sources */,
 				F95A4E2024B9937800697538 /* ContentView.swift in Sources */,
@@ -1016,6 +1026,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/SwiftUI_Kit_Mac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
@@ -1025,7 +1036,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "lilsoftware-Kit-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -1039,6 +1050,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/SwiftUI_Kit_Mac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Shared/Preview Content\"";
@@ -1048,7 +1060,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "lilsoftware.SwiftUI-Kit-Mac";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
