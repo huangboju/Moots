@@ -11,10 +11,11 @@ struct Repository {
     var id = UUID()
     var url: String
     var name: String
+    var isSelected = true
 }
 
-struct FabuloGroup: View {
-    var repositories = [
+class Repositories: ObservableObject {
+    @Published var repositories = [
         Repository(url: "git@git.code.oa.com:TencentVideoShared/QADSplashSDK.git", name: "QADSplashSDK"),
         Repository(url: "git@git.code.oa.com:TencentVideoShared/OCCategories.git", name: "OCCategories"),
         Repository(url: "git@git.code.oa.com:TencentVideoShared/VBBaseKit.git", name: "VBBaseKit"),
@@ -26,23 +27,30 @@ struct FabuloGroup: View {
         Repository(url: "git@git.code.oa.com:TencentVideoShared/VBPBData.git", name: "VBPBData"),
         Repository(url: "git@git.code.oa.com:TencentVideoShared/VBQADCommonKit.git", name: "VBQADCommonKit"),
     ]
-    
+}
+
+struct FabuloGroup: View {
+
+    @ObservedObject var viewModel = Repositories()
+
     var body: some View {
         Group {
-            ForEach(repositories, id: \.id) { repository in
-                RepositoryRow(repository: repository)
+            ForEach(viewModel.repositories.indices, id: \.self) { index in
+                RepositoryRow(repository: $viewModel.repositories[index])
+                    .onTapGesture {
+                        print(viewModel.repositories[index].isSelected)
+                    }
             }
         }
     }
 }
 
 struct RepositoryRow: View {
-    @State private var vibrateOnRing = true
-    var repository: Repository
+    @Binding var repository: Repository
     var body: some View {
         HStack(spacing: 12) {
             Text(repository.name).font(.title)
-            Toggle("", isOn: $vibrateOnRing)
+            Toggle("", isOn: $repository.isSelected)
             Spacer()
         }
     }
