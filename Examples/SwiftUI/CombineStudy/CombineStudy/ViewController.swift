@@ -17,7 +17,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        dataTaskPublisher()
+    }
+    
+    func justPubliser() {
         let _ = Just(5)
             .map { value -> String in
                 // do something with the incoming value here
@@ -28,7 +32,13 @@ class ViewController: UIViewController {
                 // sink is the subscriber and terminates the pipeline
                 print("The end result was \(receivedValue)")
             }
-        
+    }
+    
+    func emptyPublisher() {
+        let emptyPublisher = Empty<String, Never>()
+    }
+    
+    func futureAsyncPublisher() {
         let futureAsyncPublisher = Future<Bool, Error> { promise in
             CNContactStore().requestAccess(for: .contacts) { grantedAccess, err in
                 // err is an optional
@@ -44,14 +54,12 @@ class ViewController: UIViewController {
         } receiveValue: { (flag) in
             print(flag)
         }
-
-        
-        
+    }
+    
+    func resolvedSuccessAsPublisher() {
         let resolvedSuccessAsPublisher = Future<Bool, Error> { promise in
             promise(.success(true))
         }.eraseToAnyPublisher()
-        
-        dataTaskPublisher()
     }
 
     func dataTaskPublisher() {
