@@ -66,6 +66,7 @@ extension Color: Codable {
         UIColor(self).getRed(&red, green: &green, blue: &blue, alpha: nil)
         return isLightColor(red: red, green: green, blue: blue) ? .black : .white
     }
+
     private func isLightColor(red: CGFloat, green: CGFloat, blue: CGFloat) -> Bool {
         let lightRed = red > 0.65
         let lightGreen = green > 0.65
