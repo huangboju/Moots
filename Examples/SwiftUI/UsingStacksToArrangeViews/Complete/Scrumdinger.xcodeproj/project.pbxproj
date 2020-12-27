@@ -17,6 +17,7 @@
 		BE51E1C02594DA93001AE56A /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE51E1BF2594DA93001AE56A /* Color+Codable.swift */; };
 		BE5A5E952595A9CF000D9691 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5E942595A9CF000D9691 /* ScrumsView.swift */; };
 		BE5A5E9825974D4C000D9691 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5E9725974D4C000D9691 /* DetailView.swift */; };
+		BE5A5E9B2598D458000D9691 /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5E9A2598D458000D9691 /* EditView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		BE51E1BF2594DA93001AE56A /* Color+Codable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 		BE5A5E942595A9CF000D9691 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		BE5A5E9725974D4C000D9691 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		BE5A5E9A2598D458000D9691 /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				BE51E1BC2594D7F8001AE56A /* CardView.swift */,
 				BE5A5E942595A9CF000D9691 /* ScrumsView.swift */,
 				BE5A5E9725974D4C000D9691 /* DetailView.swift */,
+				BE5A5E9A2598D458000D9691 /* EditView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 			files = (
 				AA8ACE8624F44E01007DA4D8 /* MeetingView.swift in Sources */,
 				BE5A5E952595A9CF000D9691 /* ScrumsView.swift in Sources */,
+				BE5A5E9B2598D458000D9691 /* EditView.swift in Sources */,
 				BE51E1BA2594D79E001AE56A /* DailyScrum.swift in Sources */,
 				BE5A5E9825974D4C000D9691 /* DetailView.swift in Sources */,
 				BE51E1BD2594D7F8001AE56A /* CardView.swift in Sources */,
