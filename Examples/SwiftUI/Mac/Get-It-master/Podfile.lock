@@ -1,0 +1,24 @@
+PODS:
+  - ITSwitch (1.0)
+  - LetsMove (1.25)
+  - STPrivilegedTask (1.0.1)
+
+DEPENDENCIES:
+  - ITSwitch
+  - LetsMove
+  - STPrivilegedTask
+
+SPEC REPOS:
+  trunk:
+    - ITSwitch
+    - LetsMove
+    - STPrivilegedTask
+
+SPEC CHECKSUMS:
+  ITSwitch: 7ff745d6f2a6910e9194b23e4eab9a843258a478
+  LetsMove: 7b9fe44737707d984fbd3f47af46609a9a07b461
+  STPrivilegedTask: 103f97827454e786074640cf89d303be344498c7
+
+PODFILE CHECKSUM: 4dca32d4d6791341e27820d98c0efe1419299b51
+
+COCOAPODS: 1.10.0

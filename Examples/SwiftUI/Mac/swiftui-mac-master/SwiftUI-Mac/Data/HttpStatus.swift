@@ -9,7 +9,7 @@
 import Foundation
 
 struct HttpStatus: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let code: String
     let title: String
     
@@ -20,7 +20,7 @@ struct HttpStatus: Identifiable, Codable {
 }
 
 struct HttpSection: Identifiable, Codable {
-    let id = UUID()
+    var id = UUID()
     let headerCode: String
     let headerText: String
     let statuses: [HttpStatus]
