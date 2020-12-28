@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EditView: View {
     
-    @State private var scrumData = DailyScrum.Data()
+    @Binding var scrumData: DailyScrum.Data
     
     @State private var newAttendee = ""
 
@@ -56,6 +56,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView()
+        EditView(scrumData: .constant(DailyScrum.data[0].data))
     }
 }
