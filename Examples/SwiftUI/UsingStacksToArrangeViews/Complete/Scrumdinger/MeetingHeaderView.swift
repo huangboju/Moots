@@ -57,7 +57,7 @@ struct MeetingHeaderView: View {
 
 struct MeetingHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        MeetingHeaderView(secondsElapsed: .constant(60), secondsRemaining: .constant(180))
+        MeetingHeaderView(secondsElapsed: .constant(60), secondsRemaining: .constant(180), scrumColor: DailyScrum.data[0].color)
             .previewLayout(.sizeThatFits)
     }
 }
