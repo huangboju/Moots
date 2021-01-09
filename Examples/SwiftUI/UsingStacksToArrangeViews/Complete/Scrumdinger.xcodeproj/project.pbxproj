@@ -24,6 +24,7 @@
 		BE5D006025A1A37300DA305F /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D005F25A1A37300DA305F /* ScrumProgressViewStyle.swift */; };
 		BE5D006425A1A4B000DA305F /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */; };
 		BE5D006925A1A4D700DA305F /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE5D006825A1A4D700DA305F /* ding.wav */; };
+		BE90AAC825A9AAF800AFB109 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAC725A9AAF800AFB109 /* History.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		BE5D005F25A1A37300DA305F /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
 		BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		BE5D006825A1A4D700DA305F /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		BE90AAC725A9AAF800AFB109 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				BE51E1B92594D79E001AE56A /* DailyScrum.swift */,
 				BE5D005825A1A0BB00DA305F /* ScrumTimer.swift */,
 				BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */,
+				BE90AAC725A9AAF800AFB109 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,6 +212,7 @@
 			files = (
 				AA8ACE8624F44E01007DA4D8 /* MeetingView.swift in Sources */,
 				BE5A5E952595A9CF000D9691 /* ScrumsView.swift in Sources */,
+				BE90AAC825A9AAF800AFB109 /* History.swift in Sources */,
 				BE5D006025A1A37300DA305F /* ScrumProgressViewStyle.swift in Sources */,
 				BE5D006425A1A4B000DA305F /* AVPlayer+Ding.swift in Sources */,
 				BE5A5E9B2598D458000D9691 /* EditView.swift in Sources */,
