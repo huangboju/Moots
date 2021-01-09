@@ -8,34 +8,32 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
+
 // "ppwwpwkew"
 // "abcabcbb"
 
 func lengthOfLongestSubstring(_ s: String) -> Int {
     
-    guard s.count > 1 else { return s.count }
-
-    let charArr: [Character] = Array(s)
+    if s.isEmpty {
+        return 0
+    }
     
-    var maxLen = 1
-    var tempLen = 1
-    var hashMap = [charArr[0]: 0]
-    
-    for i in 1 ..< s.count {
-        if let lastPosion = hashMap[charArr[i]] {
-            if tempLen < i - lastPosion { // 这种情况 "ppwwpwkew"
-                tempLen += 1
+    var result = 0
+    var maxLength = 0
+    var dict: [String.Element: Int] = [:]
+    for (i, char) in s.enumerated() {
+        if let index = dict[char] {
+            if i - index > maxLength {
+                maxLength += 1
             } else {
-                tempLen = i - lastPosion
+                maxLength = i - index
             }
         } else {
-            tempLen += 1
+            maxLength += 1
         }
-
-        hashMap[charArr[i]] = i
-
-        maxLen = max(tempLen, maxLen)
+        dict[char] = i
+        result = max(maxLength, result)
     }
-
-    return maxLen
+    return result
 }
