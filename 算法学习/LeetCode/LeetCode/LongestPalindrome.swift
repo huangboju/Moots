@@ -8,8 +8,10 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/longest-palindromic-substring/solution/swift-026zui-chang-hui-wen-zi-chuan-by-y-9k06/
+
 func longestPalindrome(_ s: String) -> String {
-    if s.count <= 1 {
+    if s.isEmpty {
         return s
     }
     
