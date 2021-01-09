@@ -6,51 +6,31 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
-func findMedianSortedArrays(a: [Int], b: [Int]) -> Double {
-    let m = a.count
-    let n = b.count
+// https://leetcode-cn.com/problems/median-of-two-sorted-arrays/
 
-    if m > n {
-        return findMedianSortedArrays(a: b, b: a)
-    }
+//nums1 = [1,3], nums2 = [2]
 
-    var tmpMin = 0
-    var tmpMax = m
-    while tmpMin <= tmpMax {
-        let i = (tmpMin + tmpMax) / 2
-        let j = ((m + n + 1) / 2) - i
-        if j > 0 && i < m && b[j-1] > a[i] {
-            tmpMin = i + 1
-        } else if i > 0 && j < n && a[i-1] > b[j] {
-            tmpMax = i - 1
+func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
+    var index1 = 0
+    var inddex2 = 0
+    var pre = 0
+    var current = 0
+    
+    while index1 + inddex2 <= (nums1.count + nums2.count) / 2 {
+        pre = current
+
+        if inddex2 >= nums2.count || (index1 < nums1.count && nums1[index1] < nums2[inddex2]) {
+            current = nums1[index1]
+            index1 += 1
         } else {
-            var firstNum: Int
-            if i == 0 {
-                firstNum = b[j-1]
-            }
-            else if j == 0 {
-                firstNum = a[i-1]
-            }
-            else {
-                firstNum = max(a[i-1], b[j-1])
-            }
-
-            // if (m + n) is odd
-            if (m+n) & 1 != 0 {
-                return Double(firstNum)
-            }
-
-            var secondNum: Int
-            if i == m {
-                secondNum = b[j]
-            } else if j == n {
-                secondNum = a[i]
-            } else {
-                secondNum = min(a[i], b[j])
-            }
-
-            return Double((firstNum + secondNum))/2.0
+            current = nums2[inddex2]
+            inddex2 += 1
         }
     }
-    return 0.0
+
+    if (nums1.count + nums2.count % 2) == 0 {
+        return Double(current + pre) / 2
+    } else {
+        return Double(current)
+    }
 }
