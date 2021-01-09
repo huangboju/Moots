@@ -25,6 +25,7 @@
 		BE5D006425A1A4B000DA305F /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */; };
 		BE5D006925A1A4D700DA305F /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = BE5D006825A1A4D700DA305F /* ding.wav */; };
 		BE90AAC825A9AAF800AFB109 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAC725A9AAF800AFB109 /* History.swift */; };
+		BE90AACB25A9AD9300AFB109 /* ScrumData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AACA25A9AD9300AFB109 /* ScrumData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
 		BE5D006825A1A4D700DA305F /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
 		BE90AAC725A9AAF800AFB109 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		BE90AACA25A9AD9300AFB109 /* ScrumData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				BE5D005825A1A0BB00DA305F /* ScrumTimer.swift */,
 				BE5D006325A1A4B000DA305F /* AVPlayer+Ding.swift */,
 				BE90AAC725A9AAF800AFB109 /* History.swift */,
+				BE90AACA25A9AD9300AFB109 /* ScrumData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 				BE90AAC825A9AAF800AFB109 /* History.swift in Sources */,
 				BE5D006025A1A37300DA305F /* ScrumProgressViewStyle.swift in Sources */,
 				BE5D006425A1A4B000DA305F /* AVPlayer+Ding.swift in Sources */,
+				BE90AACB25A9AD9300AFB109 /* ScrumData.swift in Sources */,
 				BE5A5E9B2598D458000D9691 /* EditView.swift in Sources */,
 				BE5A5EA6259B7878000D9691 /* MeetingHeaderView.swift in Sources */,
 				BE5D005925A1A0BB00DA305F /* ScrumTimer.swift in Sources */,

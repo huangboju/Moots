@@ -180,3 +180,5 @@ let head = (0..<10).reversed().reduce(ListNode(0)) { (r, v) -> ListNode in
 print(removeNthFromEnd(head, 3))
 
 reverse(123)
+
+intToRoman(4)
