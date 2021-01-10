@@ -18,6 +18,7 @@
 		BE90AAC025A9992200AFB109 /* ReverseInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AABF25A9992200AFB109 /* ReverseInteger.swift */; };
 		BE90AACE25A9E1A300AFB109 /* MaxArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AACD25A9E1A300AFB109 /* MaxArea.swift */; };
 		BE90AAD125A9E3A700AFB109 /* IntToRoman.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */; };
+		BE90AAD425AADB3600AFB109 /* ThreeSumClosest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */; };
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
 		BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */; };
 		BED61CA5242F83ED004D5A53 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA4242F83ED004D5A53 /* Search.swift */; };
@@ -104,6 +105,7 @@
 		BE90AABF25A9992200AFB109 /* ReverseInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseInteger.swift; sourceTree = "<group>"; };
 		BE90AACD25A9E1A300AFB109 /* MaxArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxArea.swift; sourceTree = "<group>"; };
 		BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntToRoman.swift; sourceTree = "<group>"; };
+		BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSumClosest.swift; sourceTree = "<group>"; };
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
 		BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findCircleNum.swift; sourceTree = "<group>"; };
 		BED61CA4242F83ED004D5A53 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 				BE90AABF25A9992200AFB109 /* ReverseInteger.swift */,
 				BE90AACD25A9E1A300AFB109 /* MaxArea.swift */,
 				BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */,
+				BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 				F7AC932F2341A49300782FA8 /* RandomizedSet.swift in Sources */,
 				F7BFAEF023408ECD00FB2993 /* FourSumCount.swift in Sources */,
 				BEDA56B822A60B550082E025 /* main.swift in Sources */,
+				BE90AAD425AADB3600AFB109 /* ThreeSumClosest.swift in Sources */,
 				BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */,
 				BE90AAC025A9992200AFB109 /* ReverseInteger.swift in Sources */,
 				BEDA56BE22A60B550082E025 /* Intersect.swift in Sources */,
