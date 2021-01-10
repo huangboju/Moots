@@ -11,12 +11,12 @@ import Foundation
 func longestCommonPrefix(_ strs: [String]) -> String {
     if strs.isEmpty { return "" }
     let count = strs.count
-    if count == 1 { return strs.first! }
-    
+    if count == 1 { return strs[0] }
+
     var result = strs[0]
 
-    for i in 1..<count {
-        while !strs[i].hasPrefix(result) {
+    for str in strs.dropFirst() {
+        while !str.hasPrefix(result) {
             result = String(result.prefix(result.count - 1))
             if result.count == 0 { return "" }
         }

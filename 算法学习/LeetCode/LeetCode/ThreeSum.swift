@@ -18,14 +18,14 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
     let sortedNums = nums.sorted()
 
     for i in 0..<sortedNums.count-1 {
+        if sortedNums[i] > 0 { break }
         if i > 0 && sortedNums[i] == sortedNums[i-1] { continue }
-        let target = -sortedNums[i]
         var lowerBound = i + 1
         var upperBound = nums.count - 1
 
         while lowerBound < upperBound {
-            let sum = sortedNums[lowerBound] + sortedNums[upperBound]
-            if sum == target {
+            let sum = sortedNums[i] + sortedNums[lowerBound] + sortedNums[upperBound]
+            if sum == 0 {
                 results.append([sortedNums[i], sortedNums[lowerBound], sortedNums[upperBound]])
 
                 while (lowerBound < upperBound && sortedNums[lowerBound] == sortedNums[lowerBound+1]) {
@@ -34,12 +34,11 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
                 while (lowerBound < upperBound && sortedNums[upperBound] == sortedNums[upperBound-1]) {
                     upperBound -= 1
                 }
-                lowerBound += 1
+            }
+            if sum > 0 {
                 upperBound -= 1
-            } else if sum < target {
-                lowerBound += 1
             } else {
-                upperBound -= 1
+                lowerBound += 1
             }
         }
     }
