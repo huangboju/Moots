@@ -208,7 +208,29 @@ class SolutionSymmetric {
             root.right = dfs(nums, mid + 1, rightIndex)
             return root
         }
-    
+        
         return dfs(nums, 0, nums.count - 1)
+    }
+    
+    // https://leetcode-cn.com/problems/convert-sorted-list-to-binary-search-tree/
+    func sortedListToBST(_ head: ListNode?) -> TreeNode? {
+        func helper(_ nums: [Int], _ leftIndex: Int, _ rightIndex: Int) -> TreeNode? {
+            if leftIndex > rightIndex {
+                return nil
+            }
+            let mid = leftIndex + (rightIndex - leftIndex) / 2
+            let root = TreeNode(nums[mid])
+            root.left = helper(nums, leftIndex, mid - 1)
+            root.right = helper(nums, mid + 1, rightIndex)
+            return root
+        }
+        
+        var nums: [Int] = []
+        var next = head
+        while let node = next {
+            nums.append(node.val)
+            next = next?.next
+        }
+        return helper(nums, 0, nums.count - 1)
     }
 }
