@@ -131,18 +131,84 @@ class SolutionSymmetric {
         return result
     }
     
-//    func inorderTraversal(_ root: TreeNode?) -> [Int] {
-//        var result: [Int] = []
-//        inorder(root, &result)
-//        return result
-//    }
-//
-//    func inorder(_ root: TreeNode?, _ result: inout [Int]) {
-//        guard let root = root else {
-//            return
-//        }
-//        inorder(root.left, &result)
-//        result.append(root.val)
-//        inorder(root.right, &result)
-//    }
+    //    func inorderTraversal(_ root: TreeNode?) -> [Int] {
+    //        var result: [Int] = []
+    //        inorder(root, &result)
+    //        return result
+    //    }
+    //
+    //    func inorder(_ root: TreeNode?, _ result: inout [Int]) {
+    //        guard let root = root else {
+    //            return
+    //        }
+    //        inorder(root.left, &result)
+    //        result.append(root.val)
+    //        inorder(root.right, &result)
+    //    }
+    
+    // https://leetcode-cn.com/problems/same-tree/
+    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+        if p == nil && q == nil {
+            return true
+        }
+        if p == nil || q == nil {
+            return false
+        }
+        if p?.val != q?.val {
+            return false
+        }
+        return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
+    }
+    
+    func maxDepth(_ root: TreeNode?) -> Int {
+        guard let root = root else {
+            return 0
+        }
+        let left = maxDepth(root.left)
+        let right = maxDepth(root.right)
+        return max(left, right) + 1
+    }
+    
+    func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
+        guard let root = root else {
+            return []
+        }
+        var result: [[Int]] = []
+        var queue: [TreeNode] = [root]
+        
+        while !queue.isEmpty {
+            var row: [Int] = []
+            for _ in 0 ..< queue.count {
+                let first = queue.removeFirst()
+                row.append(first.val)
+                if let left = first.left {
+                    queue.append(left)
+                }
+                if let right = first.right {
+                    queue.append(right)
+                }
+            }
+            result.append(row)
+        }
+        
+        return result.reversed()
+    }
+    
+    // https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree/
+    func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
+        func dfs(_ nums: [Int], _ leftIndex: Int, _ rightIndex: Int) -> TreeNode? {
+            if leftIndex > rightIndex {
+                return nil
+            }
+            // 以升序数组的中间元素作为根节点 root。
+            let mid = leftIndex + (rightIndex - leftIndex) / 2
+            let root = TreeNode(nums[mid])
+            // 递归的构建 root 的左子树与右子树。
+            root.left = dfs(nums, leftIndex, mid - 1)
+            root.right = dfs(nums, mid + 1, rightIndex)
+            return root
+        }
+    
+        return dfs(nums, 0, nums.count - 1)
+    }
 }
