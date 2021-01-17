@@ -253,4 +253,64 @@ class SolutionSymmetric {
         
         return result
     }
+    
+    // https://leetcode-cn.com/problems/path-sum/
+    func hasPathSum(_ root: TreeNode?, _ sum: Int) -> Bool {
+        guard let root = root else {
+            return false
+        }
+        if root.left == nil && root.right == nil {
+            return root.val == sum
+        }
+        return hasPathSum(root.left, sum - root.val) || hasPathSum(root.right, sum - root.val)
+    }
+    
+    // https://leetcode-cn.com/problems/path-sum-ii/
+    //    func pathSum2(_ root: TreeNode?, _ sum: Int) -> [[Int]] {
+    //        var result = [[Int]]()
+    //        var path = [Int]()
+    //        func dfs(_ root: TreeNode?, _ sum: Int) {
+    //            guard let root = root else {
+    //                return
+    //            }
+    //
+    //            let target = sum - root.val
+    //            path.append(root.val)
+    //
+    //            if root.left == nil && root.right == nil {
+    //                if target == 0 {
+    //                    result.append(path)
+    //                }
+    //            } else {
+    //                dfs(root.left, target)
+    //                dfs(root.right, target)
+    //            }
+    //
+    //            path.removeLast()
+    //        }
+    //
+    //        dfs(root, sum)
+    //
+    //        return result
+    //    }
+    
+    // bfs
+    func pathSum2(_ root: TreeNode?, _ sum: Int) -> [[Int]] {
+        var result = [[Int]]()
+        var queue: [(node: TreeNode?, path: [Int], pathSum: Int)] = [(root, [], 0)]
+        while !queue.isEmpty {
+            let (root, path, pathSum) = queue.removeFirst()
+            guard let node = root else {
+                continue
+            }
+            if node.left == nil && node.right == nil {
+                if node.val + pathSum == sum {
+                    result.append(path + [node.val])
+                }
+            }
+            queue.append((node.left, path + [node.val], pathSum + node.val))
+            queue.append((node.right, path + [node.val], pathSum + node.val))
+        }
+        return result
+    }
 }
