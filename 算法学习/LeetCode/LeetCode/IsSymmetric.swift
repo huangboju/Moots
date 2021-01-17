@@ -233,4 +233,24 @@ class SolutionSymmetric {
         }
         return helper(nums, 0, nums.count - 1)
     }
+    
+    // https://leetcode-cn.com/problems/balanced-binary-tree/
+    func isBalanced(_ root: TreeNode?) -> Bool {
+        var result = true
+        func depth(_ root: TreeNode?) -> Int {
+            guard let root = root else {
+                return 0
+            }
+            let left = depth(root.left) + 1
+            let right = depth(root.right) + 1
+            if abs(left - right) > 1 {
+                result = false
+            }
+            return max(left, right)
+        }
+        
+        _ = depth(root)
+        
+        return result
+    }
 }
