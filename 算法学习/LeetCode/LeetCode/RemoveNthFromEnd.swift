@@ -24,7 +24,7 @@ func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
 //    sec?.next = sec?.next?.next
 //    return head
 
-    var dummyHead = ListNode(-1)
+    let dummyHead = ListNode(-1)
     dummyHead.next = head
     var fast = dummyHead
     var slow = dummyHead
