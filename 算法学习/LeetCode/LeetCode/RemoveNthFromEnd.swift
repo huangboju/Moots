@@ -24,13 +24,22 @@ func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
 //    sec?.next = sec?.next?.next
 //    return head
 
-    var arr: [ListNode] = []
-    var node = head
-    while let n = node {
-        arr.append(n)
-        node = node?.next
+    var dummyHead = ListNode(-1)
+    dummyHead.next = head
+    var fast = dummyHead
+    var slow = dummyHead
+    
+    for _ in 0..<n {
+        
+        fast = fast.next!
     }
-    let target = arr[arr.count - n - 1]
-    target.next = target.next?.next
-    return head
+    
+    while fast.next != nil {
+        fast = fast.next!
+        slow = slow.next!
+    }
+    
+    slow.next = slow.next!.next
+    
+    return dummyHead.next
 }
