@@ -30,7 +30,6 @@ func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
     var slow = dummyHead
     
     for _ in 0..<n {
-        
         fast = fast.next!
     }
     
