@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE18882325C6A4BC00C6AD5F /* Flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18882225C6A4BC00C6AD5F /* Flatten.swift */; };
 		BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE189E4B243A10F100C3B525 /* ReverseWords.swift */; };
 		BE3DF79B25A1B18B00A58F4A /* IsSymmetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */; };
 		BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42F235242E2E46002CD6C1 /* MergeKLists.swift */; };
@@ -96,6 +97,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE18882225C6A4BC00C6AD5F /* Flatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flatten.swift; sourceTree = "<group>"; };
 		BE189E4B243A10F100C3B525 /* ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWords.swift; sourceTree = "<group>"; };
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSymmetric.swift; sourceTree = "<group>"; };
@@ -287,6 +289,7 @@
 				BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */,
 				BE5A5EBF25C057F2000D9691 /* FourSum.swift */,
 				BE5A5EC325C2FC17000D9691 /* IsValid.swift */,
+				BE18882225C6A4BC00C6AD5F /* Flatten.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -420,6 +423,7 @@
 				F78C178123386FE400ECED68 /* MedianFinder.swift in Sources */,
 				BEDA56B222A60B550082E025 /* BackPack.swift in Sources */,
 				BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */,
+				BE18882325C6A4BC00C6AD5F /* Flatten.swift in Sources */,
 				BED61CAD24323AF3004D5A53 /* SpiralOrder.swift in Sources */,
 				BEDA56B922A60B550082E025 /* InsertionSort.swift in Sources */,
 				BEDA56B122A60B550082E025 /* ReverseString.swift in Sources */,

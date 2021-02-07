@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 //        operationDependency()
 //        test()
 //        delay()
-//        semaphoreGroup()
+        semaphoreGroup()
 //        dispatchIO()
 //        listenFile()
 
@@ -28,7 +28,7 @@ class ViewController: UIViewController {
 //            DispatchData(bytes: $0)
 //        }
         
-        serialQueue()
+//        serialQueue()
 //        setTargetQueue()
     }
     
