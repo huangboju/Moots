@@ -10,7 +10,7 @@ import Foundation
 
 //1->2->4, 1->3->4
 //1->1->2->3->4->4
-
+// https://leetcode-cn.com/problems/merge-two-sorted-lists/submissions/
 func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     var node1 = l1
     var node2 = l2
@@ -26,6 +26,6 @@ func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         }
         preN = preN.next!
     }
-    preN.next = node1 == nil ? node2 : node1
+    preN.next = node1 ?? node2
     return phead.next
 }
