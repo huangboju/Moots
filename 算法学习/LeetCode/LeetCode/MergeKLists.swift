@@ -44,18 +44,14 @@ func mergeKLists(_ lists: [ListNode?]) -> ListNode? {
         }
     }
     
-    var result: ListNode?
+    let result = ListNode(-1)
+    tmp = result
     for key in dict.keys.sorted() {
         for _ in 0..<dict[key]! {
-            if result == nil {
-                result = ListNode(key)
-                tmp = result
-                continue
-            }
             tmp?.next = ListNode(key)
             tmp = tmp?.next
         }
     }
-    
-    return result
+
+    return result.next
 }
