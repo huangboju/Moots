@@ -8,17 +8,17 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/valid-parentheses/
+
 func isValid(_ s: String) -> Bool {
     let map: [Character: Character] = [")": "(", "]": "[", "}": "{"]
-    var lefts = [Character]()
+    var lefts: [Character] = ["*"]
     for char in s {
         if map.values.contains(char) {
             lefts.append(char)
-        } else {
-            guard !lefts.isEmpty, map[char] == lefts.removeLast() else {
-                return false
-            }
+        } else if map[char] != lefts.removeLast() {
+            return false
         }
     }
-    return lefts.isEmpty
+    return lefts.count == 1
 }

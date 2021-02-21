@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
 func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
     var fast = head
     for _ in 0 ..< n {
