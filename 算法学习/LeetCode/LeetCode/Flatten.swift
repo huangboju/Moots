@@ -8,6 +8,8 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+
 func flatten(_ root: TreeNode?) {
     var temp = root
     while temp != nil {

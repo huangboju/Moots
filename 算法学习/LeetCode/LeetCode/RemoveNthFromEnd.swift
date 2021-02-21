@@ -9,18 +9,18 @@
 import Foundation
 
 func removeNthFromEnd(_ head: ListNode?, _ n: Int) -> ListNode? {
-    var first = head
-    for _ in 0..<n {
-        first = first?.next
+    var fast = head
+    for _ in 0 ..< n {
+        fast = fast?.next
     }
-    if first == nil {
+    if fast == nil {
         return head?.next
     }
-    var sec = head
-    while first?.next != nil {
-        first = first?.next
-        sec = sec?.next
+    var slow = head
+    while fast?.next != nil {
+        fast = fast?.next
+        slow = slow?.next
     }
-    sec?.next = sec?.next?.next
+    slow?.next = slow?.next?.next
     return head
 }
