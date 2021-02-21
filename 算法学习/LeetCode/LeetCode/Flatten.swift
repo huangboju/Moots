@@ -12,9 +12,7 @@ func flatten(_ root: TreeNode?) {
     var temp = root
     while temp != nil {
         //左子树为 null，直接考虑下一个节点
-        if temp?.left == nil {
-            temp = temp?.right
-        } else {
+        if temp?.left != nil {
             // 找左子树最右边的节点
             var pre = temp?.left
             while pre?.right != nil {
@@ -25,8 +23,9 @@ func flatten(_ root: TreeNode?) {
             // 将左子树插入到右子树的地方
             temp?.right = temp?.left
             temp?.left = nil
-            // 考虑下一个节点
-            temp = temp?.right
+            
         }
+        // 考虑下一个节点
+        temp = temp?.right
     }
 }
