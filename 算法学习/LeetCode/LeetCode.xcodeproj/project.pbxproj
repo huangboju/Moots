@@ -13,6 +13,7 @@
 		BE2BCC8525E27CA8007847A0 /* SwapPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2BCC8425E27CA8007847A0 /* SwapPairs.swift */; };
 		BE2BCC8825E29437007847A0 /* RemoveDuplicates.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */; };
 		BE2BCC8B25E3F104007847A0 /* RemoveElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */; };
+		BE2BCC8E25E3F557007847A0 /* StrStr.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2BCC8D25E3F557007847A0 /* StrStr.swift */; };
 		BE3DF79B25A1B18B00A58F4A /* IsSymmetric.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */; };
 		BE42F236242E2E46002CD6C1 /* MergeKLists.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE42F235242E2E46002CD6C1 /* MergeKLists.swift */; };
 		BE48B5012337059600E379BF /* MinStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE48B5002337059600E379BF /* MinStack.swift */; };
@@ -107,6 +108,7 @@
 		BE2BCC8425E27CA8007847A0 /* SwapPairs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwapPairs.swift; sourceTree = "<group>"; };
 		BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDuplicates.swift; sourceTree = "<group>"; };
 		BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveElement.swift; sourceTree = "<group>"; };
+		BE2BCC8D25E3F557007847A0 /* StrStr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrStr.swift; sourceTree = "<group>"; };
 		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSymmetric.swift; sourceTree = "<group>"; };
 		BE42F235242E2E46002CD6C1 /* MergeKLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeKLists.swift; sourceTree = "<group>"; };
@@ -302,6 +304,7 @@
 				BE2BCC8425E27CA8007847A0 /* SwapPairs.swift */,
 				BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */,
 				BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */,
+				BE2BCC8D25E3F557007847A0 /* StrStr.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				BEDA56B222A60B550082E025 /* BackPack.swift in Sources */,
 				BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */,
 				BE18882325C6A4BC00C6AD5F /* Flatten.swift in Sources */,
+				BE2BCC8E25E3F557007847A0 /* StrStr.swift in Sources */,
 				BED61CAD24323AF3004D5A53 /* SpiralOrder.swift in Sources */,
 				BEDA56B922A60B550082E025 /* InsertionSort.swift in Sources */,
 				BEDA56B122A60B550082E025 /* ReverseString.swift in Sources */,
