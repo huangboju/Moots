@@ -13,9 +13,8 @@ func search(_ nums: [Int], _ target: Int) -> Int {
     if nums.isEmpty { return -1 }
     var start = 0
     var end = nums.count - 1
-    var mid: Int = 0
     while start <= end {
-        mid = start + (end - start) / 2
+        let mid = start + (end - start) / 2
         if nums[mid] == target { return mid }
         if nums[start] <= nums[mid] {
             if target == nums[start] { return start }
