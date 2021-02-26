@@ -18,11 +18,21 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
     while start <= end {
         let mid = start + (end - start) / 2
         if nums[mid] == target {
-//            var left =
+            start = mid
+            end = mid
+            while start > 0 && target == nums[start - 1] {
+                start -= 1
+            }
+            while end < nums.count - 1 && target == nums[end + 1] {
+                end += 1
+            }
+            result[0] = start
+            result[1] = end
+            return result
         } else if nums[mid] > target {
             end -= 1
         } else {
-            start -= 1
+            start += 1
         }
     }
     return result
