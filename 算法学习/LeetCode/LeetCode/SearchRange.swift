@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/
 func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
     var result = [-1, -1]
     if nums.isEmpty {
