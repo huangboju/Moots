@@ -50,7 +50,7 @@ func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
                 break
             }
             
-            if i > 0 && candidates[i] == candidates[i - 1] && i != index {
+            if i > index && candidates[i] == candidates[i - 1] {
                 continue
             }
             
