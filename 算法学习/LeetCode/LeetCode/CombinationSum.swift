@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/combination-sum/
 func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
     func dfs(_ candidates: [Int], _ target: Int, _ res: inout [[Int]], _ path: inout [Int], _ index: Int) {
         if target == 0 {
@@ -36,6 +37,7 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
     return res
 }
 
+// https://leetcode-cn.com/problems/combination-sum-ii/submissions/
 func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
     func dfs(_ res: inout [[Int]], _ path: inout [Int], _ target: Int, _ candidates: [Int], _ index: Int) {
         if target == 0 {
