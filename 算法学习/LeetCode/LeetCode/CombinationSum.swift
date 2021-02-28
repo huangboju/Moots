@@ -29,9 +29,9 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
     var res = [[Int]]()
     var path = [Int]()
 
-    let result = candidates.sorted()
+    let sorted = candidates.sorted()
     
-    dfs(result, target, &res, &path, 0)
+    dfs(sorted, target, &res, &path, 0)
     
     return res
 }
@@ -39,12 +39,12 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
 func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
     func dfs(_ res: inout [[Int]], _ path: inout [Int], _ target: Int, _ candidates: [Int], _ index: Int) {
         if target == 0 {
-            res.append(Array(path))
+            res.append(path)
             return
         }
         
         for i in index ..< candidates.count {
-            guard candidates[i] <= target else {
+            if candidates[i] > target {
                 break
             }
             
