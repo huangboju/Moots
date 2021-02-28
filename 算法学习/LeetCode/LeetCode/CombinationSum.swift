@@ -9,19 +9,19 @@
 import Foundation
 
 func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
-    func _dfs(_ candidates: [Int], _ target: Int, _ res: inout [[Int]], _ path: inout [Int], _ index: Int) {
+    func dfs(_ candidates: [Int], _ target: Int, _ res: inout [[Int]], _ path: inout [Int], _ index: Int) {
         if target == 0 {
-            res.append(Array(path))
+            res.append(path)
             return
         }
-        
+
         for i in index..<candidates.count {
-            guard candidates[i] <= target else {
+            if candidates[i] > target {
                 break
             }
-            
+
             path.append(candidates[i])
-            _dfs(candidates, target - candidates[i], &res, &path, i)
+            dfs(candidates, target - candidates[i], &res, &path, i)
             path.removeLast()
         }
     }
@@ -29,9 +29,9 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
     var res = [[Int]]()
     var path = [Int]()
 
-    let result = candidates.sorted(by: <)
+    let result = candidates.sorted()
     
-    _dfs(result, target, &res, &path, 0)
+    dfs(result, target, &res, &path, 0)
     
     return res
 }
