@@ -189,3 +189,5 @@ threeSumClosest([-1,2,1,-4], 1)
 isValid("]")
 
 generateParenthesis(3)
+
+firstMissingPositive([3,4,-1,1])

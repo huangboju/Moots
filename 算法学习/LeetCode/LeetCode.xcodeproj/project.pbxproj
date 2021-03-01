@@ -25,6 +25,7 @@
 		BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CF59D233F531600585DBC /* TitleToNumber.swift */; };
 		BE81BDB325EB7BB3000A67D8 /* SearchInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */; };
 		BE81BDB625EB7D9A000A67D8 /* IsValidSudoku.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81BDB525EB7D9A000A67D8 /* IsValidSudoku.swift */; };
+		BE81BDB925EB8EFF000A67D8 /* FirstMissingPositive.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81BDB825EB8EFF000A67D8 /* FirstMissingPositive.swift */; };
 		BE90AABD25A9913200AFB109 /* ZigZagConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AABC25A9913200AFB109 /* ZigZagConversion.swift */; };
 		BE90AAC025A9992200AFB109 /* ReverseInteger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AABF25A9992200AFB109 /* ReverseInteger.swift */; };
 		BE90AACE25A9E1A300AFB109 /* MaxArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AACD25A9E1A300AFB109 /* MaxArea.swift */; };
@@ -124,6 +125,7 @@
 		BE7CF59D233F531600585DBC /* TitleToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToNumber.swift; sourceTree = "<group>"; };
 		BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInsert.swift; sourceTree = "<group>"; };
 		BE81BDB525EB7D9A000A67D8 /* IsValidSudoku.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValidSudoku.swift; sourceTree = "<group>"; };
+		BE81BDB825EB8EFF000A67D8 /* FirstMissingPositive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMissingPositive.swift; sourceTree = "<group>"; };
 		BE90AABC25A9913200AFB109 /* ZigZagConversion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZigZagConversion.swift; sourceTree = "<group>"; };
 		BE90AABF25A9992200AFB109 /* ReverseInteger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseInteger.swift; sourceTree = "<group>"; };
 		BE90AACD25A9E1A300AFB109 /* MaxArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxArea.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 				BE4B596125E7E92200F994BE /* SearchRange.swift */,
 				BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */,
 				BE81BDB525EB7D9A000A67D8 /* IsValidSudoku.swift */,
+				BE81BDB825EB8EFF000A67D8 /* FirstMissingPositive.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				BE3DF79B25A1B18B00A58F4A /* IsSymmetric.swift in Sources */,
 				BEDA56B322A60B550082E025 /* FractionToDecimal.swift in Sources */,
 				BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */,
+				BE81BDB925EB8EFF000A67D8 /* FirstMissingPositive.swift in Sources */,
 				BED61CA5242F83ED004D5A53 /* Search.swift in Sources */,
 				BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */,
 				BEDA56BA22A60B550082E025 /* MaxProduct.swift in Sources */,
