@@ -83,11 +83,10 @@ class LRUCache {
         } else {
             if capacity == 0 {
                 removeFirstNode()
-                addNewNode(key, value)
             } else {
-                addNewNode(key, value)
                 capacity -= 1
             }
+            addNewNode(key, value)
         }
     }
 }
