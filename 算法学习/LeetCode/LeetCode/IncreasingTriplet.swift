@@ -16,9 +16,9 @@ func increasingTriplet(_ nums: [Int]) -> Bool {
     for num in nums {
         if num <= min {
             min = num
-        } else if num < second_min {
+        } else if num <= second_min {
             second_min = num
-        } else if num > second_min {
+        } else {
             return true
         }
     }
