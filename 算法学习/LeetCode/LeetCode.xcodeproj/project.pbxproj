@@ -59,7 +59,6 @@
 		BEDA56AB22A60B550082E025 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */; };
 		BEDA56AC22A60B550082E025 /* MinCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568B22A60B540082E025 /* MinCount.swift */; };
 		BEDA56AD22A60B550082E025 /* KResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568C22A60B540082E025 /* KResult.swift */; };
-		BEDA56AE22A60B550082E025 /* BestSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568D22A60B540082E025 /* BestSpace.swift */; };
 		BEDA56AF22A60B550082E025 /* FindKthLargest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568E22A60B540082E025 /* FindKthLargest.swift */; };
 		BEDA56B022A60B550082E025 /* findMedianSortedArrays.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568F22A60B540082E025 /* findMedianSortedArrays.swift */; };
 		BEDA56B122A60B550082E025 /* ReverseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA569022A60B540082E025 /* ReverseString.swift */; };
@@ -159,7 +158,6 @@
 		BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LongestSubstringWithoutRepeatingCharacters.swift; sourceTree = "<group>"; };
 		BEDA568B22A60B540082E025 /* MinCount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinCount.swift; sourceTree = "<group>"; };
 		BEDA568C22A60B540082E025 /* KResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KResult.swift; sourceTree = "<group>"; };
-		BEDA568D22A60B540082E025 /* BestSpace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BestSpace.swift; sourceTree = "<group>"; };
 		BEDA568E22A60B540082E025 /* FindKthLargest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindKthLargest.swift; sourceTree = "<group>"; };
 		BEDA568F22A60B540082E025 /* findMedianSortedArrays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = findMedianSortedArrays.swift; sourceTree = "<group>"; };
 		BEDA569022A60B540082E025 /* ReverseString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseString.swift; sourceTree = "<group>"; };
@@ -239,7 +237,6 @@
 				BEDA568722A60B540082E025 /* AddTwoNumbers.swift */,
 				BEDA568022A60B540082E025 /* Anagram.swift */,
 				BEDA569122A60B540082E025 /* BackPack.swift */,
-				BEDA568D22A60B540082E025 /* BestSpace.swift */,
 				BEDA567E22A60B540082E025 /* CombinationSum.swift */,
 				BEDA568622A60B540082E025 /* ContainsDuplicate.swift */,
 				BEDA568422A60B540082E025 /* EggDrop.swift */,
@@ -426,7 +423,6 @@
 				BE2BCC8525E27CA8007847A0 /* SwapPairs.swift in Sources */,
 				BED61CAF24337E10004D5A53 /* RemoveNthFromEnd.swift in Sources */,
 				F76403002383DBBD00017DB4 /* MaxPoints.swift in Sources */,
-				BEDA56AE22A60B550082E025 /* BestSpace.swift in Sources */,
 				BEDA569E22A60B550082E025 /* Rotate.swift in Sources */,
 				BE5A5EC425C2FC17000D9691 /* IsValid.swift in Sources */,
 				BEDA56A722A60B550082E025 /* ContainsDuplicate.swift in Sources */,
