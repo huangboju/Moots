@@ -30,33 +30,8 @@ public func backPack1(_ m: Int, a: [Int]) -> Int {
     ///
     ///6 [0, 1, 1, 3, 4, 4, 6, 7, 7, 9, 10, 10]
     for v in a {
-        for volume in (1 ... m).reversed() {
-            if volume >= v {
-                result[volume] = max(result[volume-v] + v, result[volume])
-            }
-        }
-        print(v, result, "\n")
-    }
-
-    /// 1 [0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
-    ///
-    /// 3 [0, 1, 1, 3, 4, 4, 4, 4, 4, 4, 4, 4]
-    ///
-    /// 3 [0, 1, 1, 3, 4, 4, 6, 7, 7, 7, 7, 7]
-    ///
-    /// 6 [0, 1, 1, 3, 4, 4, 6, 7, 7, 9, 10, 10]
-    
-    for v in a {
-        for volume in 1 ... m {
-            if volume >= v {
-                let n = result[volume]
-                result[volume] = v
-                if n + v <= volume {
-                    result[volume] = n + v
-                } else {
-                    result[volume] = result[volume - v] + v
-                }
-            }
+        for volume in (1 ... m).reversed() where volume >= v {
+            result[volume] = max(result[volume-v] + v, result[volume])
         }
         print(v, result, "\n")
     }
@@ -81,10 +56,8 @@ public func backPack1(_ m: Int, a: [Int]) -> Int {
 public func backPackII(_ m: Int, size: [Int], value: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: m + 1)
     for (n, value) in zip(size, value) {
-        for j in (1 ... m).reversed() {
-            if j >= n {
-                result[j] = max(result[j], result[j - n] + value)
-            }
+        for v in (1 ... m).reversed() where v >= n {
+            result[v] = max(result[v], result[v - n] + value)
         }
     }
     return result[m]
@@ -102,10 +75,8 @@ public func backPackII(_ m: Int, size: [Int], value: [Int]) -> Int {
 public func backPackIII(_ m: Int, size: [Int], value: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: m + 1)
     for (n, v) in zip(size, value) {
-        for j in 1 ... m {
-            if j >= n {
-                result[j] = max(result[j], result[j - n] + v)
-            }
+        for j in 1 ... m where j >= n {
+            result[j] = max(result[j], result[j - n] + v)
         }
     }
     return result[m]
@@ -146,11 +117,9 @@ public func backPackV(_ m: Int, nums: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: m + 1)
     result[0] = 1
     for  n in nums {
-        for j in (1 ... m).reversed() {
-            if j >= n {
-                result[j] += result[j - n]
-                print(j, result, n)
-            }
+        for j in (1 ... m).reversed() where j >= n {
+            result[j] += result[j - n]
+            print(j, result, n)
         }
         print("\n")
     }
@@ -177,10 +146,8 @@ public func backPackVI(_ target: Int, nums: [Int]) -> Int {
     var result: [Int] = Array(repeating: 0, count: target + 1)
     result[0] = 1
     for i in 1 ... target {
-        for  n in nums {
-            if i >= n {
-                result[i] += result[i - n]
-            }
+        for  n in nums where i >= n {
+            result[i] += result[i - n]
         }
     }
     return result[target]
