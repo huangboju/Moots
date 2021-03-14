@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/first-unique-character-in-a-string/
 func firstUniqChar(_ s: String) -> Int {
     //创建一个含有26个为0的值的数组
     let scalars = s.unicodeScalars

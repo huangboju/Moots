@@ -8,7 +8,7 @@
 
 import Foundation
 
-// https://leetcode-cn.com/explore/featured/card/top-interview-quesitons-in-2018/264/array/1132/
+// https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/
 
 //输入: nums1 = [1,2,2,1], nums2 = [2,2]
 //输出: [2,2]
@@ -18,24 +18,15 @@ import Foundation
 //输出: [4,9]
 
 func intersect(_ nums1: [Int], _ nums2: [Int]) -> [Int] {
-    let large: [Int]
-    let small: [Int]
-    if nums1.count > nums2.count {
-        large = nums1
-        small = nums2
-    } else {
-        large = nums2
-        small = nums1
+    var hs = [Int: Int](), res = [Int]()
+    for num in nums1 {
+        hs[num, default: 0] += 1
     }
-    var result: [Int] = []
-    var start = 0
-    for n in large {
-        if n == small[start] {
-            result.append(n)
-            start += 1
+    for num in nums2 {
+        if let record = hs[num], record > 0 {
+            res.append(num)
+            hs[num] = record - 1
         }
     }
-    
-    
-    return result
+    return res
 }
