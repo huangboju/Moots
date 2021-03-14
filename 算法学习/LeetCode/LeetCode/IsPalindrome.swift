@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/valid-palindrome/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china
 func isPalindrome(_ s: String) -> Bool {
     var result = ""
     for c in s.lowercased() {
