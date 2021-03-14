@@ -8,6 +8,8 @@
 
 import Foundation
 
+
+// https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/
 //输入: [1,3,5,4,7]
 //输出: 3
 //解释: 最长连续递增序列是 [1,3,5], 长度为3。
@@ -16,15 +18,15 @@ import Foundation
 
 func findLengthOfLCIS(_ nums: [Int]) -> Int {
     if nums.isEmpty { return 0 }
-    var result = 0
-    var tmp = 0
-    for (i, n) in nums.enumerated() {
-        tmp += 1
-        if i + 1 == nums.count { break }
-        if n >= nums[i + 1] {
-            result = max(tmp, result)
-            tmp = 0
+    var result = 1
+    var maxLength = 1
+    for i in 1..<nums.count {
+        if nums[i-1] < nums[i] {
+            result += 1
+            maxLength = max(maxLength, result)
+        } else {
+            result = 1
         }
     }
-    return max(result, tmp)
+    return maxLength
 }
