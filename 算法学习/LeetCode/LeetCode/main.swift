@@ -191,3 +191,18 @@ isValid("]")
 generateParenthesis(3)
 
 firstMissingPositive([3,4,-1,1])
+
+print(searchSimilarText("float"))
+
+print(multiply("123", "456"))
+
+
+var matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+rotateImage(&matrix)
+
+print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))

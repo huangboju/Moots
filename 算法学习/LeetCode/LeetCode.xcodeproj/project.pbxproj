@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0EF80C260CD7F500EA29A7 /* SearchSimilarText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0EF80B260CD7F500EA29A7 /* SearchSimilarText.swift */; };
 		BE18882325C6A4BC00C6AD5F /* Flatten.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18882225C6A4BC00C6AD5F /* Flatten.swift */; };
 		BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE189E4B243A10F100C3B525 /* ReverseWords.swift */; };
 		BE2BCC8225E25A8A007847A0 /* GenerateParenthesis.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2BCC8125E25A8A007847A0 /* GenerateParenthesis.swift */; };
@@ -32,6 +33,11 @@
 		BE90AAD125A9E3A700AFB109 /* IntToRoman.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */; };
 		BE90AAD425AADB3600AFB109 /* ThreeSumClosest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */; };
 		BE90AAD725AAE5C700AFB109 /* LetterCombinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90AAD625AAE5C700AFB109 /* LetterCombinations.swift */; };
+		BE90DFAA2619521C003BCD7C /* PermuteUnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFA92619521C003BCD7C /* PermuteUnique.swift */; };
+		BE90DFAD26195869003BCD7C /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFAC26195869003BCD7C /* RotateImage.swift */; };
+		BE90DFB326196C3E003BCD7C /* GroupAnagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */; };
+		BEBFA4FA26109E630087F4BE /* Multiply.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4F926109E630087F4BE /* Multiply.swift */; };
+		BEBFA4FD261210FF0087F4BE /* Permute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4FC261210FF0087F4BE /* Permute.swift */; };
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
 		BED61CA3242F7B8A004D5A53 /* findCircleNum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */; };
 		BED61CA5242F83ED004D5A53 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CA4242F83ED004D5A53 /* Search.swift */; };
@@ -103,6 +109,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		BE0EF80B260CD7F500EA29A7 /* SearchSimilarText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSimilarText.swift; sourceTree = "<group>"; };
 		BE18882225C6A4BC00C6AD5F /* Flatten.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flatten.swift; sourceTree = "<group>"; };
 		BE189E4B243A10F100C3B525 /* ReverseWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseWords.swift; sourceTree = "<group>"; };
 		BE2BCC8125E25A8A007847A0 /* GenerateParenthesis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateParenthesis.swift; sourceTree = "<group>"; };
@@ -110,7 +117,6 @@
 		BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveDuplicates.swift; sourceTree = "<group>"; };
 		BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveElement.swift; sourceTree = "<group>"; };
 		BE2BCC8D25E3F557007847A0 /* StrStr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrStr.swift; sourceTree = "<group>"; };
-		BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncreasingTriplet.swift; sourceTree = "<group>"; };
 		BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsSymmetric.swift; sourceTree = "<group>"; };
 		BE42F235242E2E46002CD6C1 /* MergeKLists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MergeKLists.swift; sourceTree = "<group>"; };
 		BE48B5002337059600E379BF /* MinStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinStack.swift; sourceTree = "<group>"; };
@@ -129,6 +135,11 @@
 		BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntToRoman.swift; sourceTree = "<group>"; };
 		BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSumClosest.swift; sourceTree = "<group>"; };
 		BE90AAD625AAE5C700AFB109 /* LetterCombinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterCombinations.swift; sourceTree = "<group>"; };
+		BE90DFA92619521C003BCD7C /* PermuteUnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermuteUnique.swift; sourceTree = "<group>"; };
+		BE90DFAC26195869003BCD7C /* RotateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
+		BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAnagrams.swift; sourceTree = "<group>"; };
+		BEBFA4F926109E630087F4BE /* Multiply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply.swift; sourceTree = "<group>"; };
+		BEBFA4FC261210FF0087F4BE /* Permute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permute.swift; sourceTree = "<group>"; };
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
 		BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = findCircleNum.swift; sourceTree = "<group>"; };
 		BED61CA4242F83ED004D5A53 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
@@ -202,7 +213,6 @@
 		BE03401822A60A4D00F7482E /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				BE2FB0482279E0900060A510 /* IncreasingTriplet.swift */,
 			);
 			name = "Recovered References";
 			sourceTree = "<group>";
@@ -227,6 +237,7 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				BE0EF80B260CD7F500EA29A7 /* SearchSimilarText.swift */,
 				BE7CF59D233F531600585DBC /* TitleToNumber.swift */,
 				F78C178023386FE400ECED68 /* MedianFinder.swift */,
 				BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */,
@@ -308,6 +319,11 @@
 				BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */,
 				BE81BDB525EB7D9A000A67D8 /* IsValidSudoku.swift */,
 				BE81BDB825EB8EFF000A67D8 /* FirstMissingPositive.swift */,
+				BEBFA4F926109E630087F4BE /* Multiply.swift */,
+				BEBFA4FC261210FF0087F4BE /* Permute.swift */,
+				BE90DFA92619521C003BCD7C /* PermuteUnique.swift */,
+				BE90DFAC26195869003BCD7C /* RotateImage.swift */,
+				BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -382,14 +398,17 @@
 				BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */,
 				BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */,
 				BE90AAD725AAE5C700AFB109 /* LetterCombinations.swift in Sources */,
+				BE90DFAD26195869003BCD7C /* RotateImage.swift in Sources */,
 				F73629A0234D894300DFB34E /* LargestNumber.swift in Sources */,
 				BED61CB3243829D3004D5A53 /* DetectCycle.swift in Sources */,
 				F7C868482428DBF1004D430F /* RestoreIpAddresses.swift in Sources */,
+				BE90DFB326196C3E003BCD7C /* GroupAnagrams.swift in Sources */,
 				BEDA56AA22A60B550082E025 /* MergeSort.swift in Sources */,
 				BE2BCC8B25E3F104007847A0 /* RemoveElement.swift in Sources */,
 				F7C868462428D9CE004D430F /* SimplifyPath.swift in Sources */,
 				BEDA56B722A60B550082E025 /* SearchMatrix.swift in Sources */,
 				BE48B5012337059600E379BF /* MinStack.swift in Sources */,
+				BE90DFAA2619521C003BCD7C /* PermuteUnique.swift in Sources */,
 				BEDA56AC22A60B550082E025 /* MinCount.swift in Sources */,
 				BE5A5EC025C057F2000D9691 /* FourSum.swift in Sources */,
 				BED61CB524382B83004D5A53 /* DeleteNode.swift in Sources */,
@@ -399,11 +418,13 @@
 				BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */,
 				BEDA56A422A60B550082E025 /* MinSubArrayLen.swift in Sources */,
 				BE3DF79B25A1B18B00A58F4A /* IsSymmetric.swift in Sources */,
+				BE0EF80C260CD7F500EA29A7 /* SearchSimilarText.swift in Sources */,
 				BEDA56B322A60B550082E025 /* FractionToDecimal.swift in Sources */,
 				BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */,
 				BE81BDB925EB8EFF000A67D8 /* FirstMissingPositive.swift in Sources */,
 				BED61CA5242F83ED004D5A53 /* Search.swift in Sources */,
 				BEDA56BD22A60B550082E025 /* IsPalindrome.swift in Sources */,
+				BEBFA4FA26109E630087F4BE /* Multiply.swift in Sources */,
 				BEDA56BA22A60B550082E025 /* MaxProduct.swift in Sources */,
 				BEDA56BB22A60B550082E025 /* RunLengthEncoding.swift in Sources */,
 				BED52F492426495100600908 /* ThreeSum.swift in Sources */,
@@ -420,6 +441,7 @@
 				BE5A5EC425C2FC17000D9691 /* IsValid.swift in Sources */,
 				BEDA56A722A60B550082E025 /* ContainsDuplicate.swift in Sources */,
 				BE81BDB625EB7D9A000A67D8 /* IsValidSudoku.swift in Sources */,
+				BEBFA4FD261210FF0087F4BE /* Permute.swift in Sources */,
 				BEDA56A822A60B550082E025 /* AddTwoNumbers.swift in Sources */,
 				BEDA56AB22A60B550082E025 /* LongestSubstringWithoutRepeatingCharacters.swift in Sources */,
 				BE4B596225E7E92200F994BE /* SearchRange.swift in Sources */,
@@ -575,7 +597,7 @@
 		D81B3E831EA707A200214304 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -586,7 +608,7 @@
 		D81B3E841EA707A200214304 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_IDENTITY = "-";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
