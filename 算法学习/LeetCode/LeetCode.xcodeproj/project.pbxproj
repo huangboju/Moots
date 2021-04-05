@@ -22,6 +22,7 @@
 		BE5A5EC025C057F2000D9691 /* FourSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EBF25C057F2000D9691 /* FourSum.swift */; };
 		BE5A5EC425C2FC17000D9691 /* IsValid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5A5EC325C2FC17000D9691 /* IsValid.swift */; };
 		BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */; };
+		BE631CCE261AD041006FA88B /* ReverseKGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE631CCD261AD041006FA88B /* ReverseKGroup.swift */; };
 		BE661AEA23361221005BE4F9 /* EvalRPN.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE661AE923361221005BE4F9 /* EvalRPN.swift */; };
 		BE7CF59E233F531700585DBC /* TitleToNumber.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7CF59D233F531600585DBC /* TitleToNumber.swift */; };
 		BE81BDB325EB7BB3000A67D8 /* SearchInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */; };
@@ -124,6 +125,7 @@
 		BE5A5EBF25C057F2000D9691 /* FourSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourSum.swift; sourceTree = "<group>"; };
 		BE5A5EC325C2FC17000D9691 /* IsValid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsValid.swift; sourceTree = "<group>"; };
 		BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaxAreaOfIsland.swift; sourceTree = "<group>"; };
+		BE631CCD261AD041006FA88B /* ReverseKGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReverseKGroup.swift; sourceTree = "<group>"; };
 		BE661AE923361221005BE4F9 /* EvalRPN.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvalRPN.swift; sourceTree = "<group>"; };
 		BE7CF59D233F531600585DBC /* TitleToNumber.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleToNumber.swift; sourceTree = "<group>"; };
 		BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInsert.swift; sourceTree = "<group>"; };
@@ -237,6 +239,7 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				BE631CCD261AD041006FA88B /* ReverseKGroup.swift */,
 				BE0EF80B260CD7F500EA29A7 /* SearchSimilarText.swift */,
 				BE7CF59D233F531600585DBC /* TitleToNumber.swift */,
 				F78C178023386FE400ECED68 /* MedianFinder.swift */,
@@ -398,6 +401,7 @@
 				BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */,
 				BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */,
 				BE90AAD725AAE5C700AFB109 /* LetterCombinations.swift in Sources */,
+				BE631CCE261AD041006FA88B /* ReverseKGroup.swift in Sources */,
 				BE90DFAD26195869003BCD7C /* RotateImage.swift in Sources */,
 				F73629A0234D894300DFB34E /* LargestNumber.swift in Sources */,
 				BED61CB3243829D3004D5A53 /* DetectCycle.swift in Sources */,
