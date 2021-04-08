@@ -9,7 +9,7 @@
 import Foundation
 
 // https://leetcode-cn.com/problems/longest-palindromic-substring/solution/swift-026zui-chang-hui-wen-zi-chuan-by-y-9k06/
-
+// https://www.cxyxiaowu.com/2665.html
 func longestPalindrome(_ s: String) -> String {
     if s.isEmpty {
         return s
@@ -36,7 +36,7 @@ func longestPalindrome(_ s: String) -> String {
         if max > i && j >= 0 {
             // 优化部分,请见文章
             P.append(min(P[j], max - i))
-        }else{
+        } else {
             P.append(1)
         }
         // 循环判断以i位置为中心的左右两侧是否相同,相同加1
