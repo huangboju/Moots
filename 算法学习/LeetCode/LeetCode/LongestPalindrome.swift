@@ -8,8 +8,9 @@
 
 import Foundation
 
-// https://leetcode-cn.com/problems/longest-palindromic-substring/solution/swift-026zui-chang-hui-wen-zi-chuan-by-y-9k06/
 // https://www.cxyxiaowu.com/2665.html
+//https://leetcode-cn.com/problems/longest-palindromic-substring/
+
 func longestPalindrome(_ s: String) -> String {
     if s.isEmpty {
         return s
@@ -56,7 +57,7 @@ func longestPalindrome(_ s: String) -> String {
             maxLength = P[i]
             maxLengthIndex = i
         }
-        print("i:\(i) maxId:\(maxId) max:\(max) maxLength:\(maxLength) maxLengthIndex:\(maxLengthIndex) P:\(P)")
+//        print("i:\(i) maxId:\(maxId) max:\(max) maxLength:\(maxLength) maxLengthIndex:\(maxLengthIndex) P:\(P)")
     }
     let leftIndex = s.index(s.startIndex, offsetBy: (maxLengthIndex - (maxLength - 1))/2)
     let rightIndex = s.index(leftIndex, offsetBy:maxLength - 1 - 1)
