@@ -37,12 +37,13 @@ func _addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     var node1 = l1
     var node2 = l2
     var node: ListNode? = ListNode(0)
-    let nodes = node
+    let result = node
     var flag = 0
-    while node1?.val != nil || node2?.val != nil || flag == 1 {
-        let n1 = node1?.val ?? 0
-        let n2 = node2?.val ?? 0
-        var sum = n1 + n2 + flag
+    
+    while node1 != nil || node2 != nil || flag == 1 {
+        let v1 = node1?.val ?? 0
+        let v2 = node2?.val ?? 0
+        var sum = v1 + v2 + flag
         if sum > 9 {
             sum %= 10
             flag = 1
@@ -54,5 +55,6 @@ func _addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         node1 = node1?.next
         node2 = node2?.next
     }
-    return nodes?.next
+
+    return result?.next
 }

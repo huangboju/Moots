@@ -38,6 +38,8 @@
 		BE90DFAD26195869003BCD7C /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFAC26195869003BCD7C /* RotateImage.swift */; };
 		BE90DFB326196C3E003BCD7C /* GroupAnagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */; };
 		BE90DFC2262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */; };
+		BE90DFC5262ACDBD003BCD7C /* ReverseInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFC4262ACDBD003BCD7C /* ReverseInt.swift */; };
+		BE90DFC8262AD096003BCD7C /* IsPalindromeInt.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFC7262AD096003BCD7C /* IsPalindromeInt.swift */; };
 		BEBFA4FA26109E630087F4BE /* Multiply.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4F926109E630087F4BE /* Multiply.swift */; };
 		BEBFA4FD261210FF0087F4BE /* Permute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4FC261210FF0087F4BE /* Permute.swift */; };
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
@@ -142,6 +144,8 @@
 		BE90DFAC26195869003BCD7C /* RotateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
 		BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAnagrams.swift; sourceTree = "<group>"; };
 		BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsNearbyAlmostDuplicate.swift; sourceTree = "<group>"; };
+		BE90DFC4262ACDBD003BCD7C /* ReverseInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseInt.swift; sourceTree = "<group>"; };
+		BE90DFC7262AD096003BCD7C /* IsPalindromeInt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IsPalindromeInt.swift; sourceTree = "<group>"; };
 		BEBFA4F926109E630087F4BE /* Multiply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply.swift; sourceTree = "<group>"; };
 		BEBFA4FC261210FF0087F4BE /* Permute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permute.swift; sourceTree = "<group>"; };
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		D81B3E721EA707A200214304 = {
 			isa = PBXGroup;
 			children = (
+				BE90DFC7262AD096003BCD7C /* IsPalindromeInt.swift */,
 				D81B3E7D1EA707A200214304 /* LeetCode */,
 				D81B3E7C1EA707A200214304 /* Products */,
 				BE03401822A60A4D00F7482E /* Recovered References */,
@@ -330,6 +335,7 @@
 				BE90DFAC26195869003BCD7C /* RotateImage.swift */,
 				BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */,
 				BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */,
+				BE90DFC4262ACDBD003BCD7C /* ReverseInt.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				BE90DFB326196C3E003BCD7C /* GroupAnagrams.swift in Sources */,
 				BEDA56AA22A60B550082E025 /* MergeSort.swift in Sources */,
 				BE2BCC8B25E3F104007847A0 /* RemoveElement.swift in Sources */,
+				BE90DFC5262ACDBD003BCD7C /* ReverseInt.swift in Sources */,
 				F7C868462428D9CE004D430F /* SimplifyPath.swift in Sources */,
 				BEDA56B722A60B550082E025 /* SearchMatrix.swift in Sources */,
 				BE48B5012337059600E379BF /* MinStack.swift in Sources */,
@@ -479,6 +486,7 @@
 				BE2BCC8E25E3F557007847A0 /* StrStr.swift in Sources */,
 				BED61CAD24323AF3004D5A53 /* SpiralOrder.swift in Sources */,
 				BEDA56B922A60B550082E025 /* InsertionSort.swift in Sources */,
+				BE90DFC8262AD096003BCD7C /* IsPalindromeInt.swift in Sources */,
 				BEDA56B122A60B550082E025 /* ReverseString.swift in Sources */,
 				BE2BCC8225E25A8A007847A0 /* GenerateParenthesis.swift in Sources */,
 				BE6102A72426553F00511E77 /* MaxAreaOfIsland.swift in Sources */,

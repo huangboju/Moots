@@ -11,7 +11,7 @@ import Foundation
 print(twoSum([2, 7, 11, 15, 0, 9], 9))
 
 
-print(lengthOfLongestSubstring("ppwwpwkew"))
+print(lengthOfLongestSubstring("pwwkew"))
 
 print("\n\n")
 
@@ -208,3 +208,5 @@ rotateImage(&matrix)
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
 
 containsNearbyAlmostDuplicate([1,2], 0, 1)
+
+reverseInt(-123)
