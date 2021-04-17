@@ -206,3 +206,5 @@ var matrix = [
 rotateImage(&matrix)
 
 print(groupAnagrams(["eat","tea","tan","ate","nat","bat"]))
+
+containsNearbyAlmostDuplicate([1,2], 0, 1)

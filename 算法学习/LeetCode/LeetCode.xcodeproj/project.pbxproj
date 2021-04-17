@@ -37,6 +37,7 @@
 		BE90DFAA2619521C003BCD7C /* PermuteUnique.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFA92619521C003BCD7C /* PermuteUnique.swift */; };
 		BE90DFAD26195869003BCD7C /* RotateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFAC26195869003BCD7C /* RotateImage.swift */; };
 		BE90DFB326196C3E003BCD7C /* GroupAnagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */; };
+		BE90DFC2262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */; };
 		BEBFA4FA26109E630087F4BE /* Multiply.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4F926109E630087F4BE /* Multiply.swift */; };
 		BEBFA4FD261210FF0087F4BE /* Permute.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEBFA4FC261210FF0087F4BE /* Permute.swift */; };
 		BED52F492426495100600908 /* ThreeSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED52F482426495100600908 /* ThreeSum.swift */; };
@@ -140,6 +141,7 @@
 		BE90DFA92619521C003BCD7C /* PermuteUnique.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermuteUnique.swift; sourceTree = "<group>"; };
 		BE90DFAC26195869003BCD7C /* RotateImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateImage.swift; sourceTree = "<group>"; };
 		BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupAnagrams.swift; sourceTree = "<group>"; };
+		BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainsNearbyAlmostDuplicate.swift; sourceTree = "<group>"; };
 		BEBFA4F926109E630087F4BE /* Multiply.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiply.swift; sourceTree = "<group>"; };
 		BEBFA4FC261210FF0087F4BE /* Permute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permute.swift; sourceTree = "<group>"; };
 		BED52F482426495100600908 /* ThreeSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeSum.swift; sourceTree = "<group>"; };
@@ -327,6 +329,7 @@
 				BE90DFA92619521C003BCD7C /* PermuteUnique.swift */,
 				BE90DFAC26195869003BCD7C /* RotateImage.swift */,
 				BE90DFB226196C3E003BCD7C /* GroupAnagrams.swift */,
+				BE90DFC1262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift */,
 			);
 			path = LeetCode;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */,
 				BEDA56A422A60B550082E025 /* MinSubArrayLen.swift in Sources */,
 				BE3DF79B25A1B18B00A58F4A /* IsSymmetric.swift in Sources */,
+				BE90DFC2262AB602003BCD7C /* ContainsNearbyAlmostDuplicate.swift in Sources */,
 				BE0EF80C260CD7F500EA29A7 /* SearchSimilarText.swift in Sources */,
 				BEDA56B322A60B550082E025 /* FractionToDecimal.swift in Sources */,
 				BE189E4C243A10F100C3B525 /* ReverseWords.swift in Sources */,
