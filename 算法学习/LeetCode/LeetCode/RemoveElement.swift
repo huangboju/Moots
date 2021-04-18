@@ -12,9 +12,9 @@ import Foundation
 
 func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
     var slowIndex = 0
-    for fastIndex in 0 ..< nums.count {
-        if val != nums[fastIndex] {
-            nums[slowIndex] = nums[fastIndex]
+    for n in nums {
+        if val != n {
+            nums[slowIndex] = n
             slowIndex += 1
         }
     }

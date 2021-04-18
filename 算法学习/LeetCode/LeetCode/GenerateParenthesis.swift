@@ -10,22 +10,23 @@ import Foundation
 
 // https://leetcode-cn.com/problems/generate-parentheses/
 func generateParenthesis(_ n: Int) -> [String] {
-    var dp: [[String]] = Array(repeating: [], count: n + 1)
-    // 初始化dp[0]
-    dp[0] = [""]
-    // 计算dp[i]
-    for i in 1 ..< n + 1 {
-        for p in 0 ..< i {
-            // 得到dp[p]的所有有效组合
-            let l1 = dp[p]
-            // 得到dp[q]的所有有效组合
-            let l2 = dp[i-1-p]
-            for k1 in l1 {
-                for k2 in l2 {
-                    dp[i].append("(\(k1))\(k2)")
-                }
-            }
+    func dfs(_ curStr: String, left: Int, right: Int, result: inout [String]) {
+        if left == 0 && right == 0 {
+            result.append(curStr)
+            return
+        }
+        if left > right {
+            return
+        }
+        if left > 0 {
+            dfs(curStr + "(", left: left - 1, right: right, result: &result)
+        }
+        if right > 0 {
+            dfs(curStr + ")", left: left, right: right - 1, result: &result)
         }
     }
-    return dp[n]
+    
+    var result: [String] = []
+    dfs("", left: n, right: n, result: &result)
+    return result
 }
