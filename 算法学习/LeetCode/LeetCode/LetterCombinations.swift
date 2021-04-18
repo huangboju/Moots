@@ -8,11 +8,12 @@
 
 import Foundation
 
+// https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
 func letterCombinations(_ digits: String) -> [String] {
-    let count = digits.count
-    if count == 0 { return [] }
+
+    if digits.isEmpty { return [] }
     
-    let lettersArray: [[Character]] = [
+    let lettersArray: [[String]] = [
         ["a", "b", "c"],
         ["d", "e", "f"],
         ["g", "h", "i"],
@@ -20,24 +21,25 @@ func letterCombinations(_ digits: String) -> [String] {
         ["m", "n", "o"],
         ["p", "q", "r", "s"],
         ["t", "u", "v"],
-        ["w", "x", "y", "z"]]
+        ["w", "x", "y", "z"]
+    ]
     
-    func dfs(_ idx: Int, _ chars: [Character], _ outputs: inout [Character], _ results: inout [String]) {
+    func dfs(_ idx: Int, _ chars: [Int], _ outputs: inout [String], _ results: inout [String]) {
         if idx == chars.count {
-            results.append(String(outputs))
-        } else {
-            let letters = lettersArray[chars[idx].hexDigitValue! - 2]
-            for letter in letters {
-                outputs.append(letter)
-                dfs(idx+1, chars, &outputs, &results)
-                outputs.removeLast()
-            }
+            results.append(outputs.joined())
+            return
+        }
+        let letters = lettersArray[chars[idx] - 2]
+        for letter in letters {
+            outputs.append(letter)
+            dfs(idx+1, chars, &outputs, &results)
+            outputs.removeLast()
         }
     }
 
     var results = [String]()
-    let chars = digits.map{ $0 }
-    var outputs = [Character]()
+    let chars = digits.compactMap { $0.hexDigitValue }
+    var outputs = [String]()
     dfs(0, chars, &outputs, &results)
     return results
 }
