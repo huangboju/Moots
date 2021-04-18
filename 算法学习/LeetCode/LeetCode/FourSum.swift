@@ -59,7 +59,6 @@ func fourSum(_ nums: [Int], _ target: Int) -> [[Int]] {
                     left += 1
                 }
             }
-            
         }
     }
     

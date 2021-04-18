@@ -14,18 +14,18 @@ import Foundation
 func mergeTwoLists(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
     var node1 = l1
     var node2 = l2
-    let phead = ListNode(-1)
-    var preN = phead
-    while let n1 = node1, let n2 = node2 {
-        if n1.val <= n2.val {
-            preN.next = node1
-            node1 = node1?.next
+    let result = ListNode(-1)
+    var node: ListNode? = result
+    while let n1 = node1 , let n2 = node2 {
+        if n1.val < n2.val {
+            node?.next = n1
+            node1 = n1.next
         } else {
-            preN.next = node2
-            node2 = node2?.next
+            node?.next = n2
+            node2 = n2.next
         }
-        preN = preN.next!
+        node = node?.next
     }
-    preN.next = node1 ?? node2
-    return phead.next
+    node?.next = node1 ?? node2
+    return result.next
 }
