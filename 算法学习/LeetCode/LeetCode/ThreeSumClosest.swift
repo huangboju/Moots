@@ -13,11 +13,11 @@ import Foundation
 func threeSumClosest(_ nums: [Int], _ target: Int) -> Int {
     let sortedNums = nums.sorted()
     var result = nums[0] + nums[1] + nums[2]
-    for i in 0..<sortedNums.count - 1 {
+    for (i, n) in sortedNums.enumerated() {
         var start = i + 1
         var end = sortedNums.count - 1
         while start < end {
-            let sum = sortedNums[start] + sortedNums[end] + sortedNums[i]
+            let sum = sortedNums[start] + sortedNums[end] + n
             if sum == target {
                 return sum
             } else if abs(target - sum) < abs(target - result) {
