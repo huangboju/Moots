@@ -9,6 +9,12 @@
 // https://leetcode-cn.com/problems/multiply-strings/
 import Foundation
 
+///     123
+///     456
+///       18
+///      12
+///     6
+
 func multiply(_ num1: String, _ num2: String) -> String {
     if num1 == "0" || num2 == "0" {
         return "0"
