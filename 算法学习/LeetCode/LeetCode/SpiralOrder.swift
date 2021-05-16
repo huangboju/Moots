@@ -15,39 +15,24 @@ import Foundation
 //]
 
 func spiralOrder(_ matrix: [[Int]]) -> [Int] {
-    var res = [Int]()
-    if matrix.isEmpty { return res }
-    var startX = 0
-    var endX = matrix.count - 1
-    var startY = 0
-    var endY = matrix[0].count - 1
-    
-    while true {
-        for i in startY...endY {
-            res.append(matrix[startX][i])
+    var result = [Int]()
+    var x = 0
+    var y = -1
+    var rows = matrix[0].count + 1
+    var cols = matrix.count
+    var count = 0
+    while result.count < matrix.count * matrix[0].count {
+        rows -= 1
+        for _ in 0..<rows {
+            count % 2 == 0 ? (y += 1) : (y -= 1)
+            result.append(matrix[x][y])
         }
-        startX += 1
-        if startX > endX { break }
-        
-        for i in startX...endX {
-            res.append(matrix[i][endY])
+        cols -= 1
+        for _ in 0..<cols {
+            count % 2 == 0 ? (x += 1) : (x -= 1)
+            result.append(matrix[x][y])
         }
-        endY -= 1
-        if startY > endY { break }
-
-
-        for i in stride(from: endY, through:startY, by:-1) {
-            res.append(matrix[endX][i])
-        }
-        endX -= 1
-        
-        if startX > endX { break }
-        for i in stride(from:endX, through:startX, by:-1) {
-            res.append(matrix[i][startY])
-        }
-
-        startY += 1
-        if startY > endY { break }
+        count += 1
     }
-    return res
+    return result
 }

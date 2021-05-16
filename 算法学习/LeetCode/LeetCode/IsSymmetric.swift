@@ -112,22 +112,15 @@ class SolutionSymmetric {
         return result
     }
     
+    // https://leetcode-cn.com/problems/binary-tree-inorder-traversal/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china
     func inorderTraversal(_ root: TreeNode?) -> [Int] {
-        var node = root
-        var stack: [TreeNode] = []
+        guard let root = root else { return [] }
+        
         var result: [Int] = []
-        while true {
-            if node != nil {
-                stack.append(node!)
-                node = node!.left
-            } else if stack.isEmpty {
-                return result
-            } else {
-                node = stack.popLast()
-                result.append(node!.val)
-                node = node?.right
-            }
-        }
+        result += inorderTraversal(root.left)
+        result.append(root.val)
+        result += inorderTraversal(root.right)
+        
         return result
     }
     
