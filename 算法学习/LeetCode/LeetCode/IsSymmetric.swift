@@ -123,22 +123,7 @@ class SolutionSymmetric {
         
         return result
     }
-    
-    //    func inorderTraversal(_ root: TreeNode?) -> [Int] {
-    //        var result: [Int] = []
-    //        inorder(root, &result)
-    //        return result
-    //    }
-    //
-    //    func inorder(_ root: TreeNode?, _ result: inout [Int]) {
-    //        guard let root = root else {
-    //            return
-    //        }
-    //        inorder(root.left, &result)
-    //        result.append(root.val)
-    //        inorder(root.right, &result)
-    //    }
-    
+
     // https://leetcode-cn.com/problems/same-tree/
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil && q == nil {
@@ -153,6 +138,7 @@ class SolutionSymmetric {
         return isSameTree(p?.left, q?.left) && isSameTree(p?.right, q?.right)
     }
     
+    // https://leetcode-cn.com/problems/maximum-depth-of-binary-tree/
     func maxDepth(_ root: TreeNode?) -> Int {
         guard let root = root else {
             return 0
@@ -162,6 +148,7 @@ class SolutionSymmetric {
         return max(left, right) + 1
     }
     
+    // https://leetcode-cn.com/problems/binary-tree-level-order-traversal-ii/
     func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
         guard let root = root else {
             return []
@@ -229,22 +216,18 @@ class SolutionSymmetric {
     
     // https://leetcode-cn.com/problems/balanced-binary-tree/
     func isBalanced(_ root: TreeNode?) -> Bool {
-        var result = true
-        func depth(_ root: TreeNode?) -> Int {
+        func maxDepth(_ root:TreeNode?) -> Int {
             guard let root = root else {
                 return 0
             }
-            let left = depth(root.left) + 1
-            let right = depth(root.right) + 1
-            if abs(left - right) > 1 {
-                result = false
-            }
-            return max(left, right)
+            return max(maxDepth(root.left), maxDepth(root.right)) + 1
         }
-        
-        _ = depth(root)
-        
-        return result
+
+        guard let root = root else {
+            return true
+        }
+
+        return isBalanced(root.left) && isBalanced(root.right) && abs(maxDepth(root.left) - maxDepth(root.right))<=1
     }
     
     // https://leetcode-cn.com/problems/path-sum/
