@@ -5,9 +5,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
 //        semaphore()
 //        multitasking()
 //        quickThread()
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
 //        operationDependency()
 //        test()
 //        delay()
-        semaphoreGroup()
+//        semaphoreGroup()
 //        dispatchIO()
 //        listenFile()
 
@@ -51,6 +51,7 @@ class ViewController: UIViewController {
 //        }
         
         // 执行层次
+//        让多个串行队列之间也能串行地执行任务
         let targetQueue  = DispatchQueue(label: "com.gcd.setTargetQueue2.targetSerialQueue")
 
         let serialQueue1 = DispatchQueue(label: "com.gcd.setTargetQueue2.serialQueue1", target: targetQueue)
