@@ -42,8 +42,6 @@ class ClassCopyIvarListVC: ListVC {
 }
 
 
-
-
 class ClassCopyIvarDetailVC: ListVC {
     
     var className: String? {
