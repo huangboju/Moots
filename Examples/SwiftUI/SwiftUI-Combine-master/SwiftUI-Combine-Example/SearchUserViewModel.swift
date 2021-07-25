@@ -9,6 +9,8 @@ final class SearchUserViewModel: ObservableObject {
 
     @Published private(set) var userImages = [User: UIImage]()
 
+    private var store = Set<AnyCancellable>()
+
     private var searchCancellable: Cancellable? {
         didSet { oldValue?.cancel() }
     }
@@ -45,12 +47,12 @@ final class SearchUserViewModel: ObservableObject {
         }
 
         let request = URLRequest(url: user.avatar_url)
-        _ = URLSession.shared.dataTaskPublisher(for: request)
+        URLSession.shared.dataTaskPublisher(for: request)
             .map { UIImage(data: $0.data) }
             .replaceError(with: nil)
             .receive(on: RunLoop.main)
             .sink(receiveValue: { [weak self] image in
                 self?.userImages[user] = image
-            })
+            }).store(in: &store)
     }
 }
