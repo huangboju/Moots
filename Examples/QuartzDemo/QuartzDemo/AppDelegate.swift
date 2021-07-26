@@ -6,6 +6,8 @@
 //  Copyright © 2017年 伯驹 黄. All rights reserved.
 //
 
+// https://chengkang.me/
+
 import UIKit
 
 @UIApplicationMain
@@ -15,13 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        let fibs = [0, 1, 1, 2, 3, 5]
-        
-        let slice = fibs[1...]
-        print(slice)
-//        print(slice[0])
-        
+                
         return true
     }
 
