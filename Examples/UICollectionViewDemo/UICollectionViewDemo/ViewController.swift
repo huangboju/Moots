@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         ],
         [
             TableNestCollectionController.self
+        ],
+        [
+            ShaperLayerVC.self
         ]
     ]
 
