@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE47030626B6AD50009E1279 /* MaskShapeLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47030526B6AD50009E1279 /* MaskShapeLayerVC.swift */; };
+		BE47030B26B6AFE7009E1279 /* ShapeMaskLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47030826B6AFE7009E1279 /* ShapeMaskLayer.swift */; };
+		BE47030C26B6AFE7009E1279 /* MaskViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47030926B6AFE7009E1279 /* MaskViewVC.swift */; };
+		BE47030D26B6AFE7009E1279 /* MaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE47030A26B6AFE7009E1279 /* MaskView.swift */; };
 		BE4E379626AFD938004D1A4C /* ShaperLayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4E379526AFD938004D1A4C /* ShaperLayerVC.swift */; };
 		BED604BC1FD129800099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BB1FD129800099151E /* TableNestCollectionController.swift */; };
 		D813FFC41DEC215900B81BA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D813FFC31DEC215900B81BA9 /* AppDelegate.swift */; };
@@ -46,6 +50,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BE47030526B6AD50009E1279 /* MaskShapeLayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskShapeLayerVC.swift; sourceTree = "<group>"; };
+		BE47030826B6AFE7009E1279 /* ShapeMaskLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeMaskLayer.swift; sourceTree = "<group>"; };
+		BE47030926B6AFE7009E1279 /* MaskViewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskViewVC.swift; sourceTree = "<group>"; };
+		BE47030A26B6AFE7009E1279 /* MaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MaskView.swift; sourceTree = "<group>"; };
 		BE4E379526AFD938004D1A4C /* ShaperLayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShaperLayerVC.swift; sourceTree = "<group>"; };
 		BED604BB1FD129800099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		D813FFC01DEC215900B81BA9 /* UICollectionViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICollectionViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +104,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BE47030726B6AFE7009E1279 /* MaskView */ = {
+			isa = PBXGroup;
+			children = (
+				BE47030826B6AFE7009E1279 /* ShapeMaskLayer.swift */,
+				BE47030926B6AFE7009E1279 /* MaskViewVC.swift */,
+				BE47030A26B6AFE7009E1279 /* MaskView.swift */,
+			);
+			path = MaskView;
+			sourceTree = "<group>";
+		};
 		D813FFB71DEC215900B81BA9 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +135,8 @@
 		D813FFC21DEC215900B81BA9 /* UICollectionViewDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BE47030726B6AFE7009E1279 /* MaskView */,
+				BE47030526B6AD50009E1279 /* MaskShapeLayerVC.swift */,
 				D81992A91EDFB5620008CD7D /* CalendarView */,
 				D81D65C31DF9025F0053E3C3 /* Layout.swift */,
 				D813FFC31DEC215900B81BA9 /* AppDelegate.swift */,
@@ -270,20 +290,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D81992B71EDFC92E0008CD7D /* CalendarViewController.swift in Sources */,
+				BE47030B26B6AFE7009E1279 /* ShapeMaskLayer.swift in Sources */,
 				D813FFE81DEC2E7C00B81BA9 /* DebugGapController.swift in Sources */,
 				D813FFC61DEC215900B81BA9 /* ViewController.swift in Sources */,
 				D813FFE61DEC2A8000B81BA9 /* NoGapController.swift in Sources */,
 				D8A731C91DED5376005DF7C8 /* HighlightController2.swift in Sources */,
 				D81992B31EDFBA230008CD7D /* SampleCalendarEvent.swift in Sources */,
 				D8A731C71DED5360005DF7C8 /* HighlightController1.swift in Sources */,
+				BE47030C26B6AFE7009E1279 /* MaskViewVC.swift in Sources */,
 				D81992B51EDFBCC90008CD7D /* WeekCalendarLayout.swift in Sources */,
 				D81D65C41DF9025F0053E3C3 /* Layout.swift in Sources */,
 				D81992B11EDFB6D90008CD7D /* HeaderView.swift in Sources */,
 				D8ED296E1DF808B100AA03E9 /* UIButton+Extension.swift in Sources */,
 				D8ED29721DF80D9200AA03E9 /* IconLabelController.swift in Sources */,
+				BE47030626B6AD50009E1279 /* MaskShapeLayerVC.swift in Sources */,
 				D813FFEA1DEC2EBB00B81BA9 /* DebugNoGapController.swift in Sources */,
 				D813FFC41DEC215900B81BA9 /* AppDelegate.swift in Sources */,
 				D81992AF1EDFB66B0008CD7D /* CalendarEvent.swift in Sources */,
+				BE47030D26B6AFE7009E1279 /* MaskView.swift in Sources */,
 				D81992AD1EDFB6400008CD7D /* CalendarEventCell.swift in Sources */,
 				D81992AB1EDFB59F0008CD7D /* CalendarDataSource.swift in Sources */,
 				D813FFE41DEC22A500B81BA9 /* GapController.swift in Sources */,

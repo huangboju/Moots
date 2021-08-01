@@ -42,19 +42,34 @@ class ShaperLayerVC: UIViewController {
         drawingView2.heightAnchor.constraint(equalToConstant: 200).isActive = true
         drawingView2.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34).isActive = true
 
-        drawingView.layer.mask = mask()
 
-        drawingView1.layer.mask = mask()
+//        let maskView = MaskView()
+//        maskView.maskColor = UIColor.white
+        let maskView = DrawView()
+        maskView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(maskView)
+        maskView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        maskView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        maskView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        maskView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34).isActive = true
 
-        drawingView2.layer.mask = mask()
+        let path = UIBezierPath()
+
+        path.move(to: CGPoint(x: 100, y: 100))
+        path.addLine(to: CGPoint(x: 100, y: 700))
+        path.addLine(to: CGPoint(x: 150, y: 700))
+
+//        maskView.addTransparentPath(path)
+        
     }
 
     func mask() -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
-        let path = UIBezierPath()
+        let path = UIBezierPath(roundedRect: self.view.frame, cornerRadius: 0)
         shapeLayer.lineWidth = 2
+        shapeLayer.fillRule = .evenOdd
         shapeLayer.strokeColor = UIColor.black.cgColor
-        shapeLayer.fillColor = UIColor.clear.cgColor
+        shapeLayer.fillColor = UIColor.white.cgColor
         path.move(to: CGPoint(x: 100, y: 100))
         path.addLine(to: CGPoint(x: 150, y: 120))
         path.addLine(to: CGPoint(x: 150, y: 150))
@@ -62,5 +77,46 @@ class ShaperLayerVC: UIViewController {
         path.addLine(to: CGPoint(x: 550, y: 200))
         shapeLayer.path = path.cgPath
         return shapeLayer
+    }
+}
+
+// https://stackoverflow.com/questions/35724906/draw-transparent-uibezierpath-line-inside-drawrect
+class DrawView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        isOpaque = false
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+    override func draw(_ rect: CGRect) {
+
+        let clippingPath = UIBezierPath()
+
+        let context = UIGraphicsGetCurrentContext() // get your current context
+
+        // draw your background color
+        UIColor.green.set();
+        context?.fill(bounds)
+
+        context?.saveGState()
+
+        context?.setBlendMode(.destinationOut)
+
+
+        // do 'transparent' drawing
+
+        UIColor.white.set();
+        clippingPath.move(to: CGPoint(x: 10, y: self.bounds.height / 2))
+        clippingPath.addLine(to: CGPoint(x: self.bounds.width - 10, y: self.bounds.height / 2))
+        clippingPath.lineWidth = 6
+        clippingPath.lineCapStyle = .round
+        clippingPath.stroke()
+
+        context?.restoreGState()
+
+        // do further drawing if needed
     }
 }

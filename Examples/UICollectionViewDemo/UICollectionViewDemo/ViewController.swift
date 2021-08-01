@@ -42,7 +42,9 @@ class ViewController: UIViewController {
             TableNestCollectionController.self
         ],
         [
-            ShaperLayerVC.self
+            ShaperLayerVC.self,
+            MaskShapeLayerVC.self,
+            MaskViewVC.self
         ]
     ]
 
