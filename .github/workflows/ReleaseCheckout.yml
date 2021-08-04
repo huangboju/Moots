@@ -6,7 +6,6 @@ name: Auto checkout release branch
 on: [push]
 jobs:
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout branch
       run: git checkout -b release
