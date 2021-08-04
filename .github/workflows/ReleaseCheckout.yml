@@ -8,8 +8,8 @@ jobs:
   checkout-new-branch:
     runs-on: ubuntu-latest
     steps:
-    - name: Check out repository code
-        uses: actions/checkout@v2
+    - name: Clone Repo
+      uses: actions/checkout@master
 
     - name: Checkout new branch
       run: git checkout -b release
