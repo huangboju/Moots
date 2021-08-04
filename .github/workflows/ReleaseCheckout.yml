@@ -1,7 +1,15 @@
 name: Auto checkout release branch
-on:
-  schedule:
-  # https://crontab.guru/examples.html
-    - cron:  '0 0 * * THU'
+# on:
+#   schedule:
+#   # https://crontab.guru/examples.html
+#     - cron:  '0 0 * * THU'
+on: [push]
 jobs:
     runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout branch
+      run: git checkout -b release
+      
+    - name: Push branch to remote
+      run: git push -u origin release
