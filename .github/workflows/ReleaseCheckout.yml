@@ -5,6 +5,7 @@ name: Auto checkout release branch
 #     - cron:  '0 0 * * THU'
 on: [push]
 jobs:
+  checkout-new-branch:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout new branch
