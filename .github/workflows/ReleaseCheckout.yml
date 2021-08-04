@@ -7,7 +7,7 @@ on: [push]
 jobs:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout branch
+    - name: Checkout new branch
       run: git checkout -b release
 
     - name: Push branch to remote
