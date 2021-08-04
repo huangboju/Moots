@@ -43,9 +43,10 @@ class ShaperLayerVC: UIViewController {
         drawingView2.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -34).isActive = true
 
 
-//        let maskView = MaskView()
-//        maskView.maskColor = UIColor.white
-        let maskView = DrawView()
+        let maskView = MaskView()
+        maskView.maskColor = UIColor.red
+//        let maskView = DrawView()
+//        let maskView = UIView()
         maskView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(maskView)
         maskView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -59,22 +60,22 @@ class ShaperLayerVC: UIViewController {
         path.addLine(to: CGPoint(x: 100, y: 700))
         path.addLine(to: CGPoint(x: 150, y: 700))
 
-//        maskView.addTransparentPath(path)
+        maskView.addTransparentPath(path)
         
     }
 
     func mask() -> CAShapeLayer {
         let shapeLayer = CAShapeLayer()
         let path = UIBezierPath(roundedRect: self.view.frame, cornerRadius: 0)
+        path.usesEvenOddFillRule = true
         shapeLayer.lineWidth = 2
         shapeLayer.fillRule = .evenOdd
-        shapeLayer.strokeColor = UIColor.black.cgColor
+        shapeLayer.strokeColor = UIColor.red.cgColor
         shapeLayer.fillColor = UIColor.white.cgColor
-        path.move(to: CGPoint(x: 100, y: 100))
-        path.addLine(to: CGPoint(x: 150, y: 120))
-        path.addLine(to: CGPoint(x: 150, y: 150))
-        path.move(to: CGPoint(x: 500, y: 200))
-        path.addLine(to: CGPoint(x: 550, y: 200))
+        let subPath = UIBezierPath()
+        subPath.move(to: CGPoint(x: 100, y: 200))
+        subPath.addLine(to: CGPoint(x: 150, y: 320))
+        path.append(subPath)
         shapeLayer.path = path.cgPath
         return shapeLayer
     }
@@ -109,8 +110,17 @@ class DrawView: UIView {
         // do 'transparent' drawing
 
         UIColor.white.set();
-        clippingPath.move(to: CGPoint(x: 10, y: self.bounds.height / 2))
-        clippingPath.addLine(to: CGPoint(x: self.bounds.width - 10, y: self.bounds.height / 2))
+        clippingPath.move(to: CGPoint(x: 10, y: 100))
+        clippingPath.addLine(to: CGPoint(x: 10, y: 610))
+        clippingPath.addLine(to: CGPoint(x: 110, y: 610))
+        clippingPath.lineWidth = 6
+        clippingPath.lineCapStyle = .round
+        clippingPath.stroke()
+
+
+        clippingPath.move(to: CGPoint(x: 50, y: 100))
+        clippingPath.addLine(to: CGPoint(x: 50, y: 610))
+        clippingPath.addLine(to: CGPoint(x: 160, y: 610))
         clippingPath.lineWidth = 6
         clippingPath.lineCapStyle = .round
         clippingPath.stroke()

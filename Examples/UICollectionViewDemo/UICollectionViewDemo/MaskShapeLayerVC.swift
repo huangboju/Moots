@@ -49,10 +49,16 @@ class MaskShapeLayerVC: UIViewController {
         
         let bpath = UIBezierPath(roundedRect: CGRect(x: 10, y: 10, width: view.bounds.width - 20, height: view.bounds.height - 20), cornerRadius: 15)
         
-        let circlePath = UIBezierPath(arcCenter: view.center, radius: 100, startAngle: 0, endAngle: .pi * 2, clockwise: false)
-        bpath.append(circlePath)
+//        let circlePath = UIBezierPath(arcCenter: view.center, radius: 100, startAngle: 0, endAngle: .pi * 2, clockwise: false)
+//        bpath.append(circlePath)
+        let linePath = UIBezierPath()
+        linePath.move(to: CGPoint(x: 100, y: 100))
+        linePath.addLine(to: CGPoint(x: 100, y: 200))
+        linePath.addLine(to: CGPoint(x: 200, y: 200))
+        bpath.append(linePath)
         
         let shapeLayer = CAShapeLayer()
+        shapeLayer.isOpaque = false
         shapeLayer.strokeColor = UIColor.red.cgColor
         shapeLayer.fillColor = UIColor.blue.cgColor
         shapeLayer.path = bpath.cgPath
