@@ -1,0 +1,7 @@
+name: Auto checkout release branch
+on:
+  schedule:
+  # https://crontab.guru/examples.html
+    - cron:  '0 0 * * THU'
+jobs:
+    runs-on: ubuntu-latest
