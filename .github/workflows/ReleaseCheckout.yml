@@ -8,6 +8,9 @@ jobs:
   checkout-new-branch:
     runs-on: ubuntu-latest
     steps:
+    - name: Check out repository code
+        uses: actions/checkout@v
+
     - name: Checkout new branch
       run: git checkout -b release
 
