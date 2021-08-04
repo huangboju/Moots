@@ -10,6 +10,6 @@ jobs:
     steps:
     - name: Checkout branch
       run: git checkout -b release
-      
+
     - name: Push branch to remote
       run: git push -u origin release
