@@ -1,6 +1,6 @@
 name: Auto checkout release branch
 on:
-  schedule:
+  pull_request:
   # https://crontab.guru/examples.html
     - cron:  '0 0 * * THU'
 jobs:
