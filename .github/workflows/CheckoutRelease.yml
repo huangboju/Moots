@@ -1,4 +1,4 @@
-name: Manually triggered workflow
+name: Checkout Release Branch
 on:
   workflow_dispatch:
     inputs:
