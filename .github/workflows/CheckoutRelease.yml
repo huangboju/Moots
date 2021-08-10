@@ -1,0 +1,22 @@
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release Version'
+        required: true
+        default: '2.1.0'
+
+jobs:
+  checkout-new-branch:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Clone Repo
+      uses: actions/checkout@master
+
+    - name: Checkout new branch
+      run: git checkout -b release/${{ github.event.inputs.version }}
+
+    - name: Push branch to remote
+      run: git push -u origin release/${{ github.event.inputs.version }}
+
