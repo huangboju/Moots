@@ -20,3 +20,7 @@ jobs:
     - name: Push branch to remote
       run: git push -u origin release/${{ github.event.inputs.version }}
 
+    - name: Increment build number
+      run: xcrun agvtool next-version -all
+
+
