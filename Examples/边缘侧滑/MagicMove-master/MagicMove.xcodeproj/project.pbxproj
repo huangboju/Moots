@@ -1,0 +1,521 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A8FF09AB1B5372E300BD2C74 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09AA1B5372E300BD2C74 /* AppDelegate.swift */; };
+		A8FF09AD1B5372E300BD2C74 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09AC1B5372E300BD2C74 /* ViewController.swift */; };
+		A8FF09B01B5372E300BD2C74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8FF09AE1B5372E300BD2C74 /* Main.storyboard */; };
+		A8FF09B21B5372E300BD2C74 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A8FF09B11B5372E300BD2C74 /* Images.xcassets */; };
+		A8FF09B51B5372E300BD2C74 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */; };
+		A8FF09C11B5372E400BD2C74 /* MagicMoveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09C01B5372E400BD2C74 /* MagicMoveTests.swift */; };
+		A8FF09CB1B538CB600BD2C74 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09CA1B538CB600BD2C74 /* DetailViewController.swift */; };
+		A8FF09CD1B5391F900BD2C74 /* MagicMoveTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09CC1B5391F900BD2C74 /* MagicMoveTransion.swift */; };
+		A8FF09CF1B5399AD00BD2C74 /* MMCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09CE1B5399AD00BD2C74 /* MMCollectionViewCell.swift */; };
+		A8FF09D11B53A1AC00BD2C74 /* MagicMovePopTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8FF09D01B53A1AC00BD2C74 /* MagicMovePopTransion.swift */; };
+		BE0B49CC20D0B97C00D27AD7 /* SecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */; };
+		BE1D2BBA20D0E2EC00D6E440 /* PresentingAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1D2BB920D0E2EC00D6E440 /* PresentingAnimator.swift */; };
+		BE1DED1A20DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */; };
+		F7E5739220CFC5FA002519FC /* PresentingTransion.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739120CFC5FA002519FC /* PresentingTransion.swift */; };
+		F7E5739420CFE859002519FC /* MyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739320CFE859002519FC /* MyViewController.swift */; };
+		F7E5739620D0EC75002519FC /* DismissTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739520D0EC75002519FC /* DismissTransition.swift */; };
+		F7E5739820D0ED79002519FC /* DismissAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739720D0ED79002519FC /* DismissAnimator.swift */; };
+		F7E5739A20D0F742002519FC /* MyPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E5739920D0F742002519FC /* MyPresentationController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A8FF09BB1B5372E400BD2C74 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A8FF099D1B5372E300BD2C74 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A8FF09A41B5372E300BD2C74;
+			remoteInfo = MagicMove;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A8FF09A51B5372E300BD2C74 /* MagicMove.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MagicMove.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8FF09A91B5372E300BD2C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8FF09AA1B5372E300BD2C74 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A8FF09AC1B5372E300BD2C74 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A8FF09AF1B5372E300BD2C74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A8FF09B11B5372E300BD2C74 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		A8FF09B41B5372E300BD2C74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		A8FF09BA1B5372E400BD2C74 /* MagicMoveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicMoveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8FF09BF1B5372E400BD2C74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A8FF09C01B5372E400BD2C74 /* MagicMoveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicMoveTests.swift; sourceTree = "<group>"; };
+		A8FF09CA1B538CB600BD2C74 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A8FF09CC1B5391F900BD2C74 /* MagicMoveTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMoveTransion.swift; sourceTree = "<group>"; };
+		A8FF09CE1B5399AD00BD2C74 /* MMCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8FF09D01B53A1AC00BD2C74 /* MagicMovePopTransion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicMovePopTransion.swift; sourceTree = "<group>"; };
+		BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondVC.swift; sourceTree = "<group>"; };
+		BE1D2BB920D0E2EC00D6E440 /* PresentingAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingAnimator.swift; sourceTree = "<group>"; };
+		BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScreenEdgePanGestureRecognizer.swift; sourceTree = "<group>"; };
+		F7E5739120CFC5FA002519FC /* PresentingTransion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingTransion.swift; sourceTree = "<group>"; };
+		F7E5739320CFE859002519FC /* MyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewController.swift; sourceTree = "<group>"; };
+		F7E5739520D0EC75002519FC /* DismissTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissTransition.swift; sourceTree = "<group>"; };
+		F7E5739720D0ED79002519FC /* DismissAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissAnimator.swift; sourceTree = "<group>"; };
+		F7E5739920D0F742002519FC /* MyPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPresentationController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A8FF09A21B5372E300BD2C74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8FF09B71B5372E400BD2C74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A8FF099C1B5372E300BD2C74 = {
+			isa = PBXGroup;
+			children = (
+				A8FF09A71B5372E300BD2C74 /* MagicMove */,
+				A8FF09BD1B5372E400BD2C74 /* MagicMoveTests */,
+				A8FF09A61B5372E300BD2C74 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A8FF09A61B5372E300BD2C74 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A8FF09A51B5372E300BD2C74 /* MagicMove.app */,
+				A8FF09BA1B5372E400BD2C74 /* MagicMoveTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A8FF09A71B5372E300BD2C74 /* MagicMove */ = {
+			isa = PBXGroup;
+			children = (
+				BE0B49CD20D0BF7C00D27AD7 /* Transition */,
+				A8FF09AA1B5372E300BD2C74 /* AppDelegate.swift */,
+				A8FF09AC1B5372E300BD2C74 /* ViewController.swift */,
+				A8FF09CE1B5399AD00BD2C74 /* MMCollectionViewCell.swift */,
+				A8FF09CA1B538CB600BD2C74 /* DetailViewController.swift */,
+				F7E5739320CFE859002519FC /* MyViewController.swift */,
+				BE0B49CB20D0B97C00D27AD7 /* SecondVC.swift */,
+				F7E5739920D0F742002519FC /* MyPresentationController.swift */,
+				A8FF09AE1B5372E300BD2C74 /* Main.storyboard */,
+				A8FF09B11B5372E300BD2C74 /* Images.xcassets */,
+				A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */,
+				A8FF09A81B5372E300BD2C74 /* Supporting Files */,
+				BE1DED1920DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift */,
+			);
+			path = MagicMove;
+			sourceTree = "<group>";
+		};
+		A8FF09A81B5372E300BD2C74 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8FF09A91B5372E300BD2C74 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8FF09BD1B5372E400BD2C74 /* MagicMoveTests */ = {
+			isa = PBXGroup;
+			children = (
+				A8FF09C01B5372E400BD2C74 /* MagicMoveTests.swift */,
+				A8FF09BE1B5372E400BD2C74 /* Supporting Files */,
+			);
+			path = MagicMoveTests;
+			sourceTree = "<group>";
+		};
+		A8FF09BE1B5372E400BD2C74 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A8FF09BF1B5372E400BD2C74 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE0B49CD20D0BF7C00D27AD7 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D2BB820D0E2DB00D6E440 /* Animator */,
+				A8FF09CC1B5391F900BD2C74 /* MagicMoveTransion.swift */,
+				A8FF09D01B53A1AC00BD2C74 /* MagicMovePopTransion.swift */,
+				F7E5739520D0EC75002519FC /* DismissTransition.swift */,
+				F7E5739120CFC5FA002519FC /* PresentingTransion.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		BE1D2BB820D0E2DB00D6E440 /* Animator */ = {
+			isa = PBXGroup;
+			children = (
+				BE1D2BB920D0E2EC00D6E440 /* PresentingAnimator.swift */,
+				F7E5739720D0ED79002519FC /* DismissAnimator.swift */,
+			);
+			path = Animator;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A8FF09A41B5372E300BD2C74 /* MagicMove */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8FF09C41B5372E400BD2C74 /* Build configuration list for PBXNativeTarget "MagicMove" */;
+			buildPhases = (
+				A8FF09A11B5372E300BD2C74 /* Sources */,
+				A8FF09A21B5372E300BD2C74 /* Frameworks */,
+				A8FF09A31B5372E300BD2C74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MagicMove;
+			productName = MagicMove;
+			productReference = A8FF09A51B5372E300BD2C74 /* MagicMove.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A8FF09B91B5372E400BD2C74 /* MagicMoveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A8FF09C71B5372E400BD2C74 /* Build configuration list for PBXNativeTarget "MagicMoveTests" */;
+			buildPhases = (
+				A8FF09B61B5372E400BD2C74 /* Sources */,
+				A8FF09B71B5372E400BD2C74 /* Frameworks */,
+				A8FF09B81B5372E400BD2C74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A8FF09BC1B5372E400BD2C74 /* PBXTargetDependency */,
+			);
+			name = MagicMoveTests;
+			productName = MagicMoveTests;
+			productReference = A8FF09BA1B5372E400BD2C74 /* MagicMoveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A8FF099D1B5372E300BD2C74 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = Bourne;
+				TargetAttributes = {
+					A8FF09A41B5372E300BD2C74 = {
+						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = 6E5E8VY4L7;
+					};
+					A8FF09B91B5372E400BD2C74 = {
+						CreatedOnToolsVersion = 6.4;
+						TestTargetID = A8FF09A41B5372E300BD2C74;
+					};
+				};
+			};
+			buildConfigurationList = A8FF09A01B5372E300BD2C74 /* Build configuration list for PBXProject "MagicMove" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A8FF099C1B5372E300BD2C74;
+			productRefGroup = A8FF09A61B5372E300BD2C74 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A8FF09A41B5372E300BD2C74 /* MagicMove */,
+				A8FF09B91B5372E400BD2C74 /* MagicMoveTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A8FF09A31B5372E300BD2C74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FF09B01B5372E300BD2C74 /* Main.storyboard in Resources */,
+				A8FF09B51B5372E300BD2C74 /* LaunchScreen.xib in Resources */,
+				A8FF09B21B5372E300BD2C74 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8FF09B81B5372E400BD2C74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A8FF09A11B5372E300BD2C74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FF09D11B53A1AC00BD2C74 /* MagicMovePopTransion.swift in Sources */,
+				A8FF09CD1B5391F900BD2C74 /* MagicMoveTransion.swift in Sources */,
+				A8FF09CB1B538CB600BD2C74 /* DetailViewController.swift in Sources */,
+				A8FF09AD1B5372E300BD2C74 /* ViewController.swift in Sources */,
+				BE1D2BBA20D0E2EC00D6E440 /* PresentingAnimator.swift in Sources */,
+				BE0B49CC20D0B97C00D27AD7 /* SecondVC.swift in Sources */,
+				F7E5739620D0EC75002519FC /* DismissTransition.swift in Sources */,
+				F7E5739820D0ED79002519FC /* DismissAnimator.swift in Sources */,
+				BE1DED1A20DA336E006E632C /* MyScreenEdgePanGestureRecognizer.swift in Sources */,
+				A8FF09AB1B5372E300BD2C74 /* AppDelegate.swift in Sources */,
+				F7E5739220CFC5FA002519FC /* PresentingTransion.swift in Sources */,
+				F7E5739420CFE859002519FC /* MyViewController.swift in Sources */,
+				A8FF09CF1B5399AD00BD2C74 /* MMCollectionViewCell.swift in Sources */,
+				F7E5739A20D0F742002519FC /* MyPresentationController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A8FF09B61B5372E400BD2C74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8FF09C11B5372E400BD2C74 /* MagicMoveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A8FF09BC1B5372E400BD2C74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A8FF09A41B5372E300BD2C74 /* MagicMove */;
+			targetProxy = A8FF09BB1B5372E400BD2C74 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A8FF09AE1B5372E300BD2C74 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8FF09AF1B5372E300BD2C74 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A8FF09B31B5372E300BD2C74 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A8FF09B41B5372E300BD2C74 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A8FF09C21B5372E400BD2C74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A8FF09C31B5372E400BD2C74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A8FF09C51B5372E400BD2C74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
+				INFOPLIST_FILE = MagicMove/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tk.bourne.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		A8FF09C61B5372E400BD2C74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6E5E8VY4L7;
+				INFOPLIST_FILE = MagicMove/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tk.bourne.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		A8FF09C81B5372E400BD2C74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicMoveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tk.bourne.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicMove.app/MagicMove";
+			};
+			name = Debug;
+		};
+		A8FF09C91B5372E400BD2C74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = MagicMoveTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "tk.bourne.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MagicMove.app/MagicMove";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A8FF09A01B5372E300BD2C74 /* Build configuration list for PBXProject "MagicMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8FF09C21B5372E400BD2C74 /* Debug */,
+				A8FF09C31B5372E400BD2C74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8FF09C41B5372E400BD2C74 /* Build configuration list for PBXNativeTarget "MagicMove" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8FF09C51B5372E400BD2C74 /* Debug */,
+				A8FF09C61B5372E400BD2C74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A8FF09C71B5372E400BD2C74 /* Build configuration list for PBXNativeTarget "MagicMoveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8FF09C81B5372E400BD2C74 /* Debug */,
+				A8FF09C91B5372E400BD2C74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A8FF099D1B5372E300BD2C74 /* Project object */;
+}

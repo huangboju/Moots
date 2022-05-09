@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SongCell" customModule="CustomNavigationAnimations_Starter" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="317" height="309"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l7z-Ix-MUD">
+                    <rect key="frame" x="0.0" y="0.0" width="317" height="309"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="l7z-Ix-MUD" secondAttribute="trailing" id="4L1-Wm-cxH"/>
+                <constraint firstItem="l7z-Ix-MUD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="hCf-Yz-bqj"/>
+                <constraint firstItem="l7z-Ix-MUD" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lEn-M8-3aP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="l7z-Ix-MUD" secondAttribute="bottom" id="lyH-Jz-W4d"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="songImage" destination="l7z-Ix-MUD" id="3Ko-Md-854"/>
+            </connections>
+            <point key="canvasLocation" x="4.5" y="-124.5"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="IXr-SZ-iqV">
+    <dependencies>
+        <deployment defaultVersion="1552" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <scenes>
+        <!--SortN Filter View Controller-->
+        <scene sceneID="a8G-Fh-sH3">
+            <objects>
+                <viewController id="IXr-SZ-iqV" customClass="SortNFilterViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G9z-RB-6wf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ism-gy-9Qa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rk0-r8-K3K">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hlb-3i-Bi8">
+                                <rect key="frame" x="0.0" y="155" width="320" height="413"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <connections>
+                                    <segue destination="MeR-Vj-jSG" kind="embed" id="KDN-hc-GGq"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VmV-dR-Ete">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="155"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tX5-Fp-62b">
+                                        <rect key="frame" x="20" y="53" width="133" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="133" id="PN9-gm-npx"/>
+                                        </constraints>
+                                        <state key="normal" title="Shuffle">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shuffle" destination="IXr-SZ-iqV" eventType="touchUpInside" id="kZZ-NT-hYC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCm-YZ-V9t">
+                                        <rect key="frame" x="167" y="53" width="133" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="133" id="Ddg-ij-jg1"/>
+                                        </constraints>
+                                        <state key="normal" title="Filter">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="filter:" destination="IXr-SZ-iqV" eventType="touchUpInside" id="ueM-Zd-mLH"/>
+                                        </connections>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5Wz-Kb-D71">
+                                        <rect key="frame" x="72" y="22" width="177" height="29"/>
+                                        <segments>
+                                            <segment title="Flow Layout"/>
+                                            <segment title="Grid Layout"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="toggleLayout:" destination="IXr-SZ-iqV" eventType="valueChanged" id="N56-hy-zVM"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Tap Shuffle &amp; Filter buttons repeatedly. Best viewed in Simulator slow motion. Note: Flow Layout bugs fixed in iOS7." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-FB-ncS">
+                                        <rect key="frame" x="20" y="88" width="280" height="51"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.87450980389999999" green="0.87450980389999999" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="5Wz-Kb-D71" secondAttribute="centerX" id="2Xb-z6-LK4"/>
+                                    <constraint firstItem="rMS-FB-ncS" firstAttribute="top" secondItem="tX5-Fp-62b" secondAttribute="bottom" constant="5" id="35w-jB-Ti6"/>
+                                    <constraint firstAttribute="height" constant="155" id="8RB-Rk-XxJ"/>
+                                    <constraint firstItem="tX5-Fp-62b" firstAttribute="leading" secondItem="VmV-dR-Ete" secondAttribute="leading" constant="20" symbolic="YES" id="N20-B9-Aay"/>
+                                    <constraint firstItem="rMS-FB-ncS" firstAttribute="leading" secondItem="VmV-dR-Ete" secondAttribute="leading" constant="20" symbolic="YES" id="QxV-8V-qav"/>
+                                    <constraint firstItem="5Wz-Kb-D71" firstAttribute="top" secondItem="VmV-dR-Ete" secondAttribute="top" constant="20" id="e2f-Pb-R7s"/>
+                                    <constraint firstItem="uCm-YZ-V9t" firstAttribute="top" secondItem="5Wz-Kb-D71" secondAttribute="bottom" constant="5" id="eaF-it-O6K"/>
+                                    <constraint firstItem="tX5-Fp-62b" firstAttribute="top" secondItem="5Wz-Kb-D71" secondAttribute="bottom" constant="5" id="ggv-0c-njG"/>
+                                    <constraint firstAttribute="trailing" secondItem="rMS-FB-ncS" secondAttribute="trailing" constant="20" symbolic="YES" id="pbB-Ir-XhI"/>
+                                    <constraint firstAttribute="trailing" secondItem="uCm-YZ-V9t" secondAttribute="trailing" constant="20" symbolic="YES" id="rKR-4y-R2y"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="VmV-dR-Ete" firstAttribute="trailing" secondItem="rk0-r8-K3K" secondAttribute="trailing" id="JEm-Qq-hxJ"/>
+                            <constraint firstItem="Hlb-3i-Bi8" firstAttribute="leading" secondItem="rk0-r8-K3K" secondAttribute="leading" id="PoG-5I-mGP"/>
+                            <constraint firstItem="Hlb-3i-Bi8" firstAttribute="top" secondItem="VmV-dR-Ete" secondAttribute="bottom" id="V9g-mg-bDM"/>
+                            <constraint firstItem="Hlb-3i-Bi8" firstAttribute="trailing" secondItem="rk0-r8-K3K" secondAttribute="trailing" id="Xg0-bH-5h1"/>
+                            <constraint firstItem="Hlb-3i-Bi8" firstAttribute="bottom" secondItem="rk0-r8-K3K" secondAttribute="bottom" id="bEh-1O-iPF"/>
+                            <constraint firstItem="VmV-dR-Ete" firstAttribute="leading" secondItem="rk0-r8-K3K" secondAttribute="leading" id="tOL-A3-b7x"/>
+                            <constraint firstItem="VmV-dR-Ete" firstAttribute="top" secondItem="rk0-r8-K3K" secondAttribute="top" id="xxx-JG-oZ8"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="layoutToggle" destination="5Wz-Kb-D71" id="gNO-gB-KAU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxm-JT-ulr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-285" y="-225"/>
+        </scene>
+        <!--SortN Filter Collection View Controller-->
+        <scene sceneID="uvM-D0-2l5">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="MeR-Vj-jSG" customClass="SortNFilterCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="Y7Y-VK-gnJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="413"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CA9-1y-7ay">
+                            <size key="itemSize" width="145" height="92"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="J2T-UL-r93">
+                                <rect key="frame" x="10" y="10" width="145" height="92"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="145" height="92"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txH-rz-L1F">
+                                            <rect key="frame" x="0.0" y="11" width="145" height="71"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="71" id="IBg-DL-e3G"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="80"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <color key="backgroundColor" red="0.81568627449999997" green="0.81176470590000005" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="txH-rz-L1F" firstAttribute="centerY" secondItem="J2T-UL-r93" secondAttribute="centerY" id="NIZ-lG-6wR"/>
+                                    <constraint firstItem="txH-rz-L1F" firstAttribute="trailing" secondItem="J2T-UL-r93" secondAttribute="trailing" id="Y9a-Ds-O80"/>
+                                    <constraint firstItem="txH-rz-L1F" firstAttribute="leading" secondItem="J2T-UL-r93" secondAttribute="leading" id="jk6-XQ-w55"/>
+                                </constraints>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="MeR-Vj-jSG" id="hxO-m2-Ow9"/>
+                            <outlet property="delegate" destination="MeR-Vj-jSG" id="Jsc-i3-AEP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uuh-Qb-cm4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="210" y="87"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>

@@ -1,0 +1,33 @@
+name: Manually triggered workflow
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Person to greet'
+        required: true
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
+        required: false
+        default: 'The Octoverse'
+
+jobs:
+  say_hello:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Hello ${{ github.event.inputs.name }}!"
+          echo "- in ${{ github.event.inputs.home }}!"
+  post_url:
+      runs-on: ubuntu-latest
+      steps:
+      - run: |
+          curl -i -H "Accept:application/json" -H "Content-Type:application/json" -H "Authorization: Bearer ACCESS-TOKEN" -XPOST "https://gorest.co.in/public/v1/users" -d '{"name":"xiao-ju", "gender":"male", "email":"aaa.ramakrishna@15ce.com", "status":"active"}'
+  job2:
+    runs-on: ubuntu-latest
+    needs: post_url
+    steps:
+      - run: echo ${{needs.post_url.outputs.output1}}
+      # - run: |
+      # $output = '${{ needs.post_url.outputs.output1 }}'
+      # python3 ./.github/test.py $output

@@ -1,0 +1,18 @@
+PODS:
+  - MetalPetal (1.2.2):
+    - MetalPetal/Core (= 1.2.2)
+  - MetalPetal/Core (1.2.2)
+
+DEPENDENCIES:
+  - MetalPetal
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - MetalPetal
+
+SPEC CHECKSUMS:
+  MetalPetal: 81979ae51b296dfc0c0d2bcb9f21c63511448e09
+
+PODFILE CHECKSUM: c21a5d46d824be685f2949ca4ef75c333ad152cf
+
+COCOAPODS: 1.6.0

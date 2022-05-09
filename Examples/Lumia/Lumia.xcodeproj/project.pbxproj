@@ -1,0 +1,1487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		39241E290E637DBABF98521F /* Pods_LumiaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 16AF87D4C7CA29F066411658 /* Pods_LumiaTests.framework */; };
+		9FD5C1734D5782BE3D4EED67 /* Pods_Lumia_LumiaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF31036D861E314AD7FD30F /* Pods_Lumia_LumiaUITests.framework */; };
+		BE29C40A2411E95900567E01 /* AssetTransitioningMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4032411E95900567E01 /* AssetTransitioningMath.swift */; };
+		BE29C40B2411E95900567E01 /* AssetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4042411E95900567E01 /* AssetCell.swift */; };
+		BE29C40C2411E95900567E01 /* AssetTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4052411E95900567E01 /* AssetTransitioning.swift */; };
+		BE29C40D2411E95900567E01 /* AssetTransitionDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4062411E95900567E01 /* AssetTransitionDriver.swift */; };
+		BE29C40E2411E95900567E01 /* AssetTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4072411E95900567E01 /* AssetTransitionController.swift */; };
+		BE29C40F2411E95900567E01 /* AssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4082411E95900567E01 /* AssetViewController.swift */; };
+		BE29C4102411E95900567E01 /* AssetViewController+AssetTransitioning.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4092411E95900567E01 /* AssetViewController+AssetTransitioning.swift */; };
+		BE29C4122411E9F800567E01 /* TransitionListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE29C4112411E9F800567E01 /* TransitionListVC.swift */; };
+		BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */; };
+		BE5C123623BCC7D40045BDFD /* CustomDynamicItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */; };
+		BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */; };
+		BE79EC90250C8931003B2B21 /* SafeAreaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC73250C8931003B2B21 /* SafeAreaViewController.swift */; };
+		BE79EC91250C8931003B2B21 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC74250C8931003B2B21 /* TableViewController.swift */; };
+		BE79EC92250C8931003B2B21 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC75250C8931003B2B21 /* CollectionViewController.swift */; };
+		BE79EC93250C8931003B2B21 /* ScrollContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC76250C8931003B2B21 /* ScrollContainerViewController.swift */; };
+		BE79EC94250C8931003B2B21 /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC77250C8931003B2B21 /* ScrollViewController.swift */; };
+		BE79EC95250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC79250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift */; };
+		BE79EC97250C8931003B2B21 /* UIView+SafeAreaInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC7B250C8931003B2B21 /* UIView+SafeAreaInsets.swift */; };
+		BE79EC98250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC7D250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift */; };
+		BE79EC99250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC7E250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift */; };
+		BE79EC9A250C8931003B2B21 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC7F250C8931003B2B21 /* MainViewController.swift */; };
+		BE79EC9B250C8931003B2B21 /* TouchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC80250C8931003B2B21 /* TouchViewController.swift */; };
+		BE79EC9C250C8931003B2B21 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC83250C8931003B2B21 /* TableViewCell.swift */; };
+		BE79EC9D250C8931003B2B21 /* TableViewSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC84250C8931003B2B21 /* TableViewSectionItem.swift */; };
+		BE79EC9E250C8931003B2B21 /* TableViewHeaderFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC85250C8931003B2B21 /* TableViewHeaderFooterView.swift */; };
+		BE79EC9F250C8931003B2B21 /* TableViewSectionItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC86250C8931003B2B21 /* TableViewSectionItemsFactory.swift */; };
+		BE79ECA0250C8931003B2B21 /* TableViewCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC87250C8931003B2B21 /* TableViewCellItem.swift */; };
+		BE79ECA1250C8931003B2B21 /* CollectionViewCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC89250C8931003B2B21 /* CollectionViewCellItem.swift */; };
+		BE79ECA2250C8931003B2B21 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC8A250C8931003B2B21 /* CollectionViewCell.swift */; };
+		BE79ECA3250C8931003B2B21 /* CollectionViewReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC8B250C8931003B2B21 /* CollectionViewReusableView.swift */; };
+		BE79ECA4250C8931003B2B21 /* CollectionViewSectionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC8C250C8931003B2B21 /* CollectionViewSectionItem.swift */; };
+		BE79ECA5250C8931003B2B21 /* CollectionViewCellItemsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC8D250C8931003B2B21 /* CollectionViewCellItemsFactory.swift */; };
+		BE79ECA6250C8931003B2B21 /* TouchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79EC8F250C8931003B2B21 /* TouchView.swift */; };
+		BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */; };
+		BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */; };
+		BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */; };
+		BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94223BB6D2B00589848 /* GravityVC.swift */; };
+		BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94623BB6DA500589848 /* DecorationView.swift */; };
+		BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */; };
+		BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94A23BB7D0200589848 /* SnapVC.swift */; };
+		BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */; };
+		BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */; };
+		BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95023BC524A00589848 /* PendulumBehavior.swift */; };
+		BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */; };
+		EB69DC71EB17C007B0947613 /* Pods_Lumia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BDF3D862D862F823E9C4B0ED /* Pods_Lumia.framework */; };
+		EE1C585B2827F18200A537DD /* ScrollExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58592827F18200A537DD /* ScrollExample.swift */; };
+		EE1C585C2827F18200A537DD /* SimpleScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C585A2827F18200A537DD /* SimpleScrollView.swift */; };
+		EE1C586A2827F1D100A537DD /* RubberBand.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C585F2827F1D100A537DD /* RubberBand.swift */; };
+		EE1C586B2827F1D100A537DD /* CGPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58612827F1D100A537DD /* CGPoint+Utils.swift */; };
+		EE1C586C2827F1D100A537DD /* UISpringTimingParameters+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58622827F1D100A537DD /* UISpringTimingParameters+Utils.swift */; };
+		EE1C586D2827F1D100A537DD /* GeometryUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58632827F1D100A537DD /* GeometryUtils.swift */; };
+		EE1C586F2827F1D100A537DD /* CASpringAnimation+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58652827F1D100A537DD /* CASpringAnimation+Utils.swift */; };
+		EE1C58702827F1D100A537DD /* TimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58662827F1D100A537DD /* TimerAnimation.swift */; };
+		EE1C58712827F1D100A537DD /* SpringTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58672827F1D100A537DD /* SpringTimingParameters.swift */; };
+		EE1C58722827F1D100A537DD /* TimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58682827F1D100A537DD /* TimingParameters.swift */; };
+		EE1C58732827F1D100A537DD /* DecelerationTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58692827F1D100A537DD /* DecelerationTimingParameters.swift */; };
+		EE1C587B2827F3B900A537DD /* PictureInPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58762827F3B900A537DD /* PictureInPicture.swift */; };
+		EE1C587C2827F3B900A537DD /* PipPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58772827F3B900A537DD /* PipPlaceholder.swift */; };
+		EE1C587D2827F3B900A537DD /* PipContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58782827F3B900A537DD /* PipContainer.swift */; };
+		EE1C587E2827F3B900A537DD /* PipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE1C58792827F3B900A537DD /* PipView.swift */; };
+		EE2978862824188000E84D4A /* CollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2978822824188000E84D4A /* CollectionCell.swift */; };
+		EE2978872824188000E84D4A /* CollectionSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2978832824188000E84D4A /* CollectionSettingsView.swift */; };
+		EE2978882824188000E84D4A /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2978842824188000E84D4A /* SliderView.swift */; };
+		EE2978892824188000E84D4A /* CPCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2978852824188000E84D4A /* CPCollectionViewController.swift */; };
+		EE29788B282418D900E84D4A /* CustomPagingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29788A282418D900E84D4A /* CustomPagingVC.swift */; };
+		EE29788D282419EA00E84D4A /* PagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29788C282419EA00E84D4A /* PagingView.swift */; };
+		EE29789328241B9D00E84D4A /* TableCellInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29789028241B9D00E84D4A /* TableCellInfo.swift */; };
+		EE29789428241B9D00E84D4A /* CPTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE29789128241B9D00E84D4A /* CPTableViewController.swift */; };
+		F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */; };
+		F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */; };
+		F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7D023D5803400B7D147 /* CBCRuntime.swift */; };
+		F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */; };
+		F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */; };
+		F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */; };
+		F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */; };
+		F75D20EE2418E0FA00D0F699 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E72418E0FA00D0F699 /* Utilities.swift */; };
+		F75D20EF2418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */; };
+		F75D20F02418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */; };
+		F75D20F12418E0FA00D0F699 /* ImageViewerPresentationTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */; };
+		F75D20F22418E0FA00D0F699 /* ImageViewerDismissalTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */; };
+		F75D20F32418E0FA00D0F699 /* AnimatableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */; };
+		F75D20F72418E13A00D0F699 /* ImageViewerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20F42418E13A00D0F699 /* ImageViewerController.swift */; };
+		F75D20F82418E13A00D0F699 /* ImageViewerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */; };
+		F75D20F92418E13A00D0F699 /* ImageViewerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F75D20F62418E13A00D0F699 /* ImageViewerController.xib */; };
+		F75D20FC2418E1A600D0F699 /* SimpleImageViewerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */; };
+		F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */; };
+		F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF2923BB2AAC00E59051 /* ViewController.swift */; };
+		F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */; };
+		F7A3DF2F23BB2AAE00E59051 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */; };
+		F7A3DF3223BB2AAE00E59051 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */; };
+		F7A3DF3D23BB2AAF00E59051 /* LumiaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */; };
+		F7A3DF4823BB2AAF00E59051 /* LumiaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */; };
+		F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3DF5523BB2C8300E59051 /* Row.swift */; };
+		F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3EABE23BB32C600E59051 /* Segue.swift */; };
+		F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */; };
+		F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62A23BB383100E59051 /* Extensions.swift */; };
+		F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */; };
+		F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F62F23BB3D7200E59051 /* Rotation.swift */; };
+		F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */; };
+		F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63123BB3D7200E59051 /* Spring.swift */; };
+		F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63223BB3D7200E59051 /* Acceleration.swift */; };
+		F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63323BB3D7200E59051 /* Momentum.swift */; };
+		F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */; };
+		F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63523BB3D7200E59051 /* Pip.swift */; };
+		F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63623BB3D7200E59051 /* GradientView.swift */; };
+		F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */; };
+		F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */; };
+		F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64423BB4B5500E59051 /* ListVC.swift */; };
+		F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64723BB4CE500E59051 /* StateMachine.swift */; };
+		F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */; };
+		F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */; };
+		F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */; };
+		F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */; };
+		F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */; };
+		F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */; };
+		F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA505A23D439B300A45551 /* FluidCardVC.swift */; };
+		F7CA505E23D439FA00A45551 /* TopView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CA505C23D439FA00A45551 /* TopView.xib */; };
+		F7CA505F23D439FA00A45551 /* BottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F7CA505D23D439FA00A45551 /* BottomView.xib */; };
+		F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA506023D43A1A00A45551 /* ExpandButton.swift */; };
+		F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA506123D43A1A00A45551 /* FluidCardView.swift */; };
+		F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */; };
+		F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CA6E3023D448BF00A45551 /* TimingFunction.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F7A3DF3923BB2AAF00E59051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A3DF2123BB2AAC00E59051;
+			remoteInfo = Lumia;
+		};
+		F7A3DF4423BB2AAF00E59051 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F7A3DF2123BB2AAC00E59051;
+			remoteInfo = Lumia;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		16AF87D4C7CA29F066411658 /* Pods_LumiaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LumiaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		231C23242CDCB0114E25D0F8 /* Pods-LumiaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LumiaTests.release.xcconfig"; path = "Target Support Files/Pods-LumiaTests/Pods-LumiaTests.release.xcconfig"; sourceTree = "<group>"; };
+		2577E51F34360C2593CA9901 /* Pods-Lumia-LumiaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumia-LumiaUITests.debug.xcconfig"; path = "Target Support Files/Pods-Lumia-LumiaUITests/Pods-Lumia-LumiaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		89147162B13AF06BA6BA865E /* Pods-Lumia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumia.release.xcconfig"; path = "Target Support Files/Pods-Lumia/Pods-Lumia.release.xcconfig"; sourceTree = "<group>"; };
+		8BF31036D861E314AD7FD30F /* Pods_Lumia_LumiaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lumia_LumiaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E7B09A0C8147C5654D76605 /* Pods-Lumia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumia.debug.xcconfig"; path = "Target Support Files/Pods-Lumia/Pods-Lumia.debug.xcconfig"; sourceTree = "<group>"; };
+		BDF3D862D862F823E9C4B0ED /* Pods_Lumia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lumia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE29C4032411E95900567E01 /* AssetTransitioningMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTransitioningMath.swift; sourceTree = "<group>"; };
+		BE29C4042411E95900567E01 /* AssetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetCell.swift; sourceTree = "<group>"; };
+		BE29C4052411E95900567E01 /* AssetTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTransitioning.swift; sourceTree = "<group>"; };
+		BE29C4062411E95900567E01 /* AssetTransitionDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTransitionDriver.swift; sourceTree = "<group>"; };
+		BE29C4072411E95900567E01 /* AssetTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTransitionController.swift; sourceTree = "<group>"; };
+		BE29C4082411E95900567E01 /* AssetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetViewController.swift; sourceTree = "<group>"; };
+		BE29C4092411E95900567E01 /* AssetViewController+AssetTransitioning.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AssetViewController+AssetTransitioning.swift"; sourceTree = "<group>"; };
+		BE29C4112411E9F800567E01 /* TransitionListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionListVC.swift; sourceTree = "<group>"; };
+		BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemPropertiesVC.swift; sourceTree = "<group>"; };
+		BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDynamicItemVC.swift; sourceTree = "<group>"; };
+		BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionToBoundsMapping.swift; sourceTree = "<group>"; };
+		BE79EC73250C8931003B2B21 /* SafeAreaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SafeAreaViewController.swift; sourceTree = "<group>"; };
+		BE79EC74250C8931003B2B21 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		BE79EC75250C8931003B2B21 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		BE79EC76250C8931003B2B21 /* ScrollContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollContainerViewController.swift; sourceTree = "<group>"; };
+		BE79EC77250C8931003B2B21 /* ScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
+		BE79EC79250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+SafeAreaInsets.swift"; sourceTree = "<group>"; };
+		BE79EC7B250C8931003B2B21 /* UIView+SafeAreaInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+SafeAreaInsets.swift"; sourceTree = "<group>"; };
+		BE79EC7D250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewContentInsetAdjustmentBehaviorItem.swift; sourceTree = "<group>"; };
+		BE79EC7E250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewScrollableAxisItem.swift; sourceTree = "<group>"; };
+		BE79EC7F250C8931003B2B21 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		BE79EC80250C8931003B2B21 /* TouchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchViewController.swift; sourceTree = "<group>"; };
+		BE79EC83250C8931003B2B21 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		BE79EC84250C8931003B2B21 /* TableViewSectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionItem.swift; sourceTree = "<group>"; };
+		BE79EC85250C8931003B2B21 /* TableViewHeaderFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewHeaderFooterView.swift; sourceTree = "<group>"; };
+		BE79EC86250C8931003B2B21 /* TableViewSectionItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionItemsFactory.swift; sourceTree = "<group>"; };
+		BE79EC87250C8931003B2B21 /* TableViewCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCellItem.swift; sourceTree = "<group>"; };
+		BE79EC89250C8931003B2B21 /* CollectionViewCellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellItem.swift; sourceTree = "<group>"; };
+		BE79EC8A250C8931003B2B21 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		BE79EC8B250C8931003B2B21 /* CollectionViewReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewReusableView.swift; sourceTree = "<group>"; };
+		BE79EC8C250C8931003B2B21 /* CollectionViewSectionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewSectionItem.swift; sourceTree = "<group>"; };
+		BE79EC8D250C8931003B2B21 /* CollectionViewCellItemsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellItemsFactory.swift; sourceTree = "<group>"; };
+		BE79EC8F250C8931003B2B21 /* TouchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchView.swift; sourceTree = "<group>"; };
+		BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicsCatalogMenuVC.swift; sourceTree = "<group>"; };
+		BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttachmentsVC.swift; sourceTree = "<group>"; };
+		BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionGravityVC.swift; sourceTree = "<group>"; };
+		BE7BC94223BB6D2B00589848 /* GravityVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityVC.swift; sourceTree = "<group>"; };
+		BE7BC94623BB6DA500589848 /* DecorationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecorationView.swift; sourceTree = "<group>"; };
+		BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionsGravitySpringVC.swift; sourceTree = "<group>"; };
+		BE7BC94A23BB7D0200589848 /* SnapVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapVC.swift; sourceTree = "<group>"; };
+		BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstantaneousPushVC.swift; sourceTree = "<group>"; };
+		BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousPushVC.swift; sourceTree = "<group>"; };
+		BE7BC95023BC524A00589848 /* PendulumBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendulumBehavior.swift; sourceTree = "<group>"; };
+		BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompositeBehaviorVC.swift; sourceTree = "<group>"; };
+		BEE418398E085CFC2884EF90 /* Pods-Lumia-LumiaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumia-LumiaUITests.release.xcconfig"; path = "Target Support Files/Pods-Lumia-LumiaUITests/Pods-Lumia-LumiaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D17349975BAB6A45B133AE00 /* Pods-LumiaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LumiaTests.debug.xcconfig"; path = "Target Support Files/Pods-LumiaTests/Pods-LumiaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		EE1C58592827F18200A537DD /* ScrollExample.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollExample.swift; sourceTree = "<group>"; };
+		EE1C585A2827F18200A537DD /* SimpleScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleScrollView.swift; sourceTree = "<group>"; };
+		EE1C585F2827F1D100A537DD /* RubberBand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RubberBand.swift; sourceTree = "<group>"; };
+		EE1C58612827F1D100A537DD /* CGPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGPoint+Utils.swift"; sourceTree = "<group>"; };
+		EE1C58622827F1D100A537DD /* UISpringTimingParameters+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UISpringTimingParameters+Utils.swift"; sourceTree = "<group>"; };
+		EE1C58632827F1D100A537DD /* GeometryUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeometryUtils.swift; sourceTree = "<group>"; };
+		EE1C58652827F1D100A537DD /* CASpringAnimation+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CASpringAnimation+Utils.swift"; sourceTree = "<group>"; };
+		EE1C58662827F1D100A537DD /* TimerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerAnimation.swift; sourceTree = "<group>"; };
+		EE1C58672827F1D100A537DD /* SpringTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTimingParameters.swift; sourceTree = "<group>"; };
+		EE1C58682827F1D100A537DD /* TimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingParameters.swift; sourceTree = "<group>"; };
+		EE1C58692827F1D100A537DD /* DecelerationTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecelerationTimingParameters.swift; sourceTree = "<group>"; };
+		EE1C58762827F3B900A537DD /* PictureInPicture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PictureInPicture.swift; sourceTree = "<group>"; };
+		EE1C58772827F3B900A537DD /* PipPlaceholder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipPlaceholder.swift; sourceTree = "<group>"; };
+		EE1C58782827F3B900A537DD /* PipContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipContainer.swift; sourceTree = "<group>"; };
+		EE1C58792827F3B900A537DD /* PipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PipView.swift; sourceTree = "<group>"; };
+		EE2978822824188000E84D4A /* CollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionCell.swift; sourceTree = "<group>"; };
+		EE2978832824188000E84D4A /* CollectionSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionSettingsView.swift; sourceTree = "<group>"; };
+		EE2978842824188000E84D4A /* SliderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		EE2978852824188000E84D4A /* CPCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPCollectionViewController.swift; sourceTree = "<group>"; };
+		EE29788A282418D900E84D4A /* CustomPagingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPagingVC.swift; sourceTree = "<group>"; };
+		EE29788C282419EA00E84D4A /* PagingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagingView.swift; sourceTree = "<group>"; };
+		EE29789028241B9D00E84D4A /* TableCellInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCellInfo.swift; sourceTree = "<group>"; };
+		EE29789128241B9D00E84D4A /* CPTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CPTableViewController.swift; sourceTree = "<group>"; };
+		F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCCatalogExample.swift; sourceTree = "<group>"; };
+		F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCNodeListViewController.swift; sourceTree = "<group>"; };
+		F75CB7D023D5803400B7D147 /* CBCRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCRuntime.swift; sourceTree = "<group>"; };
+		F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomAnimator.swift; sourceTree = "<group>"; };
+		F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomDismissalInteractionController.swift; sourceTree = "<group>"; };
+		F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoomTransitionController.swift; sourceTree = "<group>"; };
+		F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidPhotoVC.swift; sourceTree = "<group>"; };
+		F75D20E72418E0FA00D0F699 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utilities.swift; path = ../Utilities.swift; sourceTree = "<group>"; };
+		F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerTransitioningHandler.swift; sourceTree = "<group>"; };
+		F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalInteractor.swift; sourceTree = "<group>"; };
+		F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerPresentationTransition.swift; sourceTree = "<group>"; };
+		F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewerDismissalTransition.swift; sourceTree = "<group>"; };
+		F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnimatableImageView.swift; path = ../AnimatableImageView.swift; sourceTree = "<group>"; };
+		F75D20F42418E13A00D0F699 /* ImageViewerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewerController.swift; path = ../ImageViewerController.swift; sourceTree = "<group>"; };
+		F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageViewerConfiguration.swift; path = ../ImageViewerConfiguration.swift; sourceTree = "<group>"; };
+		F75D20F62418E13A00D0F699 /* ImageViewerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ImageViewerController.xib; path = ../ImageViewerController.xib; sourceTree = "<group>"; };
+		F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleImageViewerVC.swift; sourceTree = "<group>"; };
+		F7A3DF2223BB2AAC00E59051 /* Lumia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lumia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F7A3DF2923BB2AAC00E59051 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F7A3DF2C23BB2AAC00E59051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A3DF3123BB2AAE00E59051 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F7A3DF3323BB2AAE00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumiaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiaTests.swift; sourceTree = "<group>"; };
+		F7A3DF3E23BB2AAF00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LumiaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LumiaUITests.swift; sourceTree = "<group>"; };
+		F7A3DF4923BB2AAF00E59051 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7A3DF5523BB2C8300E59051 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
+		F7A3EABE23BB32C600E59051 /* Segue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segue.swift; sourceTree = "<group>"; };
+		F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidInterfacesVC.swift; sourceTree = "<group>"; };
+		F7A3F62A23BB383100E59051 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceViewController.swift; sourceTree = "<group>"; };
+		F7A3F62F23BB3D7200E59051 /* Rotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotation.swift; sourceTree = "<group>"; };
+		F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorButton.swift; sourceTree = "<group>"; };
+		F7A3F63123BB3D7200E59051 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		F7A3F63223BB3D7200E59051 /* Acceleration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Acceleration.swift; sourceTree = "<group>"; };
+		F7A3F63323BB3D7200E59051 /* Momentum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Momentum.swift; sourceTree = "<group>"; };
+		F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlashlightButton.swift; sourceTree = "<group>"; };
+		F7A3F63523BB3D7200E59051 /* Pip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pip.swift; sourceTree = "<group>"; };
+		F7A3F63623BB3D7200E59051 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rubberbanding.swift; sourceTree = "<group>"; };
+		F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassCopyIvarListVC.swift; sourceTree = "<group>"; };
+		F7A3F64423BB4B5500E59051 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
+		F7A3F64723BB4CE500E59051 /* StateMachine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachineVC.swift; sourceTree = "<group>"; };
+		F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationListVC.swift; sourceTree = "<group>"; };
+		F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveViewVC.swift; sourceTree = "<group>"; };
+		F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedWaveView.swift; sourceTree = "<group>"; };
+		F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadialGradientLayer.swift; sourceTree = "<group>"; };
+		F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuartzDemoVC.swift; sourceTree = "<group>"; };
+		F7CA505A23D439B300A45551 /* FluidCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FluidCardVC.swift; sourceTree = "<group>"; };
+		F7CA505C23D439FA00A45551 /* TopView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopView.xib; sourceTree = "<group>"; };
+		F7CA505D23D439FA00A45551 /* BottomView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BottomView.xib; sourceTree = "<group>"; };
+		F7CA506023D43A1A00A45551 /* ExpandButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandButton.swift; sourceTree = "<group>"; };
+		F7CA506123D43A1A00A45551 /* FluidCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FluidCardView.swift; sourceTree = "<group>"; };
+		F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnitBezier.swift; sourceTree = "<group>"; };
+		F7CA6E3023D448BF00A45551 /* TimingFunction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimingFunction.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7A3DF1F23BB2AAC00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB69DC71EB17C007B0947613 /* Pods_Lumia.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3523BB2AAF00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				39241E290E637DBABF98521F /* Pods_LumiaTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF4023BB2AAF00E59051 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9FD5C1734D5782BE3D4EED67 /* Pods_Lumia_LumiaUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AA5D8856BE540D9237F2BBA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BDF3D862D862F823E9C4B0ED /* Pods_Lumia.framework */,
+				8BF31036D861E314AD7FD30F /* Pods_Lumia_LumiaUITests.framework */,
+				16AF87D4C7CA29F066411658 /* Pods_LumiaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AEF7E91D389C2F4937C691E0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9E7B09A0C8147C5654D76605 /* Pods-Lumia.debug.xcconfig */,
+				89147162B13AF06BA6BA865E /* Pods-Lumia.release.xcconfig */,
+				2577E51F34360C2593CA9901 /* Pods-Lumia-LumiaUITests.debug.xcconfig */,
+				BEE418398E085CFC2884EF90 /* Pods-Lumia-LumiaUITests.release.xcconfig */,
+				D17349975BAB6A45B133AE00 /* Pods-LumiaTests.debug.xcconfig */,
+				231C23242CDCB0114E25D0F8 /* Pods-LumiaTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BE29C4002411E89600567E01 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20E62418E0CF00D0F699 /* SimpleImageViewer */,
+				F75D20D82418C5F800D0F699 /* FluidPhoto */,
+				BE29C4022411E92B00567E01 /* PhotoTransitioning */,
+				BE29C4112411E9F800567E01 /* TransitionListVC.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		BE29C4012411E8AA00567E01 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C58742827F39D00A537DD /* PictureInPicture */,
+				EE1C58582827F16600A537DD /* ScrollExample */,
+				EE2978802824185D00E84D4A /* CustomPaging */,
+				BE79EC72250C88E1003B2B21 /* SafeArea */,
+				F7A3F65523BB512E00E59051 /* QuartzDemo */,
+				F7A3F64B23BB4DCB00E59051 /* Animation */,
+				F7A3F64623BB4CC000E59051 /* StateMachine */,
+				F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */,
+				BE7BC93C23BB6C9B00589848 /* DynamicsCatalog */,
+				BE29C4002411E89600567E01 /* Transitions */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		BE29C4022411E92B00567E01 /* PhotoTransitioning */ = {
+			isa = PBXGroup;
+			children = (
+				BE29C4042411E95900567E01 /* AssetCell.swift */,
+				BE29C4072411E95900567E01 /* AssetTransitionController.swift */,
+				BE29C4062411E95900567E01 /* AssetTransitionDriver.swift */,
+				BE29C4052411E95900567E01 /* AssetTransitioning.swift */,
+				BE29C4032411E95900567E01 /* AssetTransitioningMath.swift */,
+				BE29C4082411E95900567E01 /* AssetViewController.swift */,
+				BE29C4092411E95900567E01 /* AssetViewController+AssetTransitioning.swift */,
+			);
+			path = PhotoTransitioning;
+			sourceTree = "<group>";
+		};
+		BE79EC72250C88E1003B2B21 /* SafeArea */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC75250C8931003B2B21 /* CollectionViewController.swift */,
+				BE79EC7C250C8931003B2B21 /* Enums */,
+				BE79EC78250C8931003B2B21 /* Extensions */,
+				BE79EC7F250C8931003B2B21 /* MainViewController.swift */,
+				BE79EC73250C8931003B2B21 /* SafeAreaViewController.swift */,
+				BE79EC76250C8931003B2B21 /* ScrollContainerViewController.swift */,
+				BE79EC77250C8931003B2B21 /* ScrollViewController.swift */,
+				BE79EC74250C8931003B2B21 /* TableViewController.swift */,
+				BE79EC80250C8931003B2B21 /* TouchViewController.swift */,
+				BE79EC81250C8931003B2B21 /* Views */,
+			);
+			path = SafeArea;
+			sourceTree = "<group>";
+		};
+		BE79EC78250C8931003B2B21 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC79250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift */,
+				BE79EC7B250C8931003B2B21 /* UIView+SafeAreaInsets.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE79EC7C250C8931003B2B21 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC7D250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift */,
+				BE79EC7E250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		BE79EC81250C8931003B2B21 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC82250C8931003B2B21 /* TableView */,
+				BE79EC88250C8931003B2B21 /* CollectionView */,
+				BE79EC8E250C8931003B2B21 /* TouchView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE79EC82250C8931003B2B21 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC83250C8931003B2B21 /* TableViewCell.swift */,
+				BE79EC84250C8931003B2B21 /* TableViewSectionItem.swift */,
+				BE79EC85250C8931003B2B21 /* TableViewHeaderFooterView.swift */,
+				BE79EC86250C8931003B2B21 /* TableViewSectionItemsFactory.swift */,
+				BE79EC87250C8931003B2B21 /* TableViewCellItem.swift */,
+			);
+			path = TableView;
+			sourceTree = "<group>";
+		};
+		BE79EC88250C8931003B2B21 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC89250C8931003B2B21 /* CollectionViewCellItem.swift */,
+				BE79EC8A250C8931003B2B21 /* CollectionViewCell.swift */,
+				BE79EC8B250C8931003B2B21 /* CollectionViewReusableView.swift */,
+				BE79EC8C250C8931003B2B21 /* CollectionViewSectionItem.swift */,
+				BE79EC8D250C8931003B2B21 /* CollectionViewCellItemsFactory.swift */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
+		BE79EC8E250C8931003B2B21 /* TouchView */ = {
+			isa = PBXGroup;
+			children = (
+				BE79EC8F250C8931003B2B21 /* TouchView.swift */,
+			);
+			path = TouchView;
+			sourceTree = "<group>";
+		};
+		BE7BC93C23BB6C9B00589848 /* DynamicsCatalog */ = {
+			isa = PBXGroup;
+			children = (
+				BE7BC94623BB6DA500589848 /* DecorationView.swift */,
+				BE7BC93F23BB6CF300589848 /* Controllers */,
+				BE7BC93D23BB6CD300589848 /* DynamicsCatalogMenuVC.swift */,
+			);
+			path = DynamicsCatalog;
+			sourceTree = "<group>";
+		};
+		BE7BC93F23BB6CF300589848 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BE7BC94023BB6D2B00589848 /* AttachmentsVC.swift */,
+				BE7BC94123BB6D2B00589848 /* CollisionGravityVC.swift */,
+				BE7BC94223BB6D2B00589848 /* GravityVC.swift */,
+				BE7BC94823BB6F6700589848 /* CollisionsGravitySpringVC.swift */,
+				BE7BC94A23BB7D0200589848 /* SnapVC.swift */,
+				BE7BC94C23BB803D00589848 /* InstantaneousPushVC.swift */,
+				BE7BC94E23BC4FAB00589848 /* ContinuousPushVC.swift */,
+				BE7BC95023BC524A00589848 /* PendulumBehavior.swift */,
+				BE7BC95223BCA05800589848 /* CompositeBehaviorVC.swift */,
+				BE5C123323BCC3E30045BDFD /* ItemPropertiesVC.swift */,
+				BE5C123523BCC7D40045BDFD /* CustomDynamicItemVC.swift */,
+				BE5C123723BCC9580045BDFD /* PositionToBoundsMapping.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EE1C58582827F16600A537DD /* ScrollExample */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C585D2827F1A600A537DD /* ScrollMechanics */,
+				EE1C585A2827F18200A537DD /* SimpleScrollView.swift */,
+				EE1C58592827F18200A537DD /* ScrollExample.swift */,
+			);
+			path = ScrollExample;
+			sourceTree = "<group>";
+		};
+		EE1C585D2827F1A600A537DD /* ScrollMechanics */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C585E2827F1D100A537DD /* Sources */,
+			);
+			path = ScrollMechanics;
+			sourceTree = "<group>";
+		};
+		EE1C585E2827F1D100A537DD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C585F2827F1D100A537DD /* RubberBand.swift */,
+				EE1C58602827F1D100A537DD /* Utils */,
+				EE1C58672827F1D100A537DD /* SpringTimingParameters.swift */,
+				EE1C58682827F1D100A537DD /* TimingParameters.swift */,
+				EE1C58692827F1D100A537DD /* DecelerationTimingParameters.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EE1C58602827F1D100A537DD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C58612827F1D100A537DD /* CGPoint+Utils.swift */,
+				EE1C58622827F1D100A537DD /* UISpringTimingParameters+Utils.swift */,
+				EE1C58632827F1D100A537DD /* GeometryUtils.swift */,
+				EE1C58652827F1D100A537DD /* CASpringAnimation+Utils.swift */,
+				EE1C58662827F1D100A537DD /* TimerAnimation.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EE1C58742827F39D00A537DD /* PictureInPicture */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C58752827F3B900A537DD /* Sources */,
+			);
+			path = PictureInPicture;
+			sourceTree = "<group>";
+		};
+		EE1C58752827F3B900A537DD /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EE1C58762827F3B900A537DD /* PictureInPicture.swift */,
+				EE1C58772827F3B900A537DD /* PipPlaceholder.swift */,
+				EE1C58782827F3B900A537DD /* PipContainer.swift */,
+				EE1C58792827F3B900A537DD /* PipView.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EE2978802824185D00E84D4A /* CustomPaging */ = {
+			isa = PBXGroup;
+			children = (
+				EE29788E28241B9D00E84D4A /* Table */,
+				EE29788C282419EA00E84D4A /* PagingView.swift */,
+				EE2978812824188000E84D4A /* Collection */,
+				EE29788A282418D900E84D4A /* CustomPagingVC.swift */,
+			);
+			path = CustomPaging;
+			sourceTree = "<group>";
+		};
+		EE2978812824188000E84D4A /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				EE2978822824188000E84D4A /* CollectionCell.swift */,
+				EE2978832824188000E84D4A /* CollectionSettingsView.swift */,
+				EE2978842824188000E84D4A /* SliderView.swift */,
+				EE2978852824188000E84D4A /* CPCollectionViewController.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		EE29788E28241B9D00E84D4A /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				EE29789028241B9D00E84D4A /* TableCellInfo.swift */,
+				EE29789128241B9D00E84D4A /* CPTableViewController.swift */,
+			);
+			path = Table;
+			sourceTree = "<group>";
+		};
+		F75CB7CA23D57CE500B7D147 /* Frame */ = {
+			isa = PBXGroup;
+			children = (
+				F75CB7CB23D57D1800B7D147 /* CatalogByConvention */,
+				F7A3DF5523BB2C8300E59051 /* Row.swift */,
+				F7A3EABE23BB32C600E59051 /* Segue.swift */,
+			);
+			path = Frame;
+			sourceTree = "<group>";
+		};
+		F75CB7CB23D57D1800B7D147 /* CatalogByConvention */ = {
+			isa = PBXGroup;
+			children = (
+				F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */,
+				F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */,
+				F75CB7D023D5803400B7D147 /* CBCRuntime.swift */,
+			);
+			path = CatalogByConvention;
+			sourceTree = "<group>";
+		};
+		F75D20D82418C5F800D0F699 /* FluidPhoto */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20D92418C60900D0F699 /* Core */,
+				F75D20E02418C63300D0F699 /* FluidPhotoVC.swift */,
+			);
+			path = FluidPhoto;
+			sourceTree = "<group>";
+		};
+		F75D20D92418C60900D0F699 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20DA2418C61B00D0F699 /* ZoomAnimator.swift */,
+				F75D20DB2418C61B00D0F699 /* ZoomDismissalInteractionController.swift */,
+				F75D20DC2418C61B00D0F699 /* ZoomTransitionController.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F75D20E62418E0CF00D0F699 /* SimpleImageViewer */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20FA2418E19300D0F699 /* Core */,
+				F75D20FB2418E1A600D0F699 /* SimpleImageViewerVC.swift */,
+			);
+			path = SimpleImageViewer;
+			sourceTree = "<group>";
+		};
+		F75D20E82418E0FA00D0F699 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20E92418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift */,
+				F75D20EA2418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift */,
+				F75D20EB2418E0FA00D0F699 /* ImageViewerPresentationTransition.swift */,
+				F75D20EC2418E0FA00D0F699 /* ImageViewerDismissalTransition.swift */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		F75D20FA2418E19300D0F699 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F75D20ED2418E0FA00D0F699 /* AnimatableImageView.swift */,
+				F75D20F52418E13A00D0F699 /* ImageViewerConfiguration.swift */,
+				F75D20F42418E13A00D0F699 /* ImageViewerController.swift */,
+				F75D20F62418E13A00D0F699 /* ImageViewerController.xib */,
+				F75D20E82418E0FA00D0F699 /* Transitions */,
+				F75D20E72418E0FA00D0F699 /* Utilities.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F7A3DF1923BB2AAC00E59051 = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF2423BB2AAC00E59051 /* Lumia */,
+				F7A3DF3B23BB2AAF00E59051 /* LumiaTests */,
+				F7A3DF4623BB2AAF00E59051 /* LumiaUITests */,
+				F7A3DF2323BB2AAC00E59051 /* Products */,
+				AEF7E91D389C2F4937C691E0 /* Pods */,
+				AA5D8856BE540D9237F2BBA6 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		F7A3DF2323BB2AAC00E59051 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF2223BB2AAC00E59051 /* Lumia.app */,
+				F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */,
+				F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7A3DF2423BB2AAC00E59051 /* Lumia */ = {
+			isa = PBXGroup;
+			children = (
+				BE29C4012411E8AA00567E01 /* Component */,
+				F75CB7CA23D57CE500B7D147 /* Frame */,
+				F7A3DF2523BB2AAC00E59051 /* AppDelegate.swift */,
+				F7A3DF2923BB2AAC00E59051 /* ViewController.swift */,
+				F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */,
+				F7A3DF2E23BB2AAE00E59051 /* Assets.xcassets */,
+				F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */,
+				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
+				F7A3F62A23BB383100E59051 /* Extensions.swift */,
+				F7A3F64423BB4B5500E59051 /* ListVC.swift */,
+			);
+			path = Lumia;
+			sourceTree = "<group>";
+		};
+		F7A3DF3B23BB2AAF00E59051 /* LumiaTests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF3C23BB2AAF00E59051 /* LumiaTests.swift */,
+				F7A3DF3E23BB2AAF00E59051 /* Info.plist */,
+			);
+			path = LumiaTests;
+			sourceTree = "<group>";
+		};
+		F7A3DF4623BB2AAF00E59051 /* LumiaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3DF4723BB2AAF00E59051 /* LumiaUITests.swift */,
+				F7A3DF4923BB2AAF00E59051 /* Info.plist */,
+			);
+			path = LumiaUITests;
+			sourceTree = "<group>";
+		};
+		F7A3F62723BB347800E59051 /* FluidInterfaces */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F62E23BB3D5F00E59051 /* View */,
+				F7A3F62823BB349A00E59051 /* FluidInterfacesVC.swift */,
+				F7A3F62C23BB389B00E59051 /* InterfaceViewController.swift */,
+			);
+			path = FluidInterfaces;
+			sourceTree = "<group>";
+		};
+		F7A3F62E23BB3D5F00E59051 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F63223BB3D7200E59051 /* Acceleration.swift */,
+				F7A3F63023BB3D7200E59051 /* CalculatorButton.swift */,
+				F7A3F63423BB3D7200E59051 /* FlashlightButton.swift */,
+				F7A3F63623BB3D7200E59051 /* GradientView.swift */,
+				F7A3F63323BB3D7200E59051 /* Momentum.swift */,
+				F7A3F63523BB3D7200E59051 /* Pip.swift */,
+				F7A3F62F23BB3D7200E59051 /* Rotation.swift */,
+				F7A3F63723BB3D7200E59051 /* Rubberbanding.swift */,
+				F7A3F63123BB3D7200E59051 /* Spring.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F7A3F64123BB40EE00E59051 /* ClassCopyIvarList */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64223BB40FE00E59051 /* ClassCopyIvarListVC.swift */,
+			);
+			path = ClassCopyIvarList;
+			sourceTree = "<group>";
+		};
+		F7A3F64623BB4CC000E59051 /* StateMachine */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64723BB4CE500E59051 /* StateMachine.swift */,
+				F7A3F64923BB4CFC00E59051 /* StateMachineVC.swift */,
+			);
+			path = StateMachine;
+			sourceTree = "<group>";
+		};
+		F7A3F64B23BB4DCB00E59051 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				F7CA505923D4398300A45551 /* FluidCard */,
+				F7A3F64E23BB4ED900E59051 /* AnimatedWaveView */,
+				F7A3F62723BB347800E59051 /* FluidInterfaces */,
+				F7A3F64C23BB4DEA00E59051 /* AnimationListVC.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		F7A3F64E23BB4ED900E59051 /* AnimatedWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F64F23BB4EE800E59051 /* AnimatedWaveViewVC.swift */,
+				F7A3F65123BB4F5B00E59051 /* AnimatedWaveView.swift */,
+				F7A3F65323BB4F8B00E59051 /* RadialGradientLayer.swift */,
+			);
+			path = AnimatedWaveView;
+			sourceTree = "<group>";
+		};
+		F7A3F65523BB512E00E59051 /* QuartzDemo */ = {
+			isa = PBXGroup;
+			children = (
+				F7A3F65623BB515400E59051 /* QuartzDemoVC.swift */,
+			);
+			path = QuartzDemo;
+			sourceTree = "<group>";
+		};
+		F7CA505923D4398300A45551 /* FluidCard */ = {
+			isa = PBXGroup;
+			children = (
+				F7CA6E3023D448BF00A45551 /* TimingFunction.swift */,
+				F7CA6E2F23D448BF00A45551 /* UnitBezier.swift */,
+				F7CA506023D43A1A00A45551 /* ExpandButton.swift */,
+				F7CA506123D43A1A00A45551 /* FluidCardView.swift */,
+				F7CA505D23D439FA00A45551 /* BottomView.xib */,
+				F7CA505C23D439FA00A45551 /* TopView.xib */,
+				F7CA505A23D439B300A45551 /* FluidCardVC.swift */,
+			);
+			path = FluidCard;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7A3DF2123BB2AAC00E59051 /* Lumia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF4C23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "Lumia" */;
+			buildPhases = (
+				1582D966E6639F221D26D404 /* [CP] Check Pods Manifest.lock */,
+				F7A3DF1E23BB2AAC00E59051 /* Sources */,
+				F7A3DF1F23BB2AAC00E59051 /* Frameworks */,
+				F7A3DF2023BB2AAC00E59051 /* Resources */,
+				3B7F3D161A93F58189A0083C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Lumia;
+			productName = Lumia;
+			productReference = F7A3DF2223BB2AAC00E59051 /* Lumia.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F7A3DF3723BB2AAF00E59051 /* LumiaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF4F23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaTests" */;
+			buildPhases = (
+				A87DE58A899D3C9A01B95D42 /* [CP] Check Pods Manifest.lock */,
+				F7A3DF3423BB2AAF00E59051 /* Sources */,
+				F7A3DF3523BB2AAF00E59051 /* Frameworks */,
+				F7A3DF3623BB2AAF00E59051 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A3DF3A23BB2AAF00E59051 /* PBXTargetDependency */,
+			);
+			name = LumiaTests;
+			productName = LumiaTests;
+			productReference = F7A3DF3823BB2AAF00E59051 /* LumiaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F7A3DF4223BB2AAF00E59051 /* LumiaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7A3DF5223BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaUITests" */;
+			buildPhases = (
+				5B2C6EEE77088C08759336FB /* [CP] Check Pods Manifest.lock */,
+				F7A3DF3F23BB2AAF00E59051 /* Sources */,
+				F7A3DF4023BB2AAF00E59051 /* Frameworks */,
+				F7A3DF4123BB2AAF00E59051 /* Resources */,
+				F63F1DCA1387432293D828AE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F7A3DF4523BB2AAF00E59051 /* PBXTargetDependency */,
+			);
+			name = LumiaUITests;
+			productName = LumiaUITests;
+			productReference = F7A3DF4323BB2AAF00E59051 /* LumiaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7A3DF1A23BB2AAC00E59051 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1250;
+				ORGANIZATIONNAME = "黄伯驹";
+				TargetAttributes = {
+					F7A3DF2123BB2AAC00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+					};
+					F7A3DF3723BB2AAF00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F7A3DF2123BB2AAC00E59051;
+					};
+					F7A3DF4223BB2AAF00E59051 = {
+						CreatedOnToolsVersion = 11.3;
+						TestTargetID = F7A3DF2123BB2AAC00E59051;
+					};
+				};
+			};
+			buildConfigurationList = F7A3DF1D23BB2AAC00E59051 /* Build configuration list for PBXProject "Lumia" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7A3DF1923BB2AAC00E59051;
+			productRefGroup = F7A3DF2323BB2AAC00E59051 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7A3DF2123BB2AAC00E59051 /* Lumia */,
+				F7A3DF3723BB2AAF00E59051 /* LumiaTests */,
+				F7A3DF4223BB2AAF00E59051 /* LumiaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7A3DF2023BB2AAC00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF3223BB2AAE00E59051 /* LaunchScreen.storyboard in Resources */,
+				F7A3DF2F23BB2AAE00E59051 /* Assets.xcassets in Resources */,
+				F7CA505F23D439FA00A45551 /* BottomView.xib in Resources */,
+				F7CA505E23D439FA00A45551 /* TopView.xib in Resources */,
+				F7A3DF2D23BB2AAC00E59051 /* Main.storyboard in Resources */,
+				F75D20F92418E13A00D0F699 /* ImageViewerController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3623BB2AAF00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF4123BB2AAF00E59051 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1582D966E6639F221D26D404 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lumia-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B7F3D161A93F58189A0083C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lumia/Pods-Lumia-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lumia/Pods-Lumia-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lumia/Pods-Lumia-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5B2C6EEE77088C08759336FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Lumia-LumiaUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A87DE58A899D3C9A01B95D42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LumiaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F63F1DCA1387432293D828AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lumia-LumiaUITests/Pods-Lumia-LumiaUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Lumia-LumiaUITests/Pods-Lumia-LumiaUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Lumia-LumiaUITests/Pods-Lumia-LumiaUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7A3DF1E23BB2AAC00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE29C40D2411E95900567E01 /* AssetTransitionDriver.swift in Sources */,
+				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
+				F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */,
+				BE79EC9D250C8931003B2B21 /* TableViewSectionItem.swift in Sources */,
+				F7A3DF2A23BB2AAC00E59051 /* ViewController.swift in Sources */,
+				F75D20F02418E0FA00D0F699 /* ImageViewerDismissalInteractor.swift in Sources */,
+				BE7BC95123BC524A00589848 /* PendulumBehavior.swift in Sources */,
+				F7CA6E3123D448BF00A45551 /* UnitBezier.swift in Sources */,
+				BE79EC99250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift in Sources */,
+				F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */,
+				F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */,
+				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
+				BE79EC9C250C8931003B2B21 /* TableViewCell.swift in Sources */,
+				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
+				EE2978862824188000E84D4A /* CollectionCell.swift in Sources */,
+				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
+				F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */,
+				F75D20F82418E13A00D0F699 /* ImageViewerConfiguration.swift in Sources */,
+				BE29C40A2411E95900567E01 /* AssetTransitioningMath.swift in Sources */,
+				BE79ECA1250C8931003B2B21 /* CollectionViewCellItem.swift in Sources */,
+				BE79EC97250C8931003B2B21 /* UIView+SafeAreaInsets.swift in Sources */,
+				BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */,
+				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
+				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
+				BE79ECA3250C8931003B2B21 /* CollectionViewReusableView.swift in Sources */,
+				BE79EC95250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift in Sources */,
+				F75D20EF2418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift in Sources */,
+				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
+				BE79ECA5250C8931003B2B21 /* CollectionViewCellItemsFactory.swift in Sources */,
+				BE29C40F2411E95900567E01 /* AssetViewController.swift in Sources */,
+				F75D20EE2418E0FA00D0F699 /* Utilities.swift in Sources */,
+				F75D20F32418E0FA00D0F699 /* AnimatableImageView.swift in Sources */,
+				EE1C58722827F1D100A537DD /* TimingParameters.swift in Sources */,
+				BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */,
+				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
+				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
+				EE1C586D2827F1D100A537DD /* GeometryUtils.swift in Sources */,
+				BE79EC9A250C8931003B2B21 /* MainViewController.swift in Sources */,
+				EE2978882824188000E84D4A /* SliderView.swift in Sources */,
+				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
+				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
+				F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */,
+				BE79EC94250C8931003B2B21 /* ScrollViewController.swift in Sources */,
+				BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */,
+				BE79EC92250C8931003B2B21 /* CollectionViewController.swift in Sources */,
+				EE1C587E2827F3B900A537DD /* PipView.swift in Sources */,
+				BE29C4122411E9F800567E01 /* TransitionListVC.swift in Sources */,
+				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
+				F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */,
+				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
+				EE29789328241B9D00E84D4A /* TableCellInfo.swift in Sources */,
+				EE1C585B2827F18200A537DD /* ScrollExample.swift in Sources */,
+				BE79EC9F250C8931003B2B21 /* TableViewSectionItemsFactory.swift in Sources */,
+				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
+				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
+				BE79ECA2250C8931003B2B21 /* CollectionViewCell.swift in Sources */,
+				F75D20F72418E13A00D0F699 /* ImageViewerController.swift in Sources */,
+				BE79EC90250C8931003B2B21 /* SafeAreaViewController.swift in Sources */,
+				BE79ECA6250C8931003B2B21 /* TouchView.swift in Sources */,
+				BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */,
+				BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */,
+				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
+				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
+				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
+				EE29789428241B9D00E84D4A /* CPTableViewController.swift in Sources */,
+				BE79EC91250C8931003B2B21 /* TableViewController.swift in Sources */,
+				EE29788D282419EA00E84D4A /* PagingView.swift in Sources */,
+				F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */,
+				F75D20F22418E0FA00D0F699 /* ImageViewerDismissalTransition.swift in Sources */,
+				BE79EC93250C8931003B2B21 /* ScrollContainerViewController.swift in Sources */,
+				F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */,
+				EE1C587B2827F3B900A537DD /* PictureInPicture.swift in Sources */,
+				BE29C40C2411E95900567E01 /* AssetTransitioning.swift in Sources */,
+				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */,
+				F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */,
+				EE2978892824188000E84D4A /* CPCollectionViewController.swift in Sources */,
+				F7A3F65023BB4EE800E59051 /* AnimatedWaveViewVC.swift in Sources */,
+				F7A3F64A23BB4CFC00E59051 /* StateMachineVC.swift in Sources */,
+				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
+				BE29C40E2411E95900567E01 /* AssetTransitionController.swift in Sources */,
+				BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */,
+				F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */,
+				BE79ECA0250C8931003B2B21 /* TableViewCellItem.swift in Sources */,
+				BE79EC98250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift in Sources */,
+				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
+				EE1C587C2827F3B900A537DD /* PipPlaceholder.swift in Sources */,
+				F75D20FC2418E1A600D0F699 /* SimpleImageViewerVC.swift in Sources */,
+				EE1C586C2827F1D100A537DD /* UISpringTimingParameters+Utils.swift in Sources */,
+				F7A3F65723BB515400E59051 /* QuartzDemoVC.swift in Sources */,
+				EE1C587D2827F3B900A537DD /* PipContainer.swift in Sources */,
+				BE79ECA4250C8931003B2B21 /* CollectionViewSectionItem.swift in Sources */,
+				BE29C40B2411E95900567E01 /* AssetCell.swift in Sources */,
+				EE1C586B2827F1D100A537DD /* CGPoint+Utils.swift in Sources */,
+				BE79EC9B250C8931003B2B21 /* TouchViewController.swift in Sources */,
+				BE5C123623BCC7D40045BDFD /* CustomDynamicItemVC.swift in Sources */,
+				BE79EC9E250C8931003B2B21 /* TableViewHeaderFooterView.swift in Sources */,
+				EE2978872824188000E84D4A /* CollectionSettingsView.swift in Sources */,
+				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
+				EE1C58732827F1D100A537DD /* DecelerationTimingParameters.swift in Sources */,
+				F75D20F12418E0FA00D0F699 /* ImageViewerPresentationTransition.swift in Sources */,
+				EE29788B282418D900E84D4A /* CustomPagingVC.swift in Sources */,
+				EE1C585C2827F18200A537DD /* SimpleScrollView.swift in Sources */,
+				EE1C58712827F1D100A537DD /* SpringTimingParameters.swift in Sources */,
+				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
+				EE1C586F2827F1D100A537DD /* CASpringAnimation+Utils.swift in Sources */,
+				EE1C586A2827F1D100A537DD /* RubberBand.swift in Sources */,
+				BE7BC94F23BC4FAB00589848 /* ContinuousPushVC.swift in Sources */,
+				EE1C58702827F1D100A537DD /* TimerAnimation.swift in Sources */,
+				F75D20E12418C63300D0F699 /* FluidPhotoVC.swift in Sources */,
+				BE7BC94423BB6D2B00589848 /* CollisionGravityVC.swift in Sources */,
+				BE29C4102411E95900567E01 /* AssetViewController+AssetTransitioning.swift in Sources */,
+				F7A3F63D23BB3D7200E59051 /* FlashlightButton.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3423BB2AAF00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF3D23BB2AAF00E59051 /* LumiaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F7A3DF3F23BB2AAF00E59051 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7A3DF4823BB2AAF00E59051 /* LumiaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F7A3DF3A23BB2AAF00E59051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A3DF2123BB2AAC00E59051 /* Lumia */;
+			targetProxy = F7A3DF3923BB2AAF00E59051 /* PBXContainerItemProxy */;
+		};
+		F7A3DF4523BB2AAF00E59051 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F7A3DF2123BB2AAC00E59051 /* Lumia */;
+			targetProxy = F7A3DF4423BB2AAF00E59051 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F7A3DF2B23BB2AAC00E59051 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A3DF2C23BB2AAC00E59051 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F7A3DF3023BB2AAE00E59051 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F7A3DF3123BB2AAE00E59051 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F7A3DF4A23BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7A3DF4B23BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7A3DF4D23BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9E7B09A0C8147C5654D76605 /* Pods-Lumia.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lumia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7A3DF4E23BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 89147162B13AF06BA6BA865E /* Pods-Lumia.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = Lumia/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F7A3DF5023BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D17349975BAB6A45B133AE00 /* Pods-LumiaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumia.app/Lumia";
+			};
+			name = Debug;
+		};
+		F7A3DF5123BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 231C23242CDCB0114E25D0F8 /* Pods-LumiaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Lumia.app/Lumia";
+			};
+			name = Release;
+		};
+		F7A3DF5323BB2AAF00E59051 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2577E51F34360C2593CA9901 /* Pods-Lumia-LumiaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lumia;
+			};
+			name = Debug;
+		};
+		F7A3DF5423BB2AAF00E59051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BEE418398E085CFC2884EF90 /* Pods-Lumia-LumiaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = LumiaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boju.LumiaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Lumia;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7A3DF1D23BB2AAC00E59051 /* Build configuration list for PBXProject "Lumia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF4A23BB2AAF00E59051 /* Debug */,
+				F7A3DF4B23BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF4C23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "Lumia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF4D23BB2AAF00E59051 /* Debug */,
+				F7A3DF4E23BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF4F23BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF5023BB2AAF00E59051 /* Debug */,
+				F7A3DF5123BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7A3DF5223BB2AAF00E59051 /* Build configuration list for PBXNativeTarget "LumiaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7A3DF5323BB2AAF00E59051 /* Debug */,
+				F7A3DF5423BB2AAF00E59051 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F7A3DF1A23BB2AAC00E59051 /* Project object */;
+}
