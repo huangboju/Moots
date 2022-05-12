@@ -45,6 +45,43 @@ class LongestCommonSubsequence {
         let lcs = longestCommonSubsequence(word1, word2)
         return word1.count - lcs + word2.count - lcs
     }
+    
+//    func longestCommonSubsequence(_ text1: String, _ text2: String) -> Int {
+//        var memo: [[Int]] = Array(repeating: Array(repeating: 0, count: text2.count + 1), count: text1.count + 1)
+//        let char1 = Array(text1)
+//        let char2 = Array(text2)
+//        for i in 1 ... text1.count {
+//            for j in 1 ... text2.count {
+//                if char1[i-1] == char2[j-1] {
+//                    memo[i][j] = memo[i - 1][j - 1] + 1
+//                } else {
+//                    memo[i][j] = max(memo[i][j-1], memo[i-1][j])
+//                }
+//            }
+//        }
+//        return memo[text1.count][text2.count]
+//    }
+    
+    func longestPalindromeSubseq(_ s: String) -> Int {
+        var memo: [[Int]] = Array(repeating: Array(repeating: 0, count: s.count), count: s.count)
+
+        let char = Array(s)
+        
+        for (i, _) in char.enumerated() {
+            memo[i][i] = 1
+        }
+
+        for i in (0 ..< s.count - 1).reversed() {
+            for j in i + 1 ..< s.count {
+                if char[i] == char[j] {
+                    memo[i][j] = memo[i + 1][j - 1] + 2
+                } else {
+                    memo[i][j] = max(memo[i + 1][j], memo[i][j - 1])
+                }
+            }
+        }
+        return memo[0][s.count - 1]
+    }
 }
 
 /// https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/
