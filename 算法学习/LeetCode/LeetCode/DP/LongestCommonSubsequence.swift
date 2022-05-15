@@ -61,7 +61,7 @@ class LongestCommonSubsequence {
 //        }
 //        return memo[text1.count][text2.count]
 //    }
-    
+    // https://leetcode.cn/problems/longest-palindromic-subsequence/solution/zi-xu-lie-wen-ti-tong-yong-si-lu-zui-chang-hui-wen/
     func longestPalindromeSubseq(_ s: String) -> Int {
         var memo: [[Int]] = Array(repeating: Array(repeating: 0, count: s.count), count: s.count)
 

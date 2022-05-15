@@ -222,4 +222,5 @@ let hexStr = "abcdf023457dafdeeeeffaaacccbbbbdddeefffccaaabcdf023457dafdeeeeffaa
 print(value(from: hexStr), hexMod(with: hexStr))
 
 
+print(canPartition([1,5,11,5]))
 
