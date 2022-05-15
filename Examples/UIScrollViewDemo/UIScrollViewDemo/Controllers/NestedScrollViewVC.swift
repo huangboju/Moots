@@ -199,16 +199,14 @@ extension UIScrollView {
 }
 
 final class NestedScrollViewVC: UIViewController {
-    private lazy var outerScrollView: UIScrollView = {
-        let outer = UIScrollView()
-        outer.delegate = self
-        outer.backgroundColor = .systemRed
+    private lazy var outerScrollView: OuterScrollView = {
+        let outer = OuterScrollView()
+        outer.backgroundColor = .systemGray
         return outer
     }()
     
-    private lazy var nestedUIScrollView: UIScrollView = {
-        let nested = UIScrollView()
-        nested.delegate = self
+    private lazy var nestedScrollView: NestedScrollView = {
+        let nested = NestedScrollView()
         nested.backgroundColor = .systemBlue
         return nested
     }()
@@ -219,21 +217,16 @@ final class NestedScrollViewVC: UIViewController {
         view.backgroundColor = .white
         
         view.addSubview(outerScrollView)
-        outerScrollView.contentSize = CGSize(width: view.frame.width - 20, height: 5000)
+        outerScrollView.contentSize = CGSize(width: view.frame.width - 20, height: view.frame.height * 1.1)
         outerScrollView.frame = CGRect(x: 10, y: 50, width: view.frame.width - 20, height: view.frame.height - 88)
         
-        outerScrollView.addSubview(nestedUIScrollView)
-        nestedUIScrollView.contentSize = CGSize(width: view.frame.width - 40, height: 5000)
-        nestedUIScrollView.frame = CGRect(x: 10, y: 400, width: view.frame.width - 40, height: view.frame.height - 438)
+        outerScrollView.addSubview(nestedScrollView)
+        outerScrollView.nested = nestedScrollView
+        nestedScrollView.contentSize = CGSize(width: view.frame.width - 40, height: 5000)
+        nestedScrollView.frame = CGRect(x: 10, y: 320, width: view.frame.width - 40, height: view.frame.height)
     }
 }
 
-extension NestedScrollViewVC: UIScrollViewDelegate {
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        outerScrollView.contentOffset = scrollView.contentOffset
-        outerScrollView.panGestureRecognizer.state = scrollView.panGestureRecognizer.state
-    }
-}
 
 final class OuterScrollView: UIScrollView, UIScrollViewDelegate {
     var outerDeceleration: ScrollingDeceleration?
@@ -251,12 +244,17 @@ final class OuterScrollView: UIScrollView, UIScrollViewDelegate {
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         outerDeceleration = ScrollingDeceleration(velocity: velocity, decelerationRate: scrollView.decelerationRate)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if let deceleration = outerDeceleration {
             nested?.decelerator.decelerate(by: deceleration)
         }
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        
+    }
+
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
     }
     
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -284,7 +282,6 @@ final class NestedScrollView: UIScrollView, UIScrollViewDelegate {
     }()
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.value(forKey: "_verticalVelocity"))
         decelerator.invalidateIfNeeded()
     }
 }
