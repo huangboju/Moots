@@ -224,3 +224,5 @@ print(value(from: hexStr), hexMod(with: hexStr))
 
 print(canPartition([1,5,11,5]))
 
+
+print(MinPathSum().minPathSum([[1,2,3],[4,5,6]]))

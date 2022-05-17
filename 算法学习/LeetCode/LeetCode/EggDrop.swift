@@ -8,7 +8,7 @@
 
 import Foundation
 
-// https://leetcode-cn.com/problems/super-egg-drop/?utm_source=LCUS&utm_medium=ip_redirect&utm_campaign=transfer2china
+// https://leetcode.cn/problems/super-egg-drop/
 func superEggDrop(_ K: Int, _ N: Int) -> Int {
     
     // 换个思路，需要扔多少个鸡蛋可以覆盖N层楼
