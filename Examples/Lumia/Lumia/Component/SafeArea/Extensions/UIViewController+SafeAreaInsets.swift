@@ -11,16 +11,10 @@ import UIKit
 extension UIViewController {
     
     var sa_safeAreaInsets: UIEdgeInsets {
-        if #available(iOS 11, *) {
-            return view.safeAreaInsets
-        }
-        return UIEdgeInsets(top: topLayoutGuide.length, left: 0.0, bottom: bottomLayoutGuide.length, right: 0.0)
+        view.safeAreaInsets
     }
 
     var sa_safeAreaFrame: CGRect {
-        if #available(iOS 11, *) {
-            return view.safeAreaLayoutGuide.layoutFrame
-        }
-        return view.bounds.inset(by: sa_safeAreaInsets)
+        view.safeAreaLayoutGuide.layoutFrame
     }
 }

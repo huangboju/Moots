@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CollectionSettingsViewDelegate: class {
+protocol CollectionSettingsViewDelegate: AnyObject {
     func didChangeDeceleration(_ value: CGFloat)
     func didChangeSpringBounciness(_ value: CGFloat)
     func didChangeSpringSpeed(_ value: CGFloat)
