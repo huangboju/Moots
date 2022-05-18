@@ -42,7 +42,7 @@ class ScrollViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        automaticallyAdjustsScrollViewInsets = true
+        scrollView.contentInsetAdjustmentBehavior = .always
         
         scrollView.addSubview(scrollLabel)
         view.addSubview(scrollView)

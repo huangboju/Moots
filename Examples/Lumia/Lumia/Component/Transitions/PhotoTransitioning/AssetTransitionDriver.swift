@@ -140,7 +140,7 @@ class AssetTransitionDriver: NSObject {
         }
         
         if let item = itemAtPoint(point: locationInContainer), let itemCenter = item.imageView?.center {
-            item.touchOffset = locationInContainer - itemCenter
+            item.touchOffset = (locationInContainer - itemCenter).vector
             interactiveItem = item
         }
     }
@@ -200,8 +200,7 @@ class AssetTransitionDriver: NSObject {
                 let itemHeight = lerp(initialSize.height, finalSize.height, itemPercentComplete)
                 let scaleTransform = CGAffineTransform(scaleX: (itemWidth / currentSize.width), y: (itemHeight / currentSize.height))
                 let scaledOffset = item.touchOffset.apply(transform: scaleTransform)
-                
-                imageView.center = (imageView.center + (translation + (item.touchOffset - scaledOffset))).point
+                imageView.center = (imageView.center + (translation.add(rhs: item.touchOffset.subtract(rhs: scaledOffset)))).point
                 imageView.bounds = CGRect(origin: .zero, size: CGSize(width: itemWidth, height: itemHeight))
                 item.touchOffset = scaledOffset
             }

@@ -16,18 +16,24 @@ func lerp<T : FloatingPoint>(_ v0: T, _ v1: T, _ t: T) -> T {
     return v0 + (v1 - v0) * t
 }
 
-
-func -(lhs: CGVector, rhs: CGVector) -> CGVector {
-    return CGVector(dx: lhs.dx - rhs.dx, dy: lhs.dy - rhs.dy)
+public extension CGVector {
+    func subtract(rhs: CGVector) -> CGVector {
+        return CGVector(dx: dx - rhs.dx, dy: dy - rhs.dy)
+    }
 }
+
+extension CGPoint {
+    func add(rhs: CGVector) -> CGPoint {
+        return CGPoint(x: x + rhs.dx, y: y + rhs.dy)
+    }
+}
+
 
 func +(lhs: CGPoint, rhs: CGPoint) -> CGVector {
     return CGVector(dx: lhs.x + rhs.x, dy: lhs.y + rhs.y)
 }
 
-func +(lhs: CGPoint, rhs: CGVector) -> CGPoint {
-    return CGPoint(x: lhs.x + rhs.dx, y: lhs.y + rhs.dy)
-}
+
 
 func +(lhs: CGVector, rhs: CGVector) -> CGVector {
     return CGVector(dx: lhs.dx + rhs.dx, dy: lhs.dy + rhs.dy)

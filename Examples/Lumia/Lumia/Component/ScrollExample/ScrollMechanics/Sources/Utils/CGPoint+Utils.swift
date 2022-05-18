@@ -74,8 +74,4 @@ public extension CGPoint {
     static func /(lhs: CGPoint, rhs: CGFloat) -> CGPoint {
         return CGPoint(x: lhs.x / rhs, y: lhs.y / rhs)
     }
-    
-    static func -(lhs: CGPoint, rhs: CGPoint) -> CGVector {
-        return CGVector(dx: lhs.x - rhs.x, dy: lhs.y - rhs.y)
-    }
 }

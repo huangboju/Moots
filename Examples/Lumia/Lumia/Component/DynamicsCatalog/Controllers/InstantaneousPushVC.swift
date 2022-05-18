@@ -61,7 +61,7 @@ class InstantaneousPushVC: UIViewController {
         view.addSubview(square)
 
         let collisionBehavior = UICollisionBehavior(items: [square])
-        collisionBehavior.setTranslatesReferenceBoundsIntoBoundary(with: UIEdgeInsets(top: topLayoutGuide.length, left: 0, bottom:  bottomLayoutGuide.length, right:  0))
+        collisionBehavior.setTranslatesReferenceBoundsIntoBoundary(with: UIEdgeInsets(top: view.safeAreaInsets.top, left: 0, bottom:  view.safeAreaInsets.bottom, right:  0))
         // Account for any top and bottom bars when setting up the reference bounds.
         animator.addBehavior(collisionBehavior)
 

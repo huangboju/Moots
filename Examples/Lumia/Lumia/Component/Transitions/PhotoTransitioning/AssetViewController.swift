@@ -126,7 +126,7 @@ class AssetViewController: UICollectionViewController, UICollectionViewDataSourc
         case .grid:
             title = "All Photos"
         case .oneUp:
-            self.automaticallyAdjustsScrollViewInsets = false
+            collectionView.contentInsetAdjustmentBehavior = .never
             self.collectionView?.isPagingEnabled = true
             self.collectionView?.frame = view.frame.insetBy(dx: -20.0, dy: 0.0)
         }
