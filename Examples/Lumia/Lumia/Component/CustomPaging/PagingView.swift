@@ -109,7 +109,7 @@ final class PagingView: UIView {
         animation.fromValue = contentView.contentOffset
         animation.springBounciness = springBounciness
         animation.springSpeed = springSpeed
-     
+
         contentView.pop_add(animation, forKey: PagingView.snappingAnimationKey)
     }
     
