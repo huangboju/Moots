@@ -99,6 +99,7 @@ class TitleCell: UICollectionViewCell {
     
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
+        textLabel.adjustsFontSizeToFitWidth = true
         textLabel.textColor = UIColor.white
         textLabel.font = UIFont.boldSystemFont(ofSize: 25)
         textLabel.textAlignment = .center

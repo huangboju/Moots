@@ -95,6 +95,7 @@ class FluidInterfacesCell: UICollectionViewCell {
     
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
+        textLabel.adjustsFontSizeToFitWidth = true
         textLabel.textColor = UIColor.white
         textLabel.font = UIFont.boldSystemFont(ofSize: 25)
         textLabel.textAlignment = .center
@@ -132,6 +133,7 @@ class FluidInterfacesCell: UICollectionViewCell {
         textLabel.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         contentView.addSubview(arrowView)
+        arrowView.leadingAnchor.constraint(greaterThanOrEqualTo: textLabel.trailingAnchor, constant: 10).isActive = true
         arrowView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20).isActive = true
         arrowView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
     }
