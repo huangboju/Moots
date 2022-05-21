@@ -1,11 +1,11 @@
 import Foundation
 import CoreGraphics
 
-public func rubberBandClamp(_ x: CGFloat, coeff: CGFloat, dim: CGFloat) -> CGFloat {
+public func rubberBandClamp(_ x: CGFloat, coeff: CGFloat = 0.55, dim: CGFloat) -> CGFloat {
     return (1.0 - (1.0 / (x * coeff / dim + 1.0))) * dim
 }
 
-public func rubberBandClamp(_ x: CGFloat, coeff: CGFloat, dim: CGFloat, limits: ClosedRange<CGFloat>) -> CGFloat {
+public func rubberBandClamp(_ x: CGFloat, coeff: CGFloat = 0.55, dim: CGFloat, limits: ClosedRange<CGFloat>) -> CGFloat {
     let clampedX = x.clamped(to: limits)
     let diff = abs(x - clampedX)
     let sign: CGFloat = clampedX > x ? -1 : 1

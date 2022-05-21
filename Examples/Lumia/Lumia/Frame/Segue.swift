@@ -18,6 +18,14 @@ extension UIViewController {
             vc = c
         case let .segue(c):
             vc = c.init()
+        case let .modal(c):
+            vc = c.init()
+            if let c = vc as? C {
+                handle?(c)
+            }
+            vc.modalPresentationStyle = .fullScreen
+            showDetailViewController(vc, sender: nil)
+            return
         case let .web(url):
             showDetailViewController(SFSafariViewController(url: URL(string: url)!), sender: nil)
             return
@@ -44,6 +52,7 @@ public enum Segue {
     case none
     // 用SegueRow，把创建对象延迟到跳转时
     case segue(UIViewController.Type)
+    case modal(UIViewController.Type)
     case controller(UIViewController)
     case web(String)
     case scheme(Scheme)
@@ -62,6 +71,8 @@ extension Segue: CustomStringConvertible {
             return "\(str)"
         case let .scheme(s):
             return "\(s.scheme)"
+        case let .modal(dest):
+            return "\(dest)"
         }
     }
 }

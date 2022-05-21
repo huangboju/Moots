@@ -20,6 +20,7 @@ class ViewController: UIViewController {
         Row<TitleCell>(viewData: TitleCellItem(title: "ScrollExample", segue: .segue(ScrollExample.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "PictureInPicture", segue: .segue(PictureInPicture.self))),
         Row<TitleCell>(viewData: TitleCellItem(title: "ParallaxImageViewController", segue: .segue(ParallaxImageViewController.self))),
+        Row<TitleCell>(viewData: TitleCellItem(title: "UltraDrawerView", segue: .modal(ShapeViewController.self))),
     ]
 
     private lazy var collectionView: UICollectionView = {

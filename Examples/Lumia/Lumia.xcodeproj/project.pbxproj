@@ -99,6 +99,31 @@
 		EE5D98FC283484BC00443B3E /* ParallaxDoubleImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D98F0283484BC00443B3E /* ParallaxDoubleImageCollectionViewCell.swift */; };
 		EE5D98FD283484BC00443B3E /* ParallaxImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D98F2283484BC00443B3E /* ParallaxImageView.swift */; };
 		EE5D98FE283484BC00443B3E /* ProgressDotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D98F3283484BC00443B3E /* ProgressDotView.swift */; };
+		EED7A6B42838E710009C3826 /* DrawerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6992838E710009C3826 /* DrawerView.swift */; };
+		EED7A6B52838E710009C3826 /* SnappingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A69A2838E710009C3826 /* SnappingView.swift */; };
+		EED7A6B62838E710009C3826 /* DrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A69B2838E710009C3826 /* DrawerViewContent.swift */; };
+		EED7A6B72838E710009C3826 /* WeakCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A69D2838E710009C3826 /* WeakCollection.swift */; };
+		EED7A6BA2838E710009C3826 /* FloatingPoint+Projection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A02838E710009C3826 /* FloatingPoint+Projection.swift */; };
+		EED7A6BB2838E710009C3826 /* AnimationParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A12838E710009C3826 /* AnimationParameters.swift */; };
+		EED7A6BC2838E710009C3826 /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A22838E710009C3826 /* UIView+AutoLayout.swift */; };
+		EED7A6BD2838E710009C3826 /* FloatingPoint+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A32838E710009C3826 /* FloatingPoint+Utils.swift */; };
+		EED7A6BE2838E710009C3826 /* DampingTimingParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A42838E710009C3826 /* DampingTimingParameters.swift */; };
+		EED7A6C12838E710009C3826 /* UIImage+Rounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A72838E710009C3826 /* UIImage+Rounded.swift */; };
+		EED7A6C22838E710009C3826 /* CornerRadiusMaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A82838E710009C3826 /* CornerRadiusMaskView.swift */; };
+		EED7A6C32838E710009C3826 /* Collection+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6A92838E710009C3826 /* Collection+Utils.swift */; };
+		EED7A6C42838E710009C3826 /* UltraDrawerViewTimerAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AA2838E710009C3826 /* UltraDrawerViewTimerAnimation.swift */; };
+		EED7A6C52838E710009C3826 /* Notifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AB2838E710009C3826 /* Notifier.swift */; };
+		EED7A6C62838E710009C3826 /* SnappingViewSpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AC2838E710009C3826 /* SnappingViewSpringAnimation.swift */; };
+		EED7A6C72838E710009C3826 /* DrawerView+UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AD2838E710009C3826 /* DrawerView+UIScrollView.swift */; };
+		EED7A6C82838E710009C3826 /* DrawerOriginChangeSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AE2838E710009C3826 /* DrawerOriginChangeSource.swift */; };
+		EED7A6C92838E710009C3826 /* ScrollDrawerViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6AF2838E710009C3826 /* ScrollDrawerViewContent.swift */; };
+		EED7A6CA2838E710009C3826 /* SVPrivateScrollDelegateProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6B32838E710009C3826 /* SVPrivateScrollDelegateProxy.m */; };
+		EED7A6D12838EBA2009C3826 /* ShapeCell+DefaultInfos.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6CD2838EBA2009C3826 /* ShapeCell+DefaultInfos.swift */; };
+		EED7A6D22838EBA2009C3826 /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6CE2838EBA2009C3826 /* ShapeCell.swift */; };
+		EED7A6D32838EBA2009C3826 /* ShapeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6CF2838EBA2009C3826 /* ShapeHeaderView.swift */; };
+		EED7A6D42838EBA2009C3826 /* ShapeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6D02838EBA2009C3826 /* ShapeViewController.swift */; };
+		EED7A6D72838EBEF009C3826 /* UIColor+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6D52838EBEF009C3826 /* UIColor+Utils.swift */; };
+		EED7A6D82838EBEF009C3826 /* UIBezierPath+Polygon.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED7A6D62838EBEF009C3826 /* UIBezierPath+Polygon.swift */; };
 		F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */; };
 		F75CB7CF23D57DF100B7D147 /* CBCNodeListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */; };
 		F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75CB7D023D5803400B7D147 /* CBCRuntime.swift */; };
@@ -271,6 +296,33 @@
 		EE5D98F0283484BC00443B3E /* ParallaxDoubleImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxDoubleImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE5D98F2283484BC00443B3E /* ParallaxImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxImageView.swift; sourceTree = "<group>"; };
 		EE5D98F3283484BC00443B3E /* ProgressDotView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressDotView.swift; sourceTree = "<group>"; };
+		EED7A6992838E710009C3826 /* DrawerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerView.swift; sourceTree = "<group>"; };
+		EED7A69A2838E710009C3826 /* SnappingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingView.swift; sourceTree = "<group>"; };
+		EED7A69B2838E710009C3826 /* DrawerViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewContent.swift; sourceTree = "<group>"; };
+		EED7A69D2838E710009C3826 /* WeakCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeakCollection.swift; sourceTree = "<group>"; };
+		EED7A6A02838E710009C3826 /* FloatingPoint+Projection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Projection.swift"; sourceTree = "<group>"; };
+		EED7A6A12838E710009C3826 /* AnimationParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationParameters.swift; sourceTree = "<group>"; };
+		EED7A6A22838E710009C3826 /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		EED7A6A32838E710009C3826 /* FloatingPoint+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Utils.swift"; sourceTree = "<group>"; };
+		EED7A6A42838E710009C3826 /* DampingTimingParameters.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DampingTimingParameters.swift; sourceTree = "<group>"; };
+		EED7A6A72838E710009C3826 /* UIImage+Rounded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Rounded.swift"; sourceTree = "<group>"; };
+		EED7A6A82838E710009C3826 /* CornerRadiusMaskView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CornerRadiusMaskView.swift; sourceTree = "<group>"; };
+		EED7A6A92838E710009C3826 /* Collection+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Utils.swift"; sourceTree = "<group>"; };
+		EED7A6AA2838E710009C3826 /* UltraDrawerViewTimerAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltraDrawerViewTimerAnimation.swift; sourceTree = "<group>"; };
+		EED7A6AB2838E710009C3826 /* Notifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifier.swift; sourceTree = "<group>"; };
+		EED7A6AC2838E710009C3826 /* SnappingViewSpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnappingViewSpringAnimation.swift; sourceTree = "<group>"; };
+		EED7A6AD2838E710009C3826 /* DrawerView+UIScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DrawerView+UIScrollView.swift"; sourceTree = "<group>"; };
+		EED7A6AE2838E710009C3826 /* DrawerOriginChangeSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerOriginChangeSource.swift; sourceTree = "<group>"; };
+		EED7A6AF2838E710009C3826 /* ScrollDrawerViewContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollDrawerViewContent.swift; sourceTree = "<group>"; };
+		EED7A6B22838E710009C3826 /* SVPrivateScrollDelegateProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPrivateScrollDelegateProxy.h; sourceTree = "<group>"; };
+		EED7A6B32838E710009C3826 /* SVPrivateScrollDelegateProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVPrivateScrollDelegateProxy.m; sourceTree = "<group>"; };
+		EED7A6CB2838EA16009C3826 /* Bridging.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Bridging.h; sourceTree = "<group>"; };
+		EED7A6CD2838EBA2009C3826 /* ShapeCell+DefaultInfos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ShapeCell+DefaultInfos.swift"; sourceTree = "<group>"; };
+		EED7A6CE2838EBA2009C3826 /* ShapeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
+		EED7A6CF2838EBA2009C3826 /* ShapeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeHeaderView.swift; sourceTree = "<group>"; };
+		EED7A6D02838EBA2009C3826 /* ShapeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShapeViewController.swift; sourceTree = "<group>"; };
+		EED7A6D52838EBEF009C3826 /* UIColor+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Utils.swift"; sourceTree = "<group>"; };
+		EED7A6D62838EBEF009C3826 /* UIBezierPath+Polygon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Polygon.swift"; sourceTree = "<group>"; };
 		F75CB7CC23D57D2E00B7D147 /* CBCCatalogExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCCatalogExample.swift; sourceTree = "<group>"; };
 		F75CB7CE23D57DF100B7D147 /* CBCNodeListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCNodeListViewController.swift; sourceTree = "<group>"; };
 		F75CB7D023D5803400B7D147 /* CBCRuntime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CBCRuntime.swift; sourceTree = "<group>"; };
@@ -398,6 +450,7 @@
 		BE29C4012411E8AA00567E01 /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				EED7A6962838E6F0009C3826 /* UltraDrawerView */,
 				EE5D98CB2834840B00443B3E /* Parade */,
 				EE1C58742827F39D00A537DD /* PictureInPicture */,
 				EE1C58582827F16600A537DD /* ScrollExample */,
@@ -710,6 +763,87 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		EED7A6962838E6F0009C3826 /* UltraDrawerView */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6972838E710009C3826 /* Sources */,
+			);
+			path = UltraDrawerView;
+			sourceTree = "<group>";
+		};
+		EED7A6972838E710009C3826 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6CC2838EB95009C3826 /* Demo */,
+				EED7A6982838E710009C3826 /* UltraDrawerView */,
+				EED7A6B02838E710009C3826 /* UltraDrawerViewObjCUtils */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		EED7A6982838E710009C3826 /* UltraDrawerView */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6992838E710009C3826 /* DrawerView.swift */,
+				EED7A69A2838E710009C3826 /* SnappingView.swift */,
+				EED7A69B2838E710009C3826 /* DrawerViewContent.swift */,
+				EED7A69C2838E710009C3826 /* Utils */,
+				EED7A6AC2838E710009C3826 /* SnappingViewSpringAnimation.swift */,
+				EED7A6AD2838E710009C3826 /* DrawerView+UIScrollView.swift */,
+				EED7A6AE2838E710009C3826 /* DrawerOriginChangeSource.swift */,
+				EED7A6AF2838E710009C3826 /* ScrollDrawerViewContent.swift */,
+			);
+			path = UltraDrawerView;
+			sourceTree = "<group>";
+		};
+		EED7A69C2838E710009C3826 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A69D2838E710009C3826 /* WeakCollection.swift */,
+				EED7A6A02838E710009C3826 /* FloatingPoint+Projection.swift */,
+				EED7A6A12838E710009C3826 /* AnimationParameters.swift */,
+				EED7A6A22838E710009C3826 /* UIView+AutoLayout.swift */,
+				EED7A6A32838E710009C3826 /* FloatingPoint+Utils.swift */,
+				EED7A6A42838E710009C3826 /* DampingTimingParameters.swift */,
+				EED7A6A72838E710009C3826 /* UIImage+Rounded.swift */,
+				EED7A6A82838E710009C3826 /* CornerRadiusMaskView.swift */,
+				EED7A6A92838E710009C3826 /* Collection+Utils.swift */,
+				EED7A6AA2838E710009C3826 /* UltraDrawerViewTimerAnimation.swift */,
+				EED7A6AB2838E710009C3826 /* Notifier.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		EED7A6B02838E710009C3826 /* UltraDrawerViewObjCUtils */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6B12838E710009C3826 /* include */,
+				EED7A6B32838E710009C3826 /* SVPrivateScrollDelegateProxy.m */,
+			);
+			path = UltraDrawerViewObjCUtils;
+			sourceTree = "<group>";
+		};
+		EED7A6B12838E710009C3826 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6B22838E710009C3826 /* SVPrivateScrollDelegateProxy.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		EED7A6CC2838EB95009C3826 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				EED7A6D62838EBEF009C3826 /* UIBezierPath+Polygon.swift */,
+				EED7A6D52838EBEF009C3826 /* UIColor+Utils.swift */,
+				EED7A6CE2838EBA2009C3826 /* ShapeCell.swift */,
+				EED7A6CD2838EBA2009C3826 /* ShapeCell+DefaultInfos.swift */,
+				EED7A6CF2838EBA2009C3826 /* ShapeHeaderView.swift */,
+				EED7A6D02838EBA2009C3826 /* ShapeViewController.swift */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
 		F75CB7CA23D57CE500B7D147 /* Frame */ = {
 			isa = PBXGroup;
 			children = (
@@ -817,6 +951,7 @@
 				F7A3DF3323BB2AAE00E59051 /* Info.plist */,
 				F7A3F62A23BB383100E59051 /* Extensions.swift */,
 				F7A3F64423BB4B5500E59051 /* ListVC.swift */,
+				EED7A6CB2838EA16009C3826 /* Bridging.h */,
 			);
 			path = Lumia;
 			sourceTree = "<group>";
@@ -1167,7 +1302,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED7A6C42838E710009C3826 /* UltraDrawerViewTimerAnimation.swift in Sources */,
 				BE29C40D2411E95900567E01 /* AssetTransitionDriver.swift in Sources */,
+				EED7A6C62838E710009C3826 /* SnappingViewSpringAnimation.swift in Sources */,
+				EED7A6B62838E710009C3826 /* DrawerViewContent.swift in Sources */,
 				F7A3F63B23BB3D7200E59051 /* Acceleration.swift in Sources */,
 				F75CB7D123D5803400B7D147 /* CBCRuntime.swift in Sources */,
 				BE79EC9D250C8931003B2B21 /* TableViewSectionItem.swift in Sources */,
@@ -1179,35 +1317,44 @@
 				BE79EC99250C8931003B2B21 /* ScrollViewScrollableAxisItem.swift in Sources */,
 				F7CA505B23D439B300A45551 /* FluidCardVC.swift in Sources */,
 				F75D20DF2418C61B00D0F699 /* ZoomTransitionController.swift in Sources */,
+				EED7A6C12838E710009C3826 /* UIImage+Rounded.swift in Sources */,
 				F7A3F63F23BB3D7200E59051 /* GradientView.swift in Sources */,
 				BE79EC9C250C8931003B2B21 /* TableViewCell.swift in Sources */,
 				F7A3F64D23BB4DEA00E59051 /* AnimationListVC.swift in Sources */,
 				EE5D98F8283484BC00443B3E /* ParallaxImageCollectionViewCell.swift in Sources */,
+				EED7A6D82838EBEF009C3826 /* UIBezierPath+Polygon.swift in Sources */,
 				EE5D98F4283484BC00443B3E /* ParallaxImageViewController.swift in Sources */,
 				EE2978862824188000E84D4A /* CollectionCell.swift in Sources */,
 				BE7BC94723BB6DA500589848 /* DecorationView.swift in Sources */,
 				F7A3F65423BB4F8B00E59051 /* RadialGradientLayer.swift in Sources */,
 				F75D20F82418E13A00D0F699 /* ImageViewerConfiguration.swift in Sources */,
+				EED7A6CA2838E710009C3826 /* SVPrivateScrollDelegateProxy.m in Sources */,
 				BE29C40A2411E95900567E01 /* AssetTransitioningMath.swift in Sources */,
+				EED7A6C52838E710009C3826 /* Notifier.swift in Sources */,
 				EE5D98F5283484BC00443B3E /* UIColor+Hex.swift in Sources */,
 				BE79ECA1250C8931003B2B21 /* CollectionViewCellItem.swift in Sources */,
 				BE79EC97250C8931003B2B21 /* UIView+SafeAreaInsets.swift in Sources */,
 				BE7BC94523BB6D2B00589848 /* GravityVC.swift in Sources */,
 				F7A3F64023BB3D7200E59051 /* Rubberbanding.swift in Sources */,
 				EE5D98FA283484BC00443B3E /* ParallaxTheEndCollectionViewCell.swift in Sources */,
+				EED7A6D12838EBA2009C3826 /* ShapeCell+DefaultInfos.swift in Sources */,
 				F7A3F63923BB3D7200E59051 /* CalculatorButton.swift in Sources */,
 				BE79ECA3250C8931003B2B21 /* CollectionViewReusableView.swift in Sources */,
 				BE79EC95250C8931003B2B21 /* UIViewController+SafeAreaInsets.swift in Sources */,
 				F75D20EF2418E0FA00D0F699 /* ImageViewerTransitioningHandler.swift in Sources */,
 				EE5D98F7283484BC00443B3E /* ParallaxImageAppearCollectionViewCell.swift in Sources */,
 				EE5D98E42834842700443B3E /* UIScrollView+Parade.swift in Sources */,
+				EED7A6BD2838E710009C3826 /* FloatingPoint+Utils.swift in Sources */,
+				EED7A6B52838E710009C3826 /* SnappingView.swift in Sources */,
 				F7A3F63E23BB3D7200E59051 /* Pip.swift in Sources */,
 				BE79ECA5250C8931003B2B21 /* CollectionViewCellItemsFactory.swift in Sources */,
+				EED7A6BE2838E710009C3826 /* DampingTimingParameters.swift in Sources */,
 				BE29C40F2411E95900567E01 /* AssetViewController.swift in Sources */,
 				F75D20EE2418E0FA00D0F699 /* Utilities.swift in Sources */,
 				F75D20F32418E0FA00D0F699 /* AnimatableImageView.swift in Sources */,
 				EE1C58722827F1D100A537DD /* TimingParameters.swift in Sources */,
 				BE7BC94D23BB803D00589848 /* InstantaneousPushVC.swift in Sources */,
+				EED7A6C72838E710009C3826 /* DrawerView+UIScrollView.swift in Sources */,
 				F7A3F63823BB3D7200E59051 /* Rotation.swift in Sources */,
 				BE7BC93E23BB6CD300589848 /* DynamicsCatalogMenuVC.swift in Sources */,
 				EE1C586D2827F1D100A537DD /* GeometryUtils.swift in Sources */,
@@ -1217,6 +1364,7 @@
 				F7A3F65223BB4F5B00E59051 /* AnimatedWaveView.swift in Sources */,
 				F7A3F62B23BB383100E59051 /* Extensions.swift in Sources */,
 				F75CB7CD23D57D2E00B7D147 /* CBCCatalogExample.swift in Sources */,
+				EED7A6BA2838E710009C3826 /* FloatingPoint+Projection.swift in Sources */,
 				BE79EC94250C8931003B2B21 /* ScrollViewController.swift in Sources */,
 				BE7BC95323BCA05800589848 /* CompositeBehaviorVC.swift in Sources */,
 				BE79EC92250C8931003B2B21 /* CollectionViewController.swift in Sources */,
@@ -1224,23 +1372,28 @@
 				EE1C587E2827F3B900A537DD /* PipView.swift in Sources */,
 				BE29C4122411E9F800567E01 /* TransitionListVC.swift in Sources */,
 				BE7BC94323BB6D2B00589848 /* AttachmentsVC.swift in Sources */,
+				EED7A6C82838E710009C3826 /* DrawerOriginChangeSource.swift in Sources */,
 				F7CA506323D43A1A00A45551 /* FluidCardView.swift in Sources */,
 				F7A3F62D23BB389B00E59051 /* InterfaceViewController.swift in Sources */,
 				EE29789328241B9D00E84D4A /* TableCellInfo.swift in Sources */,
+				EED7A6BB2838E710009C3826 /* AnimationParameters.swift in Sources */,
 				EE1C585B2827F18200A537DD /* ScrollExample.swift in Sources */,
 				BE79EC9F250C8931003B2B21 /* TableViewSectionItemsFactory.swift in Sources */,
 				F7A3F64823BB4CE500E59051 /* StateMachine.swift in Sources */,
 				F7A3F62923BB349A00E59051 /* FluidInterfacesVC.swift in Sources */,
 				BE79ECA2250C8931003B2B21 /* CollectionViewCell.swift in Sources */,
+				EED7A6C32838E710009C3826 /* Collection+Utils.swift in Sources */,
 				F75D20F72418E13A00D0F699 /* ImageViewerController.swift in Sources */,
 				BE79EC90250C8931003B2B21 /* SafeAreaViewController.swift in Sources */,
 				EE5D98FE283484BC00443B3E /* ProgressDotView.swift in Sources */,
+				EED7A6C92838E710009C3826 /* ScrollDrawerViewContent.swift in Sources */,
 				BE79ECA6250C8931003B2B21 /* TouchView.swift in Sources */,
 				BE7BC94B23BB7D0200589848 /* SnapVC.swift in Sources */,
 				BE7BC94923BB6F6700589848 /* CollisionsGravitySpringVC.swift in Sources */,
 				F7A3F63C23BB3D7200E59051 /* Momentum.swift in Sources */,
 				F7A3F63A23BB3D7200E59051 /* Spring.swift in Sources */,
 				EE5D98F6283484BC00443B3E /* PagingCollectionViewFlowLayout.swift in Sources */,
+				EED7A6D72838EBEF009C3826 /* UIColor+Utils.swift in Sources */,
 				BE5C123423BCC3E30045BDFD /* ItemPropertiesVC.swift in Sources */,
 				EE29789428241B9D00E84D4A /* CPTableViewController.swift in Sources */,
 				EE5D98DF2834842700443B3E /* PDAnimatablePropertyMaker.swift in Sources */,
@@ -1249,6 +1402,7 @@
 				EE5D98DC2834842700443B3E /* PDAnimationViewState.swift in Sources */,
 				EE29788D282419EA00E84D4A /* PagingView.swift in Sources */,
 				F7CA6E3223D448BF00A45551 /* TimingFunction.swift in Sources */,
+				EED7A6D32838EBA2009C3826 /* ShapeHeaderView.swift in Sources */,
 				EE5D98FC283484BC00443B3E /* ParallaxDoubleImageCollectionViewCell.swift in Sources */,
 				F75D20F22418E0FA00D0F699 /* ImageViewerDismissalTransition.swift in Sources */,
 				BE79EC93250C8931003B2B21 /* ScrollContainerViewController.swift in Sources */,
@@ -1257,6 +1411,7 @@
 				EE5D98E22834842700443B3E /* PDDefinitions.swift in Sources */,
 				BE29C40C2411E95900567E01 /* AssetTransitioning.swift in Sources */,
 				F7A3F64523BB4B5500E59051 /* ListVC.swift in Sources */,
+				EED7A6C22838E710009C3826 /* CornerRadiusMaskView.swift in Sources */,
 				F75D20DE2418C61B00D0F699 /* ZoomDismissalInteractionController.swift in Sources */,
 				F7CA506223D43A1A00A45551 /* ExpandButton.swift in Sources */,
 				EE2978892824188000E84D4A /* CPCollectionViewController.swift in Sources */,
@@ -1266,9 +1421,12 @@
 				EE5D98E02834842700443B3E /* PDAnimationMaker.swift in Sources */,
 				EE5D98F9283484BC00443B3E /* ParallaxScaleCollectionViewCell.swift in Sources */,
 				F7A3DF2623BB2AAC00E59051 /* AppDelegate.swift in Sources */,
+				EED7A6B42838E710009C3826 /* DrawerView.swift in Sources */,
+				EED7A6D42838EBA2009C3826 /* ShapeViewController.swift in Sources */,
 				BE29C40E2411E95900567E01 /* AssetTransitionController.swift in Sources */,
 				BE5C123823BCC9580045BDFD /* PositionToBoundsMapping.swift in Sources */,
 				F75D20DD2418C61B00D0F699 /* ZoomAnimator.swift in Sources */,
+				EED7A6BC2838E710009C3826 /* UIView+AutoLayout.swift in Sources */,
 				BE79ECA0250C8931003B2B21 /* TableViewCellItem.swift in Sources */,
 				BE79EC98250C8931003B2B21 /* ScrollViewContentInsetAdjustmentBehaviorItem.swift in Sources */,
 				F7A3DF5623BB2C8300E59051 /* Row.swift in Sources */,
@@ -1287,11 +1445,13 @@
 				BE79EC9E250C8931003B2B21 /* TableViewHeaderFooterView.swift in Sources */,
 				EE2978872824188000E84D4A /* CollectionSettingsView.swift in Sources */,
 				F7A3EABF23BB32C600E59051 /* Segue.swift in Sources */,
+				EED7A6D22838EBA2009C3826 /* ShapeCell.swift in Sources */,
 				EE1C58732827F1D100A537DD /* DecelerationTimingParameters.swift in Sources */,
 				F75D20F12418E0FA00D0F699 /* ImageViewerPresentationTransition.swift in Sources */,
 				EE29788B282418D900E84D4A /* CustomPagingVC.swift in Sources */,
 				EE1C585C2827F18200A537DD /* SimpleScrollView.swift in Sources */,
 				EE1C58712827F1D100A537DD /* SpringTimingParameters.swift in Sources */,
+				EED7A6B72838E710009C3826 /* WeakCollection.swift in Sources */,
 				F7A3F64323BB40FE00E59051 /* ClassCopyIvarListVC.swift in Sources */,
 				EE1C586F2827F1D100A537DD /* CASpringAnimation+Utils.swift in Sources */,
 				EE1C586A2827F1D100A537DD /* RubberBand.swift in Sources */,
@@ -1486,6 +1646,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Lumia/Bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1505,6 +1666,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.boju.Lumia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Lumia/Bridging.h;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
