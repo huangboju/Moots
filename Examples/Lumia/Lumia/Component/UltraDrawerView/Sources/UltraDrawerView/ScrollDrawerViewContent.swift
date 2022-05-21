@@ -194,7 +194,7 @@ private extension NSKeyValueObservedChange where Value == CGSize {
     
     var isChanged: Bool {
         if let new = newValue, let old = oldValue {
-            return !old.isEqual(to: new, eps: 0.0001)
+            return !old.isEqual(to: new, eps: .ulpOfOne)
         } else {
             return newValue != oldValue
         }
@@ -206,7 +206,7 @@ private extension NSKeyValueObservedChange where Value == UIEdgeInsets {
     
     var isChanged: Bool {
         if let new = newValue, let old = oldValue {
-            return !old.isEqual(to: new, eps: 0.0001)
+            return !old.isEqual(to: new, eps: .ulpOfOne)
         } else {
             return newValue != oldValue
         }
