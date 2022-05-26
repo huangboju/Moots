@@ -147,7 +147,6 @@
 		D8A7321D1DED6E8A005DF7C8 /* ReloadableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A732161DED6E8A005DF7C8 /* ReloadableType.swift */; };
 		D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */; };
 		D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */; };
-		D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
 		EE7E229F281D386100098542 /* NestedScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E229E281D386100098542 /* NestedScrollViewVC.swift */; };
 		EE8AE14827E9DE8F00B2FEF0 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = EE8AE14727E9DE8F00B2FEF0 /* Resolver */; };
@@ -340,7 +339,6 @@
 		D8A732201DED7124005DF7C8 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		D8A732211DED7124005DF7C8 /* Chameleon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Chameleon.framework; path = Carthage/Build/iOS/Chameleon.framework; sourceTree = "<group>"; };
 		D8A732221DED7124005DF7C8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
-		D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollView.swift; sourceTree = "<group>"; };
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
 		EE7E229E281D386100098542 /* NestedScrollViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedScrollViewVC.swift; sourceTree = "<group>"; };
 		EE8AF88A27E9EAA800B2FEF0 /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
@@ -673,7 +671,6 @@
 				D8A732111DED6E8A005DF7C8 /* LoadMore */,
 				D8A731F11DED6E28005DF7C8 /* AppDelegate.swift */,
 				D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */,
-				D8A7322B1DED7338005DF7C8 /* InfiniteScrollView.swift */,
 				D8123AED1EE7FA8C00EAAA63 /* RulerLayout.swift */,
 				D8A731F51DED6E28005DF7C8 /* Main.storyboard */,
 				D8A731F81DED6E28005DF7C8 /* Assets.xcassets */,
@@ -1076,7 +1073,6 @@
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
 				BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
-				D8A7322C1DED7338005DF7C8 /* InfiniteScrollView.swift in Sources */,
 				BE4FCA7E1FB9430D00E1C3F0 /* MemberComponentFrameCell.swift in Sources */,
 				BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */,
 				BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */,
