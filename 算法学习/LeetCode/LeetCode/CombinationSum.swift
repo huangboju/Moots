@@ -36,33 +36,3 @@ func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
     
     return res
 }
-
-// https://leetcode-cn.com/problems/combination-sum-ii/submissions/
-func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
-    func dfs(_ res: inout [[Int]], _ path: inout [Int], _ target: Int, _ candidates: [Int], _ index: Int) {
-        if target == 0 {
-            res.append(path)
-            return
-        }
-        
-        for i in index ..< candidates.count {
-            if candidates[i] > target {
-                break
-            }
-            
-            if i > index && candidates[i] == candidates[i - 1] {
-                continue
-            }
-            
-            path.append(candidates[i])
-            dfs(&res, &path, target - candidates[i], candidates, i + 1)
-            path.removeLast()
-        }
-    }
-
-    var res = [[Int]](), path = [Int]()
-    
-    dfs(&res, &path, target, candidates.sorted(), 0)
-    
-    return res
-}
