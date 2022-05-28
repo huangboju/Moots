@@ -403,10 +403,8 @@
 		EEB9BE9527C21646004A0299 /* Tree */ = {
 			isa = PBXGroup;
 			children = (
-				BEBFA4FC261210FF0087F4BE /* Permute.swift */,
 				BE18882225C6A4BC00C6AD5F /* Flatten.swift */,
 				BE3DF79A25A1B18B00A58F4A /* IsSymmetric.swift */,
-				EE1AEA5F27D4EA4F0067CCA7 /* PermuteUnique.swift */,
 			);
 			path = Tree;
 			sourceTree = "<group>";
@@ -428,6 +426,8 @@
 			children = (
 				EEC178F82841D244008C5F18 /* Subsets.swift */,
 				EEC1F9DE28421C0A008C5F18 /* Combine.swift */,
+				EE1AEA5F27D4EA4F0067CCA7 /* PermuteUnique.swift */,
+				BEBFA4FC261210FF0087F4BE /* Permute.swift */,
 			);
 			path = Backtrack;
 			sourceTree = "<group>";
