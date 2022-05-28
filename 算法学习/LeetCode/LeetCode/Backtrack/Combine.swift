@@ -34,6 +34,35 @@ class CombineSolution {
     }
 }
 
+// https://leetcode.cn/problems/combination-sum/
+class CombinationSum {
+    var result: [[Int]] = []
+    
+    var path: [Int] = []
+    
+    func combinationSum(_ candidates: [Int], _ target: Int) -> [[Int]] {
+        backtrack(candidates, target, 0)
+        return result
+    }
+    
+    func backtrack(_ candidates: [Int], _ target: Int, _ start: Int) {
+        if target == 0 {
+            result.append(path)
+            return
+        }
+        if target < 0 {
+            return
+        }
+        
+        for i in start ..< candidates.count {
+            
+            path.append(candidates[i])
+            backtrack(candidates, target-candidates[i], i)
+            path.removeLast()
+        }
+    }
+}
+
 
 // https://leetcode.cn/problems/combination-sum-ii/
 class CombinationSum2 {
@@ -66,7 +95,7 @@ class CombinationSum2 {
             if i > start && candidates[i] == candidates[i-1] {
                 continue
             }
-
+            
             let n = candidates[i]
             path.append(n)
             sum += n

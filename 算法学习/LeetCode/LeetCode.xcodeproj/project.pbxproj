@@ -58,7 +58,6 @@
 		BED61CB524382B83004D5A53 /* DeleteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CB424382B83004D5A53 /* DeleteNode.swift */; };
 		BED61CB724382DF5004D5A53 /* LongestCommonPrefix.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED61CB624382DF5004D5A53 /* LongestCommonPrefix.swift */; };
 		BEDA569E22A60B550082E025 /* Rotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567D22A60B540082E025 /* Rotate.swift */; };
-		BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567E22A60B540082E025 /* CombinationSum.swift */; };
 		BEDA56A022A60B550082E025 /* wordBreak.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA567F22A60B540082E025 /* wordBreak.swift */; };
 		BEDA56A122A60B550082E025 /* Anagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568022A60B540082E025 /* Anagram.swift */; };
 		BEDA56A222A60B550082E025 /* TwoSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDA568122A60B540082E025 /* TwoSum.swift */; };
@@ -184,7 +183,6 @@
 		BED61CB424382B83004D5A53 /* DeleteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteNode.swift; sourceTree = "<group>"; };
 		BED61CB624382DF5004D5A53 /* LongestCommonPrefix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestCommonPrefix.swift; sourceTree = "<group>"; };
 		BEDA567D22A60B540082E025 /* Rotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rotate.swift; sourceTree = "<group>"; };
-		BEDA567E22A60B540082E025 /* CombinationSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CombinationSum.swift; sourceTree = "<group>"; };
 		BEDA567F22A60B540082E025 /* wordBreak.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = wordBreak.swift; sourceTree = "<group>"; };
 		BEDA568022A60B540082E025 /* Anagram.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Anagram.swift; sourceTree = "<group>"; };
 		BEDA568122A60B540082E025 /* TwoSum.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoSum.swift; sourceTree = "<group>"; };
@@ -296,7 +294,6 @@
 				BEDA56BF22A60B930082E025 /* IncreasingTriplet.swift */,
 				BEDA568022A60B540082E025 /* Anagram.swift */,
 				BEDA569122A60B540082E025 /* BackPack.swift */,
-				BEDA567E22A60B540082E025 /* CombinationSum.swift */,
 				BEDA568622A60B540082E025 /* ContainsDuplicate.swift */,
 				BEDA568422A60B540082E025 /* EggDrop.swift */,
 				BEDA568E22A60B540082E025 /* FindKthLargest.swift */,
@@ -500,7 +497,6 @@
 				F7D27643232F244C006217BD /* TopKFrequent.swift in Sources */,
 				BEDA56A622A60B550082E025 /* MoveZeroes.swift in Sources */,
 				F7E910D323331E6300DA76D7 /* Calculate.swift in Sources */,
-				BEDA569F22A60B550082E025 /* CombinationSum.swift in Sources */,
 				BEDA56C022A60B990082E025 /* IncreasingTriplet.swift in Sources */,
 				BE90AAD725AAE5C700AFB109 /* LetterCombinations.swift in Sources */,
 				BE631CCE261AD041006FA88B /* ReverseKGroup.swift in Sources */,
