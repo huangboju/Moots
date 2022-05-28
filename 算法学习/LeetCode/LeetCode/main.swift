@@ -226,3 +226,5 @@ print(canPartition([1,5,11,5]))
 
 
 print(MinPathSum().minPathSum([[1,2,3],[4,5,6]]))
+
+print(CombineSolution().combine(4, 2))
