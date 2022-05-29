@@ -246,6 +246,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
     private lazy var containerView: UIView = {
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
         containerView.clipsToBounds = false
+        containerView.backgroundColor = .systemGreen
         return containerView
     }()
     
@@ -256,8 +257,6 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
     // https://stackoverflow.com/questions/13221488/uiscrollview-within-a-uiscrollview-how-to-keep-a-smooth-transition-when-scrolli
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        containerView.backgroundColor = .systemGreen
         
         view.addGestureRecognizer(tableView.panGestureRecognizer)
         tableView.removeGestureRecognizer(tableView.panGestureRecognizer)
@@ -268,10 +267,14 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         let bottom = view.safeAreaBottom
         containerView.addSubview(tableView)
         tableView.frame = CGRect(x: 0, y: top, width: view.frame.width, height: view.frame.height - top - bottom)
+        
+        tableView.addObserver(self,
+                              forKeyPath: "contentSize",
+                              options: .new,
+                              context: nil)
 
         view.addSubview(topScrollView)
         topScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
-        topScrollView.contentSize = CGSize(width: view.frame.width, height: 4400 + top * 2 - stickyHeight + bottom)
         let scrollviewOrigin = topScrollView.frame.origin;
         topScrollView.scrollIndicatorInsets = UIEdgeInsets(top: -scrollviewOrigin.y, left: 0, bottom: scrollviewOrigin.y, right: scrollviewOrigin.x)
 
@@ -289,6 +292,19 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         } else {
             tableView.contentOffset = CGPoint(x: 0, y: scrollView.contentOffset.y - stickyHeight)
             containerView.bounds.origin.y = stickyHeight
+        }
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?,
+                               change: [NSKeyValueChangeKey : Any]?,
+                               context: UnsafeMutableRawPointer?) {
+        
+        if let obj = object as? UITableView,
+           obj == self.tableView &&
+            keyPath == "contentSize" {
+            var size = tableView.contentSize
+            size.height += (191 * 2 - stickyHeight + 44)
+            topScrollView.contentSize = size
         }
     }
 }
