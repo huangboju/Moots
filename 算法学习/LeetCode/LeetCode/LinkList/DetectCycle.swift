@@ -8,6 +8,7 @@
 
 import Foundation
 
+// https://leetcode.cn/problems/linked-list-cycle-ii/submissions/
 func detectCycle(_ head: ListNode?) -> ListNode? {
     var fast = head, slow = head
     while fast != nil && fast?.next != nil {
