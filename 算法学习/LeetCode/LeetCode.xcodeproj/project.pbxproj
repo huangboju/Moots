@@ -310,7 +310,6 @@
 				BEDA569822A60B550082E025 /* InsertionSort.swift */,
 				BEDA569D22A60B550082E025 /* Intersect.swift */,
 				BEDA569C22A60B550082E025 /* IsPalindrome.swift */,
-				BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */,
 				BED61CA2242F7B8A004D5A53 /* findCircleNum.swift */,
 				BEDA569722A60B550082E025 /* main.swift */,
 				BEDA568222A60B540082E025 /* MajorityElement.swift */,
@@ -390,6 +389,7 @@
 				EE291E022844F2AD009EE116 /* MinWindow.swift */,
 				EE291E042844F2C3009EE116 /* CheckInclusion.swift */,
 				EE291E062844F2D6009EE116 /* FindAnagrams.swift */,
+				BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */,
 			);
 			path = SlidingWindow;
 			sourceTree = "<group>";
