@@ -289,6 +289,7 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				EEA0E1A2284B848400A2E6C5 /* NSum */,
 				EE291E012844F266009EE116 /* SlidingWindow */,
 				EEC178F72841D232008C5F18 /* Backtrack */,
 				EEB9BE9627C27D06004A0299 /* DP */,
@@ -302,6 +303,7 @@
 				BEDA568022A60B540082E025 /* Anagram.swift */,
 				BEDA569122A60B540082E025 /* BackPack.swift */,
 				BEDA568622A60B540082E025 /* ContainsDuplicate.swift */,
+				BEDA569022A60B540082E025 /* ReverseString.swift */,
 				BEDA568422A60B540082E025 /* EggDrop.swift */,
 				BEDA568E22A60B540082E025 /* FindKthLargest.swift */,
 				BEDA568F22A60B540082E025 /* findMedianSortedArrays.swift */,
@@ -319,12 +321,10 @@
 				BEDA568322A60B540082E025 /* MinSubArrayLen.swift */,
 				BEDA568522A60B540082E025 /* MoveZeroes.swift */,
 				BEDA569522A60B550082E025 /* ProductExceptSelf.swift */,
-				BEDA569022A60B540082E025 /* ReverseString.swift */,
 				BEDA567D22A60B540082E025 /* Rotate.swift */,
 				BEDA569A22A60B550082E025 /* RunLengthEncoding.swift */,
 				BEDA569622A60B550082E025 /* SearchMatrix.swift */,
 				BEDA569B22A60B550082E025 /* SingleNumber.swift */,
-				BEDA568122A60B540082E025 /* TwoSum.swift */,
 				BEDA567F22A60B540082E025 /* wordBreak.swift */,
 				BEDA56C122A60C4D0082E025 /* kthSmallest.swift */,
 				F7D27642232F244C006217BD /* TopKFrequent.swift */,
@@ -335,7 +335,6 @@
 				F7AC932E2341A49300782FA8 /* RandomizedSet.swift */,
 				F736299F234D894300DFB34E /* LargestNumber.swift */,
 				F76402FF2383DBBD00017DB4 /* MaxPoints.swift */,
-				BED52F482426495100600908 /* ThreeSum.swift */,
 				BE90AAD625AAE5C700AFB109 /* LetterCombinations.swift */,
 				BE6102A62426553F00511E77 /* MaxAreaOfIsland.swift */,
 				F7C868452428D9CE004D430F /* SimplifyPath.swift */,
@@ -354,7 +353,6 @@
 				BE90AACD25A9E1A300AFB109 /* MaxArea.swift */,
 				BE90AAD025A9E3A700AFB109 /* IntToRoman.swift */,
 				BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */,
-				BE5A5EBF25C057F2000D9691 /* FourSum.swift */,
 				BE5A5EC325C2FC17000D9691 /* IsValid.swift */,
 				BE2BCC8125E25A8A007847A0 /* GenerateParenthesis.swift */,
 				BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */,
@@ -392,6 +390,16 @@
 				BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */,
 			);
 			path = SlidingWindow;
+			sourceTree = "<group>";
+		};
+		EEA0E1A2284B848400A2E6C5 /* NSum */ = {
+			isa = PBXGroup;
+			children = (
+				BEDA568122A60B540082E025 /* TwoSum.swift */,
+				BED52F482426495100600908 /* ThreeSum.swift */,
+				BE5A5EBF25C057F2000D9691 /* FourSum.swift */,
+			);
+			path = NSum;
 			sourceTree = "<group>";
 		};
 		EEA13A2E27C0D7B3005B5231 /* LinkList */ = {

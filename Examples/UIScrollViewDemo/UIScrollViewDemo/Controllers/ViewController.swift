@@ -61,7 +61,7 @@ class ViewController: UIViewController {
             AlertController.self
         ],
         [
-            BarcodesVisionVC.self
+            VisionMenuVC.self
         ]
     ]
 
