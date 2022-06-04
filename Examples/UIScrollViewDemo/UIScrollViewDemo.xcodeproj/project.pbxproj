@@ -151,6 +151,8 @@
 		EE7E229F281D386100098542 /* NestedScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E229E281D386100098542 /* NestedScrollViewVC.swift */; };
 		EE8AE14827E9DE8F00B2FEF0 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = EE8AE14727E9DE8F00B2FEF0 /* Resolver */; };
 		EE8AF88B27E9EAA800B2FEF0 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF88A27E9EAA800B2FEF0 /* AppDelegate+Injection.swift */; };
+		EEA0E19D284AE3E300A2E6C5 /* BarcodesVisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */; };
+		EEA0E19E284AE3E300A2E6C5 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E19C284AE3E300A2E6C5 /* UIUtilities.swift */; };
 		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
 		F75C2E822238DD9500495104 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2E812238DD9500495104 /* GestureVC.swift */; };
@@ -342,6 +344,8 @@
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
 		EE7E229E281D386100098542 /* NestedScrollViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedScrollViewVC.swift; sourceTree = "<group>"; };
 		EE8AF88A27E9EAA800B2FEF0 /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
+		EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodesVisionVC.swift; sourceTree = "<group>"; };
+		EEA0E19C284AE3E300A2E6C5 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		F72C3893221CEE3E00E081D3 /* WindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowVC.swift; sourceTree = "<group>"; };
 		F754780521DCC217004D3D32 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
 		F75C2E812238DD9500495104 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
@@ -719,9 +723,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EEA0E19A284AE3B500A2E6C5 /* BarcodesVision */ = {
+			isa = PBXGroup;
+			children = (
+				EEA0E19C284AE3E300A2E6C5 /* UIUtilities.swift */,
+				EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */,
+			);
+			path = BarcodesVision;
+			sourceTree = "<group>";
+		};
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EEA0E19A284AE3B500A2E6C5 /* BarcodesVision */,
 				BE3A566F251F325B005FFCF6 /* AlertController.swift */,
 				BEF29C7E251112430094EBD5 /* LazyLoadVC */,
 				BE79ED3A250E5EFB003B2B21 /* GestureButtonViewController */,
@@ -999,6 +1013,7 @@
 				F79C0AF6218458A6008448E3 /* MaskView.swift in Sources */,
 				F7A41CFF219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift in Sources */,
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
+				EEA0E19D284AE3E300A2E6C5 /* BarcodesVisionVC.swift in Sources */,
 				F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
@@ -1068,6 +1083,7 @@
 				BE1B15541FB2A41A00862271 /* UICollectionView+Reusable.swift in Sources */,
 				F7A41CF9219BEF2D00D0A3C3 /* SlideTransitionTabBarVC.swift in Sources */,
 				D8A732191DED6E8A005DF7C8 /* FriendTableViewController.swift in Sources */,
+				EEA0E19E284AE3E300A2E6C5 /* UIUtilities.swift in Sources */,
 				F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
