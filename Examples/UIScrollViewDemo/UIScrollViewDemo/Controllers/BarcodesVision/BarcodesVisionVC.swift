@@ -171,7 +171,6 @@ extension BarcodesVisionVC {
                     
                     //          observationHandler(payload: potentialQRCode.payloadStringValue)
                 }
-                //          captureSession.stopRunning()
             }
         }
     }
