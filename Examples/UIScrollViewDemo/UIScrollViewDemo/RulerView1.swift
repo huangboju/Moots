@@ -27,7 +27,7 @@ private let itemCount = 10000
 
 private let titleSpace: CGFloat = flat((1 - goldenRatio) * reulerViewHeight)
 
-protocol RulerViewDelegate: class {
+protocol RulerViewDelegate: AnyObject {
     func didSelectItem(with index: Int)
 }
 

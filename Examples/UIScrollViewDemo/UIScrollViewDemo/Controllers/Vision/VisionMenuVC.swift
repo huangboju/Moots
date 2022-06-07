@@ -18,7 +18,9 @@ class VisionMenuVC: UIViewController {
     
     lazy var data: [[UIViewController.Type]] = [
         [
-            BarcodesVisionVC.self
+            BarcodesVisionVC.self,
+            FaceMaskViewController.self,
+            FaceTrackVC.self
         ]
     ]
     

@@ -121,6 +121,8 @@
 		BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C81251112B80094EBD5 /* GLImageCell.swift */; };
 		BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */; };
 		BEF29C88251112DF0094EBD5 /* LazyLoadModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C87251112DF0094EBD5 /* LazyLoadModel.swift */; };
+		BEF69BAD284F466000D7ED3E /* FaceMaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF69BAC284F466000D7ED3E /* FaceMaskViewController.swift */; };
+		BEF69BB0284F47A100D7ED3E /* FaceTrackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF69BAF284F47A100D7ED3E /* FaceTrackVC.swift */; };
 		D8076CBF1DF272FA008ACB34 /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBD1DF272FA008ACB34 /* BannerView.swift */; };
 		D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CBE1DF272FA008ACB34 /* CycleView.swift */; };
 		D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8076CC11DF27335008ACB34 /* CycleViewController.swift */; };
@@ -309,6 +311,8 @@
 		BEF29C81251112B80094EBD5 /* GLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLImageCell.swift; sourceTree = "<group>"; };
 		BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadVC.swift; sourceTree = "<group>"; };
 		BEF29C87251112DF0094EBD5 /* LazyLoadModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadModel.swift; sourceTree = "<group>"; };
+		BEF69BAC284F466000D7ED3E /* FaceMaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMaskViewController.swift; sourceTree = "<group>"; };
+		BEF69BAF284F47A100D7ED3E /* FaceTrackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceTrackVC.swift; sourceTree = "<group>"; };
 		D8076CBD1DF272FA008ACB34 /* BannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		D8076CBE1DF272FA008ACB34 /* CycleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleView.swift; sourceTree = "<group>"; };
 		D8076CC11DF27335008ACB34 /* CycleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CycleViewController.swift; sourceTree = "<group>"; };
@@ -634,6 +638,22 @@
 			path = LazyLoadVC;
 			sourceTree = "<group>";
 		};
+		BEF69BAB284F465300D7ED3E /* FaceMaskVC */ = {
+			isa = PBXGroup;
+			children = (
+				BEF69BAC284F466000D7ED3E /* FaceMaskViewController.swift */,
+			);
+			path = FaceMaskVC;
+			sourceTree = "<group>";
+		};
+		BEF69BAE284F478700D7ED3E /* FaceTrack */ = {
+			isa = PBXGroup;
+			children = (
+				BEF69BAF284F47A100D7ED3E /* FaceTrackVC.swift */,
+			);
+			path = FaceTrack;
+			sourceTree = "<group>";
+		};
 		D8076CBC1DF272C6008ACB34 /* BannerView */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +757,9 @@
 		EEA0E19F284AEA5300A2E6C5 /* Vision */ = {
 			isa = PBXGroup;
 			children = (
+				BEF69BAE284F478700D7ED3E /* FaceTrack */,
+				BEF69BAB284F465300D7ED3E /* FaceMaskVC */,
+				EEA0E19A284AE3B500A2E6C5 /* BarcodesVision */,
 				EEA0E1A0284AEA5D00A2E6C5 /* VisionMenuVC.swift */,
 			);
 			path = Vision;
@@ -746,7 +769,6 @@
 			isa = PBXGroup;
 			children = (
 				EEA0E19F284AEA5300A2E6C5 /* Vision */,
-				EEA0E19A284AE3B500A2E6C5 /* BarcodesVision */,
 				BE3A566F251F325B005FFCF6 /* AlertController.swift */,
 				BEF29C7E251112430094EBD5 /* LazyLoadVC */,
 				BE79ED3A250E5EFB003B2B21 /* GestureButtonViewController */,
@@ -1034,6 +1056,7 @@
 				BEB635131FA4A3F600525EBB /* AnimatingChangesViewController.swift in Sources */,
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
+				BEF69BAD284F466000D7ED3E /* FaceMaskViewController.swift in Sources */,
 				F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */,
 				BEF29C88251112DF0094EBD5 /* LazyLoadModel.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
@@ -1138,6 +1161,7 @@
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
 				F7A41CEE219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift in Sources */,
 				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
+				BEF69BB0284F47A100D7ED3E /* FaceTrackVC.swift in Sources */,
 				BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */,
 				BE3D3A371FAFF4A6001F097D /* AccountHeaderView.swift in Sources */,
 			);
@@ -1326,8 +1350,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 89SJ2SR7HV;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
