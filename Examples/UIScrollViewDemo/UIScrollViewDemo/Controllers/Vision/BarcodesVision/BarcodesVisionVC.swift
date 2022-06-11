@@ -140,12 +140,12 @@ extension BarcodesVisionVC {
         DispatchQueue.main.async { [self] in
             if captureSession.isRunning {
                 view.layer.sublayers?.removeSubrange(1...)
-                
+                let set: Set<VNBarcodeSymbology> = [.QR, .EAN13, .EAN8, .Code128]
                 for barcode in barcodes {
                     guard
                         // TODO: Check for QR Code symbology and confidence score
                         let potentialQRCode = barcode as? VNBarcodeObservation,
-                        potentialQRCode.symbology == .QR,
+                        set.contains(potentialQRCode.symbology),
                         potentialQRCode.confidence > 0.9
                     else { return }
                     
