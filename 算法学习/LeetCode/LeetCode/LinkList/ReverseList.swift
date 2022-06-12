@@ -23,6 +23,16 @@ func reverseList(_ head: ListNode?) -> ListNode? {
     return result
 }
 
+//func reverseList(_ head: ListNode) -> ListNode? {
+//    if head == nil || head.next == nil {
+//        return head
+//    }
+//    let last = reverse(head?.next)
+//    head?.next?.next = head
+//    head?.next = null
+//    return last
+//}
+
 class ReverseBetween {
     func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
         let dummy = ListNode(-1)
