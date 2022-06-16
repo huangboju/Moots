@@ -8,19 +8,20 @@
 
 import Foundation
 
+// https://leetcode.cn/problems/remove-duplicates-from-sorted-array/
 func removeDuplicates(_ nums: inout [Int]) -> Int {
     // [0,0,1,1,1,2,2,3,3,4]
     if nums.count <= 1 {
         return nums.count
     }
-    
-    var newIndex = 1
-    for i in 1 ..< nums.count {
-        if nums[i] != nums[i - 1] {
-            nums[newIndex] = nums[i]
-            newIndex += 1
+    var fast = 0, slow = 0
+    while fast < nums.count {
+        if nums[fast] != nums[slow] {
+            slow += 1
+            nums[slow] = nums[fast]
         }
+        fast += 1
     }
-    return newIndex
+    return slow + 1
 }
 
