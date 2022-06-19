@@ -62,6 +62,9 @@ class ViewController: UIViewController {
         ],
         [
             VisionMenuVC.self
+        ],
+        [
+            DiffableDatasourceMenuVC.self
         ]
     ]
 

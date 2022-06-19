@@ -156,6 +156,8 @@
 		EEA0E19D284AE3E300A2E6C5 /* BarcodesVisionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */; };
 		EEA0E19E284AE3E300A2E6C5 /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E19C284AE3E300A2E6C5 /* UIUtilities.swift */; };
 		EEA0E1A1284AEA5D00A2E6C5 /* VisionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E1A0284AEA5D00A2E6C5 /* VisionMenuVC.swift */; };
+		EEAE4C37285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE4C36285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift */; };
+		EEAE4C39285F4C3F00B8A107 /* TableDiffableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE4C38285F4C3F00B8A107 /* TableDiffableVC.swift */; };
 		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
 		F75C2E822238DD9500495104 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2E812238DD9500495104 /* GestureVC.swift */; };
@@ -352,6 +354,8 @@
 		EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodesVisionVC.swift; sourceTree = "<group>"; };
 		EEA0E19C284AE3E300A2E6C5 /* UIUtilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		EEA0E1A0284AEA5D00A2E6C5 /* VisionMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionMenuVC.swift; sourceTree = "<group>"; };
+		EEAE4C36285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDatasourceMenuVC.swift; sourceTree = "<group>"; };
+		EEAE4C38285F4C3F00B8A107 /* TableDiffableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDiffableVC.swift; sourceTree = "<group>"; };
 		F72C3893221CEE3E00E081D3 /* WindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowVC.swift; sourceTree = "<group>"; };
 		F754780521DCC217004D3D32 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
 		F75C2E812238DD9500495104 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
@@ -765,9 +769,19 @@
 			path = Vision;
 			sourceTree = "<group>";
 		};
+		EEAE4C34285F4B8A00B8A107 /* DiffableDatasource */ = {
+			isa = PBXGroup;
+			children = (
+				EEAE4C36285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift */,
+				EEAE4C38285F4C3F00B8A107 /* TableDiffableVC.swift */,
+			);
+			path = DiffableDatasource;
+			sourceTree = "<group>";
+		};
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EEAE4C34285F4B8A00B8A107 /* DiffableDatasource */,
 				EEA0E19F284AEA5300A2E6C5 /* Vision */,
 				BE3A566F251F325B005FFCF6 /* AlertController.swift */,
 				BEF29C7E251112430094EBD5 /* LazyLoadVC */,
@@ -1057,6 +1071,7 @@
 				BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */,
 				BE3D3A361FAFF4A6001F097D /* PasswordSignInFooterView.swift in Sources */,
 				BEF69BAD284F466000D7ED3E /* FaceMaskViewController.swift in Sources */,
+				EEAE4C39285F4C3F00B8A107 /* TableDiffableVC.swift in Sources */,
 				F7A41CE7219AD18B00D0A3C3 /* CustomPresentationController.swift in Sources */,
 				BEF29C88251112DF0094EBD5 /* LazyLoadModel.swift in Sources */,
 				BE1093F81F9B50B900CD4804 /* SimpleStackViewController.swift in Sources */,
@@ -1094,6 +1109,7 @@
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
 				BE3A5670251F325B005FFCF6 /* AlertController.swift in Sources */,
 				BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */,
+				EEAE4C37285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift in Sources */,
 				BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */,
 				BE79ECA8250C931D003B2B21 /* GestureButtonViewController.swift in Sources */,
 				BEBE4A171FAC1B9A00A9CA9A /* CodeTimerPresenter.swift in Sources */,
@@ -1333,7 +1349,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1358,7 +1374,7 @@
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
