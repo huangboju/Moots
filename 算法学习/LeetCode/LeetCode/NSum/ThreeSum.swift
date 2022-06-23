@@ -19,7 +19,6 @@ func threeSum(_ nums: [Int]) -> [[Int]] {
     let sortedNums = nums.sorted()
 
     for i in 0..<sortedNums.count-1 {
-        if sortedNums[i] > 0 { break }
         if i > 0 && sortedNums[i] == sortedNums[i-1] { continue }
         var lowerBound = i + 1
         var upperBound = nums.count - 1
