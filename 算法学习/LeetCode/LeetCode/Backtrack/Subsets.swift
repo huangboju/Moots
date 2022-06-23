@@ -21,7 +21,7 @@ class SubsetsSolution {
 
     func backtrack(_ nums: [Int], _ start: Int) {
         result.append(path)
-
+        print(result, path, "🍀")
         for i in start ..< nums.count {
             path.append(nums[i])
             backtrack(nums, i + 1)

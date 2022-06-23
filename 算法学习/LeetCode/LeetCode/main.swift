@@ -77,7 +77,7 @@ print("\n🍀🍀🍀 背包问题 VI 重复选择+唯一排列+装满可能性�
 //print(backPackVI(4, nums: [1, 2, 4]))
 
 print("\n\n\n")
-print(combinationSum2([10, 2, 7, 6, 5], 11))
+print(CombinationSum2().combinationSum2([10, 2, 7, 6, 5], 11))
 
 
 
@@ -228,3 +228,5 @@ print(canPartition([1,5,11,5]))
 print(MinPathSum().minPathSum([[1,2,3],[4,5,6]]))
 
 print(CombineSolution().combine(4, 2))
+
+print(SubsetsSolution().subsets([1,2,3]))

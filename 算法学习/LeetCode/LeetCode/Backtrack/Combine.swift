@@ -70,8 +70,6 @@ class CombinationSum2 {
     
     var path: [Int] = []
     
-    var sum = 0
-    
     func combinationSum2(_ candidates: [Int], _ target: Int) -> [[Int]] {
         
         backtrack(candidates.sorted(), target, 0)
@@ -81,12 +79,11 @@ class CombinationSum2 {
     
     func backtrack(_ candidates: [Int], _ target: Int, _ start: Int) {
         
-        if sum == target {
+        if 0 == target {
             result.append(path)
             return
         }
-        
-        if sum > target {
+        if target < 0 {
             return
         }
         
@@ -98,9 +95,7 @@ class CombinationSum2 {
             
             let n = candidates[i]
             path.append(n)
-            sum += n
-            backtrack(candidates, target, i + 1)
-            sum -= n
+            backtrack(candidates, target-n, i + 1)
             path.removeLast()
         }
     }
