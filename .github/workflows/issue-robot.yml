@@ -32,14 +32,14 @@ jobs:
 
                 Please make sure you're read our [README](README.md) and we look forward to reviewing your Pull request shortly ✨`
             })
-    - uses: actions/checkout@v2
-    - uses: actions-ecosystem/action-add-labels@v1
-      with:
-        labels: invalid
-    - name: close issue
-      # Using GitHub CLI in workflows
-      # https://docs.github.com/cn/actions/using-workflows/using-github-cli-in-workflows
-      run: gh issue close $ISSUE
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        ISSUE: ${{ github.event.issue.html_url }}
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: invalid
+      - name: close issue
+        # Using GitHub CLI in workflows
+        # https://docs.github.com/cn/actions/using-workflows/using-github-cli-in-workflows
+        run: gh issue close $ISSUE
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE: ${{ github.event.issue.html_url }}
