@@ -3,12 +3,11 @@ on:
   issues:
     types: [opened, reopened]
 jobs:
-  job1:
+  verify-issue:
     runs-on: ubuntu-latest
-    outputs:
-      output: ${{ steps.step1.outputs.body }}
     steps:
       - name: View context attributes
+        id: check
         uses: actions/github-script@v6
         with:
           # Add labels to an issue
@@ -22,7 +21,7 @@ jobs:
                 repo: context.repo.repo,
                 body: '👋 Thanks for reporting!'
               })
-              return
+              return 'true'
             }
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -32,6 +31,11 @@ jobs:
 
                 Please make sure you're read our [README](README.md) and we look forward to reviewing your Pull request shortly ✨`
             })
+            return 'false'
+    close-issue:
+      runs-on: ubuntu-latest
+      needs: verify-issue
+      if: steps.check.outputs.result == 'false'
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-add-labels@v1
         with:
@@ -43,3 +47,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
+    add-label:
+      runs-on: ubuntu-latest
+      needs: verify-issue
+      if: steps.check.outputs.result == 'true'
+      - uses: actions/checkout@v2
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: help wanted
+
