@@ -5,6 +5,8 @@ on:
 jobs:
   verify-issue:
     runs-on: ubuntu-latest
+    outputs:
+      result: ${{ steps.check.outputs.result }}
     steps:
       - name: View context attributes
         id: check
@@ -40,7 +42,7 @@ jobs:
   close-issue:
     runs-on: ubuntu-latest
     needs: verify-issue
-    if: ${{ always() && needs.verify-issue.check.outputs.result == 'invalid' }}
+    if: ${{ always() && needs.verify-issue.outputs.result == 'invalid' }}
     steps:
       - name: close issue
         # Using GitHub CLI in workflows
