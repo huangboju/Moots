@@ -4,12 +4,22 @@ on:
     types:
       - opened
 jobs:
-  comment:
+  get-body:
     runs-on: ubuntu-latest
-    steps:
-      - run: echo "issue body ${{ github.event.issue.body }}"
+    outputs:
+      issue_body: ${{ steps.body-id.outputs.body }}
+    setps:
+      - id: body-id
+        run: echo "::set-output name=body::${{ github.event.issue.body }}"
       - run: echo "issue title ${{ github.event.issue.title }}"
       - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
+  verify-body:
+    runs-on: ubuntu-latest
+    needs: get-body
+    steps:
+      if: contains(needs.get-body.outputs.issue_body, "body" )
+      - run: echo ${{ needs.get-body.outputs.issue_body }}
+          
