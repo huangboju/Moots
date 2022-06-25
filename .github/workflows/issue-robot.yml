@@ -21,7 +21,7 @@ jobs:
                 repo: context.repo.repo,
                 body: '👋 Thanks for reporting!'
               })
-              return 'true'
+              return 'help wanted'
             }
             await github.rest.issues.createComment({
               issue_number: context.issue.number,
@@ -31,17 +31,17 @@ jobs:
 
                 Please make sure you're read our [README](README.md) and we look forward to reviewing your Pull request shortly ✨`
             })
-            return 'false'
+            return 'invalid'
           result-encoding: string
-  close-issue:
-    runs-on: ubuntu-latest
-    needs: verify-issue
-    if: ${{ always() && needs.verify-issue.check.outputs.result == 'false' }}
-    steps:
       - uses: actions/checkout@v2
       - uses: actions-ecosystem/action-add-labels@v1
         with:
-          labels: invalid
+          labels: steps.check.outputs.result
+  close-issue:
+    runs-on: ubuntu-latest
+    needs: verify-issue
+    if: ${{ always() && needs.verify-issue.check.outputs.result == 'invalid' }}
+    steps:
       - name: close issue
         # Using GitHub CLI in workflows
         # https://docs.github.com/cn/actions/using-workflows/using-github-cli-in-workflows
@@ -49,13 +49,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ISSUE: ${{ github.event.issue.html_url }}
-  add-label:
-    runs-on: ubuntu-latest
-    needs: verify-issue
-    if: ${{ always() && needs.verify-issue.check.outputs.result == 'true' }}
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions-ecosystem/action-add-labels@v1
-        with:
-          labels: help wanted
 
