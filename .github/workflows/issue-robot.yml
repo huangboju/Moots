@@ -13,5 +13,21 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            console.log(context)
-          
+            const body = context.payload.issue.body
+            if (body.toLowerCase().includes("body")) {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: '👋 Thanks for reporting!'
+              })
+              return
+            }
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `**Welcome**, new contributor!
+
+                Please make sure you're read our [README](README.md) and we look forward to reviewing your Pull request shortly ✨`
+            })
