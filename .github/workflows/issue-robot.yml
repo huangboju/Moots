@@ -11,6 +11,8 @@ jobs:
       - name: View context attributes
         uses: actions/github-script@v6
         with:
+          # Add labels to an issue
+          # https://docs.github.com/en/rest/issues/labels#add-labels-to-an-issue
           script: |
             const body = context.payload.issue.body
             if (body && body.toLowerCase().includes("body")) {
