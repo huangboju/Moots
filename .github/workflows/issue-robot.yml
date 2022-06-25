@@ -1,9 +1,7 @@
 name: Comment when opened
 on:
   issues:
-    types:
-      - opened
-      - reopened
+    types: [opened, reopened]
 jobs:
   job1:
     runs-on: ubuntu-latest
