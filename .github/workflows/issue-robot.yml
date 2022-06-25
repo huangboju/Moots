@@ -4,7 +4,7 @@ on:
     types:
       - opened
 jobs:
-  get_body:
+  job1:
     runs-on: ubuntu-latest
     outputs:
       output: ${{ steps.step1.outputs.body }}
@@ -18,8 +18,8 @@ jobs:
           ISSUE: ${{ github.event.issue.html_url }}
   verify-body:
     runs-on: ubuntu-latest
-    needs: get_body
+    needs: job1
     steps:
-      if: ${{ contains(needs.get_body.outputs.output, "body" ) }}
-      - run: echo "${{ needs.get_body.outputs.output }}"
+      if: ${{ contains(needs.job1.outputs.output, "body" ) }}
+      - run: echo "${{ needs.job1.outputs.output }}"
           
