@@ -7,9 +7,9 @@ jobs:
   get_body:
     runs-on: ubuntu-latest
     outputs:
-      issue_body: ${{ steps.body-id.outputs.body }}
+      output: ${{ steps.step1.outputs.body }}
     steps:
-      - id: body-id
+      - id: step1
         run: echo "::set-output name=body::${{ github.event.issue.body }}"
       - run: echo "issue title ${{ github.event.issue.title }}"
       - run: gh issue comment $ISSUE --body "Thank you for opening this issue!"
@@ -20,6 +20,6 @@ jobs:
     runs-on: ubuntu-latest
     needs: get_body
     steps:
-      if: ${{ contains(needs.get_body.outputs.issue_body, "body" ) }}
-      - run: echo "${{ needs.get_body.outputs.issue_body }}"
+      if: ${{ contains(needs.get_body.outputs.output, "body" ) }}
+      - run: echo "${{ needs.get_body.outputs.output }}"
           
