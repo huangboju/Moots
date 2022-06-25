@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       issue_body: ${{ steps.body-id.outputs.body }}
-    setps:
+    steps:
       - id: body-id
         run: echo "::set-output name=body::${{ github.event.issue.body }}"
       - run: echo "issue title ${{ github.event.issue.title }}"
