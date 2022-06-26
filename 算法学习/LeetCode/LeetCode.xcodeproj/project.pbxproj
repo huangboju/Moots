@@ -98,6 +98,7 @@
 		EE291E072844F2D6009EE116 /* FindAnagrams.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE291E062844F2D6009EE116 /* FindAnagrams.swift */; };
 		EE2978962824AFD500E84D4A /* LengthOfLIS.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2978952824AFD500E84D4A /* LengthOfLIS.swift */; };
 		EE2C1C2A2822714700249F6F /* LongestCommonSubsequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2C1C292822714700249F6F /* LongestCommonSubsequence.swift */; };
+		EE2D2A112868501C004AE45C /* isPalindromeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2D2A102868501C004AE45C /* isPalindromeNode.swift */; };
 		EE77CEBB27F09D8D00AB326F /* BinarySearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE77CEBA27F09D8D00AB326F /* BinarySearch.swift */; };
 		EE77CEBD27F0AF3400AB326F /* AdvantageCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE77CEBC27F0AF3400AB326F /* AdvantageCount.swift */; };
 		EE80DEAA28328EFC00FC3236 /* MinPathSum.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE80DEA928328EFC00FC3236 /* MinPathSum.swift */; };
@@ -228,6 +229,7 @@
 		EE291E062844F2D6009EE116 /* FindAnagrams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAnagrams.swift; sourceTree = "<group>"; };
 		EE2978952824AFD500E84D4A /* LengthOfLIS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LengthOfLIS.swift; sourceTree = "<group>"; };
 		EE2C1C292822714700249F6F /* LongestCommonSubsequence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongestCommonSubsequence.swift; sourceTree = "<group>"; };
+		EE2D2A102868501C004AE45C /* isPalindromeNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = isPalindromeNode.swift; sourceTree = "<group>"; };
 		EE77CEBA27F09D8D00AB326F /* BinarySearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinarySearch.swift; sourceTree = "<group>"; };
 		EE77CEBC27F0AF3400AB326F /* AdvantageCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvantageCount.swift; sourceTree = "<group>"; };
 		EE80DEA928328EFC00FC3236 /* MinPathSum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinPathSum.swift; sourceTree = "<group>"; };
@@ -421,6 +423,7 @@
 				EE1AEA5B27D386F10067CCA7 /* GetIntersectionNode.swift */,
 				BE2BCC8425E27CA8007847A0 /* SwapPairs.swift */,
 				EEAE4C32285B6EA000B8A107 /* DeleteDuplicates.swift */,
+				EE2D2A102868501C004AE45C /* isPalindromeNode.swift */,
 			);
 			path = LinkList;
 			sourceTree = "<group>";
@@ -624,6 +627,7 @@
 				BE18882325C6A4BC00C6AD5F /* Flatten.swift in Sources */,
 				BE2BCC8E25E3F557007847A0 /* StrStr.swift in Sources */,
 				BED61CAD24323AF3004D5A53 /* SpiralOrder.swift in Sources */,
+				EE2D2A112868501C004AE45C /* isPalindromeNode.swift in Sources */,
 				BEDA56B922A60B550082E025 /* InsertionSort.swift in Sources */,
 				BE90DFC8262AD096003BCD7C /* IsPalindromeInt.swift in Sources */,
 				EE291E072844F2D6009EE116 /* FindAnagrams.swift in Sources */,
