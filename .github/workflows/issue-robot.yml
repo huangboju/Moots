@@ -15,6 +15,7 @@ jobs:
           # Add labels to an issue
           # https://docs.github.com/en/rest/issues/labels#add-labels-to-an-issue
           script: |
+            console.log(context)
             const body = context.payload.issue.body
             if (body && body.toLowerCase().includes("body")) {
               github.rest.issues.createComment({
