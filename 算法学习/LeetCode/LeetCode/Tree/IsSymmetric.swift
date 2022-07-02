@@ -290,4 +290,22 @@ class SolutionSymmetric {
         }
         return result
     }
+    
+    func diameterOfBinaryTree(_ root: TreeNode?) -> Int {
+        var currentDiameter = 0
+        func deepth(_ root:TreeNode?) -> Int {
+            guard let node = root else {
+                return 0
+            }
+            
+            let leftDeepth = deepth(node.left)
+            let rightDeepth = deepth(node.right)
+            
+            currentDiameter = max(currentDiameter, leftDeepth+rightDeepth)
+            return max(leftDeepth,rightDeepth) + 1
+        }
+
+        let _ = deepth(root)
+        return currentDiameter
+    }
 }
