@@ -26,20 +26,16 @@ func coinChange(_ coins: [Int], _ amount: Int) -> Int {
 
 // https://leetcode.cn/problems/coin-change-2/
 func change(_ amount: Int, _ coins: [Int]) -> Int {
-    if coins.isEmpty {
-        return 0
-    }
     if amount == 0 {
         return 1
     }
-    var memo: [Int] = Array(repeating: 0, count: amount + 1)
-    memo[0] = 1
-    for i in 1 ... coins.count {
+    var dp = Array(repeating: 0, count: amount + 1)
+    dp[0] = 1
+    for coin in coins {
         for j in 1 ... amount {
-            if j - coins[i - 1] >= 0 {
-                memo[j] = memo[j] + memo[j - coins[i - 1]]
-            }
+            if coin > j { continue }
+            dp[j] += dp[j-coin]
         }
     }
-    return memo[amount]
+    return dp[amount]
 }
