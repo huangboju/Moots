@@ -13,8 +13,8 @@ import Foundation
 func coinChange(_ coins: [Int], _ amount: Int) -> Int {
     var dp = [Int](repeating: amount + 1, count: amount + 1)
     dp[0] = 0
-    for i in 0 ..< dp.count {
-        for coin in coins {
+    for coin in coins {
+        for i in 0 ..< dp.count {
             if i - coin < 0 {
                 continue
             }
