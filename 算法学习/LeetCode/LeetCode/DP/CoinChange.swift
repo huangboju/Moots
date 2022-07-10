@@ -25,6 +25,7 @@ func coinChange(_ coins: [Int], _ amount: Int) -> Int {
 }
 
 // https://leetcode.cn/problems/coin-change-2/
+// https://leetcode.cn/problems/coin-change-2/solution/ling-qian-dui-huan-iihe-pa-lou-ti-wen-ti-dao-di-yo/
 func change(_ amount: Int, _ coins: [Int]) -> Int {
     if amount == 0 {
         return 1
