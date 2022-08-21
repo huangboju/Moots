@@ -45,6 +45,48 @@ extension String {
     }
 }
 
+struct Response: Decodable {
+    let pageInstances: [Int]
+    let url: String
+    let benefitId: String?
+    let canClaim: Bool
+    let styleInfo: StyleInfo?
+    let type: SurpriseType
+    
+    enum SurpriseType: String, Decodable {
+        case none
+        case common = "COMMON"
+        case activity = "ACTIVITY"
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case pageInstances
+        case url
+        case benefitId
+        case canClaim
+        case styleInfo
+        case type
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        benefitId = try values.decodeIfPresent(String.self, forKey: .benefitId)
+        canClaim = try values.decodeIfPresent(Bool.self, forKey: .canClaim) ?? false
+        pageInstances = try values.decodeIfPresent([Int].self, forKey: .pageInstances) ?? []
+        styleInfo = try values.decodeIfPresent(StyleInfo.self, forKey: .styleInfo)
+        type = try values.decodeIfPresent(SurpriseType.self, forKey: .type) ?? .none
+        url = try values.decodeIfPresent(String.self, forKey: .url) ?? ""
+    }
+}
+
+struct StyleInfo: Codable {
+    let decorate: String?
+    let errorBoxPic: String?
+    let open: String?
+    let quotaErrorBoxPic: String?
+    let start: String?
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -52,6 +94,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        let json = """
+            {
+              "pageInstances": [
+                34
+              ],
+              "url": "xhsdiscover://wowboxweb?link=http%3A%2F%2Fwww%2Ebeta%2Exiaohongshu%2Ecom%2Freferral%2Fwowbox%3Ftrack%5Fid%3Dfls%5Fgrowth%26benefitId%3D114451657841382374%26bizSource%3DflsKeyWord%26boxType%3DCOMMON",
+              "type": "COMMON",
+              "canClaim": false,
+              "benifitId": "111",
+              "styleInfo": {
+                "start": "https://picasso-static.xiaohongshu.com/lottie/7b6fce28-f879-46c8-b36a-4310492b2e64",
+                "open": "https://picasso-static.xiaohongshu.com/lottie/bd330287-9bb0-4c0d-8511-cd54bcfe03e2",
+                "decorate": "https://picasso-static.xiaohongshu.com/lottie/49a4cd1c-d873-466c-b00f-c07ae39c3652",
+                "errorBoxPic": "https://qimg.xiaohongshu.com/beerdemo/9e74389fa07cc467af0172b69dbc88811c541a25",
+                "quotaErrorBoxPic": "https://qimg.xiaohongshu.com/beerdemo/1e6f74874ea7700dd48ba8a40590cff355fb9479"
+              }
+            }
+        """
+        
+        if let data = json.data(using: .utf8) {
+            do {
+                let result = try JSONDecoder().decode(Response.self, from: data)
+                print(result)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
 
         return true
     }

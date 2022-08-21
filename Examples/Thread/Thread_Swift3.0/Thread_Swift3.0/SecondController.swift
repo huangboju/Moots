@@ -354,7 +354,7 @@ class SecondController: UIViewController {
 //        * 自定义并发队列 Custom Concurrent Queue: 对于需要原子操作和访问临界区的代码，barrier 方法是最佳使用场景。任何你需要线程安全的实例，barrier 都是一个不错的选择。
         
         let concurrentQueue = getConcurrentQueue("cn.zeluli")
-        for i in 0...3 {
+        for i in 0...2 {
             concurrentQueue.async {
                 self.currentThreadSleep(Double(i))
                 print("第一批：\(i.toEmoji)\(Thread.current)")

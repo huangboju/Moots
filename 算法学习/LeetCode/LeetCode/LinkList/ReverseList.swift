@@ -33,6 +33,19 @@ func reverseList(_ head: ListNode?) -> ListNode? {
 //    return last
 //}
 
+//var successor: ListNode?
+//func reverseN(_ head: ListNode?, n: Int) -> ListNode? {
+//    if n == 1 {
+//        // 记录第 n + 1 个节点
+//        successor = head?.next
+//        return head
+//    }
+//    let last = reverseN(head?.next, n: n - 1)
+//    head?.next?.next = head
+//    head?.next = successor
+//    return last
+//}
+
 class ReverseBetween {
     func reverseBetween(_ head: ListNode?, _ left: Int, _ right: Int) -> ListNode? {
         let dummy = ListNode(-1)

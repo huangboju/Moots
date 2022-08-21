@@ -27,3 +27,22 @@ func canPartition(_ nums: [Int]) -> Bool {
     }
     return memo[nums.count][target]
 }
+
+func _canPartition(_ nums: [Int]) -> Bool {
+    let sum = nums.reduce(0, +)
+    guard sum % 2 == 0 else {
+        return false
+    }
+    let target = sum / 2
+    
+    var dp = Array(repeating: false, count: target + 1)
+    dp[0] = true
+    for n in nums {
+        for j in (0 ... target).reversed() {
+            if j >= n {
+                dp[j] = dp[j] || dp[j - n]
+            }
+        }
+    }
+    return dp[target]
+}
