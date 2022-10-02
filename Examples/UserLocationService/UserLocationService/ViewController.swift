@@ -50,7 +50,7 @@ import CoreLocation
 //        manager.stopUpdatingLocation()
 //    }
 //}
-
+// https://medium.com/@JuanpeCatalan/solving-dependencies-in-swift-9ee6ad4a8941
 class ViewControllerWithoutCL: UIViewController {
     
     var locationProvider: UserLocationProvider
