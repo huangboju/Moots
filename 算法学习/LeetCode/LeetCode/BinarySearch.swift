@@ -26,20 +26,6 @@ func binarySearch(_ nums: [Int], _ target: Int) -> Int {
         }
     }
     return -1
-    
-//    var left = 0
-//    var right = nums.count
-//    while left < right {
-//        let mid = left + (right - left) / 2
-//        if nums[mid] == target {
-//            return mid
-//        } else if nums[mid] > target {
-//            right -= 1
-//        } else {
-//            left += 1
-//        }
-//    }
-//    return -1
 }
 
 func leftBound(_ nums: [Int], _ target: Int) -> Int {
