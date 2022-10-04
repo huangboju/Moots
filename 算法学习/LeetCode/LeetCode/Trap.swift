@@ -8,6 +8,8 @@
 
 import Foundation
 
+//height = [0,1,0,2,1,0,1,3,2,1,2,1]
+
 // https://leetcode-cn.com/problems/trapping-rain-water/
 func trap(_ height: [Int]) -> Int {
     if height.count <= 2 {
