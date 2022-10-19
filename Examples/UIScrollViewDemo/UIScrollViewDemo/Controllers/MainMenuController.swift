@@ -60,6 +60,9 @@ class MainMenuController: UIViewController {
         ],
         [
             NestedScrollViewVC.self
+        ],
+        [
+            EmbedScrollViewVC.self
         ]
     ]
 
