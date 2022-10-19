@@ -21,20 +21,21 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
 
         view.addSubview(outerScrollView)
 
-        view.addSubview(nestedScrollView)
+        outerScrollView.addSubview(nestedScrollView)
     }
 
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        if scrollView == nestedScrollView {
-            nestedScrollingDecelerator.invalidateIfNeeded()
-        } else {
+        if scrollView == outerScrollView {
             outerScrollingDecelerator.invalidateIfNeeded()
+        } else {
+            nestedScrollingDecelerator.invalidateIfNeeded()
         }
     }
 
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
         if scrollView == outerScrollView {
             outerDeceleration = ScrollingDeceleration(velocity: velocity, decelerationRate: scrollView.decelerationRate)
+            nestedScrollingDecelerator.decelerate(by: outerDeceleration!)
         } else {
             nestedDeceleration = ScrollingDeceleration(velocity: velocity, decelerationRate: scrollView.decelerationRate)
         }
@@ -61,7 +62,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }()
 
     private lazy var outerScrollingDecelerator: ScrollingDecelerator = {
-        ScrollingDecelerator(scrollView: nestedScrollView)
+        ScrollingDecelerator(scrollView: outerScrollView)
     }()
 
     private lazy var outerScrollView: UIScrollView = {
@@ -73,7 +74,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }()
 
     private lazy var nestedScrollView: UIScrollView = {
-        let nestedScrollView = UIScrollView(frame: CGRect(x: 0, y: 580, width: view.frame.width, height: 120))
+        let nestedScrollView = UIScrollView(frame: CGRect(x: 0, y: 700, width: view.frame.width, height: 500))
         nestedScrollView.contentSize = CGSize(width: view.frame.width, height: 1000)
         nestedScrollView.backgroundColor = .systemGreen.withAlphaComponent(0.7)
         nestedScrollView.delegate = self
