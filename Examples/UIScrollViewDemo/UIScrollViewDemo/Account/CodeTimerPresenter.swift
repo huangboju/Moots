@@ -12,7 +12,7 @@ enum CheckCodeError: Error {
     case codeError
 }
 
-protocol VerificationCodePresenter: class {
+protocol VerificationCodePresenter: AnyObject {
     var timer: DispatchSourceTimer? { set get }
 }
 

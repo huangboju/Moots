@@ -9,7 +9,7 @@
 import UIKit
 
 @objc
-protocol SignActionPresenter: class {
+protocol SignActionPresenter: AnyObject {
     
     func signInAction()
 }

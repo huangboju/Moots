@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol LinerCardViewDelegate: class {
+protocol LinerCardViewDelegate: AnyObject {
     func didSelectItem(at index: Int, model: String)
 }
 

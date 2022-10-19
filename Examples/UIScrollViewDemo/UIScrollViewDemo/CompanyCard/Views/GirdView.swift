@@ -14,7 +14,7 @@ struct GirdItem {
     let title: String
 }
 
-protocol GirdViewDelegate: class {
+protocol GirdViewDelegate: AnyObject {
     func didSelectItem<T>(at indexPath: IndexPath, item: T)
 }
 
