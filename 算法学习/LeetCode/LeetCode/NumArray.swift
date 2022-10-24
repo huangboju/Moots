@@ -27,6 +27,7 @@ class NumArray {
     }
 }
 
+// https://leetcode.cn/problems/range-sum-query-2d-immutable/solution/ru-he-qiu-er-wei-de-qian-zhui-he-yi-ji-y-6c21/
 class NumMatrix {
     
     var preSum: [[Int]] = []

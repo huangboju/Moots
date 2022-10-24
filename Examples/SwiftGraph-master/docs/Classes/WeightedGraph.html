@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>WeightedGraph Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/WeightedGraph" class="dashAnchor"></a>
+    <a title="WeightedGraph Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">SwiftGraph 3.1 Docs</a> (73% documented)</p>
+        <p class="header-right"><a href="https://github.com/davecom/SwiftGraph"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">SwiftGraph Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        WeightedGraph Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Queue.html">Queue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Stack.html">Stack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UniqueElementsGraph.html">UniqueElementsGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/UnweightedGraph.html">UnweightedGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WeightedGraph.html">WeightedGraph</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/CompleteGraph.html">CompleteGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/StarGraph.html">StarGraph</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftGraph25distanceArrayToVertexDict9distances5graphSDyxq_SgGSayAEG_AA08WeightedB0Cyxq_GtSeRzSERzSHRzSeR_SER_SQR_r0_lF">distanceArrayToVertexDict(distances:graph:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftGraph14pathDictToPath4from2to0cD0SayAA12WeightedEdgeVyxGGSi_SiSDySiAHGtSeRzSERzSQRzlF">pathDictToPath(from:to:pathDict:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftGraph14pathDictToPath4from2to0cD0SayAA4Edge_pGSi_SiSDySiAaF_pGtF">pathDictToPath(from:to:pathDict:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftGraph8printMST5edges5graphySayAA12WeightedEdgeVyq_GG_AA0gB0Cyxq_GtSeRzSERzSQRzSeR_SER_SjR_r0_lF">printMST(edges:graph:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:10SwiftGraph11totalWeightyxSgSayAA12WeightedEdgeVyxGGSeRzSERzSjRzlF">totalWeight(_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Edge.html">Edge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Graph.html">Graph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/WeightedEdgeProtocol.html">WeightedEdgeProtocol</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/PriorityQueue.html">PriorityQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/UnweightedEdge.html">UnweightedEdge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WeightedEdge.html">WeightedEdge</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftGraph024UnweightedUniqueElementsB0a">UnweightedUniqueElementsGraph</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:10SwiftGraph022WeightedUniqueElementsB0a">WeightedUniqueElementsGraph</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>WeightedGraph</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">WeightedGraph</span><span class="o">&lt;</span><span class="kt">V</span><span class="p">,</span> <span class="kt">W</span><span class="o">&gt;</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Graph.html">Graph</a></span> <span class="k">where</span> <span class="kt">V</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">V</span> <span class="p">:</span> <span class="kt">Encodable</span><span class="p">,</span> <span class="kt">V</span> <span class="p">:</span> <span class="kt">Equatable</span><span class="p">,</span> <span class="kt">W</span> <span class="p">:</span> <span class="kt">Decodable</span><span class="p">,</span> <span class="kt">W</span> <span class="p">:</span> <span class="kt">Encodable</span><span class="p">,</span> <span class="kt">W</span> <span class="p">:</span> <span class="kt">Equatable</span></code></pre>
+
+                </div>
+              </div>
+            <p>An implementation of Graph that has convenience methods for adding and removing WeightedEdges. All added Edges should have the same generic Comparable type W as the WeightedGraph itself.</p>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L20-L56">Show on GitHub</a>
+              </div>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0C8verticesSayxGvp"></a>
+                    <a name="//apple_ref/swift/Property/vertices" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0C8verticesSayxGvp">vertices</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">vertices</span><span class="p">:</span> <span class="p">[</span><span class="kt">V</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0C5edgesSaySayAA0C4EdgeVyq_GGGvp"></a>
+                    <a name="//apple_ref/swift/Property/edges" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0C5edgesSaySayAA0C4EdgeVyq_GGGvp">edges</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">edges</span><span class="p">:</span> <span class="p">[[</span><span class="kt"><a href="../Structs/WeightedEdge.html">WeightedEdge</a></span><span class="o">&lt;</span><span class="kt">W</span><span class="o">&gt;</span><span class="p">]]</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0CACyxq_Gycfc"></a>
+                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0CACyxq_Gycfc">init()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L25-L26">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0C8verticesACyxq_GSayxG_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(vertices:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0C8verticesACyxq_GSayxG_tcfc">init(vertices:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">vertices</span><span class="p">:</span> <span class="p">[</span><span class="kt">V</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L28-L32">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0C7addEdge_8directedyAA0cE0Vyq_G_SbtF"></a>
+                    <a name="//apple_ref/swift/Method/addEdge(_:directed:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0C7addEdge_8directedyAA0cE0Vyq_G_SbtF">addEdge(_:<wbr>directed:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add an edge to the graph.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addEdge</span><span class="p">(</span><span class="n">_</span> <span class="nv">e</span><span class="p">:</span> <span class="kt"><a href="../Structs/WeightedEdge.html">WeightedEdge</a></span><span class="o">&lt;</span><span class="kt">W</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">directed</span><span class="p">:</span> <span class="kt">Bool</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>e</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The edge to add.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>directed</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>If false, undirected edges are created.
+                  If true, a reversed edge is also created.
+                  Default is false.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L40-L45">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0C9addVertexySixF"></a>
+                    <a name="//apple_ref/swift/Method/addVertex(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0C9addVertexySixF">addVertex(_:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Add a vertex to the graph.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">addVertex</span><span class="p">(</span><span class="n">_</span> <span class="nv">v</span><span class="p">:</span> <span class="kt">V</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>v</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The vertex to be added.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>The index where the vertex was added.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/WeightedGraph.swift#L51-L55">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60W%60%3A%20%60Comparable%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `W`: `Comparable`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60W%60%3A%20%60Comparable%60"></a>
+                  <h3 class="section-name"><p>Available where <code>W</code>: <code>Comparable</code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0CAASLR_rlE3mst5startSayAA0C4EdgeVyq_GGSgSi_tF"></a>
+                    <a name="//apple_ref/swift/Method/mst(start:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0CAASLR_rlE3mst5startSayAA0C4EdgeVyq_GGSgSi_tF">mst(start:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Find the minimum spanning tree in a weighted graph. This is the set of edges
+that touches every vertex in the graph and is of minimal combined weight. This function
+uses Jarnik&rsquo;s Algorithm (aka Prim&rsquo;s Algorithm) and so assumes the graph has
+undirected edges. For a graph with directed edges, the result may be incorrect. Also,
+if the graph is not fully connected, the tree will only span the connected component from which
+the starting vertex belongs.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">mst</span><span class="p">(</span><span class="nv">start</span><span class="p">:</span> <span class="kt">Int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Structs/WeightedEdge.html">WeightedEdge</a></span><span class="o">&lt;</span><span class="kt">W</span><span class="o">&gt;</span><span class="p">]?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>start</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index of the vertex to start creating the MST from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An array of WeightedEdges containing the minimum spanning tree, or nil if the starting vertex is invalid. If there are is only one vertex connected to the starting vertex, an empty list is returned.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/MST.swift#L34-L56">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Available%20where%20%60W%60%3A%20%60Comparable%60%20%26%20%60Numeric%60"></a>
+                <a name="//apple_ref/swift/Section/Available where `W`: `Comparable` &amp; `Numeric`" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/Available%20where%20%60W%60%3A%20%60Comparable%60%20%26%20%60Numeric%60"></a>
+                  <h3 class="section-name"><p>Available where <code>W</code>: <code>Comparable</code> &amp; <code>Numeric</code></p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0CAASLR_SjR_rlE8dijkstra4root13startDistanceSayq_SgG_SDySiAA0C4EdgeVyq_GGtSi_q_tF"></a>
+                    <a name="//apple_ref/swift/Method/dijkstra(root:startDistance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0CAASLR_SjR_rlE8dijkstra4root13startDistanceSayq_SgG_SDySiAA0C4EdgeVyq_GGtSi_q_tF">dijkstra(root:<wbr>startDistance:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Finds the shortest paths from some route vertex to every other vertex in the graph.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="nv">root</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="nv">startDistance</span><span class="p">:</span> <span class="kt">W</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt">W</span><span class="p">?],</span> <span class="p">[</span><span class="kt">Int</span> <span class="p">:</span> <span class="kt"><a href="../Structs/WeightedEdge.html">WeightedEdge</a></span><span class="o">&lt;</span><span class="kt">W</span><span class="o">&gt;</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>graph</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The WeightedGraph to look within.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>root</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The index of the root node to build the shortest paths from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>startDistance</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The distance to get to the root node (typically 0).</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Returns a tuple of two things: the first, an array containing the distances, the second, a dictionary containing the edge to reach each vertex. Use the function pathDictToPath() to convert the dictionary into something useful for a specific point.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/Search.swift#L506-L526">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:10SwiftGraph08WeightedB0CAASLR_SjR_rlE8dijkstra4root13startDistanceSayq_SgG_SDySiAA0C4EdgeVyq_GGtx_q_tF"></a>
+                    <a name="//apple_ref/swift/Method/dijkstra(root:startDistance:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:10SwiftGraph08WeightedB0CAASLR_SjR_rlE8dijkstra4root13startDistanceSayq_SgG_SDySiAA0C4EdgeVyq_GGtx_q_tF">dijkstra(root:<wbr>startDistance:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A convenience version of dijkstra() that allows the supply of the root
+vertex instead of the index of the root vertex.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">dijkstra</span><span class="p">(</span><span class="nv">root</span><span class="p">:</span> <span class="kt">V</span><span class="p">,</span> <span class="nv">startDistance</span><span class="p">:</span> <span class="kt">W</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">([</span><span class="kt">W</span><span class="p">?],</span> <span class="p">[</span><span class="kt">Int</span> <span class="p">:</span> <span class="kt"><a href="../Structs/WeightedEdge.html">WeightedEdge</a></span><span class="o">&lt;</span><span class="kt">W</span><span class="o">&gt;</span><span class="p">])</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/davecom/SwiftGraph/tree/3.1/Sources/SwiftGraph/Search.swift#L531-L536">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://twitter.com/davekopec" target="_blank" rel="external">David</a>. All rights reserved. (Last updated: 2021-02-19)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.6</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

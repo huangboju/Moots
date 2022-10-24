@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>classNames</key>
+	<dict>
+		<key>ConstructorsPerformanceTests</key>
+		<dict>
+			<key>testCompleteGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.3838</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testCycleGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.0632</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testCycleUniqueElementsGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.1685</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testCycleUniqueElementsHashableConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.3717</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testCycleUnweightedGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.6898</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testPathGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.03</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testPathUniqueElementsGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.3246</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testPathUniqueElementsGraphHashableConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.1411</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testPathUnweightedGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.7049</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testStarGraphConstructor()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.1266</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>SearchPerformanceTests</key>
+		<dict>
+			<key>testBfsInCompleteGraph()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.83567</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testBfsInCompleteGraphWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.89664</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInCompleteGraphWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.88801</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInPath()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.12806</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInPathByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.1047</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInPathWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.0651</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInPathWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.06541</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInStarGraph()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.083812</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInStarGraphByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.059561</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInStarGraphWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.081889</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testBfsInStarGraphWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.08062</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInCompleteGraph()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.974</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testDfsInCompleteGraphWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.4402</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInCompleteGraphWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>1.4464</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInPath()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.12917</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInPathByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.10377</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInPathWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.077341</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInPathWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.077921</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInStarGraph()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.058304</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInStarGraphByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.034079</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInStarGraphWithGoalTest()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.077812</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+			<key>testDfsInStarGraphWithGoalTestByIndex()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>0.077114</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>8 Mar 2019 at 00:20:07</string>
+				</dict>
+			</dict>
+		</dict>
+		<key>UnionTests</key>
+		<dict>
+			<key>testDisjointUnion()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.0054</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+			<key>testUnionWithSelf()</key>
+			<dict>
+				<key>com.apple.XCTPerformanceMetric_WallClockTime</key>
+				<dict>
+					<key>baselineAverage</key>
+					<real>2.0124</real>
+					<key>baselineIntegrationDisplayName</key>
+					<string>Local Baseline</string>
+				</dict>
+			</dict>
+		</dict>
+	</dict>
+</dict>
+</plist>

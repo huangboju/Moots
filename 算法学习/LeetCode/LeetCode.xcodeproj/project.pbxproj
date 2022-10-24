@@ -295,6 +295,7 @@
 		D81B3E7D1EA707A200214304 /* LeetCode */ = {
 			isa = PBXGroup;
 			children = (
+				EE8445E628ED6A4300DF4DC7 /* Array */,
 				EEA0E1A2284B848400A2E6C5 /* NSum */,
 				EE291E012844F266009EE116 /* SlidingWindow */,
 				EEC178F72841D232008C5F18 /* Backtrack */,
@@ -325,7 +326,6 @@
 				BEDA568922A60B540082E025 /* MergeSort.swift */,
 				BEDA568B22A60B540082E025 /* MinCount.swift */,
 				BEDA568322A60B540082E025 /* MinSubArrayLen.swift */,
-				BEDA568522A60B540082E025 /* MoveZeroes.swift */,
 				BEDA569522A60B550082E025 /* ProductExceptSelf.swift */,
 				BEDA567D22A60B540082E025 /* Rotate.swift */,
 				BEDA569A22A60B550082E025 /* RunLengthEncoding.swift */,
@@ -361,8 +361,6 @@
 				BE90AAD325AADB3600AFB109 /* ThreeSumClosest.swift */,
 				BE5A5EC325C2FC17000D9691 /* IsValid.swift */,
 				BE2BCC8125E25A8A007847A0 /* GenerateParenthesis.swift */,
-				BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */,
-				BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */,
 				BE2BCC8D25E3F557007847A0 /* StrStr.swift */,
 				BE4B596125E7E92200F994BE /* SearchRange.swift */,
 				BE81BDB225EB7BB3000A67D8 /* SearchInsert.swift */,
@@ -396,6 +394,16 @@
 				BEDA568A22A60B540082E025 /* LongestSubstringWithoutRepeatingCharacters.swift */,
 			);
 			path = SlidingWindow;
+			sourceTree = "<group>";
+		};
+		EE8445E628ED6A4300DF4DC7 /* Array */ = {
+			isa = PBXGroup;
+			children = (
+				BE2BCC8725E29437007847A0 /* RemoveDuplicates.swift */,
+				BE2BCC8A25E3F104007847A0 /* RemoveElement.swift */,
+				BEDA568522A60B540082E025 /* MoveZeroes.swift */,
+			);
+			path = Array;
 			sourceTree = "<group>";
 		};
 		EEA0E1A2284B848400A2E6C5 /* NSum */ = {
