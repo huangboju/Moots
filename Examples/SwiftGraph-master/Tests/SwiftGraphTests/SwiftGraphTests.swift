@@ -95,26 +95,4 @@ class SwiftGraphTests: XCTestCase {
         XCTAssertFalse(graph.edgeExists(fromIndex: 2, toIndex: 3))
         XCTAssertFalse(graph.edgeExists(fromIndex: 3, toIndex: 2))
     }
-    
-    func testSku() {
-        var graph = UnweightedGraph(vertices: ["红色", "紫色", "套餐一", "套餐二", "64G", "128G", "256G"])
-        
-        graph.addEdge(from: "紫色", to: "红色")
-        graph.addEdge(from: "紫色", to: "套餐一")
-        graph.addEdge(from: "紫色", to: "套餐二")
-        graph.addEdge(from: "紫色", to: "64G")
-        graph.addEdge(from: "紫色", to: "128G")
-        
-        
-        graph.addEdge(from: "红色", to: "紫色")
-        graph.addEdge(from: "红色", to: "套餐二")
-        graph.addEdge(from: "红色", to: "256G")
-        
-        graph.addEdge(from: "套餐一", to: "紫色")
-        graph.addEdge(from: "套餐一", to: "套餐二")
-        graph.addEdge(from: "套餐一", to: "64G")
-        graph.addEdge(from: "套餐一", to: "128G")
-        
-        print(graph.edgesForVertex("红色"))
-    }
 }
