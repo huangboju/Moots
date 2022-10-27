@@ -17,7 +17,7 @@
 //  limitations under the License.
 
 /// A basic unweighted edge.
-public struct UnweightedEdge: Edge, CustomStringConvertible, Equatable {
+public struct UnweightedEdge: Edge, CustomStringConvertible, Hashable {
     public var u: Int
     public var v: Int
     public var directed: Bool
@@ -40,5 +40,11 @@ public struct UnweightedEdge: Edge, CustomStringConvertible, Equatable {
     // MARK: Operator Overloads
     static public func ==(lhs: UnweightedEdge, rhs: UnweightedEdge) -> Bool {
         return lhs.u == rhs.u && lhs.v == rhs.v
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(u)
+        hasher.combine(v)
+        hasher.combine(directed)
     }
 }
