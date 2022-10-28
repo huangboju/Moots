@@ -8,14 +8,8 @@
 
 import UIKit
 
-class AutolayoutMenuController: UIViewController {
-    fileprivate lazy var tableView: UITableView = {
-        let tableView = UITableView(frame: self.view.frame, style: .grouped)
-        tableView.dataSource = self
-        tableView.delegate = self
-        return tableView
-    }()
-    
+class AutolayoutMenuController: GroupTableController {
+
     lazy var data: [[UIViewController.Type]] = [
         [
             SimpleStackViewController.self,
@@ -43,45 +37,23 @@ class AutolayoutMenuController: UIViewController {
         ]
     ]
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    override func initSubviews() {
         title = "\(classForCoder)"
-        
-        tableView.register(AutoLayoutMainCell.self, forCellReuseIdentifier: "cell")
-        view.addSubview(tableView)
-    }
-}
 
-extension AutolayoutMenuController: UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return data.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data[section].count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-    }
-}
+        var result: [[RowType]] = []
 
-extension AutolayoutMenuController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.accessoryType = .disclosureIndicator
-        cell.textLabel?.text = "\(data[indexPath.section][indexPath.row].classForCoder())"
+        for section in data {
+            let rows = section.map { Row<TitleCell>(viewData: TitleCellItem(segue: .segue($0))) }
+            result.append(rows)
+        }
+
+        rows = result
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        let controllerName = "\(data[indexPath.section][indexPath.row].classForCoder())"
-        if let controller = controllerName.fromClassName() as? UIViewController {
-            controller.title = controllerName
-            controller.hidesBottomBarWhenPushed = true
-            controller.view.backgroundColor = .white
-            navigationController?.pushViewController(controller, animated: true)
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item: TitleCellItem = rows[indexPath.section][indexPath.row].cellItem()
+        show(item.segue) { vc in
+            vc.title = item.title
         }
     }
 }
