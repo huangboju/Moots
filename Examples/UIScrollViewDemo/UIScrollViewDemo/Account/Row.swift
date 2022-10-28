@@ -10,10 +10,9 @@ import UIKit
 
 struct NoneItem {}
 
-protocol Updatable: AnyObject {
-    
+public protocol Updatable: AnyObject {
+
     associatedtype ViewData
-    
     func update(viewData: ViewData)
 }
 
@@ -21,42 +20,56 @@ extension Updatable {
     func update(viewData: NoneItem) {}
 }
 
-protocol RowType {
-    
-    var tag: String { get }
-    
-    var reuseIdentifier: String { get }
+public protocol FormCellable {}
+extension UITableViewCell: FormCellable {}
+extension UICollectionViewCell: FormCellable {}
+
+public protocol RowType {
+
+    var tag: RowTag { get }
+
     var cellClass: AnyClass { get }
-    
-    func update(cell: UITableViewCell)
-    
-    
-    func cell<T: UITableViewCell>() -> T
+
+    func update(cell: FormCellable)
+
+    var reuseIdentifier: String { get }
+
+    func cell<C: FormCellable>() -> C
+    func cellItem<M>() -> M
 }
 
-class Row<Cell> where Cell: Updatable, Cell: UITableViewCell {
+public class Row<Cell> where Cell: Updatable & FormCellable {
 
-    let tag: String
-    
-    let viewData: Cell.ViewData
-    let reuseIdentifier = "\(Cell.classForCoder())"
-    let cellClass: AnyClass = Cell.self
+    public let viewData: Cell.ViewData
+    private var _cell: Cell?
 
-    init(viewData: Cell.ViewData, tag: String = "") {
+    public var reuseIdentifier: String {
+        "\(cellClass)"
+    }
+
+    public init(viewData: Cell.ViewData, tag: RowTag = .none) {
         self.viewData = viewData
         self.tag = tag
     }
-    
-    func cell<T: UITableViewCell>() -> T {
-        guard let cell = _cell as? T else {
+
+    public let tag: RowTag
+    public let cellClass: AnyClass = Cell.self
+
+    public func cell<C: FormCellable>() -> C {
+        guard let cell = _cell as? C else {
             fatalError("cell 类型错误")
         }
         return cell
     }
 
-    private var _cell: Cell?
+    public func cellItem<M>() -> M {
+        guard let cellItem = viewData as? M else {
+            fatalError("cellItem 类型错误")
+        }
+        return cellItem
+    }
 
-    func update(cell: UITableViewCell) {
+    public func update(cell: FormCellable) {
         if let cell = cell as? Cell {
             self._cell = cell
             cell.update(viewData: viewData)
@@ -65,5 +78,32 @@ class Row<Cell> where Cell: Updatable, Cell: UITableViewCell {
 }
 
 extension Row: RowType {}
+
+public class RowTags {
+    fileprivate init() {}
+}
+
+public class RowTag: RowTags {
+    public let _key: String
+
+    public init(_ key: String) {
+        self._key = key
+        super.init()
+    }
+}
+
+extension RowTag: Hashable {
+    public static func ==(lhs: RowTag, rhs: RowTag) -> Bool {
+        return lhs.hashValue == rhs.hashValue
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(_key)
+    }
+}
+
+public extension RowTags {
+    static let none = RowTag("")
+}
 
 

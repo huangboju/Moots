@@ -119,6 +119,9 @@
 		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
 		BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BD1FD14C420099151E /* TableNestCollectionController.swift */; };
 		BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */; };
+		BEDAFFE5290BAFCC00FB67BB /* SkuListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFE4290BAFCC00FB67BB /* SkuListVC.swift */; };
+		BEDAFFE7290BB62400FB67BB /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFE6290BB62400FB67BB /* TitleCell.swift */; };
+		BEDAFFE9290BB72D00FB67BB /* SkuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFE8290BB72D00FB67BB /* SkuVC.swift */; };
 		BEF29C83251112B80094EBD5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF29C7F251112B80094EBD5 /* data.json */; };
 		BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C81251112B80094EBD5 /* GLImageCell.swift */; };
 		BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */; };
@@ -313,6 +316,9 @@
 		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
 		BED604BD1FD14C420099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSelfsizingController.swift; sourceTree = "<group>"; };
+		BEDAFFE4290BAFCC00FB67BB /* SkuListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuListVC.swift; sourceTree = "<group>"; };
+		BEDAFFE6290BB62400FB67BB /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		BEDAFFE8290BB72D00FB67BB /* SkuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuVC.swift; sourceTree = "<group>"; };
 		BEF29C7F251112B80094EBD5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		BEF29C81251112B80094EBD5 /* GLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLImageCell.swift; sourceTree = "<group>"; };
 		BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadVC.swift; sourceTree = "<group>"; };
@@ -534,6 +540,7 @@
 				BE18BBA21FB0382500B03048 /* CaptchaCell.swift */,
 				BE95F4F11FC402310033D83B /* ResetPasswordFieldCell.swift */,
 				BE95F4F31FC404DC0033D83B /* ResetPasswrodCell.swift */,
+				BEDAFFE6290BB62400FB67BB /* TitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -633,6 +640,15 @@
 				BE4FCA8E1FB96A6A00E1C3F0 /* MemberPriceAlert.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		BEDAFFE3290BAFBE00FB67BB /* Sku */ = {
+			isa = PBXGroup;
+			children = (
+				BEDAFFE4290BAFCC00FB67BB /* SkuListVC.swift */,
+				BEDAFFE8290BB72D00FB67BB /* SkuVC.swift */,
+			);
+			path = Sku;
 			sourceTree = "<group>";
 		};
 		BEF29C7E251112430094EBD5 /* LazyLoadVC */ = {
@@ -785,6 +801,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEDAFFE3290BAFBE00FB67BB /* Sku */,
 				EEAE4C34285F4B8A00B8A107 /* DiffableDatasource */,
 				EEA0E19F284AEA5300A2E6C5 /* Vision */,
 				BE3A566F251F325B005FFCF6 /* AlertController.swift */,
@@ -1024,6 +1041,7 @@
 				BED1CCF71FB2E6C6002FE096 /* MyCompanyController.swift in Sources */,
 				BE36540C1F9CA0CF001A8432 /* DynamicHeightLabelAndTextField.swift in Sources */,
 				BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */,
+				BEDAFFE9290BB72D00FB67BB /* SkuVC.swift in Sources */,
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
 				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
@@ -1094,6 +1112,7 @@
 				F79C0AF1218457AF008448E3 /* MaskShapeLayerVC.swift in Sources */,
 				BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */,
 				D8076CC01DF272FA008ACB34 /* CycleView.swift in Sources */,
+				BEDAFFE5290BAFCC00FB67BB /* SkuListVC.swift in Sources */,
 				BE95F4F21FC402310033D83B /* ResetPasswordFieldCell.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
@@ -1153,6 +1172,7 @@
 				BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */,
 				BE1B15551FB2A41A00862271 /* UITableView+Reusable.swift in Sources */,
 				BE4FCA801FB9433500E1C3F0 /* MemberAlertTitleCell.swift in Sources */,
+				BEDAFFE7290BB62400FB67BB /* TitleCell.swift in Sources */,
 				BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */,
 				F7A41CCC21999A5500D0A3C3 /* AutolayoutMenuController.swift in Sources */,
 				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,

@@ -45,15 +45,13 @@ class WeightedGraphTests: XCTestCase {
     
     func testSku() {
         let graph = WeightedGraph<String, Set<String>>(vertices: ["红色", "紫色", "套餐一", "套餐二", "64G", "128G", "256G"])
-        
-        graph.addEdge(from: "紫色", to: "红色", weight: ["紫色,红色"])
+
         graph.addEdge(from: "紫色", to: "套餐一", weight: ["紫色,套餐一,64G", "紫色,套餐一,128G"])
         graph.addEdge(from: "紫色", to: "套餐二", weight: ["紫色,套餐二,128G"])
         graph.addEdge(from: "紫色", to: "64G", weight: ["紫色,套餐一,64G"])
         graph.addEdge(from: "紫色", to: "128G", weight: ["紫色,套餐一,128G"])
         
-        
-        graph.addEdge(from: "红色", to: "紫色", weight: ["紫色,红色"])
+
         graph.addEdge(from: "红色", to: "套餐二", weight: ["红色,套餐二,256G"])
         graph.addEdge(from: "红色", to: "256G", weight: ["红色,套餐二,256G"])
         
@@ -69,7 +67,7 @@ class WeightedGraphTests: XCTestCase {
         let set1 = Set(arr1.map { $0.weight })
         print("set1:", set1)
         guard let arr2 = graph.edgesForVertex("套餐一") else {
-            return
+            return 
         }
         let set2 = Set(arr2.map { $0.weight })
         print("set2:", set2)

@@ -27,22 +27,22 @@ class FormView: UITableView {
         return rows[indexPath.section][indexPath.row]
     }
     
-    final var tags: Set<String> {
-        let _tags = rows.flatMap { $0 }.map { $0.tag }
-        return Set(_tags)
-    }
-    
-    final func cellBy<T: UITableViewCell>(tag: String) -> T {
-        for section in rows {
-            for row in section where row.tag == tag {
-                guard let cell = row.cell() as? T else {
-                    fatalError("cell不存在")
-                }
-                return cell
-            }
-        }
-        fatalError("cell不存在")
-    }
+//    final var tags: Set<String> {
+//        let _tags = rows.flatMap { $0 }.map { $0.tag }
+//        return Set(_tags)
+//    }
+//    
+//    final func cellBy<T: UITableViewCell>(tag: String) -> T {
+//        for section in rows {
+//            for row in section where row.tag == tag {
+//                guard let cell = row.cell() as? T else {
+//                    fatalError("cell不存在")
+//                }
+//                return cell
+//            }
+//        }
+//        fatalError("cell不存在")
+//    }
 
     final func tableHeaderView<T: UIView>() -> T? {
         guard let headerView = tableHeaderView as? T else {
