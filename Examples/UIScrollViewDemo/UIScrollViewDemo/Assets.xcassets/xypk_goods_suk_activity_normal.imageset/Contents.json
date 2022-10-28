@@ -1,0 +1,22 @@
+{
+  "images" : [
+    {
+      "filename" : "xypk_goods_suk_activity_normal.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "xypk_goods_suk_activity_normal_dark.png",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
