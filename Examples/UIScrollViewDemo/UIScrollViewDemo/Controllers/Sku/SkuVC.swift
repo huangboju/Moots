@@ -59,3 +59,11 @@ final class SkuVC: UIViewController {
         SkuViewModel()
     }()
 }
+
+extension SkuVC: SKUCellDelegate {
+    func skuCellItemDidSelect(_ cell: SKUCell) {
+        guard let goodsModel = cell.cellModel?.selectedGoods else { return }
+        viewModel.refreshInfoRow(with: goodsModel)
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+    }
+}
