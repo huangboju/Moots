@@ -150,10 +150,10 @@ class SKUCellModel {
         for item in allItems where changedItem.indexPath.section != item.indexPath.section {
             let result = selectedItemSets[item.indexPath.section]
             var tuple: (SKUItemStatus, Bool) = (.unfound, false)
-            for (key, value) in item.state.goodsMap where result.isSubset(of: key) {
+            for (key, value) in item.state.goodsMap where result.0.isSubset(of: key) {
                 let new = VariantState.status(with: value.status)
                 tuple.0 = new.rawValue < tuple.0.rawValue ? new : tuple.0
-                tuple.1 = value.isActivity
+                tuple.1 = item.state.optimalActivity && result.1
             }
             item.setStatus(with: tuple.0, isActivity: tuple.1)
         }
@@ -166,14 +166,15 @@ class SKUCellModel {
         selectedGoods = goods
     }
 
-    func selectedItemSets() -> [Set<Variant>] {
-        var result: [Set<Variant>] = Array(repeating: [], count: sections.count)
+    func selectedItemSets() -> [(Set<Variant>, Bool)] {
+        var result: [(Set<Variant>, Bool)] = Array(repeating: (Set<Variant>(), false), count: sections.count)
         for section in 0 ..< result.count {
-            var selectedVariantSet: Set<Variant> = []
+            var tuple: (Set<Variant>, Bool) = ([], true)
             for item in selectedItemSet where item.indexPath.section != section {
-                selectedVariantSet.insert(item.variant)
+                tuple.0.insert(item.variant)
+                tuple.1 = tuple.1 && item.state.optimalActivity
             }
-            result[section] = selectedVariantSet
+            result[section] = tuple
         }
         return result
     }
