@@ -29,7 +29,10 @@
                 ],
                 "main_image": "http://qimg.xiaohongshu.com/arkgoods/03029m01kowpcw09v6l2o0wlv1w0jndbts",
                 "id": "633a6b9cf696fd0001445b41",
-                "price": "1"
+                "price": "1",
+                "extension": {
+                    "activityFlag": "1"
+                }
             },
             {
                 "image": "",
