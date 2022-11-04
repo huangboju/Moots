@@ -117,6 +117,7 @@
 		BED1CCF71FB2E6C6002FE096 /* MyCompanyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */; };
 		BED1CCF91FB2E7A3002FE096 /* MyCoInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */; };
 		BED1CCFB1FB2EF9A002FE096 /* MyCoRightsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */; };
+		BED5652629150A3600EC0C62 /* DisplayLinkAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED5652529150A3600EC0C62 /* DisplayLinkAnimator.swift */; };
 		BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED604BD1FD14C420099151E /* TableNestCollectionController.swift */; };
 		BED893BC1FEE998100E43A69 /* TextViewSelfsizingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */; };
 		BEDAFFE5290BAFCC00FB67BB /* SkuListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFE4290BAFCC00FB67BB /* SkuListVC.swift */; };
@@ -324,6 +325,7 @@
 		BED1CCF61FB2E6C6002FE096 /* MyCompanyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCompanyController.swift; sourceTree = "<group>"; };
 		BED1CCF81FB2E7A3002FE096 /* MyCoInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoInfoCell.swift; sourceTree = "<group>"; };
 		BED1CCFA1FB2EF9A002FE096 /* MyCoRightsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCoRightsCell.swift; sourceTree = "<group>"; };
+		BED5652529150A3600EC0C62 /* DisplayLinkAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayLinkAnimator.swift; sourceTree = "<group>"; };
 		BED604BD1FD14C420099151E /* TableNestCollectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableNestCollectionController.swift; sourceTree = "<group>"; };
 		BED893BB1FEE998100E43A69 /* TextViewSelfsizingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewSelfsizingController.swift; sourceTree = "<group>"; };
 		BEDAFFE4290BAFCC00FB67BB /* SkuListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuListVC.swift; sourceTree = "<group>"; };
@@ -662,6 +664,17 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		BED5652429150A1600EC0C62 /* EmbedScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				BED5652529150A3600EC0C62 /* DisplayLinkAnimator.swift */,
+				EE7E229E281D386100098542 /* NestedScrollViewVC.swift */,
+				BE6CEBB428DDB90800975E70 /* EmbedScrollViewVC.swift */,
+				BE6CEBB628DDB9C900975E70 /* ScrollingDecelerator.swift */,
+			);
+			path = EmbedScrollView;
+			sourceTree = "<group>";
+		};
 		BEDAFFE3290BAFBE00FB67BB /* Sku */ = {
 			isa = PBXGroup;
 			children = (
@@ -847,6 +860,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BED5652429150A1600EC0C62 /* EmbedScrollView */,
 				BEDAFFE3290BAFBE00FB67BB /* Sku */,
 				EEAE4C34285F4B8A00B8A107 /* DiffableDatasource */,
 				EEA0E19F284AEA5300A2E6C5 /* Vision */,
@@ -873,9 +887,6 @@
 				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
 				F75C2E812238DD9500495104 /* GestureVC.swift */,
 				BE86BB40271BC5E9005014DC /* LazySequenceVC.swift */,
-				EE7E229E281D386100098542 /* NestedScrollViewVC.swift */,
-				BE6CEBB428DDB90800975E70 /* EmbedScrollViewVC.swift */,
-				BE6CEBB628DDB9C900975E70 /* ScrollingDecelerator.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1178,6 +1189,7 @@
 				F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */,
 				BEBE4A031FAC083F00A9CA9A /* Row.swift in Sources */,
 				D8123AF61EE8D49D00EAAA63 /* RulerControllerWithLayout.swift in Sources */,
+				BED5652629150A3600EC0C62 /* DisplayLinkAnimator.swift in Sources */,
 				D8123AF01EE7FBB300EAAA63 /* RulerController.swift in Sources */,
 				BE1B15601FB2A59400862271 /* IconTextView.swift in Sources */,
 				F7A41CE5219AD14700D0A3C3 /* CustomPresentationFirstViewController.swift in Sources */,
