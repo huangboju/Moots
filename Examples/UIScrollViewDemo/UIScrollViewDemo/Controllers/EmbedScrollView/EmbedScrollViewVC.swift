@@ -139,9 +139,10 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         }
         self.outerDeceleration?.isPaused = true
         let startTime = CACurrentMediaTime()
-        var currentOffset = self.nestedScrollView.contentOffset
-        let decelerationRate = nestedScrollView.decelerationRate.rawValue
-        self.scrollViewDidEndDragging(self.nestedScrollView, willDecelerate: true)
+        let scrollView = nestedScrollView
+        var currentOffset = scrollView.contentOffset
+        let decelerationRate = scrollView.decelerationRate.rawValue
+        self.scrollViewDidEndDragging(scrollView, willDecelerate: true)
         self.outerDeceleration = ConstantDisplayLinkAnimator(update: { [weak self] in
             guard let strongSelf = self else {
                 return
@@ -149,7 +150,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
             let t = CACurrentMediaTime() - startTime
             var currentVelocity = velocity * 15.0 * CGFloat(pow(Double(decelerationRate), 1000.0 * t))
             currentOffset.y += currentVelocity
-            let maxOffset = strongSelf.nestedScrollView.contentSize.height - strongSelf.nestedScrollView.bounds.height
+            let maxOffset = scrollView.contentSize.height - scrollView.bounds.height
             if currentOffset.y >= maxOffset {
                 currentOffset.y = maxOffset
                 currentVelocity = 0.0
@@ -165,12 +166,12 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
                 strongSelf.outerDeceleration = nil
                 didEnd = true
             }
-            var contentOffset = strongSelf.nestedScrollView.contentOffset
+            var contentOffset = scrollView.contentOffset
             contentOffset.y = currentOffset.y.flat
-            strongSelf.nestedScrollView.setContentOffset(contentOffset, animated: false)
-            strongSelf.scrollViewDidScroll(strongSelf.nestedScrollView)
+            scrollView.setContentOffset(contentOffset, animated: false)
+            strongSelf.scrollViewDidScroll(scrollView)
             if didEnd {
-                strongSelf.scrollViewDidEndDecelerating(strongSelf.nestedScrollView)
+                strongSelf.scrollViewDidEndDecelerating(scrollView)
             }
         })
         self.outerDeceleration?.isPaused = false
