@@ -36,7 +36,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }()
 
     var isNestedScrollEnabled: Bool {
-        outerScrollView.contentOffset.y >= (300 - statusBarHeight - 44)
+        outerScrollView.contentOffset.y >= nestedScrollView.frame.minY
     }
 
     var isOuterEnable: Bool {
@@ -51,6 +51,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         velocityM1 = velocity
         velocity = scrollView.value(forKey: "_verticalVelocity") as? CGFloat ?? 0
         nestedScrollView.isScrollEnabled = isNestedScrollEnabled
+        outerScrollView.isScrollEnabled = isOuterEnable
         if scrollView == outerScrollView {
             if scrollView.contentOffset.y > 50 {
                 if outerScrollView.bounces {
@@ -118,6 +119,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         outerScrollView.backgroundColor = .systemRed
         outerScrollView.contentInsetAdjustmentBehavior = .never
         outerScrollView.delegate = self
+        outerScrollView.showsVerticalScrollIndicator = false
         return outerScrollView
     }()
 
@@ -130,6 +132,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         nestedScrollView.delaysContentTouches = false
         nestedScrollView.contentInsetAdjustmentBehavior = .never
         nestedScrollView.addSubview(blockView)
+        nestedScrollView.showsVerticalScrollIndicator = false
         return nestedScrollView
     }()
 
@@ -178,9 +181,9 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }
 
     func nestedTransferVelocity(_ velocity: CGFloat) {
-        if velocity > 0.0 {
-            return
-        }
+//        if velocity > 0.0 {
+//            return
+//        }
         self.nestedDeceleration?.isPaused = true
         let startTime = CACurrentMediaTime()
         let scrollView = outerScrollView
@@ -205,7 +208,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
             }
 
             var didEnd = false
-            if abs(currentVelocity) < 0.1 {
+            if abs(currentVelocity) < .ulpOfOne {
                 strongSelf.nestedDeceleration?.isPaused = true
                 strongSelf.nestedDeceleration = nil
                 didEnd = true
