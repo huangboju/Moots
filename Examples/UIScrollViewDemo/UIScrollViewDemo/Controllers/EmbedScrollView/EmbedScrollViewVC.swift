@@ -50,6 +50,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         velocityM1 = velocity
         velocity = scrollView.value(forKey: "_verticalVelocity") as? CGFloat ?? 0
+        nestedScrollView.isScrollEnabled = isNestedScrollEnabled
         if scrollView == outerScrollView {
             if scrollView.contentOffset.y > 50 {
                 if outerScrollView.bounces {
@@ -62,9 +63,8 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
                     outerScrollView.alwaysBounceVertical = true
                 }
             }
-            nestedScrollView.isScrollEnabled = isNestedScrollEnabled
         } else {
-            if scrollView.contentOffset.y <= 0 {
+            if scrollView.contentOffset.y <= .ulpOfOne {
                 if nestedScrollView.bounces {
                     nestedScrollView.bounces = false
                     nestedScrollView.alwaysBounceVertical = false
@@ -177,14 +177,15 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }
 
     func nestedTransferVelocity(_ velocity: CGFloat) {
-        if velocity >= 0.0 {
+        if velocity > 0.0 {
             return
         }
         self.nestedDeceleration?.isPaused = true
         let startTime = CACurrentMediaTime()
-        var currentOffset = self.outerScrollView.contentOffset
+        let scrollView = outerScrollView
+        var currentOffset = scrollView.contentOffset
         let decelerationRate = outerScrollView.decelerationRate.rawValue
-        self.scrollViewDidEndDragging(self.outerScrollView, willDecelerate: true)
+        scrollViewDidEndDragging(scrollView, willDecelerate: true)
         self.nestedDeceleration = ConstantDisplayLinkAnimator(update: { [weak self] in
             guard let strongSelf = self else {
                 return
@@ -192,7 +193,7 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
             let t = CACurrentMediaTime() - startTime
             var currentVelocity = velocity * 15.0 * CGFloat(pow(Double(decelerationRate), 1000.0 * t))
             currentOffset.y += currentVelocity
-            let maxOffset = strongSelf.outerScrollView.contentSize.height - strongSelf.outerScrollView.bounds.height
+            let maxOffset = scrollView.contentSize.height - scrollView.bounds.height
             if currentOffset.y >= maxOffset {
                 currentOffset.y = maxOffset
                 currentVelocity = 0.0
@@ -208,12 +209,12 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
                 strongSelf.nestedDeceleration = nil
                 didEnd = true
             }
-            var contentOffset = strongSelf.outerScrollView.contentOffset
+            var contentOffset = scrollView.contentOffset
             contentOffset.y = currentOffset.y.flat
-            strongSelf.outerScrollView.setContentOffset(contentOffset, animated: false)
-            strongSelf.scrollViewDidScroll(strongSelf.outerScrollView)
+            scrollView.setContentOffset(contentOffset, animated: false)
+            strongSelf.scrollViewDidScroll(scrollView)
             if didEnd {
-                strongSelf.scrollViewDidEndDecelerating(strongSelf.outerScrollView)
+                strongSelf.scrollViewDidEndDecelerating(scrollView)
             }
         })
         self.nestedDeceleration?.isPaused = false
