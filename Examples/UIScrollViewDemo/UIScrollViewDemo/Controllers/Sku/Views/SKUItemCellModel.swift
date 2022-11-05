@@ -25,11 +25,11 @@ class VariantState {
     }()
 
     static func optimalStatus(with set: Set<SkuGoods.Status>) -> SKUItemStatus {
-        let sortedStatusList = set.sorted { $0.rawValue < $1.rawValue }
-        guard let first = sortedStatusList.first else {
+        let status = set.min { $0.rawValue < $1.rawValue }
+        guard let status = status else {
             return .unfound
         }
-        switch first {
+        switch status {
         case .normal:
             return .normal
         case .sellOut:
