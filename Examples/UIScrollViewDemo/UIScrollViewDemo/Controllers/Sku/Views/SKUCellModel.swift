@@ -180,7 +180,7 @@ class SKUCellModel {
 
 extension SKUCellModel {
 
-    private static func countCellHeight(_ sections: [SKUSectionModel]) -> CGFloat {
+    static func countCellHeight(_ sections: [SKUSectionModel]) -> CGFloat {
         if sections.isEmpty { return 0 }
 
         // header 30, footer 20, minSpacing 12 * (rowCount - 1), cell 28 * rowCount
