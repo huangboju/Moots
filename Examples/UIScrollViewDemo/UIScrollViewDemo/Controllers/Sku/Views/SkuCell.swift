@@ -13,7 +13,7 @@ protocol SKUCellDelegate: AnyObject {
 }
 
 class SKUCell: UITableViewCell, Reusable {
-    var cellModel: SKUCellModel?
+    var cellModel: SKUCellModelPresenter?
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -108,7 +108,7 @@ extension SKUCell: UICollectionViewDelegate {
 }
 
 extension SKUCell: Updatable {
-    func update(viewData: SKUCellModel) {
+    func update(viewData: SKUCellModelPresenter) {
         cellModel = viewData
         collectionView.snp.updateConstraints { make in
             make.height.equalTo(viewData.cellHeight)

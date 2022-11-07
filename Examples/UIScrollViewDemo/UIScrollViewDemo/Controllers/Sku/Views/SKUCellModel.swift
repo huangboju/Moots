@@ -25,7 +25,7 @@ class SKUSectionModel {
     }
 }
 
-class SKUCellModel {
+class SKUCellModel: SKUCellModelPresenter {
 
     let cellHeight: CGFloat
 
@@ -33,7 +33,7 @@ class SKUCellModel {
 
     var selectedGoods: SkuGoods?
 
-    var selectedItemSet: Set<SKUItemCellModel> = []
+    private var selectedItemSet: Set<SKUItemCellModel> = []
 
     // 后端计算好的sku组合goods
     let goodsMap: [Set<Variant>: SkuGoods]

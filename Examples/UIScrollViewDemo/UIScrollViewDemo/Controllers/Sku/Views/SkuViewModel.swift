@@ -220,8 +220,8 @@ extension SkuViewModel {
         return model
     }
 
-    var sKUCellModel: SKUCellModel? {
-        let model: SKUCellModel? = targetRow(with: SKUCell.self)?.cellItem()
+    var sKUCellModel: SKUCellModelPresenter? {
+        let model: SKUCellModelPresenter? = targetRow(with: SKUCell.self)?.cellItem()
         return model
     }
 }

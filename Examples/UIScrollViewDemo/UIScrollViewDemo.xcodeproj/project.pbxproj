@@ -56,6 +56,7 @@
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
 		BE4ACF5A2918B18200679D3B /* SKUGraphCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4ACF592918B18200679D3B /* SKUGraphCellModel.swift */; };
 		BE4ACF652918EDC400679D3B /* SwiftGraph in Frameworks */ = {isa = PBXBuildFile; productRef = BE4ACF642918EDC400679D3B /* SwiftGraph */; };
+		BE4ACF672918F52800679D3B /* SKUCellModelPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4ACF662918F52800679D3B /* SKUCellModelPresenter.swift */; };
 		BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */; };
 		BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */; };
 		BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */; };
@@ -267,6 +268,7 @@
 		BE3D3A421FAFF4B9001F097D /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
 		BE4ACF592918B18200679D3B /* SKUGraphCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUGraphCellModel.swift; sourceTree = "<group>"; };
+		BE4ACF662918F52800679D3B /* SKUCellModelPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUCellModelPresenter.swift; sourceTree = "<group>"; };
 		BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewsAndAspectFitMode.swift; sourceTree = "<group>"; };
 		BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioImageView.swift; sourceTree = "<group>"; };
 		BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextAndReadability.swift; sourceTree = "<group>"; };
@@ -711,6 +713,7 @@
 				BEDAFFF8290BC72700FB67BB /* GoodsInfoCell.swift */,
 				BEDAFFFA290BC7B200FB67BB /* GoodsInfoCellModel.swift */,
 				BEDAFFFC290BCCEC00FB67BB /* SkuViewModel.swift */,
+				BE4ACF662918F52800679D3B /* SKUCellModelPresenter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1261,6 +1264,7 @@
 				BE3D3A2F1FAFF423001F097D /* PasswordCell.swift in Sources */,
 				BE1B15621FB2A5D200862271 /* VerifyCoInfoController.swift in Sources */,
 				BEDAFFF7290BC47D00FB67BB /* VariantFlowLayout.swift in Sources */,
+				BE4ACF672918F52800679D3B /* SKUCellModelPresenter.swift in Sources */,
 				F7A41CD221999CBC00D0A3C3 /* CrossDissolveFirstViewController.swift in Sources */,
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */,
