@@ -110,29 +110,30 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         }
         let selectedItemSets = selectedItemSets()
         for item in allItems where changedItem.indexPath.section != item.indexPath.section {
-            var target = selectedItemSets[item.indexPath.section]
-            if target.isEmpty {
-                target = item.state.goodsSet
+            var tuple = selectedItemSets[item.indexPath.section]
+            if tuple.0.isEmpty {
+                tuple.0 = item.state.goodsSet
             } else {
-                target.formIntersection(item.state.goodsSet)
+                tuple.0.formIntersection(item.state.goodsSet)
             }
-            let status = VariantState.optimalStatus2(with: target)
-            item.setStatus(with: status, isActivity: target.first?.isActivity ?? false)
+            let status = VariantState.optimalStatus2(with: tuple.0)
+            item.setStatus(with: status, isActivity: item.state.optimalActivity && tuple.1)
         }
     }
 
-    func selectedItemSets() -> [Set<SkuGoods>] {
-        var result: [Set<SkuGoods>] = Array(repeating: [], count: sections.count)
+    func selectedItemSets() -> [(Set<SkuGoods>, Bool)] {
+        var result: [(Set<SkuGoods>, Bool)] = Array(repeating: (Set<SkuGoods>(), false), count: sections.count)
         for section in 0 ..< result.count {
-            var set: Set<SkuGoods> = []
+            var tuple: (Set<SkuGoods>, Bool) = ([], true)
             for item in selectedItemSet where item.indexPath.section != section {
-                if set.isEmpty {
-                    set = item.state.goodsSet
+                if tuple.0.isEmpty {
+                    tuple.0 = item.state.goodsSet
                 } else {
-                    set.formIntersection(item.state.goodsSet)
+                    tuple.0.formIntersection(item.state.goodsSet)
                 }
+                tuple.1 = tuple.1 && item.state.optimalActivity
             }
-            result[section] = set
+            result[section] = tuple
         }
         return result
     }
