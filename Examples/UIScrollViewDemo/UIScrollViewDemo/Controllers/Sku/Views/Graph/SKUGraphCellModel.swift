@@ -110,7 +110,12 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         }
         let selectedItemSets = selectedItemSets()
         for item in allItems where changedItem.indexPath.section != item.indexPath.section {
-            let target = selectedItemSets[item.indexPath.section].intersection(item.state.goodsSet)
+            var target = selectedItemSets[item.indexPath.section]
+            if target.isEmpty {
+                target = item.state.goodsSet
+            } else {
+                target.formIntersection(item.state.goodsSet)
+            }
             let status = VariantState.optimalStatus2(with: target)
             item.setStatus(with: status, isActivity: target.first?.isActivity ?? false)
         }

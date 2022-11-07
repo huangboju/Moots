@@ -168,6 +168,12 @@ class SkuGoods: Codable, Hashable {
     }
 }
 
+extension SkuGoods: CustomStringConvertible {
+    var description: String {
+        name
+    }
+}
+
 class GoodsAllVariant: Codable {
 
     let goodsList: [SkuGoods]
