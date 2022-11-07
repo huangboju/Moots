@@ -56,7 +56,9 @@ final class SkuVC: UIViewController {
     }()
 
     private lazy var viewModel: SkuViewModel = {
-        SkuViewModel()
+        let viewModel = SkuViewModel()
+        viewModel.isGraph = title == "图解法"
+        return viewModel
     }()
 }
 

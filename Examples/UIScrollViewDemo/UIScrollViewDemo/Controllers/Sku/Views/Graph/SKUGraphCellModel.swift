@@ -9,8 +9,7 @@
 import Foundation
 import SwiftGraph
 
-class SKUGraphCellModel {
-
+class SKUGraphCellModel: SKUCellModelPresenter {
     var selectedGoods: SkuGoods?
 
     let graph: WeightedGraph<Variant, Set<SkuGoods>>
@@ -30,6 +29,7 @@ class SKUGraphCellModel {
     }
 
     init(_ allVariant: GoodsAllVariant = GoodsAllVariant(), selectedGoods: SkuGoods? = nil) {
+        self.selectedGoods = selectedGoods
         graph = Backtrace(allVariant).graph
 
         let stateMap: [Variant: VariantState]
@@ -61,6 +61,33 @@ class SKUGraphCellModel {
 
             item.isSelected = true
             add(item: item)
+        }
+    }
+
+    func item(at indexPath: IndexPath) -> SKUItemCellModel {
+        section(at: indexPath).items[indexPath.row]
+    }
+
+    func section(at indexPath: IndexPath) -> SKUSectionModel {
+        sections[indexPath.section]
+    }
+
+    func didSelectItem(at indexPath: IndexPath) {
+        let item = item(at: indexPath)
+        if item.isSelected {
+            item.isSelected = false
+            remove(item: item)
+        } else {
+            removeItem(at: indexPath)
+            item.isSelected = true
+            add(item: item)
+        }
+    }
+
+    func removeItem(at indexPath: IndexPath) {
+        for item in sections[indexPath.section].items where item.isSelected {
+            item.isSelected = false
+            remove(item: item)
         }
     }
 

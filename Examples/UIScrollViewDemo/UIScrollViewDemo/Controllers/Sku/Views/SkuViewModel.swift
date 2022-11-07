@@ -150,6 +150,8 @@ open class TableViewModel: NSObject, FormViewModelable, UITableViewDataSource {
 
 class SkuViewModel: TableViewModel {
 
+    var isGraph = false
+
     var isEnable: Bool {
         if let cellModel = sKUCellModel {
             return cellModel.isValid && cellModel.selectedGoods?.status == .normal
@@ -168,7 +170,11 @@ class SkuViewModel: TableViewModel {
     func updateRows(with model: GoodsModel) {
         updateInfoRow(with: model)
 
-        addSkuRowIfNeeded(with: model)
+        if isGraph {
+            addSkuGraphRowIfNeeded(with: model)
+        } else {
+            addSkuRowIfNeeded(with: model)
+        }
     }
 
     func updateInfoRow(with model: GoodsModel) {
@@ -195,6 +201,20 @@ class SkuViewModel: TableViewModel {
             selctedGoods = goods
         }
         let cellModel = SKUCellModel(model.goodsAllVariant, selectedGoods: selctedGoods)
+        if let selctedGoods = cellModel.selectedGoods {
+            refreshInfoRow(with: selctedGoods)
+        }
+        let skuRow: RowType = Row<SKUCell>(viewData: cellModel)
+        sections[0].append(skuRow)
+    }
+
+    func addSkuGraphRowIfNeeded(with model: GoodsModel) {
+        if model.variants.isEmpty { return }
+        var selctedGoods: SkuGoods?
+        if let goods = model.goodsMap["633a6b9cf696fd0001445b41"], goods.status != .notSale {
+            selctedGoods = goods
+        }
+        let cellModel = SKUGraphCellModel(model.goodsAllVariant, selectedGoods: selctedGoods)
         if let selctedGoods = cellModel.selectedGoods {
             refreshInfoRow(with: selctedGoods)
         }
