@@ -26,7 +26,6 @@ class SKUSectionModel {
 }
 
 class SKUCellModel {
-    let allVariant: GoodsAllVariant
 
     let cellHeight: CGFloat
 
@@ -47,7 +46,6 @@ class SKUCellModel {
     }
 
     init(_ allVariant: GoodsAllVariant = GoodsAllVariant(), selectedGoods: SkuGoods? = nil) {
-        self.allVariant = allVariant
         self.selectedGoods = selectedGoods
         let stateMap: [Variant: VariantState]
         (stateMap, goodsMap) = Self.initMap(allVariant)

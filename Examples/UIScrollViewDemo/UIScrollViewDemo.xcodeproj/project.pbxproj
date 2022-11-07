@@ -54,6 +54,8 @@
 		BE3D3A441FAFF4B9001F097D /* CodeSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */; };
 		BE3D3A451FAFF4B9001F097D /* SignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3D3A421FAFF4B9001F097D /* SignInController.swift */; };
 		BE41600F1F1DD997007B619B /* AutoLayoutController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE41600E1F1DD997007B619B /* AutoLayoutController.swift */; };
+		BE4ACF5A2918B18200679D3B /* SKUGraphCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4ACF592918B18200679D3B /* SKUGraphCellModel.swift */; };
+		BE4ACF652918EDC400679D3B /* SwiftGraph in Frameworks */ = {isa = PBXBuildFile; productRef = BE4ACF642918EDC400679D3B /* SwiftGraph */; };
 		BE4B79B41F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */; };
 		BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */; };
 		BE4B79B81F9F5C6100C9662D /* DynamicTextAndReadability.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */; };
@@ -264,6 +266,7 @@
 		BE3D3A411FAFF4B9001F097D /* CodeSignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSignInController.swift; sourceTree = "<group>"; };
 		BE3D3A421FAFF4B9001F097D /* SignInController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInController.swift; sourceTree = "<group>"; };
 		BE41600E1F1DD997007B619B /* AutoLayoutController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoLayoutController.swift; sourceTree = "<group>"; };
+		BE4ACF592918B18200679D3B /* SKUGraphCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKUGraphCellModel.swift; sourceTree = "<group>"; };
 		BE4B79B31F9ED9B300C9662D /* ImageViewsAndAspectFitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewsAndAspectFitMode.swift; sourceTree = "<group>"; };
 		BE4B79B51F9F586D00C9662D /* AspectRatioImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioImageView.swift; sourceTree = "<group>"; };
 		BE4B79B71F9F5C6100C9662D /* DynamicTextAndReadability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTextAndReadability.swift; sourceTree = "<group>"; };
@@ -430,6 +433,7 @@
 				BE132FBB26E360F1005A2C1F /* SwiftyJSON in Frameworks */,
 				EE8AE14827E9DE8F00B2FEF0 /* Resolver in Frameworks */,
 				BE551F1826E31A0800E862BA /* Alamofire in Frameworks */,
+				BE4ACF652918EDC400679D3B /* SwiftGraph in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,6 +595,14 @@
 			path = FooterViews;
 			sourceTree = "<group>";
 		};
+		BE4ACF582918B17400679D3B /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				BE4ACF592918B18200679D3B /* SKUGraphCellModel.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
 		BE4FCA7A1FB942E800E1C3F0 /* MemberAlert */ = {
 			isa = PBXGroup;
 			children = (
@@ -690,6 +702,7 @@
 		BEDAFFEC290BC0A900FB67BB /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BE4ACF582918B17400679D3B /* Graph */,
 				BEDAFFEA290BC07C00FB67BB /* SkuCell.swift */,
 				BEDAFFED290BC0B600FB67BB /* SKUItemCell.swift */,
 				BEDAFFEF290BC15B00FB67BB /* SKUItemCellModel.swift */,
@@ -992,6 +1005,7 @@
 				BE132FB726E35FF3005A2C1F /* SnapKit */,
 				BE132FBA26E360F1005A2C1F /* SwiftyJSON */,
 				EE8AE14727E9DE8F00B2FEF0 /* Resolver */,
+				BE4ACF642918EDC400679D3B /* SwiftGraph */,
 			);
 			productName = UIScrollViewDemo;
 			productReference = D8A731EE1DED6E28005DF7C8 /* UIScrollViewDemo.app */;
@@ -1052,6 +1066,7 @@
 				BE132FB626E35FF3005A2C1F /* XCRemoteSwiftPackageReference "SnapKit" */,
 				BE132FB926E360F1005A2C1F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				EE8AE14627E9DE8F00B2FEF0 /* XCRemoteSwiftPackageReference "Resolver" */,
+				BE4ACF632918EDC400679D3B /* XCRemoteSwiftPackageReference "SwiftGraph" */,
 			);
 			productRefGroup = D8A731EF1DED6E28005DF7C8 /* Products */;
 			projectDirPath = "";
@@ -1149,6 +1164,7 @@
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
 				EEA0E19D284AE3E300A2E6C5 /* BarcodesVisionVC.swift in Sources */,
 				F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */,
+				BE4ACF5A2918B18200679D3B /* SKUGraphCellModel.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
 				BEA009911F5D5CAA00CB07CF /* DoubleLabel.swift in Sources */,
 				BEDAFFFD290BCCEC00FB67BB /* SkuViewModel.swift in Sources */,
@@ -1566,6 +1582,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		BE4ACF632918EDC400679D3B /* XCRemoteSwiftPackageReference "SwiftGraph" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davecom/SwiftGraph";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		BE551F1626E31A0800E862BA /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -1602,6 +1626,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE132FB926E360F1005A2C1F /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		BE4ACF642918EDC400679D3B /* SwiftGraph */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE4ACF632918EDC400679D3B /* XCRemoteSwiftPackageReference "SwiftGraph" */;
+			productName = SwiftGraph;
 		};
 		BE551F1726E31A0800E862BA /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

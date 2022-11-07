@@ -93,7 +93,7 @@ class SpuExtension: Codable {
 }
 
 
-class SkuGoods: Codable {
+class SkuGoods: Codable, Hashable {
 
     enum Status: Int, Codable {
         case normal = 1
@@ -156,6 +156,15 @@ class SkuGoods: Codable {
         variants = []
         `extension` = SpuExtension()
         title = ""
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(variants)
+    }
+
+    static func == (lhs: SkuGoods, rhs: SkuGoods) -> Bool {
+        lhs.id == rhs.id && lhs.variants == rhs.variants
     }
 }
 
