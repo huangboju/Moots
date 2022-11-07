@@ -111,8 +111,7 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         let selectedItemSets = selectedItemSets()
         for item in allItems where changedItem.indexPath.section != item.indexPath.section {
             var target = selectedItemSets[item.indexPath.section]
-            let goods = item.state.goodsMap.map { $0.value }
-            target.formIntersection(goods)
+            target.formIntersection(item.state.goodsSet)
             let status = VariantState.optimalStatus2(with: target)
             item.setStatus(with: status, isActivity: target.first?.isActivity ?? false)
         }
@@ -124,9 +123,9 @@ class SKUGraphCellModel: SKUCellModelPresenter {
             var set: Set<SkuGoods> = []
             for item in selectedItemSet where item.indexPath.section != section {
                 if set.isEmpty {
-                    set.formUnion(item.state.goodsMap.map { $0.value})
+                    set = item.state.goodsSet
                 } else {
-                    set.formIntersection(item.state.goodsMap.map { $0.value})
+                    set.formIntersection(item.state.goodsSet)
                 }
             }
             result[section] = set
@@ -149,7 +148,7 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         for goods in allVariant.goodsList {
             for variant in goods.variants {
                 if let state = dict[variant] {
-                    state.goodsMap[goods.variantSet] = goods
+                    state.goodsSet.insert(goods)
                 } else {
                     let state = VariantState(with: goods)
                     dict[variant] = state

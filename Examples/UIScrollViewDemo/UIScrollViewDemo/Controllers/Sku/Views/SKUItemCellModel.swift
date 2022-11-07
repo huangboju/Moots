@@ -12,16 +12,19 @@ class VariantState {
 
     var goodsMap: [Set<Variant>: SkuGoods]
 
+    var goodsSet: Set<SkuGoods>
+
     init (with sku: SkuGoods = SkuGoods()) {
         goodsMap = [sku.variantSet: sku]
+        goodsSet = [sku]
     }
 
     private(set) lazy var optimalStatus: SKUItemStatus = {
-        return Self.optimalStatus(with: Set(goodsMap.values.map { $0.status }))
+        return Self.optimalStatus(with: Set(goodsSet.map { $0.status }))
     }()
 
     private(set) lazy var optimalActivity: Bool = {
-        goodsMap.values.first(where: { $0.isActivity }) != nil
+        goodsSet.first(where: { $0.isActivity }) != nil
     }()
 
     static func optimalStatus(with set: Set<SkuGoods.Status>) -> SKUItemStatus {
