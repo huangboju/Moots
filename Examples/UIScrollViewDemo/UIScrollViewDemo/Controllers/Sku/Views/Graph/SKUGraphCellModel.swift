@@ -12,8 +12,6 @@ import SwiftGraph
 class SKUGraphCellModel: SKUCellModelPresenter {
     var selectedGoods: SkuGoods?
 
-    let graph: WeightedGraph<Variant, Set<SkuGoods>>
-
     let goodsMap: [Set<Variant>: SkuGoods]
 
     let sections: [SKUSectionModel]
@@ -30,7 +28,6 @@ class SKUGraphCellModel: SKUCellModelPresenter {
 
     init(_ allVariant: GoodsAllVariant = GoodsAllVariant(), selectedGoods: SkuGoods? = nil) {
         self.selectedGoods = selectedGoods
-        graph = Backtrace(allVariant).graph
 
         let stateMap: [Variant: VariantState]
         (stateMap, goodsMap) = Self.initMap(allVariant)
@@ -114,9 +111,8 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         let selectedItemSets = selectedItemSets()
         for item in allItems where changedItem.indexPath.section != item.indexPath.section {
             var target = selectedItemSets[item.indexPath.section]
-            if let edges = graph.edgesForVertex(item.variant) {
-                target.formUnion(edges.flatMap { $0.weight })
-            }
+            let goods = item.state.goodsMap.map { $0.value }
+            target.formIntersection(goods)
             let status = VariantState.optimalStatus2(with: target)
             item.setStatus(with: status, isActivity: target.first?.isActivity ?? false)
         }
@@ -127,8 +123,10 @@ class SKUGraphCellModel: SKUCellModelPresenter {
         for section in 0 ..< result.count {
             var set: Set<SkuGoods> = []
             for item in selectedItemSet where item.indexPath.section != section {
-                if let edges = graph.edgesForVertex(item.variant) {
-                    set.formUnion(edges.flatMap { $0.weight })
+                if set.isEmpty {
+                    set.formUnion(item.state.goodsMap.map { $0.value})
+                } else {
+                    set.formIntersection(item.state.goodsMap.map { $0.value})
                 }
             }
             result[section] = set
@@ -160,38 +158,5 @@ class SKUGraphCellModel: SKUCellModelPresenter {
             }
         }
         return (dict, skuMap)
-    }
-}
-
-
-class Backtrace {
-    let graph: WeightedGraph<Variant, Set<SkuGoods>>
-
-    private var path: [Variant] = []
-
-    init(_ allVariant: GoodsAllVariant) {
-        let vertices = allVariant.variants.flatMap { variants in
-            variants.values.map { value in Variant(id: variants.id, name: variants.name, value: value) }
-        }
-        graph = WeightedGraph<Variant, Set<SkuGoods>>(vertices: vertices)
-        backtrace(allVariant, start: 0)
-    }
-
-    func backtrace(_ allVariant: GoodsAllVariant, start: Int) {
-        if path.count == 2 {
-            let pathSet = Set(path)
-            let result = allVariant.goodsList.filter { pathSet.isSubset(of: $0.variantSet) }
-            graph.addEdge(from: path[0], to: path[1], weight: Set(result))
-            return
-        }
-
-        for i in start ..< allVariant.variants.count {
-            let variant = allVariant.variants[i]
-            for value in variant.values {
-                path.append(Variant(id: variant.id, name: variant.name, value: value))
-                backtrace(allVariant, start: i + 1)
-                path.removeLast()
-            }
-        }
     }
 }
