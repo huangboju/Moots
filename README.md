@@ -6,7 +6,7 @@
 ## [笔记](/Markdowns/Notes.md)
 
 
-## [优化](/Markdowns/Optimizing.md)
+## [优化](https://gist.github.com/huangboju/2a6b7c3c2aa9139cbb4ca2c617059776)
 
 
 
