@@ -10,7 +10,7 @@
 ![](/Resources/Gif/autolayout.gif)
 
 ## [CoreGraphics](https://gist.github.com/huangboju/bd459684345c926cdf91601d2a5e8fde)
-
+![](/Resources/Gif/quartz.gif)
 ## [Debug](https://gist.github.com/huangboju/9f66acf521effb7b7c0eeafcbc0ea0c0)
 
 ## [常用代码](/Markdowns/Snippets.md)

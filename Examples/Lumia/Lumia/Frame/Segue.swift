@@ -37,6 +37,9 @@ extension UIViewController {
                 UIApplication.shared.openURL(url)
             }
             return
+        case let .storyboard(id):
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            vc = storyboard.instantiateViewController(withIdentifier: id)
         default:
             return
         }
@@ -56,6 +59,7 @@ public enum Segue {
     case controller(UIViewController)
     case web(String)
     case scheme(Scheme)
+    case storyboard(String)
 }
 
 extension Segue: CustomStringConvertible {
@@ -73,6 +77,8 @@ extension Segue: CustomStringConvertible {
             return "\(s.scheme)"
         case let .modal(dest):
             return "\(dest)"
+        case let .storyboard(id):
+            return id
         }
     }
 }
