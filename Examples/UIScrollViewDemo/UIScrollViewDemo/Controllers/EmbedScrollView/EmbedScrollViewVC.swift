@@ -26,15 +26,6 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
-    private lazy var statusBarHeight: CGFloat = {
-        if #available(iOS 13.0, *) {
-            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-            return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
-        } else {
-            return UIApplication.shared.statusBarFrame.height
-        }
-    }()
-
     var isNestedScrollEnabled: Bool {
         outerScrollView.contentOffset.y >= nestedScrollView.frame.minY
     }

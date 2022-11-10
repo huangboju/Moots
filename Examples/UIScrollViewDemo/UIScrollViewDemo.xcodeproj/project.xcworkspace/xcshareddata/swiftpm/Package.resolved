@@ -37,6 +37,15 @@
       }
     },
     {
+      "identity" : "stackscrollview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/FluidGroup/StackScrollView",
+      "state" : {
+        "revision" : "c7d2950cdaee7f4aa0dfd1a1364d352f841c9954",
+        "version" : "1.6.3"
+      }
+    },
+    {
       "identity" : "swiftgraph",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/davecom/SwiftGraph",

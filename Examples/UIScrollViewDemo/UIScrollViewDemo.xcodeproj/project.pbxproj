@@ -74,6 +74,8 @@
 		BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6169D61F9DD23E00746C5E /* GroupingViews.swift */; };
 		BE6CEBB528DDB90800975E70 /* EmbedScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CEBB428DDB90800975E70 /* EmbedScrollViewVC.swift */; };
 		BE6CEBB728DDB9C900975E70 /* ScrollingDecelerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6CEBB628DDB9C900975E70 /* ScrollingDecelerator.swift */; };
+		BE7015B8291CA818007EA361 /* StackScrollView in Frameworks */ = {isa = PBXBuildFile; productRef = BE7015B7291CA818007EA361 /* StackScrollView */; };
+		BE7015BB291CA9A9007EA361 /* LabelStackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7015BA291CA9A9007EA361 /* LabelStackCell.swift */; };
 		BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */; };
 		BE79ECA8250C931D003B2B21 /* GestureButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */; };
 		BE79ED3E250E5F23003B2B21 /* UIControl断点 in Resources */ = {isa = PBXBuildFile; fileRef = BE79ED3B250E5F23003B2B21 /* UIControl断点 */; };
@@ -284,6 +286,7 @@
 		BE6169D61F9DD23E00746C5E /* GroupingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupingViews.swift; sourceTree = "<group>"; };
 		BE6CEBB428DDB90800975E70 /* EmbedScrollViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmbedScrollViewVC.swift; sourceTree = "<group>"; };
 		BE6CEBB628DDB9C900975E70 /* ScrollingDecelerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollingDecelerator.swift; sourceTree = "<group>"; };
+		BE7015BA291CA9A9007EA361 /* LabelStackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelStackCell.swift; sourceTree = "<group>"; };
 		BE75381720076B1C003FE13E /* UICollectionViewLeftAlignedLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewLeftAlignedLayout.swift; sourceTree = "<group>"; };
 		BE79ECA7250C931D003B2B21 /* GestureButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureButtonViewController.swift; sourceTree = "<group>"; };
 		BE79ED3B250E5F23003B2B21 /* UIControl断点 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "UIControl断点"; sourceTree = "<group>"; };
@@ -430,6 +433,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7015B8291CA818007EA361 /* StackScrollView in Frameworks */,
 				BE132FB826E35FF3005A2C1F /* SnapKit in Frameworks */,
 				BE551F1B26E31C0A00E862BA /* Kingfisher in Frameworks */,
 				BE132FBB26E360F1005A2C1F /* SwiftyJSON in Frameworks */,
@@ -617,6 +621,15 @@
 			path = MemberAlert;
 			sourceTree = "<group>";
 		};
+		BE7015B9291CA993007EA361 /* EpicAnswer */ = {
+			isa = PBXGroup;
+			children = (
+				EE7E229E281D386100098542 /* NestedScrollViewVC.swift */,
+				BE7015BA291CA9A9007EA361 /* LabelStackCell.swift */,
+			);
+			path = EpicAnswer;
+			sourceTree = "<group>";
+		};
 		BE75381620076B01003FE13E /* TableNestCollectionController */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,8 +694,8 @@
 		BED5652429150A1600EC0C62 /* EmbedScrollView */ = {
 			isa = PBXGroup;
 			children = (
+				BE7015B9291CA993007EA361 /* EpicAnswer */,
 				BED5652529150A3600EC0C62 /* DisplayLinkAnimator.swift */,
-				EE7E229E281D386100098542 /* NestedScrollViewVC.swift */,
 				BE6CEBB428DDB90800975E70 /* EmbedScrollViewVC.swift */,
 				BE6CEBB628DDB9C900975E70 /* ScrollingDecelerator.swift */,
 			);
@@ -1009,6 +1022,7 @@
 				BE132FBA26E360F1005A2C1F /* SwiftyJSON */,
 				EE8AE14727E9DE8F00B2FEF0 /* Resolver */,
 				BE4ACF642918EDC400679D3B /* SwiftGraph */,
+				BE7015B7291CA818007EA361 /* StackScrollView */,
 			);
 			productName = UIScrollViewDemo;
 			productReference = D8A731EE1DED6E28005DF7C8 /* UIScrollViewDemo.app */;
@@ -1070,6 +1084,7 @@
 				BE132FB926E360F1005A2C1F /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				EE8AE14627E9DE8F00B2FEF0 /* XCRemoteSwiftPackageReference "Resolver" */,
 				BE4ACF632918EDC400679D3B /* XCRemoteSwiftPackageReference "SwiftGraph" */,
+				BE7015B6291CA818007EA361 /* XCRemoteSwiftPackageReference "StackScrollView" */,
 			);
 			productRefGroup = D8A731EF1DED6E28005DF7C8 /* Products */;
 			projectDirPath = "";
@@ -1276,6 +1291,7 @@
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */,
 				F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */,
+				BE7015BB291CA9A9007EA361 /* LabelStackCell.swift in Sources */,
 				BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */,
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
@@ -1610,6 +1626,14 @@
 				minimumVersion = 6.3.1;
 			};
 		};
+		BE7015B6291CA818007EA361 /* XCRemoteSwiftPackageReference "StackScrollView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FluidGroup/StackScrollView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		EE8AE14627E9DE8F00B2FEF0 /* XCRemoteSwiftPackageReference "Resolver" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hmlongco/Resolver";
@@ -1645,6 +1669,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BE551F1926E31C0A00E862BA /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		BE7015B7291CA818007EA361 /* StackScrollView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE7015B6291CA818007EA361 /* XCRemoteSwiftPackageReference "StackScrollView" */;
+			productName = StackScrollView;
 		};
 		EE8AE14727E9DE8F00B2FEF0 /* Resolver */ = {
 			isa = XCSwiftPackageProductDependency;

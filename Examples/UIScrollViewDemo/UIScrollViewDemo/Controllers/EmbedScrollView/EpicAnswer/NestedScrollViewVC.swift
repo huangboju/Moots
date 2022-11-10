@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import StackScrollView
 
 extension UIView {
 
@@ -34,6 +35,15 @@ extension UIApplication {
     var keyWindowInConnectedScenes: UIWindow? {
         return windows.first(where: { $0.isKeyWindow })
     }
+
+    static var statusBarHeight: CGFloat {
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            return window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+        } else {
+            return UIApplication.shared.statusBarFrame.height
+        }
+    }
 }
 
 final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
@@ -52,6 +62,15 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
+
+    private lazy var stackScroll: StackScrollView = {
+        let stackScroll = StackScrollView()
+        stackScroll.contentInsetAdjustmentBehavior = .never
+        for i in 0 ..< 10 {
+            stackScroll.append(view: LabelStackCell(title: "cell:\(i)"))
+        }
+        return stackScroll
+    }()
     
     private lazy var containerView: UIView = {
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height))
@@ -61,7 +80,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
     }()
     
     private var stickyHeight: CGFloat {
-        return 100
+        return stackScroll.frame.maxY
     }
 
     // https://stackoverflow.com/questions/13221488/uiscrollview-within-a-uiscrollview-how-to-keep-a-smooth-transition-when-scrolli
@@ -73,11 +92,13 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         
         view.addSubview(containerView)
 
-        let top: CGFloat = 191
+        stackScroll.frame = CGRect(x: 0, y: UIApplication.statusBarHeight + 44, width: view.frame.width, height: 400)
+        containerView.addSubview(stackScroll)
+
         let bottom = view.safeAreaBottom
         containerView.addSubview(tableView)
-        tableView.frame = CGRect(x: 0, y: top, width: view.frame.width, height: view.frame.height - top - bottom)
-        
+        tableView.frame = CGRect(x: 0, y: stackScroll.frame.maxY, width: view.frame.width, height: view.frame.height - bottom)
+
         tableView.addObserver(self,
                               forKeyPath: "contentSize",
                               options: .new,
@@ -113,7 +134,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
            obj == self.tableView &&
             keyPath == "contentSize" {
             var size = tableView.contentSize
-            size.height += (191 * 2 - stickyHeight + 44)
+            size.height += (tableView.frame.minY + view.safeAreaBottom)
             topScrollView.contentSize = size
         }
     }
