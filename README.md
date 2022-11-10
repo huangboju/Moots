@@ -7,6 +7,8 @@
 
 ## [AutoLayout 学习资料](https://gist.github.com/huangboju/e50519460cd8f81da7c6c83d89d044bf)
 
+![](/Resources/Gif/autolayout.gif)
+
 ## [CoreGraphics](https://gist.github.com/huangboju/bd459684345c926cdf91601d2a5e8fde)
 
 ## [Debug](https://gist.github.com/huangboju/9f66acf521effb7b7c0eeafcbc0ea0c0)
