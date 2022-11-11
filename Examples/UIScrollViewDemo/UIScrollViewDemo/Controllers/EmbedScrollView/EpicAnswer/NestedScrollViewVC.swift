@@ -44,7 +44,7 @@ final class NestedScrollViewVC: UIViewController {
 
     private lazy var stackScroll: UIStackView = {
         let stackView = UIStackView()
-        for i in 0 ..< 10 {
+        for i in 0 ..< 2 {
             stackView.addArrangedSubview(LabelStackCell(title: "\(i)"))
         }
         stackView.axis = .vertical
@@ -102,11 +102,8 @@ final class NestedScrollViewVC: UIViewController {
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //the scroll view underneath (in the container view) will have a max content offset equal to the content height
-        //but minus the bounds height
+        if scrollView == tableView { return }
         if scrollView.contentOffset.y <= stickyHeight {
-            //in this scenario we are still within the content for the contained scrollview
-            //so we make sure the container view is scrolled to the top and set the offset for the contained scrollview
             tableView.contentOffset = .zero
 
             containerView.bounds.origin.y = scrollView.contentOffset.y
