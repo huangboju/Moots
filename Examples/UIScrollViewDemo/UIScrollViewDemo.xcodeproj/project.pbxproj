@@ -17,6 +17,7 @@
 		BE132FBB26E360F1005A2C1F /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = BE132FBA26E360F1005A2C1F /* SwiftyJSON */; };
 		BE15A5C11F23646700F9F4F1 /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */; };
 		BE15A5C31F23649700F9F4F1 /* ExpandingCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */; };
+		BE16A68C291E33FD00374D2E /* StackScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE16A68B291E33FD00374D2E /* StackScrollViewController.swift */; };
 		BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE18BBA21FB0382500B03048 /* CaptchaCell.swift */; };
 		BE1B154D1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */; };
 		BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1B154E1FB2A1AC00862271 /* GirdView.swift */; };
@@ -230,6 +231,7 @@
 		BE1093F91F9B577F00CD4804 /* NestedStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedStackViewController.swift; sourceTree = "<group>"; };
 		BE15A5C01F23646700F9F4F1 /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
 		BE15A5C21F23649700F9F4F1 /* ExpandingCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandingCollectionViewController.swift; sourceTree = "<group>"; };
+		BE16A68B291E33FD00374D2E /* StackScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StackScrollViewController.swift; sourceTree = "<group>"; };
 		BE18BBA21FB0382500B03048 /* CaptchaCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaptchaCell.swift; sourceTree = "<group>"; };
 		BE1B154C1FB1B1CB00862271 /* VerifyCoInfoSuccessController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyCoInfoSuccessController.swift; sourceTree = "<group>"; };
 		BE1B154E1FB2A1AC00862271 /* GirdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GirdView.swift; sourceTree = "<group>"; };
@@ -497,6 +499,7 @@
 				BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */,
 				BEB635121FA4A3F600525EBB /* AnimatingChangesViewController.swift */,
 				BEB635141FA4AA6C00525EBB /* UIKitDynamicsViewController.swift */,
+				BE16A68B291E33FD00374D2E /* StackScrollViewController.swift */,
 			);
 			path = AutoLayoutCookbook;
 			sourceTree = "<group>";
@@ -1285,6 +1288,7 @@
 				F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */,
 				F7A41CF5219BD60400D0A3C3 /* SlideTransitionAnimator.swift in Sources */,
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
+				BE16A68C291E33FD00374D2E /* StackScrollViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */,

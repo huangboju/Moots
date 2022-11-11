@@ -14,6 +14,7 @@ class AutolayoutMenuController: GroupTableController {
         [
             SimpleStackViewController.self,
             NestedStackViewController.self,
+            StackScrollViewController.self,
             DynamicStackViewController.self,
             TwoEqualWidthViewsController.self,
             TwoDifferentWidthViews.self,
@@ -33,7 +34,7 @@ class AutolayoutMenuController: GroupTableController {
             WorkingWithScrollViews.self,
             AnimatingChangesViewController.self,
             SizeClassSpecificLayouts.self,
-            UIKitDynamicsViewController.self,
+            UIKitDynamicsViewController.self
         ]
     ]
     

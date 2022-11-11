@@ -27,10 +27,10 @@ class LayoutTrasition: UIViewController {
 
     @objc func buttonAction(sender: UIButton) {
         sender.isSelected = !sender.isSelected
+        sender.snp.updateConstraints { (make) in
+            make.height.width.equalTo(sender.isSelected ? 200 : 80)
+        }
         UIView.animate(withDuration: 0.4, delay: 0, options: .curveEaseIn, animations: {
-            sender.snp.updateConstraints { (make) in
-                make.height.width.equalTo(sender.isSelected ? 200 : 80)
-            }
             sender.layoutIfNeeded()
         }, completion: nil)
     }

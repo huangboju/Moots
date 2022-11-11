@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import StackScrollView
+//import StackScrollView
 
 extension UIApplication {
     var keyWindowInConnectedScenes: UIWindow? {
@@ -41,13 +41,13 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         return tableView
     }()
 
-    private lazy var stackScroll: StackScrollView = {
-        let stackScroll = StackScrollView()
-        stackScroll.contentInsetAdjustmentBehavior = .never
+    private lazy var stackScroll: UIStackView = {
+        let stackView = UIStackView()
         for i in 0 ..< 10 {
-            stackScroll.append(view: LabelStackCell(title: "cell:\(i)"))
+            stackView.addArrangedSubview(LabelStackCell(title: "\(i)"))
         }
-        return stackScroll
+        stackView.axis = .vertical
+        return stackView
     }()
     
     private lazy var containerView: UIView = {
@@ -70,12 +70,14 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         
         view.addSubview(containerView)
 
-        stackScroll.frame = CGRect(x: 0, y: UIApplication.statusBarHeight + 44, width: view.frame.width, height: 420)
         containerView.addSubview(stackScroll)
+        stackScroll.snp.makeConstraints { make in
+            make.leading.top.trailing.equalToSuperview()
+        }
+        containerView.layoutIfNeeded()
 
-        let bottom = view.safeAreaBottom
         containerView.addSubview(tableView)
-        tableView.frame = CGRect(x: 0, y: stackScroll.frame.maxY, width: view.frame.width, height: view.frame.height - bottom)
+
 
         tableView.addObserver(self,
                               forKeyPath: "contentSize",
@@ -87,6 +89,15 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         let scrollviewOrigin = topScrollView.frame.origin;
         topScrollView.scrollIndicatorInsets = UIEdgeInsets(top: -scrollviewOrigin.y, left: 0, bottom: scrollviewOrigin.y, right: scrollviewOrigin.x)
 
+    }
+
+    private lazy var safeAreaBottom: CGFloat = {
+        view.safeAreaBottom
+    }()
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = CGRect(x: 0, y: stackScroll.frame.maxY, width: view.frame.width, height: view.frame.height)
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -112,7 +123,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
            obj == self.tableView &&
             keyPath == "contentSize" {
             var size = tableView.contentSize
-            size.height += (tableView.frame.minY + view.safeAreaBottom)
+            size.height += (tableView.frame.minY + safeAreaBottom)
             topScrollView.contentSize = size
         }
     }
