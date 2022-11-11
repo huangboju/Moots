@@ -28,7 +28,7 @@ class DynamicTextAndReadability: AutoLayoutBaseController {
         
         do {
             if #available(iOS 11, *) {
-                titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+                titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
             } else {
                 titleLabel.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor, constant: 20).isActive = true
             }

@@ -46,7 +46,7 @@ class ImageViewsAndAspectFitMode: AutoLayoutBaseController {
             bottomContentView.leadingAnchor.constraint(equalTo: topContentView.leadingAnchor).isActive = true
             bottomContentView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 8).isActive = true
             if #available(iOS 11, *) {
-                view.safeAreaLayoutGuide.topAnchor.constraint(equalTo: bottomContentView.safeAreaLayoutGuide.bottomAnchor, constant: 20).isActive = true
+                view.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: bottomContentView.bottomAnchor, constant: 20).isActive = true
             } else {
                 bottomLayoutGuide.topAnchor.constraint(equalTo: bottomContentView.bottomAnchor, constant: 20).isActive = true
             }
