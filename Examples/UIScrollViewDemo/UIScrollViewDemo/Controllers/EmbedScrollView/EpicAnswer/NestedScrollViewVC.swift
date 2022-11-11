@@ -6,30 +6,8 @@
 //  Copyright © 2022 伯驹 黄. All rights reserved.
 //
 
-import Foundation
 import UIKit
 import StackScrollView
-
-extension UIView {
-
-    var safeAreaBottom: CGFloat {
-         if #available(iOS 11, *) {
-            if let window = UIApplication.shared.keyWindowInConnectedScenes {
-                return window.safeAreaInsets.bottom
-            }
-         }
-         return 0
-    }
-
-    var safeAreaTop: CGFloat {
-         if #available(iOS 11, *) {
-            if let window = UIApplication.shared.keyWindowInConnectedScenes {
-                return window.safeAreaInsets.top
-            }
-         }
-         return 0
-    }
-}
 
 extension UIApplication {
     var keyWindowInConnectedScenes: UIWindow? {
@@ -92,7 +70,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         
         view.addSubview(containerView)
 
-        stackScroll.frame = CGRect(x: 0, y: UIApplication.statusBarHeight + 44, width: view.frame.width, height: 400)
+        stackScroll.frame = CGRect(x: 0, y: UIApplication.statusBarHeight + 44, width: view.frame.width, height: 420)
         containerView.addSubview(stackScroll)
 
         let bottom = view.safeAreaBottom

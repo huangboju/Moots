@@ -26,24 +26,38 @@ class StackCellBase: UIControl, StackCellType {
 
 }
 
+class CardView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        backgroundColor = .white
+        layer.cornerRadius = 12
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 final class LabelStackCell: StackCellBase {
 
-    private let label = UILabel()
+    private lazy var cardView: CardView = {
+        let cardView = CardView()
+        return cardView
+    }()
 
     init(title: String) {
         super.init()
 
-        backgroundColor = .systemRed
+        backgroundColor = UIColor(hex: 0xF5F5F5)
 
-        addSubview(label)
+        addSubview(cardView)
 
-        label.snp.makeConstraints { make in
-            make.leading.equalTo(15)
-            make.top.centerY.equalToSuperview()
-            make.height.equalTo(40)
+        cardView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview().inset(8)
+            make.bottom.equalTo(-10)
+            make.top.equalToSuperview()
+            make.height.equalTo(200)
         }
-
-        label.font = UIFont.preferredFont(forTextStyle: .body)
-        label.text = title
     }
 }
