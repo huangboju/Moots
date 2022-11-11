@@ -22,8 +22,6 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         view.addSubview(outerScrollView)
 
         outerScrollView.addSubview(nestedScrollView)
-
-        navigationController?.setNavigationBarHidden(true, animated: true)
     }
 
     var isNestedScrollEnabled: Bool {
@@ -120,7 +118,6 @@ class EmbedScrollViewVC: UIViewController, UIScrollViewDelegate {
         nestedScrollView.backgroundColor = .systemGreen.withAlphaComponent(0.7)
         nestedScrollView.delegate = self
         nestedScrollView.isScrollEnabled = false
-        nestedScrollView.delaysContentTouches = false
         nestedScrollView.contentInsetAdjustmentBehavior = .never
         nestedScrollView.addSubview(blockView)
         nestedScrollView.showsVerticalScrollIndicator = false

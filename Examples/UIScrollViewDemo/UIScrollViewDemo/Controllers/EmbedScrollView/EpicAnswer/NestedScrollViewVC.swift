@@ -24,7 +24,7 @@ extension UIApplication {
     }
 }
 
-final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
+final class NestedScrollViewVC: UIViewController {
     
     private lazy var topScrollView: UIScrollView = {
         let topScrollView = UIScrollView()
@@ -37,6 +37,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
         let tableView = UITableView()
         tableView.contentInsetAdjustmentBehavior = .never
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
@@ -65,7 +66,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.addGestureRecognizer(tableView.panGestureRecognizer)
+        view.addGestureRecognizer(topScrollView.panGestureRecognizer)
         tableView.removeGestureRecognizer(tableView.panGestureRecognizer)
         
         view.addSubview(containerView)
@@ -85,7 +86,7 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
                               context: nil)
 
         view.addSubview(topScrollView)
-        topScrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
+        topScrollView.frame = CGRect(x: view.frame.width, y: 0, width: view.frame.width, height: view.frame.height)
         let scrollviewOrigin = topScrollView.frame.origin;
         topScrollView.scrollIndicatorInsets = UIEdgeInsets(top: -scrollviewOrigin.y, left: 0, bottom: scrollviewOrigin.y, right: scrollviewOrigin.x)
 
@@ -126,6 +127,12 @@ final class NestedScrollViewVC: UIViewController, UIScrollViewDelegate {
             size.height += (tableView.frame.minY + safeAreaBottom)
             topScrollView.contentSize = size
         }
+    }
+}
+
+extension NestedScrollViewVC: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath)
     }
 }
 
