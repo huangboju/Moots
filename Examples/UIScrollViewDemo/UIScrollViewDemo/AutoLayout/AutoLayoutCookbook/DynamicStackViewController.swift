@@ -21,7 +21,11 @@ class DynamicStackViewController: AutoLayoutBaseController {
 
         scrollView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16).isActive = true
         scrollView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16).isActive = true
-        scrollView.topAnchor.constraint(equalTo: view.topAnchor, constant: 70).isActive = true
+        if #available(iOS 11, *) {
+            scrollView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        } else {
+            scrollView.topAnchor.constraint(equalTo: topLayoutGuide.bottomAnchor).isActive = true
+        }
         if #available(iOS 11, *) {
             scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         } else {
