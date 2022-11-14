@@ -92,6 +92,11 @@ final class NestedScrollViewVC: UIViewController {
 
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        topScrollView.setContentOffset(CGPoint(x: 0, y: stackScroll.arrangedSubviews[1].frame.minY), animated: true)
+    }
+
     private lazy var safeAreaBottom: CGFloat = {
         view.safeAreaBottom
     }()
