@@ -59,5 +59,14 @@ final class LabelStackCell: StackCellBase {
             make.top.equalToSuperview()
             make.height.equalTo(200)
         }
+
+        addTarget(self, action: #selector(clicked), for: .touchUpInside)
+    }
+
+    @objc
+    func clicked() {
+        cardView.snp.updateConstraints { make in
+            make.height.equalTo(500)
+        }
     }
 }

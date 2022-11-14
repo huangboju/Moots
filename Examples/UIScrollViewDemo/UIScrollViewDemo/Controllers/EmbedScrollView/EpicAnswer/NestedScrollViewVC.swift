@@ -78,6 +78,11 @@ final class NestedScrollViewVC: UIViewController {
         containerView.layoutIfNeeded()
 
         containerView.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.leading.trailing.equalToSuperview()
+            make.top.equalTo(stackScroll.snp.bottom)
+            make.height.equalTo(view)
+        }
 
 
         tableView.addObserver(self,
@@ -101,11 +106,6 @@ final class NestedScrollViewVC: UIViewController {
         view.safeAreaBottom
     }()
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = CGRect(x: 0, y: stackScroll.frame.maxY, width: view.frame.width, height: view.frame.height)
-    }
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView == tableView { return }
         if scrollView.contentOffset.y <= stickyHeight {
