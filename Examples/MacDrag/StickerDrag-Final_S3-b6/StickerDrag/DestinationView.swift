@@ -41,7 +41,7 @@ class DestinationView: NSView {
     setup()
   }
   
-  var nonURLTypes: Set<NSPasteboard.PasteboardType>  { return [NSPasteboard.PasteboardType(rawValue: kUTTypeTIFF as String), SparkleDrag.type] }
+  var nonURLTypes: Set<NSPasteboard.PasteboardType>  { return [.tiff, SparkleDrag.type] }
   var acceptableTypes: Set<NSPasteboard.PasteboardType> { return nonURLTypes.union([.URL]) }
   
   func setup() {
