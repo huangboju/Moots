@@ -577,7 +577,6 @@
 				BE18BBA21FB0382500B03048 /* CaptchaCell.swift */,
 				BE95F4F11FC402310033D83B /* ResetPasswordFieldCell.swift */,
 				BE95F4F31FC404DC0033D83B /* ResetPasswrodCell.swift */,
-				BEDAFFE6290BB62400FB67BB /* TitleCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -655,6 +654,16 @@
 			path = GestureButtonViewController;
 			sourceTree = "<group>";
 		};
+		BE8D16E62924CD8C003CD5A9 /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				BEDAFFE6290BB62400FB67BB /* TitleCell.swift */,
+				BEBE4A011FAC083F00A9CA9A /* Row.swift */,
+				BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
 		BEBE4A001FAC07F900A9CA9A /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,8 +671,7 @@
 				BE3D3A271FAFF3BD001F097D /* Views */,
 				BEBE4A1A1FAC3C6E00A9CA9A /* HZUIHelper.swift */,
 				BEBE4A161FAC1B9A00A9CA9A /* CodeTimerPresenter.swift */,
-				BEBE4A011FAC083F00A9CA9A /* Row.swift */,
-				BEBE4A021FAC083F00A9CA9A /* GroupTableController.swift */,
+				BE8D16E62924CD8C003CD5A9 /* Form */,
 				BEC5E7901FB41EE300A44CD7 /* CollectionListController.swift */,
 			);
 			path = Account;
