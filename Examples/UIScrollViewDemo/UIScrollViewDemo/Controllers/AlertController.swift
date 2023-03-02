@@ -193,27 +193,4 @@ final class Animal: NSObject {
 class TextField: NSObject {
     @objc dynamic var text: String = ""
 }
-// 双向绑定
-extension NSObjectProtocol where Self: NSObject {
-    func observe<A, Other>(_ keyPath: KeyPath<Self, A>, writeTo other: Other, _ otherKeyPath: ReferenceWritableKeyPath<Other, A>) -> NSKeyValueObservation where A: Equatable, Other: NSObjectProtocol {
-        return observe(keyPath, options: .new) { _, change in
-            guard let newValue = change.newValue,
-                other[keyPath: otherKeyPath] != newValue else {
-                    return // prevent endless feedback loop
-            }
-            other[keyPath: otherKeyPath] = newValue
-        }
-    }
-}
-
-extension NSObjectProtocol where Self: NSObject {
-    func bind<A, Other>(_ keyPath: ReferenceWritableKeyPath<Self,A>,
-                        to other: Other,
-                        _ otherKeyPath: ReferenceWritableKeyPath<Other,A>)
-        -> (NSKeyValueObservation, NSKeyValueObservation) where A: Equatable, Other: NSObject {
-            let one = observe(keyPath, writeTo: other, otherKeyPath)
-            let two = other.observe(otherKeyPath, writeTo: self, keyPath)
-            return (one,two)
-    }
-}
 

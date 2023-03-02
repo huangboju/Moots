@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
 		AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = AFC68BF3292240DD001D0B08 /* Parchment */; };
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
@@ -224,6 +225,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
 		BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassSpecificLayouts.swift; sourceTree = "<group>"; };
@@ -538,6 +540,7 @@
 				BE1B15531FB2A41A00862271 /* Reusable.swift */,
 				BE1B15511FB2A41A00862271 /* UICollectionView+Reusable.swift */,
 				BE1B15521FB2A41A00862271 /* UITableView+Reusable.swift */,
+				AFBC714D29B0BF9400B80723 /* Observer.swift */,
 			);
 			path = Reusable;
 			sourceTree = "<group>";
@@ -1150,6 +1153,7 @@
 				BEDAFFE9290BB72D00FB67BB /* SkuVC.swift in Sources */,
 				BE1093FA1F9B577F00CD4804 /* NestedStackViewController.swift in Sources */,
 				BE3D3A3A1FAFF4A6001F097D /* AccountFooterView.swift in Sources */,
+				AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */,
 				BED1CCEE1FB2D859002FE096 /* CompanyInfoCell.swift in Sources */,
 				F7A41CD92199A0B100D0A3C3 /* SwipeFirstViewController.swift in Sources */,
 				BED604BE1FD14C420099151E /* TableNestCollectionController.swift in Sources */,
