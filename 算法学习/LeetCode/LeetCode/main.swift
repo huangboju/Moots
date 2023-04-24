@@ -230,3 +230,23 @@ print(MinPathSum().minPathSum([[1,2,3],[4,5,6]]))
 print(CombineSolution().combine(4, 2))
 
 print(SubsetsSolution().subsets([1,2,3]))
+
+
+let root = TreeNode(1)
+let node2 = TreeNode(2)
+let node3 = TreeNode(3)
+let node4 = TreeNode(4)
+let node5 = TreeNode(5)
+let node6 = TreeNode(6)
+
+root.left = node2
+root.right = node3
+
+node2.left = node4
+node2.right = node5
+
+node3.right = node6
+
+
+
+print("result: ", SolutionSymmetric.bfs(root))

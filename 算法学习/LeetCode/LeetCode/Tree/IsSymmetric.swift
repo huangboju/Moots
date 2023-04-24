@@ -64,28 +64,26 @@ class SolutionSymmetric {
     }
     
     // BFS:
-    //     func levelOrder(_ root: TreeNode?) -> [[Int]] {
-    //        guard let root = root else { return [] }
-    //        var result = [[Int]]()
-    //        var queue = [root]
-    //
-    //        while !queue.isEmpty {
-    //            var row: [Int] = []
-    //            for _ in 0 ..< queue.count {
-    //                let first = queue.removeFirst()
-    //                row.append(first.val)
-    //                if let left = first.left {
-    //                    queue.append(left)
-    //                }
-    //                if let right = first.right {
-    //                    queue.append(right)
-    //                }
-    //            }
-    //            result.append(row)
-    //        }
-    //
-    //        return result
-    //     }
+         static func bfs(_ root: TreeNode?) -> [Int] {
+            guard let root = root else { return [] }
+            var result = [Int]()
+            var queue = [root]
+    
+            while !queue.isEmpty {
+                for _ in 0 ..< queue.count {
+                    let first = queue.removeFirst()
+                    result.append(first.val)
+                    if let left = first.left {
+                        queue.append(left)
+                    }
+                    if let right = first.right {
+                        queue.append(right)
+                    }
+                }
+            }
+    
+            return result
+         }
     
     // https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/
     func zigzagLevelOrder(_ root: TreeNode?) -> [[Int]] {
@@ -124,7 +122,7 @@ class SolutionSymmetric {
         
         return result
     }
-
+    
     // https://leetcode-cn.com/problems/same-tree/
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil && q == nil {
@@ -223,11 +221,11 @@ class SolutionSymmetric {
             }
             return max(maxDepth(root.left), maxDepth(root.right)) + 1
         }
-
+        
         guard let root = root else {
             return true
         }
-
+        
         return isBalanced(root.left) && isBalanced(root.right) && abs(maxDepth(root.left) - maxDepth(root.right))<=1
     }
     
@@ -304,7 +302,7 @@ class SolutionSymmetric {
             currentDiameter = max(currentDiameter, leftDeepth+rightDeepth)
             return max(leftDeepth,rightDeepth) + 1
         }
-
+        
         let _ = deepth(root)
         return currentDiameter
     }
