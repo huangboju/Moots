@@ -75,7 +75,6 @@ final class NestedScrollViewVC: UIViewController {
         stackScroll.snp.makeConstraints { make in
             make.leading.top.trailing.equalToSuperview()
         }
-        containerView.layoutIfNeeded()
 
         containerView.addSubview(tableView)
         tableView.snp.makeConstraints { make in
