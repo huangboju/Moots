@@ -140,6 +140,10 @@
 		BEDAFFF9290BC72700FB67BB /* GoodsInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFF8290BC72700FB67BB /* GoodsInfoCell.swift */; };
 		BEDAFFFB290BC7B200FB67BB /* GoodsInfoCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFFA290BC7B200FB67BB /* GoodsInfoCellModel.swift */; };
 		BEDAFFFD290BCCEC00FB67BB /* SkuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEDAFFFC290BCCEC00FB67BB /* SkuViewModel.swift */; };
+		BEE9853B2A2731E00015229B /* JSCoreMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9853A2A2731E00015229B /* JSCoreMenuVC.swift */; };
+		BEE9853D2A2732F90015229B /* JSCoreBasicsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE9853C2A2732F90015229B /* JSCoreBasicsVC.swift */; };
+		BEE9853F2A2733FB0015229B /* jssource.js in Resources */ = {isa = PBXBuildFile; fileRef = BEE9853E2A2733FB0015229B /* jssource.js */; };
+		BEE985422A273BE30015229B /* RulerMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE985412A273BE30015229B /* RulerMenuVC.swift */; };
 		BEF29C83251112B80094EBD5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = BEF29C7F251112B80094EBD5 /* data.json */; };
 		BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C81251112B80094EBD5 /* GLImageCell.swift */; };
 		BEF29C86251112B80094EBD5 /* LazyLoadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */; };
@@ -353,6 +357,10 @@
 		BEDAFFF8290BC72700FB67BB /* GoodsInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInfoCell.swift; sourceTree = "<group>"; };
 		BEDAFFFA290BC7B200FB67BB /* GoodsInfoCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsInfoCellModel.swift; sourceTree = "<group>"; };
 		BEDAFFFC290BCCEC00FB67BB /* SkuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkuViewModel.swift; sourceTree = "<group>"; };
+		BEE9853A2A2731E00015229B /* JSCoreMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreMenuVC.swift; sourceTree = "<group>"; };
+		BEE9853C2A2732F90015229B /* JSCoreBasicsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreBasicsVC.swift; sourceTree = "<group>"; };
+		BEE9853E2A2733FB0015229B /* jssource.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = jssource.js; sourceTree = "<group>"; };
+		BEE985412A273BE30015229B /* RulerMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulerMenuVC.swift; sourceTree = "<group>"; };
 		BEF29C7F251112B80094EBD5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		BEF29C81251112B80094EBD5 /* GLImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GLImageCell.swift; sourceTree = "<group>"; };
 		BEF29C82251112B80094EBD5 /* LazyLoadVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LazyLoadVC.swift; sourceTree = "<group>"; };
@@ -755,6 +763,27 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BEE985392A2731CD0015229B /* JSCore */ = {
+			isa = PBXGroup;
+			children = (
+				BEE9853E2A2733FB0015229B /* jssource.js */,
+				BEE9853A2A2731E00015229B /* JSCoreMenuVC.swift */,
+				BEE9853C2A2732F90015229B /* JSCoreBasicsVC.swift */,
+			);
+			path = JSCore;
+			sourceTree = "<group>";
+		};
+		BEE985402A273B750015229B /* Ruler */ = {
+			isa = PBXGroup;
+			children = (
+				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
+				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
+				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
+				BEE985412A273BE30015229B /* RulerMenuVC.swift */,
+			);
+			path = Ruler;
+			sourceTree = "<group>";
+		};
 		BEF29C7E251112430094EBD5 /* LazyLoadVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -905,6 +934,8 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BEE985402A273B750015229B /* Ruler */,
+				BEE985392A2731CD0015229B /* JSCore */,
 				BED5652429150A1600EC0C62 /* EmbedScrollView */,
 				BEDAFFE3290BAFBE00FB67BB /* Sku */,
 				EEAE4C34285F4B8A00B8A107 /* DiffableDatasource */,
@@ -916,7 +947,6 @@
 				D8A732171DED6E8A005DF7C8 /* PagingEnabled.swift */,
 				D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */,
 				D889759B1DEEA8E1005384F4 /* ScrollViewController.swift */,
-				D8123AF51EE8D49D00EAAA63 /* RulerControllerWithLayout.swift */,
 				D831FBEC1E2CAFFC009CFB28 /* ConvertController.swift */,
 				BEA0098E1F5D545800CB07CF /* CardViewController.swift */,
 				F79C0AF0218457AF008448E3 /* MaskShapeLayerVC.swift */,
@@ -924,8 +954,6 @@
 				BE894E7B1FBC1C9100585DF6 /* BubbleViewController.swift */,
 				BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */,
 				D824104A1E24B0010005E324 /* PagingSecondController.swift */,
-				D8123AF71EEA300F00EAAA63 /* RulerControllerWithScrollView.swift */,
-				D8123AEF1EE7FBB300EAAA63 /* RulerController.swift */,
 				D8076CC11DF27335008ACB34 /* CycleViewController.swift */,
 				D8A731F31DED6E28005DF7C8 /* ViewController.swift */,
 				F754780521DCC217004D3D32 /* BlurController.swift */,
@@ -1122,6 +1150,7 @@
 				BE79ED3E250E5F23003B2B21 /* UIControl断点 in Resources */,
 				BEF29C83251112B80094EBD5 /* data.json in Resources */,
 				D8A731FC1DED6E28005DF7C8 /* LaunchScreen.storyboard in Resources */,
+				BEE9853F2A2733FB0015229B /* jssource.js in Resources */,
 				BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */,
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
 				BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */,
@@ -1190,6 +1219,7 @@
 				BE3654071F9C8088001A8432 /* TwoViewsWithComplexWidths.swift in Sources */,
 				EE8AF88B27E9EAA800B2FEF0 /* AppDelegate+Injection.swift in Sources */,
 				BED1CCF51FB2E585002FE096 /* VerifyCoInfoHeaderView.swift in Sources */,
+				BEE985422A273BE30015229B /* RulerMenuVC.swift in Sources */,
 				F7A41CDF2199A53F00D0A3C3 /* SwipeTransitionInteractionController.swift in Sources */,
 				D8A7321B1DED6E8A005DF7C8 /* NextPageLoadable.swift in Sources */,
 				BE6169D71F9DD23E00746C5E /* GroupingViews.swift in Sources */,
@@ -1313,6 +1343,7 @@
 				F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */,
 				BE7015BB291CA9A9007EA361 /* LabelStackCell.swift in Sources */,
 				BE18BBA31FB0382500B03048 /* CaptchaCell.swift in Sources */,
+				BEE9853D2A2732F90015229B /* JSCoreBasicsVC.swift in Sources */,
 				BE3D3A2D1FAFF423001F097D /* TextFiledCell.swift in Sources */,
 				D824104B1E24B0010005E324 /* PagingSecondController.swift in Sources */,
 				BE1B15561FB2A41A00862271 /* Reusable.swift in Sources */,
@@ -1328,6 +1359,7 @@
 				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
 				BEC5E7941FB4222E00A44CD7 /* MyCoRightsRecommendView.swift in Sources */,
 				F7A41CEE219BC5F200D0A3C3 /* AdaptivePresentationSecondViewController.swift in Sources */,
+				BEE9853B2A2731E00015229B /* JSCoreMenuVC.swift in Sources */,
 				BE4FCA661FB6903900E1C3F0 /* NotCompanyUserController.swift in Sources */,
 				BEF69BB0284F47A100D7ED3E /* FaceTrackVC.swift in Sources */,
 				BE75381820076B1D003FE13E /* UICollectionViewLeftAlignedLayout.swift in Sources */,

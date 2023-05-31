@@ -1,20 +1,21 @@
 //
-//  SkuVC.swift
+//  JSCoreMenuVC.swift
 //  UIScrollViewDemo
 //
-//  Created by 黄渊 on 2022/10/28.
-//  Copyright © 2022 伯驹 黄. All rights reserved.
+//  Created by 黄渊 on 2023/5/31.
+//  Copyright © 2023 伯驹 黄. All rights reserved.
 //
 
 import Foundation
 
-final class SkuListVC: GroupTableController {
+class JSCoreMenuVC: GroupTableController {
 
     override func initSubviews() {
+        title = "\(classForCoder)"
+
         rows = [
             [
-                Row<TitleCell>(viewData: TitleCellItem(title: "普通解法", segue: .push(SkuVC.self))),
-                Row<TitleCell>(viewData: TitleCellItem(title: "图解法", segue: .push(SkuVC.self)))
+                Row<TitleCell>(viewData: TitleCellItem(segue: .push(JSCoreBasicsVC.self))),
             ]
         ]
     }

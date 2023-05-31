@@ -5,8 +5,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "78424be314842833c04bc3bef5b72e85fff99204",
-        "version" : "5.6.4"
+        "revision" : "bc268c28fb170f494de9e9927c371b8342979ece",
+        "version" : "5.7.1"
       }
     },
     {
@@ -24,7 +24,7 @@
       "location" : "https://github.com/rechsteiner/Parchment",
       "state" : {
         "branch" : "main",
-        "revision" : "51eba77aa6761f27cc30631e2823f0304e4eedb4"
+        "revision" : "13aad3e9308e8a4e38cb579430dbf66465418777"
       }
     },
     {

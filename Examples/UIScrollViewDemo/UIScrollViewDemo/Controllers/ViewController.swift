@@ -18,6 +18,9 @@ class ViewController: UIViewController {
 
     lazy var data: [[UIViewController.Type]] = [
         [
+            JSCoreMenuVC.self
+        ],
+        [
             FriendTableViewController.self,
             PagingEnabled.self,
             InfiniteScrollViewController.self,
@@ -31,9 +34,7 @@ class ViewController: UIViewController {
             ExpandingCollectionViewController.self,
         ],
         [
-            RulerControllerWithScrollView.self,
-            RulerController.self,
-            RulerControllerWithLayout.self
+            RulerMenuVC.self
         ],
         [
             CardViewController.self

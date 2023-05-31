@@ -17,7 +17,7 @@ extension UIViewController {
         switch segue {
         case let .controller(c):
             vc = c
-        case let .segue(c):
+        case let .push(c):
             vc = c.init()
         case let .modal(c):
             vc = c.init()
@@ -52,7 +52,7 @@ extension UIViewController {
 public enum Segue {
     case none
     // 用SegueRow，把创建对象延迟到跳转时
-    case segue(UIViewController.Type)
+    case push(UIViewController.Type)
     case modal(UIViewController.Type)
     case controller(UIViewController)
     case web(String)
@@ -64,7 +64,7 @@ extension Segue: CustomStringConvertible {
         switch self {
         case .none:
             return "none"
-        case let .segue(dest):
+        case let .push(dest):
             return "\(dest)"
         case let .controller(vc):
             return vc.description

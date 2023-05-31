@@ -44,7 +44,7 @@ class AutolayoutMenuController: GroupTableController {
         var result: [[RowType]] = []
 
         for section in data {
-            let rows = section.map { Row<TitleCell>(viewData: TitleCellItem(segue: .segue($0))) }
+            let rows = section.map { Row<TitleCell>(viewData: TitleCellItem(segue: .push($0))) }
             result.append(rows)
         }
 

@@ -13,7 +13,7 @@ class DiffableDatasourceMenuVC: GroupTableController {
     override func initSubviews() {
         rows = [
             [
-                Row<TitleCell>(viewData: TitleCellItem(segue: .segue(TableDiffableVC.self)))
+                Row<TitleCell>(viewData: TitleCellItem(segue: .push(TableDiffableVC.self)))
             ]
         ]
     }
