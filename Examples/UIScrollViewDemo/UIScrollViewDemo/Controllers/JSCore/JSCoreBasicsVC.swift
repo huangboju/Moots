@@ -31,14 +31,15 @@ class JSCoreBasicsVC: UIViewController {
                                                object: nil)
 
         // Do any additional setup after loading the view.
-        initializeJS()
-        helloWorld()
-        jsDemo1()
-        jsDemo2()
-        jsDemo3()
+//        initializeJS()
+        testJS()
+//        helloWorld()
+//        jsDemo1()
+//        jsDemo2()
+//        jsDemo3()
     }
 
-    func initializeJS() {
+    func initJS(_ fileName: String) {
         self.jsContext = JSContext()
 
         /// Catch exception
@@ -48,7 +49,7 @@ class JSCoreBasicsVC: UIViewController {
             }
         }
 
-        let jsPath = Bundle.main.path(forResource: "jssource", ofType: "js")
+        let jsPath = Bundle.main.path(forResource: fileName, ofType: "js")
         if let path = jsPath {
             do {
                 let jsSourceContents = try String(contentsOfFile: path)
@@ -57,11 +58,23 @@ class JSCoreBasicsVC: UIViewController {
                 print(ex.localizedDescription)
             }
         }
-
         // Configurate log
         let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
         jsContext.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
         jsContext.evaluateScript("consoleLog")
+    }
+
+    func testJS() {
+        initJS("dsmatrix.cjs.development")
+        guard let jsFunc = jsContext.objectForKeyedSubscript("adminConfigTest") else {
+            return
+        }
+
+        print(jsFunc.call(withArguments: ["你好"]).toDictionary())
+    }
+
+    func initializeJS() {
+        initJS("jssource")
     }
 
     func helloWorld() {
