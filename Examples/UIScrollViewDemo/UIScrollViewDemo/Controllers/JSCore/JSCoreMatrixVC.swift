@@ -18,10 +18,6 @@ class JSCoreMatrixVC: UIViewController {
                 print("JS exception: " + ex.toString())
             }
         }
-        callJSFunc(with: "bridgeName") { [weak self] in
-            guard let self, let bridgeName = $0?.toString() else { return }
-            jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
-        }
         return jsContext
     }()
 
@@ -57,13 +53,17 @@ class JSCoreMatrixVC: UIViewController {
         } catch let ex {
             print(ex.localizedDescription)
         }
+        callJSFunc(with: "bridgeName") { [weak self] in
+            guard let self, let bridgeName = $0?.toString() else { return }
+            jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
+        }
     }
 
-    func callJSFunc(with name: String, arguments: [Any] = [], completion: ((JSValue!) -> Void)? = nil) {
+    func callJSFunc(with name: String, arguments: [Any] = [], completion: ((JSValue?) -> Void)? = nil) {
         guard let jsFunc = jsContext?.objectForKeyedSubscript(name) else {
             return
         }
-        completion(jsFunc.call(withArguments: arguments))
+        completion?(jsFunc.call(withArguments: arguments))
     }
 }
 
