@@ -21,11 +21,20 @@ class JSCoreMatrixVC: UIViewController {
         return jsContext
     }()
 
+    private let consoleLog: @convention(block) (Any) -> Void = { logMessage in
+        print("\nJS console: ", logMessage)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         initJS()
 
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "callJS", style: .plain, target: self, action: #selector(callJS))
+    }
+
+    @objc
+    func callJS() {
         let data: [String: Any] = [
             "artifactPageName": "goods_detail",
             "deepLink": "www.youtube.com",
@@ -53,6 +62,10 @@ class JSCoreMatrixVC: UIViewController {
         } catch let ex {
             print(ex.localizedDescription)
         }
+        let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
+        jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
+        jsContext?.evaluateScript("consoleLog")
+
         callJSFunc(with: "bridgeName") { [weak self] in
             guard let self, let bridgeName = $0?.toString() else { return }
             jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
@@ -63,7 +76,8 @@ class JSCoreMatrixVC: UIViewController {
         guard let jsFunc = jsContext?.objectForKeyedSubscript(name) else {
             return
         }
-        completion?(jsFunc.call(withArguments: arguments))
+        let result = jsFunc.call(withArguments: arguments)
+        completion?(result)
     }
 }
 

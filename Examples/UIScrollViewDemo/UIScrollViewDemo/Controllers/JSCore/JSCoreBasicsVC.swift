@@ -31,12 +31,13 @@ class JSCoreBasicsVC: UIViewController {
                                                object: nil)
 
         // Do any additional setup after loading the view.
-//        initializeJS()
-        testJS()
+        initializeJS()
+//        testJS()
 //        helloWorld()
 //        jsDemo1()
 //        jsDemo2()
 //        jsDemo3()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "callJS", style: .plain, target: self, action: #selector(jsDemo1))
     }
 
     func initJS(_ fileName: String) {
@@ -83,6 +84,7 @@ class JSCoreBasicsVC: UIViewController {
         }
     }
 
+    @objc
     func jsDemo1() {
         let firstName = "zhang"
         let lastName = "san"
