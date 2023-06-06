@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0D19A52A273FAF00E43CAB /* dsmatrix.cjs.development.js in Resources */ = {isa = PBXBuildFile; fileRef = AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */; };
+		AF0D19A62A273FAF00E43CAB /* dsmatrix.cjs.production.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */; };
 		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
 		AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = AFC68BF3292240DD001D0B08 /* Parchment */; };
+		AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */; };
+		AFF994432A2F57230032A1CF /* dsmatrix-native.cjs.development.js in Resources */ = {isa = PBXBuildFile; fileRef = AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */; };
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
 		BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */; };
@@ -229,7 +233,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsmatrix.cjs.development.js; sourceTree = "<group>"; };
+		AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsmatrix.cjs.production.min.js; sourceTree = "<group>"; };
 		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreMatrixVC.swift; sourceTree = "<group>"; };
+		AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dsmatrix-native.cjs.development.js"; sourceTree = "<group>"; };
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
 		BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassSpecificLayouts.swift; sourceTree = "<group>"; };
@@ -766,9 +774,13 @@
 		BEE985392A2731CD0015229B /* JSCore */ = {
 			isa = PBXGroup;
 			children = (
+				AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */,
+				AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */,
+				AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */,
 				BEE9853E2A2733FB0015229B /* jssource.js */,
 				BEE9853A2A2731E00015229B /* JSCoreMenuVC.swift */,
 				BEE9853C2A2732F90015229B /* JSCoreBasicsVC.swift */,
+				AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */,
 			);
 			path = JSCore;
 			sourceTree = "<group>";
@@ -1153,7 +1165,10 @@
 				BEE9853F2A2733FB0015229B /* jssource.js in Resources */,
 				BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */,
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
+				AF0D19A62A273FAF00E43CAB /* dsmatrix.cjs.production.min.js in Resources */,
 				BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */,
+				AFF994432A2F57230032A1CF /* dsmatrix-native.cjs.development.js in Resources */,
+				AF0D19A52A273FAF00E43CAB /* dsmatrix.cjs.development.js in Resources */,
 				EE222E982911399400D2702A /* variants.json in Resources */,
 				D8A731F71DED6E28005DF7C8 /* Main.storyboard in Resources */,
 			);
@@ -1336,6 +1351,7 @@
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
 				BE16A68C291E33FD00374D2E /* StackScrollViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
+				AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */,
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,

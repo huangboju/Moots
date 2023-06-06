@@ -16,6 +16,7 @@ class JSCoreMenuVC: GroupTableController {
         rows = [
             [
                 Row<TitleCell>(viewData: TitleCellItem(segue: .push(JSCoreBasicsVC.self))),
+                Row<TitleCell>(viewData: TitleCellItem(segue: .push(JSCoreMatrixVC.self))),
             ]
         ]
     }
