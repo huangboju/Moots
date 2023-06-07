@@ -72,15 +72,12 @@ class JSCoreMatrixVC: UIViewController {
         }
         let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
         jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
-        jsContext?.evaluateScript("consoleLog")
 
         let request = unsafeBitCast(_sendClientRequest, to: AnyObject.self)
         jsContext?.setObject(request, forKeyedSubscript: "sendClientRequest" as (NSCopying & NSObjectProtocol))
-        jsContext?.evaluateScript("sendClientRequest")
 
         let response = unsafeBitCast(_handleMatrixResponse, to: AnyObject.self)
         jsContext?.setObject(response, forKeyedSubscript: "handleMatrixResponse" as (NSCopying & NSObjectProtocol))
-        jsContext?.evaluateScript("handleMatrixResponse")
     }
 
     func callJSFunc(with name: String, arguments: [Any] = [], completion: ((JSValue?) -> Void)? = nil) {
