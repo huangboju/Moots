@@ -26,11 +26,11 @@ class JSCoreMatrixVC: UIViewController {
     }
 
     private let _sendClientRequest: @convention(block) ([String: Any]) -> Void = {
-        sendClientRequest($0)
+        JSCoreMatrixVC.sendClientRequest($0)
     }
 
     private let _handleMatrixResponse: @convention(block) ([String: Any]) -> Void = {
-        handleMatrixResponse($0)
+        JSCoreMatrixVC.handleMatrixResponse($0)
     }
 
     override func viewDidLoad() {
@@ -81,11 +81,6 @@ class JSCoreMatrixVC: UIViewController {
         let response = unsafeBitCast(_handleMatrixResponse, to: AnyObject.self)
         jsContext?.setObject(response, forKeyedSubscript: "handleMatrixResponse" as (NSCopying & NSObjectProtocol))
         jsContext?.evaluateScript("handleMatrixResponse")
-
-        callJSFunc(with: "bridgeName") { [weak self] in
-            guard let self, let bridgeName = $0?.toString() else { return }
-            jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
-        }
     }
 
     func callJSFunc(with name: String, arguments: [Any] = [], completion: ((JSValue?) -> Void)? = nil) {
@@ -96,11 +91,11 @@ class JSCoreMatrixVC: UIViewController {
         completion?(result)
     }
 
-    func sendClientRequest(_ request: [String: Any]) {
+    static func sendClientRequest(_ request: [String: Any]) {
         print(request, #function)
     }
 
-    func handleMatrixResponse(_ params: [String: Any]) {
+    static func handleMatrixResponse(_ params: [String: Any]) {
         print(params, #function)
     }
 }
