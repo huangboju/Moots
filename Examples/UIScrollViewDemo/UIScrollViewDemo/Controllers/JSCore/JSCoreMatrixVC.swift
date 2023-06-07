@@ -25,7 +25,7 @@ class JSCoreMatrixVC: UIViewController {
         print("\nJS console: ", logMessage)
     }
 
-    private let _sendClientRequest: @convention(block) ([String: Any]) -> Void = {
+    private let _sendClientRequest: @convention(block) (JSValue) -> Void = {
         JSCoreMatrixVC.sendClientRequest($0)
     }
 
@@ -45,7 +45,7 @@ class JSCoreMatrixVC: UIViewController {
     func callJS() {
         let data: [String: Any] = [
             "artifactPageName": "goods_detail",
-            "deepLink": "www.youtube.com",
+            "deepLink": "",
             "basicParams": [
                 "appVersion": "1.0.0",
                 "deviceId": "123",
@@ -61,6 +61,11 @@ class JSCoreMatrixVC: UIViewController {
     }
 
     func initJS() {
+        let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
+        jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
+        let request = unsafeBitCast(_sendClientRequest, to: AnyObject.self)
+        jsContext?.setObject(request, forKeyedSubscript: "sendClientRequest" as (NSCopying & NSObjectProtocol))
+
         guard let path = Bundle.main.path(forResource: "dsmatrix-native.cjs.development", ofType: "js") else {
             return
         }
@@ -70,11 +75,6 @@ class JSCoreMatrixVC: UIViewController {
         } catch let ex {
             print(ex.localizedDescription)
         }
-        let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
-        jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
-
-        let request = unsafeBitCast(_sendClientRequest, to: AnyObject.self)
-        jsContext?.setObject(request, forKeyedSubscript: "sendClientRequest" as (NSCopying & NSObjectProtocol))
 
         let response = unsafeBitCast(_handleMatrixResponse, to: AnyObject.self)
         jsContext?.setObject(response, forKeyedSubscript: "handleMatrixResponse" as (NSCopying & NSObjectProtocol))
@@ -88,8 +88,15 @@ class JSCoreMatrixVC: UIViewController {
         completion?(result)
     }
 
-    static func sendClientRequest(_ request: [String: Any]) {
-        print(request, #function)
+    // https://stackoverflow.com/questions/35882539/javascriptcore-executing-a-javascript-defined-callback-function-from-native-cod
+    static func sendClientRequest(_ request: JSValue) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+            let success = request.forProperty("success")
+            success?.call(withArguments: ["参数"])
+
+            let failt = request.forProperty("failt")
+            failt?.call(withArguments: nil)
+        }
     }
 
     static func handleMatrixResponse(_ params: [String: Any]) {
