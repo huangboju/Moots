@@ -25,6 +25,14 @@ class JSCoreMatrixVC: UIViewController {
         print("\nJS console: ", logMessage)
     }
 
+    private let _sendClientRequest: @convention(block) ([String: Any]) -> Void = {
+        sendClientRequest($0)
+    }
+
+    private let _handleMatrixResponse: @convention(block) ([String: Any]) -> Void = {
+        handleMatrixResponse($0)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -66,6 +74,14 @@ class JSCoreMatrixVC: UIViewController {
         jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
         jsContext?.evaluateScript("consoleLog")
 
+        let request = unsafeBitCast(_sendClientRequest, to: AnyObject.self)
+        jsContext?.setObject(request, forKeyedSubscript: "sendClientRequest" as (NSCopying & NSObjectProtocol))
+        jsContext?.evaluateScript("sendClientRequest")
+
+        let response = unsafeBitCast(_handleMatrixResponse, to: AnyObject.self)
+        jsContext?.setObject(response, forKeyedSubscript: "handleMatrixResponse" as (NSCopying & NSObjectProtocol))
+        jsContext?.evaluateScript("handleMatrixResponse")
+
         callJSFunc(with: "bridgeName") { [weak self] in
             guard let self, let bridgeName = $0?.toString() else { return }
             jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
@@ -79,24 +95,12 @@ class JSCoreMatrixVC: UIViewController {
         let result = jsFunc.call(withArguments: arguments)
         completion?(result)
     }
-}
 
-extension JSCoreMatrixVC: SwiftJavaScriptDelegate {
     func sendClientRequest(_ request: [String: Any]) {
-        print(request)
+        print(request, #function)
     }
 
     func handleMatrixResponse(_ params: [String: Any]) {
-        print(params)
+        print(params, #function)
     }
-}
-
-
-@objc
-protocol SwiftJavaScriptDelegate: JSExport {
-
-    // js调用App的微信支付功能 演示最基本的用法
-    func sendClientRequest(_ request: [String: Any])
-
-    func handleMatrixResponse(_ params: [String: Any])
 }
