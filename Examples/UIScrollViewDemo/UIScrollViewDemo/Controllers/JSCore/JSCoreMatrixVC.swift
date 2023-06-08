@@ -9,7 +9,7 @@
 import Foundation
 import JavaScriptCore
 
-class JSCoreMatrixVC: UIViewController {
+class JSCoreMatrixVC: UIViewController, RetailSDKJSExport {
 
     private lazy var jsContext: JSContext? = {
         let jsContext = JSContext()
@@ -23,14 +23,6 @@ class JSCoreMatrixVC: UIViewController {
 
     private let consoleLog: @convention(block) (Any) -> Void = { logMessage in
         print("\nJS console: ", logMessage)
-    }
-
-    private let _sendClientRequest: @convention(block) (JSValue) -> Void = {
-        JSCoreMatrixVC.sendClientRequest($0)
-    }
-
-    private let _handleMatrixResponse: @convention(block) ([String: Any]) -> Void = {
-        JSCoreMatrixVC.handleMatrixResponse($0)
     }
 
     override func viewDidLoad() {
@@ -61,11 +53,6 @@ class JSCoreMatrixVC: UIViewController {
     }
 
     func initJS() {
-        let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
-        jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as (NSCopying & NSObjectProtocol))
-        let request = unsafeBitCast(_sendClientRequest, to: AnyObject.self)
-        jsContext?.setObject(request, forKeyedSubscript: "sendClientRequest" as (NSCopying & NSObjectProtocol))
-
         guard let path = Bundle.main.path(forResource: "dsmatrix-native.cjs.development", ofType: "js") else {
             return
         }
@@ -76,8 +63,17 @@ class JSCoreMatrixVC: UIViewController {
             print(ex.localizedDescription)
         }
 
-        let response = unsafeBitCast(_handleMatrixResponse, to: AnyObject.self)
-        jsContext?.setObject(response, forKeyedSubscript: "handleMatrixResponse" as (NSCopying & NSObjectProtocol))
+        injectNativeFunction()
+    }
+
+    func injectNativeFunction() {
+        callJSFunc(with: "bridgeName") { [weak self] in
+            guard let self, let bridgeName = $0?.toString() else { return }
+            jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
+        }
+
+        let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)
+        jsContext?.setObject(consoleLogObject, forKeyedSubscript: "consoleLog" as NSString)
     }
 
     func callJSFunc(with name: String, arguments: [Any] = [], completion: ((JSValue?) -> Void)? = nil) {
@@ -89,17 +85,39 @@ class JSCoreMatrixVC: UIViewController {
     }
 
     // https://stackoverflow.com/questions/35882539/javascriptcore-executing-a-javascript-defined-callback-function-from-native-cod
-    static func sendClientRequest(_ request: JSValue) {
+    func sendClientRequest(_ request: JSValue) {
+        print(request.toDictionary())
+        guard let urlLink = request.forProperty("url").toString(),
+              let url = URL(string: urlLink),
+              let method = request.forProperty("type").toString(),
+              let data = request.toDictionary()["data"] as? [String: Any] else {
+            return
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
             let success = request.forProperty("success")
             success?.call(withArguments: ["参数"])
 
-            let failt = request.forProperty("failt")
+            let failt = request.forProperty("fail")
             failt?.call(withArguments: nil)
         }
     }
 
-    static func handleMatrixResponse(_ params: [String: Any]) {
+    func handleMatrixResponse(_ params: JSValue) {
         print(params, #function)
     }
+
+    func consoleLog(_ content: JSValue) {
+        print("🍀\nJS console: ", content.toString())
+    }
+}
+
+@objc
+protocol RetailSDKJSExport: JSExport {
+
+    // js调用App的微信支付功能 演示最基本的用法
+    func sendClientRequest(_ request: JSValue)
+
+    func handleMatrixResponse(_ params: JSValue)
+
+    func consoleLog(_ content: JSValue)
 }
