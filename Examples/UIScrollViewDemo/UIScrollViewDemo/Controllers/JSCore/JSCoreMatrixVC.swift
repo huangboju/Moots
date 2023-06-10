@@ -69,7 +69,7 @@ class JSCoreMatrixVC: UIViewController, RetailSDKJSExport {
     func injectNativeFunction() {
         callJSFunc(with: "bridgeName") { [weak self] in
             guard let self, let bridgeName = $0?.toString() else { return }
-            jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
+            self.jsContext?.setObject(self, forKeyedSubscript: (bridgeName as NSString))
         }
 
         let consoleLogObject = unsafeBitCast(self.consoleLog, to: AnyObject.self)

@@ -27,11 +27,7 @@ class ViewController: UIViewController {
             ScrollViewController.self,
             PagingSecondController.self,
             ConvertController.self,
-            AutoLayoutController.self,
-            CollectionViewSelfSizing.self,
-            TableViewSelfsizing.self,
-            LayoutTrasition.self,
-            ExpandingCollectionViewController.self,
+            SandBox.self,
         ],
         [
             RulerMenuVC.self

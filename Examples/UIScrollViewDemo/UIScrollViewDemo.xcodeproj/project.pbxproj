@@ -7,12 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF0D19A52A273FAF00E43CAB /* dsmatrix.cjs.development.js in Resources */ = {isa = PBXBuildFile; fileRef = AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */; };
-		AF0D19A62A273FAF00E43CAB /* dsmatrix.cjs.production.min.js in Resources */ = {isa = PBXBuildFile; fileRef = AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */; };
 		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
 		AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = AFC68BF3292240DD001D0B08 /* Parchment */; };
 		AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */; };
-		AFF994432A2F57230032A1CF /* dsmatrix-native.cjs.development.js in Resources */ = {isa = PBXBuildFile; fileRef = AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */; };
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
 		BE0F89D31FA0C698003867B8 /* SizeClassSpecificLayouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */; };
@@ -182,6 +179,7 @@
 		D8A7321F1DED6E8A005DF7C8 /* TouchDelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A732181DED6E8A005DF7C8 /* TouchDelegateView.swift */; };
 		D8A7322E1DED743A005DF7C8 /* InfiniteScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */; };
 		EE222E982911399400D2702A /* variants.json in Resources */ = {isa = PBXBuildFile; fileRef = EE222E972911399400D2702A /* variants.json */; };
+		EE2AE2162A346AB10044C446 /* SandBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE2AE2152A346AB10044C446 /* SandBox.swift */; };
 		EE7E229F281D386100098542 /* NestedScrollViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7E229E281D386100098542 /* NestedScrollViewVC.swift */; };
 		EE8AE14827E9DE8F00B2FEF0 /* Resolver in Frameworks */ = {isa = PBXBuildFile; productRef = EE8AE14727E9DE8F00B2FEF0 /* Resolver */; };
 		EE8AF88B27E9EAA800B2FEF0 /* AppDelegate+Injection.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8AF88A27E9EAA800B2FEF0 /* AppDelegate+Injection.swift */; };
@@ -233,11 +231,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsmatrix.cjs.development.js; sourceTree = "<group>"; };
-		AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = dsmatrix.cjs.production.min.js; sourceTree = "<group>"; };
 		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreMatrixVC.swift; sourceTree = "<group>"; };
-		AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "dsmatrix-native.cjs.development.js"; sourceTree = "<group>"; };
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
 		BE0F89D21FA0C698003867B8 /* SizeClassSpecificLayouts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeClassSpecificLayouts.swift; sourceTree = "<group>"; };
@@ -410,6 +405,7 @@
 		D8A732221DED7124005DF7C8 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		D8A7322D1DED743A005DF7C8 /* InfiniteScrollViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfiniteScrollViewController.swift; sourceTree = "<group>"; };
 		EE222E972911399400D2702A /* variants.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = variants.json; sourceTree = "<group>"; };
+		EE2AE2152A346AB10044C446 /* SandBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandBox.swift; sourceTree = "<group>"; };
 		EE7E229E281D386100098542 /* NestedScrollViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestedScrollViewVC.swift; sourceTree = "<group>"; };
 		EE8AF88A27E9EAA800B2FEF0 /* AppDelegate+Injection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Injection.swift"; sourceTree = "<group>"; };
 		EEA0E19B284AE3E300A2E6C5 /* BarcodesVisionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodesVisionVC.swift; sourceTree = "<group>"; };
@@ -774,9 +770,6 @@
 		BEE985392A2731CD0015229B /* JSCore */ = {
 			isa = PBXGroup;
 			children = (
-				AFF994422A2F57230032A1CF /* dsmatrix-native.cjs.development.js */,
-				AF0D19A32A273FAE00E43CAB /* dsmatrix.cjs.development.js */,
-				AF0D19A42A273FAE00E43CAB /* dsmatrix.cjs.production.min.js */,
 				BEE9853E2A2733FB0015229B /* jssource.js */,
 				BEE9853A2A2731E00015229B /* JSCoreMenuVC.swift */,
 				BEE9853C2A2732F90015229B /* JSCoreBasicsVC.swift */,
@@ -946,6 +939,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				EE2AE2152A346AB10044C446 /* SandBox.swift */,
 				BEE985402A273B750015229B /* Ruler */,
 				BEE985392A2731CD0015229B /* JSCore */,
 				BED5652429150A1600EC0C62 /* EmbedScrollView */,
@@ -1165,10 +1159,7 @@
 				BEE9853F2A2733FB0015229B /* jssource.js in Resources */,
 				BE79ED40250E5F23003B2B21 /* UIGestureRecognizer in Resources */,
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
-				AF0D19A62A273FAF00E43CAB /* dsmatrix.cjs.production.min.js in Resources */,
 				BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */,
-				AFF994432A2F57230032A1CF /* dsmatrix-native.cjs.development.js in Resources */,
-				AF0D19A52A273FAF00E43CAB /* dsmatrix.cjs.development.js in Resources */,
 				EE222E982911399400D2702A /* variants.json in Resources */,
 				D8A731F71DED6E28005DF7C8 /* Main.storyboard in Resources */,
 			);
@@ -1368,6 +1359,7 @@
 				BE3D3A3E1FAFF4AF001F097D /* AdjustedPasswordCell.swift in Sources */,
 				F7A41CD621999EE400D0A3C3 /* CrossDissolveSecondViewController.swift in Sources */,
 				F7A41CF7219BD83300D0A3C3 /* SlideTransitionInteractionController.swift in Sources */,
+				EE2AE2162A346AB10044C446 /* SandBox.swift in Sources */,
 				F7B15AA421B62EF3002DF9C0 /* ShapeMaskLayer.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
 				F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */,

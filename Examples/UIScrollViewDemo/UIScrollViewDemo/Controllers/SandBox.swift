@@ -80,8 +80,9 @@ class SandBox: UITableViewController {
     }
 
     // 创建文件夹
+    @objc
     func createDirectory() {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
         let fileManager = FileManager.default
 
             let iOSDirectory = documentsPath + "/iOS"
@@ -312,6 +313,7 @@ class SandBox: UITableViewController {
         }
     }
     
+    @objc
     func writeToJSON() {
         //Swift对象
         let user:[String: Any] = [
