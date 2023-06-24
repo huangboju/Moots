@@ -83,9 +83,13 @@ class SandBox: UITableViewController {
     @objc
     func createDirectory() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
+        let iOSDirectory = documentsPath + "/com.xingin.goodsdetail"
         let fileManager = FileManager.default
-
-            let iOSDirectory = documentsPath + "/iOS"
+        
+        let documentsURL =  fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
+        documentsURL.appendingPathComponent("com.xingin.goodsdetail").path
+        print()
+        
         print("📂\(iOSDirectory)\n\n")
         do {
             try fileManager.createDirectory(at: URL(fileURLWithPath: iOSDirectory), withIntermediateDirectories: true, attributes: nil)
@@ -118,6 +122,7 @@ class SandBox: UITableViewController {
         }
     }
 
+    @objc
     func readFileContent() {
         let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
 
@@ -131,15 +136,16 @@ class SandBox: UITableViewController {
         }
     }
 
+    @objc
     func isExist() {
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).first!
 
-        let iOSPath = documentsPath + "/iOS.txt"
+        let iOSPath = documentsPath + "/goodsdetail_retail"
         let fileManager = FileManager.default
             if fileManager.fileExists(atPath: iOSPath) {
-            print("📃存在")
+            print("📃存在", iOSPath)
         } else {
-            print("📃不存在")
+            print("📃不存在", iOSPath)
         }
     }
 

@@ -11,21 +11,27 @@ import UIKit
 // https://medium.com/@evicoli/creating-custom-notification-ios-banner-sliding-over-status-bar-4a7b5f842307
 
 class WindowVC: UIViewController {
-
-    let bannerView = UIView(frame: CGRect(x: 0, y: 0, width: 414 - 30, height: 200))
+    
+    deinit {
+        window?.removeFromSuperview()
+        window = nil
+    }
     
     var window: UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let bannerWindow = UIWindow(frame: CGRect(x: 15, y: -200, width: 414 - 30, height: 200))
+        
+        view.backgroundColor = .white
+        
+        let bannerWindow = UIWindow(frame: CGRect(x: 15, y: -200, width: view.frame.width - 30, height: 200))
         bannerWindow.layer.cornerRadius = 12
         bannerWindow.layer.masksToBounds = true
         bannerWindow.windowLevel = UIWindow.Level.statusBar
-        bannerWindow.addSubview(bannerView)
-        bannerWindow.rootViewController = self
+        let vc = UIViewController()
+        vc.view.backgroundColor = .blue
+        bannerWindow.rootViewController = vc
         window = bannerWindow
-        bannerView.backgroundColor = .red
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
