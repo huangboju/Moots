@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14810.9" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.9"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="qtg-bZ-Fcb" customClass="TextItem" customModule="WWDC_Mac_Diffable" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="HIj-TL-z41" id="yIS-1r-p4d"/>
+                <outlet property="view" destination="mnh-33-os5" id="9tj-2Y-yyc"/>
+            </connections>
+        </collectionViewItem>
+        <box boxType="custom" title="Box" titlePosition="noTitle" id="mnh-33-os5">
+            <rect key="frame" x="0.0" y="0.0" width="61" height="37"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <view key="contentView" id="GA7-su-s94">
+                <rect key="frame" x="1" y="1" width="59" height="35"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HIj-TL-z41">
+                        <rect key="frame" x="-3" y="4" width="65" height="28"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Label" id="1gc-Uc-fSf">
+                            <font key="font" metaFont="system" size="24"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="HIj-TL-z41" firstAttribute="centerX" secondItem="GA7-su-s94" secondAttribute="centerX" id="Ysk-qD-9bU"/>
+                    <constraint firstItem="HIj-TL-z41" firstAttribute="centerY" secondItem="GA7-su-s94" secondAttribute="centerY" id="iKk-wQ-J9O"/>
+                </constraints>
+            </view>
+            <color key="borderColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+            <color key="fillColor" red="0.33333333333333331" green="0.59215686274509804" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <point key="canvasLocation" x="-177" y="281.5"/>
+        </box>
+    </objects>
+</document>

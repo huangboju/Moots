@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14810.9" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.9"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="qtg-bZ-Fcb" customClass="ListItem" customModule="WWDC_Mac_Diffable" customModuleProvider="target">
+            <connections>
+                <outlet property="imageView" destination="oU1-O9-Fuz" id="ACK-oG-tf3"/>
+                <outlet property="textField" destination="Lvn-df-8fP" id="8zt-Sg-y8y"/>
+                <outlet property="view" destination="EMa-Ha-6eI" id="i43-aC-U38"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="EMa-Ha-6eI">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="20"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-df-8fP">
+                    <rect key="frame" x="8" y="2" width="312" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Item" id="gjf-Eh-5A6">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oU1-O9-Fuz">
+                    <rect key="frame" x="328" y="2" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="e2u-y2-1EY"/>
+                        <constraint firstAttribute="width" constant="16" id="gdS-AM-isX"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="NSFollowLinkFreestandingTemplate" id="Dai-gJ-Xeb"/>
+                </imageView>
+                <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="ak0-TV-9aE">
+                    <rect key="frame" x="0.0" y="-1" width="354" height="5"/>
+                </box>
+            </subviews>
+            <constraints>
+                <constraint firstItem="oU1-O9-Fuz" firstAttribute="leading" secondItem="Lvn-df-8fP" secondAttribute="trailing" constant="10" id="ITg-Ix-0IE"/>
+                <constraint firstItem="oU1-O9-Fuz" firstAttribute="centerY" secondItem="EMa-Ha-6eI" secondAttribute="centerY" id="JnG-0g-EBV"/>
+                <constraint firstItem="Lvn-df-8fP" firstAttribute="leading" secondItem="EMa-Ha-6eI" secondAttribute="leading" constant="10" id="N7Q-VF-VXN"/>
+                <constraint firstAttribute="bottom" secondItem="ak0-TV-9aE" secondAttribute="bottom" constant="1" id="dEJ-hi-NNv"/>
+                <constraint firstAttribute="trailing" secondItem="ak0-TV-9aE" secondAttribute="trailing" id="hfD-V9-5Nb"/>
+                <constraint firstItem="ak0-TV-9aE" firstAttribute="leading" secondItem="EMa-Ha-6eI" secondAttribute="leading" id="mIM-4H-MvC"/>
+                <constraint firstAttribute="trailing" secondItem="oU1-O9-Fuz" secondAttribute="trailing" constant="10" id="t4p-BP-7gB"/>
+                <constraint firstItem="Lvn-df-8fP" firstAttribute="centerY" secondItem="EMa-Ha-6eI" secondAttribute="centerY" id="zuH-Qr-AQ9"/>
+            </constraints>
+            <point key="canvasLocation" x="-207" y="202.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSFollowLinkFreestandingTemplate" width="14" height="14"/>
+    </resources>
+</document>

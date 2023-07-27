@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14810.9" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14810.9"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <collectionViewItem id="qtg-bZ-Fcb" customClass="WiFiNetworkItem" customModule="WWDC_Mac_Diffable" customModuleProvider="target">
+            <connections>
+                <outlet property="checkBox" destination="z7U-3U-Ydd" id="JXL-jT-XhL"/>
+                <outlet property="imageView" destination="oU1-O9-Fuz" id="jgM-Xh-kjP"/>
+                <outlet property="textField" destination="Lvn-df-8fP" id="RWz-Og-S25"/>
+                <outlet property="view" destination="EMa-Ha-6eI" id="S0m-am-hP1"/>
+            </connections>
+        </collectionViewItem>
+        <customView id="EMa-Ha-6eI">
+            <rect key="frame" x="0.0" y="0.0" width="354" height="18"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Lvn-df-8fP">
+                    <rect key="frame" x="34" y="1" width="312" height="16"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Conference Wi-Fi" id="gjf-Eh-5A6">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oU1-O9-Fuz">
+                    <rect key="frame" x="10" y="1" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="16" id="b58-zt-C3W"/>
+                        <constraint firstAttribute="height" constant="16" id="m3w-ru-tGS"/>
+                    </constraints>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="NSMenuOnStateTemplate" id="Dai-gJ-Xeb"/>
+                </imageView>
+                <button hidden="YES" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="z7U-3U-Ydd">
+                    <rect key="frame" x="9" y="0.0" width="18" height="18"/>
+                    <buttonCell key="cell" type="check" bezelStyle="regularSquare" imagePosition="overlaps" state="on" inset="2" id="zNf-Ok-vmv">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="z7U-3U-Ydd" firstAttribute="centerX" secondItem="oU1-O9-Fuz" secondAttribute="centerX" id="75u-0i-4kN"/>
+                <constraint firstAttribute="bottom" secondItem="Lvn-df-8fP" secondAttribute="bottom" constant="1" id="9Q5-fa-Dtd"/>
+                <constraint firstItem="oU1-O9-Fuz" firstAttribute="centerY" secondItem="EMa-Ha-6eI" secondAttribute="centerY" id="JnG-0g-EBV"/>
+                <constraint firstItem="Lvn-df-8fP" firstAttribute="leading" secondItem="oU1-O9-Fuz" secondAttribute="trailing" constant="10" id="KCA-FV-AMQ"/>
+                <constraint firstItem="oU1-O9-Fuz" firstAttribute="leading" secondItem="EMa-Ha-6eI" secondAttribute="leading" constant="10" id="KE0-ij-BN2"/>
+                <constraint firstItem="Lvn-df-8fP" firstAttribute="top" secondItem="EMa-Ha-6eI" secondAttribute="top" constant="1" id="YxV-hZ-lUp"/>
+                <constraint firstAttribute="trailing" secondItem="Lvn-df-8fP" secondAttribute="trailing" constant="10" id="ad1-7w-qwc"/>
+                <constraint firstItem="z7U-3U-Ydd" firstAttribute="centerY" secondItem="oU1-O9-Fuz" secondAttribute="centerY" id="apM-r1-U61"/>
+            </constraints>
+            <point key="canvasLocation" x="-207" y="202.5"/>
+        </customView>
+    </objects>
+    <resources>
+        <image name="NSMenuOnStateTemplate" width="12" height="12"/>
+    </resources>
+</document>
