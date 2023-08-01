@@ -10,24 +10,23 @@ import Foundation
 
 // https://leetcode.cn/problems/partition-list/submissions/
 func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
-    var dummy1: ListNode? = ListNode(-1)
-    var dummy2: ListNode? = ListNode(-1)
-    var p1 = dummy1, p2 = dummy2
-    var head = head
-    while head != nil {
-        if (head?.val ?? 0) < x {
-            p1?.next = head
+    let dummy1 = ListNode(-1), dummy2 = ListNode(-1)
+    var p1: ListNode? = dummy1, p2: ListNode? = dummy2
+    var node = head
+    while let n = node {
+        if n.val < x {
+            p1?.next = node
             p1 = p1?.next
         } else {
-            p2?.next = head
+            p2?.next = node
             p2 = p2?.next
         }
-        let temp = head?.next
-        head?.next = nil
-        head = temp
+        let temp = node?.next
+        node?.next = nil
+        node = temp
     }
     
-    p1?.next = dummy2?.next
+    p1?.next = dummy2.next
     
-    return dummy1?.next
+    return dummy1.next
 }
