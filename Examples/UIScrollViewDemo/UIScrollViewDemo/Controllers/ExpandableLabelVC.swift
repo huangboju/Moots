@@ -27,7 +27,7 @@ class ExpandableLabelVC: UITableViewController {
 
         view.addSubview(slider)
         slider.snp.makeConstraints { (make) in
-            make.leading.equalTo(15)
+            make.leading.equalTo(50)
             make.centerX.equalToSuperview()
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
@@ -44,15 +44,17 @@ class ExpandableLabelVC: UITableViewController {
         let size = image.size
         let height = size.height / CGFloat(lines)
         for line in 0 ..< lines {
-            let rect = CGRect(x: 0, y: height * CGFloat(line), width: size.width, height: height)
+            let y = height * CGFloat(line)
+            let rect = CGRect(x: 0, y: y, width: size.width, height: height)
             let subImage = image.crop(rect: rect)
             let imageView = UIImageView(image: subImage)
-            imageView.alpha = line == 0 ? 1 : 0
+            let isFirstLine = line == 0
+            imageView.alpha = isFirstLine ? 1 : 0
             imageView.backgroundColor = .white
             view.addSubview(imageView)
             imageView.snp.makeConstraints { make in
                 make.leading.trailing.equalTo(textLabel)
-                make.top.equalTo(textLabel.snp.bottom).offset(20)
+                make.top.equalTo(textLabel.snp.bottom).offset(20 + y * 0.8)
             }
             imageViews.append((rect, imageView))
         }
@@ -60,16 +62,14 @@ class ExpandableLabelVC: UITableViewController {
 
     @objc
     func valueChanged(_ sender: UISlider) {
-        if imageViews.isEmpty { return }
+        if imageViews.isEmpty {
+            return
+        }
         let progress = CGFloat(sender.value)
-        let baseline = imageViews[0].0.minY
         for (rect, imageView) in imageViews.dropFirst() {
-            let distance = rect.minY - baseline
-            let detal = distance * progress
             imageView.alpha = progress
             imageView.snp.updateConstraints { make in
-                make.leading.trailing.equalTo(textLabel)
-                make.top.equalTo(textLabel.snp.bottom).offset(20 + detal)
+                make.top.equalTo(textLabel.snp.bottom).offset(20 + rect.minY * (0.8 + 0.2 * progress))
             }
         }
     }
@@ -77,7 +77,7 @@ class ExpandableLabelVC: UITableViewController {
     private lazy var textLabel: UILabel = {
         let textLabel = UILabel()
         textLabel.numberOfLines = 0
-        textLabel.text = "必要的信号分析与数据处理，从而获得与被测对象有关的信息必要的信号分析与数据处理，从而获得与被测对象有关的信息"
+        textLabel.text = "BIBILEE STUDIO春夏新款不规则波浪撞色上衣BBL125圆领系列"
         return textLabel
     }()
 
