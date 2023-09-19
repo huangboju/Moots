@@ -28,6 +28,7 @@ class ViewController: UIViewController {
             PagingSecondController.self,
             ConvertController.self,
             SandBox.self,
+            ExpandableLabelVC.self
         ],
         [
             RulerMenuVC.self

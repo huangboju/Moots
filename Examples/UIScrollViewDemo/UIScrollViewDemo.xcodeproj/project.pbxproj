@@ -35,6 +35,7 @@
 		BE1FAD381F20F7CC007D36BF /* TableViewSelfsizing.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */; };
 		BE1FAD3A1F219C00007D36BF /* LayoutTrasition.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */; };
 		BE22B46F20DF9A7F0032490A /* ResizableImageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */; };
+		BE27B37C2AB94E7B0014D7F0 /* ExpandableLabelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */; };
 		BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */; };
 		BE3654031F9C76C4001A8432 /* TwoEqualWidthViewsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */; };
 		BE3654051F9C7F72001A8432 /* TwoDifferentWidthViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE3654041F9C7F72001A8432 /* TwoDifferentWidthViews.swift */; };
@@ -258,6 +259,7 @@
 		BE1FAD371F20F7CC007D36BF /* TableViewSelfsizing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSelfsizing.swift; sourceTree = "<group>"; };
 		BE1FAD391F219C00007D36BF /* LayoutTrasition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutTrasition.swift; sourceTree = "<group>"; };
 		BE22B46E20DF9A7F0032490A /* ResizableImageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizableImageVC.swift; sourceTree = "<group>"; };
+		BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandableLabelVC.swift; sourceTree = "<group>"; };
 		BE3654001F9C69B8001A8432 /* DynamicStackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicStackViewController.swift; sourceTree = "<group>"; };
 		BE3654021F9C76C4001A8432 /* TwoEqualWidthViewsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoEqualWidthViewsController.swift; sourceTree = "<group>"; };
 		BE3654041F9C7F72001A8432 /* TwoDifferentWidthViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoDifferentWidthViews.swift; sourceTree = "<group>"; };
@@ -966,6 +968,7 @@
 				F72C3893221CEE3E00E081D3 /* WindowVC.swift */,
 				F75C2E812238DD9500495104 /* GestureVC.swift */,
 				BE86BB40271BC5E9005014DC /* LazySequenceVC.swift */,
+				BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1288,6 +1291,7 @@
 				BED1CCF21FB2E31B002FE096 /* CoInfoVerifyCell.swift in Sources */,
 				BEBDCB501F9D94F9009762A8 /* ButtonsSizeClass.swift in Sources */,
 				BE3A5670251F325B005FFCF6 /* AlertController.swift in Sources */,
+				BE27B37C2AB94E7B0014D7F0 /* ExpandableLabelVC.swift in Sources */,
 				BE95F4F01FC3FF0F0033D83B /* ResetPasswordController.swift in Sources */,
 				EEAE4C37285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift in Sources */,
 				BE1B154F1FB2A1AC00862271 /* GirdView.swift in Sources */,
