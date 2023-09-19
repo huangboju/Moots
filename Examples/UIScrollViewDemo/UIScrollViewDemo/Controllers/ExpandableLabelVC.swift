@@ -16,7 +16,7 @@ class ExpandableLabelVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Capture", style: .plain, target: self, action: #selector(captureClicked))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Start", style: .plain, target: self, action: #selector(startClicked))
 
         view.addSubview(textLabel)
         textLabel.snp.makeConstraints { (make) in
@@ -35,10 +35,14 @@ class ExpandableLabelVC: UITableViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        captureClicked()
+        makeScreenshot()
     }
 
-    @objc func captureClicked() {
+    @objc func startClicked() {
+
+    }
+
+    func makeScreenshot() {
         let image = textLabel.makeScreenshot()
         let lines = textLabel.numberOfVisibleLines
         let size = image.size
