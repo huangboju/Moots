@@ -2,6 +2,10 @@
 
 多年iOS开发收集的资料
 
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=huangboju/Moots&type=Date)](https://star-history.com/#huangboju/Moots&Date)
+
 
 ## [Offer收割机](https://gist.github.com/huangboju/050e7ab233682088a4bc70a85fac89a4)
 
