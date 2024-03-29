@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Heart Rate Monitor View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="HeartRateMonitorViewController" customModule="Core_Bluetooth_HRM" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="dBy-3S-3on">
+                                <rect key="frame" x="16" y="20" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bJS-Hx-wRh">
+                                <rect key="frame" x="61" y="20" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="37" id="ADf-mV-3BL"/>
+                                    <constraint firstAttribute="height" constant="37" id="DCr-O6-4o7"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zG3-fV-dFW">
+                                <rect key="frame" x="239" y="23" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="s15-nN-6zH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Device:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XE2-H9-ngY">
+                                <rect key="frame" x="174" y="28" width="57" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8sk-MN-U4l">
+                                <rect key="frame" x="239" y="61" width="120" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="lo4-gO-FHN"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sensor:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WX0-GV-B3n">
+                                <rect key="frame" x="172.5" y="65.5" width="58.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="miZ-H3-SdQ">
+                                <rect key="frame" x="118.5" y="130" width="137.5" height="36"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fK9-h7-MDK">
+                                        <rect key="frame" x="0.0" y="0.0" width="71" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bpm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDE-HF-Bj7">
+                                        <rect key="frame" x="79" y="0.0" width="58.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Bluetooth OFF" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zw-be-llR">
+                                <rect key="frame" x="16" y="65" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="miZ-H3-SdQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ce-3l-gHm"/>
+                            <constraint firstItem="miZ-H3-SdQ" firstAttribute="top" secondItem="8sk-MN-U4l" secondAttribute="bottom" constant="39" id="B0Z-Dh-MBP"/>
+                            <constraint firstItem="bJS-Hx-wRh" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EpQ-mC-Hdg"/>
+                            <constraint firstItem="XE2-H9-ngY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="FmC-eR-2aO"/>
+                            <constraint firstItem="8sk-MN-U4l" firstAttribute="top" secondItem="zG3-fV-dFW" secondAttribute="bottom" constant="8" id="JMW-Ka-Hfh"/>
+                            <constraint firstItem="zG3-fV-dFW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="K0i-uW-gCC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zG3-fV-dFW" secondAttribute="trailing" constant="16" id="LCc-Ex-V1g"/>
+                            <constraint firstItem="8sk-MN-U4l" firstAttribute="leading" secondItem="WX0-GV-B3n" secondAttribute="trailing" constant="8" id="Ui9-1E-0Rl"/>
+                            <constraint firstItem="4zw-be-llR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cFH-kr-W6A"/>
+                            <constraint firstItem="4zw-be-llR" firstAttribute="top" secondItem="dBy-3S-3on" secondAttribute="bottom" constant="8" id="ceW-12-e03"/>
+                            <constraint firstItem="WX0-GV-B3n" firstAttribute="top" secondItem="XE2-H9-ngY" secondAttribute="bottom" constant="17" id="dIo-39-nKt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8sk-MN-U4l" secondAttribute="trailing" constant="16" id="gYM-C3-pRp"/>
+                            <constraint firstItem="zG3-fV-dFW" firstAttribute="leading" secondItem="XE2-H9-ngY" secondAttribute="trailing" constant="8" id="lRv-ie-5kh"/>
+                            <constraint firstItem="bJS-Hx-wRh" firstAttribute="leading" secondItem="dBy-3S-3on" secondAttribute="trailing" constant="8" id="s6q-ls-8sA"/>
+                            <constraint firstItem="dBy-3S-3on" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="tzx-c7-4BI"/>
+                            <constraint firstItem="dBy-3S-3on" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="xwW-sn-1w8"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="beatsPerMinuteLabel" destination="fK9-h7-MDK" id="Krt-Q6-hV9"/>
+                        <outlet property="bluetoothOffLabel" destination="4zw-be-llR" id="Zsk-rL-adp"/>
+                        <outlet property="brandNameTextField" destination="zG3-fV-dFW" id="6zI-Ik-4pX"/>
+                        <outlet property="connectingActivityIndicator" destination="dBy-3S-3on" id="UTo-3n-qaH"/>
+                        <outlet property="connectionStatusView" destination="bJS-Hx-wRh" id="YLA-7V-dLy"/>
+                        <outlet property="sensorLocationTextField" destination="8sk-MN-U4l" id="kkl-MK-Ora"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+</document>
