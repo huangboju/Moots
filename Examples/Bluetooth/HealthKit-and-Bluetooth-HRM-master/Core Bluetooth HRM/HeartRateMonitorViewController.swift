@@ -33,6 +33,14 @@ let BLE_Heart_Rate_Service_CBUUID = CBUUID(string: "0x180D")
 let BLE_Heart_Rate_Measurement_Characteristic_CBUUID = CBUUID(string: "0x2A37")
 let BLE_Body_Sensor_Location_Characteristic_CBUUID = CBUUID(string: "0x2A38")
 
+// https://docs.petoi.com/v/chinese/li-cheng/11.-lan-ya-di-gong-hao-ble-chuan-kou-tou-chuan
+let RX_SERVICE_UUID = CBUUID(string: "6E400001-B5A3-F393-E0A9-E50E24DCCA9E")
+// RX（接收数据）
+let RX_CHAR_UUID = CBUUID(string: "6e400002-b5a3-f393-e0a9-e50e24dcca9e")
+// TX（发送数据）
+let TX_CHAR_UUID = CBUUID(string: "6e400003-b5a3-f393-e0a9-e50e24dcca9e")
+let DFU_SERVICE_UUID = CBUUID(string: "0000fe59-0000-1000-8000-00805f9b34fb")
+
 // STEP 0.1: this class adopts both the central and peripheral delegates
 // and therefore must conform to these protocols' requirements
 class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate, CBPeripheralDelegate {
@@ -55,7 +63,6 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
     @IBOutlet weak var bluetoothOffLabel: UILabel!
     
     // HealthKit setup
-    let healthKitInterface = HealthKitInterface()
     
     // MARK: - UIViewController delegate
     
@@ -174,7 +181,7 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
         }
         
         // STEP 8: look for services of interest on peripheral
-        peripheralHeartRateMonitor?.discoverServices(nil)
+        peripheralHeartRateMonitor?.discoverServices([RX_SERVICE_UUID])
 
     } // END func centralManager(... didConnect peripheral
     
@@ -205,13 +212,15 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
     
     func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         
-        for service in peripheral.services! {
+        guard let services = peripheral.services else { return }
+        
+        for service in services {
             
             print("Service: \(service)")
             
             // STEP 9: look for characteristics of interest
             // within services of interest
-            peripheral.discoverCharacteristics(nil, for: service)
+            peripheral.discoverCharacteristics([TX_CHAR_UUID], for: service)
             
         }
         
@@ -221,8 +230,16 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
     // of interest within services of interest
     func peripheral(_ peripheral: CBPeripheral, didDiscoverCharacteristicsFor service: CBService, error: Error?) {
         
-        for characteristic in service.characteristics! {
-            print(characteristic)
+        guard let characteristics = service.characteristics else { return }
+        
+        for characteristic in characteristics {
+            print("characteristic: \(characteristic)")
+            
+            if characteristic.properties.contains(.notify) || characteristic.properties.contains(.writeWithoutResponse) {
+                print(characteristic, "🍀")
+            }
+            
+            
             
             // STEP 11: subscribe to a single notification
             // for characteristic of interest;
@@ -232,7 +249,10 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
             //
             // Read    Mandatory
             //
-            peripheral.readValue(for: characteristic)
+//            peripheral.readValue(for: characteristic)
+            
+            peripheral.setNotifyValue(true, for: characteristic)
+            
 
 //            if characteristic.uuid == BLE_Heart_Rate_Measurement_Characteristic_CBUUID {
 //
@@ -252,41 +272,66 @@ class HeartRateMonitorViewController: UIViewController, CBCentralManagerDelegate
         
     } // END func peripheral(... didDiscoverCharacteristicsFor service
     
+    func sendGetRecordNumber() {
+        let command: [UInt8] = [
+            14,
+            48
+        ]
+        let composeByteWithCommand = Data(command).composeByteWithCommand
+        print(composeByteWithCommand)
+    }
+    
+    func sendReadWheelSize() {
+        let command: [UInt8] = [
+            8,
+            16
+        ]
+        let composeByteWithCommand = Data(command).composeByteWithCommand
+        print(composeByteWithCommand.hexEncodedString())
+    }
+    
     // STEP 12: we're notified whenever a characteristic
     // value updates regularly or posts once; read and
     // decipher the characteristic value(s) that we've
     // subscribed to
+    var result = Data()
     func peripheral(_ peripheral: CBPeripheral, didUpdateValueFor characteristic: CBCharacteristic, error: Error?) {
         
-        if characteristic.uuid == BLE_Heart_Rate_Measurement_Characteristic_CBUUID {
-            
-            // STEP 13: we generally have to decode BLE
-            // data into human readable format
-            let heartRate = deriveBeatsPerMinute(using: characteristic)
-            
-            DispatchQueue.main.async { () -> Void in
-                
-                UIView.animate(withDuration: 1.0, animations: {
-                    self.beatsPerMinuteLabel.alpha = 1.0
-                    self.beatsPerMinuteLabel.text = String(heartRate)
-                }, completion: { (true) in
-                    self.beatsPerMinuteLabel.alpha = 0.0
-                })
-                
-            } // END DispatchQueue.main.async...
-
-        } // END if characteristic.uuid ==...
+        guard let data = characteristic.value else {
+            return
+        }
+        print(data.hexEncodedString(), "🍀")
+        result.append(data)
         
-        if characteristic.uuid == BLE_Body_Sensor_Location_Characteristic_CBUUID {
-            
-            // STEP 14: we generally have to decode BLE
-            // data into human readable format
-            let sensorLocation = readSensorLocation(using: characteristic)
-
-            DispatchQueue.main.async { () -> Void in
-                self.sensorLocationTextField.text = sensorLocation
-            }
-        } // END if characteristic.uuid ==...
+//        if characteristic.uuid == BLE_Heart_Rate_Measurement_Characteristic_CBUUID {
+//            
+//            // STEP 13: we generally have to decode BLE
+//            // data into human readable format
+//            let heartRate = deriveBeatsPerMinute(using: characteristic)
+//            
+//            DispatchQueue.main.async { () -> Void in
+//                
+//                UIView.animate(withDuration: 1.0, animations: {
+//                    self.beatsPerMinuteLabel.alpha = 1.0
+//                    self.beatsPerMinuteLabel.text = String(heartRate)
+//                }, completion: { (true) in
+//                    self.beatsPerMinuteLabel.alpha = 0.0
+//                })
+//                
+//            } // END DispatchQueue.main.async...
+//
+//        } // END if characteristic.uuid ==...
+//        
+//        if characteristic.uuid == BLE_Body_Sensor_Location_Characteristic_CBUUID {
+//            
+//            // STEP 14: we generally have to decode BLE
+//            // data into human readable format
+//            let sensorLocation = readSensorLocation(using: characteristic)
+//
+//            DispatchQueue.main.async { () -> Void in
+//                self.sensorLocationTextField.text = sensorLocation
+//            }
+//        } // END if characteristic.uuid ==...
         
     } // END func peripheral(... didUpdateValueFor characteristic
     

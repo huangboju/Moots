@@ -14,6 +14,10 @@
 		02D4A7D620780BAE00708F74 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D4A7D420780BAE00708F74 /* Main.storyboard */; };
 		02D4A7D820780BAE00708F74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02D4A7D720780BAE00708F74 /* Assets.xcassets */; };
 		02D4A7DB20780BAE00708F74 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02D4A7D920780BAE00708F74 /* LaunchScreen.storyboard */; };
+		EEE23FEA2BBEBE5200238041 /* BLKGattAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE23FE92BBEBE5200238041 /* BLKGattAttributes.swift */; };
+		EEE2F0792BB84B6D00238041 /* PackageHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2F0782BB84B6D00238041 /* PackageHead.swift */; };
+		EEE2F07B2BB84DE300238041 /* GibikeUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2F07A2BB84DE300238041 /* GibikeUtils.swift */; };
+		EEE2F07D2BB852E500238041 /* RecordItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEE2F07C2BB852E500238041 /* RecordItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		02D4A7D720780BAE00708F74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02D4A7DA20780BAE00708F74 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02D4A7DC20780BAE00708F74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EEE23FE92BBEBE5200238041 /* BLKGattAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLKGattAttributes.swift; sourceTree = "<group>"; };
+		EEE2F0782BB84B6D00238041 /* PackageHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageHead.swift; sourceTree = "<group>"; };
+		EEE2F07A2BB84DE300238041 /* GibikeUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GibikeUtils.swift; sourceTree = "<group>"; };
+		EEE2F07C2BB852E500238041 /* RecordItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +85,10 @@
 				02D4A7D720780BAE00708F74 /* Assets.xcassets */,
 				02D4A7D920780BAE00708F74 /* LaunchScreen.storyboard */,
 				02D4A7DC20780BAE00708F74 /* Info.plist */,
+				EEE2F0782BB84B6D00238041 /* PackageHead.swift */,
+				EEE2F07A2BB84DE300238041 /* GibikeUtils.swift */,
+				EEE2F07C2BB852E500238041 /* RecordItem.swift */,
+				EEE23FE92BBEBE5200238041 /* BLKGattAttributes.swift */,
 			);
 			path = "Core Bluetooth HRM";
 			sourceTree = "<group>";
@@ -159,7 +171,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				026A0DB02081788E00824BE8 /* HealthKitInterface.swift in Sources */,
+				EEE23FEA2BBEBE5200238041 /* BLKGattAttributes.swift in Sources */,
 				02D4A7D320780BAE00708F74 /* HeartRateMonitorViewController.swift in Sources */,
+				EEE2F07B2BB84DE300238041 /* GibikeUtils.swift in Sources */,
+				EEE2F07D2BB852E500238041 /* RecordItem.swift in Sources */,
+				EEE2F0792BB84B6D00238041 /* PackageHead.swift in Sources */,
 				02D4A7D120780BAE00708F74 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
