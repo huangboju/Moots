@@ -97,10 +97,10 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
      (didUpdateNotificationStateForCharacteristic will cancel the connection if a subscription is involved)
      */
     func disconnectFromDevice () {
-        if blePeripheral != nil {
+        if let blePeripheral {
             // We have a connection to the device but we are not subscribed to the Transfer Characteristic for some reason.
             // Therefore, we will just disconnect from the peripheral
-            centralManager?.cancelPeripheralConnection(blePeripheral!)
+            centralManager?.cancelPeripheralConnection(blePeripheral)
         }
     }
     
@@ -132,7 +132,9 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
     
     //-Connection
     func connectToDevice () {
-        centralManager?.connect(blePeripheral!, options: nil)
+        if let blePeripheral {
+            centralManager?.connect(blePeripheral)
+        }
     }
     
     /*
@@ -230,7 +232,7 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
         for characteristic in characteristics {
             //looks for the right characteristic
             
-            if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Rx)  {
+            if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Rx) && characteristic.properties.contains(.notify)  {
                 rxCharacteristic = characteristic
                 
                 //Once found, subscribe to the this particular characteristic...
@@ -238,11 +240,12 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
                 // We can return after calling CBPeripheral.setNotifyValue because CBPeripheralDelegate's
                 // didUpdateNotificationStateForCharacteristic method will be called automatically
                 peripheral.readValue(for: characteristic)
-                
+                print("Rx Characteristic properties:")
                 print("Rx Characteristic: \(characteristic)")
             }
-            if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx){
+            if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx) && characteristic.properties.contains([.writeWithoutResponse]) {
                 txCharacteristic = characteristic
+                print("Tx Characteristic properties:", characteristic.properties)
                 print("Tx Characteristic: \(characteristic)")
             }
             peripheral.discoverDescriptors(for: characteristic)
