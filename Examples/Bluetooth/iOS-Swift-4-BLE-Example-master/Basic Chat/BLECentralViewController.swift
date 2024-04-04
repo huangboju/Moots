@@ -273,8 +273,8 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
     func peripheral(_ peripheral: CBPeripheral, didDiscoverDescriptorsFor characteristic: CBCharacteristic, error: Error?) {
         print("*******************************************************")
         
-        if error != nil {
-            print("\(error.debugDescription)")
+        if let error {
+            print("\(error.localizedDescription)")
             return
         }
         if let descriptors = characteristic.descriptors {
