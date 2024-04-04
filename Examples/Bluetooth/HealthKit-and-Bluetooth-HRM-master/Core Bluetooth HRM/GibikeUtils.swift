@@ -40,6 +40,10 @@ extension Data {
         return self.map { String(format: format, $0) }.joined()
     }
     
+    public var bytes: [UInt8] {
+        [UInt8](self)
+    }
+    
     var composeByteWithCommand: Data {
         let bytes = self.bytes
         var result = [UInt8](repeating: 0, count: bytes.count + 2)

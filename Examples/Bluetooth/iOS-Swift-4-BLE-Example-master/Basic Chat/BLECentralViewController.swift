@@ -234,15 +234,16 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
                 rxCharacteristic = characteristic
                 
                 //Once found, subscribe to the this particular characteristic...
-                peripheral.setNotifyValue(true, for: rxCharacteristic!)
+                peripheral.setNotifyValue(true, for: characteristic)
                 // We can return after calling CBPeripheral.setNotifyValue because CBPeripheralDelegate's
                 // didUpdateNotificationStateForCharacteristic method will be called automatically
                 peripheral.readValue(for: characteristic)
-                print("Rx Characteristic: \(characteristic.uuid)")
+                
+                print("Rx Characteristic: \(characteristic)")
             }
             if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx){
                 txCharacteristic = characteristic
-                print("Tx Characteristic: \(characteristic.uuid)")
+                print("Tx Characteristic: \(characteristic)")
             }
             peripheral.discoverDescriptors(for: characteristic)
         }
@@ -275,11 +276,12 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
         }
         if let descriptors = characteristic.descriptors {
             
-            for descriptor in descriptors{
+            for descriptor in descriptors {
+                print("descriptor: \(descriptor.uuid)")
                 print("function name: DidDiscoverDescriptorForChar \(String(describing: descriptor.description))")
                 print("Rx Value \(String(describing: rxCharacteristic?.value))")
                 if let txValue = txCharacteristic?.value {
-                    print("Tx Value \(String(describing: String(data: txValue, encoding: .utf16))), txValue=\(txValue)")
+                    print("Tx Value \(String(describing: String(data: txValue, encoding: .utf8))), txValue=\(txValue)")
                 }
             }
         }
@@ -372,6 +374,33 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
             alertVC.addAction(action)
             self.present(alertVC, animated: true, completion: nil)
         }
+    }
+}
+
+extension Data {
+    struct HexEncodingOptions: OptionSet {
+        let rawValue: Int
+        static let upperCase = HexEncodingOptions(rawValue: 1 << 0)
+    }
+
+    func hexEncodedString(options: HexEncodingOptions = []) -> String {
+        let format = options.contains(.upperCase) ? "%02hhX" : "%02hhx"
+        return self.map { String(format: format, $0) }.joined()
+    }
+    
+    public var bytes: [UInt8] {
+        [UInt8](self)
+    }
+    
+    var composeByteWithCommand: Data {
+        let bytes = self.bytes
+        var result = [UInt8](repeating: 0, count: bytes.count + 2)
+        result[0] = 60
+        result[1] = UInt8(bytes.count)
+        for (i, byte) in bytes.enumerated() {
+            result[i + 2] = byte
+        }
+        return Data(result)
     }
 }
 

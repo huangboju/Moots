@@ -23,8 +23,3 @@ struct PackageHead {
     }
 }
 
-extension Data {
-    public var bytes: [UInt8] {
-        [UInt8](self)
-    }
-}
