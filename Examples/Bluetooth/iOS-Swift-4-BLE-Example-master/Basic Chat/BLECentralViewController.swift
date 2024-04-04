@@ -218,8 +218,8 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
         
         print("*******************************************************")
         
-        if ((error) != nil) {
-            print("Error discovering services: \(error!.localizedDescription)")
+        if let error {
+            print("Error discovering services: \(error.localizedDescription)")
             return
         }
         
