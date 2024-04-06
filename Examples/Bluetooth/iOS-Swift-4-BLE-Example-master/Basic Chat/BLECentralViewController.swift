@@ -245,6 +245,12 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
             }
             if characteristic.uuid.isEqual(BLE_Characteristic_uuid_Tx) && characteristic.properties.contains([.writeWithoutResponse]) {
                 txCharacteristic = characteristic
+                if let data = "2251753979".data(using: .utf8) {
+                    peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                }
+                if let data = "YatqH3LeQnQjdNTD".data(using: .utf8) {
+                    peripheral.writeValue(data, for: characteristic, type: .withResponse)
+                }
                 print("Tx Characteristic properties:", characteristic.properties)
                 print("Tx Characteristic: \(characteristic)")
             }
@@ -262,7 +268,7 @@ class BLECentralViewController : UIViewController, CBCentralManagerDelegate, CBP
             
             if let value = characteristic.value, let ASCIIstring = String(data: value, encoding: .utf8) {
                 characteristicASCIIValue = ASCIIstring
-                print("Value Recieved: \((characteristicASCIIValue as String))")
+                print("Value Recieved: \((characteristicASCIIValue as String)), \(value.hexEncodedString())")
                 NotificationCenter.default.post(name:NSNotification.Name(rawValue: "Notify"), object: nil)
                 
             }
