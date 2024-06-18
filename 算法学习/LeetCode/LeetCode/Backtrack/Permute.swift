@@ -37,3 +37,30 @@ class Permute {
         }
     }
 }
+
+
+// https://leetcode.cn/circle/discuss/oiNLDr/
+class PermuteV2 {
+
+    var result: [[Int]] = []
+
+    var path: [Int] = []
+
+    func permute(_ nums: [[Int]]) -> [[Int]] {
+        backtrack(nums, nums.count, 0)
+        return result
+    }
+
+    func backtrack(_ nums: [[Int]], _ count: Int, _ start: Int) {
+        if start == count {
+            result.append(path)
+            return
+        }
+
+        for n in nums[start] {
+            path.append(n)
+            backtrack(nums, count, start+1)
+            path.removeLast()
+        }
+    }
+}

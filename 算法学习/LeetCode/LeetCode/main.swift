@@ -250,3 +250,6 @@ node3.right = node6
 
 
 print("result: ", SolutionSymmetric.bfs(root))
+
+
+print(PermuteV2().permute([[1,2,3], [5,6],[7,8]]))
