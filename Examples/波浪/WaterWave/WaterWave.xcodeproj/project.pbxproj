@@ -239,6 +239,7 @@
 				TargetAttributes = {
 					D8B1A3151D9CC75D0083AAA3 = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 7XJTY6W57S;
 						ProvisioningStyle = Automatic;
 					};
 					D8B1A3291D9CC75D0083AAA3 = {
@@ -486,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				INFOPLIST_FILE = WaterWave/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -499,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				INFOPLIST_FILE = WaterWave/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
