@@ -23,6 +23,20 @@ class SCViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        try? AVAudioSession.sharedInstance().setCategory(.playAndRecord)
+        
+        AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
+            if granted {
+                DispatchQueue.main.async {
+                    self.start()
+                }
+            } else {
+                print("Permission to record not granted")
+            }
+        }
+    }
+    
+    func start() {
         let url = URL(fileURLWithPath: "/dev/null")
         let settings = [
             AVSampleRateKey: NSNumber(value: 44100),
@@ -53,7 +67,16 @@ class SCViewController: UIViewController {
     @objc func updateMeters() {
         recorder?.updateMeters()
         // pow()用来计算以x 为底的 y 次方值，然后将结果返回。设返回值为 ret，则 ret = xy。
-        let normalizedValue = pow(10, CGFloat(recorder?.averagePower(forChannel: 0) ?? 0) / 20)
+        let normalizedValue = normalizedPowerLevel(from: CGFloat(recorder?.averagePower(forChannel: 0) ?? 0))
+        print("🍀👹👹 \(normalizedValue)===\(recorder?.averagePower(forChannel: 0))")
         waveformView.update(with: normalizedValue)
+    }
+    
+    func normalizedPowerLevel(from decibels: CGFloat) -> CGFloat {
+        if decibels < -60.0 || decibels == 0.0 {
+            return 0.0
+        }
+        
+        return pow((pow(10.0, 0.05 * decibels) - pow(10.0, 0.05 * -60.0)) * (1.0 / (1.0 - pow(10.0, 0.05 * -60.0))), 1.0 / 2.0)
     }
 }

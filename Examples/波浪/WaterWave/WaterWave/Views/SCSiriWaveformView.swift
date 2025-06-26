@@ -109,19 +109,17 @@ class SCSiriWaveformView: UIView {
 
             waveColor.withAlphaComponent(multiplier * waveColor.cgColor.alpha).set()
 
-            var x: CGFloat = 0
-            while x < (width + density) {
+            for x in stride(from: 0.0, to: width + density, by: density) {
                 // We use a parable to scale the sinus wave, that has its peak in the middle of the view.
                 let scaling = -pow(1 / mid * (x - mid), 2) + 1
                 
-                let y = scaling * maxAmplitude * normedAmplitude * CGFloat(sinf(Float(2 * .pi * (x / width) * frequency + phase))) + halfHeight
+                let y = scaling * maxAmplitude * normedAmplitude * sin(2 * .pi * (x / width) * frequency + phase) + halfHeight
                 
                 if x == 0 {
                     context.move(to: CGPoint(x: x, y: y))
                 } else {
                     context.addLine(to: CGPoint(x: x, y: y))
                 }
-                x += density
             }
             context.strokePath()
         }
