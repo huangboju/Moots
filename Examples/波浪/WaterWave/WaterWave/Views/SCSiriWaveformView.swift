@@ -84,23 +84,30 @@ class SCSiriWaveformView: UIView {
     
     override func draw(_ rect: CGRect) {
         // We draw multiple sinus waves, with equal phases but altered amplitudes, multiplied by a parable function.
+        guard let context = UIGraphicsGetCurrentContext() else { return }
+        context.clear(bounds)
+        backgroundColor?.set()
+        context.fill(bounds)
+
         for i in 0 ..< numberOfWaves {
             
-            guard let context = UIGraphicsGetCurrentContext() else { return }
+            let strokeLineWidth = (i == 0 ? primaryWaveLineWidth : secondaryWaveLineWidth)
             
-            context.setLineWidth((i == 0 ? primaryWaveLineWidth : secondaryWaveLineWidth))
+            context.setLineWidth(strokeLineWidth)
 
             let halfHeight = bounds.height / 2.0
             let width = bounds.width
             let mid = width / 2.0
             
-            let maxAmplitude = halfHeight - 4.0 // 4 corresponds to twice the stroke width
+            let maxAmplitude = halfHeight - 2 * strokeLineWidth // 4 corresponds to twice the stroke width
             
             // Progress is a value between 1.0 and -0.5, determined by the current wave idx, which is used to alter the wave's amplitude.
             let progress = 1.0 - CGFloat(i) / CGFloat(numberOfWaves)
-            let normedAmplitude = (1.5 * progress - 0.5) * amplitude
+            let normedAmplitude = (1.5 * progress - (2 / CGFloat(numberOfWaves))) * amplitude
             
-            waveColor.withAlphaComponent((progress / 3.0 * 2.0) + (1.0 / 3.0)).set()
+            let multiplier = min(1.0, (progress / 3.0 * 2.0) + (1.0 / 3.0))
+
+            waveColor.withAlphaComponent(multiplier * waveColor.cgColor.alpha).set()
 
             var x: CGFloat = 0
             while x < (width + density) {
