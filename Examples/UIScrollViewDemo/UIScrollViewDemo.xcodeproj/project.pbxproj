@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -189,6 +189,8 @@
 		EEA0E1A1284AEA5D00A2E6C5 /* VisionMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA0E1A0284AEA5D00A2E6C5 /* VisionMenuVC.swift */; };
 		EEAE4C37285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE4C36285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift */; };
 		EEAE4C39285F4C3F00B8A107 /* TableDiffableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEAE4C38285F4C3F00B8A107 /* TableDiffableVC.swift */; };
+		EEDACE3F2E15501F0010DEC3 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = EEDACE3E2E15501F0010DEC3 /* SQLite */; };
+		EEDACE412E1550860010DEC3 /* DatabaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDACE402E1550860010DEC3 /* DatabaseVC.swift */; };
 		F72C3894221CEE3E00E081D3 /* WindowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72C3893221CEE3E00E081D3 /* WindowVC.swift */; };
 		F754780621DCC217004D3D32 /* BlurController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F754780521DCC217004D3D32 /* BlurController.swift */; };
 		F75C2E822238DD9500495104 /* GestureVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F75C2E812238DD9500495104 /* GestureVC.swift */; };
@@ -415,6 +417,7 @@
 		EEA0E1A0284AEA5D00A2E6C5 /* VisionMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionMenuVC.swift; sourceTree = "<group>"; };
 		EEAE4C36285F4BD400B8A107 /* DiffableDatasourceMenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiffableDatasourceMenuVC.swift; sourceTree = "<group>"; };
 		EEAE4C38285F4C3F00B8A107 /* TableDiffableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDiffableVC.swift; sourceTree = "<group>"; };
+		EEDACE402E1550860010DEC3 /* DatabaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseVC.swift; sourceTree = "<group>"; };
 		F72C3893221CEE3E00E081D3 /* WindowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowVC.swift; sourceTree = "<group>"; };
 		F754780521DCC217004D3D32 /* BlurController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurController.swift; sourceTree = "<group>"; };
 		F75C2E812238DD9500495104 /* GestureVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GestureVC.swift; sourceTree = "<group>"; };
@@ -458,6 +461,7 @@
 				AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */,
 				BE132FBB26E360F1005A2C1F /* SwiftyJSON in Frameworks */,
 				EE8AE14827E9DE8F00B2FEF0 /* Resolver in Frameworks */,
+				EEDACE3F2E15501F0010DEC3 /* SQLite in Frameworks */,
 				BE551F1826E31A0800E862BA /* Alamofire in Frameworks */,
 				BE4ACF652918EDC400679D3B /* SwiftGraph in Frameworks */,
 			);
@@ -969,6 +973,7 @@
 				F75C2E812238DD9500495104 /* GestureVC.swift */,
 				BE86BB40271BC5E9005014DC /* LazySequenceVC.swift */,
 				BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */,
+				EEDACE402E1550860010DEC3 /* DatabaseVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1077,6 +1082,7 @@
 				BE4ACF642918EDC400679D3B /* SwiftGraph */,
 				BE7015B7291CA818007EA361 /* StackScrollView */,
 				AFC68BF3292240DD001D0B08 /* Parchment */,
+				EEDACE3E2E15501F0010DEC3 /* SQLite */,
 			);
 			productName = UIScrollViewDemo;
 			productReference = D8A731EE1DED6E28005DF7C8 /* UIScrollViewDemo.app */;
@@ -1140,6 +1146,7 @@
 				BE4ACF632918EDC400679D3B /* XCRemoteSwiftPackageReference "SwiftGraph" */,
 				BE7015B6291CA818007EA361 /* XCRemoteSwiftPackageReference "StackScrollView" */,
 				AFC68BF2292240DD001D0B08 /* XCRemoteSwiftPackageReference "Parchment" */,
+				EEDACE3D2E15501F0010DEC3 /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = D8A731EF1DED6E28005DF7C8 /* Products */;
 			projectDirPath = "";
@@ -1324,6 +1331,7 @@
 				F7A41CD421999D3600D0A3C3 /* CrossDissolveTransitionAnimator.swift in Sources */,
 				D8123AEE1EE7FA8C00EAAA63 /* RulerLayout.swift in Sources */,
 				BE1FAD321F1FAC8B007D36BF /* CollectionViewSelfSizing.swift in Sources */,
+				EEDACE412E1550860010DEC3 /* DatabaseVC.swift in Sources */,
 				BEF29C85251112B80094EBD5 /* GLImageCell.swift in Sources */,
 				BE4B79B61F9F586D00C9662D /* AspectRatioImageView.swift in Sources */,
 				BE4FCA7E1FB9430D00E1C3F0 /* MemberComponentFrameCell.swift in Sources */,
@@ -1714,6 +1722,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		EEDACE3D2E15501F0010DEC3 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.15.4;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1756,6 +1772,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EE8AE14627E9DE8F00B2FEF0 /* XCRemoteSwiftPackageReference "Resolver" */;
 			productName = Resolver;
+		};
+		EEDACE3E2E15501F0010DEC3 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EEDACE3D2E15501F0010DEC3 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
