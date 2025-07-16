@@ -95,7 +95,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        let link = "xhsdiscover://variant_goods_detail?goodsId=651bfaff54784c000101b575&goods_detail_type=commentVariant&uuid=1718369538911&selected_variant_values=%7B%22variants%22:%5B%7B%22variantId%22:%2260404e0de85df80001991224%22,%22variantName%22:%22%E9%A2%9C%E8%89%B2%E5%88%86%E7%B1%BB%22,%22variantValue%22:%22%5B%E6%96%B0%E6%89%8B%E6%8E%A8%E8%8D%9020%E7%A3%85%5D%E6%B7%A1%E8%93%9D%E8%89%B2%22%7D%5D%7D"
+        let link = "xhsdiscover://vision_dsl_panel/?path=/api/store/jpd/edith/detail/authentic&keyword=brand_title_23_1&user_id=65b8f4c3000000000201b010&brand_name=睿问".addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
+        print(link)
 
         let com = URLComponents(string: link)
 

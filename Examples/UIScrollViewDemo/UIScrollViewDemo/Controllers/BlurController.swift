@@ -12,17 +12,34 @@ class BlurController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        
+
+        let opacityAni = CAKeyframeAnimation(keyPath: "opacity")
+
+        opacityAni.values = [0, 1]
+        opacityAni.duration = 4
+        opacityAni.keyTimes = [0, 1]
+        opacityAni.timingFunctions = [CAMediaTimingFunction(name: .easeInEaseOut)]
+
+        let blockView = UIView()
+        blockView.backgroundColor = .systemRed
+        view.addSubview(blockView)
+        blockView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+            make.width.height.equalTo(100)
+        }
+        blockView.layer.add(opacityAni, forKey: "animaiton")
+
+
 //        let image = UIImage(named: "flowers")?.blurred(radius: 10)
-        let imageView = UIImageView(image: UIImage(named: "flowers"))
-        view.addSubview(imageView)
-        imageView.frame.origin = CGPoint(x: 0, y: 100)
-        
-        let darkBlur = UIBlurEffect(style: .extraLight)
-        let blurView = UIVisualEffectView(effect: darkBlur)
-        blurView.frame = imageView.bounds
-        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        imageView.addSubview(blurView)
+//        let imageView = UIImageView(image: UIImage(named: "flowers"))
+//        view.addSubview(imageView)
+//        imageView.frame.origin = CGPoint(x: 0, y: 100)
+//        
+//        let darkBlur = UIBlurEffect(style: .extraLight)
+//        let blurView = UIVisualEffectView(effect: darkBlur)
+//        blurView.frame = imageView.bounds
+//        blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        imageView.addSubview(blurView)
         
 //        let image = UIImage(named: "flowers")?.blurred(radius: 10)
 //        let imageView1 = UIImageView(image: image)

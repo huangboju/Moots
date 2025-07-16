@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
+		AFC513EE2E27878D0000C0F4 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */; };
 		AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = AFC68BF3292240DD001D0B08 /* Parchment */; };
 		AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */; };
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
@@ -235,6 +236,7 @@
 
 /* Begin PBXFileReference section */
 		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
+		AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
 		AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreMatrixVC.swift; sourceTree = "<group>"; };
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
@@ -974,6 +976,7 @@
 				BE86BB40271BC5E9005014DC /* LazySequenceVC.swift */,
 				BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */,
 				EEDACE402E1550860010DEC3 /* DatabaseVC.swift */,
+				AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1279,6 +1282,7 @@
 				BE95F4F21FC402310033D83B /* ResetPasswordFieldCell.swift in Sources */,
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
+				AFC513EE2E27878D0000C0F4 /* ButtonVC.swift in Sources */,
 				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,

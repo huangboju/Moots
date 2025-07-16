@@ -18,6 +18,9 @@ class ViewController: UIViewController {
 
     lazy var data: [[UIViewController.Type]] = [
         [
+            ButtonVC.self
+        ],
+        [
             JSCoreMenuVC.self,
             DatabaseVC.self
         ],
