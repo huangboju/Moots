@@ -15,17 +15,45 @@ final class ButtonVC: UIViewController {
 
         view.backgroundColor = .white
 
-        view.addSubview(button)
+        view.addSubview(beginLabel)
+        beginLabel.snp.makeConstraints { make in
+            make.leading.equalTo(16)
+            make.top.equalTo(100)
+        }
+
+        view.addSubview(endLabel)
+        endLabel.snp.makeConstraints { make in
+            make.leading.equalTo(16)
+            make.top.equalTo(beginLabel.snp.bottom).offset(8)
+        }
+
+        view.addSubview(axisView)
+        axisView.snp.makeConstraints { make in
+            make.top.equalTo(beginLabel)
+            make.leading.equalTo(beginLabel.snp.trailing).offset(10)
+        }
+
+
+        let panelView = UIView()
+        panelView.backgroundColor = .lightGray
+        view.addSubview(panelView)
+        panelView.snp.makeConstraints { make in
+            make.center.equalToSuperview()
+        }
+
+
+        let dimension: CGFloat = 50
+        panelView.addSubview(button)
         button.backgroundColor = .systemBlue
         button.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(100)
-            make.width.height.equalTo(100)
+            make.edges.equalToSuperview().inset(dimension)
+            make.width.height.equalTo(dimension)
         }
     }
 
     @objc
     func touchDown() {
+        beginLabel.text = "Tracking began"
         print("🍀👹👹 \(#function)")
     }
 
@@ -35,8 +63,14 @@ final class ButtonVC: UIViewController {
     }
 
     @objc
-    func touchDragInside() {
+    func touchDragInside(sender: UIButton, withEvent event: UIEvent) {
         print("🍀👹👹 \(#function)")
+        guard let touch = event.touches(for: sender)?.first else {
+            return
+        }
+        let location = touch.location(in: sender)
+        axisView.x = "x: \(location.x)"
+        axisView.y = "y: \(location.y)"
     }
 
     @objc
@@ -61,6 +95,7 @@ final class ButtonVC: UIViewController {
 
     @objc
     func touchUpOutside() {
+        endLabel.text = "Tracking ended"
         print("🍀👹👹 \(#function)")
     }
 
@@ -81,5 +116,74 @@ final class ButtonVC: UIViewController {
         button.addTarget(self, action: #selector(touchUpOutside), for: .touchUpOutside)
         button.addTarget(self, action: #selector(touchCancel), for: .touchCancel)
         return button
+    }()
+
+    private lazy var beginLabel: UILabel = {
+        let beginLabel = UILabel()
+        return beginLabel
+    }()
+
+    private lazy var endLabel: UILabel = {
+        let endLabel = UILabel()
+        return endLabel
+    }()
+
+    private lazy var axisView: AXISView = {
+        let axisView = AXISView()
+        return axisView
+    }()
+}
+
+final class AXISView: UIView {
+
+    var x: String? {
+        get {
+            xLabel.text
+        }
+        set {
+            xLabel.text = newValue
+        }
+    }
+
+    var y: String? {
+        get {
+            yLabel.text
+        }
+        set {
+            yLabel.text = newValue
+        }
+    }
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        addSubview(stackView)
+        stackView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+
+    private lazy var stackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [
+            xLabel,
+            yLabel
+        ])
+        stackView.spacing = 6
+        stackView.axis = .vertical
+        return stackView
+    }()
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private lazy var xLabel: UILabel = {
+        let titleLabel = UILabel()
+        return titleLabel
+    }()
+
+    private lazy var yLabel: UILabel = {
+        let valueLabel = UILabel()
+        return valueLabel
     }()
 }
