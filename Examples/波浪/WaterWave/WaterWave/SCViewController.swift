@@ -68,7 +68,7 @@ class SCViewController: UIViewController {
         recorder?.updateMeters()
         // pow()用来计算以x 为底的 y 次方值，然后将结果返回。设返回值为 ret，则 ret = xy。
         let normalizedValue = normalizedPowerLevel(from: CGFloat(recorder?.averagePower(forChannel: 0) ?? 0))
-        print("🍀👹👹 \(normalizedValue)===\(recorder?.averagePower(forChannel: 0))")
+        print("🍀👹👹 \(normalizedValue)===\(String(describing: recorder?.averagePower(forChannel: 0)))")
         waveformView.update(with: normalizedValue)
     }
     

@@ -21,7 +21,9 @@ class ViewController: UIViewController {
             FirstViewController.self,
             SecondController.self,
             ThirdController.self,
-            SCViewController.self
+            SCViewController.self,
+            SiriWaveViewController.self,
+            VolumeWaveViewController.self
         ]
     ]
 

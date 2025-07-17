@@ -70,7 +70,7 @@ class PullToRefreshWaveView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         displaylink = CADisplayLink(target: self, selector: #selector(displayLinkTric))
-        displaylink?.frameInterval = 2
+        displaylink?.preferredFramesPerSecond = 2
         displaylink?.add(to: RunLoop.main, forMode: RunLoop.Mode.common)
         displaylink?.isPaused = true
 

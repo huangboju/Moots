@@ -3,10 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AFC506F22E292C7A0000C0F4 /* VolumeWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC506F12E292C7A0000C0F4 /* VolumeWaveViewController.swift */; };
+		AFC507022E2932E40000C0F4 /* VolumeWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */; };
+		AFC5A8CC2E27DC100000C0F4 /* SiriWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CB2E27DC100000C0F4 /* SiriWaveViewController.swift */; };
+		AFC5A8D42E27DC3C0000C0F4 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CE2E27DC3C0000C0F4 /* Lerp.swift */; };
+		AFC5A8D52E27DC3C0000C0F4 /* SiriWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8D22E27DC3C0000C0F4 /* SiriWaveView.swift */; };
+		AFC5A8D62E27DC3C0000C0F4 /* SiriWaveLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8D12E27DC3C0000C0F4 /* SiriWaveLine.swift */; };
+		AFC5A8D72E27DC3C0000C0F4 /* Timeout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CF2E27DC3C0000C0F4 /* Timeout.swift */; };
+		AFC5A8D82E27DC3C0000C0F4 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CD2E27DC3C0000C0F4 /* DateExtension.swift */; };
 		D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41F81E4C890900CC083E /* FirstViewController.swift */; };
 		D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */; };
 		D88B02401DB2210D0096114E /* ThirdController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B023F1DB2210D0096114E /* ThirdController.swift */; };
@@ -44,6 +52,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AFC506F12E292C7A0000C0F4 /* VolumeWaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeWaveViewController.swift; sourceTree = "<group>"; };
+		AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeWaveView.swift; sourceTree = "<group>"; };
+		AFC5A8CB2E27DC100000C0F4 /* SiriWaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriWaveViewController.swift; sourceTree = "<group>"; };
+		AFC5A8CD2E27DC3C0000C0F4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		AFC5A8CE2E27DC3C0000C0F4 /* Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
+		AFC5A8CF2E27DC3C0000C0F4 /* Timeout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timeout.swift; sourceTree = "<group>"; };
+		AFC5A8D12E27DC3C0000C0F4 /* SiriWaveLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriWaveLine.swift; sourceTree = "<group>"; };
+		AFC5A8D22E27DC3C0000C0F4 /* SiriWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriWaveView.swift; sourceTree = "<group>"; };
 		D83D41F81E4C890900CC083E /* FirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCViewController.swift; sourceTree = "<group>"; };
 		D88B023F1DB2210D0096114E /* ThirdController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdController.swift; sourceTree = "<group>"; };
@@ -94,6 +110,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AFC5A8D02E27DC3C0000C0F4 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				AFC5A8CD2E27DC3C0000C0F4 /* DateExtension.swift */,
+				AFC5A8CE2E27DC3C0000C0F4 /* Lerp.swift */,
+				AFC5A8CF2E27DC3C0000C0F4 /* Timeout.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		AFC5A8D32E27DC3C0000C0F4 /* SiriWaveView */ = {
+			isa = PBXGroup;
+			children = (
+				AFC5A8D02E27DC3C0000C0F4 /* Utility */,
+				AFC5A8D12E27DC3C0000C0F4 /* SiriWaveLine.swift */,
+				AFC5A8D22E27DC3C0000C0F4 /* SiriWaveView.swift */,
+			);
+			path = SiriWaveView;
+			sourceTree = "<group>";
+		};
 		D8B1A30D1D9CC75D0083AAA3 = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +153,7 @@
 		D8B1A3181D9CC75D0083AAA3 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
+				AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */,
 				D8E102D41E5153CC00B05708 /* Views */,
 				D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */,
 				D8B1A31B1D9CC75D0083AAA3 /* ViewController.swift */,
@@ -128,6 +165,8 @@
 				D88B023F1DB2210D0096114E /* ThirdController.swift */,
 				D83D41F81E4C890900CC083E /* FirstViewController.swift */,
 				D83D41FA1E4C8AEA00CC083E /* SCViewController.swift */,
+				AFC5A8CB2E27DC100000C0F4 /* SiriWaveViewController.swift */,
+				AFC506F12E292C7A0000C0F4 /* VolumeWaveViewController.swift */,
 			);
 			path = WaterWave;
 			sourceTree = "<group>";
@@ -153,6 +192,7 @@
 		D8E102D41E5153CC00B05708 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFC5A8D32E27DC3C0000C0F4 /* SiriWaveView */,
 				D8E102D61E51543600B05708 /* PullToRefreshWave */,
 				D8E102D51E51543600B05708 /* NYWaterWaveView.swift */,
 				D8E102D91E51543600B05708 /* WaterWaveView.swift */,
@@ -233,8 +273,9 @@
 		D8B1A30E1D9CC75D0083AAA3 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1620;
 				ORGANIZATIONNAME = xiAo_Ju;
 				TargetAttributes = {
 					D8B1A3151D9CC75D0083AAA3 = {
@@ -306,7 +347,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AFC506F22E292C7A0000C0F4 /* VolumeWaveViewController.swift in Sources */,
 				D8E102DB1E51543600B05708 /* NYWaterWaveView.swift in Sources */,
+				AFC507022E2932E40000C0F4 /* VolumeWaveView.swift in Sources */,
 				D8B1A31C1D9CC75D0083AAA3 /* ViewController.swift in Sources */,
 				D8E102DC1E51543600B05708 /* PullToRefreshWaveView.swift in Sources */,
 				D83D41FB1E4C8AEA00CC083E /* SCViewController.swift in Sources */,
@@ -315,7 +358,13 @@
 				D8E102DF1E51543600B05708 /* WaveView.swift in Sources */,
 				D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
+				AFC5A8CC2E27DC100000C0F4 /* SiriWaveViewController.swift in Sources */,
 				D88B02401DB2210D0096114E /* ThirdController.swift in Sources */,
+				AFC5A8D42E27DC3C0000C0F4 /* Lerp.swift in Sources */,
+				AFC5A8D52E27DC3C0000C0F4 /* SiriWaveView.swift in Sources */,
+				AFC5A8D62E27DC3C0000C0F4 /* SiriWaveLine.swift in Sources */,
+				AFC5A8D72E27DC3C0000C0F4 /* Timeout.swift in Sources */,
+				AFC5A8D82E27DC3C0000C0F4 /* DateExtension.swift in Sources */,
 				D8E102E11E5162D000B05708 /* SCSiriWaveformView.swift in Sources */,
 				D8E102DD1E51543600B05708 /* UIScrollView+Extension.swift in Sources */,
 			);
@@ -408,6 +457,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -467,6 +517,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -478,7 +529,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -490,7 +542,10 @@
 				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				INFOPLIST_FILE = WaterWave/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -504,7 +559,10 @@
 				DEVELOPMENT_TEAM = 7XJTY6W57S;
 				INFOPLIST_FILE = WaterWave/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -514,13 +572,16 @@
 		D8B1A3421D9CC75D0083AAA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WaterWaveTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterWave.app/WaterWave";
 			};
 			name = Debug;
@@ -528,13 +589,16 @@
 		D8B1A3431D9CC75D0083AAA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = WaterWaveTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWaveTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WaterWave.app/WaterWave";
 			};
 			name = Release;
@@ -542,12 +606,15 @@
 		D8B1A3451D9CC75D0083AAA3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WaterWaveUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWaveUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = WaterWave;
 			};
 			name = Debug;
@@ -555,12 +622,15 @@
 		D8B1A3461D9CC75D0083AAA3 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = WaterWaveUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = WaterWave.WaterWaveUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				TEST_TARGET_NAME = WaterWave;
 			};
 			name = Release;
