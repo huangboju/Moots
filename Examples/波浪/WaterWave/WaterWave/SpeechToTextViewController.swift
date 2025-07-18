@@ -21,15 +21,22 @@ class SpeechToTextViewController: UIViewController {
     // MARK: - 状态管理
     private var isRecording = false
     private var lastVolumeUpdateTime: TimeInterval = 0
+    private var currentAmplitude: CGFloat = 0.0
+    private var targetAmplitude: CGFloat = 0.0
+    private var displayLink: CADisplayLink?
     
     // MARK: - UI 元素
     private lazy var waveformView: SCSiriWaveformView = {
         let view = SCSiriWaveformView()
         view.backgroundColor = UIColor.black
         view.waveColor = UIColor.white
-        view.numberOfWaves = 2
-        view.primaryWaveLineWidth = 1
-        view.secondaryWaveLineWidth = 1
+        view.numberOfWaves = 5
+        view.primaryWaveLineWidth = 2.0
+        view.secondaryWaveLineWidth = 1.0
+        view.frequency = 1.5
+        view.idleAmplitude = 0.01
+        view.phaseShift = -0.15
+        view.density = 5
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -94,6 +101,7 @@ class SpeechToTextViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         stopRecording()
+        stopSmoothAnimation()
     }
     
     // MARK: - UI 设置
@@ -256,6 +264,7 @@ class SpeechToTextViewController: UIViewController {
             recordButton.isSelected = true
             recordButton.backgroundColor = UIColor.systemGreen
             statusLabel.text = "正在录音和识别..."
+            startSmoothAnimation()
         } catch {
             print("音频引擎启动失败: \(error)")
             statusLabel.text = "录音启动失败"
@@ -276,9 +285,10 @@ class SpeechToTextViewController: UIViewController {
         recordButton.isSelected = false
         recordButton.backgroundColor = UIColor.systemRed
         statusLabel.text = "已停止录音"
+        stopSmoothAnimation()
     }
     
-    // MARK: - 音量处理
+        // MARK: - 音量处理
     private func processAudioBuffer(_ buffer: AVAudioPCMBuffer) {
         guard let channelData = buffer.floatChannelData?[0] else { return }
         
@@ -295,14 +305,28 @@ class SpeechToTextViewController: UIViewController {
         
         let normalizedVolume = (decibels + 60) / 60.0 // 标准化到 0-1 范围
         
-                 // 节流更新频率（避免过于频繁的UI更新）
-         let currentTime = CACurrentMediaTime()
-//         if currentTime - lastVolumeUpdateTime > 0.05 { // 每50ms更新一次
-             DispatchQueue.main.async { [weak self] in
-                 self?.waveformView.update(with: CGFloat(normalizedVolume))
-             }
-             lastVolumeUpdateTime = currentTime
-//         }
+        // 设置目标音量，让平滑动画处理实际更新
+        targetAmplitude = CGFloat(normalizedVolume)
+    }
+    
+    // MARK: - 平滑动画控制
+    private func startSmoothAnimation() {
+        displayLink = CADisplayLink(target: self, selector: #selector(updateSmoothAnimation))
+        displayLink?.add(to: .main, forMode: .default)
+    }
+    
+    private func stopSmoothAnimation() {
+        displayLink?.invalidate()
+        displayLink = nil
+    }
+    
+    @objc private func updateSmoothAnimation() {
+        // 使用线性插值实现平滑过渡
+        let lerpSpeed: CGFloat = 0.3 // 调整这个值来控制平滑度，值越小越平滑
+        currentAmplitude = Lerp.lerp(currentAmplitude, targetAmplitude, lerpSpeed)
+        
+        // 更新波形
+        waveformView.update(with: currentAmplitude)
     }
     
     // MARK: - 按钮动作
