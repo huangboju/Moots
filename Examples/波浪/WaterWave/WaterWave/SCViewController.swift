@@ -13,7 +13,10 @@ class SCViewController: UIViewController {
     
     private lazy var waveformView: SCSiriWaveformView = {
         let waveformView = SCSiriWaveformView(frame: CGRect(x: 0, y: 100, width: self.view.frame.width, height: 120))
-        
+        waveformView.waveColor = UIColor.white
+        waveformView.numberOfWaves = 2
+        waveformView.primaryWaveLineWidth = 1
+        waveformView.secondaryWaveLineWidth = 1
         return waveformView
     }()
     
@@ -52,11 +55,7 @@ class SCViewController: UIViewController {
             recorder?.record()
             
             let displaylink = CADisplayLink(target: self, selector: #selector(updateMeters))
-            displaylink.add(to: RunLoop.current, forMode: RunLoop.Mode.common)
-            
-            waveformView.waveColor = UIColor.white
-            waveformView.primaryWaveLineWidth = 3
-            waveformView.secondaryWaveLineWidth = 1
+            displaylink.add(to: .current, forMode: RunLoop.Mode.common)
 
             view.addSubview(waveformView)
         } catch let error {

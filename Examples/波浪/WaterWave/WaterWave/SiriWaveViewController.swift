@@ -9,6 +9,7 @@
 import AVFoundation
 import UIKit
 
+// https://www.kodeco.com/21672160-avaudioengine-tutorial-for-ios-getting-started
 final class SiriWaveViewController: UIViewController {
 
     private var recorder:AVAudioRecorder!
@@ -62,10 +63,12 @@ final class SiriWaveViewController: UIViewController {
 
     private func startRecording() {
         let recordingSession = AVAudioSession.sharedInstance()
-        let recorderSettings = [AVSampleRateKey: NSNumber(value: 44100.0),
-                                AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
-                                AVNumberOfChannelsKey: NSNumber(value: 2),
-                                AVEncoderAudioQualityKey: NSNumber(value: Int8(AVAudioQuality.min.rawValue))]
+        let recorderSettings: [String : Any] = [
+            AVSampleRateKey: NSNumber(value: 44100.0),
+            AVFormatIDKey: NSNumber(value: kAudioFormatAppleLossless),
+            AVNumberOfChannelsKey: NSNumber(value: 2),
+            AVEncoderAudioQualityKey: NSNumber(value: Int8(AVAudioQuality.min.rawValue))
+        ]
 
         let url: URL = URL(fileURLWithPath:"/dev/null")
         do {
@@ -78,8 +81,8 @@ final class SiriWaveViewController: UIViewController {
             try recordingSession.setCategory(.playAndRecord,
                                              mode: .default)
             try recordingSession.setActive(true)
-            self.recorder = try AVAudioRecorder.init(url: url,
-                                                     settings: recorderSettings as [String : Any])
+            self.recorder = try AVAudioRecorder(url: url,
+                                                settings: recorderSettings)
             self.recorder.prepareToRecord()
             self.recorder.isMeteringEnabled = true;
             self.recorder.record()
