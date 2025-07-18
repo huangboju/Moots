@@ -23,9 +23,13 @@ class SpeechToTextViewController: UIViewController {
     private var lastVolumeUpdateTime: TimeInterval = 0
     
     // MARK: - UI 元素
-    private lazy var volumeWaveView: VolumeWaveView = {
-        let view = VolumeWaveView()
+    private lazy var waveformView: SCSiriWaveformView = {
+        let view = SCSiriWaveformView()
         view.backgroundColor = UIColor.black
+        view.waveColor = UIColor.white
+        view.numberOfWaves = 2
+        view.primaryWaveLineWidth = 1
+        view.secondaryWaveLineWidth = 1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -97,7 +101,7 @@ class SpeechToTextViewController: UIViewController {
         view.backgroundColor = .black
         title = "语音转文字"
         
-        view.addSubview(volumeWaveView)
+        view.addSubview(waveformView)
         view.addSubview(transcriptionTextView)
         view.addSubview(recordButton)
         view.addSubview(statusLabel)
@@ -105,15 +109,15 @@ class SpeechToTextViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             // 波形视图
-            volumeWaveView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
-            volumeWaveView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            volumeWaveView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
-            volumeWaveView.heightAnchor.constraint(equalToConstant: 150),
+            waveformView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
+            waveformView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
+            waveformView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20),
+            waveformView.heightAnchor.constraint(equalToConstant: 150),
             
             // 文字显示区域
             transcriptionTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             transcriptionTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            transcriptionTextView.topAnchor.constraint(equalTo: volumeWaveView.bottomAnchor, constant: 20),
+            transcriptionTextView.topAnchor.constraint(equalTo: waveformView.bottomAnchor, constant: 20),
             transcriptionTextView.heightAnchor.constraint(equalToConstant: 200),
             
             // 状态标签
@@ -291,14 +295,14 @@ class SpeechToTextViewController: UIViewController {
         
         let normalizedVolume = (decibels + 60) / 60.0 // 标准化到 0-1 范围
         
-        // 节流更新频率（避免过于频繁的UI更新）
-        let currentTime = CACurrentMediaTime()
-        if currentTime - lastVolumeUpdateTime > 0.05 { // 每50ms更新一次
-            DispatchQueue.main.async { [weak self] in
-                self?.volumeWaveView.updateVolume(CGFloat(normalizedVolume))
-            }
-            lastVolumeUpdateTime = currentTime
-        }
+                 // 节流更新频率（避免过于频繁的UI更新）
+         let currentTime = CACurrentMediaTime()
+//         if currentTime - lastVolumeUpdateTime > 0.05 { // 每50ms更新一次
+             DispatchQueue.main.async { [weak self] in
+                 self?.waveformView.update(with: CGFloat(normalizedVolume))
+             }
+             lastVolumeUpdateTime = currentTime
+//         }
     }
     
     // MARK: - 按钮动作
