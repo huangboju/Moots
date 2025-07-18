@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AFC506F22E292C7A0000C0F4 /* VolumeWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC506F12E292C7A0000C0F4 /* VolumeWaveViewController.swift */; };
 		AFC507022E2932E40000C0F4 /* VolumeWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */; };
+		AFC51B0B2E2A49420000C0F4 /* SpeechToTextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC51B0A2E2A49420000C0F4 /* SpeechToTextViewController.swift */; };
 		AFC5A8CC2E27DC100000C0F4 /* SiriWaveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CB2E27DC100000C0F4 /* SiriWaveViewController.swift */; };
 		AFC5A8D42E27DC3C0000C0F4 /* Lerp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8CE2E27DC3C0000C0F4 /* Lerp.swift */; };
 		AFC5A8D52E27DC3C0000C0F4 /* SiriWaveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC5A8D22E27DC3C0000C0F4 /* SiriWaveView.swift */; };
@@ -54,6 +55,7 @@
 /* Begin PBXFileReference section */
 		AFC506F12E292C7A0000C0F4 /* VolumeWaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeWaveViewController.swift; sourceTree = "<group>"; };
 		AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeWaveView.swift; sourceTree = "<group>"; };
+		AFC51B0A2E2A49420000C0F4 /* SpeechToTextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechToTextViewController.swift; sourceTree = "<group>"; };
 		AFC5A8CB2E27DC100000C0F4 /* SiriWaveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriWaveViewController.swift; sourceTree = "<group>"; };
 		AFC5A8CD2E27DC3C0000C0F4 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		AFC5A8CE2E27DC3C0000C0F4 /* Lerp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lerp.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		D8B1A3181D9CC75D0083AAA3 /* WaterWave */ = {
 			isa = PBXGroup;
 			children = (
+				AFC51B0A2E2A49420000C0F4 /* SpeechToTextViewController.swift */,
 				AFC507012E2932E40000C0F4 /* VolumeWaveView.swift */,
 				D8E102D41E5153CC00B05708 /* Views */,
 				D8B1A3191D9CC75D0083AAA3 /* AppDelegate.swift */,
@@ -358,6 +361,7 @@
 				D8E102DF1E51543600B05708 /* WaveView.swift in Sources */,
 				D83D41F91E4C890900CC083E /* FirstViewController.swift in Sources */,
 				D8B1A31A1D9CC75D0083AAA3 /* AppDelegate.swift in Sources */,
+				AFC51B0B2E2A49420000C0F4 /* SpeechToTextViewController.swift in Sources */,
 				AFC5A8CC2E27DC100000C0F4 /* SiriWaveViewController.swift in Sources */,
 				D88B02401DB2210D0096114E /* ThirdController.swift in Sources */,
 				AFC5A8D42E27DC3C0000C0F4 /* Lerp.swift in Sources */,

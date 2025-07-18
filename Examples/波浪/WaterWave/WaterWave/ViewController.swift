@@ -23,7 +23,8 @@ class ViewController: UIViewController {
             ThirdController.self,
             SCViewController.self,
             SiriWaveViewController.self,
-            VolumeWaveViewController.self
+            VolumeWaveViewController.self,
+            SpeechToTextViewController.self
         ]
     ]
 
