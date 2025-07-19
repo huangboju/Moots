@@ -299,9 +299,7 @@ class SpeechToTextViewController: UIViewController {
         let rms = sqrt(channelDataValueArray.map { $0 * $0 }.reduce(0, +) / Float(channelDataValueArray.count))
         
         // 转换为分贝并标准化
-        var decibels: Float = 20 * log10(rms)
-        if decibels < -60 { decibels = -60 }
-        if decibels > 0 { decibels = 0 }
+        let decibels: Float = min(max(20 * log10(rms), -60), 0)
         
         let normalizedVolume = (decibels + 60) / 60.0 // 标准化到 0-1 范围
         
