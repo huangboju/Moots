@@ -16,6 +16,7 @@ class ScreenRecordMenu: GroupTableController {
         rows = [
             [
                 Row<TitleCell>(viewData: TitleCellItem(segue: .push(ASScreenRecorderVC.self))),
+                Row<TitleCell>(viewData: TitleCellItem(segue: .push(ReplayKitVC.self))),
             ]
         ]
     }
