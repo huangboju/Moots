@@ -20,8 +20,6 @@ final class ReplayCaptureRecorder: ObservableObject {
     private var outputURL: URL?
     private var sessionStarted = false
 
-    private let audioPlayer = AudioPlayer()
-
     func start(playMusic: Bool) {
         guard recorder.isAvailable else {
             statusText = "录屏不可用（请真机运行）"
@@ -42,11 +40,10 @@ final class ReplayCaptureRecorder: ObservableObject {
         }
 
         if playMusic {
-            do {
-                try audioPlayer.prepareSession()
-                try audioPlayer.playBundledMP3(named: "background_music") // 对应 demo.mp3
-            } catch {
-                statusText = "音乐播放失败：\(error.localizedDescription)"
+            if let musicURL = Bundle.main.url(forResource: "background_music", withExtension: "mp3") {
+                AudioManager.shared.playMusic(from: musicURL, loop: true)
+            } else {
+                statusText = "提示: 找不到音乐文件 background_music.mp3，请将音乐文件添加到项目中"
             }
         }
 
@@ -76,7 +73,7 @@ final class ReplayCaptureRecorder: ObservableObject {
         guard isRecording else { return }
         statusText = "停止中…"
 
-        audioPlayer.stop()
+        AudioManager.shared.stopMusic()
 
         recorder.stopCapture { [weak self] error in
             guard let self else { return }
@@ -243,30 +240,5 @@ final class ReplayCaptureRecorder: ObservableObject {
                 try? FileManager.default.removeItem(at: videoURL)
             })
         }
-    }
-}
-
-final class AudioPlayer {
-    private var player: AVAudioPlayer?
-
-    func prepareSession() throws {
-        let session = AVAudioSession.sharedInstance()
-        try session.setCategory(.playback, mode: .default, options: [])
-        try session.setActive(true)
-    }
-
-    func playBundledMP3(named name: String) throws {
-        guard let url = Bundle.main.url(forResource: name, withExtension: "mp3") else {
-            throw NSError(domain: "AudioPlayer", code: -1, userInfo: [NSLocalizedDescriptionKey: "找不到资源：\(name).mp3"])
-        }
-        player = try AVAudioPlayer(contentsOf: url)
-        player?.numberOfLoops = -1
-        player?.prepareToPlay()
-        player?.play()
-    }
-
-    func stop() {
-        player?.stop()
-        player = nil
     }
 }
