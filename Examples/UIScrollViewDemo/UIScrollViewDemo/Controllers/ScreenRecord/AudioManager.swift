@@ -5,7 +5,6 @@ class AudioManager {
     static let shared = AudioManager()
     
     private var audioPlayer: AVAudioPlayer?
-    private var audioEngine: AVAudioEngine?
     private var audioFile: AVAudioFile?
     
     private init() {
