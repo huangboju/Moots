@@ -4,7 +4,7 @@ import UIKit
 class AudioManager {
     static let shared = AudioManager()
     
-    private var audioPlayer: AVAudioPlayer?
+    private(set) var audioPlayer: AVAudioPlayer?
     private var audioFile: AVAudioFile?
     
     private init() {

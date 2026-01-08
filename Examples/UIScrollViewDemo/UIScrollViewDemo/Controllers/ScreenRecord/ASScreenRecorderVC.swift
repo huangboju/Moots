@@ -65,9 +65,9 @@ final class ASScreenRecorderVC: UIViewController {
     }
 
     @objc private func onPlay() {
-        ASScreenRecorder.shared.startRecording()
         if let musicURL = Bundle.main.url(forResource: "background_music", withExtension: "mp3") {
             AudioManager.shared.playMusic(from: musicURL, loop: true)
+            ASScreenRecorder.shared.startRecording(AudioManager.shared.audioPlayer)
         } else {
             print("提示: 找不到音乐文件 background_music.mp3，请将音乐文件添加到项目中")
             // 可以创建一个简单的提示

@@ -24,6 +24,11 @@ public final class ASScreenRecorder: NSObject {
     public private(set) var isRecording: Bool = false
     public weak var delegate: ASScreenRecorderDelegate?
 
+    /// 使用 `AVAudioPlayer` 的音频文件来“录后合成”进最终视频（不会弹 ReplayKit 权限）。
+    /// 注意：这不是抓系统输出，只适用于 `AVAudioPlayer(contentsOf:)` 这种有 `url` 的播放方式。
+    private var audioPlayerSourceURL: URL?
+    private var audioPlayerStartTime: TimeInterval?
+
     /// If `videoURL` is nil, the video will be saved into the camera roll.
     /// This property cannot be changed whilst recording is in progress.
     public var videoURL: URL? {
@@ -39,6 +44,10 @@ public final class ASScreenRecorder: NSObject {
     private var displayLink: CADisplayLink?
 
     private var firstTimeStamp: CFTimeInterval = 0
+
+    // 临时文件
+    private var tempVideoURL: URL?
+    private var tempMergedURL: URL?
 
     private let renderQueue = DispatchQueue(label: "ASScreenRecorder.render_queue", qos: .userInitiated)
     private let appendQueue = DispatchQueue(label: "ASScreenRecorder.append_queue")
@@ -64,10 +73,19 @@ public final class ASScreenRecorder: NSObject {
         }
     }
 
-    // MARK: - Public
+
+    /// 录制视频 + 在结束后把 `player` 对应的音频文件按 `currentTime` 对齐合成进视频
     @discardableResult
-    public func startRecording() -> Bool {
+    public func startRecording(_ player: AVAudioPlayer?) -> Bool {
         guard !isRecording else { return true }
+
+        if let player, let url = player.url {
+            audioPlayerSourceURL = url
+            audioPlayerStartTime = player.currentTime
+        } else {
+            audioPlayerSourceURL = nil
+            audioPlayerStartTime = nil
+        }
 
         setUpWriter()
         isRecording = (videoWriter?.status == .writing)
@@ -112,7 +130,10 @@ public final class ASScreenRecorder: NSObject {
         CVPixelBufferPoolCreate(nil, nil, bufferAttributes as CFDictionary, &pool)
         outputBufferPool = pool
 
-        let url = videoURL ?? tempFileURL()
+        // 若需要合成 AVAudioPlayer 音频：视频先写临时文件，结束后合成进最终 mov
+        let shouldMergeAudio = (audioPlayerSourceURL != nil)
+        let url: URL = shouldMergeAudio ? tempVideoFileURL() : (videoURL ?? tempFileURL())
+        tempVideoURL = shouldMergeAudio ? url : nil
         let fileType: AVFileType = .mov
 
         do {
@@ -183,6 +204,18 @@ public final class ASScreenRecorder: NSObject {
         return URL(fileURLWithPath: outputPath)
     }
 
+    private func tempVideoFileURL() -> URL {
+        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/screenCapture_video.mov")
+        removeTempFilePath(outputPath)
+        return URL(fileURLWithPath: outputPath)
+    }
+
+    private func tempMergedFileURL() -> URL {
+        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/screenCapture_merged.mov")
+        removeTempFilePath(outputPath)
+        return URL(fileURLWithPath: outputPath)
+    }
+
     private func removeTempFilePath(_ filePath: String) {
         let fm = FileManager.default
         guard fm.fileExists(atPath: filePath) else { return }
@@ -203,15 +236,46 @@ public final class ASScreenRecorder: NSObject {
                 self.videoWriter?.finishWriting { [weak self] in
                     guard let self else { return }
 
-                    let done: () -> Void = {
-                        self.cleanup()
+                    let callback: () -> Void = {
                         DispatchQueue.main.async { completion?() }
                     }
 
+                    guard let writtenVideoURL = self.videoWriter?.outputURL else {
+                        self.cleanup()
+                        callback()
+                        return
+                    }
+
+                    // 需要合成音频（AVAudioPlayer 对应的源文件）
+                    if let audioURL = self.audioPlayerSourceURL {
+                        let startSeconds = self.audioPlayerStartTime ?? 0
+                        self.mergeAudioFromPlayer(audioURL: audioURL, audioStartSeconds: startSeconds, intoVideo: writtenVideoURL) { [weak self] mergedURL in
+                            guard let self else { return }
+                            let outputURL = mergedURL ?? writtenVideoURL
+
+                            if let targetURL = self.videoURL {
+                                self.replaceFile(at: targetURL, with: outputURL)
+                                self.cleanup()
+                                callback()
+                            } else {
+                                self.saveToPhotoLibrary(url: outputURL) { [weak self] in
+                                    self?.cleanup()
+                                    callback()
+                                }
+                            }
+                        }
+                        return
+                    }
+
+                    // 不需要合成音频：保持原逻辑
                     if self.videoURL != nil {
-                        done()
+                        self.cleanup()
+                        callback()
                     } else {
-                        self.saveToPhotoLibrary(url: self.videoWriter?.outputURL, completion: done)
+                        self.saveToPhotoLibrary(url: writtenVideoURL) { [weak self] in
+                            self?.cleanup()
+                            callback()
+                        }
                     }
                 }
             }
@@ -257,6 +321,95 @@ public final class ASScreenRecorder: NSObject {
         firstTimeStamp = 0
         rgbColorSpace = nil
         outputBufferPool = nil
+
+        if let url = tempMergedURL { removeTempFilePath(url.path) }
+        if let url = tempVideoURL { removeTempFilePath(url.path) }
+        tempMergedURL = nil
+        tempVideoURL = nil
+
+        audioPlayerSourceURL = nil
+        audioPlayerStartTime = nil
+    }
+
+    // MARK: - Merge
+    private func mergeAudioFromPlayer(audioURL: URL, audioStartSeconds: TimeInterval, intoVideo videoURL: URL, completion: @escaping (URL?) -> Void) {
+        let videoAsset = AVURLAsset(url: videoURL)
+        let audioAsset = AVURLAsset(url: audioURL)
+
+        let composition = AVMutableComposition()
+
+        guard let videoTrack = videoAsset.tracks(withMediaType: .video).first,
+              let compVideo = composition.addMutableTrack(withMediaType: .video, preferredTrackID: kCMPersistentTrackID_Invalid)
+        else {
+            completion(nil)
+            return
+        }
+
+        do {
+            try compVideo.insertTimeRange(CMTimeRange(start: .zero, duration: videoAsset.duration), of: videoTrack, at: .zero)
+            compVideo.preferredTransform = videoTrack.preferredTransform
+        } catch {
+            NSLog("Merge video track failed: %@", error.localizedDescription)
+            completion(nil)
+            return
+        }
+
+        // 没有音轨就别做导出了，直接用原视频（由调用方 fallback）
+        guard let audioTrack = audioAsset.tracks(withMediaType: .audio).first,
+              let compAudio = composition.addMutableTrack(withMediaType: .audio, preferredTrackID: kCMPersistentTrackID_Invalid)
+        else {
+            completion(nil)
+            return
+        }
+
+        let start = max(0, audioStartSeconds)
+        let startTime = CMTimeMakeWithSeconds(start, preferredTimescale: 600)
+        let available = CMTimeSubtract(audioAsset.duration, startTime)
+        let dur = CMTimeMinimum(videoAsset.duration, available)
+        guard dur > .zero else {
+            completion(nil)
+            return
+        }
+
+        do {
+            try compAudio.insertTimeRange(CMTimeRange(start: startTime, duration: dur), of: audioTrack, at: .zero)
+        } catch {
+            NSLog("Merge audio track failed: %@", error.localizedDescription)
+            completion(nil)
+            return
+        }
+
+        let mergedURL = tempMergedFileURL()
+        tempMergedURL = mergedURL
+
+        guard let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality) else {
+            completion(nil)
+            return
+        }
+        exporter.outputURL = mergedURL
+        exporter.outputFileType = .mov
+        exporter.shouldOptimizeForNetworkUse = true
+
+        exporter.exportAsynchronously {
+            switch exporter.status {
+            case .completed:
+                completion(mergedURL)
+            default:
+                if let error = exporter.error {
+                    NSLog("Export merged video failed: %@", error.localizedDescription)
+                }
+                completion(nil)
+            }
+        }
+    }
+
+    private func replaceFile(at targetURL: URL, with sourceURL: URL) {
+        removeTempFilePath(targetURL.path)
+        do {
+            try FileManager.default.copyItem(at: sourceURL, to: targetURL)
+        } catch {
+            NSLog("Replace output file failed: %@", error.localizedDescription)
+        }
     }
 
     // MARK: - Frame rendering
@@ -352,5 +505,7 @@ public final class ASScreenRecorder: NSObject {
         return ctx
     }
 }
+
+
 
 
