@@ -230,55 +230,53 @@ public final class ASScreenRecorder: NSObject {
     private func completeRecordingSession(completion: VideoCompletionBlock?) {
         renderQueue.async { [weak self] in
             guard let self else { return }
+
             self.appendQueue.sync {
                 self.videoWriterInput?.markAsFinished()
-
-                self.videoWriter?.finishWriting { [weak self] in
-                    guard let self else { return }
-
-                    let callback: () -> Void = {
-                        DispatchQueue.main.async { completion?() }
-                    }
-
-                    guard let writtenVideoURL = self.videoWriter?.outputURL else {
-                        self.cleanup()
-                        callback()
-                        return
-                    }
-
-                    // 需要合成音频（AVAudioPlayer 对应的源文件）
-                    if let audioURL = self.audioPlayerSourceURL {
-                        let startSeconds = self.audioPlayerStartTime ?? 0
-                        self.mergeAudioFromPlayer(audioURL: audioURL, audioStartSeconds: startSeconds, intoVideo: writtenVideoURL) { [weak self] mergedURL in
-                            guard let self else { return }
-                            let outputURL = mergedURL ?? writtenVideoURL
-
-                            if let targetURL = self.videoURL {
-                                self.replaceFile(at: targetURL, with: outputURL)
-                                self.cleanup()
-                                callback()
-                            } else {
-                                self.saveToPhotoLibrary(url: outputURL) { [weak self] in
-                                    self?.cleanup()
-                                    callback()
-                                }
-                            }
-                        }
-                        return
-                    }
-
-                    // 不需要合成音频：保持原逻辑
-                    if self.videoURL != nil {
-                        self.cleanup()
-                        callback()
-                    } else {
-                        self.saveToPhotoLibrary(url: writtenVideoURL) { [weak self] in
-                            self?.cleanup()
-                            callback()
-                        }
-                    }
-                }
             }
+
+            self.videoWriter?.finishWriting { [weak self] in
+                self?.handleFinishedWriting(completion: completion)
+            }
+        }
+    }
+
+    private func handleFinishedWriting(completion: VideoCompletionBlock?) {
+        let callback: () -> Void = { DispatchQueue.main.async { completion?() } }
+
+        guard let writtenVideoURL = videoWriter?.outputURL else {
+            cleanup()
+            callback()
+            return
+        }
+
+        // 需要合成音频（AVAudioPlayer 对应的源文件）
+        if let audioURL = audioPlayerSourceURL {
+            let startSeconds = audioPlayerStartTime ?? 0
+            mergeAudioFromPlayer(audioURL: audioURL, audioStartSeconds: startSeconds, intoVideo: writtenVideoURL) { [weak self] mergedURL in
+                guard let self else { return }
+                self.finalizeOutput(outputURL: mergedURL ?? writtenVideoURL, callback: callback)
+            }
+            return
+        }
+
+        finalizeOutput(outputURL: writtenVideoURL, callback: callback)
+    }
+
+    private func finalizeOutput(outputURL: URL, callback: @escaping () -> Void) {
+        if let targetURL = videoURL {
+            // 如果 writer 直接写到目标路径，就别重复 copy 了
+            if outputURL != targetURL {
+                replaceFile(at: targetURL, with: outputURL)
+            }
+            cleanup()
+            callback()
+            return
+        }
+
+        saveToPhotoLibrary(url: outputURL) { [weak self] in
+            self?.cleanup()
+            callback()
         }
     }
 
