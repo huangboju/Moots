@@ -24,10 +24,12 @@ public final class ASScreenRecorder: NSObject {
     public private(set) var isRecording: Bool = false
     public weak var delegate: ASScreenRecorderDelegate?
 
+    // MARK: - Audio merge (AVAudioPlayer -> file)
     /// 使用 `AVAudioPlayer` 的音频文件来“录后合成”进最终视频（不会弹 ReplayKit 权限）。
     /// 注意：这不是抓系统输出，只适用于 `AVAudioPlayer(contentsOf:)` 这种有 `url` 的播放方式。
     private var audioPlayerSourceURL: URL?
     private var audioPlayerStartTime: TimeInterval?
+    private var shouldMergeAudio: Bool { audioPlayerSourceURL != nil }
 
     /// If `videoURL` is nil, the video will be saved into the camera roll.
     /// This property cannot be changed whilst recording is in progress.
@@ -45,7 +47,7 @@ public final class ASScreenRecorder: NSObject {
 
     private var firstTimeStamp: CFTimeInterval = 0
 
-    // 临时文件
+    // MARK: - Temp files
     private var tempVideoURL: URL?
     private var tempMergedURL: URL?
 
@@ -83,8 +85,7 @@ public final class ASScreenRecorder: NSObject {
             audioPlayerSourceURL = url
             audioPlayerStartTime = player.currentTime
         } else {
-            audioPlayerSourceURL = nil
-            audioPlayerStartTime = nil
+            resetAudioMergeState()
         }
 
         setUpWriter()
@@ -131,7 +132,6 @@ public final class ASScreenRecorder: NSObject {
         outputBufferPool = pool
 
         // 若需要合成 AVAudioPlayer 音频：视频先写临时文件，结束后合成进最终 mov
-        let shouldMergeAudio = (audioPlayerSourceURL != nil)
         let url: URL = shouldMergeAudio ? tempVideoFileURL() : (videoURL ?? tempFileURL())
         tempVideoURL = shouldMergeAudio ? url : nil
         let fileType: AVFileType = .mov
@@ -199,19 +199,19 @@ public final class ASScreenRecorder: NSObject {
     }
 
     private func tempFileURL() -> URL {
-        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/screenCapture.mov")
-        removeTempFilePath(outputPath)
-        return URL(fileURLWithPath: outputPath)
+        tempURL(filename: "screenCapture.mov")
     }
 
     private func tempVideoFileURL() -> URL {
-        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/screenCapture_video.mov")
-        removeTempFilePath(outputPath)
-        return URL(fileURLWithPath: outputPath)
+        tempURL(filename: "screenCapture_video.mov")
     }
 
     private func tempMergedFileURL() -> URL {
-        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/screenCapture_merged.mov")
+        tempURL(filename: "screenCapture_merged.mov")
+    }
+
+    private func tempURL(filename: String) -> URL {
+        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/\(filename)")
         removeTempFilePath(outputPath)
         return URL(fileURLWithPath: outputPath)
     }
@@ -231,9 +231,8 @@ public final class ASScreenRecorder: NSObject {
         renderQueue.async { [weak self] in
             guard let self else { return }
 
-            self.appendQueue.sync {
-                self.videoWriterInput?.markAsFinished()
-            }
+            // 保证 renderQueue 里的最后一帧渲染/调度已执行完，再等待 appendQueue 里的 append 全部完成后再 markAsFinished
+            self.appendQueue.sync { self.videoWriterInput?.markAsFinished() }
 
             self.videoWriter?.finishWriting { [weak self] in
                 self?.handleFinishedWriting(completion: completion)
@@ -325,6 +324,10 @@ public final class ASScreenRecorder: NSObject {
         tempMergedURL = nil
         tempVideoURL = nil
 
+        resetAudioMergeState()
+    }
+
+    private func resetAudioMergeState() {
         audioPlayerSourceURL = nil
         audioPlayerStartTime = nil
     }
