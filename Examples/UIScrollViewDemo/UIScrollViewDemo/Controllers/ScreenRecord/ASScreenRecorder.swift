@@ -25,11 +25,15 @@ public final class ASScreenRecorder: NSObject {
     public weak var delegate: ASScreenRecorderDelegate?
 
     // MARK: - Audio merge (AVAudioPlayer -> file)
+    private struct AudioMerge {
+        let url: URL
+        let startTime: TimeInterval
+    }
+
     /// 使用 `AVAudioPlayer` 的音频文件来“录后合成”进最终视频（不会弹 ReplayKit 权限）。
     /// 注意：这不是抓系统输出，只适用于 `AVAudioPlayer(contentsOf:)` 这种有 `url` 的播放方式。
-    private var audioPlayerSourceURL: URL?
-    private var audioPlayerStartTime: TimeInterval?
-    private var shouldMergeAudio: Bool { audioPlayerSourceURL != nil }
+    private var audioMerge: AudioMerge?
+    private var shouldMergeAudio: Bool { audioMerge != nil }
 
     /// If `videoURL` is nil, the video will be saved into the camera roll.
     /// This property cannot be changed whilst recording is in progress.
@@ -48,8 +52,7 @@ public final class ASScreenRecorder: NSObject {
     private var firstTimeStamp: CFTimeInterval = 0
 
     // MARK: - Temp files
-    private var tempVideoURL: URL?
-    private var tempMergedURL: URL?
+    // 不需要存 URL：临时文件名固定，cleanup 时按路径清理即可
 
     private let renderQueue = DispatchQueue(label: "ASScreenRecorder.render_queue", qos: .userInitiated)
     private let appendQueue = DispatchQueue(label: "ASScreenRecorder.append_queue")
@@ -82,8 +85,7 @@ public final class ASScreenRecorder: NSObject {
         guard !isRecording else { return true }
 
         if let player, let url = player.url {
-            audioPlayerSourceURL = url
-            audioPlayerStartTime = player.currentTime
+            audioMerge = AudioMerge(url: url, startTime: player.currentTime)
         } else {
             resetAudioMergeState()
         }
@@ -133,7 +135,6 @@ public final class ASScreenRecorder: NSObject {
 
         // 若需要合成 AVAudioPlayer 音频：视频先写临时文件，结束后合成进最终 mov
         let url: URL = shouldMergeAudio ? tempVideoFileURL() : (videoURL ?? tempFileURL())
-        tempVideoURL = shouldMergeAudio ? url : nil
         let fileType: AVFileType = .mov
 
         do {
@@ -210,8 +211,12 @@ public final class ASScreenRecorder: NSObject {
         tempURL(filename: "screenCapture_merged.mov")
     }
 
+    private func tempPath(filename: String) -> String {
+        (NSHomeDirectory() as NSString).appendingPathComponent("tmp/\(filename)")
+    }
+
     private func tempURL(filename: String) -> URL {
-        let outputPath = (NSHomeDirectory() as NSString).appendingPathComponent("tmp/\(filename)")
+        let outputPath = tempPath(filename: filename)
         removeTempFilePath(outputPath)
         return URL(fileURLWithPath: outputPath)
     }
@@ -250,9 +255,8 @@ public final class ASScreenRecorder: NSObject {
         }
 
         // 需要合成音频（AVAudioPlayer 对应的源文件）
-        if let audioURL = audioPlayerSourceURL {
-            let startSeconds = audioPlayerStartTime ?? 0
-            mergeAudioFromPlayer(audioURL: audioURL, audioStartSeconds: startSeconds, intoVideo: writtenVideoURL) { [weak self] mergedURL in
+        if let audioMerge = audioMerge {
+            mergeAudioFromPlayer(audioURL: audioMerge.url, audioStartSeconds: audioMerge.startTime, intoVideo: writtenVideoURL) { [weak self] mergedURL in
                 guard let self else { return }
                 self.finalizeOutput(outputURL: mergedURL ?? writtenVideoURL, callback: callback)
             }
@@ -319,17 +323,15 @@ public final class ASScreenRecorder: NSObject {
         rgbColorSpace = nil
         outputBufferPool = nil
 
-        if let url = tempMergedURL { removeTempFilePath(url.path) }
-        if let url = tempVideoURL { removeTempFilePath(url.path) }
-        tempMergedURL = nil
-        tempVideoURL = nil
+        // 清理我们可能用到的临时文件（存在与否都没关系）
+        removeTempFilePath(tempPath(filename: "screenCapture_video.mov"))
+        removeTempFilePath(tempPath(filename: "screenCapture_merged.mov"))
 
         resetAudioMergeState()
     }
 
     private func resetAudioMergeState() {
-        audioPlayerSourceURL = nil
-        audioPlayerStartTime = nil
+        audioMerge = nil
     }
 
     // MARK: - Merge
@@ -381,7 +383,6 @@ public final class ASScreenRecorder: NSObject {
         }
 
         let mergedURL = tempMergedFileURL()
-        tempMergedURL = mergedURL
 
         guard let exporter = AVAssetExportSession(asset: composition, presetName: AVAssetExportPresetHighestQuality) else {
             completion(nil)
