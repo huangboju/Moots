@@ -227,7 +227,7 @@ public final class ASScreenRecorder: NSObject {
         do {
             try fm.removeItem(atPath: filePath)
         } catch {
-            NSLog("Could not delete old recording: %@", error.localizedDescription)
+            ScreenRecordLog.log(.warning, "Could not delete old recording: \(error.localizedDescription)")
         }
     }
 
@@ -292,7 +292,7 @@ public final class ASScreenRecorder: NSObject {
         let saveBlock: (PHAuthorizationStatus) -> Void = { [weak self] status in
             guard let self else { return }
             guard status == .authorized || status == .limited else {
-                NSLog("Error copying video to camera roll: Photo permission not granted (%ld)", status.rawValue)
+                ScreenRecordLog.log(.error, "Error copying video to camera roll: Photo permission not granted (\(status.rawValue))")
                 completion()
                 return
             }
@@ -302,7 +302,7 @@ public final class ASScreenRecorder: NSObject {
                 request.addResource(with: .video, fileURL: url, options: nil)
             }, completionHandler: { success, error in
                 if let error {
-                    NSLog("Error copying video to camera roll: %@", error.localizedDescription)
+                    ScreenRecordLog.log(.error, "Error copying video to camera roll: \(error.localizedDescription)")
                 } else if success {
                     self.removeTempFilePath(url.path)
                 }
@@ -352,7 +352,7 @@ public final class ASScreenRecorder: NSObject {
             try compVideo.insertTimeRange(CMTimeRange(start: .zero, duration: videoAsset.duration), of: videoTrack, at: .zero)
             compVideo.preferredTransform = videoTrack.preferredTransform
         } catch {
-            NSLog("Merge video track failed: %@", error.localizedDescription)
+            ScreenRecordLog.log(.error, "Merge video track failed: \(error.localizedDescription)")
             completion(nil)
             return
         }
@@ -377,7 +377,7 @@ public final class ASScreenRecorder: NSObject {
         do {
             try compAudio.insertTimeRange(CMTimeRange(start: startTime, duration: dur), of: audioTrack, at: .zero)
         } catch {
-            NSLog("Merge audio track failed: %@", error.localizedDescription)
+            ScreenRecordLog.log(.error, "Merge audio track failed: \(error.localizedDescription)")
             completion(nil)
             return
         }
@@ -398,7 +398,7 @@ public final class ASScreenRecorder: NSObject {
                 completion(mergedURL)
             default:
                 if let error = exporter.error {
-                    NSLog("Export merged video failed: %@", error.localizedDescription)
+                    ScreenRecordLog.log(.error, "Export merged video failed: \(error.localizedDescription)")
                 }
                 completion(nil)
             }
@@ -410,7 +410,7 @@ public final class ASScreenRecorder: NSObject {
         do {
             try FileManager.default.copyItem(at: sourceURL, to: targetURL)
         } catch {
-            NSLog("Replace output file failed: %@", error.localizedDescription)
+            ScreenRecordLog.log(.error, "Replace output file failed: \(error.localizedDescription)")
         }
     }
 
@@ -470,7 +470,7 @@ public final class ASScreenRecorder: NSObject {
 
                     let success = self.adaptor?.append(pb, withPresentationTime: time) ?? false
                     if !success {
-                        NSLog("Warning: Unable to write buffer to video")
+                        ScreenRecordLog.log(.warning, "Unable to write buffer to video")
                     }
                 }
             }
