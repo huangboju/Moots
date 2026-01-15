@@ -415,13 +415,12 @@ public final class ASScreenRecorder: NSObject {
     }
 
     // MARK: - Frame rendering
-    private func allApplicationWindows() -> [UIWindow] {
-        var windows: [UIWindow] = []
-        for scene in UIApplication.shared.connectedScenes {
-            guard let ws = scene as? UIWindowScene else { continue }
-            windows.append(contentsOf: ws.windows)
-        }
-        return windows
+    private var keyWindow: UIWindow? {
+        UIApplication.shared.connectedScenes
+            .compactMap { $0 as? UIWindowScene }
+            .filter { $0.activationState == .foregroundActive }
+            .first?.windows
+            .first(where: \.isKeyWindow)
     }
 
     @objc private func writeVideoFrame() {
@@ -455,7 +454,7 @@ public final class ASScreenRecorder: NSObject {
             // draw each window into the context
             DispatchQueue.main.sync {
                 UIGraphicsPushContext(bitmapContext)
-                for window in self.allApplicationWindows() {
+                if let window = self.keyWindow {
                     window.drawHierarchy(in: CGRect(x: 0, y: 0, width: self.viewSize.width, height: self.viewSize.height),
                                          afterScreenUpdates: false)
                 }
