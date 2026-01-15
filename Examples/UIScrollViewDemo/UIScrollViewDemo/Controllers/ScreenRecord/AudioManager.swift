@@ -18,7 +18,7 @@ class AudioManager {
             try audioSession.setCategory(.playAndRecord, mode: .default, options: [.defaultToSpeaker, .allowBluetoothHFP])
             try audioSession.setActive(true)
         } catch {
-            print("音频会话配置失败: \(error)")
+            ScreenRecordLog.log(.error, "音频会话配置失败: \(error)")
         }
     }
     
@@ -33,16 +33,16 @@ class AudioManager {
             audioPlayer?.prepareToPlay()
             audioPlayer?.play()
             
-            print("开始播放音乐: \(url.lastPathComponent)")
+            ScreenRecordLog.log(.info, "开始播放音乐: \(url.lastPathComponent)")
         } catch {
-            print("播放音乐失败: \(error)")
+            ScreenRecordLog.log(.error, "播放音乐失败: \(error)")
         }
     }
     
     /// 播放Bundle中的音乐文件
     func playMusicFromBundle(fileName: String, fileExtension: String = "mp3", loop: Bool = false) {
         guard let url = Bundle.main.url(forResource: fileName, withExtension: fileExtension) else {
-            print("找不到音乐文件: \(fileName).\(fileExtension)")
+            ScreenRecordLog.log(.warning, "找不到音乐文件: \(fileName).\(fileExtension)")
             return
         }
         playMusic(from: url, loop: loop)
