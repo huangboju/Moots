@@ -18,7 +18,11 @@ class ViewController: UIViewController {
 
     lazy var data: [[UIViewController.Type]] = [
         [
-            ButtonVC.self
+            ButtonVC.self,
+            FeedbackVC.self,
+            ScreenRecordMenu.self,
+            DemoChartViewController.self,
+            HeartRateIntervalChartViewController.self
         ],
         [
             JSCoreMenuVC.self,

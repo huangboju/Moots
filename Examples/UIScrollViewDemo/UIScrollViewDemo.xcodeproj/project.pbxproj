@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF4211892F190D1600F72F0B /* HeartRateIntervalChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */; };
+		AF42118A2F190D1600F72F0B /* HeartRateIntervalChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */; };
+		AF42118B2F190D1600F72F0B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AF4211872F190D1600F72F0B /* README.md */; };
+		AFA03E0E2EB3829100D65133 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA03E0D2EB3829100D65133 /* FeedbackVC.swift */; };
 		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
 		AFC513EE2E27878D0000C0F4 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */; };
 		AFC68BF4292240DD001D0B08 /* Parchment in Frameworks */ = {isa = PBXBuildFile; productRef = AFC68BF3292240DD001D0B08 /* Parchment */; };
+		AFF7F2A82EE9455A00E4A02C /* DynamicInputAccessoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF7F2A72EE9455A00E4A02C /* DynamicInputAccessoryViewController.swift */; };
 		AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */; };
 		BE02ABC01F9CA39E007F7A9D /* FixedHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */; };
 		BE02ABC21F9CA874007F7A9D /* DynamicHeightColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */; };
@@ -235,8 +240,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateIntervalChartView.swift; sourceTree = "<group>"; };
+		AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateIntervalChartViewController.swift; sourceTree = "<group>"; };
+		AF4211872F190D1600F72F0B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AFA03E0D2EB3829100D65133 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
+		AFF7F2A72EE9455A00E4A02C /* DynamicInputAccessoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicInputAccessoryViewController.swift; sourceTree = "<group>"; };
 		AFF994402A2F3B730032A1CF /* JSCoreMatrixVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSCoreMatrixVC.swift; sourceTree = "<group>"; };
 		BE02ABBF1F9CA39E007F7A9D /* FixedHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FixedHeightColumns.swift; sourceTree = "<group>"; };
 		BE02ABC11F9CA874007F7A9D /* DynamicHeightColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightColumns.swift; sourceTree = "<group>"; };
@@ -452,6 +462,11 @@
 		F7B15AA321B62EF3002DF9C0 /* ShapeMaskLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeMaskLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		AF3F66D42F0E5E2D006167C2 /* ScreenRecord */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScreenRecord; sourceTree = "<group>"; };
+		AF4211742F18F23500F72F0B /* GradientLineVC */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = GradientLineVC; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
 		D8A731EB1DED6E28005DF7C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
@@ -479,6 +494,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF4211882F190D1600F72F0B /* HeartRateChart */ = {
+			isa = PBXGroup;
+			children = (
+				AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */,
+				AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */,
+				AF4211872F190D1600F72F0B /* README.md */,
+			);
+			path = HeartRateChart;
+			sourceTree = "<group>";
+		};
 		BE1093F31F9B4E9E00CD4804 /* AutoLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -947,6 +972,9 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF4211882F190D1600F72F0B /* HeartRateChart */,
+				AF4211742F18F23500F72F0B /* GradientLineVC */,
+				AF3F66D42F0E5E2D006167C2 /* ScreenRecord */,
 				EE2AE2152A346AB10044C446 /* SandBox.swift */,
 				BEE985402A273B750015229B /* Ruler */,
 				BEE985392A2731CD0015229B /* JSCore */,
@@ -977,6 +1005,8 @@
 				BE27B37B2AB94E7B0014D7F0 /* ExpandableLabelVC.swift */,
 				EEDACE402E1550860010DEC3 /* DatabaseVC.swift */,
 				AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */,
+				AFA03E0D2EB3829100D65133 /* FeedbackVC.swift */,
+				AFF7F2A72EE9455A00E4A02C /* DynamicInputAccessoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1074,6 +1104,10 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				AF3F66D42F0E5E2D006167C2 /* ScreenRecord */,
+				AF4211742F18F23500F72F0B /* GradientLineVC */,
 			);
 			name = UIScrollViewDemo;
 			packageProductDependencies = (
@@ -1174,6 +1208,7 @@
 				D8A731F91DED6E28005DF7C8 /* Assets.xcassets in Resources */,
 				BE79ED3F250E5F23003B2B21 /* UIButton断点 in Resources */,
 				EE222E982911399400D2702A /* variants.json in Resources */,
+				AF42118B2F190D1600F72F0B /* README.md in Resources */,
 				D8A731F71DED6E28005DF7C8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1316,6 +1351,8 @@
 				BEC5E79E1FB45EFE00A44CD7 /* MemberAlertView.swift in Sources */,
 				BE3D3A391FAFF4A6001F097D /* CodeSignInFooterView.swift in Sources */,
 				BEC5E78F1FB4037C00A44CD7 /* MyCoRightsRecommendCell.swift in Sources */,
+				AF4211892F190D1600F72F0B /* HeartRateIntervalChartViewController.swift in Sources */,
+				AF42118A2F190D1600F72F0B /* HeartRateIntervalChartView.swift in Sources */,
 				F79C0AF321845883008448E3 /* MaskViewVC.swift in Sources */,
 				BEDAFFF5290BC3BF00FB67BB /* SKUCellModel.swift in Sources */,
 				BE3D3A431FAFF4B9001F097D /* SignUpController.swift in Sources */,
@@ -1361,6 +1398,7 @@
 				AFF994412A2F3B730032A1CF /* JSCoreMatrixVC.swift in Sources */,
 				BEC5E78B1FB3356D00A44CD7 /* SignUpSuccessController.swift in Sources */,
 				BE4FCA821FB9434F00E1C3F0 /* CoRightsFrameView.swift in Sources */,
+				AFA03E0E2EB3829100D65133 /* FeedbackVC.swift in Sources */,
 				D8A7321C1DED6E8A005DF7C8 /* NextPageState.swift in Sources */,
 				F7A41CE12199B54D00D0A3C3 /* SwipeSecondViewController.swift in Sources */,
 				F7A41CEC219BC5CD00D0A3C3 /* AdaptivePresentationFirstViewController.swift in Sources */,
@@ -1378,6 +1416,7 @@
 				EE2AE2162A346AB10044C446 /* SandBox.swift in Sources */,
 				F7B15AA421B62EF3002DF9C0 /* ShapeMaskLayer.swift in Sources */,
 				D8A7321E1DED6E8A005DF7C8 /* PagingEnabled.swift in Sources */,
+				AFF7F2A82EE9455A00E4A02C /* DynamicInputAccessoryViewController.swift in Sources */,
 				F7A41CFB219BEF5600D0A3C3 /* SlideTransitionFirstVC.swift in Sources */,
 				BE1B15591FB2A45500862271 /* NibOwnerLoadable.swift in Sources */,
 				BE1093F51F9B4F9100CD4804 /* MainMenuController.swift in Sources */,
@@ -1551,13 +1590,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89SJ2SR7HV;
+				DEVELOPMENT_TEAM = S98ZGC6777;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1576,13 +1615,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 89SJ2SR7HV;
+				DEVELOPMENT_TEAM = S98ZGC6777;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = UIScrollViewDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
