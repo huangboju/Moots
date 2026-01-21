@@ -24,11 +24,29 @@ final class GradientDashedLineViewVC: UIViewController {
 }
 
 final class GradientDashedLineView: UIView {
+    
+    private lazy var dashMask: CAShapeLayer = {
+        let dashMask = CAShapeLayer()
+        dashMask.fillColor = UIColor.clear.cgColor
+        dashMask.strokeColor = UIColor.black.cgColor  // 作为 mask 只看 alpha，颜色无所谓
+        dashMask.lineCap = .butt
+        dashMask.lineCap = .round
+        dashMask.lineWidth = lineWidth
+        dashMask.lineDashPattern = [
+            NSNumber(value: Float(dashLength)),
+            NSNumber(value: Float(dashGap))
+        ]
+        return dashMask
+    }()
 
-    private let dashMask = CAShapeLayer()
 
     // 可按需调
-    var lineWidth: CGFloat = 1.5
+    var lineWidth: CGFloat = 1.5 {
+        didSet {
+            dashMask.lineWidth = lineWidth
+        }
+    }
+    
     var dashLength: CGFloat = 4
     var dashGap: CGFloat = 4
 
@@ -54,16 +72,6 @@ final class GradientDashedLineView: UIView {
             UIColor(hex: "#BE3838").cgColor,
             UIColor(hex: "#BE38384D").cgColor
         ]
-        // 位置可微调，中间两段保持更“实”
-
-        // 虚线遮罩
-        dashMask.fillColor = UIColor.clear.cgColor
-        dashMask.strokeColor = UIColor.black.cgColor  // 作为 mask 只看 alpha，颜色无所谓
-        dashMask.lineCap = .butt
-        dashMask.lineCap = .round
-        dashMask.lineWidth = lineWidth
-        dashMask.lineDashPattern = [NSNumber(value: Float(dashLength)),
-                                    NSNumber(value: Float(dashGap))]
 
         gradientLayer?.mask = dashMask
         isUserInteractionEnabled = false
