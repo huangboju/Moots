@@ -29,8 +29,8 @@ final class GradientDashedLineView: UIView {
     private let dashMask = CAShapeLayer()
 
     // 可按需调
-    var lineWidth: CGFloat = 2
-    var dashLength: CGFloat = 6
+    var lineWidth: CGFloat = 1.5
+    var dashLength: CGFloat = 4
     var dashGap: CGFloat = 4
 
     override init(frame: CGRect) {
@@ -45,8 +45,8 @@ final class GradientDashedLineView: UIView {
 
     private func setup() {
         // 纵向渐变：上 -> 下
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradient.endPoint   = CGPoint(x: 0.5, y: 1.0)
+        gradient.startPoint = CGPoint(x: 0, y: 0.0)
+        gradient.endPoint   = CGPoint(x: 0, y: 1.0)
 
         // 颜色：#BE38384D, #BE3838, #BE3838, #BE38384D
         gradient.colors = [
@@ -56,7 +56,6 @@ final class GradientDashedLineView: UIView {
             UIColor(hex: "#BE38384D").cgColor
         ]
         // 位置可微调，中间两段保持更“实”
-        gradient.locations = [0.0, 0.33, 0.67, 1.0]
 
         layer.addSublayer(gradient)
 
@@ -64,6 +63,7 @@ final class GradientDashedLineView: UIView {
         dashMask.fillColor = UIColor.clear.cgColor
         dashMask.strokeColor = UIColor.black.cgColor  // 作为 mask 只看 alpha，颜色无所谓
         dashMask.lineCap = .butt
+        dashMask.lineCap = .round
         dashMask.lineWidth = lineWidth
         dashMask.lineDashPattern = [NSNumber(value: Float(dashLength)),
                                     NSNumber(value: Float(dashGap))]
