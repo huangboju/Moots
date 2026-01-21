@@ -25,7 +25,6 @@ final class GradientDashedLineViewVC: UIViewController {
 
 final class GradientDashedLineView: UIView {
 
-    private let gradient = CAGradientLayer()
     private let dashMask = CAShapeLayer()
 
     // 可按需调
@@ -45,19 +44,17 @@ final class GradientDashedLineView: UIView {
 
     private func setup() {
         // 纵向渐变：上 -> 下
-        gradient.startPoint = CGPoint(x: 0, y: 0.0)
-        gradient.endPoint   = CGPoint(x: 0, y: 1.0)
+        gradientLayer?.startPoint = CGPoint(x: 0, y: 0.0)
+        gradientLayer?.endPoint   = CGPoint(x: 0, y: 1.0)
 
         // 颜色：#BE38384D, #BE3838, #BE3838, #BE38384D
-        gradient.colors = [
+        gradientLayer?.colors = [
             UIColor(hex: "#BE38384D").cgColor,
             UIColor(hex: "#BE3838").cgColor,
             UIColor(hex: "#BE3838").cgColor,
             UIColor(hex: "#BE38384D").cgColor
         ]
         // 位置可微调，中间两段保持更“实”
-
-        layer.addSublayer(gradient)
 
         // 虚线遮罩
         dashMask.fillColor = UIColor.clear.cgColor
@@ -68,15 +65,13 @@ final class GradientDashedLineView: UIView {
         dashMask.lineDashPattern = [NSNumber(value: Float(dashLength)),
                                     NSNumber(value: Float(dashGap))]
 
-        gradient.mask = dashMask
+        gradientLayer?.mask = dashMask
         isUserInteractionEnabled = false
         backgroundColor = .clear
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
-
-        gradient.frame = bounds
 
         let x = bounds.midX
         let path = UIBezierPath()
@@ -85,6 +80,14 @@ final class GradientDashedLineView: UIView {
 
         dashMask.frame = bounds
         dashMask.path = path.cgPath
+    }
+    
+    var gradientLayer: CAGradientLayer? {
+        layer as? CAGradientLayer
+    }
+    
+    override class var layerClass: AnyClass {
+        CAGradientLayer.self
     }
 }
 
