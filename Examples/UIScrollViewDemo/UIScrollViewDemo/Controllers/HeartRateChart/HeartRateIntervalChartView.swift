@@ -169,17 +169,39 @@ class HeartRateIntervalChartView: UIView {
         let chartHeight = chartContainerView.bounds.height
         
         guard chartWidth > 0 && chartHeight > 0 else { return }
-        
-        let path = UIBezierPath()
-        
-        // Draw horizontal grid lines
-        for i in 0..<gridLineCount {
-            let y = chartHeight * CGFloat(i) / CGFloat(gridLineCount - 1)
-            path.move(to: CGPoint(x: 0, y: y))
-            path.addLine(to: CGPoint(x: chartWidth, y: y))
+
+        let format = UIGraphicsImageRendererFormat.default()
+        format.opaque = false
+        format.scale = UIScreen.main.scale
+
+        let renderer = UIGraphicsImageRenderer(size: chartContainerView.bounds.size, format: format)
+        let image = renderer.image { rendererContext in
+            let ctx = rendererContext.cgContext
+
+            ctx.setLineWidth(gridLayer.lineWidth)
+            ctx.setStrokeColor((gridLayer.strokeColor ?? UIColor(white: 0.3, alpha: 1.0).cgColor))
+
+            if let dashPattern = gridLayer.lineDashPattern, !dashPattern.isEmpty {
+                let lengths = dashPattern.map { CGFloat(truncating: $0) }
+                ctx.setLineDash(phase: 0, lengths: lengths)
+            } else {
+                ctx.setLineDash(phase: 0, lengths: [])
+            }
+
+            // Draw horizontal grid lines
+            for i in 0..<gridLineCount {
+                let y = chartHeight * CGFloat(i) / CGFloat(gridLineCount - 1)
+                ctx.move(to: CGPoint(x: 0, y: y))
+                ctx.addLine(to: CGPoint(x: chartWidth, y: y))
+            }
+
+            ctx.strokePath()
         }
-        
-        gridLayer.path = path.cgPath
+
+        // Use CGContext-rendered image instead of a path-based CAShapeLayer
+        gridLayer.path = nil
+        gridLayer.contentsScale = UIScreen.main.scale
+        gridLayer.contents = image.cgImage
         gridLayer.frame = chartContainerView.frame
     }
     

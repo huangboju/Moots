@@ -22,7 +22,9 @@ class ViewController: UIViewController {
             FeedbackVC.self,
             ScreenRecordMenu.self,
             DemoChartViewController.self,
-            HeartRateIntervalChartViewController.self
+            HeartRateIntervalChartViewController.self,
+            AverageComparisonVC.self,
+            GradientDashedLineViewVC.self
         ],
         [
             JSCoreMenuVC.self,

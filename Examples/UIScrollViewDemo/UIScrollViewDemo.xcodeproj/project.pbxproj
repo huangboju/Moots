@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF0E27E12F1FB7A40093E434 /* AverageComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E27E02F1FB7A40093E434 /* AverageComparisonView.swift */; };
+		AF0E27E32F1FB7AC0093E434 /* AverageComparisonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF0E27E22F1FB7AC0093E434 /* AverageComparisonVC.swift */; };
 		AF4211892F190D1600F72F0B /* HeartRateIntervalChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */; };
 		AF42118A2F190D1600F72F0B /* HeartRateIntervalChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */; };
 		AF42118B2F190D1600F72F0B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AF4211872F190D1600F72F0B /* README.md */; };
+		AF8ACDA52F20CA3300C0F437 /* GradientDashedLineViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8ACDA42F20CA3300C0F437 /* GradientDashedLineViewVC.swift */; };
 		AFA03E0E2EB3829100D65133 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA03E0D2EB3829100D65133 /* FeedbackVC.swift */; };
 		AFBC714E29B0BF9400B80723 /* Observer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBC714D29B0BF9400B80723 /* Observer.swift */; };
 		AFC513EE2E27878D0000C0F4 /* ButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */; };
@@ -240,9 +243,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AF0E27E02F1FB7A40093E434 /* AverageComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageComparisonView.swift; sourceTree = "<group>"; };
+		AF0E27E22F1FB7AC0093E434 /* AverageComparisonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AverageComparisonVC.swift; sourceTree = "<group>"; };
 		AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateIntervalChartView.swift; sourceTree = "<group>"; };
 		AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartRateIntervalChartViewController.swift; sourceTree = "<group>"; };
 		AF4211872F190D1600F72F0B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		AF8ACDA42F20CA3300C0F437 /* GradientDashedLineViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDashedLineViewVC.swift; sourceTree = "<group>"; };
 		AFA03E0D2EB3829100D65133 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		AFBC714D29B0BF9400B80723 /* Observer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observer.swift; sourceTree = "<group>"; };
 		AFC513ED2E27878D0000C0F4 /* ButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonVC.swift; sourceTree = "<group>"; };
@@ -497,9 +503,12 @@
 		AF4211882F190D1600F72F0B /* HeartRateChart */ = {
 			isa = PBXGroup;
 			children = (
+				AF0E27E02F1FB7A40093E434 /* AverageComparisonView.swift */,
 				AF4211852F190D1600F72F0B /* HeartRateIntervalChartView.swift */,
 				AF4211862F190D1600F72F0B /* HeartRateIntervalChartViewController.swift */,
 				AF4211872F190D1600F72F0B /* README.md */,
+				AF0E27E22F1FB7AC0093E434 /* AverageComparisonVC.swift */,
+				AF8ACDA42F20CA3300C0F437 /* GradientDashedLineViewVC.swift */,
 			);
 			path = HeartRateChart;
 			sourceTree = "<group>";
@@ -1284,6 +1293,7 @@
 				F7A41CFF219BEF7000D0A3C3 /* SlideTransitionThirdVC.swift in Sources */,
 				BE55D95E20941CC3004C748E /* AlignmentRectController.swift in Sources */,
 				EEA0E19D284AE3E300A2E6C5 /* BarcodesVisionVC.swift in Sources */,
+				AF0E27E12F1FB7A40093E434 /* AverageComparisonView.swift in Sources */,
 				F7A41CD021999C7400D0A3C3 /* TransitionMenuController.swift in Sources */,
 				BE4ACF5A2918B18200679D3B /* SKUGraphCellModel.swift in Sources */,
 				BEC5E7981FB448A900A44CD7 /* MyCoRightsRecommendTitleCell.swift in Sources */,
@@ -1318,6 +1328,7 @@
 				BEA0098F1F5D545800CB07CF /* CardViewController.swift in Sources */,
 				D8076CC21DF27335008ACB34 /* CycleViewController.swift in Sources */,
 				AFC513EE2E27878D0000C0F4 /* ButtonVC.swift in Sources */,
+				AF0E27E32F1FB7AC0093E434 /* AverageComparisonVC.swift in Sources */,
 				BE4B79BA1F9F614E00C9662D /* WorkingWithScrollViews.swift in Sources */,
 				D8123AF41EE8D44D00EAAA63 /* RulerView1.swift in Sources */,
 				D831FBED1E2CAFFC009CFB28 /* ConvertController.swift in Sources */,
@@ -1392,6 +1403,7 @@
 				BE3654011F9C69B8001A8432 /* DynamicStackViewController.swift in Sources */,
 				F7A41CF0219BC6D100D0A3C3 /* AdaptivePresentationController.swift in Sources */,
 				F7A41CF5219BD60400D0A3C3 /* SlideTransitionAnimator.swift in Sources */,
+				AF8ACDA52F20CA3300C0F437 /* GradientDashedLineViewVC.swift in Sources */,
 				BE894E7C1FBC1C9100585DF6 /* BubbleViewController.swift in Sources */,
 				BE16A68C291E33FD00374D2E /* StackScrollViewController.swift in Sources */,
 				BE3D3A381FAFF4A6001F097D /* GroupButtonView.swift in Sources */,
