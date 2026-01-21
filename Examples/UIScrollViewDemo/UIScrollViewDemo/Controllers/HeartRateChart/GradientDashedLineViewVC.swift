@@ -53,7 +53,7 @@ final class GradientDashedLineView: UIView {
         super.init(frame: frame)
         // 纵向渐变：上 -> 下
         gradientLayer?.startPoint = CGPoint(x: 0, y: 0.0)
-        gradientLayer?.endPoint   = CGPoint(x: 0, y: 1.0)
+        gradientLayer?.endPoint = CGPoint(x: 0, y: 1.0)
 
         // 颜色：#BE38384D, #BE3838, #BE3838, #BE38384D
         gradientLayer?.colors = [
