@@ -29,7 +29,6 @@ final class GradientDashedLineView: UIView {
         let dashMask = CAShapeLayer()
         dashMask.fillColor = UIColor.clear.cgColor
         dashMask.strokeColor = UIColor.black.cgColor  // 作为 mask 只看 alpha，颜色无所谓
-        dashMask.lineCap = .butt
         dashMask.lineCap = .round
         dashMask.lineWidth = lineWidth
         dashMask.lineDashPattern = [
