@@ -24,7 +24,8 @@ class ViewController: UIViewController {
             DemoChartViewController.self,
             HeartRateIntervalChartViewController.self,
             AverageComparisonVC.self,
-            GradientDashedLineViewVC.self
+            GradientDashedLineViewVC.self,
+            AbnormalHeartRateViewVC.self
         ],
         [
             JSCoreMenuVC.self,

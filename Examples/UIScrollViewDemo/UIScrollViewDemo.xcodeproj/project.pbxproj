@@ -471,6 +471,7 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		AF3F66D42F0E5E2D006167C2 /* ScreenRecord */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ScreenRecord; sourceTree = "<group>"; };
 		AF4211742F18F23500F72F0B /* GradientLineVC */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = GradientLineVC; sourceTree = "<group>"; };
+		AF8AECF02F21FA0400C0F437 /* AbnormalHeartRateView */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = AbnormalHeartRateView; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -981,6 +982,7 @@
 		F79C0AEF2184574D008448E3 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				AF8AECF02F21FA0400C0F437 /* AbnormalHeartRateView */,
 				AF4211882F190D1600F72F0B /* HeartRateChart */,
 				AF4211742F18F23500F72F0B /* GradientLineVC */,
 				AF3F66D42F0E5E2D006167C2 /* ScreenRecord */,
@@ -1117,6 +1119,7 @@
 			fileSystemSynchronizedGroups = (
 				AF3F66D42F0E5E2D006167C2 /* ScreenRecord */,
 				AF4211742F18F23500F72F0B /* GradientLineVC */,
+				AF8AECF02F21FA0400C0F437 /* AbnormalHeartRateView */,
 			);
 			name = UIScrollViewDemo;
 			packageProductDependencies = (
