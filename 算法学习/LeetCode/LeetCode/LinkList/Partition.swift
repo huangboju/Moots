@@ -23,6 +23,7 @@ func partition(_ head: ListNode?, _ x: Int) -> ListNode? {
         }
         let temp = node?.next
         node?.next = nil
+        print(node, temp, "========")
         node = temp
     }
     
