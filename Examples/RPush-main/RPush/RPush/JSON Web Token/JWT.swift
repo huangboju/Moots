@@ -22,26 +22,33 @@ private struct Header: Codable {
     let keyIdentifier: String
 }
 
-/// The JWT Payload contains information specific to the App Store Connect APIs, such as issuer ID and expiration time.
+/// The JWT Payload for APNs.
+///
+/// Per Apple's documentation, the APNs provider JWT must contain `iss` (Team ID) and `iat`
+/// (the time at which the token was issued, in seconds since the Unix epoch). APNs treats the
+/// token as valid for up to one hour after `iat` and rejects providers that update the token
+/// faster than once every 20 minutes (`TooManyProviderTokenUpdates`).
 private struct Payload: Codable {
-    
+
     enum CodingKeys: String, CodingKey {
         case issuerIdentifier = "iss"
-        case expirationTime = "iat"
+        case issuedAt = "iat"
     }
-    
-    /// Your issuer identifier from the API Keys page in App Store Connect (Ex: 57246542-96fe-1a63-e053-0824d011072a)
+
+    /// Your 10-character Team ID, obtained from your developer account.
     let issuerIdentifier: String
 
-    /// The token's expiration time, in Unix epoch time; tokens that expire more than 20 minutes in the future are not valid (Ex: 1528408800)
-    let expirationTime: TimeInterval
+    /// The token's issuance time, in Unix epoch seconds.
+    let issuedAt: TimeInterval
 }
 
 protocol JWTCreatable {
+    /// The instant this JWT was issued. Used to enforce APNs's refresh window.
+    var issuedAt: Date { get }
     func signedToken(using privateKey: JWT.P8PrivateKey) throws -> JWT.Token
 }
 
-struct JWT: Codable, JWTCreatable {
+struct JWT: JWTCreatable {
 
     public enum Error: Swift.Error, LocalizedError {
 
@@ -74,21 +81,25 @@ struct JWT: Codable, JWTCreatable {
     typealias Token = String
     typealias P8PrivateKey = String
 
-    /// The JWT Header contains information specific to the App Store Connect API Keys, such as algorithm and keys.
+    /// The JWT Header.
     private let header: Header
 
-    /// The JWT Payload contains information specific to the App Store Connect APIs, such as issuer ID and expiration time.
+    /// The JWT Payload.
     private let payload: Payload
 
-    /// Creates a new JWT Factory to create signed requests for the App Store Connect API.
+    /// The instant this JWT was issued (the value used for the `iat` claim).
+    let issuedAt: Date
+
+    /// Creates a new JWT factory for signing APNs provider authentication tokens.
     ///
     /// - Parameters:
-    ///   - keyIdentifier: Your private key ID from App Store Connect (Ex: 2X9R4HXF34)
-    ///   - issuerIdentifier: Your issuer identifier from the API Keys page in App Store Connect (Ex: 57246542-96fe-1a63-e053-0824d011072a)
-    ///   - expireDuration: The token's expiration duration. Tokens that expire more than 20 minutes in the future are not valid, so set it to a max of 20 minutes.
-    public init(keyIdentifier: String, issuerIdentifier: String, expireDuration: TimeInterval, baseDate: Date = Date()) {
-        header = Header(keyIdentifier: keyIdentifier)
-        payload = Payload(issuerIdentifier: issuerIdentifier, expirationTime: baseDate.addingTimeInterval(expireDuration).timeIntervalSince1970)
+    ///   - keyIdentifier: Your 10-character Key ID, obtained from your developer account (Ex: 2X9R4HXF34).
+    ///   - issuerIdentifier: Your 10-character Team ID, obtained from your developer account.
+    ///   - issuedAt: The instant to use for the `iat` claim. Defaults to "now".
+    public init(keyIdentifier: String, issuerIdentifier: String, issuedAt: Date = Date()) {
+        self.header = Header(keyIdentifier: keyIdentifier)
+        self.issuedAt = issuedAt
+        self.payload = Payload(issuerIdentifier: issuerIdentifier, issuedAt: issuedAt.timeIntervalSince1970)
     }
 
     /// Combine the header and the payload as a digest for signing.

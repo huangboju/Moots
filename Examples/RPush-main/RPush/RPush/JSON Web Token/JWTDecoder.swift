@@ -8,19 +8,29 @@
 import Foundation
 
 internal extension JWT.Token {
+    /// APNs accepts a provider JWT for up to 60 minutes after `iat`. We refresh a bit earlier
+    /// to leave room for clock skew and in-flight requests.
+    static let safeLifetime: TimeInterval = 50 * 60
+
+    /// Whether this JWT should be considered expired and re-signed.
+    ///
+    /// Returns true when the token cannot be decoded, or when its `iat` is older than
+    /// ``safeLifetime``. Note: APNs also rejects refreshes that happen faster than once every
+    /// 20 minutes (`TooManyProviderTokenUpdates`); enforcing a minimum refresh interval is the
+    /// caller's responsibility.
     var isExpired: Bool {
         do {
-            let decodedBearer = try JWTDecoder.decode(self)
-            return decodedBearer.expiryDate.compare(Date()) != ComparisonResult.orderedDescending
+            let decoded = try JWTDecoder.decode(self)
+            return Date().timeIntervalSince(decoded.issuedAt) >= JWT.Token.safeLifetime
         } catch {
             return true
         }
     }
 }
 
-/// A decoded `JWT` including the expiry date.
+/// A decoded `JWT` including its issuance date.
 private struct DecodedJWT {
-    let expiryDate: Date
+    let issuedAt: Date
 }
 
 /// A decoder for JSON Web Tokens which is able to extract the expiry date.
@@ -60,12 +70,12 @@ private enum JWTDecoder {
         }
         let tokenBody = try decodeJWTPart(parts[1])
 
-        guard let expiryTimestamp = tokenBody["exp"] as? Double else {
+        // APNs JWT carries `iat` (issued-at) but no `exp`. We derive expiry from `iat`.
+        guard let issuedAtTimestamp = tokenBody["iat"] as? Double else {
             throw DecodeError.invalidJSON(parts[1])
         }
 
-        let expiryDate = Date(timeIntervalSince1970: expiryTimestamp)
-        return DecodedJWT(expiryDate: expiryDate)
+        return DecodedJWT(issuedAt: Date(timeIntervalSince1970: issuedAtTimestamp))
     }
 
     /// Base64 URL decode the given string into `Data` which is in this case encoded JSON data.

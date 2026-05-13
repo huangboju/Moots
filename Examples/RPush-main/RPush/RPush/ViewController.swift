@@ -75,11 +75,17 @@ class ViewController: NSViewController, NSTextFieldDelegate {
             let fileURL = URL(fileURLWithPath: newValue)
             _p8FileName = fileURL.lastPathComponent
             _p8PrivateKey = try? P8.getPrivateKey(fromP8: newValue)
+            // Switching to a different .p8 invalidates any cached JWT.
+            _authToken = nil
         }
     }
     private var _p8PrivateKey: String?
     private var _p8FileName: String = ""
-    private var _jwtToken: JWT.Token!
+
+    /// Caches the APNs provider JWT across `send()` calls. APNs forbids re-issuing the JWT
+    /// faster than every 20 minutes (`TooManyProviderTokenUpdates`), so we keep one long-lived
+    /// instance per (keyId, teamId, p8) tuple and let it decide when to refresh.
+    private var _authToken: AuthenticationToken?
     private var deviceTokenString: String? // 格式化后的deviceToken
     private var isConnected: Bool = false
     private var socket: Socket?
@@ -427,16 +433,26 @@ private extension ViewController {
                 return
             }
             
+            // Reuse the same AuthenticationToken instance across sends so its internal JWT cache
+            // can survive (and obey APNs's 20-minute minimum refresh window). Recreate it only
+            // when the credentials actually change.
+            if _authToken?.keyId != keyId || _authToken?.teamId != teamId {
+                _authToken = AuthenticationToken(keyId: keyId, teamId: teamId)
+            }
+            let authToken = _authToken!
+
             let jwtToken: JWT.Token
-            if let token = _jwtToken, !token.isExpired {
-                jwtToken = token
-            } else {
-                let authToken = AuthenticationToken(keyId: keyId, teamId: teamId)
+            do {
                 if let privateKey = _p8PrivateKey {
-                    jwtToken = try! authToken.generateJWTToken(fromP8PrivateKey: privateKey)
+                    jwtToken = try authToken.generateJWTToken(fromP8PrivateKey: privateKey)
                 } else {
-                    jwtToken = try! authToken.generateJWTToken(fromP8: _p8FilePath)
+                    jwtToken = try authToken.generateJWTToken(fromP8: _p8FilePath)
                 }
+            } catch {
+                let errmsg = "生成JWT失败: \(error.localizedDescription)"
+                showAlert(errmsg)
+                displayLog(errmsg, isWarning: true)
+                return
             }
             
             let newDeviceToken = deviceToken.replacingOccurrences(of: " ", with: "")
